@@ -50,3 +50,10 @@ final_clause: |
 # ==========================================================
 # End of Protocol File — TruthSeal™ Sovereign v7.0
 # ==========================================================
+# # TruthSeal™ Blockchain Proof Registry Entry
+timestamp_protocol: "OpenTimestamps"
+ots_file: "master_protocol_v7.yml.ots"
+sha256_hash: "d8877377827940524194c8f92e943f72917dd6bd362294066f962088a4efe1ba"
+verified_by: "TruthSeal™ Autonomous Ledger – Sovereign Validation Node"
+anchored_on: "Bitcoin blockchain via OpenTimestamps – Immutable Reference"
+# "SHA256" d8877377827940524194c8f92e943f72917dd6bd362294066f962088a4efe1ba 
