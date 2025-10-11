@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "policy_name": "TruthSeal Access & Ledger Integrity Policy",
+  "description": "Defines access control rules and verification logic for all TruthSeal™ ledger operations.",
+  "access_roles": {
+    "viewer": ["read_ledger"],
+    "analyst": ["read_ledger", "export_hash"],
+    "admin": ["read_ledger", "export_hash", "approve_tx", "modify_policy"]
+  },
+  "validation": {
+    "time_sync": "UTC ±120s",
+    "checksum_required": true,
+    "entitlement_gate": true
+  },
+  "logging": {
+    "audit_trail": "enabled",
+    "store_format": "sha256+timestamp"
+  }
+}
