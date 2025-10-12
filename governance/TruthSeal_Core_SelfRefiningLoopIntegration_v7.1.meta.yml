@@ -1,0 +1,35 @@
+# ===========================================================
+# TruthSeal™ v7.1 — Core Self-Refining Loop Integration Module
+# Author: Dr. Nickolay Traykov (Commander Nick)
+# Date: 2025-10-12
+# ===========================================================
+
+version: "7.1"
+module_name: "TruthSeal_Core_SelfRefiningLoopIntegration"
+status: "Immutable"
+category: "AI Governance Enhancement"
+
+registry:
+  author: "Dr. Nickolay Traykov"
+  entity: "TruthSeal™ Sovereign AI Integrity Framework"
+  jurisdiction: "Global"
+  license: "Sovereign Intellectual Property — All Rights Reserved"
+
+integration:
+  link_to_master_protocol: "./master_protocol_v7.yml"
+  objective: "Embed Self-Refining Reasoning Loop (TRM Integration) into the TruthSeal Thinking Core for recursive validation cycles."
+  architecture: "draft → internal critique → revision → finalization"
+  performance_targets:
+    latency_P95_ms: 500
+    active_parameters: 10000000
+    result_quality: "Comparable to billion-parameter LLMs"
+
+security_binding:
+  anchor: "IntegrityLedger™"
+  verification_proof: "Timestamp anchored via TruthSeal Ledger Anchor"
+  audit_path: "Preflight Protocol Checkpoint"
+
+notes:
+  - "Module operates autonomously under WAiND supervision."
+  - "All recursive loops log outputs to IntegrityLedger™ for traceability."
+  - "Deployment requires Commander Nick confirmation and ledger seal."
