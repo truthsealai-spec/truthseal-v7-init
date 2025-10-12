@@ -1,0 +1,32 @@
+{
+  "capsule_version": "7.1",
+  "capsule_type": "IntegrityLedger_CrossVerification",
+  "title": "TruthSeal™ Ledger Capsule — Dual Governance Anchor",
+  "author": "Dr. Nickolay Traykov (Commander Nick)",
+  "entity": "TruthSeal™ Sovereign AI Integrity Framework",
+  "jurisdiction": "Global",
+  "license": "Sovereign Intellectual Property — All Rights Reserved",
+  "linked_commits": [
+    {
+      "name": "TruthSeal_Core_SelfRefiningLoopIntegration_v7.1.meta.yml",
+      "commit_hash": "f4f432c29b174685f30c8b347880f78fa501a2a3",
+      "timestamp_anchor": "2025-10-12T23:35Z"
+    },
+    {
+      "name": "TruthSeal_HybridAccelerationProtocol_v1.0.meta.yml",
+      "commit_hash": "0bf2bef3176d04aa8d63eb936bccf344472e09f2",
+      "timestamp_anchor": "2025-10-13T08:40Z"
+    }
+  ],
+  "ledger_binding": {
+    "verification": "Cross-verified within Sovereign Integrity Ledger",
+    "anchor_protocol": "IntegrityLedger™ v7.x",
+    "governance_reference": "./master_protocol_v7.yml",
+    "proof_method": "Recursive Hash Integrity Chain"
+  },
+  "notes": [
+    "This capsule cross-anchors all verified commits under governance.",
+    "Each commit becomes cryptographically linked to its Sovereign Timestamp.",
+    "Ledger Capsule v7.1 marks the first institutional milestone of TruthSeal™."
+  ]
+}
