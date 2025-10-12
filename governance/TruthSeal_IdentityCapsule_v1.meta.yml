@@ -1,0 +1,19 @@
+# ===========================================================
+# TruthSeal™ — Sovereign Identity Capsule v1
+# Author: Dr. Nickolay Traykov, Prof. (h.c.) of AI Neurological Governance
+# Date: <auto-set at commit>
+# ===========================================================
+
+version: "1.0"
+capsule_name: "TruthSeal_IdentityCapsule_v1"
+status: "Immutable"
+
+canonical_identity:
+  full_title: "Dr. Nickolay Traykov, Prof. (h.c.) of AI Neurological Governance — Founder of TruthSeal™ and Author of the THT Protocol™ — Bulgarian-Australian Researcher & AI Governance Pioneer"
+  jurisdictions: ["Global"]
+  license: "Sovereign Intellectual Property — All Rights Reserved"
+
+usage:
+  - "All TruthSeal™, THT™, and Ledger modules MUST reference this capsule."
+  - "Any legacy references (e.g., 'Commander Nick') are deprecated."
+  - "This capsule is the single source of truth for public author attribution."
