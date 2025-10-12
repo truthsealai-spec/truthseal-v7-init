@@ -1,9 +1,9 @@
 # ===========================================================
-# TruthSeal™ v7.1 — Core Self-Refining Loop Integration Module
-# Author: Dr. Nickolay Traykov (Commander Nick)
-# Date: 2025-10-12
+# TruthSeal™ — Governance Module
+# Author: Dr. Nickolay Traykov, Prof. (h.c.) of AI Neurological Governance
+# Canonical Title Source: ./TruthSeal_IdentityCapsule_v1.meta.yml
+# Date: <auto-set at commit>
 # ===========================================================
-
 version: "7.1"
 module_name: "TruthSeal_Core_SelfRefiningLoopIntegration"
 status: "Immutable"
