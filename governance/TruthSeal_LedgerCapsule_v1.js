@@ -1,7 +1,6 @@
-{
-  "capsule_version": "1.0",
-  "issuer": "TruthSeal™ Sovereign Ledger",
-  "owner": "Dr. Nickolay Traykov (Commander Nick)",
+canonical_identity:
+  source: "./TruthSeal_IdentityCapsule_v1.meta.yml"
+  full_title: "Dr. Nickolay Traykov, Prof. (h.c.) of AI Neurological Governance — Founder of TruthSeal™ and Author of the THT Protocol™ — Bulgarian-Australian Researcher & AI Governance Pioneer"
   "scope": "Public-safe anchor metadata for timestamped artifacts",
   "artifacts": [
     {
