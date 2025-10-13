@@ -1,4 +1,4 @@
-# ===========================================================
+# sha256": "<b63b43ea61c611000a6ef6f3f420e3cfc952cfa565cff6a20d98bdeb20b78c38>"       
 # TruthSeal™ — Sovereign Identity Capsule v1
 # Author: Dr. Nickolay Traykov, Prof. (h.c.) of AI Neurological Governance
 # Date: <auto-set at commit>
@@ -17,3 +17,4 @@ usage:
   - "All TruthSeal™, THT™, and Ledger modules MUST reference this capsule."
   - "Any legacy references (e.g., 'Commander Nick') are deprecated."
   - "This capsule is the single source of truth for public author attribution."
+  commit_hash": "<b63b43ea61c611000a6ef6f3f420e3cfc952cfa565cff6a20d98bdeb20b78c38>"
