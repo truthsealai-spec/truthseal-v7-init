@@ -1,0 +1,120 @@
+name: TruthSeal LeakScan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+# Needed so the bot can write the reports back to the repo
+permissions:
+  contents: write
+
+concurrency:
+  group: leaks-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    # Avoid loop when the bot commits the reports
+    if: ${{ !contains(github.event.head_commit.message, 'LeakScan:') }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ensure folders exist
+        run: |
+          mkdir -p governance/audit_logs governance/TruthSeal_PublicReports
+
+      - name: Run classified leak scan
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          TS=$(date -u +"%Y-%m-%dT%H-%M-%SZ")
+          EVID="governance/audit_logs/SCAN_${TS}.md"
+          PUB="governance/TruthSeal_PublicReports/LeakReport_${TS}.md"
+
+          # Prefer changed files; fall back to all relevant files on first run
+          CHANGED=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- \
+                     '**/*.yml' '**/*.yaml' '**/*.md' '**/*.js' '**/*.py' || true)
+          if [ -z "$CHANGED" ]; then
+            CHANGED=$(git ls-files '**/*.yml' '**/*.yaml' '**/*.md' '**/*.js' '**/*.py')
+          fi
+
+          # Evidence log header
+          {
+            echo "# TruthSeal Classified Leak Scan — Evidence"
+            echo ""
+            echo "- repo: $GITHUB_REPOSITORY"
+            echo "- run_id: $GITHUB_RUN_ID"
+            echo "- branch: $GITHUB_REF_NAME"
+            echo "- utc_time: $TS"
+            echo "- commit: $GITHUB_SHA"
+            echo ""
+            echo "## Files scanned"
+            printf '%s\n' $CHANGED
+            echo ""
+          } > "$EVID"
+
+          # Patterns (extend here as needed)
+          cat > patterns.txt <<'EOF'
+TruthSeal™? (?:Sovereign )?AI Integrity Framework
+THT Protocol™
+WAiND
+ASI\b|AGI\b
+Commander Nick
+Nickolay Traykov
+Prof\.\s*\(h\.c\.\)
+Sovereign Intellectual Property
+NeuroVest™
+Canonical Title Source
+IntegrityLedger™
+VerdictCard™
+GhostKey™
+SovereignSeal™
+ConsentVault™
+RiskDial™
+SnS|LnL|USBUch™|SIMSentinel™|Region Pins™
+EOF
+
+          MATCHES=0
+          echo "## Matches" >> "$EVID"
+          for f in $CHANGED; do
+            [ -f "$f" ] || continue
+            if grep -nEI --color=never -f patterns.txt "$f" > tmp_matches.txt; then
+              echo "### $f" >> "$EVID"
+              sed 's/^/    /' tmp_matches.txt >> "$EVID"
+              MATCHES=1
+            fi
+          done
+
+          # Public report
+          {
+            echo "# TruthSeal Public Leak Report"
+            echo ""
+            echo "**UTC:** $TS  "
+            echo "**Commit:** $GITHUB_SHA  "
+            echo ""
+            if [ $MATCHES -eq 1 ]; then
+              echo "Status: ⚠️ Potentially sensitive references found. Internal review required."
+            else
+              echo "Status: ✅ No sensitive references found in the scanned files."
+            fi
+            echo ""
+            echo "Scanned files:"
+            printf '%s\n' $CHANGED
+          } > "$PUB"
+
+      - name: Commit report artifacts
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "LeakScan: auto-run via GitHub Actions"
+          file_pattern: |
+            governance/audit_logs/*.md
+            governance/TruthSeal_PublicReports/*.md
