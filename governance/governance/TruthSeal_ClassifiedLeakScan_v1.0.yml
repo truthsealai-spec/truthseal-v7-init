@@ -1,0 +1,45 @@
+# ===========================================================
+# TruthSeal™ Classified Leak Scan Protocol v1.0
+# Author: Dr. Nickolay Traykov, Prof. (h.c.) of AI Neurological Governance
+# Date: 2025-10-13
+# ===========================================================
+
+version: "1.0"
+module_name: "TruthSeal_ClassifiedLeakScan"
+status: "Active"
+category: "Security Monitoring"
+
+registry:
+  author: "Dr. Nickolay Traykov"
+  entity: "TruthSeal™ Sovereign AI Integrity Framework"
+  jurisdiction: "Global"
+  license: "Sovereign Intellectual Property — All Rights Reserved"
+
+function:
+  purpose: "Detect any classified, trademarked, or sensitive terms within public commits and logs."
+  triggers:
+    - "Commit event in any TruthSeal™ repository"
+    - "Manual audit request from authorised user"
+  detection_terms:
+    - "LnL™"
+    - "SnS™"
+    - "Ghost Key™"
+    - "CNLO™"
+    - "WAiND"
+    - "Integrity Ledger™"
+  response:
+    action: "Generate a Public Leak Report (Classified Leak Summary)"
+    notify: "AI Governance Vault and Author"
+    severity_levels:
+      low: "Internal reference only"
+      medium: "Internal flag and review"
+      high: "Immediate quarantine and ledger report"
+
+ledger_binding:
+  verification_anchor: "Integrity Ledger™ Core"
+  timestamp_method: "OpenTimestamps SHA-256 Proof"
+
+notes:
+  - "This protocol operates continuously once committed."
+  - "Logs are stored in /governance/audit_logs/."
+  - "Public Leak Reports are automatically generated under TruthSeal_PublicReports/."
