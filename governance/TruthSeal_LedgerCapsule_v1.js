@@ -29,7 +29,7 @@ canonical_identity:
     {
       "case_id": "TS-NEUROVEST-v1",
       "title": "NeuroVest™ — Scientific & Media Article",
-      "sha256": "<PASTE_SHA256_HERE>",
+      "sha256": "<"4f8138bcdd955ea2db08dc080d64a69337cdf17e1c55dda006395556d065d363>",
       "ots_receipt_path": "governance/receipts/NeuroVest_v1.pdf.ots",
       "polygon": {
         "network": "Polygon PoS",
