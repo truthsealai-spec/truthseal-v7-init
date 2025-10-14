@@ -29,4 +29,3 @@ canonical_identity:
     approved_by: "Dr. Nickolay Traykov, Prof. (h.c.) of AI Neurological Governance"
     "commit_hash": "<FILL_AFTER_COMMIT>"
   }
-}
