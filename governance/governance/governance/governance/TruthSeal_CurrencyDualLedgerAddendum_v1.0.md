@@ -31,7 +31,8 @@ This parity remains the official baseline for valuation equivalence until supers
 These figures are **functionally identical** in intrinsic value. The difference represents jurisdictional denomination only.
 
 ---
-```markdown 
+
+markdown 
 ## Section 4 — Governance Directive
 All future TruthSeal™ and THT Protocol™ memos, plans, and reports must display both currency anchors explicitly in the header:
 
@@ -42,3 +43,4 @@ All future TruthSeal™ and THT Protocol™ memos, plans, and reports must displ
 • Oversight Entity: TruthSeal Integrity Ledger Foundation  
 • Audit Frequency: Quarterly  
 • Report Submission: Integrity Vault Archive  
+
