@@ -30,14 +30,6 @@ This parity remains the official baseline for valuation equivalence until supers
 These figures are **functionally identical** in intrinsic value. The difference represents jurisdictional denomination only.
 
 ---
-## Section 2 — Conversion Baseline (Oct 2025 FX Lock)
-This parity remains the official baseline for valuation equivalence until superseded by a subsequent Governance FX Addendum.
-
----
-
-## Section 3 — Valuation Parity
-- Sovereign Valuation Baseline: A $ 11 B  
-- Global Benchmark Equivalent: ≈ US $ 7.15 B (± 3 % tolerance)  
 
 These figures are **functionally identical** in intrinsic value. The difference represents jurisdictional denomination only.
 
