@@ -31,10 +31,7 @@ This parity remains the official baseline for valuation equivalence until supers
 These figures are **functionally identical** in intrinsic value. The difference represents jurisdictional denomination only.
 
 ---
-```markdown
-Valuation: A $ 11 B (≈ US $ 7.15 B equivalent @ Oct 2025 FX rate 0.65)  
-Currency Anchor: AUD – Sovereign Australian base for Doctorantura filings
-
+```markdown 
 ## Section 4 — Governance Directive
 All future TruthSeal™ and THT Protocol™ memos, plans, and reports must display both currency anchors explicitly in the header:
 
