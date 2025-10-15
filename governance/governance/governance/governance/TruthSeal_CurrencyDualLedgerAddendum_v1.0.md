@@ -27,7 +27,7 @@ This parity remains the official baseline for valuation equivalence until supers
 - Sovereign Valuation Baseline: A $ 11 B  
 - Global Benchmark Equivalent: ≈ US $ 7.15 B (± 3 % tolerance)  
 
-These figures are **functionally identical** in intrinsic value. The difference represents jurisdictional denomination only.
+
 
 ---
 
