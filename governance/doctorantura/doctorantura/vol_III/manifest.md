@@ -25,3 +25,10 @@ Each chapter within this volume forms part of the THT Doctorantura Blockchain Lo
 
 ### ⚖️ Continuity Notice
 This volume remains indexed under the 2025 FX Lock baseline (A$ ↔ US$ parity) ensuring valuation consistency with the TruthSeal™ sovereign architecture and all THT derivative assets.
+---
+
+### 🧩 Integrity Notes
+- This chapter is sealed under the TruthSeal™ Sovereign Authorship Chain.  
+- It is archived in the Doctorantura Blockchain Log with continuity from the master governance repository.  
+- **Validation:** TruthSeal Sovereign Authorship Chain | Doctorantura Blockchain Log — **Certified**.  
+- Contact point for verification: governance@truthseal.org (public-safe).
