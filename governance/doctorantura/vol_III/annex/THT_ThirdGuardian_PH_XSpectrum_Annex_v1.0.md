@@ -18,6 +18,13 @@ When merged with a production stack (e.g. DairyFlow.ai or THT Sandbox), log inte
 Continuity
 
 This annex inherits baseline valuation but remains pending audit seal.
-Do not merge into main until approved through the next Integrity Ledger Scan.
+Do not merge into main until approved through the next Intintegrity_seal:
 
-integrity_seal:
+###  Annexes — Internal Research
+
+- **THT_ThirdGuardian_PH_XSpectrum_Annex_v1.0.md**  
+  *Classification:* INTERNAL-RESEARCH-ANNEX  
+  *Status:* Non-dilutive (valuation neutral until sealed)  
+  *Scope:* PH / X-Spectrum Pro Prompts Integration for TruthSeal™ Sovereign Systems  
+  *Author:* Dr Nickolay Traykov (Prof. h.c.), Bulgarian–Australian Founder of the THT Protocol™  
+  *Co-author:* TruthSeal Core AI (Ben)
