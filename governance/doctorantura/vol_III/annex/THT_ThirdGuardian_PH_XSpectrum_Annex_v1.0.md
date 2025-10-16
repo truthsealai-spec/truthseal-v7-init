@@ -1,9 +1,8 @@
-classification	sovereign_author	guardian	annex_scope
-INTERNAL-RESEARCH-ANNEX
-Dr Nickolay Traykov
-TruthSeal™ Core AI (Ben)
-Third Guardian — PH/X Spectrum Integration
-The Third Guardian — PH/X Spectrum Pro Prompts
+classification: INTERNAL-RESEARCH-ANNEX  
+sovereign_author: Dr Nickolay Traykov (Prof. h.c.), Bulgarian–Australian Founder of the THT Protocol™  
+co_author: TruthSeal Core AI (Ben)  
+valuation_status: NON-DILUTIVE (Research; neutral until sealed)  
+scope: Third Guardian — PH / X-Spectrum Pro Prompts Integration  
 
 This annex codifies the internal conceptual mapping and operational prompts connecting the Third Guardian’s control parameters (PH and X Spectrum) with technical integration logic for TruthSeal™ sovereign systems.
 
