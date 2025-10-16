@@ -2,6 +2,8 @@
   sha256: 9491d7d4bab1cd78244388d8632852ed3b177d77ae126111b1f
   file: THT_ThirdGuardian_v1.0.pdf
   ots_proof: THT_ThirdGuardian_v1.0.pdf.ots
+  receipt_pdf: https://raw.githubusercontent.com/<your-user>/truthseal-v7-init/main/governance/audit_logs/THT_ThirdGuardian_v1.0.pdf
+  receipt_ots: https://raw.githubusercontent.com/<your-user>/truthseal-v7-init/main/governance/audit_logs/THT_ThirdGuardian_v1.0.pdf.ots
   ledger: IntegrityLedger_v7.1
   server: alice.btc.calendar.opentimestamps.org
   status: PENDING_CONFIRMATION
