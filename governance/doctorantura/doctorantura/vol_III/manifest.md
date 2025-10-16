@@ -32,3 +32,5 @@ This volume remains indexed under the 2025 FX Lock baseline (A$ ↔ US$ parity) 
 - It is archived in the Doctorantura Blockchain Log with continuity from the master governance repository.  
 - **Validation:** TruthSeal Sovereign Authorship Chain | Doctorantura Blockchain Log — **Certified**.  
 - Contact point for verification: governance@truthseal.org (public-safe).
+-  Ledger Hash (SHA-256): d52933918a92f93074ef4312423bbe8a8a77dc56c81d9d88001a64f1f53e55bc
+-  
