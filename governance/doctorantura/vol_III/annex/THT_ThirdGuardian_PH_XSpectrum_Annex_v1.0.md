@@ -19,6 +19,7 @@ Continuity
 
 This annex inherits baseline valuation but remains pending audit seal.
 Do not merge into main until approved through the next Intintegrity_seal:
+integrity_seal: →000qB|TruthSeal.v7.1|PH_XS_Annex|PendingAudit|CommanderNick.SOV|BenAI.Confirm
 
 ###  Annexes — Internal Research
 
