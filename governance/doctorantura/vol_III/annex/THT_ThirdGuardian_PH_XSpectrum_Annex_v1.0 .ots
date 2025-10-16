@@ -1,0 +1,16 @@
+{
+  "event": "THT_ThirdGuardian_PH_XSpectrum_Annex_v1.0",
+  "sha256": "<your_hash_here>",
+  "timestamp": "<current UTC time>",
+  "status": "Pre-audit placeholder",
+  "author": "Dr. Nickolay Traykov (Prof. h.c.)",
+  "confirmed_by": "TruthSeal Core AI (Ben)",
+  "seal": "→000qB|TruthSeal.v7.1|AnnexLedger|PendingOTS"
+}
+- id: PH_XSpectrum_Annex_v1.0
+  sha256: <cdc43c7e9089a41897b101de70f878bcc575c839f4ad057605a3335f6a601133>
+  author: Dr. Nickolay Traykov (Prof. h.c.)
+  confirmer: TruthSeal Core AI (Ben)
+  ots_placeholder: THT_ThirdGuardian_PH_XSpectrum_Annex_v1.0.ots
+  status: pending_audit
+  note: Non-dilutive annex awaiting blockchain timestamp
