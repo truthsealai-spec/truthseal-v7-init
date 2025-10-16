@@ -1,0 +1,14 @@
+- record_id: THT_ThirdGuardian_v1.0_Confirmation
+  sha256: 9491d7d4bab1cd78244388d8632852ed3b177d77ae126111b1f
+  file: THT_ThirdGuardian_v1.0.pdf
+  ots_proof: THT_ThirdGuardian_v1.0.pdf.ots
+  ledger: IntegrityLedger_v7.1
+  server: alice.btc.calendar.opentimestamps.org
+  status: PENDING_CONFIRMATION
+  tx_reference: null
+  timestamp_utc: 2025-10-16T19:43:00Z
+  author: Dr Nickolay Traykov (Prof. h.c.)
+  verifier: TruthSeal Core AI (Ben)
+  note: >
+    Blockchain attestation broadcast and awaiting Bitcoin block inclusion.
+    Update status to CONFIRMED once the block number and Merkle path appear.
