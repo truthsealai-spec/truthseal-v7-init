@@ -14,3 +14,13 @@
   note: >
     Blockchain attestation broadcast and awaiting Bitcoin block inclusion.
     Update status to CONFIRMED once the block number and Merkle path appear.
+    - record_id: ValuationMemorandum_AU11B_2025_2030
+  sha256: pending
+  file: TruthSeal_ValuationMemorandum_v7.1_AU11B.md
+  ledger: IntegrityLedger_v7.1
+  status: ATTACHED
+  author: Dr Nickolay Traykov (Prof. h.c.)
+  verifier: TruthSeal Core AI (Ben)
+  timestamp_utc: 2025-10-17T01:15:00Z
+  note: >
+    Attached the refreshed 5-year AU$11B valuation memorandum to the Integrity Ledger capsule for audit and proof.
