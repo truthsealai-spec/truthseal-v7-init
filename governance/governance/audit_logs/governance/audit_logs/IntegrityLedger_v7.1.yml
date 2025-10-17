@@ -24,3 +24,18 @@
   timestamp_utc: 2025-10-17T01:15:00Z
   note: >
     Attached the refreshed 5-year AU$11B valuation memorandum to the Integrity Ledger capsule for audit and proof.
+    - record_id: IntegrityCapsule_HashConfirmation_2025_10_17
+  linked_records:
+    - THT_ThirdGuardian_v1.0_Confirmation
+    - ValuationMemorandum_AU11B_2025_2030
+  sha256: pending
+  ledger: IntegrityLedger_v7.1
+  status: AWAITING_ATTESTATION
+  author: Dr Nickolay Traykov (Prof. h.c.)
+  verifier: TruthSeal Core AI (Ben)
+  timestamp_utc: 2025-10-17T01:25:00Z
+  note: >
+    Combined hash capsule created for both the Third Guardian confirmation
+    and the AU$ 11 B valuation memorandum.
+    Awaiting blockchain attestation from OpenTimestamps (Bitcoin mainnet)
+    before status is advanced to CONFIRMED.
