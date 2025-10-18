@@ -1,0 +1,17 @@
+{
+  "private_identity_layer": {
+    "full_name": "Dr Nickolay Traykov",
+    "date_of_birth": "06-12-1969",
+    "citizenships": ["Bulgarian", "Australian"],
+    "signature_key_id": "TS-X509-Primary-001"
+  },
+  "public_proof_layer": {
+    "document_hash_reference": "to-be-inserted-after-signing",
+    "ledger_reference": "IntegrityLedger_v7.1",
+    "timestamp": "auto-generated"
+  },
+  "verification_layer": {
+    "digital_signature": "pending",
+    "verification_status": "awaiting-attestation"
+  }
+}
