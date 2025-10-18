@@ -14,7 +14,9 @@
   },
 
   "encrypted_identity_payload": {
-    "ciphertext_base64": "<PASTE_BASE64_CIPHERTEXT_HERE>",
+    "ciphertext_base64": "<1c1382bef68514b9718458694805 f0c93db04bc3300ea4234
+1
+39d7b32c05dd9639f4ab7adee00f2d>",
     "encryption": {
       "algorithm": "AES-256-CBC",
       "encoding": "Base64",
