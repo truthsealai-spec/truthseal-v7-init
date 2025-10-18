@@ -1,0 +1,49 @@
+{
+  "document_type": "TruthSeal Identity Proof",
+  "version": "v7.1",
+  "author": {
+    "full_name": "Dr Nickolay Traykov",
+    "titles": ["Prof. (h.c.) of AI Neurological Governance"],
+    "roles": ["Founder & Chief Architect of TruthSeal™", "Founder of the THT Protocol™"]
+  },
+
+  "ledger_context": {
+    "ledger_reference": "IntegrityLedger_v7.1",
+    "compendium_reference": "THT Compendium — Vol. II: Governance & Institutional Integrity Frameworks",
+    "capsule_id": "IL-Ref-2025-AUS-THT-721"
+  },
+
+  "encrypted_identity_payload": {
+    "ciphertext_base64": "<PASTE_BASE64_CIPHERTEXT_HERE>",
+    "encryption": {
+      "algorithm": "AES-256-CBC",
+      "encoding": "Base64",
+      "key_id": "→000qB|TheNT",
+      "iv": "THTv7.1Authority"
+    },
+    "notes": "Payload contains: full legal name, DOB, and dual citizenships; retained in private layer; public layer shows only the cryptographic proof."
+  },
+
+  "hash_attestation": {
+    "algorithm": "SHA-256",
+    "digest_hex": "1c1382bef68514b9718458694805f0c93db04bc3300ea423418dcc63d69f90016463a8520dfd9dcad9535b04a16f8b5b5839d7b32c05dd9639f4ab7adee00f2d",
+    "purpose": "Immutable fingerprint of the encrypted identity payload for cross-ledger verification."
+  },
+
+  "blockchain_proof": {
+    "ots_status": "pending",
+    "ots_receipt_file": "IdentityProof_v7.1.sha256.txt.ots",
+    "timestamp_policy": "OpenTimestamps attestation anchored into Bitcoin block chain",
+    "server_hint": "alice.btc.calendar.opentimestamps.org"
+  },
+
+  "verification_status": {
+    "local_verification": "VALID_PAYLOAD_HASHED",
+    "ledger_status": "AWAITING_ATTESTATION",
+    "next_steps": [
+      "1) Upload SHA-256 to OpenTimestamps and download .ots receipt",
+      "2) Commit .ots receipt under governance/receipts/",
+      "3) Update IntegrityLedger_v7.1.yml record status to CONFIRMED once Bitcoin block is posted"
+    ]
+  }
+}
