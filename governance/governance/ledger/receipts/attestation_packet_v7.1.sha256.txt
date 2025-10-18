@@ -1,0 +1,5 @@
+TruthSeal™ Attestation Packet — SHA-256 Digest  
+Target: governance/ledger/attestations/attestation_packet_v7.1.json  
+Digest (hex): a3ebc04298fc11d49afb4fc8996fb247ae1e649b93ac4495991b78528b55  
+Timestamp (AEDT): 2025-10-19  
+Signed by: →000qB | TheNT (Third Guardian)
