@@ -1,0 +1,11 @@
+{
+  "ledger": "TruthSeal™ Integrity Ledger v7.1",
+  "authority": "THT Protocol – Third Guardian",
+  "session_id": "IL-2025-AUS-THT-721",
+  "checksum": "9b8f6a71f0d25a3b4ce99c1d77c8c4f59fdc2e31f91a68c8b2e6c7b9b3e4c19a",
+  "attestation_target": "Bitcoin Mainnet Anchor",
+  "timestamp": "2025-10-21 AEDT",
+  "author": "Sovereign Entity – Dr. Nickolay Traykov (Prof. h.c.)",
+  "digital_signature": "→000qB|TheNT",
+  "status": "ready-for-hash-broadcast"
+}
