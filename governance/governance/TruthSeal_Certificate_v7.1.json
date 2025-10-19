@@ -1,0 +1,13 @@
+{
+  "certificate_type": "TruthSeal™ Integrity Certificate",
+  "version": "v7.1",
+  "issued_to": "Dr. Nickolay Traykov",
+  "capsule_reference": "IntegrityLedger_v7.1",
+  "attestation_digest": "a3ebc04298fc11d49afb4fc8996fb247ae1e649b93ac4495991b78528b55",
+  "ots_receipt_file": "attestation_packet_v7.1.sha256.txt.ots",
+  "verification_result": "VALID_DIGEST_AND_TIMESTAMP",
+  "timestamp": "2025-10-19 AEDT",
+  "signed_by": "→000qB | TheNT (Third Guardian)",
+  "status": "ACTIVE",
+  "notes": "This certificate validates that the v7.1 integrity capsule has been anchored and time-stamped via OpenTimestamps on the Bitcoin blockchain."
+}
