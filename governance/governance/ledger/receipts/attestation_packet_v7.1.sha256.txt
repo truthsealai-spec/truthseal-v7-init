@@ -3,3 +3,37 @@ Target: governance/ledger/attestations/attestation_packet_v7.1.json
 Digest (hex): a3ebc04298fc11d49afb4fc8996fb247ae1e649b93ac4495991b78528b55  
 Timestamp (AEDT): 2025-10-19  
 Signed by: →000qB | TheNT (Third Guardian)
+{
+  "attestation_record": {
+    "document": {
+      "name": "attestation_packet_v7.1.sha256.txt",
+      "path": "governance/ledger/attestations/",
+      "type": "sha256-digest-text"
+    },
+    "digest": {
+      "algorithm": "SHA-256",
+      "hex": "bd1a4e6ce8ab2c76d989ff9536526480e25ff73e1c54186790004974b8b3db24",
+      "base64": null,
+      "note": "Base64 will be filled later; hex is sufficient to anchor proof."
+    },
+    "opentimestamps": {
+      "receipt_file": "governance/ledger/attestations/receipts/attestation_packet_v7.1.sha256.txt.ots",
+      "status": "PENDING_BLOCK",
+      "timestamp_policy": "OpenTimestamps via Bitcoin (calendar servers)"
+    },
+    "signatory": {
+      "authority": "→000qB | TheNT (Third Guardian)",
+      "role": "Custodian of IntegrityLedger_v7.1"
+    },
+    "issued_at": {
+      "timestamp_local": "2025-10-19 AEDT",
+      "ledger_capsule": "IntegrityLedger_v7.1"
+    },
+    "verification_status": {
+      "local_verification": "VALID_DIGEST",
+      "ots_verification": "AWAITING_ATTESTATION",
+      "btc_block_height": null
+    },
+    "version": "v7.1"
+  }
+}
