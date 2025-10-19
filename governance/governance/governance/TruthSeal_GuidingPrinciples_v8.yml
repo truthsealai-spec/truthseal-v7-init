@@ -1,0 +1,50 @@
+version: "8.0.0"
+capsule: TruthSeal_GuidingPrinciples
+applies_to:
+  repository: truthseal-v7-init
+  section: governance
+status: active
+
+principles:
+  - id: data_aggregation_insight
+    title: "Data Aggregation & Custom Insight"
+    rule: >
+      Design TruthSeal™ to aggregate structured and siloed data
+      (transcripts, Grafana dashboards, document logs) to generate
+      actionable strategic insights.
+
+  - id: strategic_uplift
+    title: "Strategic Uplift & Problem Identification"
+    rule: >
+      Prioritize surfacing the critical problems and key levers for decision-making,
+      shifting user focus from data collection to strategy execution.
+
+  - id: future_proofing
+    title: "Future-Proofing & Adaptability"
+    rule: >
+      Architect modular AI model integration; allow continuous model evolution
+      without hard-coded constraints.
+
+  - id: minimum_viable_agent
+    title: "Minimum Viable Agent (MVA)"
+    rule: >
+      Focus development on a single, high-value capability (e.g., real-time meeting
+      capture) to prove utility before expansion.
+
+  - id: communication_action_layer
+    title: "Communication & Action Layer"
+    rule: >
+      Translate insights directly into actions—follow-up emails, task creation,
+      and visualizations—to drive measurable performance.
+
+  - id: paradigm_shift_interface
+    title: "Paradigm Shift & New Interface"
+    rule: >
+      Position TruthSeal™ as a strategic co-pilot for human–AI collaboration,
+      transforming data management into decision orchestration.
+
+register:
+  ledger: IntegrityLedger_v8
+  ots_ready: true
+  path: /governance/governance/TruthSeal_GuidingPrinciples_v8.yml
+  auditor: →000qB | TheNT
