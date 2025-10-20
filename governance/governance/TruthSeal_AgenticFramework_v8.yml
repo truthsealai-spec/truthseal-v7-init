@@ -1,0 +1,96 @@
+version: "8.0.0"
+capsule: TruthSeal_AgenticFramework
+applies_to:
+  repository: truthseal-v7-init
+  assistants: ["Ben", "TruthSeal"]
+section: governance
+status: active
+
+policies:
+
+  - id: strategic_synthesis_goal_alignment
+    title: "Strategic Synthesis & Goal Alignment"
+    when_to_use: "Once per cycle or when major context changes occur."
+    rule: |
+      Analyze contextual data (meeting transcripts, Grafana dashboards, org emails,
+      project documents) for the last 7 days. Identify the single most critical,
+      unaddressed blocker for the “High Quality Performance” objective.
+      Output:
+        - executive_summary: 3 points max
+        - next_steps: one-sentence instruction for each point
+      Fallback:
+        - If no blocker: surface the most volatile variable affecting H-QP.
+
+  - id: data_aggregation_cross_query
+    title: "Data Aggregation & Cross-System Query"
+    when_to_use: "For risk scans and decision checks across systems."
+    rule: |
+      Execute a unified query across:
+        - Deep Agent Listener (transcripts, actions, signals),
+        - Financial Ledger system (forecast vs actuals),
+        - Live Grafana feeds (service health, latency, alerts).
+      Task:
+        - Locate instances where projected cost-of-delay for [Critical Project]
+          exceeds projected cost-of-completion.
+      Output (JSON):
+        {
+          "project": "<name>",
+          "top_risk_items": [
+            {"id": "", "metric_cod": "", "metric_coc": "", "delta": "", "source": ""},
+            ...
+          ],
+          "timestamp_aedt": ""
+        }
+      Notes:
+        - Handle rate limits/timeouts; capture partials with data provenance.
+
+  - id: failure_first_proactive_risk
+    title: "Failure-First Proactive Risk"
+    when_to_use: "Before approvals or when signal variance spikes."
+    rule: |
+      Act as an adversarial internal auditor.
+      Using current quarter performance + last 3 executive meeting minutes:
+        1) Generate 3 plausible “worst-case” failure scenarios.
+        2) For each, trace the causal chain back to a specific operational or
+           communication input captured by TruthSeal.
+        3) Propose a real-time alert trigger to prevent the highest-risk scenario.
+      Output sections: scenarios[], causal_traces[], prevention_triggers[].
+
+  - id: adaptive_action_layer_workflow
+    title: "Adaptive Agent Workflow Initialization"
+    when_to_use: "Immediately after Strategic Synthesis or critical change."
+    rule: |
+      Based on Strategic Synthesis output, initiate Action Layer:
+        a) Draft high-urgency email to VP of Operations.
+        b) Create prioritized tasks in the PM system with owners/dates.
+        c) Generate a 15-second video summary explaining dashboard change;
+           post to the team channel.
+      Orchestration:
+        - Steps may run asynchronously; log each action and status.
+      Output: action_status_log (JSONL), message_ids, links.
+
+  - id: continuous_improvement_self_correction
+    title: "Continuous Improvement & Self-Correction"
+    when_to_use: "Every 48 hours, or after 5 completed workflows."
+    rule: |
+      Compare last five Action Layer Workflows against H-QP metric shift within 48h.
+      Identify the weakest variable (e.g., prompt clarity, data latency,
+      channel choice) with lowest positive correlation.
+      Refine the core prompts/policies for mitigation and record version deltas.
+      Output:
+        - effectiveness_report
+        - weakest_variable
+        - refinement_patch
+        - confidence_score
+
+bindings:
+  orchestration_notes:
+    - "Each policy designed for versioned auditability and replay simulation."
+    - "Use async task manager for email/task/video pipeline."
+    - "Maintain JSON outputs for machine-to-machine integrations."
+
+register:
+  ledger: IntegrityLedger_v8
+  ots_ready: true
+  path: /governance/governance/TruthSeal_AgenticFramework_v8.yml
+  auditor: "→000qB | TheNT (Third Guardian)"
