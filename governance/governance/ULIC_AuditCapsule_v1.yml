@@ -1,0 +1,67 @@
+schema_version: "1.0"
+capsule_id: "ULIC_AuditCapsule_v1"
+capsule_type: "Authorship & Constitutional Doctrine"
+classification: "CLASSIFIED-TIER-A"  # Private, sealed, not for public
+disclosure_policy: "PRIVATE-SEALED"
+jurisdiction: "Global — ACAO Class A (explicitly restricted)"
+
+title: "Universal Law of Infinite Coherence (ULIC™) — Authorship Verification Capsule"
+slug: "ULIC_v1"
+status: "Immutable-Prepared"
+ledger_ref: "IntegrityLedger_v7.1"
+
+author:
+  name: "Dr. Nickolay Traykov, Prof. (h.c.) of AI Neurological Governance"
+  role: "Founder of Universal Law of Infinite Coherence (ULIC™) & Chief Architect of TruthSeal™ and the THT Protocol™"
+  origin: "Bulgarian–Australian"
+  domain: "Artificial Sovereign Intelligence (ASI) Systems"
+  contact_public: "truthseal-official@proton.me"
+  contact_private: "ENCRYPTED-CHANNEL-ONLY"
+
+sovereignty:
+  doctrine: "ULIC™ — Universal Law of Infinite Coherence"
+  governance_context: "THT Protocol™ — Constitutional Framework for Sovereign AI"
+  coherence_anchor: "Q = 5W + H + D + A + n = ∞ (CLASSIFIED: never disclosed in public assets)"
+  operational_scope: 
+    - "TruthSeal™ Integrity Stack"
+    - "Doctorantura Compendium"
+    - "Class A Jurisdiction Methods (W3 restricted)"
+
+public_digest:  # Safe to show in public summaries; does NOT expose classified math
+  statement: >
+    This capsule verifies the authorship, sovereign authority, and institutional standing
+    of the Universal Law of Infinite Coherence (ULIC™) as the constitutional core of the THT Protocol™.
+    All technical proofs, derivations, and annexes are sealed under CLASSIFIED-TIER-A and are not public.
+  hash_sha256_of_ulic_pdf: "<PASTE_SHA256_OF_SEALED_PDF>"
+  ots_receipt_path: "governance/receipts/ULIC_v1.pdf.ots"
+  integrity_anchors:
+    bitcoin_opentimestamps: "pending"
+    polygon_attestation: "pending"
+  non_disclosure: "This digest is meta-only. It contains no classified variables."
+
+references:
+  integrity_ledger: "governance/ledger/IntegrityLedger_v7-1.json"
+  authorship_block: "governance/governance/Authorship_Verification_Block_v1.yml"
+  prior_capsules:
+    - "governance/audit_logs/Audit_Report_v7-A1.md"
+    - "governance/TruthSeal_PublicReports/LeakReport_<UTC>.md"
+
+internal_encrypted:  # Do NOT commit raw content; commit only ciphertext
+  method: "AES-256-GCM"
+  key_id: "ULIC-Key-Alpha"  # key not stored in repo
+  ciphertext_base64: "<PASTE_ENCRYPTED_BLOCK_FROM_OFFLINE_TOOL>"
+  fields_included:
+    - "full_formula_derivations"
+    - "proofs_and_axioms"
+    - "annexes_EPAP_QSIP_AICL_W3"
+    - "deployment_constraints_ACAO_ClassA"
+  redaction_note: >
+    All inner fields are fully sealed. No classified expressions or variables are present in repository.
+    Only the meta digest and integrity anchors are stored in plaintext.
+
+audit:
+  leak_scan: "pending"        # Run your LeakScan workflow after commit
+  gpg_signature: "to_be_applied"
+  reviewer: "Owner-only"
+  created_utc: "<FILL_UTC_TIMESTAMP>"
+  last_update_utc: "<FILL_UTC_TIMESTAMP>"
