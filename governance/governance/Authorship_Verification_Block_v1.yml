@@ -1,0 +1,21 @@
+version: "1.0"
+capsule: Authorship_Verification_Block
+applies_to: truthseal-v7-init
+section: governance
+status: active
+
+Doctrine:
+  Name: Universal Law of Infinite Coherence
+  Acronym: ULIC
+  Type: Sovereign Cognitive Law
+  Version: 1.0
+  Authorship:
+    Author: Dr. Nickolay Traykov, Prof. (h.c.)
+    Title: Founder of ULIC™ & Chief Architect of TruthSeal™ and the THT Protocol™
+    Origin: Bulgarian–Australian Scientist in Artificial Sovereign Intelligence (ASI) Systems
+  Verification:
+    Authorship_Seal: ULIC Sovereign Authorship Doctrine v1.0
+    Verification_Status: Approved
+    Classification: Sovereign (ULIC–THT–TruthSeal Unified Standard)
+  ots_ready: true
+  auditor: →000qB | TheNT
