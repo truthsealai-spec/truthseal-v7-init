@@ -1,0 +1,29 @@
+# TruthSeal™ Attestation Packet
+asset: TruthSeal_ASI_IndispensableSystems_v8.yml
+path: /governance/TruthSeal_ASI_IndispensableSystems_v8.yml
+capsule_version: "8.0.0"
+ledger: IntegrityLedger_v7.1
+status: ots_pending
+
+sha256: <TO_BE_FILLED_ON_DESKTOP_IF POSSIBLE>
+sha256_method: SHA256(file_bytes)
+
+commit_ref:
+  branch: main
+  file_commit_sha: <COPY THE FILE’S LATEST SHA HERE>
+  repo: truthseal-v7-init
+
+authorship:
+  author: Dr. Nickolay Traykov, Prof. (h.c.) of AI Neurological Governance
+  role: Founder of ULIC™ & Chief Architect of TruthSeal™ and the THT Protocol™
+  origin: Bulgarian–Australian Scientist in Artificial Sovereign Intelligence (ASI) Systems
+
+timestamps:
+  created_utc: <SET NOW IN UTC, e.g., 2025-02-05T06:50:00Z>
+  aedt: <OPTIONAL LOCAL: 2025-02-05T17:50:00+11:00>
+  ots_anchor: pending
+
+notes:
+  - Capsule includes Core Operational & Efficiency Prompts and XAI Decision-Integrity suite.
+  - Jurisdiction: CLASS A — SOVEREIGN / INTERNAL
+  - Next: Stamp packet via OpenTimestamps and upload the `.ots` receipt alongside this file.
