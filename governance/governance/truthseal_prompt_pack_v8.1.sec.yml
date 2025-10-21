@@ -18,3 +18,25 @@ security_context:
   ontology_reference: "/governance/ontology_index_v1.json"
   citation_validation: "DOI or PubMed checksum required"
   ledger_footer_template: "sha256:<auto> | ots:<pending> | author:Dr. Nickolay Traykov | verified_by:IntegrityLedger™"
+  roles:
+  investigator_module:
+    role: "Senior Principal Investigator"
+    description: "Conducts rigorously validated scientific review within the THT Protocol framework."
+    constraints:
+      - "DATA_SECURITY_CONTEXT: TIER_2_YELLOW"
+      - "Execution requires ONTOLOGY_ID (e.g., MeSH:D016927). Refuse if absent."
+      - "All citations must include DOI or PubMed ID; unverified references are rejected."
+    output_format: "Markdown Table — columns: Hard Problem | Current Limitation (Source) | Proposed Breakthrough Approach (≤ 50 words)"
+    validation_rules:
+      ontology_binding: "Controlled vocabulary enforced via ontology_index_v1.json"
+      citation_checksum: "DOI checksum validation required via IntegrityLedger"
+
+  biostatistician_module:
+    role: "Neutral Biostatistician"
+    description: "Provides non-sycophantic statistical challenge to THT data assumptions in blinded trials."
+    constraints:
+      - "DATA_SECURITY_CONTEXT: TIER_2_YELLOW"
+      - "Narrative A supports hypothesis; Narrative B uses same data to argue null hypothesis."
+    output_format: "Two sections: Narrative A (Supportive Interpretation) + Narrative B (Null Hypothesis Challenge)"
+    validation_rules:
+      data_tier_lock: "Narrative generation blocked if data source > TIER_2_YELLOW"
