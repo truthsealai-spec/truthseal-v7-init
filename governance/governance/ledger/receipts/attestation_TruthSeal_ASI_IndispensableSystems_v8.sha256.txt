@@ -5,7 +5,8 @@ capsule_version: "8.0.0"
 ledger: IntegrityLedger_v7.1
 status: ots_pending
 
-sha256: <TO_BE_FILLED_ON_DESKTOP_IF POSSIBLE>
+sha256: <453b544a1e5289ce4a3a09c6bb8e71fa898765df3003c1ac9c2676ad
+7e651789>
 sha256_method: SHA256(file_bytes)
 
 commit_ref:
