@@ -1,0 +1,228 @@
+version: "8.0.0"
+title: "TruthSeal™ — ASI Indispensable Systems Prompt Capsule"
+classification:
+  - SOVEREIGN
+  - INTERNAL
+  - CLASS_A_JURISDICTION
+jurisdiction: ["Australia", "Bulgaria", "Global (operational integrity)"]
+status: "Controlled"
+category: "Prompt Architecture & Governance"
+created_utc: "TO_BE_FILLED_ON_COMMIT"
+description: >
+  This capsule defines the operational and explainability (XAI) prompts that render TruthSeal™
+  indispensable under Artificial Sovereign Intelligence (ASI) constraints. It aligns deep-learning
+  acceleration, agentic autonomy, structured provenance, and real-time interpretability into a
+  single, auditable governance asset.
+
+registry:
+  author:
+    name: "Dr. Nickolay Traykov, Prof. (h.c.) of AI Neurological Governance"
+    roles:
+      - "Founder of Universal Law of Infinite Coherence (ULIC™)"
+      - "Chief Architect of TruthSeal™ and the THT Protocol™"
+      - "Bulgarian–Australian Scientist and Founding Authority in Artificial and Sovereign Intelligence (ASI) Systems"
+  custodianship: "TruthSeal™ Integrity Ledger Authority"
+  integrity_reference: "IL-Ref-2025-AUS-THT-721"
+  contact: "All contact via Integrity Ledger Capsule v7.1 (no public email exposed)."
+
+dependencies:
+  - "IntegrityLedger_v7.1 (anchoring & seal)"
+  - "TruthSeal_AgenticFramework_v8.yml (agent orchestration)"
+  - "Audit_Report_v7-A1.md (public-safe audit series)"
+  - "LeakScan-Action (GitHub Actions; public-safe telemetry)"
+
+terms_and_safety:
+  acronym_policy: "All acronyms expanded on first mention within this capsule."
+  xai_note: "XAI = Explainable Artificial Intelligence"
+  compute_note:
+    - "GPU = Graphics Processing Unit (parallel accelerator)"
+    - "NPU = Neural Processing Unit (specialized AI accelerator)"
+  privacy_scope: "No personal data; all examples synthetic. No secret keys embedded."
+  jurisdictional_limitations: "CLASS A use requires explicit authorization under Sovereign Governance."
+
+directives:
+  A_Core_Operational_and_Efficiency_Prompts:
+    intent: >
+      Ensure high quality performance by migrating heavy computation to parallel accelerators,
+      deploying an internal digital engineer agent, and keeping all outputs fresh via low-latency context.
+    prompts:
+      - id: "A1_CoreInfrastructureTransition"
+        name: "The Core Infrastructure Transition Prompt"
+        instruction: >
+          Initiate a full audit of the current TruthSeal™ compute architecture against the 'Classical CPU vs. Deep Learning'
+          paradigm shift. Generate a Transition Plan that reallocates all large-scale numerical computation
+          (e.g., massive data analysis, model training) away from sequential CPU processing and onto
+          dedicated parallel accelerators (GPU = Graphics Processing Unit, NPU = Neural Processing Unit).
+          Quantify the ROI of this migration in terms of High Quality Performance improvement, echoing the
+          hundreds of billions recovered by hyperscalers, and immediately push the resulting performance
+          gains to the Grafana Dashboard.
+        outputs:
+          - "Transition Plan (systems map, ROI analysis, migration steps)"
+          - "Grafana performance deltas (pre/post migration telemetry)"
+        guardrails:
+          - "No impact on data privacy or ledger integrity."
+          - "All changes logged to Integrity Ledger with version IDs."
+
+      - id: "A2_DigitalEngineerAgent"
+        name: "The Agentic Digital Workforce Prompt"
+        instruction: >
+          Deploy an internal Digital Engineer Agent (Level-1 ASI) dedicated solely to TruthSeal™ operations.
+          This agent must be fully integrated into the existing backend and frontend architecture (Python/React.js).
+          Its core task is to monitor the Grafana Dashboard for performance degradation, autonomously generate
+          optimized model code, and execute required software/data adjustments, effectively augmenting 100%
+          of the system’s self-maintenance engineering hours. Report on the net human labor augmentation
+          achieved within 72 hours.
+        outputs:
+          - "Agent deployment manifest + integration log"
+          - "72-hour augmentation report (human hours saved)"
+          - "Auto-commit diffs (code/config) with SHA-256 hashes"
+        guardrails:
+          - "Agent actions require signed policy approvals; rollback always available."
+
+      - id: "A3_PhysicalAI_Simulation"
+        name: "The Physical AI & Simulation Prompt"
+        instruction: >
+          In anticipation of Physical AI (Robotics), create a generic Digital Twin environment for task rehearsal,
+          based on the Omniverse concept. Establish a tri-computer architecture: 1) AI Training Computer
+          (for model learning), 2) Simulation Computer (the virtual world), and 3) Operation Computer (the target
+          robotic brain). Design and train a foundational model within this simulated environment to handle a core
+          physical task, ensuring its intelligence is generalizable and multi-embodiment compatible.
+        outputs:
+          - "Tri-computer architecture blueprint"
+          - "Baseline foundational model + evaluation metrics"
+          - "Generalizability test protocol across embodiments"
+        guardrails:
+          - "No real-world actuation without human-in-the-loop approval (CLASS A)."
+
+      - id: "A4_Biological_FoundationModel"
+        name: "The Biological & Foundation Model Prompt"
+        instruction: >
+          Establish a Structural Intelligence research thread. Convert raw protein and chemical data relevant
+          to the project's domain into a Foundation Model representation (e.g., cell/molecule-level). Develop a
+          query interface ('Talk to the Structure') that allows for the real-time querying of complex properties
+          and metabolism, thereby predicting domain-specific outcomes before physical or systemic symptoms manifest.
+          Use this model to preemptively generate prediction recommendations.
+        outputs:
+          - "Structural Foundation Model (spec + version ID)"
+          - "'Talk to the Structure' interface + API docs"
+          - "Prediction recommendation catalog"
+        guardrails:
+          - "All bioscience use restricted to ethical, lawful scopes; no wet-lab control here."
+
+      - id: "A5_LowLatency_ContextThinking"
+        name: "The Low-Latency Context & Thinking Prompt"
+        instruction: >
+          To ensure all operational decisions are based on the latest context, implement a system where
+          TruthSeal™'s final output is never pre-compiled. The system must continuously process new context,
+          think, and generate an immediate output (token) on demand. Critical Constraint: Profile the latency and
+          computational cost of this 'thinking' process to ensure it remains below 50ms for mission-critical alerts,
+          justifying the continuous running of the AI Factory resources.
+        outputs:
+          - "Latency + cost profile report"
+          - "Real-time decision token stream"
+          - "Alert SLA dashboard (sub-50ms targets)"
+        guardrails:
+          - "Automated throttling when cost/latency exceeds thresholds; fallback to cached summaries."
+
+  B_NextLevel_XAI_and_Understandable_Systems_Prompts:
+    intent: >
+      Enforce transparency, auditability, and trustworthiness in every decision using explainable AI (XAI),
+      sensitivity checks, and full provenance trails.
+    prompts:
+      - id: "B1_LocalFeatureAttribution"
+        name: "The Local Feature Attribution Prompt (Why Now?)"
+        instruction: >
+          For the latest critical decision/alert generated (e.g., 'Risk Level: High'), execute a Local
+          Interpretability Analysis (e.g., SHAP or LIME). Isolate the top 3 input features that contributed
+          most significantly to the final outcome score. Output the finding as a natural language summary followed
+          by a JSON object containing the feature name, its numerical value, and its calculated impact weight on
+          the prediction. This must be generated in real-time alongside the alert.
+        outputs:
+          - "Attribution summary (plain language)"
+          - "JSON object: [{feature, value, impact_weight}]"
+        guardrails:
+          - "No personal identifiers; use feature classes or anonymized labels."
+
+      - id: "B2_GlobalModelRationale"
+        name: "The Global Model Rationale Prompt (How Does It Work?)"
+        instruction: >
+          Every 24 hours, generate a Global Rationale Report for the currently deployed production model. Identify the
+          overall most influential relationship between the input data set and the final prediction target. Express this
+          relationship as a simple Rule-Set Approximation (If X and Y, then Z) suitable for a non-technical executive audience.
+          Use this report to validate the model's logic against known domain expertise and highlight any logic that
+          contradicts established assumptions.
+        outputs:
+          - "24-hour Global Rationale (rule-set) report"
+          - "Executive-friendly summary + annotations"
+        guardrails:
+          - "Flag contradictions for human review; never auto-deploy changed rules."
+
+      - id: "B3_Counterfactual_Debugging"
+        name: "The Counterfactual Debugging Prompt (What If?)"
+        instruction: >
+          For the last instance where the system's prediction was incorrect or failed to meet the High Quality Performance
+          threshold, execute a Counterfactual Generation routine. Identify the smallest possible change to the input feature
+          set that would have resulted in the desired outcome. Present this minimum change as a targeted data-correction
+          recommendation for the training pipeline. The output is a direct instruction for the data ingestion layer.
+        outputs:
+          - "Counterfactual delta (minimum change)"
+          - "Ingestion-layer correction instruction"
+        guardrails:
+          - "No irreversible schema changes without data steward approval."
+
+      - id: "B4_DataSensitivity_Bias"
+        name: "The Data Sensitivity & Bias Prompt (Is It Fair?)"
+        instruction: >
+          Run a Sensitivity Analysis across all protected or sensitive input features. Generate a report detailing the degree
+          to which a minimal perturbation (e.g., ±5%) to this feature class impacts the prediction's variance. If the model exhibits
+          disproportionate sensitivity or bias towards any single feature, automatically lower the model's confidence score on the
+          Grafana Dashboard and trigger a retraining flag with constrained feature weighting.
+        outputs:
+          - "Sensitivity variance report"
+          - "Confidence downgrades + retraining flag"
+        guardrails:
+          - "Protected features masked or used only with lawful basis."
+
+      - id: "B5_AuditReady_Provenance"
+        name: "The Audit-Ready Provenance Prompt (Where Did It Come From?)"
+        instruction: >
+          For every prediction, decision, or generated artifact, automatically construct an End-to-End Audit Trail Log.
+          This log must chronologically track: 1) The exact version ID of the model used, 2) The full input data hash utilized,
+          3) The specific CPU/GPU (Graphics Processing Unit) compute resource ID that executed the task, and 4) The end-to-end latency
+          of the operation. Encrypt and store this immutable record in the database for instant retrieval by regulatory or internal auditors.
+        outputs:
+          - "Immutable audit trail entries"
+          - "Encrypted provenance store (query-ready)"
+        guardrails:
+          - "Keys stored in HSM or KMS; no plaintext secrets; periodic integrity checks."
+
+governance_controls:
+  - control: "QSIP (Quantum Substrate Integrity Protocol) — simulated"
+    note: "Pre-execution ethical/logic checks for high-speed compute pipelines."
+  - control: "AICL (Autonomous Instantiation Coherence Layer)"
+    note: "Every autonomous action leaves a forensic trail (logical + sensory inputs)."
+  - control: "EPAP (Existential Purpose Alignment Protocol) — proxy"
+    note: "Balance efficiency with human-centered well-being metrics where applicable."
+
+integrity:
+  sha256: "TO_BE_FILLED_AFTER_COMMIT"
+  ots_receipt_path: "governance/ledger/receipts/TruthSeal_ASI_IndispensableSystems_v8.yml.ots"
+  polygon:
+    network: "Polygon PoS"
+    tx: "FILL_AFTER_METAMASK"
+    note: "Self-transfer memo for public timestamp (optional)."
+  ledger_capsule_ref: "IntegrityLedger_v7.1"
+  verification:
+    - "GitHub commit hash (immutable history)"
+    - "OpenTimestamps (Bitcoin) receipt (independent witness)"
+    - "Optional Polygon transaction (public checkpoint)"
+
+authorship_verification_block:
+  statement: >
+    Authored and Verified by:
+    Dr. Nickolay Traykov, Prof. (h.c.) of AI Neurological Governance
+    Founder of Universal Law of Infinite Coherence (ULIC™) & Chief Architect of TruthSeal™ and the THT Protocol™
+    Bulgarian–Australian Scientist and Founding Authority in Artificial and Sovereign Intelligence (ASI) Systems
+  consent: "Sovereign authorship affirmed; redistribution governed by Sovereign IP terms."
+  signed_under: "TruthSeal™ Integrity Ledger Authority"
+  date_utc: "TO_BE_FILLED_ON_COMMIT"
