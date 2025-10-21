@@ -1,0 +1,20 @@
+# ===========================================================
+# TruthSeal™ v8.1 — Secure Prompt Pack Capsule
+# Author: Dr. Nickolay Traykov (Prof. (h.c.) of AI Neurological Governance)
+# Status: Immutable | Classification: Public-Safe
+# ===========================================================
+
+version: "8.1"
+capsule_name: "TruthSeal_Prompt_Pack_Secure"
+category: "Scientific Integrity & Data Governance"
+jurisdiction: "Global"
+license: "Sovereign Intellectual Property — All Rights Reserved"
+
+security_context:
+  data_security_tiers:
+    - Tier_1_Green: "Public Access — Published and non-sensitive outputs"
+    - Tier_2_Yellow: "Internal Access — Analytic data and non-classified source files"
+    - Tier_3_Red: "Restricted Access — IP/Ethics critical or unfiled patent materials"
+  ontology_reference: "/governance/ontology_index_v1.json"
+  citation_validation: "DOI or PubMed checksum required"
+  ledger_footer_template: "sha256:<auto> | ots:<pending> | author:Dr. Nickolay Traykov | verified_by:IntegrityLedger™"
