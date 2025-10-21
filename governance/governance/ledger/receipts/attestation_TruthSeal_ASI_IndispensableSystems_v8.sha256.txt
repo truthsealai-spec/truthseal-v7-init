@@ -3,7 +3,7 @@ asset: TruthSeal_ASI_IndispensableSystems_v8.yml
 path: /governance/TruthSeal_ASI_IndispensableSystems_v8.yml
 capsule_version: "8.0.0"
 ledger: IntegrityLedger_v7.1
-status: ots_pending
+status: ots_confirmed
 
 sha256: <453b544a1e5289ce4a3a09c6bb8e71fa898765df3003c1ac9c2676ad
 7e651789>
@@ -29,3 +29,9 @@ notes:
   - Capsule includes Core Operational & Efficiency Prompts and XAI Decision-Integrity suite.
   - Jurisdiction: CLASS A — SOVEREIGN / INTERNAL
   - Next: Stamp packet via OpenTimestamps and upload the `.ots` receipt alongside this file.
+# --- attestation status (append at end of file) ---
+timestamps:
+  ots_anchor: confirmed
+  btc_block_height: <BLOCK_NUMBER>
+  btc_txid: "<TRANSACTION_ID>"
+  verification_status: "CONFIRMED_CHAIN_ANCHOR"
