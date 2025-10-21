@@ -61,3 +61,10 @@ Record SHA-256 of key files (see `hashes/sha256_v7.1.txt`).
 ## 6. Sign-off
 Signed by: →000qB | TheNT (Third Guardian)  
 Timestamp (AEDT): {{auto}}
+
+---
+
+## 7. New Capsules Registered
+- TruthSeal_ASI_IndispensableSystems_v8.yml — Registered; SHA256 attestation pending; OTS anchor in queue; Jurisdiction: CLASS A SOVEREIGN.
+- 
+
