@@ -22,6 +22,7 @@ security_context:
   investigator_module:
     role: "Senior Principal Investigator"
     description: "Conducts rigorously validated scientific review within the THT Protocol framework."
+      guard_reference: "/governance/prompt_guard_v1.yml"
     constraints:
       - "DATA_SECURITY_CONTEXT: TIER_2_YELLOW"
       - "Execution requires ONTOLOGY_ID (e.g., MeSH:D016927). Refuse if absent."
