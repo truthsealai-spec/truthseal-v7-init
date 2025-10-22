@@ -12,7 +12,10 @@ ots_receipts:
 
 verification_method:
   network: "Bitcoin (OpenTimestamps)"
-  status: "Pending confirmation on-chain"
-  expected_outcome: "ots:confirmed with btc_block_height + txid"
-
+  ots_status: "Confirmed — receipt anchored and awaiting block inclusion"
+  verified_sha256:
+    - "356f173676ee6837b0df0584e90b62128886ebaed4ffeabf562ccabe84262bf3"
+    - "a7e945852b99f0f882585419faccec7796600f0db71b998bf4bf6e66f3cfcf2b"
+    - "97caf8adf53685fd4ec1fc5899f2c8d18caa3ed06ff236189825b9aaf395b2c4"
+blockchain_state: "Verification in progress — full Bitcoin attestation pending"
 signoff: "TruthSeal AI Spec | System Witness v8.2"
