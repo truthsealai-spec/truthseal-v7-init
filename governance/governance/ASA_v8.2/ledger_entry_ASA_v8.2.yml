@@ -1,0 +1,24 @@
+# TruthSeal™ Integrity Ledger Entry
+# Capsule: ASA v8.2 — Autonomous Scientific Agent Stack
+# Author: Dr. Nickolay Traykov (Prof. h.c.)
+
+entry_id: "THT-ASA-8.2-LEDGER"
+timestamp_utc: "<INSERT CURRENT UTC TIME>"
+
+sha256_manifest: "876831ac31a10d05d62b193f6714e3062e8a81b4913ece795ae5c2c90cf50d8e"
+ots_receipts:
+  - "356f173676ee6837b0df0584e90b62128886ebaed4ffeabf562ccabe84262bf3"
+  - "876831ac31a10d05d62b193f6714e3062e8a81b4913ece795ae5c2c90cf50d8e"
+
+context:
+  title: "Full THT Protocol™ Pro Prompts and Ultra-Hard Prevention Framework"
+  summary: >
+    Contains six ASA Agent prompts (Synthesis, Adversarial, Data Governance,
+    Design, Technician, Critic) and the Ultra-Hard Failures & Preventions module.
+    Defines logic-guardrails, ontology enforcement, bias-challenge loop,
+    robotic/VLM execution safety, and self-correction through Critic Agent.
+  relevance: "Forms the cognitive-safety backbone of the THT Protocol and links directly to TruthSeal v8 IntegrityLedger."
+
+verification_status: "Pending Bitcoin confirmation"
+integrity_state: "Confirmed on GitHub ledger branch"
+signoff: "TruthSeal AI Spec | System Witness v8.2"
