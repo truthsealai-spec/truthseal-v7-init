@@ -1,0 +1,15 @@
+# ==========================================================
+# TruthSeal™ Integrity Ledger Entry
+# Author: Dr. Nickolay Traykov (Prof. h.c.)
+# Capsule: ASA v8.2 – Autonomous Scientific Agent Stack
+# ==========================================================
+
+entry_id: "THT-ASA-8.2-LEDGER"
+timestamp_utc: "<INSERT CURRENT UTC TIME>"
+sha256_manifest: "876831ac31a10d05d62b193f6714e3062e8a81b4913ece795ae5c2c90cf50d8e"
+ots_receipts:
+  - "356f173676ee6837b0df0584e90b62128886ebaed4ffeabf562ccabe84262bf3.ots"
+  - "876831ac31a10d05d62b193f6714e3062e8a81b4913ece795ae5c2c90cf50d8e.ots"
+verification_status: "Pending Bitcoin confirmation"
+integrity_state: "Confirmed on GitHub ledger branch main"
+signoff: "TruthSeal AI Spec | System Witness v8.2"
