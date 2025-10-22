@@ -1,0 +1,25 @@
+# TruthSeal™ — Ontology Index v1
+# Canonical IDs bind concepts to exact meanings — no ambiguity allowed.
+
+version: "1.0"
+status: "Immutable"
+
+terms:
+  # Example entries — expand per your needs:
+  - id: "MeSH:D016927"
+    label: "Amyloid"
+    category: "Biomolecular aggregate"
+    refs:
+      - "PMID:29167337"
+      - "DOI:10.1038/s41586-020-03172-0"
+
+  - id: "TS:ThT-Assay"
+    label: "Thioflavin T assay kinetics"
+    category: "Fluorescence assay"
+    refs:
+      - "PMID:33975967"
+      - "DOI:10.1016/j.ab.2020.113832"
+
+validation:
+  checksum: "auto"
+  last_review: "<SET_UTC_ISO8601>"
