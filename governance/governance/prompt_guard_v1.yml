@@ -1,0 +1,22 @@
+# TruthSeal™ Prompt Guard v1 — Enforce Safe, Valid Science Prompts
+
+version: "1.0"
+status: "Immutable"
+
+guards:
+  require_ontology_id: true
+  allowed_tiers:
+    - "TIER_1_GREEN"
+    - "TIER_2_YELLOW"
+  citation_validation:
+    require_doi_or_pmid: true
+    # Example regex stubs for later tooling:
+    doi_regex: "^10\\.[0-9]{4,9}/[-._;()/:A-Z0-9]+$"
+    pmid_regex: "^[0-9]{5,9}$"
+
+responses:
+  on_missing_ontology: "REFUSE — No ONTOLOGY_ID provided. Execution blocked."
+  on_disallowed_tier: "REFUSE — Data security context exceeds allowed level."
+  on_invalid_citation: "REFUSE — Citation missing DOI/PMID or failed validation."
+
+ledger_footer_template: "sha256:<auto> | ots:<pend> | anchor: TruthSeal IntegrityLedger™"
