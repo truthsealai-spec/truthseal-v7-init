@@ -3,7 +3,7 @@
 # Scope: Bitcoin attestation verification
 
 verification_id: "ASA-8.2-BTC-VERIFY"
-timestamp_utc: "<"2025-10-22T09:55:00Z">"
+timestamp_utc: "2025-10-22T09:55:00Z"
 sha256_manifest: "876831ac31a10d05d62b193f6714e3062e8a81b4913ece795ae5c2c90cf50d8e"
 
 ots_receipts:
