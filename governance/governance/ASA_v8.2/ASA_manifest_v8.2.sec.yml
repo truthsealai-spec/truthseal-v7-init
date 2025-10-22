@@ -17,7 +17,7 @@ security_context:
     - Tier_3_Red:    "Restricted Access — Proprietary Methodology & AI Core Code"
   ontology_reference: "/governance/ontology_index_v7.yml"
   citation_validation: "DOI or PubMed checksum required"
-  ledger_footer_template: "sha256:<auto> | ots:<pending>"
+  ledger_footer_template: "sha256:<876831ac31a10d05d62b193f6714e3062e8a81b4913ece795ae5c2c90cf50d8e> | ots:<pending>"
 
 modules:
 
