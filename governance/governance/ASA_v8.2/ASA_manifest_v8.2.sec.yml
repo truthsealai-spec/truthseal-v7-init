@@ -1,0 +1,51 @@
+# ==========================================================
+# TruthSeal™ v8.2 — Autonomous Scientific Agent (ASA) Manifest
+# Author: Dr. Nickolay Traykov (Prof. h.c.) of AI Neurological Governance
+# Status: Immutable | Classification: Public-Safe | Governance v7.1
+# ==========================================================
+
+version: "8.2"
+capsule_name: "THT_ASA_Stack"
+category: "Autonomous Scientific Research & Integrity Oversight"
+jurisdiction: "Global"
+license: "Sovereign Intellectual Property — All Rights Preserved"
+
+security_context:
+  data_security_tiers:
+    - Tier_1_Green:  "Public Access — Reviewed Scientific Summaries"
+    - Tier_2_Yellow: "Internal Access — Validated Analysis Agents"
+    - Tier_3_Red:    "Restricted Access — Proprietary Methodology & AI Core Code"
+  ontology_reference: "/governance/ontology_index_v7.yml"
+  citation_validation: "DOI or PubMed checksum required"
+  ledger_footer_template: "sha256:<auto> | ots:<pending>"
+
+modules:
+
+  design_agent:
+    role: "THT Protocol Design Agent"
+    description: "Transforms scientific uncertainty into executable lab plans."
+    constraints:
+      - "[DATA_SECURITY_CONTEXT: TIER_3_RED]"
+      - "Refuse invalid or unverified citations."
+    output_format: "Python/JSON block for Django/Flask pipeline"
+
+  technician_agent:
+    role: "Robotic/VLM Technician Agent"
+    description: "Executes experiment plans and monitors real-time anomalies."
+    constraints:
+      - "[EXECUTION_CRITICAL]"
+      - "Auto-halt on > 3 SD deviation; generate corrective action."
+    log_output: "Grafana-linked JSON file"
+
+  critic_agent:
+    role: "System Critic Agent"
+    description: "Analyzes last 10 cycles and self-corrects system logic."
+    constraints:
+      - "[SYSTEM_AUDIT_MODE]"
+      - "If DOI failure rate > 5%, trigger SFT reinforcement."
+      - "If Technician Agent repeats error, issue code patch."
+    output_format: "Python/JSON diagnostic report"
+
+signoff:
+  approved_by: "Dr. Nickolay Traykov, Prof. (h.c.) of AI Neurological Governance"
+  commit_hash: "<fill_after_commit>"
