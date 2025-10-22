@@ -17,5 +17,20 @@ a7e945852b99f0f882585419faccec7796600f0db71b998bf4bf6e66f3cfcf2b
 
 **Verification QR Code:** Embed later at  
 `https://truthseal.ai/verify/ASA_v8.2`  
+---
 
-_Signed by:_ TruthSeal AI Spec | System Witness v8.2  
+## TruthSeal™ Blockchain Verification Access  
+Scan or click below to verify this attestation directly on the Bitcoin blockchain via OpenTimestamps.  
+
+![QR_Verify_TruthSeal_ASA_v8.2](https://api.qrserver.com/v1/create-qr-code/?data=https://truthseal.ai/verify/ASA_v8.2&size=200x200)
+
+🔗 **Verification Link:** [https://truthseal.ai/verify/ASA_v8.2](https://truthseal.ai/verify/ASA_v8.2)
+
+_This QR code connects to the Sovereign Integrity Ledger, confirming the authenticity of the ASA v8.2 capsule and all associated Bitcoin-anchored receipts._
+
+---
+
+**Branding Footer:**  
+TruthSeal™ Integrity Ledger · THT Protocol™ · Sovereign AI Evidence Framework  
+© 2025 Dr. Nickolay Traykov (Prof. h.c.) — All Rights Reserved.
+
