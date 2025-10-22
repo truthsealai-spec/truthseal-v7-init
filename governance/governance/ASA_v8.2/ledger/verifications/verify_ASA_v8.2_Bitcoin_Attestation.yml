@@ -1,0 +1,18 @@
+# TruthSeal™ – On-chain Verification Record
+# Capsule: ASA v8.2 – Autonomous Scientific Agent Stack
+# Scope: Bitcoin attestation verification
+
+verification_id: "ASA-8.2-BTC-VERIFY"
+timestamp_utc: "<INSERT CURRENT UTC TIME>"
+sha256_manifest: "876831ac31a10d05d62b193f6714e3062e8a81b4913ece795ae5c2c90cf50d8e"
+
+ots_receipts:
+  - path: "../ASA_v8.2/876831ac31a10d05d62b193f6714e3062e8a81b4913ece795ae5c2c90cf50d8e.ots"
+  - path: "../ASA_v8.2/356f173676ee6837b0df0584e90b62128886ebaed4ffeabf562ccabe84262bf3.ots"
+
+verification_method:
+  network: "Bitcoin (OpenTimestamps)"
+  status: "Pending confirmation on-chain"
+  expected_outcome: "ots:confirmed with btc_block_height + txid"
+
+signoff: "TruthSeal AI Spec | System Witness v8.2"
