@@ -1,11 +1,5 @@
 name: Ledger — OTS Stamp & Verify (inline)
-on:
-  workflow_dispatch:
-    inputs:
-      artifacts:
-        description: "space-separated artifact paths"
-        required: false
-        default: "README.md"
+on: [push]
 
 jobs:
   ledger:
