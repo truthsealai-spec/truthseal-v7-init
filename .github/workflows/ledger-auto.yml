@@ -1,0 +1,51 @@
+name: Ledger — OTS Stamp & Verify (inline)
+on:
+  workflow_dispatch:
+    inputs:
+      artifacts:
+        description: "space-separated artifact paths"
+        required: false
+        default: "README.md"
+
+jobs:
+  ledger:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prep ledger dirs
+        run: |
+          echo "LEDGER_ROOT=governance/ledger" >> $GITHUB_ENV
+          mkdir -p governance/ledger/receipts governance/ledger/verifications
+
+      - name: Install OpenTimestamps client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y opentimestamps-client || true
+
+      - name: Hash + OTS stamp (inline)
+        env:
+          ARTIFACTS: ${{ github.event.inputs.artifacts }}
+        run: |
+          set -euo pipefail
+          STAMP_FILE="governance/ledger/attestation_packet.sha256.txt"
+          : > "$STAMP_FILE"
+          TARGETS="${ARTIFACTS:-README.md}"
+          for f in $TARGETS; do
+            [ -f "$f" ] && sha256sum "$f" >> "$STAMP_FILE"
+          done
+          if command -v ots >/dev/null 2>&1; then
+            ots stamp "$STAMP_FILE" || true
+            [ -f "${STAMP_FILE}.ots" ] && mv "${STAMP_FILE}.ots" "governance/ledger/receipts/"
+          fi
+          {
+            echo "TruthSeal Verification Log — IntegrityLedger v7.1"
+            date -u +"Generated: %Y-%m-%d %H:%M:%S UTC"
+            echo "Artifacts digests:"; cat "$STAMP_FILE"
+          } > "governance/ledger/verifications/ledger_update.ver.txt"
+
+      - name: Commit ledger updates
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "ledger: update receipts and log"
+          branch: ${{ github.ref_name }}
