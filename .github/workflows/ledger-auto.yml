@@ -1,6 +1,9 @@
 name: Ledger — OTS Stamp & Verify (inline)
 on: [push]
 
+permissions:
+  contents: write
+
 jobs:
   ledger:
     runs-on: ubuntu-latest
