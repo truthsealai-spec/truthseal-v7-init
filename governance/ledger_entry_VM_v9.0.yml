@@ -18,6 +18,5 @@ context:
     through DEVORA™ UI. Anchors all verdicts immutably to the THT Integrity Ledger.
   relevance: "Defines the post-v8.2 transition from verification to adjudication within the Sovereign Ledger structure."
 
-verification_status: "Pending OTS/Bitcoin confirmation"
 integrity_state: "Confirmed on GitHub ledger branch"
 signoff: "TruthSeal AI Spec | System Witness v9.0"
