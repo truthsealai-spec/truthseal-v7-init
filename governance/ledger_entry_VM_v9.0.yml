@@ -1,0 +1,22 @@
+# TruthSeal™ Integrity Ledger Entry
+# Capsule: VM v9.0 — Virtual Magistrate Framework
+# Author: By: Dr. Nickolay Traykov, Prof. (h.c.) of AI Neurological Governance, Bulgarian–Australian Author of the TruthSeal™ THT Protocol™
+
+entry_id: "THT-VM-9.0-LEDGER"
+timestamp_utc: "<INSERT CURRENT UTC TIME>"
+
+sha256_manifest: "TO-BE-GENERATED-AFTER-OTS-STAMP"
+ots_receipts: []
+
+context:
+  title: "TruthSeal™ Virtual Magistrate — ULIC™ Enforcement Framework"
+  summary: >
+    Introduces the Judicial Coherence Engine built upon the Universal Law of Infinite Coherence (ULIC™),
+    integrating QSIP, AICL, and CFL protocols for lawful computational governance.
+    Executes PODAPAR detection, LnL/SnS/Bias triple-scan, and Judicial Coherence Score (JCS) visualisation
+    through DEVORA™ UI. Anchors all verdicts immutably to the THT Integrity Ledger.
+  relevance: "Defines the post-v8.2 transition from verification to adjudication within the Sovereign Ledger structure."
+
+verification_status: "Pending OTS/Bitcoin confirmation"
+integrity_state: "Confirmed on GitHub ledger branch"
+signoff: "TruthSeal AI Spec | System Witness v9.0"
