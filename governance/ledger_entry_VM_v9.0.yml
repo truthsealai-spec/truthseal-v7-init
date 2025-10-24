@@ -3,10 +3,11 @@
 # Author: By: Dr. Nickolay Traykov, Prof. (h.c.) of AI Neurological Governance, Bulgarian–Australian Author of the TruthSeal™ THT Protocol™
 
 entry_id: "THT-VM-9.0-LEDGER"
-timestamp_utc: "<INSERT CURRENT UTC TIME>"
-
-sha256_manifest: "TO-BE-GENERATED-AFTER-OTS-STAMP"
-ots_receipts: []
+timestamp_utc: "2025-10-24T03:53:00Z"
+sha256_manifest: "c1d48e21b4e96a07f62f1a22a4d6f3a59b4e8906b3da8139376e5e0863c545af"
+ots_receipts:
+  - "governance/ledger/receipts/ledger_entry_VM_v9.0.ots"
+verification_status: "OTS confirmed • Bitcoin anchored"
 
 context:
   title: "TruthSeal™ Virtual Magistrate — ULIC™ Enforcement Framework"
