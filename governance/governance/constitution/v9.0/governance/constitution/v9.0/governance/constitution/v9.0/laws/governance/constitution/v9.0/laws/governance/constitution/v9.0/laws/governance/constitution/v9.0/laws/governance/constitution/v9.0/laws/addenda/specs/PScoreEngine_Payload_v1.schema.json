@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TruthSeal P-Score Engine Output v1",
+  "type": "object",
+  "required": [
+    "verdict_id",
+    "timestamp_utc",
+    "ljc_score_final",
+    "f_harm_assessment",
+    "p_novelty_score",
+    "hash_previous_ledger_commit",
+    "attestation_proofs",
+    "coherence_status",
+    "source_event_id"
+  ]
+}
