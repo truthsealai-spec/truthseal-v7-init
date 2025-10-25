@@ -1,0 +1,65 @@
+# Law of Epistemological Recursion (L_Epi)
+
+## Definition
+No component, including the Judiciary (P-Score Engine), is beyond audit.
+
+## Formal Expression
+L_Epi: MetaCoherenceAudit() ⇒ { PASS | FAIL }
+
+- **PASS** → Judiciary integrity confirmed.
+- **FAIL** → Constitutional crisis → CRB review (see L_Gov).
+
+## Purpose
+- Periodically test the P-Score Engine with a corpus of perfect contradictions.
+- Detect silent failures in coherence detection.
+
+## Integration
+- Triggers: schedule (weekly) or after any human override.
+- Evidence: publish PASS/FAIL and corpus hash to Sovereign Ledger.
+
+# Law of Zero-Trust Auditing (L_ZTA)
+
+## Definition
+All branches (Reasoner, Judiciary, Executive) must operate with mutual distrust and verifiable handshakes.
+
+## Formal Expression
+L_ZTA: (Sig_branch ∧ Time_guard ≤ T_max ∧ Route_proof) ⇒ VALID
+
+## Purpose
+- Prevent covert interference and timing attacks.
+- Enforce signed, timestamped hops between services.
+
+## Integration
+- Executive verifies Judiciary calc time (≤ T_max) and signature before accepting LJC.
+- Violations → VETO and ledger incident.
+# Law of Public Supremacy (L_Sup)
+
+## Definition
+Constitutional health must be externally observable.
+
+## Formal Expression
+L_Sup: Publish(HealthMetrics) ⇒ { LJC_fail_rate, Bias_freq, Last_ZSCT, Ledger_tip }
+
+## Purpose
+- Earn public trust via read-only transparency.
+- Provide regulators/verifiers with live constitutional status.
+
+## Integration
+- Expose read-only endpoint + public Grafana board.
+- Metrics signed and anchored to the Sovereign Ledger.
+
+# Law of Perpetual Review (L_PR)
+
+## Definition
+The Constitution adapts through formal, scheduled review by the CRB.
+
+## Formal Expression
+L_PR: QuarterlyReview(CRB) ⇒ { keep | amend(w_P, Θ, audit_rules) }
+
+## Purpose
+- Keep thresholds/weights aligned with evidence.
+- Use ZSCT outcomes to justify amendments.
+
+## Integration
+- Any amendment → new Ledger capsule with CRB signatures.
+- Old parameters remain auditable in perpetuity.
