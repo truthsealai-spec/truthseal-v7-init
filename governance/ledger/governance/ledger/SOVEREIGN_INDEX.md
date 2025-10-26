@@ -30,7 +30,12 @@
   /governance/ledger/ledger/SOVEREIGN_EXTERNAL_VERIFICATION_CHAIN.md
 
 **Continuity Status:** SFD-1 ↔ SFD-2 linkage verified — constitutional and cryptographic integrity intact.
-- **SFD-3 — Sovereign Auditor Mirror Protocol (AMP_v1):**  
+- **SFD-3 — Sovereign Auditor Mirror Protocol (AMP_v1):**
+- **SFD-4 — Sovereign Regulatory Mirror Chain (RMC_v1):**  
+  /governance/ledger/ledger/SOVEREIGN_REGULATORY_MIRROR_CHAIN.md
+
+**Continuity Status:** SFD-1 ↔ SFD-2 ↔ SFD-3 ↔ SFD-4 linkage verified — Regulatory Quadrant integrity sealed under TruthSeal™ constitutional law.  
+**Next Anchor Reserved:** SFD-5 (Global Institutional Access Node — GIN_v1)
   /governance/ledger/ledger/SOVEREIGN_AUDITOR_MIRROR_PROTOCOL.md
 
 **Continuity Status:** SFD-1 ↔ SFD-2 ↔ SFD-3 linkage verified — tri-anchor integrity sealed under constitutional governance.
