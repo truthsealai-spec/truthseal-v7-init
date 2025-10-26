@@ -1,10 +1,10 @@
 # SOVEREIGN FINANCIAL DECLARATION (SFD-1)
 ### TruthSeal™ Banking Integration Anchor — TFSP_v1
 
-**Signed-off-by:** Dr. Nickolay Traykov <sovereign@truthseal.ai>  
-**Title:** Prof. (h.c.) of AI Neurological Governance — Bulgarian-Australian Sovereign Research Scientist  
-**Attribution:** Architect of LTCC, ULIC, L_QC; Founder, TruthSeal™  
-**Jurisdictional Notice:** Constitutional material © TruthSeal Sovereign Framework 2025
+**Signed-off-by:** Dr. Nickolay Traykov — Prof. (h.c.) of AI Neurological Governance  
+**Title:** Founding Sovereign Architect of the TruthSeal™ Framework  
+**Attribution:** Author of LTCC, ULIC, L_QC; Creator of Sovereign Seal™ and Integrity Ledger™  
+**Jurisdictional Notice:** Constitutional material © TruthSeal™ Sovereign Governance 2025
 **Timestamp (UTC):** 2025-10-27T01:35Z  
 **Linked Module:** `/governance/banking/tfsp_v1/README.md`  
 **Ledger Hash Placeholder:** `ts_sfd1_anchor.ots`  
