@@ -18,3 +18,16 @@
 - PQ Mirror: {TBD_PQ_HASH}
 
 **Mandate:** This INDEX is the canonical entry in the Sovereign Ledger for v9.0 and must be referenced by all downstream ledger capsules and verdict commits.
+
+---
+
+## Sovereign Banking Anchors (TFSP / EVC)
+
+- **SFD-1 — Sovereign Financial Declaration (TFSP_v1):**  
+  /governance/ledger/ledger/SOVEREIGN_FINANCIAL_DECLARATION.md
+
+- **SFD-2 — Sovereign External Verification Chain (EVC_v1):**  
+  /governance/ledger/ledger/SOVEREIGN_EXTERNAL_VERIFICATION_CHAIN.md
+
+**Continuity Status:** SFD-1 ↔ SFD-2 linkage verified — constitutional and cryptographic integrity intact.
+**Next Anchor Reserved:** SFD-3 (Auditor Mirror Node Protocol — AMP_v1)
