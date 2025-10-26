@@ -36,6 +36,15 @@
 
 **Continuity Status:** SFD-1 ↔ SFD-2 ↔ SFD-3 ↔ SFD-4 linkage verified — Regulatory Quadrant integrity sealed under TruthSeal™ constitutional law.  
 **Next Anchor Reserved:** SFD-5 (Global Institutional Access Node — GIN_v1)
+• SFD-6 — Sovereign Diplomatic Recognition Protocol (DRP_v1):
+  /governance/ledger/ledger/SOVEREIGN_DIPLOMATIC_RECOGNITION_PROTOCOL.md
+
+Continuity Status:
+SFD-1 ↔ SFD-2 ↔ SFD-3 ↔ SFD-4 ↔ SFD-5 ↔ SFD-6 linkage verified —
+full Diplomatic Continuum Chain sealed under TruthSeal™ Sovereign Constitution.
+
+Next Anchor Reserved:
+SFD-7 (Judicial Integrity & Arbitration Nexus — JIAN_v1)
   /governance/ledger/ledger/SOVEREIGN_AUDITOR_MIRROR_PROTOCOL.md
 
 **Continuity Status:** SFD-1 ↔ SFD-2 ↔ SFD-3 linkage verified — tri-anchor integrity sealed under constitutional governance.
