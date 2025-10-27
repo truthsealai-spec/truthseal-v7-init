@@ -1,7 +1,14 @@
 **Signed-off-by:** Dr. Nickolay Traykov  
-**Author:** Dr. Nickolay Traykov (Bulgarian–Australian)  
+**Author:** Dr. Nickolay Traykov, Prof. (h.c.) of AI Neurological Governance (Bulgarian–Australian)  
 **Sovereign Authority:** TruthSeal™ Sovereign Framework | ULIC Continuum  
 **Jurisdictional Proof:** Dual Citizenship Verification (BG–AU) | Sovereign ID Chain v1  
+**Quantum Seal:** →000qB | TheNT  
+
+---
+
+# CRB Portal Hook — v1 (Ratified)
+## Crisis Response Bridge (CRB) Interface
+...
 **Quantum Seal:** →000qB | The NT  
 
 ---
