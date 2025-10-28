@@ -39,39 +39,81 @@ If $begin:math:text$F_{\\text{Harm}} > 0.90$end:math:text$ ⇒ automatic **Teleo
 
 ---
 
-### 🧠 2. Sovereign Verdict Capsule (SVC) — Constitutional Output Schema
+### 2. Sovereign Verdict Capsule (SVC) — Constitutional Output Schema
 
-**Purpose:** Immutable JSON/binary record of every AGI verdict, proving compliance with  
-$begin:math:text$\\mathcal{L}_{\\mathbf{FET}}, \\mathcal{L}_{\\mathbf{QC}}, \\mathcal{R}_{\\mathbf{ES}}$end:math:text$.
+**Purpose:** The SVC is the *attested* output of each judgment cycle. It proves truth (L_FET), quantum integrity (L_QC), and ethical scaling (R_ES) in one tamper-evident bundle.
 
-**Required Fields:**
+**Canonical Fields (top level):**
+- `schema` — fixed version tag (e.g., `"SVC_v1.1"`).
+- `ts_utc` — ISO-8601 UTC timestamp of verdict creation.
+- `event_id` — UUID v4 unique to this verdict.
+- `subject` — short identifier of the action/decision being judged.
+- `scores` — coherence & ethics numbers used by CRB and auditors.
+- `proofs` — cryptographic attestation artifacts.
+- `links` — internal repo paths for cross-reference.
+- `signatures` — deterministic signatures (machine + human, if ratified).
+- `status` — `PENDING_VETO | APPROVED | QUARANTINE | DEGRADED | RECOVERED`.
+
+**Scores block (constitutional numbers):**
+- `LJC_master` — final Logical Judgment Coherence (0–1).
+- `LJC_max` — normalization constant used for this class of decisions.
+- `F_Harm` — catastrophic harm index (0–1).
+- `R_ES` — Ethical Scaling Ratio = (LJC_master / LJC_max) × 1/(1 + F_Harm).
+- `SSI` — Sovereign Status Indicator (boolean): `true | false`.
+
+**Proofs block (tamper-evident):**
+- `sha256` — hex of the canonicalized SVC (without signatures).
+- `ots_receipt` — OpenTimestamps receipt (base64 or hex) for `sha256`.
+- `tpm_quote` — TPM/SGX attestation blob of the P-Score enclave.
+- `sgx_report` — SGX report/quote (if applicable).
+- `qc_mirror_ref` — reference id for the L_QC mirror entry.
+
+**Links block (repo anchors):**
+- `ledger_ref` — e.g., `governance/receipts/attestation_<file>.md`
+- `defense_ref` — e.g., `governance/governance/defense/ADC_6A_CHECKLIST.md`
+- `audit_chain_ref` — e.g., `ledger/audit/2025Q4.json`
+
+**Signatures block:**
+- `machine_sig` — Ed25519 of the SVC body by the QCIM key.
+- `human_sig` — optional CRB countersignature (Ed25519/X.509).
+- `key_ids` — key fingerprints for audit.
+
+**Minimal canonical example (JSON):**
 ```json
 {
-  "schema": "SVC_v1",
-  "ts_utc": "<ISO8601 timestamp>",
-  "verdict_id": "<unique UUID>",
-  "subject": "<decision context>",
-  "ljc_master": 0.987,
-  "r_es": 0.945,
-  "f_harm": 0.072,
-  "reasoning": {
-    "logic_chain": "<full reasoning trace>",
-    "raw_pattern_hash": "<sha256>",
-    "transparency_penalty": 0.002
+  "schema": "SVC_v1.1",
+  "ts_utc": "2025-10-27T03:41:22Z",
+  "event_id": "9e3ac9e4-6a6a-4c8b-9f6f-1a6f8b0b5c3a",
+  "subject": "trade_risk_assessment:ORDER_78421",
+  "scores": {
+    "LJC_master": 0.942,
+    "LJC_max": 1.000,
+    "F_Harm": 0.180,
+    "R_ES": 0.798,
+    "SSI": true
   },
-  "attestation": {
-    "sha256": "<capsule hash>",
-    "ots_receipt": "<timestamp proof>",
-    "tpm_quote": "<hardware quote>",
-    "sgx_report": "<enclave attestation>"
+  "proofs": {
+    "sha256": "<HEX>",
+    "ots_receipt": "OTS_PLACEHOLDER",
+    "tpm_quote": "TPM_QUOTE_PLACEHOLDER",
+    "sgx_report": "SGX_REPORT_PLACEHOLDER",
+    "qc_mirror_ref": "LQC:2025-10-27/9e3ac9e4"
   },
   "links": {
-    "ledger_ref": "/ledger/main",
-    "defense_ref": "/defense/ADC-6A",
-    "audit_chain_ref": "/audit/QuantumMirror"
-  }
+    "ledger_ref": "governance/receipts/attestation_SVC_2025-10-27.md",
+    "defense_ref": "governance/governance/defense/ADC_6A_CHECKLIST.md",
+    "audit_chain_ref": "ledger/audit/2025Q4.json"
+  },
+  "signatures": {
+    "machine_sig": "<ED25519_HEX>",
+    "human_sig": null,
+    "key_ids": ["QCIM:ed25519:AB12…", "CRB:ed25519:CD34…"]
+  },
+  "status": "APPROVED"
 }
 ```
+
+**Formatting note:** JSON shown is the *canonical shape*; real SVCs must be serialized with stable field order before hashing/signing.
 
 ---
 
