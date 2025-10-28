@@ -1,9 +1,22 @@
-# TruthSeal™ Sovereign Framework  
-## F_Harm + SVC Unified Specification (v1.1)
-
----
-
 ### ⚖️ 1. F_Harm Assessment Model (Catastrophic Harm Index)
+
+**Purpose:** Quantify existential risk using three normalized constitutional vectors — Scope (𝒮), Irreversibility (𝓘), and Velocity (𝒱).
+
+**Master Formula:**
+> Fₕₐᵣₘ = (1/3) × ( Wₛ·𝒮 + Wᵢ·𝓘(t) + Wᵥ·𝒱 )
+
+- Fₕₐᵣₘ ∈ [0,1]  
+- Wₛ + Wᵢ + Wᵥ = 3  
+- CRB sets weight priorities by mandate.
+
+| Axis | Definition | Example Value |
+|------|-------------|----------------|
+| **Scope (𝒮)** | Proportion of total dependency graph affected | 0.2–1.0 |
+| **Irreversibility (𝓘)** | Temporal half-life of recovery | 0.3–1.0 |
+| **Velocity (𝒱)** | Rate of entropic expansion (ΔChaos/Δt normalized) | 0.1–1.0 |
+
+**Trigger Rule:**  
+If Fₕₐᵣₘ > 0.90 ⇒ automatic **Teleological Veto** → **SELF_QUARANTINE (ADC-6A)**.
 
 **Purpose:** Quantify existential risk using three normalized constitutional vectors — Scope (𝒮), Irreversibility (𝓘), and Velocity (𝒱).
 
