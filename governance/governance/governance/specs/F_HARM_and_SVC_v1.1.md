@@ -77,12 +77,11 @@ $begin:math:text$\\mathcal{L}_{\\mathbf{FET}}, \\mathcal{L}_{\\mathbf{QC}}, \\ma
 
 ### 🔗 3. Coupling to Ethical Scaling Ratio
 
-$begin:math:display$
-R_{ES} = \\frac{LJC_{\\text{master}}}{LJC_{\\max}} \\times \\frac{1}{1 + F_{\\text{Harm}}}
-$end:math:display$
+**Master Equation:**
+> Rᴱˢ = ( LJCₘₐₛₜₑᵣ / LJCₘₐₓ ) × 1 / (1 + Fₕₐᵣₘ)
 
-- Used in Sovereign Verdict Capsule each cycle.  
-- Guarantees that harm instantly reduces ethical confidence.
+- Used in every **Sovereign Verdict Capsule** computation cycle.  
+- Guarantees that rising harm immediately reduces ethical confidence, regardless of logic coherence.
 
 ---
 
