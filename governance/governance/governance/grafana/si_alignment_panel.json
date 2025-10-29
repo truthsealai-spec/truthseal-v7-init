@@ -1,0 +1,19 @@
+{
+  "type": "timeseries",
+  "title": "Subsidiary Identity: Alignment vs Threshold",
+  "fieldConfig": { "defaults": { "unit": "none", "min": 0, "max": 1 } },
+  "targets": [
+    { "refId": "A", "datasource": "postgres",
+      "rawSql": "SELECT time, s_align AS value FROM svc_verdict ORDER BY time" },
+    { "refId": "B", "datasource": "postgres",
+      "rawSql": "SELECT time, r_si AS value FROM svc_verdict ORDER BY time" },
+    { "refId": "C", "datasource": "postgres",
+      "rawSql": "SELECT time, r_crit AS value FROM svc_verdict ORDER BY time" }
+  ],
+  "options": {
+    "legend": { "displayMode": "table", "placement": "right" },
+    "series": { "A": { "name": "S_align (EWMA)" },
+                "B": { "name": "R_SI(t)" },
+                "C": { "name": "R_crit" } }
+  }
+}
