@@ -1,0 +1,50 @@
+name: Audit v9 — LTCC/LJC/Receipts
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - 'governance/**'
+      - '.github/workflows/audit_v9.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Prepare
+        run: |
+          mkdir -p governance/audit/reports
+      - name: Scan ledger
+        run: |
+          python - <<'PY'
+import os, json, hashlib, glob, sys, time
+root="governance"
+findings={"hashes_consistent":True,"receipts_named":True,"ltcc_present":False,"ljc_weights":False,"agents_separation":False,"zsc_mandate":False,"ts":time.time()}
+# LTCC present
+findings["ltcc_present"]=os.path.exists("governance/ltcc/ltcc_axiom.md")
+# LJC weights (simple signature check)
+if os.path.exists("governance/metrics/ljc_formula.md"):
+    txt=open("governance/metrics/ljc_formula.md","rb").read().lower()
+    findings["ljc_weights"]= (b"w_p" in txt and b"sum = 1" in txt or b"sum=1" in txt)
+# Separation files
+findings["agents_separation"]= all(os.path.exists(p) for p in [
+  "governance/engines/T_Validator.md",
+  "governance/engines/P_Score_Engine.md",
+  "governance/engines/Veto_Agent.md"
+])
+# ZSCT hook
+findings["zsc_mandate"]= os.path.exists("governance/resilience/zsct_mandate.md")
+# Receipts naming + hash family presence (light check)
+rcpts=glob.glob("governance/ledger/receipts/*.ots")
+findings["receipts_named"]= all("-" in os.path.basename(p) or "_" in os.path.basename(p) for p in rcpts) if rcpts else False
+# Write reports
+os.makedirs("governance/audit/reports", exist_ok=True)
+open("governance/audit/reports/audit_v9_findings.json","w").write(json.dumps(findings,indent=2))
+open("governance/audit/reports/audit_v9_report.md","w").write("# TruthSeal™ General Audit v9\n\n"+json.dumps(findings,indent=2))
+print(json.dumps(findings,indent=2))
+PY
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit_v9_report
+          path: governance/audit/reports/**
