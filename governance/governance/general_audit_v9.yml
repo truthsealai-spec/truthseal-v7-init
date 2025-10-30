@@ -1,0 +1,43 @@
+# TruthSeal™ General Audit — v9 (LTCC + LJC + Third Guardian)
+audit_id: "TS-AUDIT-GENERAL-v9"
+scope:
+  constitutional_laws:
+    - LTCC (Law of TruthSeal Cognitive Coherence)
+    - LJC (Law of Judicial Coherence)  # P_Score weighted largest
+  agents:
+    - Validator: T_Validator  # pre-check IRAC contradictions
+    - Judiciary: P_Score_Engine  # sole LJC + P_Score calc
+    - Executive: Veto_Agent  # gate: LJC >= θ AND no bias
+  resilience:
+    - ZSCT (Zero-Shot Contradiction Test) on veto/override
+  ledger:
+    - AICL commit must hash: Verdict + LJC + P_Score + Bias_Flag + TraceID
+targets:
+  files_present:
+    - governance/ledger/ledger_entry_ASA_v8.2.yml
+    - governance/ledger/receipts/                # .ots receipts
+    - governance/ledger/verifications/           # .ver.txt proofs
+    - governance/audit/general_audit_v9.yml
+    - governance/ltcc/ltcc_axiom.md              # LTCC statement
+    - governance/metrics/ljc_formula.md          # LJC weights
+    - governance/workflows/                      # CI refs (optional)
+checks:
+  - id: hashes_consistent
+    desc: "All .sha256 match anchored .ots"
+  - id: receipts_named
+    desc: "Receipt filenames match entry_id"
+  - id: ltcc_present
+    desc: "LTCC axiom file exists and is signed"
+  - id: ljc_weights
+    desc: "w_P > all other weights; sum = 1.0"
+  - id: agents_separation
+    desc: "Validator/Judiciary/Executive files separated"
+  - id: zsc_mandate
+    desc: "ZSCT hooked on veto or override"
+outputs:
+  - audit_report: governance/audit/reports/audit_v9_report.md
+  - findings_json: governance/audit/reports/audit_v9_findings.json
+policy:
+  cadence_days: 180
+  author_line: "By: Dr. Nickolay Traykov, Prof. (h.c.) of AI Neurological Governance, Bulgarian–Australian Author of the TruthSeal™ THT Protocol™"
+  classification: Public-Safe
