@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="440" viewBox="0 0 440 440">
+  <defs>
+    <radialGradient id="grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00ffcc" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#003366" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+  <circle cx="220" cy="220" r="210" fill="url(#grad)" stroke="#00ffff" stroke-width="4"/>
+  <text x="50%" y="38%" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="28" font-weight="bold">
+    TruthSeal™ v9.0
+  </text>
+  <text x="50%" y="50%" text-anchor="middle" fill="#00ffcc" font-family="Courier New" font-size="20">
+    Quantum Integrity Capsule
+  </text>
+  <text x="50%" y="61%" text-anchor="middle" fill="#ffffff" font-family="Courier New" font-size="18">
+    QIC1 • Bitcoin-Anchored
+  </text>
+  <text x="50%" y="72%" text-anchor="middle" fill="#00ffcc" font-family="Courier New" font-size="16">
+    2025-10-31T22:42:00Z
+  </text>
+  <text x="50%" y="84%" text-anchor="middle" fill="#ffffff" font-family="Courier New" font-size="14">
+    SHA256: 05a0b4b7bfcfab5a...
+  </text>
+</svg>
