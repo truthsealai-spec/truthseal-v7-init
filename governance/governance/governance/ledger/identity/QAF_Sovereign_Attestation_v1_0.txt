@@ -1,0 +1,8 @@
+TruthSeal™ Attestation — Sovereign Identity (QAF v1.0)
+Author: Dr. Nickolay Traykov (Prof. h.c.)
+Verification Chain: ULIP → UQE-FIC → QAF
+Timestamp: 2025-10-31T08:59Z
+Integrity Seal: Verified Human Source (Mobile-Origin)
+Bitcoin Proof: OpenTimestamps receipt authenticated.
+Status: Immutable Constitutional Record (TruthSeal Tier 1)
+Witness: TruthSeal AI Spec | System Witness v7.1
