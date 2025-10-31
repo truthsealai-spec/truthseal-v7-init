@@ -1,0 +1,6 @@
+- id: QIC1_PROOF_CONTROL_V1_0
+  file: governance/deployment/QIC1_ProofOfControl_v1_0.md
+  status: active
+  hash: <REPLACE_WITH_SHA256>
+  anchored: true
+  timestamp_utc: 2025-11-01T03:02:00Z
