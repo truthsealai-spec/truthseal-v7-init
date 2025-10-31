@@ -1,6 +1,6 @@
 # TruthSeal™ Ledger Verification — QIC-1 (v1.0)
 ledger_entry_id: "QIC1-LEDGER-v1_0"
-timestamp_utc: "<REPLACE_WITH_ISO_UTC>"
+timestamp_utc: "2025-10-31T22:42:00Z"
 author: "Dr. Nickolay Traykov (Prof. h.c.)"
 jurisdiction: "Bulgarian–Australian Dual Sovereign Identity"
 verification_status: "✅ Immutable — Bitcoin-Anchored"
