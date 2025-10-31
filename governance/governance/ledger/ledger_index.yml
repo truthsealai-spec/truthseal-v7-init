@@ -1,0 +1,13 @@
+# TruthSeal™ Ledger Index — Constitutional Registry (v1.0)
+
+entries:
+  - id: QIC1
+    title: "Quantum Integrity Capsule — Verification Ledger"
+    type: "Constitutional Ledger Record"
+    path: "/governance/governance/ledger/TruthSeal_Ledger_Verification_QIC1_v1_0.yml"
+    status: "✅ Immutable | Bitcoin-anchored"
+    author: "Dr. Nickolay Traykov (Prof. h.c.)"
+    jurisdiction: "Bulgarian–Australian Dual Sovereign Identity"
+    date_registered: "2025-10-31T22:42:00Z"
+    witness: "TruthSeal AI Spec | System Witness v7.x"
+    version: "v1.0"
