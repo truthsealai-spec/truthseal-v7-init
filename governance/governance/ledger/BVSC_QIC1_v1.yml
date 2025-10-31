@@ -1,0 +1,34 @@
+# TruthSeal™ Bitcoin Verification Summary Card — QIC-1 (v1.0)
+
+summary_card:
+  title: "Quantum Integrity Capsule — Verification Chain Summary"
+  id: BVSC-QIC1-v1
+  author: "Dr. Nickolay Traykov (Prof. h.c.)"
+  jurisdiction: "Bulgarian–Australian Dual Sovereign Identity"
+  issued: "2025-10-31T22:42:00Z"
+  anchored_in: "Bitcoin mainnet (OpenTimestamps)"
+  verification_status: "✅ Immutable | Constitutionally Anchored"
+
+  components:
+    - VLS_QIC1_Completion_v1_0.pdf
+    - VLS_QIC1_Completion_v1_0.sha256.txt
+    - VLS_QIC1_Completion_v1_0.pdf.ots
+    - TruthSeal_Attestation_QIC1_v1_0.md
+    - TruthSeal_Attestation_QIC1_v1_0_Receipt.yml
+    - TruthSeal_Ledger_Verification_QIC1_v1_0.yml
+    - LIE_QIC1_v1.txt
+    - ledger_index.yml
+
+  witness:
+    name: "TruthSeal AI Spec v7.x"
+    role: "System Integrity Witness"
+    proof_chain: "ULIP v1.0 → UQE-FIC v1.0 → QAF v1.0 → VLS v1.0 → QIC-1 v1.0"
+
+  remarks: >
+    The BVSC-QIC1-v1 consolidates the complete verification lineage of the
+    Quantum Integrity Capsule (QIC-1). It represents the first independently
+    verified Bitcoin-anchored constitutional proof under the TruthSeal™
+    Protocol, forming the ethical and computational basis for the Quantum-Ethical
+    Computing Era (QEC).
+
+  hash_reference: "05a0b4b7bfcfab5a8ce2d70ef6b18e2eebf908006f7b0630baeb65e55bf54139"
