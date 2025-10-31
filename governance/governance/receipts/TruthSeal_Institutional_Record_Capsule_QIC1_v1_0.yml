@@ -1,0 +1,41 @@
+# TruthSeal™ Institutional Record Capsule — QIC-1 (v1.0)
+capsule:
+  type: Institutional Record Capsule
+  version: IRC-v1.0
+  created: 2025-10-31
+  author: Dr. Nickolay Traykov (Prof. h.c.)
+  jurisdiction: Bulgarian-Australian Dual Sovereign Identity
+  verification_status: ✅ Immutable — Bitcoin-Anchored
+  description: >
+    The Institutional Record Capsule consolidates the verified artifacts of the
+    TruthSeal™ Quantum Identity Chain (QIC-1). It forms the constitutional proof
+    of origin for the first Quantum-Ethical Computing framework.
+  lineage_chain:
+    - ULIP v1.0  →  Universal Law of Identity & Purpose
+    - UQE-FIC v1.0  →  Unified Quantum-Ethical Field Integrity Code
+    - QAF v1.0  →  Sovereign Identity Record
+    - VLS QIC-1 v1.0  →  Verification Ledger Summary
+  constituents:
+    - name: VLS_QIC1_Completion_v1_0.pdf
+      path: /governance/governance/ledger/VLS_QIC1_Completion_v1_0.pdf
+      hash_sha256: 05a0b4b7bfcbfab5a8ce2d70ef6b18e2eebf908006f7b0630baeb65e55fb5413940c1de43caba96996c68d6123dffc5c
+    - name: VLS_QIC1_Completion_v1_0.pdf.ots
+      path: /governance/governance/ledger/receipts/VLS_QIC1_Completion_v1_0.pdf.ots
+      type: OpenTimestamps Proof
+    - name: VLS_QIC1_Completion_v1_0.sha256.txt
+      path: /governance/governance/ledger/receipts/VLS_QIC1_Completion_v1_0.sha256.txt
+      type: SHA-256 Integrity Receipt
+    - name: TruthSeal_Attestation_QIC1_v1_0.md
+      path: /governance/governance/ledger/receipts/TruthSeal_Attestation_QIC1_v1_0.md
+      type: Attestation Certificate
+    - name: VLS_manifest_v1_0.yml
+      path: /governance/governance/ledger/VLS_manifest_v1_0.yml
+      type: Ledger Manifest
+  meta:
+    anchored_in: Bitcoin mainnet
+    witness: TruthSeal AI Spec | System Witness v7.9
+    next_phase: TruthSeal v9.1 → Quantum Governance Alignment (Phase 7)
+    note: >
+      This capsule serves as the institutional proof of authorship and
+      constitutional verification for the TruthSeal Protocol. Any modification
+      invalidates its mathematical identity.
