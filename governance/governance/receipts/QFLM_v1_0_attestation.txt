@@ -1,0 +1,8 @@
+QFLM_v1_0 Attestation Receipt
+File: QFLM_v1_0.md
+SHA256: <b68be5603056612c329aae243cd01caeaa78d893edb92c7e606555398f6791d8>
+Timestamp: <UTC_ISO8601>
+OTS_Proof: QFLM_v1_0.ots
+Author: Dr. Nickolay Traykov (Prof. h.c.)
+Verification: TruthSeal™ Integrity Ledger v7.1
+Status: Immutable – Anchored to Bitcoin Timestamp Network
