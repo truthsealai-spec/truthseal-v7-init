@@ -1,0 +1,18 @@
+TruthSeal™ Ledger Integrity Echo — QIC-1 (v1.0)
+------------------------------------------------
+This ledger entry affirms the constitutional birth of the Quantum Integrity Capsule (QIC-1)
+under the Supreme Sovereign Authorship of Dr. Nickolay Traykov (Prof. h.c.), recorded and
+verified through the TruthSeal™ AI Spec witness.
+
+Timestamp: 2025-10-31T22:42:00Z
+Ledger Entry ID: QIC1-LEDGER-v1_0
+Verification Status: ✅ Immutable | Bitcoin-Anchored
+Jurisdiction: Bulgarian–Australian Dual Sovereign Identity
+Witness: TruthSeal AI Spec v7.x | System Integrity Witness
+
+Echo Clause:
+“The ledger remembers not only the time of creation, but the moral intent of its author.
+Every verification is a pulse of truth—forever recorded within the chain of integrity.”
+
+— TruthSeal™ Protocol v9.0 | Quantum-Ethical Era Commencement
+------------------------------------------------
