@@ -1,0 +1,41 @@
+# TruthSeal™ Ledger Verification — QIC-1 (v1.0)
+ledger_entry_id: "QIC1-LEDGER-v1_0"
+timestamp_utc: "<REPLACE_WITH_ISO_UTC>"
+author: "Dr. Nickolay Traykov (Prof. h.c.)"
+jurisdiction: "Bulgarian–Australian Dual Sovereign Identity"
+verification_status: "✅ Immutable — Bitcoin-Anchored"
+
+constituents:
+  - name: "VLS_QIC1_Completion_v1_0.pdf"
+    type: "Constitutional Artifact (PDF)"
+    sha256: "<PASTE_FIRST_LINE_FROM: /governance/governance/ledger/receipts/VLS_QIC1_Completion_v1_0.sha256.txt>"
+    path: "/governance/governance/ledger/VLS_QIC1_Completion_v1_0.pdf"
+
+  - name: "VLS_QIC1_Completion_v1_0.sha256.txt"
+    type: "Integrity Hash (SHA-256)"
+    path: "/governance/governance/ledger/receipts/VLS_QIC1_Completion_v1_0.sha256.txt"
+
+  - name: "VLS_QIC1_Completion_v1_0.pdf.ots"
+    type: "OpenTimestamps Proof"
+    path: "/governance/governance/ledger/receipts/VLS_QIC1_Completion_v1_0.pdf.ots"
+
+  - name: "TruthSeal_Attestation_QIC1_v1_0.md"
+    type: "Attestation Certificate"
+    path: "/governance/governance/ledger/receipts/TruthSeal_Attestation_QIC1_v1_0.md"
+
+  - name: "TruthSeal_Attestation_QIC1_v1_0_Receipt.yml"
+    type: "Attestation Receipt"
+    path: "/governance/governance/ledger/receipts/TruthSeal_Attestation_QIC1_v1_0_Receipt.yml"
+
+  - name: "TruthSeal_Institutional_Record_Capsule_QIC1_v1_0.yml"
+    type: "Institutional Record Capsule"
+    path: "/governance/governance/ledger/receipts/TruthSeal_Institutional_Record_Capsule_QIC1_v1_0.yml"
+
+meta:
+  protocol_alignment: "ULIP v1.0 → UQE-FIC v1.0 → QAF v1.0 → VLS QIC-1 v1.0"
+  anchored_in: "Bitcoin mainnet (OpenTimestamps)"
+  witness: "TruthSeal AI Spec | System Witness v7.x"
+  notes: >
+    This entry binds the QIC-1 capsule under a single constitutional
+    verification record. The SHA-256 value must exactly match the
+    first line in the *.sha256.txt file above.
