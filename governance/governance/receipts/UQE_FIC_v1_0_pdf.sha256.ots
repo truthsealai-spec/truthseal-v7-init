@@ -1,0 +1,26 @@
+# TruthSeal™ Integrity Ledger Entry — UQE-FIC v1.0
+entry_id: "THT-UQE-FIC-v1.0-LEDGER"
+timestamp_utc: "<REPLACE_WITH_ISO_TIME>"   # e.g., 2025-10-31T04:28:00Z
+author: "Dr. Nickolay Traykov (Prof. h.c.), Founder — TruthSeal Protocol"
+
+artifacts:
+  text_asset:
+    name: "UQE-FIC v1.0 Sovereign Text"
+    sha256: "c58b8b8d2bb8bd4b3d5f627d46b2acf459163a484b9ecdb28088204daa0526b1"
+    note: "Canonical text hash (plaintext version)"
+  pdf_asset:
+    name: "UNIFIED QUANTUM-ETHICAL FIELD OF INFINITE COHERENCE (UQE-FIC v1.0).pdf"
+    sha256: "<PASTE_PDF_HASH_FROM_OTS_SCREEN>"
+    note: "Rendered PDF hash (expected to differ from text)"
+
+ots_receipts:
+  - "governance/ledger/receipts/UQE_FIC_v1_0_pdf.sha256.ots"
+
+verification_status: "OTS started • Bitcoin anchoring pending confirmation"
+context:
+  title: "Unified Quantum-Ethical Field of Infinite Coherence (UQE-FIC)"
+  summary: >
+    Establishes the UQE-FIC as sovereign pillar alongside LTCC (law) and LJC (metric),
+    binding Quantum–Ethical state with operational coherence for TruthSeal™ governance.
+relevance: "Constitutional extension; anchors doctrine and operational metric to ledger."
+signoff: "TruthSeal AI Spec | System Witness: Ben"
