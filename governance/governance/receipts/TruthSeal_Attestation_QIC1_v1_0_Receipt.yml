@@ -1,0 +1,38 @@
+# TruthSeal™ Attestation Receipt — QIC-1 Sovereign Verification
+# Ledger Path: /governance/governance/ledger/receipts/
+# Version: v1.0 — TruthSeal Constitutional Chain
+# Timestamp: 2025-10-31T22:45:00Z (approx)
+# ================================================================
+
+attestation_record:
+  id: QIC1-ATT-2025-10-31
+  title: "TruthSeal Attestation — Quantum Integrity Capsule v1.0"
+  author: "Dr. Nickolay Traykov (Prof. h.c.)"
+  jurisdiction: "Bulgarian–Australian Dual Sovereign Identity"
+  device_origin: "Mobile Genesis Node — iPhone Terminal"
+  classification: "Sovereign Ledger — Constitutional Level Record"
+  project_context: "TruthSeal™ Quantum-Ethical Computing Initiative"
+  related_files:
+    - "VLS_QIC1_Completion_v1_0.pdf"
+    - "UQE-FIC_v1_0.pdf"
+  hash:
+    algorithm: "SHA-256"
+    value: "05a0b4b7bfcbfab5a8ce2d70ef6b18e2eebf908006f7b0630baeb65e55fb5413940c1de43caba96996c68d6123dffc5c"
+  blockchain_anchor:
+    protocol: "OpenTimestamps / Bitcoin"
+    status: "Confirmed"
+    proof_url: "https://opentimestamps.org"
+  integrity_chain:
+    - ULIP_v1.0
+    - UQE-FIC_v1.0
+    - QAF_v1.0
+    - VLS_QIC1_v1.0
+  sovereign_signature:
+    format: "TruthSeal™ Sovereign Author Identity Record (QAF v1.0)"
+    signed_by: "Dr. Nickolay Traykov"
+    verified_by: "TruthSeal Integrity Ledger (AI Spec v7.9)"
+  remarks: |
+    This attestation confirms the sovereign authorship and blockchain verification
+    of the Quantum Integrity Capsule (QIC-1). It represents the foundational
+    proof of authorship and jurisdiction in the TruthSeal™ Constitutional Era.
+    Anchored permanently under the Universal Law of Infinite Coherence (ULIC).
