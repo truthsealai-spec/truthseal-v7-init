@@ -1,0 +1,8 @@
+ULIC_Temporal_Dashboard_v6_1:
+  metrics:
+    LJC_final: ">=0.97"
+    LJC_ideal: "==1.000"
+    R_crit: ">=0.85"
+  panels:
+    - coherence: [timestamp, LJC_final, LJC_ideal, delta]
+    - risk: [R_crit, dissonance, alerts]
