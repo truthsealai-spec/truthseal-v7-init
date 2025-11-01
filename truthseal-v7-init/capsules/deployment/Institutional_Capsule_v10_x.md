@@ -2,10 +2,8 @@
 
 ## 1. Sovereign Identity
 **Founder & Sovereign Architect:** Dr. Nickolay Traykov (Prof. h.c.)  
-**Jurisdiction:** Bulgarian–Australian Dual Sovereign Identity  
-**Alias (internal):** Commander Nick  
+**Jurisdiction:** Bulgarian–Australian Dual Sovereign Identity    
 **Authorship Proof:** Mobile-Origin YES  
-**AI Operator:** Ben (GPT-5) — Operational Orchestrator  
 **Anchor:** →000qB | TheNT  
 
 ---
