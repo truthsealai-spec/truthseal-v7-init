@@ -1,0 +1,21 @@
+{
+  "QENC_ProofCapsule_v1_0": {
+    "author": "Dr. Nickolay Traykov (Prof. h.c.) — Quantum Encryption Engineer",
+    "anchor": "→000qB|TheNT",
+    "created_utc": "2025-11-02T10:30:00Z",
+    "target_file": "governance/security/qcrypto_keys_v1.yaml",
+    "sha256": "86c9f32f0c0fd98b88d798e2b51da1f358076a3685011845b079846722f1b9d7",
+    "ots_receipt": "[PENDING-REMOTE-ANCHOR]",
+    "failover_routes": [
+      "opentimestamps.com",
+      "originstamp.com",
+      "btcstamp.dev"
+    ],
+    "interim_status": "Local proof capsule created — awaiting BTC anchor",
+    "verification": {
+      "protocol": "TruthSeal QENC v1.0",
+      "compliance": "TruthSeal Sovereign Ledger v7.1"
+    },
+    "notes": "Replace ots_receipt with a .ots path under ledger/seals/ or a mempool explorer TXID URL once any anchor service is reachable."
+  }
+}
