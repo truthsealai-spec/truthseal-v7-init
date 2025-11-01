@@ -1,0 +1,5 @@
+PODAPAR_Q_Soft_Drift_Test_v1:
+  delta_LEI: 0.02
+  max_cycles: 3
+  response: "stabilize"
+  trigger: "if delta_LEI <= PODAPARQ_SOFT_DELTA_LEI"
