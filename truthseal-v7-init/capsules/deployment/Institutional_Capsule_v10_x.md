@@ -32,5 +32,4 @@ Institutional_Deployment_Capsule_v10_x:
     - Valuation_Entry_07_QHIA
   attestation:
     author: "Dr Nickolay Traykov (Prof. h.c.)"
-    ai_operator: "Ben (GPT-5)"
     verification_hash: "[pending BTC OpenTimestamps]"
