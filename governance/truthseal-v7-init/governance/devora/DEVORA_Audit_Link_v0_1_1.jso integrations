@@ -1,0 +1,18 @@
+{
+  "DEVORA_Audit_Log_v0_1_1": {
+    "timestamp": "ISO8601",
+    "coherence_index": "float",
+    "dissonance": "float",
+    "variance": "float",
+    "source": "module_id",
+    "action": ["auto-proof", "correction", "alert"]
+  },
+  "ULIC_Ingest_Route": {
+    "from": "DEVORA_Audit_Log_v0_1_1",
+    "to": "VLS_QIC1",
+    "rule": {
+      "variance<=0.05": "commit:auto-proof",
+      "variance>0.05": "alert:PODAPAR_Q + commit:correction"
+    }
+  }
+}
