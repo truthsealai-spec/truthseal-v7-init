@@ -1,0 +1,64 @@
+QENC_v1_0_Framework_v1_0:
+  objective: "Quantum-Resilient Encryption & Keying Framework for TruthSeal™"
+  author: "Dr. Nickolay Traykov (Prof. h.c.)" "Quantum Encription Engineer"
+  anchor: "→000qB|TheNT"
+
+  scope:
+    - protect: [QIC-1 commits, VLS proofs, Phase7 capsules, governance keys]
+    - protect_channels: [git, ledger-signing, diplomatic-channel]
+
+  strategy:
+    hybrid_pqc_classical:
+      key_encapsulation: "CRYSTALS-Kyber (NIST-approved profile)"
+      signatures: ["CRYSTALS-Dilithium", "SPHINCS+"]
+      rationale: "Immediate quantum-resistance on classical infra; minimal disruption"
+    qkd_pathway:
+      pilots: ["BB84 lab pilot", "entanglement-E91 pilot (institutional link)"]
+      vendors: ["IDQuantique / Toshiba / QKD-partner (vendor selection during pilot)"]
+      use_cases: ["diplomatic channel key exchange", "node-to-node attestation for Phase7"]
+
+  integration_points:
+    - QIC-1: "wrap proof packets with PQC KEM envelope before VLS commit"
+    - VLS: "attach dual-signature: Dilithium + SPHINCS+ (post-quantum) to merkle roots"
+    - BTC_anchor: "pre-sign merkle root with PQC signature then OTS -> Bitcoin TX"
+    - GitHub: "protect repo with PQC-capable SSH / GPG (oqs-openssl integration)"
+
+  implementation_plan:
+    phase_1_pqc_week0_4:
+      - install: "oqs-openssl or liboqs toolchain"
+      - generate_keys:
+          - command_examples:
+              - "openssl genpkey -algorithm OQS-default -out pq_priv.pem"
+              - "openssl pkey -in pq_priv.pem -pubout -out pq_pub.pem"
+      - register_fingerprints: "/governance/security/qcrypto_keys_v1.yaml"
+      - rotate_ssh_gpg: "deploy PQC-wrapped keys for critical signing accounts"
+    phase_2_qkd_pilot_month2_6:
+      - vendor_selection: "RFP -> lab pilot"
+      - pilot_actions:
+          - "establish BB84 link between two secure nodes"
+          - "measure key generation rate and error rate"
+      - policy: "use QKD keys for highest-sensitivity diplomatic channels only"
+    phase_3_hsm_tss_month6_12:
+      - "migrate PQC private keys to FIPS-level HSM or TSS for custody"
+      - "implement threshold signing for ledger attestation"
+
+  key_management:
+    key_storage: "HSM / TSS recommended for all root keys"
+    rotation_interval_days: 90
+    emergency_revoke: "log and ledger-attest revocation event; issue new OTS anchor"
+    audit: "DEVORA audit feed must include qenc_key_events"
+
+  compliance_and_risk:
+    compliance_targets: ["NIST PQC profiles", "ISO quantum-ready guidance (draft)"]
+    risk_controls:
+      - "fallback to classical-only with sealed audit if PQC path unavailable"
+      - "QKD fallback limited to diplomatic lane; not for public ledger"
+    valuation_impact: "increases sovereign trust floor; positions TruthSeal as quantum-resilient"
+
+  artifacts_and_outputs:
+    - "/governance/security/qcrypto_keys_v1.yaml (fingerprints)"
+    - "/governance/security/qenc_deployment_plan_v1.md (detailed runbook)"
+    - "attestation: QENC_v1_0 deployment proof packet → QAM v1.0 bind"
+
+  next_action:
+    - "Approve QENC_v1_0 framework to create qcrypto_keys_v1 and start Phase1 PQC rollout"
