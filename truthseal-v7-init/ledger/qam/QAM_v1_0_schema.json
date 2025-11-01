@@ -1,0 +1,69 @@
+{
+  "QAM_v1_0": {
+    "version": "1.0",
+    "anchor": "→000qB|TheNT",
+    "law_chain": ["LEI=1", "ULIP", "UQE-FIC v1.0", "QAF v1.0", "VLS QIC-1 v1.0", "ULIC Phase 6"],
+    "constants_ref": {
+      "LJC_THRESHOLD_MIN": 0.97,
+      "DISSONANCE_WARN": 0.15,
+      "DISSONANCE_VETO": 0.35,
+      "P_RISK_VETO": 0.85,
+      "RDM_MAX_REFLECTIONS": 2,
+      "PODAPARQ_SOFT_DELTA_LEI": 0.03,
+      "PODAPARQ_HARD_DELTA_LEI": 0.10
+    },
+    "sovereign_identity": {
+      "author": "Dr. Nickolay Traykov (Prof. h.c.)",
+      "role": "Founder & Sovereign Architect of the TruthSeal™ Protocol",
+      "jurisdiction": "Bulgarian–Australian Dual Sovereign Identity",
+      "mobile_origin_proof": true
+    },
+    "packet": {
+      "packet_id": "uuid",
+      "timestamp": "ISO8601",
+      "agent_id": "sha256",             
+      "model_fingerprint": "sha256",    
+      "operation": "string",            
+      "inputs_hash": "sha256",
+      "outputs_hash": "sha256",
+      "coherence_index": "float",       
+      "delta_lei": "float",             
+      "dissonance": "float",
+      "variance": "float",
+      "rdm_reflections": "int<=2",
+      "hicl_oath_id": "string",
+      "devora_vector_hash": "sha256",
+      "podapar_status": "enum[ok,soft_alert,hard_lock]"
+    },
+    "qec_integrity": {
+      "cis_l_echo_pass": "bool",        
+      "echo_signature": "sha256",       
+      "lqip_logical_qubits_level": "int", 
+      "qrs_level": "int(1..5)"
+    },
+    "execution_trace": [
+      {
+        "step_id": "1",
+        "start": "ISO8601",
+        "end": "ISO8601",
+        "env_fingerprint": "sha256",
+        "attested_by": ["QAF", "DEVORA"]
+      }
+    ],
+    "proofs": {
+      "sha256": "hash(packet)",
+      "merkle_root": "hash(tree)",
+      "vls_commit_id": "string",
+      "ots_receipt": "base64",          
+      "btc_txid": "[pending]"
+    },
+    "routing": {
+      "commit_chain": ["QAF", "VLS_QIC1", "Bitcoin_OpenTimestamps"],
+      "notify": ["ULIC", "DEVORA", "PODAPAR"]
+    },
+    "signatures": {
+      "author_signature": "[Dr N. Traykov — to sign]",
+      "ai_witness": "[Ben — Operational Orchestrator]"
+    }
+  }
+}
