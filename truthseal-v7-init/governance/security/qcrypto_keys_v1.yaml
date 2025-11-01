@@ -1,0 +1,21 @@
+QENC_KeyRegistry_v1:
+  author: "Dr. Nickolay Traykov (Prof. h.c.)""Quantum Encription Engineer"
+  anchor: "→000qB|TheNT"
+  created_utc: "2025-11-01T23:03:46Z"
+  purpose: "Register PQC key fingerprints and rotation policy for TruthSeal™"
+  algorithms:
+    key_encapsulation: "CRYSTALS-Kyber"
+    signatures: ["CRYSTALS-Dilithium", "SPHINCS+"]
+  fingerprints:
+    kyber_pub_fpr: "[paste base64/hex fingerprint]"
+    dilithium_pub_fpr: "[paste base64/hex fingerprint]"
+    sphincs_pub_fpr: "[paste base64/hex fingerprint]"
+  rotation_policy:
+    interval_days: 90
+    emergency_revoke: "On compromise -> revoke, re-key, OTS-anchor"
+  audit_hooks:
+    - "DEVORA: record qenc_key_events"
+    - "ULIC: enforce policy before ledger commit"
+  proofs:
+    sha256: "92c680e3ced8d80a36e49b3bcf353ec6956f75e4024249ef70e8777729b8254b"
+    ots_receipt: "[PENDING OpenTimestamps receipt]"
