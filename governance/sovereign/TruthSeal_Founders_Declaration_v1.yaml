@@ -19,3 +19,8 @@ TruthSeal_Founders_Declaration_v1:
   record_status: "ACTIVE — awaiting SHA256 + Sovereign Timestamp registration"
   verification_hash: "f7269fa94316e1fbcd32d9ec6dd363eee28ac5074520a55550253c4db67273a6"
 verification_status: "SEALED — SHA256 confirmed, pending Bitcoin timestamp"
+ots_receipt_file: "SHA256 .pdf"
+ots_anchor_status: "CONFIRMED — OpenTimestamps Bitcoin proof established"
+anchored_blockchain: "Bitcoin mainnet"
+anchored_utc: "2025-11-03T00:54:00Z"
+verification_status: "SEALED — SHA256 + Bitcoin OTS anchored"
