@@ -1,0 +1,83 @@
+TruthSeal_Quantum_Ethical_Compendium_v1_0:
+  author: "Dr. Nickolay Traykov (Prof. h.c.) — Quantum Encryption Engineer"
+  anchor: "→000qB|TheNT"
+  created_utc: "2025-11-02T00:00:00Z"   # keep or update to actual commit time
+  classification: "TruthSeal™ Quantum Integrity Capsule — Q-Integrity Ladder v1.0"
+  sovereignty_law: "LEI = 1 (Law of Ethical Irreversibility)"
+
+  links:
+    qenc_framework: "governance/security/QENC_v1_0_Framework.yaml"
+    tcs_1: "governance/research/TCS-1_TimeCrystal_Standard_v1.yaml"
+    qaoa_vrp_plan: "governance/research/QML/QAOA_VRP_Feasibility_v1.yaml"
+    qenc_failover: "governance/research/QENC_Failover_Redundancy_v1.yaml"
+    ipfs_module: "governance/infra/ipfs/QENC_IPFS_Module_v1_0.yaml"
+
+  prompts:
+    - id: "P1_QDay_Threat_Image"
+      domain: "Security/Comms"
+      purpose: "Visual communication of post-quantum risk"
+      prompt: >
+        Design a cinematic, dark-themed image of a cracked digital vault lock:
+        neon-cyan quantum circuit dissolving gold encryption chains; binary fragments;
+        '2027' faintly lit. Style: sci-fi realism.
+
+    - id: "P2_PQC_Roadmap_RnA"
+      domain: "Enterprise Strategy"
+      purpose: "Quarterly roadmap (Q1 2025–Q4 2027) for PQC + harvest-now/decrypt-later mitigation."
+      prompt: >
+        Specify milestones for NIST PQC (Kyber, Dilithium, SPHINCS+) adoption and
+        data-harvest mitigation; bullet objectives per quarter.
+
+    - id: "P3_QAOA_VRP_Optimization"
+      domain: "QML/Optimization"
+      purpose: "Feasibility abstract for QAOA on last-mile VRP (15 nodes)."
+      prompt: >
+        Quantify speed/quality vs classical (2-opt/LKH, SA/TS) on a 50-qubit device;
+        focus on approximation ratio and search-space reduction.
+
+    - id: "P4_QPCA_Finance_Pipeline"
+      domain: "QML/Data Compression"
+      purpose: "Hybrid QPCA for HFT risk management."
+      prompt: >
+        Define amplitude encoding prep, quantum PCA stage, and classical post-processing
+        for low-rank risk factor extraction.
+
+    - id: "P5_QCBM_DrugDiscovery_GenAI"
+      domain: "QML/Generative"
+      purpose: "Quantum-enhanced generative model for molecules."
+      prompt: >
+        QCBM proposes candidates; classical net filters by synthesizability and efficacy.
+
+    - id: "P6_Heisenberg_QKD_Abstract"
+      domain: "Physics/Security"
+      purpose: "250-word abstract on uncertainty bounds protecting BB84."
+      prompt: >
+        Show how ΔxΔp ≥ ħ/2 limits Eve’s information and prevents cloning without disturbance.
+
+    - id: "P7_TimeCrystals_Sensing_Feasibility"
+      domain: "Physics/Metrology"
+      purpose: "Use time-crystal periodicity for resilient sensing."
+      prompt: >
+        Analyze ≥10^6 oscillation coherence, decoherence resistance, and applications
+        to gravity mapping/inertial navigation. (Links TCS-1.)
+
+    - id: "P8_Uncertainty_Computing_Memo"
+      domain: "Governance/Engineering"
+      purpose: "CTO memo: deterministic vs probabilistic computing; QEC necessity."
+      prompt: >
+        Explain non-commuting observables, measurement back-action, and why QEC is required
+        beyond environmental noise.
+
+    - id: "P9_Rarefied_Drops_Theory"
+      domain: "Theory/Materials"
+      purpose: "Hypothesis for vacuum-engineered structures via quantum fluctuations."
+      prompt: >
+        Model Casimir-like forces enabling ultra-low-density, volumetrically-stable structures
+        for deep-space construction / energy storage.
+
+  compliance:
+    - "TruthSeal Sovereign Ledger v7.1"
+    - "UQE-FIC v1.0 linkage"
+    - "QENC v1.0 continuity"
+
+  verification_status: "DRAFT — awaiting SHA256 + OTS receipt"
