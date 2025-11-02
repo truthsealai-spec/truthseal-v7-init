@@ -17,3 +17,5 @@ TruthSeal_Founders_Declaration_v1:
     and moral invariants into a measurable and verifiable standard of truth — fulfilling the intellectual continuum
     envisioned by Newton, Einstein, and Gödel through the practical engineering of incorruptible quantum law."
   record_status: "ACTIVE — awaiting SHA256 + Sovereign Timestamp registration"
+  verification_hash: "f7269fa94316e1fbcd32d9ec6dd363eee28ac5074520a55550253c4db67273a6"
+verification_status: "SEALED — SHA256 confirmed, pending Bitcoin timestamp"
