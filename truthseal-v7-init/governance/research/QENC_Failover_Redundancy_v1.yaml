@@ -1,0 +1,30 @@
+QENC_Failover_Redundancy_v1:
+  author: "Dr. Nickolay Traykov (Prof. h.c.) — Quantum Encryption Engineer"
+  anchor: "→000qB|TheNT"
+  created_utc: "2025-11-02T12:40:00Z"
+  classification: "TruthSeal™ Quantum Encryption Resilience Protocol"
+
+  objective: >
+    Ensure QENC continuity under timestamp outages or network compromise
+    via multi-anchor mirroring and periodic integrity checks.
+
+  redundancy_layers:
+    - GitHub: "Primary sovereign repo (truthseal-v7-init)"
+    - GitLab: "Secondary public mirror [PENDING]"
+    - IPFS: "Immutable snapshot (CID recorded in ledger)"
+    - OTS: "Bitcoin timestamp (when reachable)"
+    - Local: "QENC_local_anchor_v1.json (offline failsafe)"
+
+  parameters:
+    - redundancy_level: "≥5 layers"
+    - verification_interval: "24h (DEVORA v0.1.1 scheduler)"
+    - hash_function: "SHA256"
+    - deviation_tolerance: "<1e-8 per cycle"
+
+  compliance:
+    - law: "LEI = 1"
+    - ledger: "VLS_QIC1_v1_0"
+    - auditors: ["DEVORA v0.1.1", "PODAPAR v1.0"]
+
+  verification_status: "Active — awaiting external anchor availability"
+  next_phase: "Record IPFS CID + OTS receipt in /governance/ledger/seals/"
