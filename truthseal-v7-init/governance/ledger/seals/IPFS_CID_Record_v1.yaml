@@ -1,0 +1,34 @@
+IPFS_CID_Record_v1:
+  author: "Dr. Nickolay Traykov (Prof. h.c.) — Quantum Encryption Engineer"
+  anchor: "→000qB|TheNT"
+  created_utc: "2025-11-02T12:50:00Z"
+  classification: "TruthSeal™ Immutable Proof Capsule"
+
+  objective: >
+    Log and verify IPFS content identifiers (CIDs) generated from
+    TruthSeal QENC and TCS proof capsules. This ledger file serves as
+    the immutable registry for distributed archival and retrieval validation.
+
+  linked_capsules:
+    - "governance/research/QENC_Failover_Redundancy_v1.yaml"
+    - "governance/research/TCS-1_TimeCrystal_Standard_v1.yaml"
+
+  ipfs_records:
+    - capsule: "QENC_Failover_Redundancy_v1"
+      cid: "[PENDING_UPLOAD]"
+      gateway_url: "[https://ipfs.io/ipfs/<CID>]"
+    - capsule: "TCS-1_TimeCrystal_Standard_v1"
+      cid: "[PENDING_UPLOAD]"
+      gateway_url: "[https://ipfs.io/ipfs/<CID>]"
+
+  verification_method:
+    - "Retrieve CID via public IPFS gateway"
+    - "Validate hash matches stored SHA256 ledger value"
+    - "Cross-check replication in failover nodes"
+
+  compliance:
+    - "TruthSeal Sovereign Ledger v7.1"
+    - "Quantum Redundancy Law (LEI = 1)"
+
+  verification_status: "Pending — awaiting IPFS publish confirmation"
+  next_phase: "Record OTS receipts and link mempool TXIDs once reachable"
