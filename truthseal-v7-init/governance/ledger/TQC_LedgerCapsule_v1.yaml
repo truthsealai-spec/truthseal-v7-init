@@ -7,3 +7,5 @@ ledger_entry:
   verification_status: "CONFIRMED"
   record_status: "ACTIVE – archived TruthSeal sovereign ledger v7"
   timestamp_utc: "2025-11-03T01:48:00Z"
+  ots_hash: "bf66d62d45f0d1884cc358626ada982ebc40c04035317ec45c2bb76515e4ed27"
+verification_status: "ANCHOR CONFIRMED – OpenTimestamps Bitcoin proof pending final inclusion"
