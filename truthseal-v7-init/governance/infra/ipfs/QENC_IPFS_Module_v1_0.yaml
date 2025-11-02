@@ -1,0 +1,28 @@
+QENC_IPFS_Module_v1_0:
+  author: "Dr. Nickolay Traykov (Prof. h.c.) — Quantum Encryption Engineer"
+  anchor: "→000qB|TheNT"
+  created_utc: "2025-11-02T12:30:00Z"
+  objective: >
+    Anchor TruthSeal artifacts via official IPFS tools with verifiable CIDs.
+    No web forms. No payments. Full auditability.
+  toolchain:
+    ipfs_cli: ">=0.28 from ipfs.tech (official)"
+    w3up_client: "OPTIONAL — Protocol Labs signed keys only"
+  policy:
+    - "Never submit card/PII to storage providers."
+    - "Only use DNSSEC-verified domains (ipfs.tech, web3.storage docs)."
+    - "All files hashed before add: sha256(recorded)."
+  operation:
+    - step_1_hash: "sha256 <file> → write into governance/ledger/seals/"
+    - step_2_add:  "ipfs add --cid-version=1 <file> → produce CIDv1"
+    - step_3_pin:  "ipfs pin add <CID>; keep local node online"
+    - step_4_record: "append CID to IPFS_CID_Record_v1.yaml (path below)"
+    - step_5_verify: "gateway fetch x2 (ipfs.io, dweb.link) → re-hash match"
+    - step_6_optional_w3up: "w3up upload <file> → record DID space + CID"
+  records:
+    cid_registry_path: "governance/ledger/seals/IPFS_CID_Record_v1.yaml"
+    sha_registry_path: "governance/ledger/seals/"
+  failover:
+    - "If gateways down → keep local, retry in 24h; no third-party sites."
+  compliance: ["LEI = 1", "TruthSeal Sovereign Ledger v7.1"]
+  status: "READY"
