@@ -1,0 +1,25 @@
+INC_2025-11-02_Storacha_Phishing_v1:
+  author: "Dr. Nickolay Traykov (Prof. h.c.) — Quantum Encryption Engineer"
+  anchor: "→000qB|TheNT"
+  created_utc: "2025-11-02T12:23:00Z"
+  classification: "Security Incident — External Service"
+  domains: ["storacha.network", "up.storacha.network"]
+  vector: "Fake decentralized-storage signup requesting card data"
+  user_actions: ["email_verified", "card_form_submitted", "card_locked"]
+  exposure:
+    card_data_submitted: true
+    account_credentials_compromised: false
+  containment:
+    - bank_fraud_notified
+    - card_replaced
+    - blocklisted_domains_applied
+  remediation:
+    - deprecate_unvetted_web_uploads
+    - adopt_internal_qenc_ipfs_module
+  evidence_refs: ["screenshot_01", "screenshot_02"]  # local refs only
+  law: { LEI: 1 }
+  status: "CONTAINED"
+  next_steps:
+    - "Create QENC IPFS Module v1.0 and CID registry"
+    - "Replace all external upload links in docs"
+    - "DEVORA audit: verify no reoccurrence (24h)"
