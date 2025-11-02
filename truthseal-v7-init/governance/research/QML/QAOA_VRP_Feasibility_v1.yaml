@@ -1,0 +1,64 @@
+QAOA_VRP_Feasibility_v1:
+  author: "Dr. Nickolay Traykov (Prof. h.c.) — Quantum Encryption Engineer"
+  anchor: "→000qB|TheNT"
+  created_utc: "2025-11-02T13:55:00Z"
+  classification: "TruthSeal™ QML Study Capsule"
+
+  objective: "Assess QAOA viability on Vehicle Routing Problem (VRP) at 15 nodes."
+
+  scope:
+    vrp_nodes: 15
+    vehicle_count: 1
+    capacity_constraints: "OFF (v1); ON in v1.1"
+    time_windows: "OFF (v1)"
+    dist_metric: "Euclidean from seed set"
+    repetitions: 20
+
+  method:
+    mapping: "VRP → TSP reduction → QUBO; penalty weights λ_route, λ_degree"
+    hamiltonians:
+      cost: "Σ d(i,j) x_ij"
+      constraints: ["degree-2 per node", "single tour", "subtour penalty via slack"]
+    qaoa_layers_p: [1,2,3,4]
+    init_params: "random + warm-start from classical 2-opt"
+    optimizer: "COBYLA / SPSA"
+    backend:
+      gate_model: "50-qubit simulator (Aer or equivalent)"
+      note: "If annealer used, run QUBO on annealer as baseline; treat as separate track."
+    baselines:
+      - "Classical: 2-opt / LKH on same instances"
+      - "Heuristic: Simulated Annealing (QUBO)"
+    metrics:
+      - name: "objective_gap"
+        def: "(best_QAOA - best_classical)/best_classical"
+      - name: "wall_time_sec"
+      - name: "feasible_rate"
+      - name: "approx_ratio"
+    kpi_targets:
+      objective_gap: "≤ +5% vs best classical on ≥50% instances"
+      wall_time_sec: "≤ classical on ≤15-node median case"
+      feasible_rate: "≥ 0.9"
+
+  data:
+    instance_gen: "Seeded random coords (15 nodes) + fixed seeds S1..S5"
+    seeds: [42, 73, 101, 2025, 4096]
+    export_paths:
+      instances: "governance/research/QML/data/vrp15/"
+      results: "governance/research/QML/results/QAOA_VRP_v1/"
+
+  validation:
+    reproducibility: "Fix seeds; log β,γ; store result JSON"
+    ledger: "Commit JSON + SHA256 to VLS; add CID later"
+    unknowns: ["Quantum advantage at n=15 is UNKNOWN; report honestly."]
+
+  risks:
+    - "QAOA sensitivity to penalty tuning λ_*"
+    - "Barren plateaus at higher p"
+    - "Simulator vs hardware gap"
+
+  outputs:
+    - "QAOA_VRP_v1_Report.md"
+    - "QAOA_VRP_v1_results.json"
+    - "QAOA_VRP_v1_params.json"
+
+  next_phase: "v1.1 add capacity/time windows; compare p∈{1..6}"
