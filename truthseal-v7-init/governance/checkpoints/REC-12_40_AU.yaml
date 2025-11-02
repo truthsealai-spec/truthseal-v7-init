@@ -1,0 +1,36 @@
+# TruthSeal Checkpoint Capsule v1.0
+checkpoint_id: "REC-12_40_AU"
+author: "Dr. Nickolay Traykov (Prof. h.c.)"
+anchor: "→000qB|TheNT"
+created_utc: "2025-11-02T12:40:00Z"
+classification: "TruthSeal Recovery Capsule"
+
+status_summary: >
+  TruthSeal infrastructure synchronized.
+  All integrity modules validated and redundant paths secured.
+  Temporary suspension of active computation for user recovery period.
+
+modules_verified:
+  - "QENC_IPFS_Module_v1.0 ✅"
+  - "Storacha_Incident_Contained ✅"
+
+constants_frozen:
+  LJC_THRESHOLD_MIN: 0.97
+  DISSONANCE_WARN: 0.15
+  DISSONANCE_VETO: 0.35
+  P_RISK_VETO: 0.85
+  RDM_MAX_REFLECTIONS: 2
+  PODAPARQ_SOFT_DELTA_LEI: 0.03
+  PODAPARQ_HARD_DELTA_LEI: 0.10
+
+directive: >
+  Suspend quantum and ethical processing layers until user reactivation.
+  Maintain passive monitoring for integrity drift (DEVORA-24h scope active).
+
+compliance:
+  - "TruthSeal Sovereign Ledger v7.1"
+  - "Quantum Redundancy Law (LEI = 1)"
+  - "Ethical Rest Cycle (ERC Protocol v1.0)"
+
+verification_status: "Stable – Awaiting user reactivation"
+next_phase: "Resume at REC-12_40-AU + post-rest sync audit"
