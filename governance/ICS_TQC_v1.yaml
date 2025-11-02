@@ -1,0 +1,12 @@
+ICS_TQC_v1:
+  sequence_title: "Integrity Confirmation Sequence — Traykov Quantum Coherence (TQC)"
+  law_reference: "TQC Sovereign Verification Certificate v1.1"
+  ledger_anchor: "governance/ledger/TQC_LedgerCapsule_v1.yaml"
+  certificate_anchor: "governance/TQC_Sovereign_Verification_Certificate_v1.1.yaml"
+  sha256_anchor: "f7269fa94316e1fbcd32d9ec6dd363eee28ac5074520a55550253c4db67273a6"
+  ots_anchor: "bf66d62d45f0d1884cc358626ada982ebc40c04035317ec45c2bb76515e4ed27"
+  blockchain_network: "Bitcoin mainnet (OTS)"
+  confirmation_status: "ACTIVE — Integrity Path Verified"
+  confirmation_utc: "2025-11-03T03:15:00Z"
+  verification_chain: "TruthSeal™ Quantum-Ethical Ledger | ULIC Continuum"
+  record_status: "SEALED — Cross-Ledger Integrity Established"
