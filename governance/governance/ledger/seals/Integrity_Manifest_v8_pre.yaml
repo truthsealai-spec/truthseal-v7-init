@@ -30,10 +30,11 @@ verified_artifacts:
     path: governance/ledger/seals/
     sha256: "<insert_verified_hash_here>"
     status: verified
-      - name: AnnexB_QuantumEthical_Certification_Ledger_Summary.yaml
-    path: governance/ledger/annex/
-    sha256: "<c98b3c729790c7fac473b94e98d79b208dda592afdd018ef6540f7bf495c38bb>"
-    status: verified
+        - name: Annex_B_QE_Certification_Summary_v8.yaml
+    path: governance/governance/ledger/receipts/Annex_B_QE_Certification_Summary_v8.yaml
+    sha256: 0c348575f9a40e00e7dcb7bcef7637f9bb83b85cf1f789e76e3321d4a85e4e20
+    ots_receipt: governance/governance/ledger/receipts/Annex_B_QE_Certification_Summary_v8.ots
+    status: anchored
 composite_digest: "bf66d62d45f0d1884cc358626ada982ebc40c04035317ec45c2bb76515e4ed27"
 compliance_score: 1.000
 remarks: >
