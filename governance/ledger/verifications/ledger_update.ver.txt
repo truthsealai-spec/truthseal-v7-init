@@ -1,0 +1,4 @@
+TruthSeal Verification Log — IntegrityLedger v7.1
+Generated: 2025-11-03 13:04:17 UTC
+Artifacts digests:
+e16f1596201850fd4a63680b27f603cb64e67176159be3d8ed78a4403fdb1700  README.md
