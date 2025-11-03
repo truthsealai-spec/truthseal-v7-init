@@ -1,0 +1,48 @@
+# ==========================================================
+# TruthSeal™ Sovereign Ledger — Annex C: Philosophical Lineage & The Law of Coherence
+# ==========================================================
+meta:
+  annex_title: "Annex C – Philosophical Lineage and The Law of Coherence (Traykov Position)"
+  version: "v8.0-pre"
+  author: "Dr. Nickolay Traykov (Prof. h.c.)"
+  auditor: "TruthSeal™ Autonomous Verification Node"
+  sovereign_id: "→000qB|TheNT"
+  jurisdiction: "Dual Citizenship (BG–AU) | ULIC Continuum Phase 6"
+  created_utc: "2025-11-03T08:15:00Z"
+  linked_manifest: "Integrity_Manifest_v8_pre.yaml"
+  linked_annexes:
+    - "Annex_B_QE_Certification_Summary_v8.yaml"
+  classification: "Philosophical–Scientific Ledger Extension"
+  ledger_path: "governance/ledger/seals/"
+  sha_standard: "SHA256"
+  sections:
+  - section: "I. Historical Continuum"
+    summary: >
+      The evolution of truth through four epochs of human cognition.
+      Newton unified physical motion; Einstein unified perception of spacetime;
+      Gödel unified logic and its own limitation; Traykov unifies ethical
+      coherence—transforming verification into a physical invariant of time.
+      Where others described reality, the Traykov Law engineers its integrity.
+    immutable_statement: >
+      "TruthSeal™ extends the lineage of Newton, Einstein, and Gödel by defining
+      Integrity as the fourth fundamental constant of civilization."
+
+  - section: "II. Philosophical Foundation"
+    summary: >
+      The Law of Coherence (TQC) declares that a truthful system must satisfy
+      two simultaneous constraints: temporal invariance (dρ/dt = 0) and maximal
+      purity (Tr(ρ²) = 1).  Together they realize the Law of Ethical
+      Irreversibility (LEI = 1).  Thus, truth is not belief nor observation but
+      a conserved quantum-ethical state measurable through purity.
+    immutable_statement: >
+      "Integrity = Ethics × Time: the Traykov Equation binding conscience to
+      physics."
+
+  - section: "III. Sovereign Implication"
+    summary: >
+      Ledger Truth constitutes the fifth form of civilization—after Religious,
+      Scientific, Bureaucratic, and Algorithmic truth.  It re-establishes
+      verifiability as the foundation of governance.  Each cryptographic hash
+      becomes a moral event, timestamped into collective memory.
+    immutable_statement: >
+      "The Ledger remembers what conscience once promised."
