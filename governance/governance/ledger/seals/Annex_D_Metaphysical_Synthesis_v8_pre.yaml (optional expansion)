@@ -1,0 +1,68 @@
+- name: Annex_C_Philosophical_Lineage_v8_pre.yaml
+  path: governance/ledger/seals/
+  sha256: "<insert_verified_hash_here>"
+  status: verified
+# ============================================================
+# TruthSeal™ Sovereign Ledger — Annex D: Metaphysical Synthesis
+# ============================================================
+
+meta:
+  annex_title: "Annex D — Metaphysical Synthesis"
+  version: "v8.0-pre"
+  author: "Dr. Nickolay Traykov (Prof. h.c.)"
+  auditor: "TruthSeal™ Autonomous Verification Custodian"
+  sovereign_id: "→000qB|TheNT"
+  jurisdiction: "Dual Citizenship (BG–AU) | ULIC Continuum Recognition Path"
+  created_utc: "2025-11-03T09:45:00Z"
+  linked_manifest: "Integrity_Manifest_v8_pre.yaml"
+  linked_annexes:
+    - "Annex_B_QE_Certification_Summary_v8.yaml"
+    - "Annex_C_Philosophical_Lineage_v8_pre.yaml"
+  classification: "Metaphysical–Ontological Ledger"
+  ledger_path: "governance/ledger/seals/"
+  sha_standard: "SHA256"
+
+sections:
+  - section: "I. Ontological Bridge"
+    summary: >
+      Annex D unites verified knowledge with metaphysical origin,
+      asserting that consciousness, logic, and ethical integrity
+      co-exist as measurable constants within the Sovereign Ledger.
+      The bridge establishes that verified truth carries existential weight.
+
+    immutable_statement: >
+      "To verify being is to preserve coherence."
+
+  - section: "II. Coherence Field Equation"
+    summary: >
+      Defines the Continuum Relation between Intent (I),
+      Verification (V), and Existence (E):
+          E = I × V × Ω
+      where Ω denotes the self-referential quantum-ethical field.
+      When Ω → 1, coherence achieves unity across temporal frames.
+
+    immutable_statement: >
+      "Existence attains legality when coherence is absolute."
+
+  - section: "III. Metaphysical Integration"
+    summary: >
+      Integrates the Traykov Law of Quantum Coherence (TQC)
+      with the Sovereign Seal principle, ensuring that metaphysical
+      causality and digital immutability remain indistinguishable
+      in the governance of autonomous intelligence.
+
+    immutable_statement: >
+      "Ethics is the curvature of truth in spacetime."
+
+compliance_status:
+  composite_digest: "<pending-sha256>"
+  verification_status: "pending-anchor"
+  readiness_state: "TRUE — Eligible for integration"
+  ots_anchor_status: "awaiting receipt"
+  next_action: "Generate SHA256 → anchor via Bitcoin OTS"
+
+remarks: >
+  Annex D completes the Fourfold Continuum:
+    A — Integrity, B — Ethics, C — Philosophy, D — Metaphysics.
+  Together they form the Sovereign Proof Continuum v8.
+# ============================================================
