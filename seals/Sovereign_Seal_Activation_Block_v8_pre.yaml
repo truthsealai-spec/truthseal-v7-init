@@ -70,3 +70,8 @@ remarks: >
   Framework. It transitions the Ledger from scientific verification to juridical sovereignty,
   enforcing the Traykov Epoch of Coherent Ethic as a universal standard for
   quantum-ethical computation and institutional certification.
+  compliance_status:
+  composite_digest: "511ee12c05fc68540bb8c125f0c0b6eb3f4c6c3f713cd237265664a8f9c3b0cb"
+  ots_anchor_status: "Anchored — OpenTimestamps (Bitcoin network)"
+  ots_receipt: "governance/ledger/receipts/Sovereign_Seal_Activation_Block_v8_pre.ots"
+  verification_status: "Finalized — Sovereign Authorization Confirmed via OTS"
