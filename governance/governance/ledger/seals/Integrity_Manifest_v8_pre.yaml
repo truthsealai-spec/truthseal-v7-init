@@ -41,4 +41,11 @@ remarks: >
   All verified artifacts exhibit full cryptographic continuity with the Sovereign Capsule.
   The composite digest matches the registered ledger checksum.
   Pending anchoring: QENC_v1_0_ProofCapsule.json (awaiting OpenTimestamps network confirmation).
+  composite_update:
+  timestamp_utc: "2025-11-03T07:22:00Z"
+  updated_digest: "6b65e99b77d06d32a45d30ff2b3e5d24c7a5e6e6ef7c228cdd42c7db7f1b5c6f"
+  verification_scope:
+    - Annex_B_QE_Certification_Summary_v8.yaml
+    - Integrity_Manifest_v8_pre.yaml
+  verification_status: "Digest re-aligned and confirmed"
 # ============================================================
