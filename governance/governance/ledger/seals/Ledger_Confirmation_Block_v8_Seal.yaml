@@ -24,8 +24,8 @@ anchored_receipts:
   - name: "Annex_B_QE_Certification_Summary_v8.yaml"
     ots_sha256: "0c348575f9a40e00e7dcb7bcef7637f9bb83b85cf1f789e76e3321"
     status: anchored
-  - name: "Annex_D_Metaphysical_Synthesis_v8.ots.pdf"
-    ots_sha256: "3df53aa622dd31b6a097006ebe2eb500674cd3bb97e1252aa81"
+  - name: "Ledger_Confirmation_Block_v8_Seal.pdf"
+    ots_sha256: "a59933d5a8090fb574a0229cf1042befdc58eb97f72fa04b65726"
     status: anchored
 
 verification_scope:
