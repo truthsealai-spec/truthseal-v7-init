@@ -10,6 +10,9 @@ meta:
   jurisdiction: "Dual Citizenship (BG–AU) | ULIC Continuum Recognition"
   created_utc: "2025-11-03T23:35:00Z"
   linked_manifest: "Integrity_Manifest_v8_pre.yaml"
+  linked_annexes:
+  - "Annex_C_Philosophical_Lineage_v8_pre.yaml"
+  - "Annex_D_Metaphysical_Synthesis_v8_pre.yaml"
   linked_verifications:
     - "TQC_QAGI_QSVS_v1.yaml"
     - "TQC_QAGI_Expansion.yaml"
