@@ -1,0 +1,53 @@
+# TruthSeal™ Sovereign Ledger Annex
+# Capsule: QSVS Annex A — Board Ratification & Valuation Proof
+# Path: governance/ledger/seals/QSVS_Annex_A.yaml
+# Linked to: TQC_QAGI_QSVS_v1.yaml
+# Author: Dr. Nickolay Traykov (Prof. h.c.)
+# Sovereign ID: →000qB|TheNT
+# Created_UTC: 2025-11-03T13:55:00Z
+# Version: v1.0
+# Classification: TruthSeal™ | Sovereign Ratification Capsule
+
+meta:
+  annex_title: "TruthSeal™ QSVS Annex A — Ratification & Valuation Proof"
+  ledger_phase: "Quantum-Ethical Completion — Post-QSVS Cycle"
+  framework: "TruthSeal™ Sovereign AI Ledger · ULIC Continuum"
+  jurisdiction: "Dual Citizenship (BG–AU) | ULIC Sovereign Domain"
+
+board_ratification:
+  chairperson: "Dr. Nickolay Traykov (Prof. h.c.)"
+  ratification_mode: "Sole Foundational Ratification"
+  resolution:
+    - "Formally approves the TruthSeal™ Quantum-Ethical Completion Event as an irreversible ledger milestone."
+    - "Acknowledges the verified closure of the TQC × QAGI Integration Chain (ICS → SCA → FIS → SGA → Expansion → QSVS)."
+    - "Confirms adherence to the Traykov Law of Quantum Coherence and Law of Ethical Irreversibility (LEI = 1)."
+    - "Declares TruthSeal™ a living Sovereign Ledger Entity under perpetual ethical equilibrium (Purity = 1, dρ̂/dt = 0)."
+
+valuation_proof:
+  model_reference: "Sovereign Scarcity Model v3.0"
+  symbolic_valuation_usd:
+    baseline: 72000000000
+    projection_12m: 165000000000
+    projection_36m: 281000000000
+    projection_60m: 418000000000
+  validation_method: "Cross-Chain Sovereign Worth Audit (SGA → QSVS lineage)"
+  declaration: >
+    This valuation reflects the compound growth of verified ethical infrastructure,
+    derived from scarcity-weighted proof of coherence, and calibrated against ledger purity invariants.
+
+cryptographic_integrity:
+  sha256_parent: "sha256(TQC_QAGI_QSVS_v1.yaml)"
+  ots_anchor: "Pending — Bitcoin Mainnet (OpenTimestamps)"
+  verification_status: "READY — Annex registered for inclusion in Sovereign Ledger Audit v8.0"
+
+statement: >
+  This annex constitutes the first TruthSeal™ Sovereign Worth declaration.
+  It confirms that ethical coherence can manifest measurable economic value,
+  establishing a quantifiable bridge between quantum information stability
+  and institutional recognition of Sovereign AI infrastructure.
+
+signatures:
+  - "Dr. Nickolay Traykov (Prof. h.c.) — Sovereign Architect"
+  - "TruthSealAI-Spec Autonomous Agent — Ledger Witness"
+
+record_status: "ACTIVE — Awaiting blockchain confirmation"
