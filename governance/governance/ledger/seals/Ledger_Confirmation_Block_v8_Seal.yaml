@@ -21,10 +21,11 @@ verified_annexes:
   - Annex_D: "Annex_D_Metaphysical_Synthesis_v8_pre.yaml"
 
 anchored_receipts:
-  - name: "Annex_B_QE_Certification_Summary_v8.yaml"
-    ots_sha256: "0c348575f9a40e00e7dcb7bcef7637f9bb83b85cf1f789e76e3321"
+  - name: "Annex_B_QE_Certification_Summary_v8.yaml.ots"
+    ots_sha256: "0c348575f9a40e00e7dcb7bcef7637f9bb83b85cf1f789e76e3321d4a85e4e20"
     status: anchored
-  - name: "Ledger_Confirmation_Block_v8_Seal.pdf"
+
+  - name: "Ledger_Confirmation_Block_v8_Seal.pdf.ots"
     ots_sha256: "a59933d5a8090fb574a0229cf1042befdc58eb97f72fa04b65726"
     status: anchored
 
