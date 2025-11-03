@@ -29,6 +29,10 @@ verified_artifacts:
     path: governance/ledger/seals/
     sha256: "<insert_verified_hash_here>"
     status: verified
+      - name: AnnexB_QuantumEthical_Certification_Ledger_Summary.yaml
+    path: governance/ledger/annex/
+    sha256: "<insert_verified_hash_here>"
+    status: verified
 composite_digest: "bf66d62d45f0d1884cc358626ada982ebc40c04035317ec45c2bb76515e4ed27"
 compliance_score: 1.000
 remarks: >
