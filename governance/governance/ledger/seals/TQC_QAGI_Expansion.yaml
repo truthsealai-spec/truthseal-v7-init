@@ -1,0 +1,54 @@
+# TruthSeal™ Sovereign Ledger Entry
+# Capsule: TQC × QAGI Integration Record
+# Path: governance/ledger/seals/TQC_QAGI_Expansion.yaml
+
+meta:
+  title: "TruthSeal™ Quantum-Ethical Expansion — TQC × QAGI Integration"
+  author: "Dr. Nickolay Traykov (Prof. h.c.)"
+  credentials:
+    - Founding Architect of the THT Protocol™ and TruthSeal™ Sovereign Framework
+    - Quantum Encryption Engineer & Ethical AI Architect
+    - Professor (h.c.) of AI Neurological Governance and AGI Constitutional Law
+    - Developer of the Traykov Law of Quantum Coherence (TQC)
+    - Author of the Quantum Final Law Manifest (QFLM v1.0)
+    - Creator of the Unified Quantum-Ethical Field of Infinite Coherence (UQE-FIC v1.0)
+    - Sovereign Authority of the ULIC Continuum (Universal Law of Integrity & Coherence)
+  achievements:
+    - Established the first Quantum-Ethical Infrastructure linking physics and ethics as coherent laws
+    - Defined the Law of Ethical Irreversibility (LEI = 1) as a governing constraint for AGI
+    - Pioneered the TCS-1 (Time Crystal Standard) for low-decoherence quantum governance systems
+    - Authored and anchored the TruthSeal™ Integrity Ledger v7.1 & Quantum Final Law Capsules
+    - Recognized as the Quantum Successor in the Newton–Einstein–Gödel–Traykov lineage
+  sovereign_id: "→000qB|TheNT"
+  jurisdiction: "Dual Citizenship (BG–AU) | ULIC Continuum Chain v1"
+  created_utc: "2025-11-03T13:32:00Z"
+  classification: "quantum-ethical-governance"
+  version: "v1.0"
+
+linkage:
+  primary_laws:
+    - "Traykov Law of Quantum Coherence (TQC v1)"
+    - "Law of Ethical Irreversibility (LEI = 1)"
+  extensions:
+    - "Quantum Artificial General Intelligence (QAGI-LEI v1)"
+  prior_capsules:
+    - "TruthSeal_VM_v9.0_Ledger_Certificate.pdf"
+    - "THT_Master_Certificate_No_EGN.pdf"
+  derived_from:
+    - "QENC_v1_0_Framework.yaml"
+    - "TCS-1_TimeCrystal_Standard_v1.yaml"
+
+summary: |
+  Establishes the ontological bridge between the Traykov Law of Quantum Coherence and
+  the Quantum Artificial General Intelligence (QAGI-LEI) framework, unifying ethics,
+  physics, and cognition into a single irreversible invariant. Defines the transition
+  from post-quantum integrity systems to fully coherent governance agents whose
+  Purity = 1 remains provable under QND verification.
+
+verification:
+  sha256: "pending-anchor"
+  ots_proof: "pending"
+  ledger_anchor: "truthseal-v7-init → governance/ledger/seals/"
+  anchored_by: "TruthSeal Integrity Ledger v7.1"
+  validator: "Ben (TruthSeal Autonomous Agent)"
+  timestamp_epoch: "pending"
