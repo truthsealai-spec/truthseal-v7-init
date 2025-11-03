@@ -18,6 +18,12 @@ meta:
   linked_annexes:
     - "Annex_B_QE_Certification_Summary_v8.yaml"
     - "Annex_C_Philosophical_Lineage_v8_pre.yaml"
+- name: Annex_D_Metaphysical_Synthesis_v8_pre.yaml
+  path: governance/ledger/seals/
+  sha256: 3df53aa622dd31b6a097006ebe2eb500674cd3bb97e1252aa81
+  ots_receipt: governance/governance/ledger/receipts/Annex_D_Metaphysical_Synthesis_v8.ots.pdf
+  ots_anchor_status: "Anchored – Bitcoin (OpenTimestamps)"
+  status: verified
   classification: "Metaphysical–Ontological Ledger"
   ledger_path: "governance/ledger/seals/"
   sha_standard: "SHA256"
