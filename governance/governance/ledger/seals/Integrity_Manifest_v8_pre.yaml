@@ -3,6 +3,7 @@
 # ============================================================
 title: TruthSeal Sovereign Ledger Integrity Manifest
 version: v8.0-pre
+manifest_sha256: "c98b3c729790c7fac473b94e98d79b208dda592afdd018ef6540f7bf495c38bb"
 author: Dr. Nickolay Traykov, Prof. (h.c.)
 auditor: Ben / TruthSeal AI Custodian
 created_utc: 2025-11-03T22:41:00Z
@@ -19,7 +20,7 @@ verified_artifacts:
     status: verified
   - name: QENC_v1_0_ProofCapsule.json
     path: governance/security/
-    sha256: "<insert_verified_hash_here>"
+    sha256: "<c98b3c729790c7fac473b94e98d79b208dda592afdd018ef6540f7bf495c38bb>"
     status: pending-anchor
   - name: Traykov_Law_of_Quantum_Coherence_(TQC).pdf
     path: governance/ledger/seals/
@@ -31,7 +32,7 @@ verified_artifacts:
     status: verified
       - name: AnnexB_QuantumEthical_Certification_Ledger_Summary.yaml
     path: governance/ledger/annex/
-    sha256: "<insert_verified_hash_here>"
+    sha256: "<c98b3c729790c7fac473b94e98d79b208dda592afdd018ef6540f7bf495c38bb>"
     status: verified
 composite_digest: "bf66d62d45f0d1884cc358626ada982ebc40c04035317ec45c2bb76515e4ed27"
 compliance_score: 1.000
