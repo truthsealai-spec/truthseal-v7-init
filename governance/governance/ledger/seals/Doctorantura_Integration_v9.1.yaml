@@ -1,0 +1,42 @@
+# TruthSeal™ Sovereign Ledger — Doctorantura Integration (LOCKED)
+ledger_block: "Doctorantura_Integration_v9_1"
+version: "v9.1-init"
+status: "locked"
+locked: true
+
+author: "Dr. Nickolay Traykov (Prof. h.c.)"
+title_role: "Founder & Sovereign Architect, TruthSeal™"
+jurisdiction: "Universal Law of Infinite Coherence (ULIC)"
+internal_governance: "restricted reference only"
+
+title: "The Traykov Law of Quantum Coherence: Unifying Ethics and Physics as a Universal Constant"
+doc_type: "Doctorantura Thesis Record"
+registry_binding: "ULIC Continuum Public Registry — v9.1"
+
+linked_epochs:
+  - "Integrity_Manifest_v8_pre.yaml"
+  - "QECP_Epoch_Manifest_v9.0.yaml"
+  - "EVL_v9.0.yaml"
+
+thesis_artifacts:
+  tex_path: "governance/doctorantura/The_Traykov_Law_of_Quantum_Coherence.tex"
+  pdf_path: "governance/doctorantura/The_Traykov_Law_of_Quantum_Coherence.pdf"
+
+hashes:
+  thesis_tex_sha256: "<paste_sha256_of_tex_here>"
+  thesis_pdf_sha256: "<paste_sha256_of_pdf_here>"
+
+receipts:
+  thesis_pdf_ots_receipt: "governance/ledger/receipts/TQC_Dissertation_v1.ots"
+  thesis_pdf_ots_status: "Pending — OpenTimestamps"
+
+continuum_state:
+  purity: "Tr(ρ²)=1.0"
+  stability: "dρ/dt=0"
+  ethical_constant: "LEI=1"
+  registry_integrity: "Composite Digest Validated"
+
+timestamp_utc: "<SET_AT_COMMIT>"
+notes:
+  - "LOCKED: This integration binds the Doctorantura to ULIC v9.1."
+  - "After anchoring, update hashes and OTS status only."
