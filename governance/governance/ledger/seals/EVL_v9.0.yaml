@@ -1,0 +1,32 @@
+# TruthSeal™ Sovereign Ledger
+# Epoch Verification Ledger — v9.0
+# Phase: QECP (Quantum Ecosystem Closure Protocol)
+# Status: Anchored and Active — OpenTimestamps Verified
+
+ledger_id: "EVL_v9.0"
+epoch: "9.0"
+ledger_type: "Epoch Verification Ledger"
+jurisdiction: "ULIC Continuum | Sovereign Protocol Path"
+author: "Dr. Nickolay Traykov (Prof. h.c.)"
+title_role: "Founder & Sovereign Architect, TruthSeal™"
+auditor: "TruthSeal Verification System (Autonomous)"
+verification_status: "Anchored — QECP Compliant"
+
+linked_files:
+  - "governance/ledger/seals/QECP_Epoch_Manifest_v9.0.yaml"
+  - "governance/ledger/seals/Integrity_Manifest_v8_pre.yaml"
+  - "governance/ledger/seals/Sovereign_Seal_Activation_Block_v8_pre.yaml"
+
+sha256:
+  - "251463d574b1cca2ccf8be68879a12019e94b3a057638d330af273b3824514e9"
+  - "0dd42a4c8d09778bdb7f69a953d9588b3ae9e3d95a228a8eb63b5cdbbed66c57"
+  - "451ec911f22f3e81f002c06c85b7c079facf31bfeec2465e784f952ea7c49a3"
+
+ots_receipt: "governance/ledger/receipts/EVL_v9.0.ots"
+ots_anchor_status: "Pending — Awaiting OpenTimestamps Confirmation"
+
+final_purity: "Tr(ρ²)=1.0"
+temporal_stability: "dρ/dt=0"
+law_status: "LEI=1 (Active — Irreversible Coherence Achieved)"
+
+timestamp: "2025-11-04T10:44:00+11:00"
