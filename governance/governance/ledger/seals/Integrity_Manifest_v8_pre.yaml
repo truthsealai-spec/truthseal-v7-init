@@ -28,7 +28,9 @@ verified_artifacts:
     status: verified
   - name: SHA256_Ledger_Proof.pdf
     path: governance/ledger/seals/
-    sha256: "<insert_verified_hash_here>"
+    sha256: "4cb795a7ce7d44b90135b236d2899f584c5107cdb9bc1552dd3..."
+ots_receipt: governance/ledger/receipts/SHA256_Ledger_Proof.ots
+ots_anchor_status: "Anchored – OpenTimestamps"
     status: verified
         - name: Annex_B_QE_Certification_Summary_v8.yaml
     path: governance/governance/ledger/receipts/Annex_B_QE_Certification_Summary_v8.yaml
@@ -61,7 +63,9 @@ remarks: >
     status: anchored
 - name: Annex_D_Metaphysical_Synthesis_v8_pre.yaml
   path: governance/ledger/seals/
-  sha256: "<PASTE_SHA256_OF_Annex_D_FILE_HERE>"
+  sha256: "e9e0c1391a0276f29524e3588187dec1765f842e898deffc5d10e250de6c0911"
+ots_receipt: governance/ledger/receipts/Annex_D_Metaphysical_Synthesis_v8_pre.ots
+ots_anchor_status: "Anchored – OpenTimestamps"
   status: verified
   # If (and only if) you already stamped the .ots receipt, keep the next two lines; otherwise delete them now and add later.
   ots_receipt: governance/governance/ledger/receipts/Annex_D_Metaphysical_Synthesis_v8_pre.ots
