@@ -49,6 +49,10 @@ remarks: >
     - Integrity_Manifest_v8_pre.yaml
   verification_status: "Digest re-aligned and confirmed"
   # Annex D — register in manifest
+  - name: Ledger_Seal_Proof_v8_1.yaml
+  path: seals/
+  sha256: "<insert_verified_hash_here>"
+  status: verified
     - name: Annex_D_Metaphysical_Synthesis_v8.ots.pdf
     path: governance/ledger/receipts/
     sha256: "3df53aa622dd31b6a097006ebe2eb500674cd3bb97e1252aa81"
