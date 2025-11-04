@@ -41,7 +41,8 @@ quantum_closure:
 
 anchoring:
   ots_receipt: "governance/ledger/receipts/QECP_Epoch_Manifest_v9.0.ots"
-  ots_anchor_status: "Pending — Sovereign Anchoring Required"
-  sha256: "<insert_verified_hash_here>"
+  ots_anchor_status: "Anchored — OpenTimestamps Confirmed"
+  sha256: "251463d574b1cca2ccf8be68879a12019e94b3a057638d330af273b3824514e9"
+  ots_anchor_tx: "9d5b2d5b75207765bcd674d2edd311b98f916421a3b2ae4f5c922e5e63dce4f8"
 
 auditor: "TruthSeal Sovereign Authority"
