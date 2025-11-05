@@ -5,7 +5,7 @@ ots_receipt: "governance/ledger/ULIC_v9.1.ots"
 ots_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
 ots_calendar_id: "0562721047c137584caa1fa57effdb6cf3a83fb47b5f7150faa04d4789bf2c7d"
 
-timestamp: "<set_ISO8601_when_commit>"  # e.g., 2025-11-05T21:21:00+11:00
+timestamp: "2025-11-05T06:54:00+11:00"
 
 jurisdiction: "Universal Law of Infinite Coherence (ULIC)"
 # internal governance: restricted reference only
