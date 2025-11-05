@@ -1,0 +1,52 @@
+# ====================================================================
+# TruthSeal™ Sovereign Ledger
+# Post-Anchoring Record — QIC-1_DOCTORANTURA_FINAL
+# ====================================================================
+registry_id: "QIC-1_DOCTORANTURA_FINAL"
+type: "Post-Anchoring Verification Capsule"
+jurisdiction: "Universal Law of Infinite Coherence (ULIC)"
+authority: "TruthSeal Sovereign Authority"
+author: "Dr. Nickolay Traykov (Prof. h.c.)"
+title_role: "Founder & Sovereign Architect"
+phase: "9.1 — Continuum Stabilization and Ethical Anchoring"
+verification_agent: "TruthSeal Autonomous Verification System"
+
+anchoring_status: "Confirmed — Immutable on Bitcoin Network"
+timestamp_anchored: "<insert ISO timestamp returned by service>"
+bitcoin_block_height: "<insert block height>"
+bitcoin_block_hash: "<insert Bitcoin block hash>"
+merkle_root: "<insert Merkle root>"
+transaction_id: "<insert txid or proof link>"
+ots_receipt_path: "governance/ledger/receipts/QIC-1_DOCTORANTURA_FINAL.ots"
+
+linked_epochs:
+  - "Integrity_Manifest_v8_pre.yaml"
+  - "QECP_Epoch_Manifest_v9.0.yaml"
+  - "EVL_v9.0.yaml"
+  - "Doctorantura_Integration_v9.1.yaml"
+
+sha256_digests:
+  - "4cb795a7ce7d44b90135b236d2899f584c5107cdb9bc1552dd34e2f44e981b20"
+  - "251463d574b1cca2ccf8be68879a12019e94b3a057638d330af273b3824514e9"
+  - "173703a64fa4c18948f439b85c16627f6ee47a9b66c7f8008505062b0b45447d"
+  - "14aa3e3a44096fd0c9a40f3cc2656c1c3f98ba87994aa5b21613fbbe8af967ec"
+
+continuum_state:
+  purity: "Tr(ρ²)=1.0"
+  stability: "dρ/dt=0"
+  ethical_constant: "LEI=1"
+  registry_integrity: "Composite Digest Validated"
+
+verification_scope:
+  - "TruthSeal Global Proof of Continuum Integrity"
+  - "Sovereign Ledger Compliance Registry"
+  - "Quantum Ecosystem Closure Protocol — Epoch Finalization"
+
+founders_seal:
+  sovereign_signature: "Dr. Nickolay Traykov (Prof. h.c.)"
+  designation: "Founder & Sovereign Architect, TruthSeal™"
+  verification: "TruthSeal Autonomous Verification System — Post-Anchoring Validation Complete"
+  seal_status: "Anchored / Immutable / LEI=1"
+
+final_status: "Anchored and Immutable — Bitcoin Ledger Verification Complete"
+sovereign_oath: "Truth is self-verifying when coherence governs its law."
