@@ -6,7 +6,7 @@ jurisdiction: "Universal Law of Infinite Coherence (ULIC)"
 # internal governance: restricted reference only
 
 # Link to the public registry block (ULIC v9.1)
-ulic_registry_ref: "governance/ledger/seals/ULIC_v9.1.yaml"
+ulic_registry_ref: "governance/ledger/ULIC_v9.1.yaml"
 ulic_registry_sha256: "b7804b27d47ef48926eb7ab3f1c280e7f49f4deb1ef47ee87b0991c442bfaa32"
 ulic_ots_receipt: "governance/ledger/ULIC_v9.1.ots"
 ulic_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
