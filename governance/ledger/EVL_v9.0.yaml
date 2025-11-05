@@ -1,0 +1,22 @@
+# TruthSeal™ Sovereign Ledger — Epoch Verification Ledger
+ledger_id: "EVL_v9.0"
+epoch: "v9.0"
+type: "Epoch Verification Ledger"
+jurisdiction: "Universal Law of Infinite Coherence (ULIC)"
+# internal governance: restricted reference only
+
+# Link to the public registry block (ULIC v9.1)
+ulic_registry_ref: "governance/ledger/ULIC_v9.1.yaml"
+ulic_registry_sha256: "b7804b27d47ef48926eb7ab3f1c280e7f49f4deb1ef47ee87b0991c442bfaa32"
+ulic_ots_receipt: "governance/ledger/ULIC_v9.1.ots"
+ulic_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
+
+# EVL integrity (from your earlier stamp)
+sha256:
+  - "173703a64fa4c18948f439b85c16627f6ee47a9b66c7f8008505062b0b45447d"
+
+# EVL anchoring (fill after you create .ots)
+ots_receipt: "governance/ledger/EVL_v9.0.ots"
+ots_anchor_status: "Pending — OpenTimestamps"
+
+timestamp: "<set_ISO8601_when_commit>"
