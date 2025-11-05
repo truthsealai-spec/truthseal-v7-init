@@ -33,7 +33,6 @@ continuum_state:
   ethical_constant: "LEI=1"
   registry_integrity: "Composite Digest Validated"
 
-timestamp: "<set_ISO8601_when_commit>"  # e.g., 2025-11-05T12:34:56+11:00
 verification_scope:
   - "TruthSeal Global Proof of Continuum Integrity"
   - "Sovereign Ledger Compliance Registry"
