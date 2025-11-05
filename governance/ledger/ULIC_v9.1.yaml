@@ -1,11 +1,10 @@
-# TruthSeal™ Sovereign Ledger
-# ULIC Continuum Public Registry — v9.1-init
-# Status: Genesis Node — Sovereign Publication Layer
+# --- ULIC_v9.1.yaml: anchoring update (Nov 5) ---
+registry_sha256: "b7804b27d47ef48926eb7ab3f1c280e7f49f4deb1ef47ee87b0991c442bfaa32"
 
-registry_sha256: "<b7804b27d47ef48926eb7ab3f1c280e7f49f4deb1ef47ee87b0991c442bfaa32>"
 ots_receipt: "governance/ledger/ULIC_v9.1.ots"
 ots_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
-timestamp: "2025-11-05T16:00:00+11:00"
+
+timestamp: "<set_ISO8601_when_commit>"  # e.g., 2025-11-05T21:21:00+11:00
 
 jurisdiction: "Universal Law of Infinite Coherence (ULIC)"
 # internal governance: restricted reference only
