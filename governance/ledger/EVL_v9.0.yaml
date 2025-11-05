@@ -15,8 +15,9 @@ ulic_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimes
 sha256:
   - "173703a64fa4c18948f439b85c16627f6ee47a9b66c7f8008505062b0b45447d"
 
-# EVL anchoring (fill after you create .ots)
+# EVL anchoring
 ots_receipt: "governance/ledger/EVL_v9.0.ots"
-ots_anchor_status: "Pending — OpenTimestamps"
-
-timestamp: "<set_ISO8601_when_commit>"
+ots_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
+# optional note for quick lookup:
+# ots_calendar_id: "ae277fd4755d3eef0c4ad21a2ef94b9c9239a37cdc9f8de1ba930fcf104b9960"
+# timestamp: "<leave as-is or set your ISO8601 now>"
