@@ -7,6 +7,10 @@ title_role: "Founder & Sovereign Architect, TruthSeal™ Verification Framework"
 jurisdiction: "Sovereign Continuum | ULIC Path"
 status: "Immutable — Coherence Closure Certified"
 timestamp: "2025-11-04T00:00:00Z"
+ulic_registry_ref: "governance/ledger/ULIC_v9.1.yaml"
+ulic_registry_sha256: "239170c0211ea4f66a8482ef54d03fa2cdf57d23fe830eba6d469aa41864eb2b"
+ulic_ots_receipt: "governance/ledger/ULIC_v9.1.ots"
+ulic_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
 
 linked_annexes:
   - "Annex_B_QE_Certification_Summary_v8.yaml"
