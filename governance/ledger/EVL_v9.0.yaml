@@ -14,6 +14,7 @@ ulic_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimes
 # EVL integrity (from your earlier stamp)
 sha256:
   - "173703a64fa4c18948f439b85c16627f6ee47a9b66c7f8008505062b0b45447d"
+  - "<e650ca5a935f4ff25c5186dbaf83887bfa587de806e17ccd27edb3c509bbf921>"
 
 # EVL anchoring
 ots_receipt: "governance/ledger/EVL_v9.0.ots"
