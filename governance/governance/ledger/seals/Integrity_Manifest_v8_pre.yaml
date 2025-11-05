@@ -9,6 +9,10 @@ auditor: Ben / TruthSeal AI Custodian
 created_utc: 2025-11-03T22:41:00Z
 linked_capsule: "→000qB|TheNT"
 governance_standard: ISO/TruthSeal ProofSeal v8.0-pre
+ulic_registry_ref: "governance/ledger/ULIC_v9.1.yaml"
+ulic_registry_sha256: "239170c0211ea4f66a8482ef54d03fa2cdf57d23fe830eba6d469aa41864eb2b"
+ulic_ots_receipt: "governance/ledger/ULIC_v9.1.ots"
+ulic_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
 verified_artifacts:
   - name: TruthSeal_Sovereign_Framework_v1.3.1_DualEdition.pdf
     path: governance/frameworks/
@@ -46,8 +50,8 @@ remarks: >
   The composite digest matches the registered ledger checksum.
   Pending anchoring: QENC_v1_0_ProofCapsule.json (awaiting OpenTimestamps network confirmation).
   composite_update:
-  timestamp_utc: "2025-11-03T07:22:00Z"
-  updated_digest: "6b65e99b77d06d32a45d30ff2b3e5d24c7a5e6e6ef7c228cdd42c7db7f1b5c6f"
+  timestamp_utc: "2025-11-05T22:44:00Z"
+  updated_digest: "<leave-as-is (use the same hex already in this file)>"
   verification_scope:
     - Annex_B_QE_Certification_Summary_v8.yaml
     - Integrity_Manifest_v8_pre.yaml
