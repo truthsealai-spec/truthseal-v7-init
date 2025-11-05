@@ -26,9 +26,6 @@ sha256:
   - "251463d574b1cca2ccf8be68879a12019e94b3a057638d330af273b3824514e9"
   - "173703a64fa4c18948f439b85c16627f6ee47a9b66c7f8008505062b0b45447d"
 
-# OTS receipt goes here (mobile-friendly location):
-ots_receipt: "governance/ledger/ULIC_v9.1.ots"
-ots_anchor_status: "Pending — OpenTimestamps"
 
 continuum_state:
   purity: "Tr(rho^2)=1.0"
