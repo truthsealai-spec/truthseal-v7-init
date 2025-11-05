@@ -2,9 +2,10 @@
 # ULIC Continuum Public Registry — v9.1-init
 # Status: Genesis Node — Sovereign Publication Layer
 
-registry_sha256: "9b50c2b1ae6a5734ffb4ee46d835e022dd106e8fadf1fbc493ba8519d11fd912"
+registry_sha256: "98241d7f83016160fca83e1a04363ec32dafe1b8f1eb5519bd843370902c3bd4"
 ots_receipt: "governance/ledger/ULIC_v9.1.ots"
-ots_anchor_status: "Receipt issued - awaiting Bitcoin confirmation (OpenTimestamps)"
+ots_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
+timestamp: "2025-11-05T16:00:00+11:00"
 
 jurisdiction: "Universal Law of Infinite Coherence (ULIC)"
 # internal governance: restricted reference only
