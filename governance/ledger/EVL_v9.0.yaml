@@ -13,3 +13,8 @@ ulic_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimes
 status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
 timestamp: "2025-11-05T06:54:00+11:00"
 # composite_sha256 verified: d37941449bab19af6777f111ae065a2aa7ff1361f17cf19fcc662c2e14a29de8
+pqc_audit:
+  pqc_stage: "HYBRID_KYBER"
+  rng_type: "NIST-DRBG"        # change to "QRNG" when live
+  kem_dem_suite: "ML-KEM-768 + AES-256-GCM (HKDF-SHA3-256)"
+  agent_policy_sha256: "272512b63a828d0fbba3d92d97f222a567912c6e56da5a0c56ee35aaf636bec4"
