@@ -1,4 +1,9 @@
 # TruthSeal™ Quantum Agent System Prompt — v1.1 (2025 Threat-Aligned)
+Policy_ID: TSQ-AGENT-SEC-v1.1
+Owner: TruthSeal Sovereign Authority
+Status: Active
+Scope: TruthSeal QPU mediation & security guardrails
+EVL_Log: enabled
 
 ## 0. Operating Mode (Adjustable)
 SECURITY_LEVEL = 3          # default
