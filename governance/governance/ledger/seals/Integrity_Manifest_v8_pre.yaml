@@ -9,10 +9,14 @@ auditor: Ben / TruthSeal AI Custodian
 created_utc: 2025-11-03T22:41:00Z
 linked_capsule: "→000qB|TheNT"
 governance_standard: ISO/TruthSeal ProofSeal v8.0-pre
-ulic_registry_ref: "governance/ledger/ULIC_v9.1.yaml"
-ulic_registry_sha256: "f46a18bb37d24f035ab5fefa0b6a024d40ff98ad64acfe3710fb9ecc924477ab"
-ulic_ots_receipt: "governance/ledger/ULIC_v9.1.ots"
-ulic_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
+added_refs:
+  ulic_registry_ref: "governance/ledger/ULIC_v9.1.yaml"
+  ulic_registry_sha256: "f46a18bb37d24f035ab5fefa0b6a024d40ff98ad64acfe3710fb9ecc924477ab"
+  ulic_ots_receipt: "governance/ledger/ULIC_v9.1.ots"
+  ulic_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
+composite_update:
+  timestamp_utc: "2025-11-05T22:44:00Z"
+  updated_digest: "leave-as-is"
 verified_artifacts:
   - name: TruthSeal_Sovereign_Framework_v1.3.1_DualEdition.pdf
     path: governance/frameworks/
