@@ -11,7 +11,7 @@ linked_capsule: "→000qB|TheNT"
 governance_standard: ISO/TruthSeal ProofSeal v8.0-pre
 added_refs:
   ulic_registry_ref: "governance/ledger/ULIC_v9.1.yaml"
-  ulic_registry_sha256: "f46a18bb37d24f035ab5fefa0b6a024d40ff98ad64acfe3710fb9ecc924477ab"
+  ulic_registry_sha256: "d37941449bab19af6777f111ae065a2aa7ff1361f17cf19fcc662c2e14a29de8"
   ulic_ots_receipt: "governance/ledger/ULIC_v9.1.ots"
   ulic_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
 composite_update: 
