@@ -18,7 +18,7 @@ authority: "TruthSeal Sovereign Authority"
 author: "Dr. Nickolay Traykov (Prof. h.c.)"
 title_role: "Founder & Sovereign Architect"
 auditor: "TruthSeal Autonomous Verification System"
-status: "Anchored — Epoch Verification Confirmed"
+status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
 
 linked_epochs:
   - "Integrity_Manifest_v8_pre.yaml"
