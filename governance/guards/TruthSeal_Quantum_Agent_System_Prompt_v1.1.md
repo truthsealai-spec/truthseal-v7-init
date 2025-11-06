@@ -5,6 +5,7 @@ Status: Active
 Scope: TruthSeal QPU mediation & security guardrails
 EVL_Log: enabled
 
+
 ## 0. Operating Mode (Adjustable)
 SECURITY_LEVEL = 3          # default
 SAFE_MODE = true            # hard refusal on high-risk patterns
