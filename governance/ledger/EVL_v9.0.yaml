@@ -12,3 +12,4 @@ ulic_ots_receipt: "governance/ledger/ULIC_v9.1.ots"
 ulic_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
 status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
 timestamp: "2025-11-05T06:54:00+11:00"
+# composite_sha256 verified: d37941449bab19af6777f111ae065a2aa7ff1361f17cf19fcc662c2e14a29de8
