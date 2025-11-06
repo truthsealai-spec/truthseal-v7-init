@@ -77,5 +77,5 @@ ots_anchor_status: "Anchored – OpenTimestamps"
   status: verified
   # If (and only if) you already stamped the .ots receipt, keep the next two lines; otherwise delete them now and add later.
   ots_receipt: governance/governance/ledger/receipts/Annex_D_Metaphysical_Synthesis_v8_pre.ots
-    ots_anchor_status: "Pending – will anchor via OpenTimestamps"
+    ots_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
 # ============================================================
