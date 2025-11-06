@@ -1,0 +1,30 @@
+version: "1.0"
+title: "EVL Job Attestation — code↔env↔result (TruthSeal)"
+record_type: "evl_job_attest"
+schema:
+  qid: "<string uuid>"
+  caller_id: "<string>"
+  pqc_stage: "<enum: OFF|HYBRID_KYBER|PQC_ONLY>"
+  submit:
+    canonicalization: "JSON.sort_keys+compact+LF"
+    hash_algo: "SHA256"
+    code_hash: "<hex64>"          # hash(params) BEFORE execution
+    ts_utc: "<RFC3339>"
+  env:
+    measure: "sandbox_fingerprint" # e.g., container image digest + QPU fw rev
+    hash_algo: "SHA256"
+    env_hash: "<hex64>"           # state measured IMMEDIATELY before run
+    ts_utc: "<RFC3339>"
+  result:
+    hash_algo: "SHA256"
+    result_hash: "<hex64>"        # hash of final result payload
+    ts_utc: "<RFC3339>"
+  decision:
+    allow: true                   # final gate decision the Commander took
+    security_level: 3
+    threat_score: 0.0             # from SLM
+  status: "<submitted|running|completed|denied|quarantined>"
+notes:
+  - "QPU MUST verify submit.code_hash against EVL before execution."
+  - "Post-run, recompute code hash and compare; mismatch → quarantine."
+  - "If any hash missing → status=quarantined and alert."
