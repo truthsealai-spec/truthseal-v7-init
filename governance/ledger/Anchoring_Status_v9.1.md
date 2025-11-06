@@ -1,6 +1,7 @@
 # TruthSeal Anchoring Status — v9.1 (mobile audit stub)
 
 composite_sha256: d37941449bab19af6777f111ae065a2aa7ff1361f17cf19fcc662c2e14a29de8
+last_checked_utc: "2025-11-06T07:00:53Z"
 
 ULIC_v9.1:
   ots_receipt: governance/ledger/ULIC_v9.1.ots
