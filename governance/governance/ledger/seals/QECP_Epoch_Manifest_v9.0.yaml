@@ -13,6 +13,7 @@ added_refs:
   ulic_ots_receipt: "governance/ledger/ULIC_v9.1.ots"
   ulic_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
   anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
+  # composite_sha256 verified: d37941449bab19af6777f111ae065a2aa7ff1361f17cf19fcc662c2e1
 
 linked_annexes:
   - "Annex_B_QE_Certification_Summary_v8.yaml"
