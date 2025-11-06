@@ -3,7 +3,12 @@
 # Status: Genesis Node — Sovereign Publication Layer
 
 # --- anchoring update (Nov 5) ---
-registry_sha256: "b7804b27d47ef48926eb7ab3f1c280e7f49f4deb1ef47ee87b0991c442bfaa32"
+registry_sha256: "f46a18bb37d24f035ab5fefa0b6a024d40ff98ad64acfe3710fb9ecc924477ab"
+sha256:
+  - "4cb795a7ce7d44b90135b236d2899f584c5107cdb9bc1552dd34e2f44e981b20"
+  - "251463d574b1cca2ccf8be68879a12019e94b3a057638d330af273b3824514e9"
+  - "173703a64fa4c18948f439b85c16627f6ee47a9b66c7f8008505062b0b45447d"
+  - "55f6ea93192b3a490b5b65dfc0ff4275358d92f237134cea54437bdcdf144bbb"
 ots_receipt: "governance/ledger/ULIC_v9.1.ots"
 ots_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
 phase: "10"
