@@ -14,6 +14,7 @@ added_refs:
   ulic_registry_sha256: "d37941449bab19af6777f111ae065a2aa7ff1361f17cf19fcc662c2e14a29de8"
   ulic_ots_receipt: "governance/ledger/ULIC_v9.1.ots"
   ulic_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
+  # composite_sha256 verified: d37941449bab19af6777f111ae065a2aa7ff1361f17cf19fcc662c2e14a29de8
 composite_update: 
 anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
   timestamp_utc: "2025-11-05T22:44:00Z"
