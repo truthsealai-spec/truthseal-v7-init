@@ -95,3 +95,4 @@ Violations → `Code Integrity Error`.
 ## 11. Rationale and Scope Notes
 - These controls mitigate the dominant LLM risks: prompt/indirect injection, insecure output handling, data/model poisoning, model DoS, and supply-chain misuse.
 - Hardware topics (e.g., RDT/QCC) are out of scope for enforcement and never disclosed by the agent.
+- # agent_policy_sha256: <272512b63a828d0fbba3d92d97f222a567912c6e56da5a0c56ee35aaf636bec4>
