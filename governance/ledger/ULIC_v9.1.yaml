@@ -22,7 +22,7 @@ status: "Anchored — Epoch Verification Confirmed"
 
 linked_epochs:
   - "Integrity_Manifest_v8_pre.yaml"
-  - "QECP_Epoch_Manifest_v9.0.yaml"
+  - "QCEP_Epoch_Manifest_v9.0.yaml"
   - "EVL_v9.0.yaml"
 
 sha256:
