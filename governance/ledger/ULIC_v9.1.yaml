@@ -1,5 +1,5 @@
 # --- ULIC_v9.1.yaml: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)" 
-registry_sha256: "f46a18bb37d24f035ab5fefa0b6a024d40ff98ad64acfe3710fb9ecc924477ab"
+registry_sha256: "d37941449bab19af6777f111ae065a2aa7ff1361f17cf19fcc662c2e14a29de8"
 ots_receipt: "governance/ledger/ULIC_v9.1.ots"
 ots_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
 ots_calendar_id: "0562721047c137584caa1fa57effdb6cf3a83fb47b5f7150faa04d4789bf2c7d"
