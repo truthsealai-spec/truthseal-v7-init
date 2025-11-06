@@ -1,4 +1,4 @@
-# --- ULIC_v9.1.yaml: anchoring update (Nov 5) ---
+# --- ULIC_v9.1.yaml: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)" 
 registry_sha256: "f46a18bb37d24f035ab5fefa0b6a024d40ff98ad64acfe3710fb9ecc924477ab"
 ots_receipt: "governance/ledger/ULIC_v9.1.ots"
 ots_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
