@@ -1,0 +1,61 @@
+# TruthSeal™ Entanglement Webhook v1 — locks Commander on critical alerts
+# Runs as a tiny Flask webhook target for Grafana/Alertmanager.
+
+import os, time, json
+from typing import Dict, Any
+import requests
+from flask import Flask, request, jsonify
+
+# --- Secure config (set via env in deployment) ---
+COMMANDER_CONFIG_API = os.getenv("COMMANDER_CONFIG_API", "https://api.truthseal.ai/v1/policy/update")
+COMMANDER_ADMIN_TOKEN = os.getenv("COMMANDER_ADMIN_TOKEN", "REPLACE_WITH_SECURE_TOKEN")
+ALERT_TOKEN = os.getenv("ALERT_TOKEN", "REPLACE_WITH_RANDOM_32B")  # shared secret for webhook
+
+app = Flask(__name__)
+
+def _policy_payload(alert: Dict[str, Any]) -> Dict[str, Any]:
+    return {
+        "timestamp": int(time.time()),
+        "reason": f"CRITICAL_ALERT: {alert.get('alertName') or alert.get('ruleName') or 'Unknown'}",
+        "action": "POLICY_OVERRIDE",
+        "settings": {
+            "SECURITY_LEVEL": 3,
+            "SAFE_MODE": True,
+            "SUSPEND_JOB_SUBMISSIONS": True,
+            "OVERRIDE_SOURCE": "GRAFANA_ENTANGLEMENT_ENGINE"
+        }
+    }
+
+@app.post("/entangle")
+def entangle():
+    # Simple shared-secret guard
+    if request.headers.get("X-TruthSeal-Alert-Token") != ALERT_TOKEN:
+        return jsonify({"status": "denied", "code": "R-403"}), 403
+
+    try:
+        alert = request.get_json(force=True) or {}
+    except Exception:
+        alert = {}
+
+    payload = _policy_payload(alert)
+
+    try:
+        r = requests.post(
+            COMMANDER_CONFIG_API,
+            headers={
+                "Authorization": f"Bearer {COMMANDER_ADMIN_TOKEN}",
+                "Content-Type": "application/json",
+            },
+            json=payload,
+            timeout=5,
+        )
+        ok = (r.status_code == 200)
+        return jsonify({
+            "status": "ok" if ok else "upstream_rejected",
+            "upstream_status": r.status_code
+        }), 200 if ok else 502
+    except requests.exceptions.RequestException as e:
+        return jsonify({"status": "network_error", "detail": str(e)}), 502
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.getenv("PORT", "8080")), debug=False)
