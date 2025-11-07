@@ -1,0 +1,27 @@
+# TruthSeal™ Grafana/Alertmanager rules (v1)
+groups:
+  - name: truthseal_security
+    interval: 1m
+    rules:
+      # 1) Threat score crossed red line
+      - alert: HighThreatScore
+        expr: max by(instance) (SLM_Threat_Score_Avg{job="truthseal_security_reporter"}) > 0.8
+        for: 2m
+        labels:
+          service: truthseal
+          severity: critical
+        annotations:
+          summary: "Critical threat score on {{ $labels.instance }} (>{{ $value | printf \"%.2f\" }})"
+          action: "Auto-lock to SECURITY_LEVEL=3 and investigate SLM logs."
+
+      # 2) Any red-line trip or enforced L3 lockdown
+      - alert: RedLineOrLevel3Increase
+        expr: (increase(Red_Line_Trip_Count{job="truthseal_security_reporter"}[1m]) > 0)
+              or (increase(Security_Level_3_Enforced_Count{job="truthseal_security_reporter"}[1m]) > 0)
+        for: 0m
+        labels:
+          service: truthseal
+          severity: critical
+        annotations:
+          summary: "Red-line tripped or Level-3 enforced on {{ $labels.instance }}"
+          action: "Freeze new QPU jobs; open incident; correlate with EVL entries."
