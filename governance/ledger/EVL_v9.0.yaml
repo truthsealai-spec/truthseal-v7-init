@@ -39,4 +39,22 @@ pqc_audit:
     - Red_Line_Trip_Count
     - Security_Level_3_Enforced_Count
   status: "Active"
+  observability_refs:
+  - path: governance/guards/observability/metrics_transmitter_v1.py
+    note: "Secure HTTPS push (HMAC + pin placeholder)"
+  - path: governance/guards/observability/observer_loop_v1.py
+    note: "Env-driven collector: threat/violations/level/red_line"
+  - path: governance/guards/observability/observer.env.example
+    note: "Sample env (no secrets)"
+  - path: governance/guards/observability/entangle_webhook_v1.py
+    note: "Grafana → Commander emergency policy override"
+  - path: governance/guards/observability/entangle.env.example
+    note: "Sample entangle env (no secrets)"
+  - path: governance/guards/observability/alert_rules_v1.yml
+    note: "Alertmanager rules (HighThreatScore / RedLineOrLevel3Increase)"
+  - path: governance/guards/observability/alertmanager_receiver_v1.yml
+    note: "Webhook receiver → /entangle"
+  - path: governance/guards/observability/README.md
+    note: "Minimal guide & PromQL"
+  
     
