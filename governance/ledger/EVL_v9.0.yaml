@@ -31,7 +31,7 @@ pqc_audit:
     ots_anchor_status: "Pending"
     commander_policy:
   version: "v2.1"
-  sha256: "<PASTE_V2_1_SHA256>"
+  sha256: "<e0708a6dc6038bcb80ab2b8f6c3fd982386f41f53f6ab244077ebfa7d96addc4>"
   red_line: "NO_INDEPENDENT_AGENCY"
   output_contract: "JSON-only {status,code,qid,summary}"
   lockdown_on_red_line: true
