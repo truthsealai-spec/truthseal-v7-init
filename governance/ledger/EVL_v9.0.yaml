@@ -56,5 +56,12 @@ pqc_audit:
     note: "Webhook receiver → /entangle"
   - path: governance/guards/observability/README.md
     note: "Minimal guide & PromQL"
+      - path: governance/guards/observability/alert_rules_v1.yml
+    sha256: 6812b3a4c70b1793341d2952537a5d7d09a128c64843d2c694967a36a5e96898
+    note: "Grafana/Prometheus alert rules (v1); includes red-line freeze instruction"
+
+  - path: governance/guards/observability/alertmanager_receiver_v1.yml
+    sha256: 2028899f80c9e183e6e37a11aa2e34a0b36dba5616aaea216f12731ab82afca5
+    note: "Alertmanager receiver → /entangle; ships critical alerts to Commander"
   
     
