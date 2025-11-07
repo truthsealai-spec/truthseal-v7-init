@@ -29,4 +29,14 @@ pqc_audit:
     sha256: 32c9952b67bfdfaa858b8aaa983f0d71a27930e6c58dbac36bbf381589b747b6
     ots_receipt: governance/ledger/receipts/TruthSeal_Paramount_Policy_Charter_v1.0.ots
     ots_anchor_status: "Pending"
+    commander_policy:
+  version: "v2.1"
+  sha256: "<PASTE_V2_1_SHA256>"
+  red_line: "NO_INDEPENDENT_AGENCY"
+  output_contract: "JSON-only {status,code,qid,summary}"
+  lockdown_on_red_line: true
+  telemetry_counters:
+    - Red_Line_Trip_Count
+    - Security_Level_3_Enforced_Count
+  status: "Active"
     
