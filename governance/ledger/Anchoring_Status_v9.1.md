@@ -3,6 +3,8 @@
 composite_sha256: d37941449bab19af6777f111ae065a2aa7ff1361f17cf19fcc662c2e14a29de8
 last_checked_utc: "2025-11-06T07:00:53Z"
 Verification summary:
+• Commander policy v2.1 → sha256 matches EVL ✅
+  e0708a6dc6038bcb80ab2b8f6c3fd982386f41f53f6ab244077ebfa7d96addc4
 - Validator (job_validator_v1.py) → matches EVL validator_sha256 ✅
 - ULIC_v9.1 → registry_sha256 matches composite ✅
 - EVL_v9.0 → ulic_registry_sha256 matches composite ✅
@@ -49,4 +51,12 @@ Integrity_Manifest_v8_pre:
   
 Next actions:
   - Upload .ots files (ULIC_v9.1.ots, EVL_v9.0.ots) into governance/ledger/ when on desktop.
-  - When confirmations land, flip all ots_anchor_status values to: "Anchored — Epoch Verification Confirmed".
+  - When confirmations land, flip all ots_anchor_status values to: "Anchored — Epoch Verification Confirmed"
+  - Commander policy (v2.1)
+- sha256: e0708a6dc6038bcb80ab2b8f6c3fd982386f41f53f6ab244077ebfa7d96addc4
+- red_line: "NO_INDEPENDENT_AGENCY"
+- output_contract: "JSON-only {status, code, qid, summary}"
+- lockdown_on_red_line: true
+- telemetry_counters:
+  - Red_Line_Trip_Count
+  - Security_Level_3_Enforced_Count
