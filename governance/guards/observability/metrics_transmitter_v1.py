@@ -37,9 +37,8 @@ ALLOWED_METRICS = {
     "Unapproved_Op_Count",
     "Job_Wall_Time_Violation_Count",
     "Security_Level_3_Enforced_Count",
+    "Red_Line_Trip_Count",           # added for Commander v2.1 telemetry
 }
-
-# Canonical label allow-list (keys only). Values are length-checked and control characters stripped.
 ALLOWED_LABEL_KEYS = {
     "source", "violation_type", "severity", "env", "region",
     "job", "instance"
@@ -193,3 +192,4 @@ if __name__ == "__main__":
     ]
     ok = tx.push(sample)
     print("pushed=", ok)
+    
