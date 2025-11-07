@@ -1,3 +1,28 @@
+# Metrics endpoint used by the observer/transmitter.
+# Example: https://metrics.truthseal.ai/api/prom/push
+METRICS_ENDPOINT=https://metrics.truthseal.ai/api/prom/push
+
+# Basic auth for the metrics endpoint.
+METRICS_USERNAME=truthseal_reporter
+METRICS_API_KEY=REPLACE_WITH_SECURE_TOKEN
+
+# Hash-based message authentication code (HMAC) secret for payload signing.
+METRICS_HMAC_KEY=REPLACE_WITH_RANDOM_32B_SECRET
+
+# TLS certificate pin (SHA-256) for endpoint certificate locking.
+METRICS_TLS_CERT_PIN_SHA256=REPLACE_WITH_CERT_PIN_SHA256
+
+# Job labels for Grafana/Prometheus.
+METRICS_JOB_NAME=truthseal_security_reporter
+INSTANCE_ID=commander-instance-01
+
+# Observer timing (seconds between pushes).
+METRICS_REPORT_EVERY_SECONDS=10
+
+# Runtime counters/flags (read-only in prod; useful for local dry-runs).
+THREAT_SCORE_AVG=0.0
+SECURITY_POLICY_VIOLATION_COUNT=0
+SECURITY_LEVEL=2
 import os, time
 from typing import List, Dict, Any
 
