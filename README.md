@@ -13,3 +13,18 @@ sum by (instance) (increase(Red_Line_Trip_Count{job="truthseal_security_reporter
 
 **Level-3 enforcements (last 24h)**
 sum by (instance) (increase(Security_Level_3_Enforced_Count{job="truthseal_security_reporter"}[1d]))
+## Panel thresholds (copy into Grafana)
+
+**Threat score (Gauge or Time series)**
+- Query: max by(instance)(SLM_Threat_Score_Avg{job="truthseal_security_reporter"})
+- Thresholds:
+  • 0.20 = green (normal)
+  • 0.50 = orange (elevated)
+  • 0.80 = red (critical)
+
+**Violations rate (Stat or Time series)**
+- Query: sum by(instance)(rate(Security_Policy_Violation_Count{job="truthseal_security_reporter"}[5m]))
+- Unit: /s
+- Thresholds (per instance):
+  • 0.02 = yellow (warning)
+  • 0.10 = red (critical)
