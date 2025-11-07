@@ -18,3 +18,11 @@ pqc_audit:
   rng_type: "NIST-DRBG"        # change to "QRNG" when live
   kem_dem_suite: "ML-KEM-768 + AES-256-GCM (HKDF-SHA3-256)"
   agent_policy_sha256: "272512b63a828d0fbba3d92d97f222a567912c6e56da5a0c56ee35aaf636bec4"
+  
+  policy_refs:
+  - id: TSP-ETHICS-CHARTER-v1.0
+    path: governance/TruthSeal_Paramount_Policy_Charter_v1.0.md
+    sha256: 32c9952b67bfdfaa858b8aaa983f0d71a27930e6c58dbac36bbf381589b747b6
+    ots_receipt: governance/ledger/receipts/TruthSeal_Paramount_Policy_Charter_v1.0.ots
+    ots_anchor_status: "Pending"
+    
