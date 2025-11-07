@@ -6,7 +6,7 @@ created_utc: 2025-11-07T00:00:00Z
 lei: 1
 classification: Public policy (Doctorantura exclusions apply)
 doctorantura_exclusions: [ "ULIC", "PODAPAR", "Infinity Formula" ]
-sha256: "<insert_after_commit>"
+sha256: "<32c9952b67bfdfaa858b8aaa983f0d71a27930e6c58dbac36bbf381589b747b6>"
 ots_receipt: "governance/ledger/receipts/TruthSeal_Paramount_Policy_Charter_v1.0.ots"
 ots_anchor_status: "Pending"
 linked_ledgers:
