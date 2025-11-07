@@ -1,0 +1,28 @@
+# TruthSeal™ Alertmanager receiver — v1 (entanglement webhook)
+# Use as a standalone AM config or copy blocks into your main alertmanager.yaml
+
+global: {}
+
+route:
+  receiver: truthseal-entangle
+  routes:
+    # Send our critical security alerts to the entanglement webhook
+    - matchers:
+        - alertname=~"HighThreatScore|RedLineOrLevel3Increase"
+      receiver: truthseal-entangle
+
+receivers:
+  - name: truthseal-entangle
+    webhook_configs:
+      # Fallback: pass token via query (works on any AM build)
+      - url: https://<WEBHOOK_HOST>/entangle?token=${ALERT_TOKEN}
+        send_resolved: true
+        http_config:
+          follow_redirects: false
+          tls_config:
+            insecure_skip_verify: false
+          # Preferred (more secure): use Authorization: Bearer
+          # Enable Alertmanager with --config.expand-env, then uncomment:
+          # authorization:
+          #   type: Bearer
+          #   credentials: ${ALERT_TOKEN}
