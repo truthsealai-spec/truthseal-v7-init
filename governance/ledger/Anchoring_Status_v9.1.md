@@ -3,6 +3,7 @@
 composite_sha256: d37941449bab19af6777f111ae065a2aa7ff1361f17cf19fcc662c2e14a29de8
 last_checked_utc: "2025-11-06T07:00:53Z"
 Verification summary:
+- Validator (job_validator_v1.py) → matches EVL validator_sha256 ✅
 - ULIC_v9.1 → registry_sha256 matches composite ✅
 - EVL_v9.0 → ulic_registry_sha256 matches composite ✅
 - QCEP_Epoch_Manifest_v9.0 → added_refs.ulic_registry_sha256 matches composite ✅
