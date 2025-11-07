@@ -2,3 +2,6 @@
 governance/guards/observability/.env
 governance/guards/observability/*.key
 governance/guards/observability/*.pem
+# Observability runtime env files (never commit)
+governance/guards/observability/observer.env
+governance/guards/observability/entangle.env
