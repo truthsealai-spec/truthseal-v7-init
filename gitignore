@@ -1,0 +1,4 @@
+# TruthSeal observability secrets — never commit these
+governance/guards/observability/.env
+governance/guards/observability/*.key
+governance/guards/observability/*.pem
