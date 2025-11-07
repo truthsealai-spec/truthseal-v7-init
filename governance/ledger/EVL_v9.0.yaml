@@ -20,7 +20,7 @@ pqc_audit:
   agent_policy_sha256: "272512b63a828d0fbba3d92d97f222a567912c6e56da5a0c56ee35aaf636bec4"
 
 
-  validator_sha256: "12d20c62728ec2f5d5235353e258b4c6f5eb65c856b345ddc2cb0b243ce9f9e8"
+  validator_sha256: "476c637816975581571dc006506f81e5b7ed5d924cfe1c88445e4d9486d1f9bc"
   
   policy_refs:
   - id: TSP-ETHICS-CHARTER-v1.0
