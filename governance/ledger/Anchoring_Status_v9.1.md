@@ -60,3 +60,5 @@ Next actions:
 - telemetry_counters:
   - Red_Line_Trip_Count
   - Security_Level_3_Enforced_Count
+  - • alert_rules_v1.yml → sha256=6812b3a4c70b1793341d2952537a5d7d09a128c64843d2c694967a36a5e96898 matches EVL observability_refs ✅
+• alertmanager_receiver_v1.yml → sha256=2028899f80c9e183e6e37a11aa2e34a0b36dba5616aaea216f12731ab82afca5 matches EVL observability_refs ✅
