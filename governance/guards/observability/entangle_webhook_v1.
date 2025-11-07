@@ -28,8 +28,14 @@ def _policy_payload(alert: Dict[str, Any]) -> Dict[str, Any]:
 
 @app.post("/entangle")
 def entangle():
-    # Simple shared-secret guard
-    if request.headers.get("X-TruthSeal-Alert-Token") != ALERT_TOKEN:
+
+        # Auth: header OR bearer OR ?token=
+    token_hdr = request.headers.get("X-TruthSeal-Alert-Token")
+    auth = request.headers.get("Authorization", "")
+    bearer = auth.split(" ", 1)[1] if auth.startswith("Bearer ") else None
+    token_qs = request.args.get("token")
+    presented = token_hdr or bearer or token_qs
+    if not presented or presented != ALERT_TOKEN:
         return jsonify({"status": "denied", "code": "R-403"}), 403
 
     try:
