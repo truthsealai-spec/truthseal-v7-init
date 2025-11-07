@@ -5,6 +5,7 @@ sha256:
   - "55f6ea93192b3a490b5b65dfc0ff4275358d92f237134cea54437bdcdf144bbb"
 ots_receipt: "governance/ledger/EVL_v9.0.ots"
 ots_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
+validator_sha256: 476c637816975581571dc006506f81e5b7ed5d924cfe1c88445e4d9486d1f9bc
 ots_calendar_id: "ae277fd4755d3eef0c4ad21a2ef94b9c9239a37cdc9f8de1ba930fcf104b9960"
 ulic_registry_ref: "governance/ledger/ULIC_v9.1.yaml"
 ulic_registry_sha256: "d37941449bab19af6777f111ae065a2aa7ff1361f17cf19fcc662c2e14a29de8"
