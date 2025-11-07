@@ -1,3 +1,5 @@
+# Package marker for observability components.
+# Do not place secrets or runtime config here.
 import os, time
 from typing import List, Dict, Any
 
