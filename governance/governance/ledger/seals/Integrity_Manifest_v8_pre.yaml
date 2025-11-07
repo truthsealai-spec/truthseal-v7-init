@@ -87,4 +87,10 @@ ots_anchor_status: "Anchored – OpenTimestamps"
   # If (and only if) you already stamped the .ots receipt, keep the next two lines; otherwise delete them now and add later.
   ots_receipt: governance/governance/ledger/receipts/Annex_D_Metaphysical_Synthesis_v8_pre.ots
     ots_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
+    policy_refs:
+  - id: TSP-ETHICS-CHARTER-v1.0
+    path: governance/TruthSeal_Paramount_Policy_Charter_v1.0.md
+    sha256: 32c9952b67bfdfaa858b8aaa983f0d71a27930e6c58dbac36bbf381589b747b6
+    evl_ref: governance/ledger/EVL_v9.0.yaml
+    note: "Public policy; ULIC/PODAPAR/Infinity kept classified"
 # ============================================================
