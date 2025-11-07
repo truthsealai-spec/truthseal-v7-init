@@ -20,21 +20,24 @@ REPORT_EVERY_SECONDS = int(os.getenv("METRICS_REPORT_EVERY_SECONDS", "10"))
 def collect_metrics() -> List[Dict[str, Any]]:
     """
     Minimal collector:
-      - threat score average comes from an environment variable
-      - violation count comes from an environment variable
-      - level-three enforced flag derives from SECURITY_LEVEL
+      - threat score average from env
+      - violation count from env
+      - level-three enforced flag from env
+      - red line trips from env (NEW)
     """
-    # Pull counters from environment (agent or commander sets these)
-    threat_avg = float(os.getenv("THREAT_SCORE_AVG", "0.0"))
-    violations = float(os.getenv("SECURITY_POLICY_VIOLATION_COUNT", "0"))
-    level = os.getenv("SECURITY_LEVEL", "2").strip()
-    enforced = 1.0 if level == "3" else 0.0
+    threat_avg   = float(os.getenv("THREAT_SCORE_AVG", "0"))
+    violations   = float(os.getenv("SECURITY_POLICY_VIOLATION_COUNT", "0"))
+    level        = os.getenv("SECURITY_LEVEL", "2")
+    enforced     = 1.0 if level.strip() == "3" else 0.0
+    red_line_cnt = float(os.getenv("RED_LINE_TRIP_COUNT", "0"))  # NEW
 
     return [
-        {"name": "SLM_Threat_Score_Avg", "value": threat_avg, "labels": {"source": "slm_aggregate"}},
-        {"name": "Security_Policy_Violation_Count", "value": violations, "labels": {"source": "commander"}},
-        {"name": "Security_Level_3_Enforced_Count", "value": enforced, "labels": {"source": "commander"}},
+        {"name": "SLM_Threat_Score_Avg",        "value": threat_avg,   "labels": {"source": "commander"}},
+        {"name": "Security_Policy_Violation_Count","value": violations, "labels": {"violation_type": "aggregate"}},
+        {"name": "Security_Level_3_Enforced_Count","value": enforced,   "labels": {}},
+        {"name": "Red_Line_Trip_Count",         "value": red_line_cnt, "labels": {"severity": "critical"}},  # NEW
     ]
+    
 
 def main() -> None:
     tx = MetricsTransmitter(
