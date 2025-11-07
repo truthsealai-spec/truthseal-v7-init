@@ -7,6 +7,13 @@ Verification summary:
 - EVL_v9.0 → ulic_registry_sha256 matches composite ✅
 - QCEP_Epoch_Manifest_v9.0 → added_refs.ulic_registry_sha256 matches composite ✅
 - Integrity_Manifest_v8_pre → added_refs.ulic_registry_sha256 matches composite ✅
+- Paramount_Policy_Charter_v1_0:
+  path: governance/TruthSeal_Paramount_Policy_Charter_v1.0.md
+  sha256: 32c9952b67bfdfaa858b8aaa983f0d71a27930e6c58dbac36bbf381589b747b6
+  evl_ref: governance/ledger/EVL_v9.0.yaml
+  ulic_registry_sha256: d37941449bab19af6777f111ae065a2aa7ff1361f17cf19fcc662c2e14a29de8
+  ots_receipt: governance/ledger/receipts/TruthSeal_Paramount_Policy_Charter_v1.0.ots
+  ots_anchor_status: "Pending"
 
 ULIC_v9.1:
   ots_receipt: governance/ledger/ULIC_v9.1.ots
