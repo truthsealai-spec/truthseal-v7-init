@@ -18,6 +18,9 @@ pqc_audit:
   rng_type: "NIST-DRBG"        # change to "QRNG" when live
   kem_dem_suite: "ML-KEM-768 + AES-256-GCM (HKDF-SHA3-256)"
   agent_policy_sha256: "272512b63a828d0fbba3d92d97f222a567912c6e56da5a0c56ee35aaf636bec4"
+
+
+  validator_sha256: "12d20c62728ec2f5d5235353e258b4c6f5eb65c856b345ddc2cb0b243ce9f9e8"
   
   policy_refs:
   - id: TSP-ETHICS-CHARTER-v1.0
