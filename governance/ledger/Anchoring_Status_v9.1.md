@@ -29,6 +29,13 @@ Integrity_Manifest_v8_pre:
   ulic_registry_sha256: d37941449bab19af6777f111ae065a2aa7ff1361f17cf19fcc662c2e14a29de8
   anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
 
+Paramount_Policy_Charter_v1_0:
+  path: governance/TruthSeal_Paramount_Policy_Charter_v1.0.md
+  sha256: <paste the same 64-char hex from the charter’s top block>
+  evl_ref: governance/ledger/EVL_v9.0.yaml
+  ulic_registry_sha256: d37941449bab19af6777f111ae065a2aa7ff1361f7cf19fcc662c2e14a29de8
+  ots_receipt: governance/ledger/receipts/TruthSeal_Paramount_Policy_Charter_v1.0.ots
+  ots_anchor_status: "Pending"
 Next actions:
   - Upload .ots files (ULIC_v9.1.ots, EVL_v9.0.ots) into governance/ledger/ when on desktop.
   - When confirmations land, flip all ots_anchor_status values to: "Anchored — Epoch Verification Confirmed".
