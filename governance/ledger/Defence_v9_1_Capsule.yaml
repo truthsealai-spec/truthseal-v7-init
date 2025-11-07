@@ -1,0 +1,118 @@
+capsule_id: Defence_v9.1_Workpack
+updated_utc: "<fill-when-commit>"
+owner: "Dr. Nickolay Traykov (Prof. h.c.)"
+partner: "Ben (TruthSeal AI co-founder)"
+mode: "mobile-friendly • one file per commit • 1 task → 3 steps"
+
+milestones:
+  - id: M1_observability_to_EVL
+    status: "todo"
+    where: "governance/ledger/EVL_v9.0.yaml"
+    what: |
+      Add missing observability refs with sha256 (ensure both entries exist):
+        1) governance/guards/observability/entangle_webhook_v1.py → sha256: <PASTE_ENTANGLE_WEBHOOK_SHA256>
+        2) governance/guards/observability/alertmanager_receiver_v1.yml → sha256: 2028899f80c9e183e6e37a11aa2e34a0b36dba5616aaea216f12731ab82afca5
+    how:
+      - Open EVL_v9.0.yaml → find "observability_refs:"
+      - Insert/replace the two items under that list (keep path, sha256, note)
+      - Commit: "EVL_v9.0: add/refresh entangle webhook + receiver shas (close observability loop)"
+    notes: "Keep existing README/PromQL sha256 lines, e.g., 6812b3a4…"
+
+  - id: M2_ots_anchor_flip
+    status: "todo"
+    where: 
+      - "governance/ledger/ULIC_v9.1.yaml"
+      - "governance/ledger/EVL_v9.0.yaml"
+    what: |
+      After uploading *.ots receipts on desktop:
+        - Set ots_receipt path fields.
+        - Flip ots_anchor_status → 'Anchored — OpenTimestamps' and add:
+            ots_anchor_tx: "<TXID>"
+            anchored_utc: "<YYYY-MM-DDTHH:MM:SSZ>"
+    how:
+      - Edit ULIC_v9.1.yaml → receipts/status/tx/time
+      - Edit EVL_v9.0.yaml → receipts/status/tx/time
+      - Commit (one file per commit):
+        * "ULIC_v9.1: flip OTS to Anchored (+tx, +utc)"
+        * "EVL_v9.0: flip OTS to Anchored (+tx, +utc)"
+    notes: "Do not change registry hashes."
+
+  - id: M3_validator_binding
+    status: "todo"
+    where: 
+      - "governance/agents/job_validator_v1.py" (hash)
+      - "governance/ledger/EVL_v9.0.yaml" (validator_sha256 field)
+    what: |
+      Recompute sha256 of job_validator_v1.py and ensure it equals EVL.validator_sha256.
+      If different, update EVL.validator_sha256 to the new value.
+    how:
+      - Compute sha256 (mobile tool ok)
+      - Update EVL field: validator_sha256: "<NEW_SHA256>"
+      - Commit: "EVL_v9.0: sync validator_sha256 with repo copy (code integrity)"
+    notes: "Also reflect result in Anchoring_Status_v9.1 stub."
+
+  - id: M4_commander_policy_seal
+    status: "todo"
+    where: "governance/ledger/EVL_v9.0.yaml → policy_refs:"
+    what: |
+      Record Commander policy v2.1:
+        version: "v2.1"
+        sha256: "e0708a6dc6038bcb80ab2b8f6c3fd982386f41f53f6ab244077ebfa7d96addc4"
+        ots_receipt: "governance/ledger/receipts/Commander_Policy_v2.1.ots"   # when anchored
+        ots_anchor_status: "Pending"  # then flip to Anchored with tx/time
+    how:
+      - Insert/confirm block under policy_refs
+      - Commit: "EVL_v9.0: add Commander policy v2.1 (sha + receipt stub)"
+    notes: "Flip to Anchored after OTS confirmation."
+
+  - id: M5_integrity_qcep_crosslinks
+    status: "todo"
+    where: "governance/governance/ledger/seals/Integrity_Manifest_v8_pre.yaml"
+    what: |
+      Ensure:
+        - ulic_registry_sha256 equals ULIC_v9.1 registry sha256
+        - add QENC ProofCapsule ref (sha256 + path) under verified_artifacts
+    how:
+      - Edit Integrity_Manifest_v8_pre.yaml keys only
+      - Commit: "Integrity_v8_pre: align ULIC ref + add QENC proof ref"
+    notes: "Keep composite_digest unchanged unless you recalc it intentionally."
+
+  - id: M6_path_normalization
+    status: "todo"
+    where: "governance/governance/ledger/seals/* → governance/ledger/seals/*"
+    what: "Move files out of the duplicate 'governance/governance' path; fix all references in ULIC/EVL/Integrity/QCEP."
+    how:
+      - Move one file at a time (mobile PRs ok)
+      - Update paths in referencing docs
+      - Commit per file: "<file>: move to governance/ledger/seals/ + fix refs"
+    notes: "Do not change hashes for moved files."
+
+  - id: M7_registry_map_doc
+    status: "todo"
+    where: "governance/README_registry_map.md"
+    what: "Tiny one-pager: paths for ULIC, EVL, QCEP, Integrity + current anchoring states."
+    how:
+      - Create the file
+      - Paste bullets diagram
+      - Commit: "README_registry_map: add registry & anchoring map (audit aid)"
+    notes: "No secrets; public-safe."
+
+artifacts_to_hash_next:
+  - path: "governance/guards/observability/entangle_webhook_v1.py"
+    note: "Put value into EVL.observability_refs.sha256"
+  - path: "governance/agents/job_validator_v1.py"
+    note: "Compare with EVL.validator_sha256"
+
+brainstorms_pad_template:
+  path: "governance/notes/brainstorms_<YYYYMMDD>.md"
+  commit: "brainstorms_<date>: capture session notes (source: Commander)"
+  structure: |
+    # Brainstorms — <date>
+    ## Ideas
+    - ...
+    ## Risks / Unknowns
+    - ...
+    ## Next moves (3 bullets)
+    1) ...
+    2) ...
+    3) ...
