@@ -1,0 +1,13 @@
+name: Emit ACS sample
+on:
+  workflow_dispatch:
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run ACS emitter on sample counters
+        env:
+          METRICS_INPUT_JSON: governance/guards/observability/metrics_sample.js
+        run: |
+          python3 governance/guards/observability/acs_metrics_emitter_v1.py
