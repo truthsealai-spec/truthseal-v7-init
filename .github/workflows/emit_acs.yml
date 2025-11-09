@@ -4,8 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'governance/guards/observability/metrics_sample.json'
-      - 'governance/guards/observability/acs_metrics_emitter_v1.py'
+      - 'governance/guards/observability/**'
       - '.github/workflows/emit_acs.yml'
 
 jobs:
@@ -17,9 +16,9 @@ jobs:
       - name: Sanity check
         run: |
           echo "== pwd ==" && pwd
-          echo "== git HEAD ==" && git rev-parse --short HEAD
-          echo "== list observability ==" && ls -la governance/guards/observability || true
           echo "== python ==" && python3 --version
+          echo "== show HEAD ==" && git rev-parse --short HEAD
+          echo "== list observability ==" && ls -la governance/guards/observability
 
       - name: Show sample input
         run: |
@@ -29,9 +28,9 @@ jobs:
       - name: Run ACS emitter on sample counters
         env:
           PYTHONUNBUFFERED: '1'
+          PYTHONPATH: ${{ github.workspace }}
           METRICS_INPUT_JSON: governance/guards/observability/metrics_sample.json
         run: |
           echo "== Run emitter =="
-          python3 governance/guards/observability/acs_metrics_emitter_v1.py
+          python3 -m governance.guards.observability.acs_metrics_emitter_v1
           echo "== End emitter =="
-        continue-on-error: true
