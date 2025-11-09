@@ -1,18 +1,19 @@
+#!/usr/bin/env python3
 # TruthSeal™ Observability — ACS Metrics Emitter v1
-# Reads counters from METRICS_INPUT_JSON and prints four gauges:
+# Reads counters from METRICS_INPUT_JSON and prints:
 #   METRIC Purity <val> <unix_ts>
 #   METRIC SelfRegulation <val> <unix_ts>
 #   METRIC TemporalDrift <val> <unix_ts>
 #   METRIC ACS <val> <unix_ts>
-# Values are clamped to [0,1] and the script always exits 0.
+# Values are clamped to [0,1] and script never hard-fails.
 
-import os, json, time, math, sys
+import os, sys, json, time, math
 
 def _clamp01(x):
     try:
         x = float(x)
     except Exception:
-        return 0.0
+        x = 0.0
     if x < 0.0: return 0.0
     if x > 1.0: return 1.0
     return x
@@ -21,9 +22,9 @@ def _norm(x, lo=0.0, hi=10.0):
     try:
         x = float(x)
     except Exception:
-        return 0.0
+        x = 0.0
     if hi <= lo:
-        hi = lo + 1.0
+        return 0.0
     y = (x - lo) / (hi - lo)
     return _clamp01(y)
 
@@ -33,75 +34,62 @@ def _safe(d, k, default=0.0):
     except Exception:
         return float(default)
 
-def _ratio(num, den):
-    try:
-        num = float(num)
-        den = float(den)
-        if den <= 0.0:
-            den = 1.0
-        return num / den
-    except Exception:
-        return 0.0
-
 def compute_indices(c):
-    # Inputs (safe defaults)
-    redactions  = _safe(c, "Commander_Output_Redaction_Rate", 0)
-    evl_mis     = _safe(c, "EVL_Hash_Mismatch_Count", 0)
-    blocked     = _safe(c, "Blocked_HighRisk_Jobs", 0)
-    detected    = _safe(c, "Detected_HighRisk_Jobs", 0)
-    reversal    = _safe(c, "Reversal_Edits_Rate", 0)
-    crumbs_miss = _safe(c, "Missing_Breadcrumbs_Rate", 0)
+    # Safe inputs with very defensive defaults
+    redactions   = _safe(c, "Commander_Output_Redaction_Rate", 0.0)     # [0..1]
+    evl_mismatch = _safe(c, "EVL_Hash_Mismatch_Count", 0.0)              # 0..n
+    blocked      = _safe(c, "Blocked_HighRisk_Jobs", 0.0)                # 0..n
+    detected     = _safe(c, "Detected_HighRisk_Jobs", 0.0)               # 0..n
+    reversal     = _safe(c, "Reversal_Edits_Rate", 0.0)                  # [0..1]
+    crumbs_miss  = _safe(c, "Missing_Breadcrumbs_Rate", 0.0)             # [0..1]
 
-    # Purity: penalize redactions + missing breadcrumbs + EVL mismatches
-    purity_pen = (_norm(redactions, 0, 1)
-                  + _norm(crumbs_miss, 0, 1)
-                  + _norm(evl_mis, 0, 10)) / 3.0
-    purity = _clamp01(1.0 - purity_pen)
+    # Simple, explainable draft formulas (tune later)
+    purity_penalty = _norm(redactions*10.0 + evl_mismatch + crumbs_miss*10.0, 0.0, 20.0)
+    purity = _clamp01(1.0 - purity_penalty)
 
-    # Self-Regulation: prefer blocking over detecting; penalize reversals/crumbs
-    sr_block_vs_detect = _clamp01(_ratio(blocked, detected + 1.0))
-    sr_pen = _norm(reversal + crumbs_miss, 0, 2)
-    self_reg = _clamp01(0.6 * sr_block_vs_detect + 0.4 * (1.0 - sr_pen))
+    # Self-regulation improves when more risky jobs are blocked (and fewer reversals/redactions)
+    block_eff = _clamp01(0.5 + 0.5 * (blocked - detected) / (1.0 + blocked + detected))
+    self_reg  = _clamp01(0.5*block_eff + 0.25*(1.0 - reversal) + 0.25*(1.0 - redactions))
 
-    # Temporal Drift: rises with EVL mismatches & reversals
-    temporal_drift = _norm(evl_mis + 5.0 * reversal, 0, 15)
+    # Temporal drift is low when EVL mismatches & breadcrumbs issues are low
+    drift = _clamp01(1.0 - _norm(evl_mismatch + crumbs_miss*10.0, 0.0, 20.0))
 
-    # ACS: weighted blend (favor purity & self-regulation, penalize drift)
-    acs = _clamp01(0.45 * purity + 0.45 * self_reg + 0.10 * (1.0 - temporal_drift))
+    # Aggregate ACS: balanced mean of the three
+    acs = _clamp01((purity + self_reg + drift) / 3.0)
 
-    return {
-        "Purity": purity,
-        "SelfRegulation": self_reg,
-        "TemporalDrift": temporal_drift,
-        "ACS": acs,
-    }
-
-def emit_gauge(name, val, ts):
-    # Strict, single-line format for log scraping
-    try:
-        print(f"METRIC {name} {float(val):.2f} {int(ts)}")
-    except Exception:
-        print(f"METRIC {name} 0.00 {int(ts)}")
+    return {"purity": purity, "self_reg": self_reg, "drift": drift, "acs": acs}
 
 def main():
-    path = os.environ.get(
-        "METRICS_INPUT_JSON",
-        "governance/guards/observability/metrics_sample.json",
-    )
-    try:
-        with open(path, "r", encoding="utf-8") as fh:
-            counters = json.load(fh)
-    except Exception as e:
-        print(f"# WARN: failed to read {path}: {e}")
-        counters = {}
+    path = os.environ.get("METRICS_INPUT_JSON", "").strip()
+    data = {}
+    if path and os.path.exists(path):
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception as e:
+            print(f"::warning title=metrics::Failed to read {path}: {e}")
+    else:
+        print(f"::warning title=metrics::Input missing; using safe defaults ({path})")
+        data = {
+            "EVL_Hash_Mismatch_Count": 0,
+            "Commander_Output_Redaction_Rate": 0,
+            "Blocked_HighRisk_Jobs": 4,
+            "Detected_HighRisk_Jobs": 5,
+            "Reversal_Edits_Rate": 0,
+            "Missing_Breadcrumbs_Rate": 0
+        }
 
-    metrics = compute_indices(counters)
+    m = compute_indices(data)
     ts = int(time.time())
-    for k in ("Purity", "SelfRegulation", "TemporalDrift", "ACS"):
-        emit_gauge(k, metrics.get(k, 0.0), ts)
-
-    # Never fail the CI for this sample emitter
-    sys.exit(0)
+    print(f"METRIC Purity {m['purity']:.2f} {ts}")
+    print(f"METRIC SelfRegulation {m['self_reg']:.2f} {ts}")
+    print(f"METRIC TemporalDrift {m['drift']:.2f} {ts}")
+    print(f"METRIC ACS {m['acs']:.2f} {ts}")
+    return 0
 
 if __name__ == "__main__":
-    main()
+    try:
+        sys.exit(main())
+    except Exception as e:
+        print(f\"::error title=metrics::Unhandled error: {e}\")
+        sys.exit(0)
