@@ -1,4 +1,5 @@
 name: Ledger — OTS Stamp & Verify (inline)
+
 on:
   push:
     paths:
@@ -17,37 +18,33 @@ jobs:
 
       - name: Prep ledger dirs
         run: |
-          echo "LEDGER_ROOT=governance/ledger" >> $GITHUB_ENV
-          mkdir -p governance/ledger/receipts governance/ledger/verifications
+          mkdir -p governance/ledger/receipts
 
       - name: Install OpenTimestamps client
         run: |
           sudo apt-get update
-          sudo apt-get install -y opentimestamps-client || true
+          python3 -m pip install --upgrade pip
+          python3 -m pip install opentimestamps-client
 
       - name: Hash + OTS stamp (inline)
         env:
           ARTIFACTS: ${{ github.event.inputs.artifacts }}
         run: |
           set -euo pipefail
-          STAMP_FILE="governance/ledger/attestation_packet.sha256.txt"
+          STAMP_FILE="governance/ledger/receipts/verification-${{ github.sha }}.txt"
           : > "$STAMP_FILE"
           TARGETS="${ARTIFACTS:-README.md}"
           for f in $TARGETS; do
-            [ -f "$f" ] && sha256sum "$f" >> "$STAMP_FILE"
+            if [ -f "$f" ]; then
+              sha256sum "$f" >> "$STAMP_FILE"
+            fi
           done
           if command -v ots >/dev/null 2>&1; then
             ots stamp "$STAMP_FILE" || true
-            [ -f "${STAMP_FILE}.ots" ] && mv "${STAMP_FILE}.ots" "governance/ledger/receipts/"
           fi
-          {
-            echo "TruthSeal Verification Log — IntegrityLedger v7.1"
-            date -u +"Generated: %Y-%m-%d %H:%M:%S UTC"
-            echo "Artifacts digests:"; cat "$STAMP_FILE"
-          } > "governance/ledger/verifications/ledger_update.ver.txt"
 
-      - name: Commit ledger updates
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Upload receipts
+        uses: actions/upload-artifact@v4
         with:
-          commit_message: "ledger: update receipts and log"
-          branch: ${{ github.ref_name }}
+          name: ledger-receipts
+          path: governance/ledger/receipts/*
