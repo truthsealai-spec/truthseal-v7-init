@@ -1,11 +1,10 @@
-# TruthSeal™ Observability — ACS Metrics Emitter (stdout version)
-# Reads counters from METRICS_INPUT_JSON and prints:
-#   METRIC Purity <v> <unix_ts>
-#   METRIC SelfRegulation <v> <unix_ts>
-#   METRIC TemporalDrift <v> <unix_ts>
-#   METRIC ACS <v> <unix_ts>
-#
-# Values are normalized to [0,1] then rounded to 2 decimals for readability.
+# TruthSeal™ Observability — ACS Metrics Emitter v1
+# Reads counters from METRICS_INPUT_JSON and prints four METRIC lines:
+#   METRIC Purity <val> <unix_ts>
+#   METRIC SelfRegulation <val> <unix_ts>
+#   METRIC TemporalDrift <val> <unix_ts>
+#   METRIC ACS <val> <unix_ts>
+# The script is defensive and always exits 0 (never fails CI).
 
 import os, json, time, math, sys
 
@@ -14,63 +13,75 @@ def _clamp01(x):
         x = float(x)
     except Exception:
         x = 0.0
-    return 0.0 if x < 0.0 else 1.0 if x > 1.0 else x
+    if x < 0.0: return 0.0
+    if x > 1.0: return 1.0
+    return x
 
 def _norm(x, lo=0.0, hi=10.0):
-    # Map [lo..hi] → [0..1], clamp outside.
-    try: x = float(x)
-    except Exception: x = 0.0
-    if hi <= lo: hi = lo + 1.0
+    try:
+        x = float(x)
+    except Exception:
+        x = 0.0
+    if hi <= lo:
+        hi = lo + 1.0
     y = (x - lo) / (hi - lo)
     return _clamp01(y)
 
-def _safe(x):
-    try: return float(x)
-    except Exception: return 0.0
+def _safe(d, k, default=0.0):
+    try:
+        return float(d.get(k, default))
+    except Exception:
+        return float(default)
 
-def compute_indices(counters):
-    # Inputs (with safe defaults)
-    redactions   = _safe(counters.get("Commander_Output_Redaction_Rate", 0))
-    evl_mismatch = _safe(counters.get("EVL_Hash_Mismatch_Count", 0))
-    blocked      = _safe(counters.get("Blocked_HighRisk_Jobs", 0))
-    detected     = _safe(counters.get("Detected_HighRisk_Jobs", 0))
-    reversal     = _safe(counters.get("Reversal_Edits_Rate", 0))
-    crumbs_miss  = _safe(counters.get("Missing_Breadcrumbs_Rate", 0))
+def compute_indices(c):
+    # Inputs (with very safe defaults)
+    redactions   = _safe(c, "Commander_Output_Redaction_Rate", 0.0)   # 0..1 expected
+    evl_mismatch = _safe(c, "EVL_Hash_Mismatch_Count", 0.0)           # count
+    blocked      = _safe(c, "Blocked_HighRisk_Jobs", 0.0)             # count
+    detected     = _safe(c, "Detected_HighRisk_Jobs", 0.0)            # count
+    reversal     = _safe(c, "Reversal_Edits_Rate", 0.0)               # 0..1 expected
+    crumbs_miss  = _safe(c, "Missing_Breadcrumbs_Rate", 0.0)          # 0..1 expected
 
-    # Simple, explainable draft formulas (bounded & robust):
-    # Purity penalizes redactions, mismatches, reversals, and missing breadcrumbs.
-    purity_penalty = _norm(redactions + evl_mismatch + reversal + crumbs_miss, lo=0, hi=10)
+    # Simple, explainable draft formulas:
+    # Purity penalizes redactions, mismatches, and missing breadcrumbs
+    purity_penalty = _norm(redactions + crumbs_miss, 0.0, 1.5) * 0.6 + _norm(evl_mismatch, 0.0, 10.0) * 0.4
     purity = _clamp01(1.0 - purity_penalty)
 
-    # Self-Regulation improves when fewer jobs are blocked.
-    self_reg = _clamp01(1.0 - _norm(blocked, lo=0, hi=10))
+    # Self-Regulation improves when we block risky jobs and avoid reversals
+    self_reg = _clamp01(0.25 * _norm(detected, 0.0, 15.0) + 0.75 * (1.0 - _norm(blocked + reversal, 0.0, 15.0)))
 
-    # Temporal Drift rises with EVL mismatches (higher -> worse drift).
-    temporal_drift = _norm(evl_mismatch, lo=0, hi=10)
+    # Temporal drift increases with mismatches and reversals
+    drift = _norm(evl_mismatch * 0.7 + reversal * 5.0, 0.0, 12.0)
 
-    # ACS (aggregate) favors Purity and Self-Regulation, penalizes Drift.
-    acs = 0.5 * purity + 0.3 * self_reg + 0.2 * (1.0 - temporal_drift)
-    acs = _clamp01(acs)
-
-    return purity, self_reg, temporal_drift, acs
+    # Overall ACS (weighted blend; higher is better)
+    acs = _clamp01(0.4 * purity + 0.4 * self_reg + 0.2 * (1.0 - drift))
+    return purity, self_reg, drift, acs
 
 def main():
-    src = os.environ.get("METRICS_INPUT_JSON", "governance/guards/observability/metrics_sample.json")
+    ts = int(time.time())
+    path = os.getenv("METRICS_INPUT_JSON", "governance/guards/observability/metrics_sample.json")
+    counters = {}
     try:
-        with open(src, "r", encoding="utf-8") as f:
+        with open(path, "r", encoding="utf-8") as f:
             counters = json.load(f)
     except Exception as e:
-        print(f"ERROR could not read metrics JSON: {src} :: {e}", file=sys.stderr)
+        print(f"WARNING: could not read counters at '{path}': {e}", file=sys.stderr)
         counters = {}
 
-    purity, self_reg, drift, acs = compute_indices(counters)
-    ts = int(time.time())
+    try:
+        purity, self_reg, drift, acs = compute_indices(counters)
+    except Exception as e:
+        print(f"WARNING: compute failed: {e}", file=sys.stderr)
+        purity, self_reg, drift, acs = 0.0, 0.0, 1.0, 0.0
 
-    # Required stdout lines for CI/log scraping:
-    print(f"METRIC Purity {purity:.2f} {ts}")
-    print(f"METRIC SelfRegulation {self_reg:.2f} {ts}")
-    print(f"METRIC TemporalDrift {drift:.2f} {ts}")
-    print(f"METRIC ACS {acs:.2f} {ts}")
+    # Always print METRIC lines; keep them simple for Actions mobile UI
+    print(f"METRIC Purity {purity:.2f} {ts}", flush=True)
+    print(f"METRIC SelfRegulation {self_reg:.2f} {ts}", flush=True)
+    print(f"METRIC TemporalDrift {drift:.2f} {ts}", flush=True)
+    print(f"METRIC ACS {acs:.2f} {ts}", flush=True)
+
+    # Never fail CI
+    sys.exit(0)
 
 if __name__ == "__main__":
     main()
