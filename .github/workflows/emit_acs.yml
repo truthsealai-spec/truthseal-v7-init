@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'governance/guards/observability/**'
+      - 'governance/guards/observability/metrics_sample.json'
       - '.github/workflows/emit_acs.yml'
 
 jobs:
@@ -13,24 +13,62 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Sanity check
-        run: |
-          echo "== pwd ==" && pwd
-          echo "== python ==" && python3 --version
-          echo "== show HEAD ==" && git rev-parse --short HEAD
-          echo "== list observability ==" && ls -la governance/guards/observability
-
-      - name: Show sample input
-        run: |
-          echo "== Sample input =="
-          cat governance/guards/observability/metrics_sample.json
-
-      - name: Run ACS emitter on sample counters
+      - name: Emit ACS METRIC lines
         env:
-          PYTHONUNBUFFERED: '1'
-          PYTHONPATH: ${{ github.workspace }}
           METRICS_INPUT_JSON: governance/guards/observability/metrics_sample.json
         run: |
-          echo "== Run emitter =="
-          python3 -m governance.guards.observability.acs_metrics_emitter_v1
-          echo "== End emitter =="
+          set -e
+          echo "== Sample input =="
+          cat "$METRICS_INPUT_JSON"
+          echo "== METRICS =="
+          python3 - <<'PY'
+          import os, json, time, math
+
+          def _clamp01(x):
+              try: x = float(x)
+              except Exception: x = 0.0
+              if x < 0.0: return 0.0
+              if x > 1.0: return 1.0
+              return x
+
+          def _norm(x, lo=0.0, hi=10.0):
+              try: x = float(x)
+              except Exception: x = 0.0
+              if hi <= lo: return 0.0
+              y = (x - lo) / (hi - lo)
+              return _clamp01(y)
+
+          p = os.environ.get("METRICS_INPUT_JSON", "governance/guards/observability/metrics_sample.json")
+          with open(p, "r") as f:
+              c = json.load(f)
+
+          redactions   = c.get("Commander_Output_Redaction_Rate", 0)
+          evl_mismatch = c.get("EVL_Hash_Mismatch_Count",       0)
+          blocked      = c.get("Blocked_HighRisk_Jobs",          0)
+          detected     = c.get("Detected_HighRisk_Jobs",         0)
+          reversal     = c.get("Reversal_Edits_Rate",            0)
+          crumbs_miss  = c.get("Missing_Breadcrumbs_Rate",       0)
+
+          # Draft, explainable indices
+          purity_penalty = _norm(redactions + evl_mismatch + crumbs_miss, lo=0, hi=10)
+          purity         = _clamp01(1.0 - purity_penalty)
+
+          self_reg = _clamp01(
+              0.25 * _norm(detected - blocked, lo=-10, hi=10) +
+              0.50 * _clamp01(1.0 - float(reversal)) +
+              0.25 * _clamp01(1.0 - float(redactions))
+          )
+
+          drift = _clamp01(
+              0.50 * _norm(evl_mismatch, lo=0, hi=5) +
+              0.50 * _norm(crumbs_miss,  lo=0, hi=5)
+          )
+
+          acs = _clamp01(0.35 * purity + 0.35 * self_reg + 0.30 * (1.0 - drift))
+
+          ts = int(time.time())
+          print(f"METRIC Purity {purity:.2f} {ts}")
+          print(f"METRIC SelfRegulation {self_reg:.2f} {ts}")
+          print(f"METRIC TemporalDrift {drift:.2f} {ts}")
+          print(f"METRIC ACS {acs:.2f} {ts}")
+          PY
