@@ -1,0 +1,89 @@
+name: ACS PR gate
+
+on:
+  pull_request:
+    paths:
+      - 'governance/guards/observability/**'
+      - '.github/workflows/emit_acs.yml'
+      - '.github/workflows/acs_pr_gate.yml'
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Emit + gate ACS metrics
+        env:
+          METRICS_INPUT_JSON: governance/guards/observability/metrics_sample.json
+          # Thresholds (hard gate for PRs)
+          PURITY_MIN: '0.80'
+          SELFREG_MIN: '0.60'
+          DRIFT_MAX: '0.30'
+          ACS_MIN: '0.70'
+          HARD_GATE: 'true'
+        run: |
+          set -e
+          echo "== PR input =="
+          cat "${METRICS_INPUT_JSON}" || true
+
+          python3 - <<'PY'
+          import os, json, time, sys
+
+          def _clamp01(x):
+              try: x = float(x)
+              except Exception: return 0.0
+              if x < 0.0: return 0.0
+              if x > 1.0: return 1.0
+              return x
+
+          def _norm(x, lo=0.0, hi=10.0):
+              try: x = float(x)
+              except Exception: return 0.0
+              if hi <= lo: return 0.0
+              return _clamp01((x - lo) / (hi - lo))
+
+          p = os.environ.get("METRICS_INPUT_JSON","governance/guards/observability/metrics_sample.json")
+          with open(p,"r") as f:
+              c = json.load(f)
+
+          redactions = float(c.get("Commander_Output_Redaction_Rate", 0.0))
+          blocked    = float(c.get("Blocked_HighRisk_Jobs", 0))
+          detected   = float(c.get("Detected_HighRisk_Jobs", 0))
+          reversals  = float(c.get("Reversal_Edits_Rate", 0.0))
+          crumbs     = float(c.get("Missing_Breadcrumbs_Rate", 0.0))
+
+          purity = _clamp01(1.0 - redactions)
+          selfreg = _clamp01(1.0 - max(0.0, (blocked - detected)) / 10.0)
+          drift = _clamp01(0.5*reversals + 0.5*crumbs)
+          acs = _clamp01((purity + selfreg + (1.0 - drift)) / 3.0)
+          ts = int(time.time())
+
+          print(f"METRIC Purity {purity:.2f} {ts}")
+          print(f"METRIC SelfRegulation {selfreg:.2f} {ts}")
+          print(f"METRIC TemporalDrift {drift:.2f} {ts}")
+          print(f"METRIC ACS {acs:.2f} {ts}")
+
+          PR = float(os.environ.get("PURITY_MIN","0.8"))
+          SR = float(os.environ.get("SELFREG_MIN","0.6"))
+          DM = float(os.environ.get("DRIFT_MAX","0.3"))
+          AM = float(os.environ.get("ACS_MIN","0.7"))
+          hard = os.environ.get("HARD_GATE","true").lower() == "true"
+
+          ok = (purity>=PR) and (selfreg>=SR) and (drift<=DM) and (acs>=AM)
+
+          summary = f"""TruthSeal ACS metrics
+
+- Purity: {purity:.2f}
+- SelfRegulation: {selfreg:.2f}
+- TemporalDrift: {drift:.2f}
+- ACS: {acs:.2f}
+
+Thresholds: Purity≥{PR}, SelfReg≥{SR}, Drift≤{DM}, ACS≥{AM}
+Status: {"PASS ✅" if ok else "FAIL ❌"}
+"""
+          open(os.environ.get("GITHUB_STEP_SUMMARY","/tmp/summary"),"a").write(summary)
+
+          if hard and not ok:
+              sys.exit(1)
+          PY
