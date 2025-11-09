@@ -1,16 +1,22 @@
-# TruthSeal™ v7 — Operational Index
+# TruthSeal™ × NVIDIA — Partner Pack (v1.0)
 
-**File:** README.md  
-**Purpose:** One-stop entry to live status, observability, and partner materials.
+File: governance/partners/nvidia/README.md  
+Purpose: One-stop index for NVIDIA reviewers: what this is, why it matters, and where to click.
 
 ## Quick links
-- Partner Pack (NVIDIA) → `governance/partners/nvidia/README.md`
-- Executive Summary (TQC-Certified Coherence Chip) → `governance/partners/nvidia/Executive_Summary_TQC_Certified_Chip_v1.0.md`
-- Technical Specification v1.0 → `governance/partners/nvidia/TQC_Certified_Coherence_Chip_Spec_v1.0.md`
-- ACS Financial Model v1.0 → `governance/guards/observability/ACS_Financial_Model_v1.0.md`
-- Live ACS Status (Aim Coherence Score) → `docs/STATUS_ACS.md`
-- Observability (ACS guard guide) → `governance/guards/observability/README.md`
+- Executive Summary (TQC-Certified Coherence Chip) → governance/partners/nvidia/Executive_Summary_TQC_Certified_Chip_v1.0.md
+- Technical Specification v1.0 → governance/partners/nvidia/TQC_Certified_Coherence_Chip_Spec_v1.0.md
+- Aim Coherence Score Financial Model v1.0 → governance/guards/observability/ACS_Financial_Model_v1.0.md
+- Live ACS Status (Aim Coherence Score) → docs/STATUS_ACS.md
+- Outreach Email v1.0 → governance/partners/nvidia/Outreach_Email_NVIDIA_v1.0.md
+- Calendar Invite Text v1.0 → governance/partners/nvidia/Calendar_Invite_Text_v1.0.md
+- Jensen Cover Note v1.0 → governance/partners/nvidia/Jensen_Cover_Note_v1.0.md
 
-## Notes
-- Mobile mode discipline: one file per commit; commit line only.
-- After partner review, we will timestamp-anchor (OpenTimestamps) the Partner Pack bundle.
+## Send sequence (first contact)
+1) Send **Jensen Cover Note** via email/LinkedIn InMail.  
+2) Follow with **Outreach Email** including links to the three core docs.  
+3) Offer **Calendar Invite** for a 45-minute executive brief next week.
+
+**Notes:**  
+- **TQC** = Traykov Law of Quantum Coherence.  
+- **ACS** = Aim Coherence Score (integrity signal signed in silicon).
