@@ -21,7 +21,9 @@ jobs:
 
       - name: Run ACS emitter on sample counters
         env:
+          PYTHONUNBUFFERED: '1'
           METRICS_INPUT_JSON: governance/guards/observability/metrics_sample.json
         run: |
           echo "== Run emitter =="
-          python3 governance/guards/observability/acs_metrics_emitter_v1.py | tee -a "$GITHUB_STEP_SUMMARY"
+          python3 governance/guards/observability/acs_metrics_emitter_v1.py
+          echo "== End emitter =="
