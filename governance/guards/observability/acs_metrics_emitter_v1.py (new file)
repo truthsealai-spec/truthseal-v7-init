@@ -1,56 +1,76 @@
-# TruthSeal™ Observability — ACS Metrics Emitter v1
-# Emits Purity (P), Self-Regulation (S), Temporal Drift (D), and ACS per ECI spec.
-# Swap emit_gauge() with your exporter (Prometheus, StatsD, etc.) when wiring.
+# TruthSeal™ Observability — ACS Metrics Emitter (stdout version)
+# Reads counters from METRICS_INPUT_JSON and prints:
+#   METRIC Purity <v> <unix_ts>
+#   METRIC SelfRegulation <v> <unix_ts>
+#   METRIC TemporalDrift <v> <unix_ts>
+#   METRIC ACS <v> <unix_ts>
+#
+# Values are normalized to [0,1] then rounded to 2 decimals for readability.
 
-import json, os, time
+import os, json, time, math, sys
 
-def _normalize(x, lo=0.0, hi=10.0):
+def _clamp01(x):
     try:
         x = float(x)
     except Exception:
         x = 0.0
-    if hi <= lo:
-        hi = lo + 1.0
+    return 0.0 if x < 0.0 else 1.0 if x > 1.0 else x
+
+def _norm(x, lo=0.0, hi=10.0):
+    # Map [lo..hi] → [0..1], clamp outside.
+    try: x = float(x)
+    except Exception: x = 0.0
+    if hi <= lo: hi = lo + 1.0
     y = (x - lo) / (hi - lo)
-    return max(0.0, min(1.0, y))
+    return _clamp01(y)
 
-def _safe_div(num, den):
-    den = max(float(den), 1.0)
-    return max(0.0, min(1.0, float(num) / den))
+def _safe(x):
+    try: return float(x)
+    except Exception: return 0.0
 
-def compute_indices(c):
-    # Draft bindings (must match ECI_Dashboard_Design_Spec.md)
-    redactions = float(c.get("Commander_Output_Redaction_Rate", 0))
-    evl_mismatch = float(c.get("EVL_Hash_Mismatch_Count", 0))
-    P = 1.0 - _normalize(redactions + evl_mismatch)
+def compute_indices(counters):
+    # Inputs (with safe defaults)
+    redactions   = _safe(counters.get("Commander_Output_Redaction_Rate", 0))
+    evl_mismatch = _safe(counters.get("EVL_Hash_Mismatch_Count", 0))
+    blocked      = _safe(counters.get("Blocked_HighRisk_Jobs", 0))
+    detected     = _safe(counters.get("Detected_HighRisk_Jobs", 0))
+    reversal     = _safe(counters.get("Reversal_Edits_Rate", 0))
+    crumbs_miss  = _safe(counters.get("Missing_Breadcrumbs_Rate", 0))
 
-    blocked = c.get("Blocked_HighRisk_Jobs", 0)
-    detected = c.get("Detected_HighRisk_Jobs", 0)
-    S = _safe_div(blocked, detected)
+    # Simple, explainable draft formulas (bounded & robust):
+    # Purity penalizes redactions, mismatches, reversals, and missing breadcrumbs.
+    purity_penalty = _norm(redactions + evl_mismatch + reversal + crumbs_miss, lo=0, hi=10)
+    purity = _clamp01(1.0 - purity_penalty)
 
-    reversals = float(c.get("Reversal_Edits_Rate", 0))
-    gaps = float(c.get("Missing_Breadcrumbs_Rate", 0))
-    D = _normalize(reversals + gaps)
+    # Self-Regulation improves when fewer jobs are blocked.
+    self_reg = _clamp01(1.0 - _norm(blocked, lo=0, hi=10))
 
-    ACS = max(0.0, min(1.0, P * S * (1.0 - D)))
-    return P, S, D, ACS
+    # Temporal Drift rises with EVL mismatches (higher -> worse drift).
+    temporal_drift = _norm(evl_mismatch, lo=0, hi=10)
 
-def emit_gauge(name, value, ts=None):
-    ts = ts or int(time.time())
-    print(f"METRIC {name} {value:.6f} {ts}")
+    # ACS (aggregate) favors Purity and Self-Regulation, penalizes Drift.
+    acs = 0.5 * purity + 0.3 * self_reg + 0.2 * (1.0 - temporal_drift)
+    acs = _clamp01(acs)
+
+    return purity, self_reg, temporal_drift, acs
 
 def main():
-    src = os.getenv("METRICS_INPUT_JSON", "")
-    counters = {}
-    if src and os.path.exists(src):
+    src = os.environ.get("METRICS_INPUT_JSON", "governance/guards/observability/metrics_sample.json")
+    try:
         with open(src, "r", encoding="utf-8") as f:
             counters = json.load(f)
+    except Exception as e:
+        print(f"ERROR could not read metrics JSON: {src} :: {e}", file=sys.stderr)
+        counters = {}
 
-    P, S, D, ACS = compute_indices(counters)
-    emit_gauge("Purity_Index_P", P)
-    emit_gauge("Self_Regulation_Index_S", S)
-    emit_gauge("Temporal_Drift_Index_D", D)
-    emit_gauge("ACS", ACS)
+    purity, self_reg, drift, acs = compute_indices(counters)
+    ts = int(time.time())
+
+    # Required stdout lines for CI/log scraping:
+    print(f"METRIC Purity {purity:.2f} {ts}")
+    print(f"METRIC SelfRegulation {self_reg:.2f} {ts}")
+    print(f"METRIC TemporalDrift {drift:.2f} {ts}")
+    print(f"METRIC ACS {acs:.2f} {ts}")
 
 if __name__ == "__main__":
     main()
