@@ -1,6 +1,12 @@
 name: Emit ACS sample
+
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'governance/guards/observability/metrics_sample.json'
+      - 'governance/guards/observability/acs_metrics_emitter_v1.py'
+      - '.github/workflows/emit_acs.yml'
 
 jobs:
   run:
@@ -8,11 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Show sample input
+        run: |
+          echo "== Sample input =="
+          cat governance/guards/observability/metrics_sample.json
+
       - name: Run ACS emitter on sample counters
         env:
           METRICS_INPUT_JSON: governance/guards/observability/metrics_sample.json
         run: |
-          echo "== Sample input =="
-          cat governance/guards/observability/metrics_sample.json
           echo "== Run emitter =="
-          python3 governance/guards/observability/acs_metrics_emitter_v1.py
+          python3 governance/guards/observability/acs_metrics_emitter_v1.py | tee -a "$GITHUB_STEP_SUMMARY"
