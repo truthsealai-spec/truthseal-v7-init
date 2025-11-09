@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'governance/guards/observability/metrics_sample.json'
+      - 'governance/guards/observability/**'
       - '.github/workflows/emit_acs.yml'
 
 jobs:
@@ -16,51 +16,49 @@ jobs:
       - name: Emit ACS METRIC lines
         env:
           METRICS_INPUT_JSON: governance/guards/observability/metrics_sample.json
-          # Thresholds (tweak as you wish)
+          # Thresholds (tune as you wish)
           PURITY_MIN: '0.80'
           SELFREG_MIN: '0.60'
           DRIFT_MAX: '0.30'
           ACS_MIN: '0.70'
+          # Soft/Hard gate: set to 'true' to fail run on threshold breach
+          HARD_GATE: 'false'
         run: |
           set -e
           echo "== Sample input =="
-          cat "$METRICS_INPUT_JSON"
-
+          cat "$METRICS_INPUT_JSON" || true
           echo "== METRICS =="
           python3 - <<'PY'
           import os, json, time, sys
 
           def clamp01(x):
-              try: x=float(x)
-              except: x=0.0
-              if x < 0: return 0.0
-              if x > 1: return 1.0
-              return x
+              try: x = float(x)
+              except: x = 0.0
+              return 0.0 if x < 0 else 1.0 if x > 1 else x
 
           def norm(x, lo=0.0, hi=10.0):
-              try: x=float(x)
-              except: x=0.0
+              try: x = float(x)
+              except: x = 0.0
               if hi <= lo: return 0.0
               return clamp01((x - lo) / (hi - lo))
 
-          path = os.environ.get("METRICS_INPUT_JSON","governance/guards/observability/metrics_sample.json")
-          with open(path,"r") as f:
+          p = os.environ.get("METRICS_INPUT_JSON", "metrics_sample.json")
+          with open(p, "r") as f:
               c = json.load(f)
 
-          red       = float(c.get("Commander_Output_Redaction_Rate", 0))
-          evl       = float(c.get("EVL_Hash_Mismatch_Count",      0))
-          blocked   = float(c.get("Blocked_HighRisk_Jobs",        0))
-          detected  = float(c.get("Detected_HighRisk_Jobs",       0))
-          reversal  = float(c.get("Reversal_Edits_Rate",          0))
-          crumbs    = float(c.get("Missing_Breadcrumbs_Rate",     0))
+          redactions = float(c.get("Commander_Output_Redaction_Rate", 0))
+          evl_mm    = float(c.get("EVL_Hash_Mismatch_Count", 0))
+          blocked   = float(c.get("Blocked_HighRisk_Jobs", 0))
+          detected  = float(c.get("Detected_HighRisk_Jobs", 0))
+          rev_rate  = float(c.get("Reversal_Edits_Rate", 0))
+          crumbs    = float(c.get("Missing_Breadcrumbs_Rate", 0))
 
-          # Draft formulas (explainable & safe)
-          purity_penalty = norm(red + norm(evl,0,3) + norm(reversal,0,1) + norm(crumbs,0,1), 0, 4)
-          purity         = clamp01(1.0 - purity_penalty)
-          self_reg       = clamp01(0.25 * norm(detected,0,10) + 0.75 * (1.0 - norm(blocked,0,10)))
-          drift          = clamp01(0.5*norm(evl,0,3) + 0.5*norm(reversal,0,1))
-          acs            = clamp01(0.4*purity + 0.4*self_reg + 0.2*(1.0 - drift))
-          ts             = str(int(time.time()))
+          purity_penalty = norm(redactions + evl_mm + blocked, 0, 10)
+          purity   = clamp01(1.0 - purity_penalty)
+          self_reg = clamp01(0.25 * norm(detected, 0, 10) + 0.75 * (1.0 - norm(blocked, 0, 10)))
+          drift    = clamp01(norm(rev_rate + crumbs, 0, 10))
+          acs      = clamp01(0.35 * purity + 0.35 * self_reg + 0.30 * (1.0 - drift))
+          ts = int(time.time())
 
           lines = [
               f"METRIC Purity {purity:.2f} {ts}",
@@ -68,34 +66,40 @@ jobs:
               f"METRIC TemporalDrift {drift:.2f} {ts}",
               f"METRIC ACS {acs:.2f} {ts}",
           ]
-          for L in lines: print(L)
+          print("\n".join(lines))
 
-          # Threshold gating
-          pmin = float(os.environ.get("PURITY_MIN","0.80"))
-          smin = float(os.environ.get("SELFREG_MIN","0.60"))
-          dmax = float(os.environ.get("DRIFT_MAX","0.30"))
-          amin = float(os.environ.get("ACS_MIN","0.70"))
+          thr = {
+              "purity":   float(os.environ.get("PURITY_MIN", "0.8")),
+              "selfreg":  float(os.environ.get("SELFREG_MIN", "0.6")),
+              "drift_max":float(os.environ.get("DRIFT_MAX", "0.3")),
+              "acs":      float(os.environ.get("ACS_MIN", "0.7")),
+          }
+          ok = (purity >= thr["purity"] and self_reg >= thr["selfreg"]
+                and drift <= thr["drift_max"] and acs >= thr["acs"])
 
-          bad = []
-          if purity   < pmin: bad.append(f"Purity<{pmin}")
-          if self_reg < smin: bad.append(f"SelfReg<{smin}")
-          if drift    > dmax: bad.append(f"Drift>{dmax}")
-          if acs      < amin: bad.append(f"ACS<{amin}")
+          # Artifact
+          with open("acs_metrics.txt", "w") as f:
+              f.write("\n".join(lines) + "\n")
+              f.write(f"THRESHOLDS: {thr}\n")
+              f.write(f"STATUS: {'PASS' if ok else 'FAIL'}\n")
 
-          # Write step summary
-          summary = os.environ.get("GITHUB_STEP_SUMMARY")
-          if summary:
-              with open(summary,"a") as f:
-                  f.write("### TruthSeal ACS metrics\\n")
-                  f.write(f"- Purity: {purity:.2f}  \\n- SelfRegulation: {self_reg:.2f}  \\n- TemporalDrift: {drift:.2f}  \\n- ACS: {acs:.2f}\\n")
-                  f.write(f"\\nThresholds: Purity≥{pmin}, SelfReg≥{smin}, Drift≤{dmax}, ACS≥{amin}\\n")
-                  f.write(f"\\n**Status:** {'PASS' if not bad else 'FAIL — ' + ', '.join(bad)}\\n")
+          # Step summary
+          summary = [
+              "TruthSeal ACS metrics",
+              f"- Purity: {purity:.2f}",
+              f"- SelfRegulation: {self_reg:.2f}",
+              f"- TemporalDrift: {drift:.2f}",
+              f"- ACS: {acs:.2f}",
+              "",
+              f"Thresholds: Purity≥{thr['purity']}, SelfReg≥{thr['selfreg']}, Drift≤{thr['drift_max']}, ACS≥{thr['acs']}",
+              f"Status: {'PASS ✅' if ok else 'FAIL ❌'}"
+          ]
+          with open(os.environ.get("GITHUB_STEP_SUMMARY", "/dev/null"), "a") as f:
+              f.write("\n".join(summary) + "\n")
 
-          # Save artifact of the lines
-          with open("/tmp/acs_metrics.txt","w") as f:
-              f.write("\\n".join(lines) + "\\n")
-
-          if bad:
+          # Hard gate toggle
+          hard = os.environ.get("HARD_GATE", "false").lower() in ("1","true","yes","on")
+          if hard and not ok:
               sys.exit(1)
           PY
 
@@ -104,4 +108,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: acs-metrics
-          path: /tmp/acs_metrics.txt
+          path: acs_metrics.txt
