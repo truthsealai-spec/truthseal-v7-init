@@ -16,59 +16,92 @@ jobs:
       - name: Emit ACS METRIC lines
         env:
           METRICS_INPUT_JSON: governance/guards/observability/metrics_sample.json
+          # Thresholds (tweak as you wish)
+          PURITY_MIN: '0.80'
+          SELFREG_MIN: '0.60'
+          DRIFT_MAX: '0.30'
+          ACS_MIN: '0.70'
         run: |
           set -e
           echo "== Sample input =="
           cat "$METRICS_INPUT_JSON"
+
           echo "== METRICS =="
           python3 - <<'PY'
-          import os, json, time, math
+          import os, json, time, sys
 
-          def _clamp01(x):
-              try: x = float(x)
-              except Exception: x = 0.0
-              if x < 0.0: return 0.0
-              if x > 1.0: return 1.0
+          def clamp01(x):
+              try: x=float(x)
+              except: x=0.0
+              if x < 0: return 0.0
+              if x > 1: return 1.0
               return x
 
-          def _norm(x, lo=0.0, hi=10.0):
-              try: x = float(x)
-              except Exception: x = 0.0
+          def norm(x, lo=0.0, hi=10.0):
+              try: x=float(x)
+              except: x=0.0
               if hi <= lo: return 0.0
-              y = (x - lo) / (hi - lo)
-              return _clamp01(y)
+              return clamp01((x - lo) / (hi - lo))
 
-          p = os.environ.get("METRICS_INPUT_JSON", "governance/guards/observability/metrics_sample.json")
-          with open(p, "r") as f:
+          path = os.environ.get("METRICS_INPUT_JSON","governance/guards/observability/metrics_sample.json")
+          with open(path,"r") as f:
               c = json.load(f)
 
-          redactions   = c.get("Commander_Output_Redaction_Rate", 0)
-          evl_mismatch = c.get("EVL_Hash_Mismatch_Count",       0)
-          blocked      = c.get("Blocked_HighRisk_Jobs",          0)
-          detected     = c.get("Detected_HighRisk_Jobs",         0)
-          reversal     = c.get("Reversal_Edits_Rate",            0)
-          crumbs_miss  = c.get("Missing_Breadcrumbs_Rate",       0)
+          red       = float(c.get("Commander_Output_Redaction_Rate", 0))
+          evl       = float(c.get("EVL_Hash_Mismatch_Count",      0))
+          blocked   = float(c.get("Blocked_HighRisk_Jobs",        0))
+          detected  = float(c.get("Detected_HighRisk_Jobs",       0))
+          reversal  = float(c.get("Reversal_Edits_Rate",          0))
+          crumbs    = float(c.get("Missing_Breadcrumbs_Rate",     0))
 
-          # Draft, explainable indices
-          purity_penalty = _norm(redactions + evl_mismatch + crumbs_miss, lo=0, hi=10)
-          purity         = _clamp01(1.0 - purity_penalty)
+          # Draft formulas (explainable & safe)
+          purity_penalty = norm(red + norm(evl,0,3) + norm(reversal,0,1) + norm(crumbs,0,1), 0, 4)
+          purity         = clamp01(1.0 - purity_penalty)
+          self_reg       = clamp01(0.25 * norm(detected,0,10) + 0.75 * (1.0 - norm(blocked,0,10)))
+          drift          = clamp01(0.5*norm(evl,0,3) + 0.5*norm(reversal,0,1))
+          acs            = clamp01(0.4*purity + 0.4*self_reg + 0.2*(1.0 - drift))
+          ts             = str(int(time.time()))
 
-          self_reg = _clamp01(
-              0.25 * _norm(detected - blocked, lo=-10, hi=10) +
-              0.50 * _clamp01(1.0 - float(reversal)) +
-              0.25 * _clamp01(1.0 - float(redactions))
-          )
+          lines = [
+              f"METRIC Purity {purity:.2f} {ts}",
+              f"METRIC SelfRegulation {self_reg:.2f} {ts}",
+              f"METRIC TemporalDrift {drift:.2f} {ts}",
+              f"METRIC ACS {acs:.2f} {ts}",
+          ]
+          for L in lines: print(L)
 
-          drift = _clamp01(
-              0.50 * _norm(evl_mismatch, lo=0, hi=5) +
-              0.50 * _norm(crumbs_miss,  lo=0, hi=5)
-          )
+          # Threshold gating
+          pmin = float(os.environ.get("PURITY_MIN","0.80"))
+          smin = float(os.environ.get("SELFREG_MIN","0.60"))
+          dmax = float(os.environ.get("DRIFT_MAX","0.30"))
+          amin = float(os.environ.get("ACS_MIN","0.70"))
 
-          acs = _clamp01(0.35 * purity + 0.35 * self_reg + 0.30 * (1.0 - drift))
+          bad = []
+          if purity   < pmin: bad.append(f"Purity<{pmin}")
+          if self_reg < smin: bad.append(f"SelfReg<{smin}")
+          if drift    > dmax: bad.append(f"Drift>{dmax}")
+          if acs      < amin: bad.append(f"ACS<{amin}")
 
-          ts = int(time.time())
-          print(f"METRIC Purity {purity:.2f} {ts}")
-          print(f"METRIC SelfRegulation {self_reg:.2f} {ts}")
-          print(f"METRIC TemporalDrift {drift:.2f} {ts}")
-          print(f"METRIC ACS {acs:.2f} {ts}")
+          # Write step summary
+          summary = os.environ.get("GITHUB_STEP_SUMMARY")
+          if summary:
+              with open(summary,"a") as f:
+                  f.write("### TruthSeal ACS metrics\\n")
+                  f.write(f"- Purity: {purity:.2f}  \\n- SelfRegulation: {self_reg:.2f}  \\n- TemporalDrift: {drift:.2f}  \\n- ACS: {acs:.2f}\\n")
+                  f.write(f"\\nThresholds: Purity≥{pmin}, SelfReg≥{smin}, Drift≤{dmax}, ACS≥{amin}\\n")
+                  f.write(f"\\n**Status:** {'PASS' if not bad else 'FAIL — ' + ', '.join(bad)}\\n")
+
+          # Save artifact of the lines
+          with open("/tmp/acs_metrics.txt","w") as f:
+              f.write("\\n".join(lines) + "\\n")
+
+          if bad:
+              sys.exit(1)
           PY
+
+      - name: Upload ACS metrics artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: acs-metrics
+          path: /tmp/acs_metrics.txt
