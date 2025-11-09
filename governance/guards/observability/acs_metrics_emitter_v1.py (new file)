@@ -1,0 +1,56 @@
+# TruthSeal™ Observability — ACS Metrics Emitter v1
+# Emits Purity (P), Self-Regulation (S), Temporal Drift (D), and ACS per ECI spec.
+# Swap emit_gauge() with your exporter (Prometheus, StatsD, etc.) when wiring.
+
+import json, os, time
+
+def _normalize(x, lo=0.0, hi=10.0):
+    try:
+        x = float(x)
+    except Exception:
+        x = 0.0
+    if hi <= lo:
+        hi = lo + 1.0
+    y = (x - lo) / (hi - lo)
+    return max(0.0, min(1.0, y))
+
+def _safe_div(num, den):
+    den = max(float(den), 1.0)
+    return max(0.0, min(1.0, float(num) / den))
+
+def compute_indices(c):
+    # Draft bindings (must match ECI_Dashboard_Design_Spec.md)
+    redactions = float(c.get("Commander_Output_Redaction_Rate", 0))
+    evl_mismatch = float(c.get("EVL_Hash_Mismatch_Count", 0))
+    P = 1.0 - _normalize(redactions + evl_mismatch)
+
+    blocked = c.get("Blocked_HighRisk_Jobs", 0)
+    detected = c.get("Detected_HighRisk_Jobs", 0)
+    S = _safe_div(blocked, detected)
+
+    reversals = float(c.get("Reversal_Edits_Rate", 0))
+    gaps = float(c.get("Missing_Breadcrumbs_Rate", 0))
+    D = _normalize(reversals + gaps)
+
+    ACS = max(0.0, min(1.0, P * S * (1.0 - D)))
+    return P, S, D, ACS
+
+def emit_gauge(name, value, ts=None):
+    ts = ts or int(time.time())
+    print(f"METRIC {name} {value:.6f} {ts}")
+
+def main():
+    src = os.getenv("METRICS_INPUT_JSON", "")
+    counters = {}
+    if src and os.path.exists(src):
+        with open(src, "r", encoding="utf-8") as f:
+            counters = json.load(f)
+
+    P, S, D, ACS = compute_indices(counters)
+    emit_gauge("Purity_Index_P", P)
+    emit_gauge("Self_Regulation_Index_S", S)
+    emit_gauge("Temporal_Drift_Index_D", D)
+    emit_gauge("ACS", ACS)
+
+if __name__ == "__main__":
+    main()
