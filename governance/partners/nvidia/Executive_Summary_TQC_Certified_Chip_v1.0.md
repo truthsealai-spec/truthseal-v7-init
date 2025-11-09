@@ -1,6 +1,9 @@
 # TRUTHSEAL™ × NVIDIA — Executive Summary (TQC-Certified Coherence Chip)
 
 **Purpose**  
+**Links for reviewers**
+- Full Technical Spec → `governance/partners/nvidia/TQC_Certified_Coherence_Chip_Spec_v1.0.md`
+- Aim Coherence Score (ACS) Financial Model v1.0 → `governance/guards/observability/ACS_Financial_Model_v1.0.md`
 Secure an exclusive partnership where NVIDIA becomes the sole vendor of **TQC-Certified Coherence Chips**—hardware that enforces the **Law of Ethical Irreversibility (LEI=1)** and proves integrity in real time via the **Aim Coherence Score (ACS)**.
 
 **Plain terms (no assumptions)**
