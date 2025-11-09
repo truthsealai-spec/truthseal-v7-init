@@ -1,5 +1,10 @@
 name: Ledger — OTS Stamp & Verify (inline)
-on: [push]
+on:
+  push:
+    paths:
+      - 'governance/ledger/**'
+      - 'governance/ledger/receipts/**'
+  workflow_dispatch:
 
 permissions:
   contents: write
