@@ -1,0 +1,114 @@
+name: ACS PR gate
+
+on:
+  pull_request:
+    paths:
+      - 'governance/guards/observability/**'
+      - '.github/workflows/acs_pr_gate.yml'
+      - '.github/workflows/emit_acs.yml'
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Emit + gate ACS metrics
+        env:
+          METRICS_INPUT_JSON: governance/guards/observability/metrics_sample.json
+          # Thresholds (tune as needed)
+          PURITY_MIN: '0.80'
+          SELFREG_MIN: '0.60'
+          DRIFT_MAX: '0.30'
+          ACS_MIN: '0.70'
+          HARD_GATE: 'true'   # fail PRs when below thresholds
+        run: |
+          set -e
+          python3 - <<'PY'
+          import os, json, sys, time
+
+          def _clamp01(x):
+              try:
+                  x = float(x)
+              except Exception:
+                  return 0.0
+              if x < 0.0: return 0.0
+              if x > 1.0: return 1.0
+              return x
+
+          def _norm(x, lo=0.0, hi=10.0):
+              try:
+                  x = float(x)
+              except Exception:
+                  return 0.0
+              if hi <= lo:
+                  return 0.0
+              y = (x - lo) / (hi - lo)
+              return _clamp01(y)
+
+          def _safe(d, k, default=0.0):
+              try:
+                  return float(d.get(k, default))
+              except Exception:
+                  return float(default)
+
+          def _ratio(num, den):
+              try:
+                  num = float(num); den = float(den)
+                  if den <= 0.0: den = 1.0
+                  return num / den
+              except Exception:
+                  return 0.0
+
+          p = os.environ.get("METRICS_INPUT_JSON", "governance/guards/observability/metrics_sample.json")
+          with open(p, "r") as f:
+              c = json.load(f)
+
+          # Inputs
+          evl_mismatch = _safe(c, "EVL_Hash_Mismatch_Count", 0.0)
+          redaction    = _safe(c, "Commander_Output_Redaction_Rate", 0.0)
+          blocked      = _safe(c, "Blocked_HighRisk_Jobs", 0.0)
+          detected     = _safe(c, "Detected_HighRisk_Jobs", 0.0)
+          reversal     = _safe(c, "Reversal_Edits_Rate", 0.0)
+          crumbs       = _safe(c, "Missing_Breadcrumbs_Rate", 0.0)
+
+          # Simple, explainable formulas (stable for CI use)
+          purity = _clamp01(1.0 - _norm(evl_mismatch + 5*redaction + 5*crumbs, 0.0, 10.0))
+          selfreg = _clamp01(_ratio(detected, detected + blocked))
+          drift = _clamp01(reversal)
+          acs = _clamp01(0.4*purity + 0.4*selfreg + 0.2*(1.0 - drift))
+
+          # Thresholds
+          t_purity  = float(os.environ.get("PURITY_MIN", "0.80"))
+          t_selfreg = float(os.environ.get("SELFREG_MIN", "0.60"))
+          t_drift   = float(os.environ.get("DRIFT_MAX", "0.30"))
+          t_acs     = float(os.environ.get("ACS_MIN", "0.70"))
+          hard_gate = os.environ.get("HARD_GATE","false").lower() == "true"
+
+          passed = (purity >= t_purity and selfreg >= t_selfreg and drift <= t_drift and acs >= t_acs)
+
+          ts = int(time.time())
+          lines = []
+          lines.append("TruthSeal ACS metrics")
+          lines.append(f"- Purity: {purity:.2f} {ts}")
+          lines.append(f"- SelfRegulation: {selfreg:.2f} {ts}")
+          lines.append(f"- TemporalDrift: {drift:.2f} {ts}")
+          lines.append(f"- ACS: {acs:.2f} {ts}")
+          lines.append("")
+          lines.append(f"Thresholds: Purity≥{t_purity}, SelfReg≥{t_selfreg}, Drift≤{t_drift}, ACS≥{t_acs}")
+          lines.append(f"Status: {'PASS ✅' if passed else 'FAIL ❌'}")
+
+          summary = "\n".join(lines)
+          print(summary)
+          with open("acs-metrics.txt","w") as f:
+              f.write(summary + "\n")
+
+          if hard_gate and not passed:
+              sys.exit(1)
+          PY
+
+      - name: Upload ACS metrics artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: acs-metrics
+          path: acs-metrics.txt
