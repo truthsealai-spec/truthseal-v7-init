@@ -63,5 +63,7 @@ pqc_audit:
   - path: governance/guards/observability/alertmanager_receiver_v1.yml
     sha256: 2028899f80c9e183e6e37a11aa2e34a0b36dba5616aaea216f12731ab82afca5
     note: "Alertmanager receiver → /entangle; ships critical alerts to Commander"
+      - path: governance/guards/observability/acs_metrics_emitter_v1.py
+    note: "ACS metrics emitter (P,S,D,ACS)"
   
     
