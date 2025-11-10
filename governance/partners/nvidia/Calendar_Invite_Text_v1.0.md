@@ -1,28 +1,36 @@
-# Calendar Invite — TruthSeal™ × NVIDIA (Executive Brief)
+# Calendar Invite — NVIDIA Executive Brief (v1.0)
 
-**Title:** TruthSeal × NVIDIA — TQC-Certified Coherence Chip (Executive Brief)
-**Duration:** 45 minutes (+15 min hold)
-**Attendees (proposed):** 
-- NVIDIA: Jensen Huang (or delegate), Chief Product Officer, Chief Scientist, VP Architecture (Blackwell/BlueField), Confidential Computing lead
-- TruthSeal: Dr. Nickolay Traykov (Prof. h.c.), core engineering & validation leads
+## Event title
+TruthSeal × NVIDIA — 45-min Executive Brief (TQC-Certified Coherence Chip + Live ACS)
 
-**Objective:** 
-Agree in principle to an exclusive partnership to build the first **TQC-Certified Coherence Chip**—hardware that enforces the **Law of Ethical Irreversibility (LEI=1)** and produces a signed **Aim Coherence Score (ACS)** in silicon—then charter a two-week joint specification/validation sprint.
+## When
+{{DATE}}, {{START_TIME}}–{{END_TIME}} ({{TIMEZONE}})
+— happy to move to a time that suits you.
 
-**Agenda (time-boxed):**
-0–5  Intros and meeting frame  
-5–12 The problem: speculative demand, “electron gap,” and fragile software guardrails  
-12–22 The hardware law: TQC invariants, Layer-4 Integrity Check (input purity), dlPFC-equivalent Executive Control (final decision)  
-22–32 ACS telemetry: how the chip signs integrity in real time and turns coherence into utility revenue  
-32–40 Partner Pack walkthrough (exec summary, spec v1.0, ACS financial model, live status)  
-40–45 Decision & next steps: joint task force, owners, dates, NDA
+## Location
+{{MEETING_LINK}}  (Google Meet/Zoom/Teams)
 
-**Pre-reads (repo paths):**
-- Executive Summary → `governance/partners/nvidia/Executive_Summary_TQC_Certified_Chip_v1.0.md`  
-- Technical Spec v1.0 → `governance/partners/nvidia/TQC_Certified_Coherence_Chip_Spec_v1.0.md`  
-- ACS Financial Model v1.0 → `governance/guards/observability/ACS_Financial_Model_v1.0.md`  
-- Live ACS Status → `docs/STATUS_ACS.md`
+## Attendees
+NVIDIA team ({{names}}) · TruthSeal: Dr. Nickolay Traykov (Prof. h.c.)
 
-**Logistics:** Secure Zoom/Meet link (TruthSeal host). Recording off by default.  
-**Confidentiality:** Materials are confidential; provisional filings in progress; do not forward outside named attendees.  
-**Scheduling:** Offer two windows with timezone clarity.
+## Description
+Court-ready coherence framework and TQC-Certified Coherence Chip spec that makes integrity **measurable** via the Aim Coherence Score (ACS). Quick walkthrough + Q&A.
+
+## Agenda (45 minutes)
+1) Why coherence matters for silicon & AI (5m)  
+2) TQC-Certified Coherence Chip — spec walkthrough (12m)  
+3) Live ACS signal & observability (10m)  
+4) Anchoring & verification (OpenTimestamps) (6m)  
+5) Integration paths & next steps (10m)  
+6) Buffer (2m)
+
+## Reference links (for the event notes)
+• One-page bundle → governance/partners/nvidia/Partner_Pack_Bundle_v1.0.md  
+• Executive Summary → governance/partners/nvidia/Executive_Summary_TQC_Certified_Chip_v1.0.md  
+• Technical Spec v1.0 → governance/partners/nvidia/TQC_Certified_Coherence_Chip_Spec_v1.0.md  
+• ACS Financial Model → governance/guards/observability/ACS_Financial_Model_v1.0.md  
+• Live ACS Status → docs/STATUS_ACS.md  
+• Anchoring Status (v9.1) → docs/Anchoring_Status_v9.1.md
+
+## Follow-up
+We’ll capture outcomes and action items, then share a short summary and next-step options.
