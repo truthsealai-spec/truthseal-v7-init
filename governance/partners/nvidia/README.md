@@ -1,4 +1,5 @@
 **Share this pack (copy/paste)**
+	•	Send Sequence (first contact) → governance/partners/nvidia/Send_Sequence_v1.0.md
 - One-page bundle → governance/partners/nvidia/Partner_Pack_Bundle_v1.0.md
 - Live ACS Status → docs/STATUS_ACS.md
 - Anchoring Status v9.1 → docs/Anchoring_Status_v9.1.md
