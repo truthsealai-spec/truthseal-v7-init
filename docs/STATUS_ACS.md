@@ -19,10 +19,10 @@ self_reg: <0.00>
 drift: <0.00>
 acs: <0.00>
 
-## Artifacts
-- ACS metrics artifact: <artifact-id-or-link>
-- Workflow run: <run-url-or-id>
+### Artifacts
 
+- ACS metrics sample → governance/guards/observability/metrics_sample.json
+- Workflow definitions → .github/workflows/emit_acs.yml • .github/workflows/acs_pr_gate.yml
 ## Notes
 - This page is manual while on mobile; update numbers after each run.
 - If FAIL, open a ticket and attach the metrics artifact; do not send Partner Pack until PASS.
