@@ -1,9 +1,9 @@
 {
   "capsule": "TruthSeal QENC ProofCapsule",
   "version": "v1.0",
-  "created_utc": "<fill-UTC>",
+  "created_utc": "<2025-11-10T03:05:0>",
   "issuer": "TruthSeal™",
-  "sha256_of_this_file": "TBD",
+  "sha256_of_this_file": "<a54fb4dd47f0d5d9677ad7089e363d8e0c3a1cecb20ed7973a56f2ba15006f2b>",
   "references": {
     "ulic_registry": {
       "path": "governance/ledger/ULIC_v9.1.yaml",
@@ -29,5 +29,5 @@
       "composite_update_utc": "2025-11-05T22:44:00Z"
     }
   },
-  "notes": "Mobile-mode capsule. Later: normalize seals path to governance/ledger/seals/ and update refs."
+  "notes": "Mobile-mode capsule. Later: attach OTS receipt; normalize seals path."
 }
