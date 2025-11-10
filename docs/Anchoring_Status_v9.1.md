@@ -33,11 +33,11 @@ path: governance/governance/ledger/seals/QENC_v1_0_ProofCapsule.json
 sha256: a54fb4dd47f0d5d9677ad7089e363d8e0c3a1cecb20ed7973a56f2ba15006f2b
 anchor_status: Pending anchor (queue for OpenTimestamps)
 
-### Next actions
+## Next actions
+
 - When OTS confirms for ULIC/EVL, record TX and flip to “Anchored — <UTC>”.
 - On desktop, upload .ots receipts to governance/ledger/receipts/.
 - Update this page after each anchor event.
-- QENC v1.0
 
 path: governance/governance/ledger/seals/QENC_v1_0_ProofCapsule.json
 sha256: a54fb4dd47f0d5d9677ad7089e363d8e0c3a1cecb20ed7973a56f2ba15006f2b
