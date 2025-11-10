@@ -1,3 +1,8 @@
+**Share this pack (copy/paste)**
+- One-page bundle → governance/partners/nvidia/Partner_Pack_Bundle_v1.0.md
+- Live ACS Status → docs/STATUS_ACS.md
+- Anchoring Status v9.1 → docs/Anchoring_Status_v9.1.md
+- Full NVIDIA index → governance/partners/nvidia/README.md
 # TruthSeal™ × NVIDIA — Partner Pack (v1.0)
 
 File: governance/partners/nvidia/README.md  
