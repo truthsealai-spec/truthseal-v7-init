@@ -54,7 +54,7 @@ ots_anchor_status: "Anchored – OpenTimestamps"
     sha256: 0c348575f9a40e00e7dcb7bcef7637f9bb83b85cf1f789e76e3321d4a85e4e20
     ots_receipt: governance/governance/ledger/receipts/Annex_B_QE_Certification_Summary_v8.ots
     status: anchored
-composite_digest: "bf666d62d45fd01884cc358626a..."
+composite_digest: "Ty bf666d62d45fd01884cc358626a..."
 ots_receipt: governance/ledger/receipts/Integrity_Manifest_v8_pre.ots
 ots_anchor_status: "Anchored – OpenTimestamps"
 compliance_score: 1.000
@@ -69,12 +69,18 @@ remarks: >
     - Annex_B_QE_Certification_Summary_v8.yaml
     - Integrity_Manifest_v8_pre.yaml
   verification_status: "Digest re-aligned and confirmed"
-  # Annex D — register in manifest
+
+- name: QENC_v1_0_ProofCapsule.json
+  path: governance/governance/ledger/seals/QENC_v1_0_ProofCapsule.json
+  sha256: "a54fb4dd47f0d5d9677ad7089e363d8e0c3a1cecb20ed7973a56f2ba15006f2b"
+  status: verified
+  
+    # Annex D — register in manifest
   - name: Ledger_Seal_Proof_v8_1.yaml
   path: seals/
   sha256: "<insert_verified_hash_here>"
   status: verified
-    - name: Annex_D_Metaphysical_Synthesis_v8.ots.pdf
+   - name: Annex_D_Metaphysical_Synthesis_v8.ots.pdf
     path: governance/ledger/receipts/
     sha256: "3df53aa622dd31b6a097006ebe2eb500674cd3bb97e1252aa81"
     status: anchored
