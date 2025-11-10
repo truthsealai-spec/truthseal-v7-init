@@ -9,6 +9,7 @@ File: governance/partners/nvidia/README.md
 Purpose: One-stop index for NVIDIA reviewers: what this is, why it matters, and where to click.
 
 ## Quick links
+- **Send Sequence (first contact)** → governance/partners/nvidia/Send_Sequence_v1.0.md
 - **Open the one-page bundle (v1.0)** → governance/partners/nvidia/Partner_Pack_Bundle_v1.0.md
 - Executive Summary (TQC-Certified Coherence Chip) → governance/partners/nvidia/Executive_Summary_TQC_Certified_Chip_v1.0.md
 - Technical Specification v1.0 → governance/partners/nvidia/TQC_Certified_Coherence_Chip_Spec_v1.0.md
