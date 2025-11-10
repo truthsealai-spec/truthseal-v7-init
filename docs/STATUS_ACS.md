@@ -1,3 +1,5 @@
+Navigation: Operational Index → ../README.md • Docs Index → ./README.md • Public Reports → ../governance/governance/TruthSeal_PublicReports/README.md
+
 # Aim Coherence Score — Live Status (v1.0)
 
 Purpose: one page to read ACS health at a glance.
