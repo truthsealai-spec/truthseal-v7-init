@@ -32,3 +32,9 @@ Purpose: fast, human-readable snapshot of anchoring across ULIC/EVL/QCEP/Integri
 - Upload .ots receipts on desktop and keep calendar IDs here meanwhile.
 - Publish & timestamp QENC_v1_0_ProofCapsule.json; add its sha256 under Integrity verified_artifacts.
 - Normalize seals paths into governance/ledger/seals/ and update refs.
+- ## QCEP v9.0
+
+- path: governance/governance/ledger/seals/QCEP_Epoch_Manifest_v9.0.yaml
+- sha256: 251463d574b1cca2ccf8be68879a12019e94b3a057638d330af273b3824514e9
+- anchor_status: Anchored — OpenTimestamps
+- ots_anchor_tx: 9d5b2d5b75207756bcd674d2...
