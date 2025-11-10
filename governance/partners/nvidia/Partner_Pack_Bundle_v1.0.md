@@ -1,22 +1,22 @@
-# NVIDIA Partner Pack — Export Bundle v1.0
+# TruthSeal™ × NVIDIA — Partner Pack Bundle (v1.0)
 
-**File:** governance/partners/nvidia/Partner_Pack_Bundle_v1.0.md  
-**Purpose:** One-click checklist to export the full partner pack to PDF (in the right order), ready to email/print.
+**Purpose:** Single-page launcher for NVIDIA reviewers. One place to open every asset fast.
 
-## Bundle order (export these to PDF in sequence)
-1) Executive Summary → `governance/partners/nvidia/Executive_Summary_TQC_Certified_Chip_v1.0.md`
-2) Technical Specification v1.0 → `governance/partners/nvidia/TQC_Certified_Coherence_Chip_Spec_v1.0.md`
-3) ACS Financial Model v1.0 → `governance/guards/observability/ACS_Financial_Model_v1.0.md`
-4) Live ACS Status (appendix) → `docs/STATUS_ACS.md`
+## Contents
+- **Executive Summary** → governance/partners/nvidia/Executive_Summary_TQC_Certified_Chip_v1.0.md
+- **Technical Specification v1.0** → governance/partners/nvidia/TQC_Certified_Coherence_Chip_Spec_v1.0.md
+- **Aim Coherence Score (ACS) Financial Model v1.0** → governance/guards/observability/ACS_Financial_Model_v1.0.md
+- **Outreach Email v1.0** → governance/partners/nvidia/Outreach_Email_NVIDIA_v1.0.md
+- **Calendar Invite Text v1.0** → governance/partners/nvidia/Calendar_Invite_Text_v1.0.md
 
-## iPhone quick-export (GitHub → PDF)
-1) Open a doc → tap the share icon → **Print**.  
-2) On the print preview, two-finger **pinch-out** to full page → share → **Save to Files** (PDF).  
-3) Repeat for each doc above, keeping the filenames as shown.
+## Status & Live Signals
+- **Live ACS Status (Aim Coherence Score)** → docs/STATUS_ACS.md
+- **Anchoring Status v9.1 (mobile audit stub)** → docs/Anchoring_Status_v9.1.md
 
-## Cover email subject (suggested)
-TruthSeal™ × NVIDIA — TQC-Certified Coherence Chip (Executive Summary + Spec + ACS Model)
+## Suggested Review Flow (5–10 minutes total)
+1) Read **Executive Summary** (3 min).  
+2) Skim **Technical Spec v1.0** (focus on TQC invariants & ACS) (5 min).  
+3) Open **ACS Financial Model** (2 min) to see the business lever.  
+4) Confirm **Outreach Email** + **Calendar Invite** are ready to send.
 
-## Notes
-- This pack will be timestamp-anchored after your final review (OpenTimestamps).  
-- Path A (legal) is in motion; this bundle is for partner review under NDA.
+**Contact (public docs):** Dr. Nickolay Traykov (Prof. h.c.), Founder, TruthSeal™
