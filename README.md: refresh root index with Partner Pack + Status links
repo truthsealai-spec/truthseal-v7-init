@@ -1,25 +1,8 @@
 # TruthSeal™ v7 — Operational Index
 
-**Purpose:** One-stop entry to live status, observability, and partner materials. (No acronyms left unexplained on first mention.)
+**Purpose:** One-stop entry to live status and partner materials.
 
 ## Quick links
-
 - **Live Aim Coherence Score (ACS) Status** → docs/STATUS_ACS.md  
-  *ACS = Aim Coherence Score.*
-- **Anchoring Status v9.1** → docs/Anchoring_Status_v9.1.md
-
----
-
-## NVIDIA Partner Pack (v1.0)
-
-- **Index** → governance/partners/nvidia/README.md
-- **Executive Summary (TQC-Certified Coherence Chip)** → governance/partners/nvidia/Executive_Summary_TQC_Certified_Chip_v1.0.md  
-  *TQC = Traykov Law of Quantum Coherence.*
-- **Technical Specification v1.0** → governance/partners/nvidia/TQC_Certified_Coherence_Chip_Spec_v1.0.md
-- **ACS Financial Model v1.0** → governance/guards/observability/ACS_Financial_Model_v1.0.md
-- **Outreach Email v1.0** → governance/partners/nvidia/Outreach_Email_NVIDIA_v1.0.md
-- **Calendar Invite Text v1.0** → governance/partners/nvidia/Calendar_Invite_Text_v1.0.md
-
----
-
-*Contact (public docs):* Dr. Nickolay Traykov (Prof. h.c.), Founder, TruthSeal™
+- **Anchoring Status v9.1 (mobile audit stub)** → docs/Anchoring_Status_v9.1.md  
+- **Partners Index** → governance/partners/README.md
