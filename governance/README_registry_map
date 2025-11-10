@@ -38,3 +38,4 @@ Purpose: fast index of canonical ledger artifacts + current anchor state.
 ## Status pages
 - Live ACS status → docs/STATUS_ACS.md
 - Anchoring Status v9.1 → docs/Anchoring_Status_v9.1.md
+- **Public Reports index** → governance/governance/TruthSeal_PublicReports/README.md
