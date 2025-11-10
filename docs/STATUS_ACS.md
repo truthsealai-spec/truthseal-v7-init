@@ -1,11 +1,26 @@
-# TruthSeal™ — Live ACS Status
+# Aim Coherence Score — Live Status (v1.0)
 
-[![ACS sample](https://github.com/truthsealai-spec/truthseal-v7-init/actions/workflows/emit_acs.yml/badge.svg?branch=main)](https://github.com/truthsealai-spec/truthseal-v7-init/actions/workflows/emit_acs.yml)
-[![ACS PR gate](https://github.com/truthsealai-spec/truthseal-v7-init/actions/workflows/acs_pr_gate.yml/badge.svg?branch=main)](https://github.com/truthsealai-spec/truthseal-v7-init/actions/workflows/acs_pr_gate.yml)
+Purpose: one page to read ACS health at a glance.
 
-**Thresholds:** Purity ≥ 0.80 · SelfReg ≥ 0.60 · Drift ≤ 0.30 · ACS ≥ 0.70  
-Tune in: `.github/workflows/emit_acs.yml` → `env:` block.
+_Last update (UTC): <fill-utc>_
 
-Shortcuts:  
-- Observability guide → `governance/guards/observability/README.md`  
-- Sample input → `governance/guards/observability/metrics_sample.json`
+## Thresholds (must meet all)
+- Purity ≥ 0.80
+- Self-Regulation ≥ 0.60
+- Drift ≤ 0.30
+- **ACS ≥ 0.70**
+
+## Latest run
+result: <PASS|FAIL>
+purity: <0.00>
+self_reg: <0.00>
+drift: <0.00>
+acs: <0.00>
+
+## Artifacts
+- ACS metrics artifact: <artifact-id-or-link>
+- Workflow run: <run-url-or-id>
+
+## Notes
+- This page is manual while on mobile; update numbers after each run.
+- If FAIL, open a ticket and attach the metrics artifact; do not send Partner Pack until PASS.
