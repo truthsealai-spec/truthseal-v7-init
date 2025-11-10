@@ -26,3 +26,9 @@ acs: <0.00>
 ## Notes
 - This page is manual while on mobile; update numbers after each run.
 - If FAIL, open a ticket and attach the metrics artifact; do not send Partner Pack until PASS.
+- ### Run history
+
+<!-- append new rows at the top -->
+| time_utc              | purity | self_reg | drift | ACS  | result | notes |
+|-----------------------|--------|----------|-------|------|--------|-------|
+| 2025-11-09T00:00:00Z  |  –     |   –      |  –    |  –   |  –     | init scaffold |
