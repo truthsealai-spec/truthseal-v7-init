@@ -1,0 +1,17 @@
+{
+  "type": "ULLI_Sovereign_Declaration",
+  "version": "v1.0",
+  "artifact": "governance/doctorantura/ULLI_Foundational_Law_v1.0.md",
+  "artifact_sha256": "<PASTE_SHA256_OF_FILE_TEXT>",
+  "stamped_utc": "2025-11-11T00:00:00Z",
+  "ots_calendar_id": "<PASTE_WHEN_RECEIPT_ISSUED>",
+  "ots_status": "Receipt issued — awaiting Bitcoin confirmation",
+  "links": {
+    "anchoring_status": "docs/Anchoring_Status_v9.1.md",
+    "evl_yaml": "governance/ledger/EVL_v9.0.yaml",
+    "ulic_yaml": "governance/ledger/ULIC_v9.1.yaml",
+    "tqc_ulic_capsule": "governance/doctorantura/TQC_ULIC_Synthesis_v1.0.md"
+  },
+  "signatory": "Dr. Nickolay Traykov (Prof. h.c.)",
+  "notes": "Canonical source is the markdown artifact. Update ots_* once OpenTimestamps confirms."
+}
