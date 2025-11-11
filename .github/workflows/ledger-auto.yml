@@ -1,50 +1,9 @@
-name: Ledger — OTS Stamp & Verify (inline)
-
+name: Ledger — OTS Stamp & Verify (manual)
 on:
-  push:
-    paths:
-      - 'governance/ledger/**'
-      - 'governance/ledger/receipts/**'
-  workflow_dispatch:
-
-permissions:
-  contents: write
+  workflow_dispatch: {}
 
 jobs:
-  ledger:
+  paused:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Prep ledger dirs
-        run: |
-          mkdir -p governance/ledger/receipts
-
-      - name: Install OpenTimestamps client
-        run: |
-          sudo apt-get update
-          python3 -m pip install --upgrade pip
-          python3 -m pip install opentimestamps-client
-
-      - name: Hash + OTS stamp (inline)
-        env:
-          ARTIFACTS: ${{ github.event.inputs.artifacts }}
-        run: |
-          set -euo pipefail
-          STAMP_FILE="governance/ledger/receipts/verification-${{ github.sha }}.txt"
-          : > "$STAMP_FILE"
-          TARGETS="${ARTIFACTS:-README.md}"
-          for f in $TARGETS; do
-            if [ -f "$f" ]; then
-              sha256sum "$f" >> "$STAMP_FILE"
-            fi
-          done
-          if command -v ots >/dev/null 2>&1; then
-            ots stamp "$STAMP_FILE" || true
-          fi
-
-      - name: Upload receipts
-        uses: actions/upload-artifact@v4
-        with:
-          name: ledger-receipts
-          path: governance/ledger/receipts/*
+      - run: echo "Temporarily paused to stop CI noise while we finish anchoring & secrets."
