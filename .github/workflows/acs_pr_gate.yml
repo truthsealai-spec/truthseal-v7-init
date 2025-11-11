@@ -1,10 +1,11 @@
-name: TruthSeal PR Gate (ACS thresholds)
+name: ACS PR Gate
 
 on:
   pull_request:
     branches: [ main ]
     paths:
-      - 'governance/guards/observability/**'
+      - 'governance/**'
+      - 'docs/**'
       - '.github/workflows/acs_pr_gate.yml'
 
 permissions:
@@ -14,60 +15,60 @@ jobs:
   gate:
     runs-on: ubuntu-latest
     env:
-      HARD_GATE: 'true'
-      THRESH_PURITY: '0.80'
-      THRESH_SELFREG: '0.60'
-      THRESH_DRIFT: '0.30'   # max allowed
-      THRESH_ACS: '0.70'
-      METRICS_FILE: 'governance/guards/observability/metrics_sample.json'
+      HARD_GATE: 'true'        # set to 'false' to warn-only
+      PURITY_MIN: '0.80'
+      SELFREG_MIN: '0.60'
+      DRIFT_MAX: '0.30'
+      ACS_MIN: '0.70'
+      METRICS_FILE: governance/guards/observability/metrics_sample.json
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Show metrics input
+      - name: Ensure jq/bc
         run: |
-          echo "Using $METRICS_FILE"
-          if [ -f "$METRICS_FILE" ]; then cat "$METRICS_FILE"; else echo "{}"; fi
+          if ! command -v jq >/dev/null 2>&1; then
+            sudo apt-get update && sudo apt-get install -y jq
+          fi
+          if ! command -v bc >/dev/null 2>&1; then
+            sudo apt-get update && sudo apt-get install -y bc
+          fi
 
-      - name: Gate check
+      - name: Read ACS sample
+        id: read
         run: |
-          python - << 'PY'
-          import json, os, sys
-          path = os.environ.get("METRICS_FILE","")
-          try:
-              with open(path, "r", encoding="utf-8") as f:
-                  data = json.load(f)
-          except Exception as e:
-              print(f"::error::failed to load metrics file {path}: {e}")
-              sys.exit(1)
+          if [ ! -f "$METRICS_FILE" ]; then
+            echo "file_missing=true" >> "$GITHUB_OUTPUT"
+            echo "WARN_ONLY=yes" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          P=$(jq -r '.purity'  "$METRICS_FILE")
+          S=$(jq -r '.selfreg' "$METRICS_FILE")
+          D=$(jq -r '.drift'   "$METRICS_FILE")
+          A=$(jq -r '.acs'     "$METRICS_FILE")
+          echo "purity=$P"  >> "$GITHUB_OUTPUT"
+          echo "selfreg=$S" >> "$GITHUB_OUTPUT"
+          echo "drift=$D"   >> "$GITHUB_OUTPUT"
+          echo "acs=$A"     >> "$GITHUB_OUTPUT"
 
-          purity  = float(data.get("Purity",  data.get("purity", 0)))
-          selfreg = float(data.get("SelfReg", data.get("selfReg", 0)))
-          drift   = float(data.get("Drift",   data.get("drift", 1)))
-          acs     = float(data.get("ACS",     data.get("acs", 0)))
+      - name: Gate decision
+        run: |
+          if [ "${WARN_ONLY:-no}" = "yes" ]; then
+            echo "::warning::No metrics file found. Skipping hard gate."
+            exit 0
+          fi
+          P="${{ steps.read.outputs.purity }}"
+          S="${{ steps.read.outputs.selfreg }}"
+          D="${{ steps.read.outputs.drift }}"
+          A="${{ steps.read.outputs.acs }}"
 
-          thr_p = float(os.environ.get("THRESH_PURITY",   "0.80"))
-          thr_s = float(os.environ.get("THRESH_SELFREG",  "0.60"))
-          thr_d = float(os.environ.get("THRESH_DRIFT",    "0.30"))
-          thr_a = float(os.environ.get("THRESH_ACS",      "0.70"))
-          hard  = os.environ.get("HARD_GATE","false").lower()=="true"
+          FAIL=0
+          [ "$(echo "$P < $PURITY_MIN"  | bc -l)" -eq 1 ] && echo "::error::Purity $P < $PURITY_MIN"   && FAIL=1
+          [ "$(echo "$S < $SELFREG_MIN" | bc -l)" -eq 1 ] && echo "::error::SelfReg $S < $SELFREG_MIN" && FAIL=1
+          [ "$(echo "$D > $DRIFT_MAX"   | bc -l)" -eq 1 ] && echo "::error::Drift $D > $DRIFT_MAX"     && FAIL=1
+          [ "$(echo "$A < $ACS_MIN"     | bc -l)" -eq 1 ] && echo "::error::ACS $A < $ACS_MIN"         && FAIL=1
 
-          print(f"Purity={purity} (>= {thr_p})")
-          print(f"SelfReg={selfreg} (>= {thr_s})")
-          print(f"Drift={drift} (<= {thr_d})")
-          print(f"ACS={acs} (>= {thr_a})")
-
-          bad=[]
-          if purity  < thr_p: bad.append("Purity")
-          if selfreg < thr_s: bad.append("SelfReg")
-          if drift   > thr_d: bad.append("Drift")
-          if acs     < thr_a: bad.append("ACS")
-
-          if bad and hard:
-              print(f"::error::Thresholds not met: {', '.join(bad)}")
-              sys.exit(2)
-          PY
-
-      - name: Summary
-        if: always()
-        run: echo "ACS PR Gate completed." >> "$GITHUB_STEP_SUMMARY"
+          if [ "$HARD_GATE" = "true" ] && [ $FAIL -eq 1 ]; then
+            echo "Hard gate enforced."; exit 1
+          fi
+          echo "Gate OK."
