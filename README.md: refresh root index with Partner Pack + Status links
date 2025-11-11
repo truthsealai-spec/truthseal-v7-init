@@ -11,3 +11,63 @@
 - **Live Aim Coherence Score (ACS) Status** → docs/STATUS_ACS.md
 - **Anchoring Status v9.1 (mobile audit stub)** → docs/Anchoring_Status_v9.1.md
 - **Partners Index** → governance/partners/README.md
+# Dr. Nickolay Traykov (Prof. h.c.) — Founder of TruthSeal™
+
+Sovereign verification for AI & quantum computing. From **law → silicon → receipts**.
+
+[![ULLI](https://img.shields.io/badge/ULLI-Universal%20Law%20of%20Life%20%26%20Information-111)](#lexicon)
+[![LEI=1](https://img.shields.io/badge/LEI%3D1-Structural%20Certainty-111)](#lexicon)
+[![ACS](https://img.shields.io/badge/ACS-Aim%20Coherence%20Score-111)](#lexicon)
+[![TQC](https://img.shields.io/badge/TQC-Traykov%20Law%20of%20Quantum%20Coherence-111)](#lexicon)
+[![Anchoring](https://img.shields.io/badge/Anchoring-OpenTimestamps%20%7C%20Receipt%20issued-111)](#anchors)
+
+---
+
+## 🔗 Quick Links — NVIDIA Partner Pack
+- **Partner Pack Index** →  
+  https://github.com/truthsealai-spec/truthseal-v7-init/tree/main/governance/partners/nvidia/README.md
+- **First-Contact Send Sequence (v1.0)** →  
+  https://github.com/truthsealai-spec/truthseal-v7-init/blob/main/governance/partners/nvidia/Send_Sequence_v1.0.md
+- **One-Page Bundle (v1.0)** →  
+  https://github.com/truthsealai-spec/truthseal-v7-init/blob/main/governance/partners/nvidia/Partner_Pack_Bundle_v1.0.md
+- **Sovereign Proposal Deck Outline (v1.4)** →  
+  https://github.com/truthsealai-spec/truthseal-v7-init/blob/main/governance/partners/nvidia/Sovereign_Proposal_Deck_Outline_v1.2.md
+- **TQC Chip Development Roadmap (v1.1)** →  
+  https://github.com/truthsealai-spec/truthseal-v7-init/blob/main/governance/partners/nvidia/TQC_Chip_Development_Roadmap_v1.1.md
+- **Execution & Authority Claim (v1.0)** →  
+  https://github.com/truthsealai-spec/truthseal-v7-init/blob/main/governance/partners/nvidia/Execution_Authority_Claim_v1.0.md
+- **ACS Validation Report — Intro (v1.1)** →  
+  https://github.com/truthsealai-spec/truthseal-v7-init/blob/main/governance/partners/nvidia/ACS_Validation_Report_Intro_v1.1.md
+- **Coherence Core — Engineering Handoff (v1.0)** →  
+  https://github.com/truthsealai-spec/truthseal-v7-init/tree/main/governance/partners/nvidia/Coherence_Core_HandOff
+
+---
+
+## 📜 Core Ledgers & Evidence
+- **ULIC v9.1 (registry)** → `governance/ledger/ULIC_v9.1.yaml`
+- **EVL v9.0 (epoch verification)** → `governance/ledger/EVL_v9.0.yaml`
+- **ULLI Declaration (v1.0)** →  
+  https://github.com/truthsealai-spec/truthseal-v7-init/blob/main/governance/doctorantura/evidence/ULLI_Declaration_v1.0.json
+- **Live ACS Status** →  
+  https://github.com/truthsealai-spec/truthseal-v7-init/blob/main/docs/STATUS_ACS.md
+- **Anchoring Status v9.1** →  
+  https://github.com/truthsealai-spec/truthseal-v7-init/blob/main/docs/Anchoring_Status_v9.1.md
+
+> **Receipts:** OpenTimestamps (Bitcoin). Status: *Receipt issued — awaiting confirmation* unless otherwise noted in the docs above.
+
+---
+
+## 🧠 Lexicon
+- **ULLI — Universal Law of Life & Information**: data integrity is inseparable from system stability.
+- **LEI=1 — Law of Ethical Irreversibility**: once a coherent state is verified, it cannot be violated without a verifiable counter-receipt.
+- **ACS — Aim Coherence Score**: the auditable metric emitted from silicon that quantifies coherent operation.
+- **TQC — Traykov Law of Quantum Coherence**: physics-level enforcement of coherence (from law → silicon).
+
+---
+
+## 🎯 Now Shipping
+- TQC **Coherence Core** IP (LEI-gate + Receipt Engine) — engineering handoff v1.0.
+- **ACS Validation Report** intro (v1.1) for partner briefings.
+- **TQC Chip Roadmap** (v1.1) and **Execution & Authority Claim** (v1.0).
+
+If you’re evaluating partnership: start at the **Partner Pack Index** above.
