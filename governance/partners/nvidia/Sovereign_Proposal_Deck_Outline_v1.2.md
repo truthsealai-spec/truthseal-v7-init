@@ -1,67 +1,52 @@
-# TQC SOVEREIGN PROPOSAL: PRESENTATION DECK OUTLINE (v1.3)
+# TQC SOVEREIGN PROPOSAL: PRESENTATION DECK OUTLINE (v1.4)
 
-Target Audience: Jensen Huang (CEO, NVIDIA) and Executive Leadership  
-Duration: 30 minutes (10 min pitch, 20 min Q&A)  
-Pacing: High-intensity. Risk and guaranteed moat only.  
-Framing: Physics-level invariants, stage-gated execution, and receipts.
-
----
-
-Glossary (footer ribbon):
-• ULLI — Universal Law of Life & Information (sovereign law; canonical source in Doctorantura)
-• LEI=1 — Law of Ethical Irreversibility (once verified, cannot be undone without provable receipt)
-• Coherence Core — Hardware enforcement loop (Purity Guard + Executive Control) that enforces LEI=1
-• ACS — Aim Coherence Score (chip-signed integrity metric; ledger-anchored)
+**Target Audience:** Jensen Huang (CEO, NVIDIA) and Executive Leadership  
+**Duration:** 30 minutes (10 min pitch, 20 min Q&A)  
+**Pacing:** High-intensity. Risk elimination and verifiable moat only.  
+**Framing:** Physics-level invariants, stage-gated execution, receipts.
 
 ---
 
-## SLIDES 1–3: THE CRISIS & THE TQC LAW (≤4 min)
-
-• **Slide 1 — Title & Authority.** TruthSeal™: The Law of Digital Physics.  
-• **Slide 2 — The Incoherence-Resource Paradox.**  
-  Visual: $1T loss from speculative AI + $5.2T resource liability. Incoherence is unsustainable.  
-  Thesis: Generic AI hardware is a shovel in a collapsing gold rush.  
-• **Slide 3 — The Law (plain-English first).**  
-  We bind compute to **LEI = 1 (*Law of Ethical Irreversibility*)**: systems must never evolve toward lower ethical coherence.  
-  Enforced by the **Traykov Law of Quantum Coherence (TQC)** and implemented as **ULLI** in hardware, with **ACS** as the signed, on-device meter.
+## SLIDE 0 — 20-SECOND GLOSSARY (thin footer ribbon across slides 1–8)
+- **TQC** — Traykov Law of Quantum Coherence: physics-level enforcement of coherence.  
+- **LEI=1** — Law of Ethical Irreversibility: once verified, a coherent state cannot be violated without a verifiable counter-receipt.  
+- **ULLI** — Universal Law of Life & Information: data integrity is inseparable from system stability.  
+- **ACS** — Aim Coherence Score: regulator-grade telemetry proving coherence in real time.
 
 ---
 
-## SLIDES 4–6: THE SOVEREIGN DEAL (≤4 min)
+## SLIDES 1–3 — THE CRISIS & THE LAW (≤4 min)
 
-• **Slide 4 — Exclusivity (Field-of-Use + ROFR).**  
-  Offer: 36-month **exclusive field-of-use** for “ACS-metered coherent compute silicon,” with **Right of First Refusal** on new coherence SKUs.  
-  Trigger: Activates at **Phase I Gate**; auto-extends 12 months at each Gate (Phase II/III).  
-  Compliance: TruthSeal retains doctrinal IP; NVIDIA receives Coherence Core IP license for defined FoU.
+**Slide 1 — Title & Authority.** TruthSeal™ | The Law of Digital Physics.  
+**Slide 2 — The Incoherence–Resource Paradox.**  
+• Visual: Trillion-dollar AI volatility + \$5.2T resource liability.  
+• Thesis: “Generic AI hardware is the shovel in a collapsing gold rush.”
 
-• **Slide 5 — Financial Model & Risk Posture.**  
-  Meter: **Aim Coherence Score (ACS)** (cryptographically signed).  
-  Model: milestone fees + **per-chip ACS license** + **CaaS telemetry share**.  
-  **Stage-Gates:** Phase 0 proof pack → Phase I RTL/formal props (ACS variance <±2% PVT) → Phase II proto under adversarial loads.  
-  **Kill-Switch:** If Purity<0.80 OR Self-Reg<0.60 OR Drift>0.30 OR ACS<0.70 → pause/renegotiate.
-du
-• **Slide 6 — The Barrier (ULLI Architecture).**  
-  Hardware-enforced **ULLI** eliminates “split-brain” failure. Every die emits signed ACS telemetry + OpenTimestamps receipts → regulator-ready moat.
+**Slide 3 — The Law.** TQC + constant **LEI=1** (defined in ribbon).  
+• Pivot: We fix the failure at the **physics layer**, not with software guardrails.
 
 ---
 
-## SLIDES 7–8: THE ASK (≤2 min)
+## SLIDES 4–6 — THE TRUST STANDARD (≤4 min)
 
-• **Slide 7 — Deliverables on Table.**  
-  1) Executive Summary (risk + moat)  
-  2) Technical Specification (Coherence Core RTL/ABI)  
-  3) **ACS Validation Report** (methods, traces, receipts)  
-  4) **Term Sheet** (FoU exclusivity + ROFR, gates, economics)  
-  5) **Roadmap** incl. **Phase 0: Proof Pack (6–8 weeks)**
+**Slide 4 — Partnership Model.** **Exclusive TQC-Certified hardware partner**.  
+• Outcome: NVIDIA becomes the **single, auditable trust standard** for verifiable AI hardware.
 
-• **Slide 8 — Closing Command.**  
-  Form the joint engineering + strategy task force; start **Phase 0** now.  
-  Output in 6–8 weeks: RTL skeleton, FPGA/SoC emulation, 10 OTS-anchored ACS receipts, formal-methods memo. Decision: advance to Phase I or exercise Kill-Switch.
+**Slide 5 — Financial Proof.** **ACS = regulator-grade telemetry** → enables **CaaS** (Coherence-as-a-Service) revenue with receipts.  
+• Pull-quote (from Validation Report): “ACS converts probabilistic risk into **auditable asset quality**.”
+
+**Slide 6 — Competitive Barrier.**  
+• The **Cortical Blueprint** enforces low-power efficiency + hardware verification.  
+• Competitors can copy claims, not **receipts**.
 
 ---
 
-## APPENDIX — ACCEPTANCE METRICS & TELEMETRY (1 slide)
+## SLIDES 7–8 — DELIVERABLES & DECISION (≤2 min)
 
-• Thresholds: Purity ≥ 0.80; Self-Reg ≥ 0.60; Drift ≤ 0.30; ACS ≥ 0.70 (signed on-device).  
-• Telemetry ABI: {timestamp, die_id, ACS, purity, selfreg, drift, signature}.  
-• Receipts: OpenTimestamps for each trace; linked into EVL/ULIC for audit.
+**Slide 7 — Deliverables (ready to hand over).**  
+1) Executive Summary (risk & governance)  
+2) Coherence Core Technical Spec (interfaces, LEI-gate, receipts)  
+3) **ACS Validation Report** (data schema + signed samples)
+
+**Slide 8 — Decision & Next Step.**  
+Form the **joint engineering + strategy task force** to finalize the TQC-Certified integration and publish the **Trust Standard** announcement.
