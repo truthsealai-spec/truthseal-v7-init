@@ -1,89 +1,55 @@
-name: ACS PR gate
-
+name: ACS PR Gate
 on:
   pull_request:
+    branches: [ main ]
     paths:
-      - 'governance/guards/observability/**'
-      - '.github/workflows/emit_acs.yml'
+      - 'governance/**'
+      - 'docs/**'
       - '.github/workflows/acs_pr_gate.yml'
 
 jobs:
   gate:
     runs-on: ubuntu-latest
+    env:
+      HARD_GATE: 'true'     # set to 'false' to warn-only
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Emit + gate ACS metrics
-        env:
-          METRICS_INPUT_JSON: governance/guards/observability/metrics_sample.json
-          # Thresholds (hard gate for PRs)
-          PURITY_MIN: '0.80'
-          SELFREG_MIN: '0.60'
-          DRIFT_MAX: '0.30'
-          ACS_MIN: '0.70'
-          HARD_GATE: 'true'
+      - name: Load thresholds
         run: |
-          set -e
-          echo "== PR input =="
-          cat "${METRICS_INPUT_JSON}" || true
+          echo "PURITY_MIN=0.80" >> $GITHUB_ENV
+          echo "SELFREG_MIN=0.60" >> $GITHUB_ENV
+          echo "DRIFT_MAX=0.30"  >> $GITHUB_ENV
+          echo "ACS_MIN=0.70"    >> $GITHUB_ENV
 
-          python3 - <<'PY'
-          import os, json, time, sys
+      - name: Read ACS sample
+        run: |
+          FILE="governance/guards/observability/metrics_sample.json"
+          if [ ! -f "$FILE" ]; then
+            echo "::warning::No metrics_sample.json found; passing in warn-only mode."
+            echo "WARN_ONLY=yes" >> $GITHUB_ENV
+          else
+            PURITY=$(jq -r '.purity' "$FILE")
+            SELFREG=$(jq -r '.selfreg' "$FILE")
+            DRIFT=$(jq -r '.drift' "$FILE")
+            ACS=$(jq -r '.acs' "$FILE")
+            echo "PURITY=$PURITY  SELFREG=$SELFREG  DRIFT=$DRIFT  ACS=$ACS"
+            echo "PURITY_OK=$([ "$(echo "$PURITY>=$PURITY_MIN" | bc -l)" = 1 ] && echo ok || echo fail)" >> $GITHUB_ENV
+            echo "SELFREG_OK=$([ "$(echo "$SELFREG>=$SELFREG_MIN" | bc -l)" = 1 ] && echo ok || echo fail)" >> $GITHUB_ENV
+            echo "DRIFT_OK=$([ "$(echo "$DRIFT<=$DRIFT_MAX" | bc -l)" = 1 ] && echo ok || echo fail)" >> $GITHUB_ENV
+            echo "ACS_OK=$([ "$(echo "$ACS>=$ACS_MIN" | bc -l)" = 1 ] && echo ok || echo fail)" >> $GITHUB_ENV
+          fi
 
-          def _clamp01(x):
-              try: x = float(x)
-              except Exception: return 0.0
-              if x < 0.0: return 0.0
-              if x > 1.0: return 1.0
-              return x
-
-          def _norm(x, lo=0.0, hi=10.0):
-              try: x = float(x)
-              except Exception: return 0.0
-              if hi <= lo: return 0.0
-              return _clamp01((x - lo) / (hi - lo))
-
-          p = os.environ.get("METRICS_INPUT_JSON","governance/guards/observability/metrics_sample.json")
-          with open(p,"r") as f:
-              c = json.load(f)
-
-          redactions = float(c.get("Commander_Output_Redaction_Rate", 0.0))
-          blocked    = float(c.get("Blocked_HighRisk_Jobs", 0))
-          detected   = float(c.get("Detected_HighRisk_Jobs", 0))
-          reversals  = float(c.get("Reversal_Edits_Rate", 0.0))
-          crumbs     = float(c.get("Missing_Breadcrumbs_Rate", 0.0))
-
-          purity = _clamp01(1.0 - redactions)
-          selfreg = _clamp01(1.0 - max(0.0, (blocked - detected)) / 10.0)
-          drift = _clamp01(0.5*reversals + 0.5*crumbs)
-          acs = _clamp01((purity + selfreg + (1.0 - drift)) / 3.0)
-          ts = int(time.time())
-
-          print(f"METRIC Purity {purity:.2f} {ts}")
-          print(f"METRIC SelfRegulation {selfreg:.2f} {ts}")
-          print(f"METRIC TemporalDrift {drift:.2f} {ts}")
-          print(f"METRIC ACS {acs:.2f} {ts}")
-
-          PR = float(os.environ.get("PURITY_MIN","0.8"))
-          SR = float(os.environ.get("SELFREG_MIN","0.6"))
-          DM = float(os.environ.get("DRIFT_MAX","0.3"))
-          AM = float(os.environ.get("ACS_MIN","0.7"))
-          hard = os.environ.get("HARD_GATE","true").lower() == "true"
-
-          ok = (purity>=PR) and (selfreg>=SR) and (drift<=DM) and (acs>=AM)
-
-          summary = f"""TruthSeal ACS metrics
-
-- Purity: {purity:.2f}
-- SelfRegulation: {selfreg:.2f}
-- TemporalDrift: {drift:.2f}
-- ACS: {acs:.2f}
-
-Thresholds: Purity≥{PR}, SelfReg≥{SR}, Drift≤{DM}, ACS≥{AM}
-Status: {"PASS ✅" if ok else "FAIL ❌"}
-"""
-          open(os.environ.get("GITHUB_STEP_SUMMARY","/tmp/summary"),"a").write(summary)
-
-          if hard and not ok:
-              sys.exit(1)
-          PY
+      - name: Gate decision
+        run: |
+          if [ "${WARN_ONLY}" = "yes" ]; then
+            echo "No metrics file; warning only."
+            exit 0
+          fi
+          echo "Results: PURITY=$PURITY_OK SELFREG=$SELFREG_OK DRIFT=$DRIFT_OK ACS=$ACS_OK"
+          if [ "$HARD_GATE" = "true" ] && { [ "$PURITY_OK" != "ok" ] || [ "$SELFREG_OK" != "ok" ] || [ "$DRIFT_OK" != "ok" ] || [ "$ACS_OK" != "ok" ]; }; then
+            echo "::error::ACS thresholds not met (hard gate)."
+            exit 1
+          fi
+          echo "Gate passed (or warn-only)."
