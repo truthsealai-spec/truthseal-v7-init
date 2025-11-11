@@ -17,7 +17,8 @@ Stamped_utc: 2025-11-11T00:55Z
 - **Phase 6 — Constitutional Expansion (ULIC Continuum)**  
   - `../governance/ledger/ULIC_v9.1.yaml` — **UNKNOWN ❓ (verify)**  
   - `../governance/ledger/EVL_v9.0.yaml` — **UNKNOWN ❓ (verify)**  
-  - Anchors dashboard → [`docs/Anchoring_Status_v9.1.md`](./Anchoring_Status_v9.1.md) — **LOCKED (needs updates when OTS confirms) 🟡**
+  - Anchors dashboard →
+  - - Doctorantura — TQC & ULIC Synthesis (INTERNAL) → ../governance/doctorantura/TQC_ULIC_Synthesis_v1.0.md — LOCKED 🔒[`docs/Anchoring_Status_v9.1.md`](./Anchoring_Status_v9.1.md) — **LOCKED (needs updates when OTS confirms) 🟡**
 - **Phase 7 — Institutional Deployment & Diplomatic Recognition**  
   NVIDIA pack index → [`../governance/partners/README.md`](../governance/partners/README.md) — **LOCKED ✅** (verify all 8 child docs open)
 
