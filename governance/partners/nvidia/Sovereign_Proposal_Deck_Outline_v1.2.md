@@ -7,12 +7,11 @@ Framing: Physics-level invariants, stage-gated execution, and receipts.
 
 ---
 
-## SLIDE 0 — 20-SECOND GLOSSARY (kept as a thin footer ribbon on slides 1–8)
-
-**TQC** — Traykov Law of Quantum Coherence (physics invariant for stable compute)  
-**LEI = 1** — *Law of Ethical Irreversibility*: no step may reduce ethical coherence  
-**ULLI** — Unbreakable Local-Loop Integrity (hardware-enforced sync loop)  
-**ACS** — Aim Coherence Score (on-silicon, signed proof of coherence)
+Glossary (footer ribbon):
+• ULLI — Universal Law of Life & Information (sovereign law; canonical source in Doctorantura)
+• LEI=1 — Law of Ethical Irreversibility (once verified, cannot be undone without provable receipt)
+• Coherence Core — Hardware enforcement loop (Purity Guard + Executive Control) that enforces LEI=1
+• ACS — Aim Coherence Score (chip-signed integrity metric; ledger-anchored)
 
 ---
 
@@ -40,7 +39,7 @@ Framing: Physics-level invariants, stage-gated execution, and receipts.
   Model: milestone fees + **per-chip ACS license** + **CaaS telemetry share**.  
   **Stage-Gates:** Phase 0 proof pack → Phase I RTL/formal props (ACS variance <±2% PVT) → Phase II proto under adversarial loads.  
   **Kill-Switch:** If Purity<0.80 OR Self-Reg<0.60 OR Drift>0.30 OR ACS<0.70 → pause/renegotiate.
-
+du
 • **Slide 6 — The Barrier (ULLI Architecture).**  
   Hardware-enforced **ULLI** eliminates “split-brain” failure. Every die emits signed ACS telemetry + OpenTimestamps receipts → regulator-ready moat.
 
