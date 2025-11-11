@@ -1,9 +1,10 @@
 name: Ledger — OTS Stamp & Verify (manual)
+
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 jobs:
   paused:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Temporarily paused to stop CI noise while we finish anchoring & secrets."
+      - run: echo "Auto-stamping temporarily paused to clear red noise; run manually when ready."
