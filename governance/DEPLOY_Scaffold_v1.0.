@@ -1,0 +1,44 @@
+# TruthSeal™ — Deployment Scaffold (v1.0)
+Classification: INTERNAL — OPERATIONS
+
+Stamped_utc: 2025-11-11T00:00:00Z
+Owner: Dr. Nickolay Traykov (Prof. h.c.) • Ops Lead: Ben (TruthSeal AI)
+
+## Purpose
+Single page to see **applications**, **milestones**, and **next actions** for go-live.
+
+---
+
+## A) Applications / Assets (ready-to-send or working)
+- [x] **NVIDIA Partner Pack** (bundle + index) → governance/partners/nvidia/README.md
+- [x] **Partners Index** → governance/partners/README.md
+- [x] **ACS status page** → docs/STATUS_ACS.md
+- [x] **Anchoring dashboard (mobile audit stub)** → docs/Anchoring_Status_v9.1.md
+- [x] **Financial Projection (Plain)** → docs/Financial_Projection_LEI1_Plain_v1.0.md
+- [x] **Financial Value Report (Refined, INTERNAL)** → governance/partners/investors/Financial_Value_Report_LEI1_Refined_v1.0.md
+- [x] **TQC Civilizational Report (INTERNAL)** → governance/partners/investors/TQC_Four_Dimensions_Civilizational_Report_v1.0.md
+- [x] **Project Chronology & Constants** → docs/TruthSeal_Project_Chronology_v1.0.md
+- [x] **Phases Ledger** → docs/Phases_Ledger_v1.0.md
+- [x] **Workflows (guards)** → .github/workflows/emit_acs.yml, acs_pr_gate.yml, truthseal_leakscan.yml, ledger-auto.yml, ots-reminder.yml
+
+---
+
+## B) Phase Milestones (snapshot)
+- **Phase 3 — DEFENCE:** LOCKED ✔ → docs/DEFENCE_Checklist_v1.0.md
+- **Phase 4 — ACS/Guards:** ATTN ● → confirm metrics sample + PR gate visible in repo UI
+- **Phase 5 — ISO/Quantum Audit Cert (TruthSeal Sovereign AI Cert):** VERIFY ? → governance/ledger/policy/TruthSeal_Paramount_Policy_Charter_v1.0.md (path to be finalized)
+- **Phase 6 — ULIC Continuum:** VERIFY ? → governance/ledger/ULIC_v9.1.yaml, governance/ledger/EVL_v9.0.yaml (confirm present + anchors)
+- **Anchors:** LOCKED (awaiting OTS confirmations) → docs/Anchoring_Status_v9.1.md
+
+---
+
+## C) Next 72 hours — critical actions
+1) **Confirm anchors:** update OTS status/TX once confirmed in `docs/Anchoring_Status_v9.1.md`.
+2) **Trigger ACS gate:** open a small PR touching `governance/guards/observability/*` to demonstrate PR hard-gate behavior (attach artifact).
+3) **Investor handoff pack:** use `governance/partners/investors/README.md` to assemble the diligence zip (INTERNAL only).
+
+---
+
+## D) Public vs Internal guardrails
+- Do **not** link anything under `governance/partners/investors/` from public indexes.
+- Public-safe references live under `docs/` and `governance/partners/` (non-investor).
