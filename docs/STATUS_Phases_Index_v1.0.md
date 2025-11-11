@@ -11,7 +11,8 @@ Stamped_utc: 2025-11-11T00:55Z
 
 ## Phase overview
 - **Phase 3 — DEFENCE** → [`docs/DEFENCE_Checklist_v1.0.md`](./DEFENCE_Checklist_v1.0.md) — **LOCKED ✅**
-- **Phase 4 — ACS/Guards** → [`docs/STATUS_ACS.md`](./STATUS_ACS.md) — **ATTN 🟡** (confirm workflows + metrics sample exist)
+- **Phase 4 — ACS/Guards** → [`docs/STATUS_ACS.md`](./STATUS_ACS.md) — **ATTN 🟡** (confirm workflows + metrics
+- - QHIA Annex (INTERNAL) → ../governance/doctorantura/TruthSeal_QHIA_Annex_v1.0.md — LOCKED 🔒
 - **Phase 5 — ISO / Quantum Audit Certification (TruthSeal Sovereign AI Cert)**  
   Expected doc: `governance/ledger/policy/TruthSeal_Paramount_Policy_Charter_v1.0.md` — **UNKNOWN ❓**
 - **Phase 6 — Constitutional Expansion (ULIC Continuum)**  
