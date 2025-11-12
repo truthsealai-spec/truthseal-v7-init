@@ -1,4 +1,5 @@
 # NVIDIA Partner Pack — Index (v1.0)
+- **DEVORA™ Coherence Gate (live demo)** → demos/devora/DEVORA_App.html  _(runs offline; open → Raw → Save to Files → tap to run)_
 
 ## What this package proves
 Physics-level coherence, auditability, and a stage-gated path from brief to silicon—zero hand-wave.
