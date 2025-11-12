@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-<title>TruthSeal — Local ACS + Receipt Demo (Offline, v1.5)</title>
+<title>TruthSeal — Local ACS + Receipt Demo (Offline, v1.6)</title>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <style>
   :root{color-scheme:dark}
@@ -31,7 +31,7 @@
 </head>
 <body>
 <div class="wrap">
-  <h1>TruthSeal — Local ACS + Receipt Demo <span class="tag">v1.5</span></h1>
+  <h1>TruthSeal — Local ACS + Receipt Demo <span class="tag">v1.6</span></h1>
   <p class="muted">Runs entirely on-device (no network). Show a real <em>Aim Coherence Score</em> and save a receipt JSON locally.</p>
 
   <!-- Controls -->
@@ -93,7 +93,7 @@
 </div>
 
 <script>
-  // -------- utilities
+  // ===== utilities
   const $ = s => document.querySelector(s);
   const round4 = x => Math.round((+x + Number.EPSILON)*10000)/10000;
 
@@ -110,13 +110,22 @@
     return round4(purity*(1-drift)*lei);
   }
   function stableStringify(o){ return JSON.stringify(o,Object.keys(o).sort(),2); }
+
+  // Try WebCrypto first; if unavailable (e.g., iOS Quick Look), return a safe placeholder.
   async function sha256Hex(str){
-    const enc = new TextEncoder().encode(str);
-    const dg = await crypto.subtle.digest('SHA-256',enc);
-    return Array.from(new Uint8Array(dg)).map(b=>b.toString(16).padStart(2,'0')).join('');
+    try{
+      if (window.crypto && window.crypto.subtle) {
+        const enc = new TextEncoder().encode(str);
+        const dg = await window.crypto.subtle.digest('SHA-256', enc);
+        return Array.from(new Uint8Array(dg)).map(b=>b.toString(16).padStart(2,'0')).join('');
+      }
+      throw new Error('subtle missing');
+    }catch(_){
+      return 'sha256_unavailable_in_this_viewer';
+    }
   }
 
-  // -------- UI refs
+  // ===== UI refs
   const purity=$('#purity'), drift=$('#drift'), lei=$('#lei'), attSel=$('#att');
   const kpi=$('#kpi'), status=$('#status'), attPill=$('#attPill'), out=$('#out');
 
@@ -126,34 +135,47 @@
     kpi.textContent = acs.toFixed(4);
     kpi.className = 'kpi ' + ((acs===1.0&&att)?'ok':'bad');
     status.textContent = 'STATUS: ' + ((acs===1.0&&att)?'COHERENT':'QUARANTINE');
-    status.className = 'pill ' + ((acs===1.0&&att)?'good':'bad');
+    status.className   = 'pill ' + ((acs===1.0&&att)?'good':'bad');
     attPill.textContent = 'ATTESTATION: ' + (att?'TRUSTED':'UNTRUSTED');
-    attPill.className = 'pill ' + (att?'':'bad');
+    attPill.className   = 'pill ' + (att?'':'bad');
   }
   function resetToCoherent(){
     purity.value='1.0000'; drift.value='0.0000'; lei.value='1'; attSel.value='true';
     refresh();
   }
 
+  // ===== receipt pipeline (always resolves, even in restricted viewers)
   let lastReceipt = {};
   async function generateReceipt(){
-    const now = new Date().toISOString();
-    const counter = nextCounter();
-    const values = {
-      purity: round4(purity.value),
-      drift : round4(drift.value),
-      lei   : (+lei.value===1)?1:0,
-      attested: (attSel.value==='true')
-    };
-    const acs = calcACS(values.purity,values.drift,values.lei);
-    const body = { acs, values, timestamp_utc: now, monotonic_counter: counter };
-    const canon = stableStringify(body);
-    const hash_hex = await sha256Hex(canon);
-    const pqc_signature = "PQC_SIGNATURE_PLACEHOLDER";
-    lastReceipt = { receipt_version:"v1.0", body, hash_sha256:hash_hex, pqc_signature,
-      note:"Local demo: frame only. Replace signature with PQC key once available." };
-    out.textContent = JSON.stringify(lastReceipt,null,2);
-    out.scrollIntoView({behavior:'smooth',block:'start'});
+    try{
+      const now = new Date().toISOString();
+      const counter = nextCounter();
+      const values = {
+        purity: round4(purity.value),
+        drift : round4(drift.value),
+        lei   : (+lei.value===1)?1:0,
+        attested: (attSel.value==='true')
+      };
+      const acs = calcACS(values.purity,values.drift,values.lei);
+      const body = { acs, values, timestamp_utc: now, monotonic_counter: counter };
+      const canon = stableStringify(body);
+      const hash_hex = await sha256Hex(canon);
+      const pqc_signature = "PQC_SIGNATURE_PLACEHOLDER";
+      lastReceipt = {
+        receipt_version:"v1.0",
+        body,
+        hash_sha256: hash_hex,
+        pqc_signature,
+        note: (hash_hex==='sha256_unavailable_in_this_viewer'
+              ? "Local demo in iOS Files viewer: hash placeholder used. Open via Safari→Raw for full SHA-256."
+              : "Local demo: frame only. Replace signature with PQC key once available.")
+      };
+      out.textContent = JSON.stringify(lastReceipt,null,2);
+      out.scrollIntoView({behavior:'smooth',block:'start'});
+    }catch(e){
+      out.textContent = JSON.stringify({error:"Unexpected error generating receipt", detail:String(e)},null,2);
+      out.scrollIntoView({behavior:'smooth',block:'start'});
+    }
   }
 
   async function copyJSON(){
@@ -163,7 +185,6 @@
       await navigator.clipboard.writeText(text);
       alert('Receipt JSON copied.');
     }catch(_){
-      // iOS Quick Look fallback: select text so long-press → Copy works
       const r = document.createRange(); r.selectNodeContents(out);
       const s = getSelection(); s.removeAllRanges(); s.addRange(r);
       out.focus(); alert('Selected JSON. Long-press → Copy.');
@@ -185,14 +206,13 @@
       document.body.appendChild(a); a.click();
       setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},200);
     }catch(_){
-      // last-ditch fallback
-      alert('If Save is blocked, tap “Show JSON”, then use Share → Save.');
+      alert('If Save is blocked here, tap “Show JSON”, then Share → Save.');
     }
   }
 
   function showJSON(){ out.scrollIntoView({behavior:'smooth',block:'start'}); }
 
-  // -------- touch-friendly bindings (iOS Quick Look)
+  // ===== touch-friendly bindings (iOS Quick Look)
   function bindTap(el, fn){
     let fired=false;
     const safe = e=>{ if(fired) return; fired=true; e.preventDefault(); fn(); setTimeout(()=>fired=false,150); };
@@ -200,19 +220,17 @@
     el.addEventListener('touchend', safe, {passive:false});
   }
 
-  // live bindings
   [purity,drift,lei,attSel].forEach(el=>{
     el.addEventListener('input', refresh, {passive:true});
     el.addEventListener('change', refresh, {passive:true});
   });
   bindTap($('#btnReset'), resetToCoherent);
-  bindTap($('#btnGen'), generateReceipt);
-  bindTap($('#btnCopy'), copyJSON);
-  bindTap($('#btnSave'), saveJSON);
-  bindTap($('#btnShow'), showJSON);
+  bindTap($('#btnGen'),   generateReceipt);
+  bindTap($('#btnCopy'),  copyJSON);
+  bindTap($('#btnSave'),  saveJSON);
+  bindTap($('#btnShow'),  showJSON);
 
-  // first paint
-  refresh();
+  refresh(); // first paint
 </script>
 </body>
 </html>
