@@ -1,163 +1,87 @@
-# TruthSeal™ Executive Summary (v1.0) — Internal Compass
+=== CLASSIFICATION: INTERNAL — CONFIDENTIAL ===
+Title: TruthSeal™ Executive Summary (v1.0)
+Distribution: Restricted (Owner + named counterparties under NDA)
+Export Control: Pre-patent concepts; external circulation prohibited
+=== END CLASSIFICATION HEADER ===
 
-Status: Pre-commercial R&D. Not soliciting business. All language below is for internal alignment and partner/legal review.
+# TruthSeal™ Executive Summary — INTERNAL (v1.0)
 
-Date: November 2025  
-Author: Dr. Nickolay Traykov (Prof. h.c.)
+## 0) One-page overview (plain language)
+TruthSeal™ is a sovereignty-grade integrity system that makes digital decisions **structurally coherent by design**. We do this by enforcing three simple, testable conditions **in hardware**:
+- **Temporal stability:** truth shouldn’t drift over time.
+- **Purity:** the state shouldn’t contain internal contradiction/noise.
+- **Ethical irreversibility (LEI = 1):** once coherence is confirmed, incoherent actions are physically blocked.
 
----
+A tiny hardware IP block—the **TQC Coherence Core**—enforces these rules, outputs a real-time integrity score (**Aim Coherence Score, ACS**) and signs auditable receipts. This is useful first in **high-stakes finance**, **sovereign systems**, and **safety-critical AI**. It is built to be **post-quantum secure** from day one.
 
-## 0) Plain-Language Glossary (read first)
+## 1) Foundations (no mystique, no hype)
+- **ULLI (Universal Law of Life & Information):** integrity of life and integrity of information must stay aligned; if one drifts, the system fails.
+- **TQC (Traykov Law of Quantum Coherence):** a “truthful” state must be (i) temporally stable and (ii) maximally pure.
+- **LEI = 1 (Law of Ethical Irreversibility):** a hard constraint that prevents incoherent action once coherence is verified.
 
-- Universal Law of Life & Information (ULLI): Life and its information must stay aligned; integrity in one requires integrity in the other.
-- Traykov Law of Quantum Coherence (TQC): For “truthful” information, two things must hold: (1) it stays stable over time; (2) it contains no internal noise/contradiction.
-- Law of Ethical Irreversibility (LEI = 1): A rule that blocks incoherent/unethical actions at the core of the system.
-- Aim Coherence Score (ACS): A simple number (target 1.0) that shows if a decision loop is coherent *right now*. ACS is produced and signed in hardware.
-- Coherence Core (TQC IP Block): A small hardware block that enforces LEI=1, computes ACS, and emits signed receipts. It is integrated into an existing chip platform.
-- Receipt Engine: The sub-system that writes an auditable “receipt” (score + time + counter + PQC signature) for each relevant action.
-- Coherence Sync Fabric (CSF): The wiring/synchronization that prevents “split-brain” behavior inside the chip core.
+These are implemented **physically** so they can’t be bypassed by software.
 
----
+## 2) Product in one sentence
+**The TQC Coherence Core**: a small, low-power silicon IP block that:
+1) enforces **LEI = 1** (hard-wired coherence gate),
+2) computes **ACS** (integrity score),
+3) emits a signed **receipt** (score + time + counter + post-quantum signature),
+4) synchronizes control loops via the **Coherence Sync Fabric (CSF)** to prevent “split-brain” behavior.
 
-## 1) The Problem (Why TruthSeal exists)
+## 3) Why it matters (three first buyers)
+- **Critical finance & audit:** when outputs move billions, “almost safe” isn’t safe. Hardware-verified receipts make audits cheap and decisive.
+- **Sovereign & defense:** coherent decisions under stress; receipts that stand up in court.
+- **Safety-critical AI:** decisions must be provably coherent *at the moment of action*.
 
-Modern digital systems—especially AI—optimize for speed and scale, not integrity. They accept a small chance of failure by design (statistical guardrails). That non-zero failure chance stacks up in business, finance, and safety. The result is fragile decisions, expensive rework, and losses that compound system-wide.
+## 4) Quantum & post-quantum readiness (explicit)
+- **PQC signatures** (e.g., NIST lattice schemes) on every receipt.
+- **Monotonic counters + optional external anchoring** (e.g., OpenTimestamps) for ordering/existence proofs without leaking private data.
+- Works across classical and quantum pipelines (hybrid-future safe).
 
-**Plainly:** We don’t have a *physics-level* guarantee that a system will act coherently under pressure. Software guardrails help, but they’re probabilistic. The world now needs structural certainty.
+## 5) Business model (quiet, legal-first)
+- **Licensing** tied to silicon (per device / managed capacity).
+- Optional **Integrity-as-a-Service** (customer-side verification tools; we don’t centralize their data).
+- **Internal 60-month base case:** USD **$256M** annualized by Month 60 (conservative), with an expansion path to **$500M–$1.2B** if regulatory adoption accelerates. (Planning anchor only; depends on partner/regulator pacing.)
 
----
+## 6) Nvidia track (private engineering after filings)
+- We provide RTL for **LEI-Gate**, **Receipt Engine**, **CSF** + a minimal SDK to read ACS/receipts.
+- Nvidia provides silicon/toolchain/validation. 
+- Output: a chip variant with **built-in coherence** for regulated, high-trust markets.
+- **All under NDA after entity registration + provisional patents.**
 
-## 2) The Principle (What makes TruthSeal different)
+## 7) Regulatory strategy (FSB/IMF)
+- Problem: current risk models accept an unknown failure term (“probabilistic safety”).
+- Proposal: make **ACS** the verifiable integrity metric and the **receipt frame** the audit artifact.
+- Ask: a limited **120-day** evaluation against existing baselines.
 
-TruthSeal is built on simple, testable conditions:
+## 8) Route map (90-day reality plan)
+**Day 0–30:** register entity; draft NDA + pilot letter; draft provisional claims; keep repo internal; build a local demo that prints **ACS=1.0000** + emits a signed receipt JSON (`artifacts/`).  
+**Day 31–60:** file provisional; tighten tech brief; internal integrity tests; prepare private partner pack.  
+**Day 61–90:** one **pilot** under NDA if legal + demo are green.
 
-1) **Temporal stability:** truth should not drift over time.  
-2) **Purity:** truth should be free of internal contradiction.  
-3) **Ethical irreversibility:** once a coherent pathway is confirmed, the system must not act against it.
+## 9) Risk register (and how we defuse it)
+- **Legal risk:** no public outreach before filings.  
+- **Partner risk:** keep the core **small, useful, integrable**.  
+- **Funding risk:** ship the **local demo + receipts** first; pilot second.  
+- **Over-scope risk:** we build the **coherence heart**, not everything.
 
-We don’t “suggest” these rules in software; we **enforce** them in silicon so every critical action must pass the coherence check.
+## 10) Repo map (internal, private)
+- `docs/internal/` — this summary, legal notices, partner drafts  
+- `partners/nvidia/` — tech hand-off draft (post-filing)  
+- `artifacts/` — demo receipts + verification notes  
+- `notes/` — research notes (private)
 
----
+## 11) Lexicon (short, definitive)
+- **ULLI:** Universal Law of Life & Information (principle).  
+- **TQC:** Traykov Law of Quantum Coherence (engineering rule).  
+- **LEI = 1:** Law of Ethical Irreversibility (hard gate in silicon).  
+- **ACS:** Aim Coherence Score (live integrity telemetry).  
+- **CSF:** Coherence Sync Fabric (wiring/sync to prevent split-brain).  
+- **Receipt:** {ACS, time, monotonic counter, PQC signature}.
 
-## 3) The Product (What we’re actually building)
+## 12) What “done” looks like (near-term)
+- Reproducible **local demo** that outputs **ACS=1.0** and emits a **PQC-signed** receipt JSON.  
+- Entity registered; provisional filed; NDA + pilot letter ready.  
+- Clean, private **tech hand-off** for a single hardware partner.
 
-**The TQC Coherence Core (hardware IP)**  
-- **LEI-Gate:** a hardwired check—blocks incoherent actions.  
-- **Receipt Engine:** produces a signed “receipt” per action (ACS value, time, monotonic counter, PQC signature).  
-- **Coherence Sync Fabric:** keeps the executive control loop synchronized—no split-brain behavior.
-
-**Proof telemetry:** The core emits **ACS** in real time (target = 1.0). If ACS < 1, the system is quarantined or forced into safe behavior.
-
-**Why hardware?** Because structural guarantees must be physical. Software can advise; hardware decides.
-
----
-
-## 4) Quantum & Post-Quantum Readiness (explicit)
-
-- **Quantum safety:** Our receipts are designed to be signed with **post-quantum cryptography** (e.g., NIST-selected lattice schemes).  
-- **Time anchoring:** We record a monotonic counter and can anchor receipts externally (e.g., OpenTimestamps) to prove ordering and existence without revealing private data.  
-- **Hybrid future:** The same receipt frame works across classical and quantum pipelines—so governance survives the quantum transition.
-
----
-
-## 5) Where this fits (Who needs it first)
-
-- **Critical finance & audit:** When model output moves billions, “almost safe” is not acceptable.  
-- **Sovereign & defense:** Systems must remain coherent under stress; receipts must be court-ready.  
-- **High-integrity AI (safety, health, infra):** Decisions must be provably coherent at the moment of action.
-
----
-
-## 6) How we partner (Nvidia track — private, technical)
-
-TruthSeal provides a **small IP block** (the Coherence Core) to be integrated into an Nvidia platform (e.g., DPU/accelerator line).  
-- We supply RTL for LEI-Gate, Receipt Engine, and CSF, plus a minimal SDK for reading ACS and receipts.  
-- Nvidia provides silicon, toolchain, validation infrastructure.  
-- Result: a chip variant with **built-in coherence** for regulated and high-trust markets.
-
-*(Note: this is a private engineering conversation under NDA after entity registration and IP filings.)*
-
----
-
-## 7) Market entry (quiet, narrow, legal-first)
-
-**Phase 0 — Pre-commercial (now):**  
-- Register entity, file provisional IP, keep repo internal, build local demo that emits ACS + a receipt JSON.  
-- No public sales. No contact pages. All drafts tagged INTERNAL.
-
-**Phase 1 — Single private pilot (under NDA):**  
-- One trusted counterparty (finance or sovereign ops).  
-- Pilot success = ACS=1.0 under real load + signed receipts accepted by internal audit.
-
-**Phase 2 — Platform partner build:**  
-- Joint work with hardware partner to package the Coherence Core for limited production.
-
----
-
-## 8) Business model (simple, conservative)
-
-- **Core revenue:** hardware-linked licensing (per device or per managed capacity), plus support.  
-- **Optional:** “Integrity as a Service” (IaaS) for storing/verifying receipts on the customer’s side (we avoid centralizing their data).  
-- **Pricing principle:** customers pay for *coherence-assured outcomes* and clean audits, not for compute hours.
-
-**60-month base case (internal yardstick):**  
-- PQC-safety licensing, Governance deployments, Integrity service: together target an annualized **USD $256M** at Month 60 (base, conservative).  
-- This remains our internal planning anchor; actual pacing depends on partner timing and regulatory cycles.
-
----
-
-## 9) Regulation (FSB/IMF stance, plain English)
-
-- Today’s risk models accept a small unknown chance of failure. That’s fine for research—not fine for settlement, markets, or national infrastructure.  
-- We propose **ACS** as the *verifiable integrity metric* and the **Receipt Frame** as the *audit artifact*.  
-- Ask: a limited evaluation window (e.g., 120 days) comparing current risk baselines vs. ACS-enforced flows.
-
----
-
-## 10) Legal & IP (must-haves before outreach)
-
-- Register company, file provisional patents (claims cover: coherence enforcement in hardware; real-time integrity score; signed receipts with ordering).  
-- Reserve trademarks (classes to be confirmed by counsel).  
-- All external language to be counsel-approved. Until then: **no public solicitation**.
-
----
-
-## 11) Roadmap (90-day view, only what matters)
-
-**Day 0–30:**  
-- Register entity; create private legal folder; draft NDA + pilot letter; draft provisional claims; keep repo internal.  
-- Build a **local demo** that outputs ACS=1.0000 and a signed receipt JSON; store under `/artifacts/`.
-
-**Day 31–60:**  
-- Counsel review; file provisional; tighten technical brief; run internal integrity tests; prepare private partner pack.  
-
-**Day 61–90:**  
-- If legal + demo are green: approach a single pilot counterparty under NDA; if not, extend and finish gaps.
-
----
-
-## 12) Risks & how we handle them
-
-- **Legal risk:** We don’t talk to market before filings.  
-- **Partner risk:** Keep the IP block small, useful, and easy to integrate.  
-- **Funding risk:** Stay small, ship the demo, prove receipts—then pilot.  
-- **Over-scope risk:** We are not building “everything”—just the **coherence heart**.
-
----
-
-## 13) What “done” looks like (near-term)
-
-- A reproducible local demo that prints ACS=1.0 and emits a receipt JSON with a PQC signature placeholder and a monotonic counter.  
-- Entity registered, provisional filed, NDA + pilot letter ready.  
-- A clean, private technical brief for the hardware partner.
-
-(When all three are true, we’re ready for a single, safe pilot.)
-
----
-
-## Appendices (pointers)
-
-- Legal Status Notice (internal): `docs/LEGAL_STATUS_NOTICE_v1.0.md`  
-- Executive Route Map (internal): `docs/EXEC_ROUTE_MAP_v1.0.md`  
-- Technical Hand-Off (internal draft): `partners/nvidia/TQC_Coherence_Core_Tech_Handoff_v0.1.md` (create after IP filing)  
-- Demo Artifacts (local receipts): `artifacts/` (add README with verification steps)
+— END —
