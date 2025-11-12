@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TruthSeal — Local ACS + Receipt Demo</title>
+  <style>
+    :root{color-scheme:dark light}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+         background:#0b1218;color:#d6e1ea}
+    .wrap{max-width:920px;margin:28px auto;padding:0 14px}
+    h1{font-size:28px;margin:0 0 10px}
+    .muted{color:#8aa3b8;font-size:13px;margin:0 0 18px}
+    .card{background:#0f2133;border:1px solid #1b3a55;border-radius:12px;padding:16px;margin:14px 0}
+    label{display:block;font-size:13px;margin:10px 0 4px}
+    input,select,textarea,button{width:100%;box-sizing:border-box;font-size:16px}
+    input,select,textarea{background:#0e1a27;border:1px solid #274766;border-radius:10px;
+                          color:#d6e1ea;padding:12px 14px}
+    input:focus,select:focus,textarea:focus{outline:none;border-color:#3aa2ff;box-shadow:0 0 0 3px #003e7a70}
+    textarea{min-height:140px;white-space:pre;line-height:1.4}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    .row > div{flex:1 1 280px}
+    .kpi{display:flex;align-items:center;gap:12px;margin:6px 0 12px}
+    .score{font-size:54px;font-weight:800;letter-spacing:1px}
+    .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #2a9460;background:#0a2a1f;
+          color:#a6f4c5;border-radius:999px;padding:8px 12px;font-weight:700}
+    .pill.secondary{border-color:#2a7e94;background:#08222a;color:#94eaff}
+    .btn{cursor:pointer;padding:12px 14px;border-radius:10px;border:1px solid #21496b;background:#0e3759;
+         font-weight:700}
+    .btn:hover{filter:brightness(1.07)}
+    .btn.primary{background:#0b3d91;border-color:#316dc1}
+    .btn.row{display:flex;gap:12px;flex-wrap:wrap}
+    .hint{font-size:12px;color:#8aa3b8;margin-top:10px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>TruthSeal — Local ACS + Receipt Demo</h1>
+    <p class="muted">Runs 100% on-device (no network). Host over <b>https</b> (GitHub Pages) so iOS allows copy/download.</p>
+
+    <div class="card">
+      <div class="row">
+        <div>
+          <label>Purity (0…1)</label>
+          <input id="purity" type="number" inputmode="decimal" step="any" min="0" max="1" value="1">
+        </div>
+        <div>
+          <label>Temporal drift (0…1)</label>
+          <input id="drift" type="number" inputmode="decimal" step="any" min="0" max="1" value="0">
+        </div>
+        <div>
+          <label>Ethical irreversibility (LEI)</label>
+          <select id="lei">
+            <option value="1" selected>1 (enforced)</option>
+            <option value="0">0 (not enforced)</option>
+          </select>
+        </div>
+        <div>
+          <label>Secure attestation (trusted boot)</label>
+          <select id="attest">
+            <option value="trusted" selected>trusted</option>
+            <option value="untrusted">untrusted</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="kpi">
+        <div class="score" id="score">1.0000</div>
+        <div class="pill" id="status">STATUS: COHERENT</div>
+        <div class="pill secondary" id="att-pill">ATTESTATION: TRUSTED</div>
+      </div>
+
+      <div class="row">
+        <button class="btn primary" id="genBtn">Generate Receipt</button>
+      </div>
+      <p class="hint">ACS = Purity × (1 − Drift) × LEI. Attestation is recorded separately.</p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin:0 0 10px">Latest receipt (JSON)</h3>
+      <div class="row">
+        <button class="btn" id="copyBtn">Copy JSON</button>
+        <button class="btn" id="dlBtn">Download JSON</button>
+      </div>
+      <textarea id="jsonBox" spellcheck="false" autocorrect="off" autocomplete="off">{}</textarea>
+      <p class="hint">Tip: long-press inside the JSON box → Copy (works even if a browser blocks programmatic copy).</p>
+    </div>
+  </div>
+
+  <script>
+    const purity  = document.getElementById('purity');
+    const drift   = document.getElementById('drift');
+    const lei     = document.getElementById('lei');
+    const attest  = document.getElementById('attest');
+    const scoreEl = document.getElementById('score');
+    const statusEl= document.getElementById('status');
+    const attEl   = document.getElementById('att-pill');
+    const jsonBox = document.getElementById('jsonBox');
+    const genBtn  = document.getElementById('genBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    const dlBtn   = document.getElementById('dlBtn');
+
+    function clamp01(x){ x=parseFloat(x); if(isNaN(x)) return 0; return Math.max(0, Math.min(1, x)); }
+    function computeACS(){
+      const P = clamp01(purity.value);
+      const D = clamp01(drift.value);
+      const L = parseInt(lei.value,10) === 1 ? 1 : 0;
+      const acs = +(P * (1 - D) * L).toFixed(4);
+      scoreEl.textContent = acs.toFixed(4);
+      statusEl.textContent = 'STATUS: ' + (acs >= 0.9999 ? 'COHERENT' : 'INCOHERENT');
+      attEl.textContent = 'ATTESTATION: ' + (attest.value === 'trusted' ? 'TRUSTED' : 'UNTRUSTED');
+      return {P,D,L,acs};
+    }
+
+    function buildReceipt(){
+      const {P,D,L,acs} = computeACS();
+      const now = new Date();
+      return {
+        product: "TruthSeal",
+        version: "demo-v1.0",
+        timestamp_utc: now.toISOString(),
+        inputs: { purity:P, drift:D, lei:L, attestation:attest.value },
+        results: { acs, status: (acs>=0.9999?'COHERENT':'INCOHERENT') },
+        proof: { pqc_signature: "placeholder", hash: "placeholder" }
+      };
+    }
+
+    genBtn.addEventListener('click', ()=>{
+      const receipt = buildReceipt();
+      jsonBox.value = JSON.stringify(receipt, null, 2);
+    });
+
+    // Update badges live while typing
+    [purity,drift,lei,attest].forEach(el=>el.addEventListener('input', computeACS));
+    computeACS();
+
+    copyBtn.addEventListener('click', async ()=>{
+      const txt = jsonBox.value || "{}";
+      try{
+        await navigator.clipboard.writeText(txt);
+        copyBtn.textContent = "Copied ✔";
+        setTimeout(()=>copyBtn.textContent="Copy JSON",1200);
+      }catch(e){
+        // Fallback: select the text (user can tap Copy)
+        jsonBox.focus(); jsonBox.select();
+      }
+    });
+
+    dlBtn.addEventListener('click', ()=>{
+      const txt = jsonBox.value || "{}";
+      const blob = new Blob([txt], {type:"application/json"});
+      const url  = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = `truthseal_receipt_${Date.now()}.json`;
+      document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+</html>
