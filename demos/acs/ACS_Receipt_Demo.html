@@ -1,190 +1,97 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TruthSeal — Local ACS + Receipt Demo</title>
-  <style>
-    :root { color-scheme: dark; }
-    body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; }
-    .wrap { max-width: 980px; margin: 28px auto; padding: 0 16px; }
-    h1 { font-size: 28px; margin: 0 0 6px 0; }
-    .v { display:inline-block; font-size:12px; background:#20313a; border-radius:12px; padding:2px 8px; margin-left:8px; }
-    .muted { color:#9ab; font-size:13px; line-height:1.4; margin: 10px 0 22px 0; }
-    .card { background:#101820; border:1px solid #1a2a33; border-radius:14px; padding:18px; margin:18px 0; }
-    label { display:block; font-size:13px; color:#9fbdc9; margin:14px 0 8px 0; }
-    input, select, button { font: inherit; }
-    input[type="text"], select {
-      width:100%; padding:12px 14px; border-radius:10px; border:1px solid #233641; background:#0b141b;
-      color:#cfe5ef; outline: none; -webkit-appearance:none; appearance:none;
-    }
-    .row { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
-    .pill { display:inline-block; padding:6px 12px; border-radius:999px; background:#0b2330; border:1px solid #214253; font-weight:600; }
-    .ok { background:#0c2f22; border-color:#124d3a; color:#9ff3c0; }
-    .warn { background:#2a1e1e; border-color:#5a2f2f; color:#ffc8bd; }
-    .kpi { font-size:56px; font-weight:800; letter-spacing:1px; margin:6px 0; }
-    .btn { cursor:pointer; padding:12px 18px; border-radius:12px; border:1px solid #213e4c; background:#0b3d91; color:white; font-weight:700; }
-    .btn:active { transform: translateY(1px); }
-    .btn.alt { background:#0b2130; }
-    .btn.ghost { background:transparent; border-color:#2b4d5f; }
-    pre { background:#0b1320; border:1px solid #1b2c3a; border-radius:12px; padding:14px; overflow:auto; color:#bfe4ff; }
-    .hint { font-size:12px; color:#9ab; margin-top:8px; }
-  </style>
-</head>
+<html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TruthSeal — Local ACS + Receipt Demo (Lite)</title>
+<style>
+  :root { color-scheme: dark; }
+  body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;background:#0b0f14;color:#d7e1ea}
+  .wrap{max-width:920px;margin:28px auto;padding:0 14px}
+  h1{font-size:22px;margin:0 0 12px} .muted{color:#8aa}
+  .card{background:#101820;border:1px solid #24313c;border-radius:14px;padding:16px;margin:18px 0}
+  label{display:block;font-size:13px;margin:10px 0 6px}
+  input,select{width:100%;font:16px ui-monospace,Menlo,Monaco,Consolas,monospace;background:#0f1a24;color:#d7e1ea;border:1px solid #2a3b48;border-radius:10px;padding:12px}
+  pre{background:#0c1520;border:1px solid #233241;border-radius:12px;padding:12px;white-space:pre-wrap;user-select:text}
+  .kpi{font-size:44px;font-weight:800;margin:8px 0}
+  .pill{display:inline-block;border-radius:18px;padding:6px 10px;margin:6px 6px 0 0;font-weight:700;font-size:14px}
+  .ok{background:#123c23;color:#77e18a;border:1px solid #1e6b36} .hint{font-size:12px;color:#89a}
+</style>
 <body>
-  <div class="wrap">
-    <h1>TruthSeal — Local ACS + Receipt Demo <span class="v">v1.6</span></h1>
-    <p class="muted">Runs entirely on-device (no network). Show a real <em>Aim Coherence Score</em> and save a receipt JSON locally.</p>
+<div class="wrap">
+  <h1>TruthSeal — Local ACS + Receipt Demo (Lite)</h1>
+  <p class="muted">Runs 100% on-device (no network). JSON below updates automatically as you type. Long-press inside the JSON to copy.</p>
 
-    <div class="card">
-      <label for="purity">Purity (no contradiction) — range [0…1]</label>
-      <input id="purity" type="text" inputmode="decimal" placeholder="1.0" value="1.0" />
-
-      <label for="drift">Temporal drift — range [0…1]</label>
-      <input id="drift" type="text" inputmode="decimal" placeholder="0.0" value="0.0" />
-
-      <label for="lei">Ethical irreversibility (LEI)</label>
-      <input id="lei" type="text" inputmode="decimal" placeholder="1" value="1" />
-
-      <label for="att">Secure attestation (trusted boot)</label>
-      <select id="att">
-        <option value="trusted" selected>trusted</option>
-        <option value="untrusted">untrusted</option>
-      </select>
-
-      <div style="margin-top:14px;">
-        <button id="resetBtn" class="btn ghost">Reset to Coherent</button>
-      </div>
-    </div>
-
-    <div class="card" id="scoreCard">
-      <div class="kpi" id="kpi">1.0000</div>
-      <div class="row">
-        <div class="pill ok" id="statusPill">STATUS: COHERENT</div>
-        <div class="pill ok" id="attPill">ATTESTATION: TRUSTED</div>
-      </div>
-      <p class="muted">ACS = Purity × (1 − Drift) × LEI (attestation recorded separately and required for “green” status).</p>
-      <button id="genBtn" class="btn">Generate Receipt</button>
-    </div>
-
-    <div class="card">
-      <h3 style="margin:0 0 8px 0;">Latest receipt (JSON)</h3>
-      <div class="row" style="margin: 8px 0 10px 0;">
-        <button id="copyBtn" class="btn alt">Copy JSON</button>
-        <button id="dlBtn" class="btn alt">Download JSON</button>
-        <button id="showBtn" class="btn alt">Show JSON</button>
-      </div>
-      <pre id="out">{}</pre>
-      <p class="hint">If download is blocked on iPhone, tap “Show JSON”, then long-press to copy.</p>
-    </div>
+  <div class="card">
+    <label>Purity (0…1)</label>
+    <input id="purity" inputmode="decimal" value="1.0">
+    <label>Temporal drift (0…1)</label>
+    <input id="drift"  inputmode="decimal" value="0.0">
+    <label>Ethical irreversibility (LEI ∈ {0,1})</label>
+    <input id="lei"    inputmode="numeric" value="1">
+    <label>Secure attestation (trusted boot)</label>
+    <select id="att"><option>trusted</option><option>untrusted</option></select>
+    <div class="kpi" id="acs">1.0000</div>
+    <span class="pill ok" id="status">STATUS: COHERENT</span>
+    <span class="pill ok" id="attn">ATTESTATION: TRUSTED</span>
   </div>
 
-  <script>
-    // -------- helpers
-    const $ = (id) => document.getElementById(id);
-    function clamp01(x) { x = Number(x); return isFinite(x) ? Math.min(1, Math.max(0, x)) : 0; }
-    function fmt4(n){ return (Math.round(n*10000)/10000).toFixed(4); }
+  <div class="card">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+      <a href="#" id="copy" class="pill ok" style="text-decoration:none">Copy JSON</a>
+      <a href="#" id="download" class="pill ok" style="text-decoration:none">Download JSON</a>
+    </div>
+    <pre id="out">{}</pre>
+    <p class="hint">Tip: if download is blocked on iPhone, just long-press inside the JSON box → Copy.</p>
+  </div>
+</div>
 
-    async function sha256Hex(s){
-      try{
-        const enc = new TextEncoder().encode(s);
-        const buf = await crypto.subtle.digest('SHA-256', enc);
-        return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
-      }catch{
-        // minimal fallback
-        return Array.from(s).reduce((h,c)=>((h<<5)-h)+c.charCodeAt(0),0>>>0).toString(16);
-      }
-    }
+<script>
+(function () {
+  const $ = id => document.getElementById(id);
+  const purity = $('purity'), drift = $('drift'), lei = $('lei'), attSel = $('att');
+  const acsEl = $('acs'), statusEl = $('status'), attnEl = $('attn'), out = $('out');
 
-    function score(){
-      const P = clamp01(purity.value);
-      const D = clamp01(drift.value);
-      const L = clamp01(lei.value);
-      const val = P * (1 - D) * L;
-      kpi.textContent = fmt4(val);
-      statusPill.className = 'pill ' + (val >= 1 ? 'ok' : 'warn');
-      statusPill.textContent = 'STATUS: ' + (val >= 1 ? 'COHERENT' : 'INCOHERENT');
-      const trusted = (att.value === 'trusted');
-      attPill.className = 'pill ' + (trusted ? 'ok' : 'warn');
-      attPill.textContent = 'ATTESTATION: ' + (trusted ? 'TRUSTED' : 'UNTRUSTED');
-      return val;
-    }
+  function clamp01(x){ x=parseFloat(x); return isFinite(x) ? Math.min(1, Math.max(0, x)) : 0 }
+  function oneOrZero(x){ return String(x).trim()==='1' ? 1 : 0 }
 
-    function nowIso(){ return new Date().toISOString(); }
-    function monotonic() {
-      const k = 'ts_monotonic_counter';
-      const v = Number(localStorage.getItem(k) || '0') + 1;
-      localStorage.setItem(k, String(v));
-      return v;
-    }
+  function build() {
+    const p = clamp01(purity.value), d = clamp01(drift.value), L = oneOrZero(lei.value);
+    const att = attSel.value === 'trusted';
+    const acs = +(p * (1 - d) * L).toFixed(4);
+    acsEl.textContent = acs.toFixed(4);
+    statusEl.textContent = acs === 1 ? 'STATUS: COHERENT' : 'STATUS: ATTENTION';
+    attnEl.textContent   = 'ATTESTATION: ' + (att ? 'TRUSTED' : 'UNTRUSTED');
 
-    async function generate(){
-      const acs = score();
-      const frame = {
-        version: '1.0',
-        when_utc: nowIso(),
-        counter: monotonic(),
-        inputs: {
-          purity: clamp01(purity.value),
-          drift: clamp01(drift.value),
-          lei: clamp01(lei.value),
-          attestation: att.value
-        },
-        acs: Number(acs.toFixed(6)),
-        pqc_signature: 'placeholder',    // PQC slot (e.g., Dilithium) for hardware path
-      };
-      frame.digest_sha256 = await sha256Hex(JSON.stringify(frame));
-      out.textContent = JSON.stringify(frame, null, 2);
-      return frame;
-    }
+    const now = new Date();
+    const frame = {
+      acs, purity: p, drift: d, lei: L,
+      attestation: att ? 'trusted' : 'untrusted',
+      monotonic_counter: Math.floor(performance.now()),
+      ts_utc: now.toISOString(),
+      pqc_signature: "[placeholder: Dilithium]"
+    };
+    out.textContent = JSON.stringify(frame, null, 2);
+    // prepare download link (may be ignored by Quick Look)
+    try {
+      const blob = new Blob([out.textContent], {type:'application/json'});
+      const url  = URL.createObjectURL(blob);
+      const dl   = document.getElementById('download');
+      dl.href = url; dl.download = `truthseal_receipt_${now.toISOString().replace(/[:.]/g,'-')}.json`;
+    } catch(e){}
+  }
 
-    function dl(filename, text){
-      const a = document.createElement('a');
-      a.href = 'data:application/json;charset=utf-8,' + encodeURIComponent(text);
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-    }
+  ['input','change','keyup'].forEach(ev=>{
+    purity.addEventListener(ev, build); drift.addEventListener(ev, build);
+    lei.addEventListener(ev, build);    attSel.addEventListener(ev, build);
+  });
 
-    async function copy(text){
-      try{
-        await navigator.clipboard.writeText(text);
-        alert('JSON copied to clipboard');
-      }catch{
-        // Fallback for iOS Quick Look
-        const ta = document.createElement('textarea');
-        ta.value = text; document.body.appendChild(ta);
-        ta.select(); document.execCommand('copy'); ta.remove();
-        alert('JSON copied (fallback)');
-      }
-    }
+  document.getElementById('copy').addEventListener('click', function (e) {
+    e.preventDefault();
+    const r = document.createRange(); r.selectNodeContents(out);
+    const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    document.execCommand('copy'); // fallback works in Safari
+  }, {passive:false});
 
-    // -------- bind
-    const purity = $('purity'), drift = $('drift'), lei = $('lei'), att = $('att');
-    const kpi = $('kpi'), statusPill = $('statusPill'), attPill = $('attPill'), out = $('out');
-
-    // Update score on input
-    [purity, drift, lei, att].forEach(el => {
-      el.addEventListener('input', score, { passive: true });
-      el.addEventListener('change', score, { passive: true });
-    });
-
-    function bindTap(id, fn){
-      const el = $(id);
-      // handle both tap and click so iOS Quick Look can’t swallow it
-      el.addEventListener('touchend', (e)=>{ e.preventDefault(); fn(); }, { passive:false });
-      el.addEventListener('click', (e)=>{ e.preventDefault(); fn(); });
-    }
-
-    bindTap('resetBtn', () => { purity.value='1'; drift.value='0'; lei.value='1'; att.value='trusted'; score(); });
-    bindTap('genBtn', async () => { const f = await generate(); try{ navigator.vibrate && navigator.vibrate(10);}catch{} });
-    bindTap('copyBtn', async () => copy(out.textContent));
-    bindTap('dlBtn', async () => dl('truthseal_acs_receipt.json', out.textContent));
-    bindTap('showBtn', () => { out.scrollIntoView({behavior:'smooth', block:'center'}); });
-
-    // initial compute
-    score();
-  </script>
-</body>
-</html>
+  build(); // initial render
+})();
+</script>
+</body></html>
