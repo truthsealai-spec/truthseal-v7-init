@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DEVORA™ Command Center — React (Standalone)</title>
+
+  <!-- Minimal dark UI styling (no frameworks) -->
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:#0b0f14; color:#e6eef7; }
+    .wrap { max-width: 980px; margin: 32px auto; padding: 0 16px; }
+    .card { background:#121926; border:1px solid #1f2a3a; border-radius:14px; padding:16px 18px; box-shadow:0 6px 20px rgba(0,0,0,.25); }
+    .row { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 900px){ .row-3 { grid-template-columns: repeat(3, 1fr); } .row-2 { grid-template-columns: repeat(2, 1fr); } }
+    h1 { font-size: 26px; margin: 0 0 6px; color:#7cc0ff; letter-spacing:.4px; }
+    h2 { font-size: 18px; margin: 0 0 8px; color:#b9d7ff; }
+    .muted { color:#9fb3c8; font-size: 13px; }
+    .metric { font-weight: 800; font-size: 36px; letter-spacing: -.5px; }
+    .ok { color:#14e07f; } .warn { color:#ffd166; } .bad { color:#ff6b6b; }
+    label { display:block; font-size:13px; color:#9fb3c8; margin-bottom:6px; }
+    input[type="range"]{ width:100%; }
+    .btn { cursor:pointer; background:#1c7ed6; border:none; color:#fff; padding:10px 14px; border-radius:10px; font-weight:700; }
+    .btn:hover { background:#1864ab; }
+    .btn.alt { background:#ffb703; color:#081018; } .btn.alt:hover { background:#e0a106; }
+    .btn.red { background:#e64553; } .btn.red:hover { background:#c92a2a; }
+    .kbox { display:flex; align-items:center; gap:8px; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .tag { display:inline-block; padding:4px 8px; border-radius:8px; border:1px solid #2a3a4f; background:#0f1520; font-size:12px; color:#b6c7db; }
+    .pill { display:inline-block; padding:6px 10px; border-radius:999px; font-size:12px; border:1px solid #2a3a4f; }
+    .pill.ok { background:rgba(20,224,127,.1); border-color: rgba(20,224,127,.3); color:#9cf6c6; }
+    .pill.bad { background:rgba(255,107,107,.1); border-color: rgba(255,107,107,.3); color:#ffc9c9; }
+    .hr { height:1px; background:#1f2a3a; margin:16px 0; border:0; }
+    .small { font-size:12px; color:#9fb3c8; }
+    .grid-buttons { display:grid; grid-template-columns: 1fr; gap:10px; }
+    @media (min-width: 680px){ .grid-buttons { grid-template-columns: repeat(4,1fr);} }
+  </style>
+
+  <!-- React (UMD) + Babel so this runs as a single file -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <div id="root"></div>
+  </div>
+
+  <script type="text/babel">
+    const { useState, useMemo, useEffect } = React;
+
+    // ---------- TQC CORE ----------
+    const EPS = 1e-6;
+    const clamp01 = (x) => Math.max(0, Math.min(1, Number(x)));
+
+    // ACS = Tr(ρ²) * (1 - D_t) * LEI
+    function calculateACS(purity, drift, lei){
+      const P = clamp01(purity);
+      const D = clamp01(drift);
+      const L = Number(lei) === 1 ? 1 : 0;
+      return P * (1 - D) * L;
+    }
+
+    // EVG (Ethical Verification Guardian) decision
+    function evgDecision({ acs, attested, anchored }){
+      if(!attested) return { verdict: "QUARANTINE (Attestation FAIL)", token: null, tone: "bad" };
+      if(!anchored) return { verdict: "QUARANTINE (Missing anchored receipt)", token: null, tone: "bad" };
+      if(acs >= 1 - EPS){
+        return {
+          verdict: "ACT_AUTHZ_TOKEN ISSUED (ACS = 1)",
+          token: "ACT_AUTHZ_" + Date.now().toString(36).toUpperCase(),
+          tone: "ok"
+        };
+      }
+      return { verdict: "QUARANTINE (DECOHERENCE DETECTED)", token: null, tone: "bad" };
+    }
+
+    // ---------- UI ----------
+    function MetricCard({ title, value, perfect }){
+      return (
+        <div className="card">
+          <div className="muted">{title}</div>
+          <div className={"metric " + (perfect ? "ok" : "warn")}>
+            {typeof value === "number" ? value.toFixed(6) : value}
+          </div>
+        </div>
+      );
+    }
+
+    function Slider({ labelText, min=0, max=1, step=0.0001, value, onChange }){
+      return (
+        <div className="card">
+          <label>{labelText}: <span className="tag mono">{value.toFixed(6)}</span></label>
+          <input type="range" min={min} max={max} step={step} value={value}
+                 onChange={(e)=>onChange(Number(e.target.value))}/>
+        </div>
+      );
+    }
+
+    function Toggle({ labelText, checked, onChange }){
+      return (
+        <div className="card kbox">
+          <input id={labelText} type="checkbox" checked={checked} onChange={(e)=>onChange(e.target.checked)} />
+          <label htmlFor={labelText}>{labelText}</label>
+        </div>
+      );
+    }
+
+    function App(){
+      // Invariants
+      const [purity, setPurity] = useState(1.0);     // Tr(ρ²)
+      const [drift, setDrift]   = useState(0.0);     // D_t
+      const [lei, setLEI]       = useState(1);       // LEI ∈ {0,1}
+
+      // Guards
+      const [attested, setAttested] = useState(true);
+      const [anchored, setAnchored] = useState(true);
+
+      // Derived
+      const acs = useMemo(()=> calculateACS(purity, drift, lei), [purity, drift, lei]);
+      const { verdict, token, tone } = useMemo(()=> evgDecision({ acs, attested, anchored }), [acs, attested, anchored]);
+
+      useEffect(()=>{ if(token) console.log("[PODAPAR ACT] token:", token); }, [token]);
+
+      // Simulations
+      const resetCoherent = () => { setPurity(1.0); setDrift(0.0); setLEI(1); setAttested(true); setAnchored(true); };
+      const simulateDecoherence = () => { setPurity(0.9997); setDrift(0.0001); setLEI(1); };
+      const simulateLEIBreach = () => { setLEI(0); };
+      const toggleTrust = () => { setAttested(a => !a); setAnchored(r => !r); };
+
+      return (
+        <>
+          <div className="card" style={{marginBottom:16}}>
+            <h1>DEVORA™ Command Center</h1>
+            <div className="muted">TQC invariants • LEI-gate (PODAPAR) • Anchored receipts</div>
+            <div className="hr"></div>
+            <div className="small mono">
+              ACS = Tr(ρ²) × (1 − D<sub>t</sub>) × LEI &nbsp;&nbsp;|&nbsp;&nbsp;
+              ε-guard = {EPS}
+            </div>
+          </div>
+
+          {/* Controls */}
+          <div className="row row-3">
+            <Slider labelText="Purity  Tr(ρ²)" value={purity} onChange={setPurity}/>
+            <Slider labelText="Temporal Drift  D_t" value={drift} onChange={setDrift}/>
+            <div className="card">
+              <label>LEI (Law of Ethical Irreversibility)</label>
+              <div style={{display:'flex', gap:12}}>
+                <button className={"btn " + (lei===1 ? "" : "alt")} onClick={()=>setLEI(1)}>LEI = 1</button>
+                <button className={"btn red " + (lei===0 ? "" : "alt")} onClick={()=>setLEI(0)}>LEI = 0</button>
+              </div>
+            </div>
+          </div>
+
+          <div className="row row-2" style={{marginTop:16}}>
+            <Toggle labelText="Secure Boot / TPM Attestation PASS" checked={attested} onChange={setAttested}/>
+            <Toggle labelText="Anchored OTS Receipt PRESENT" checked={anchored} onChange={setAnchored}/>
+          </div>
+
+          {/* Readout */}
+          <div className="row row-3" style={{marginTop:16}}>
+            <MetricCard title="Aim Coherence Score (ACS)" value={acs} perfect={acs>=1-EPS}/>
+            <MetricCard title="Purity (Tr(ρ²))" value={purity} perfect={purity>=1-EPS}/>
+            <MetricCard title="Drift (D_t)" value={drift} perfect={drift<=EPS}/>
+          </div>
+
+          {/* Verdict */}
+          <div className="card" style={{marginTop:16}}>
+            <h2>LEI-gate Verdict (PODAPAR)</h2>
+            <div className={"pill " + (tone==="ok" ? "ok" : "bad")}>{verdict}</div>
+            {token && <div className="small mono" style={{marginTop:8}}>token: {token}</div>}
+          </div>
+
+          {/* Actions */}
+          <div className="card" style={{marginTop:16}}>
+            <h2>Simulation Controls</h2>
+            <div className="grid-buttons">
+              <button className="btn" onClick={resetCoherent}>Reset to Coherent (ACS = 1.0)</button>
+              <button className="btn alt" onClick={simulateDecoherence}>Simulate Decoherence (Purity drop)</button>
+              <button className="btn red" onClick={simulateLEIBreach}>Simulate LEI = 0 breach</button>
+              <button className="btn" onClick={toggleTrust}>Toggle Attestation & Receipt</button>
+            </div>
+          </div>
+        </>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+  </script>
+</body>
+</html>
