@@ -70,7 +70,7 @@
       pqc_signature: "[placeholder: Dilithium]"
     };
     out.textContent = JSON.stringify(frame, null, 2);
-    // prepare download link (may be ignored by Quick Look)
+
     try {
       const blob = new Blob([out.textContent], {type:'application/json'});
       const url  = URL.createObjectURL(blob);
@@ -88,7 +88,7 @@
     e.preventDefault();
     const r = document.createRange(); r.selectNodeContents(out);
     const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
-    document.execCommand('copy'); // fallback works in Safari
+    document.execCommand('copy'); // works in Safari/Quick Look
   }, {passive:false});
 
   build(); // initial render
