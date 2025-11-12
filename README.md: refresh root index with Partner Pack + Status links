@@ -1,6 +1,6 @@
 # TruthSeal™ v7 — Operational Index
 
-*This is the canonical, auditable home of the TruthSeal™ sovereign stack—laws, ledgers, ACS telemetry, CI workflows, and partner hand-offs—kept verifiable by receipts and history.*
+*Canonical, auditable home of the TruthSeal™ sovereign stack—laws, ledgers, ACS telemetry, CI workflows, and partner hand-offs—kept verifiable by receipts and history.*
 
 [![ULLI](https://img.shields.io/badge/ULLI-Law_of_Life_&_Information-222)](#)
 [![LEI=1](https://img.shields.io/badge/LEI%3D1-Ethical_Irreversibility-222)](#)
@@ -17,26 +17,26 @@
 | [EVL v9.0](governance/ledger/EVL_v9.0.yaml) | Receipt issued — awaiting Bitcoin confirmation |
 | [QCEP v9.0](governance/ledger/seals/QCEP_Epoch_Manifest_v9.0.yaml) | Anchored — OpenTimestamps |
 
-*Full details: see [Anchoring Status v9.1](docs/Anchoring_Status_v9.1.md).*
+*Details →* [Anchoring_Status_v9.1.md](docs/Anchoring_Status_v9.1.md)
 
 ---
 
 ## Start here
-- **Docs index** → `docs/README.md`
-- **Repo scope & map** → `Repo_Scope_And_Map_v1.0.md`
+- **Docs index** → [docs/README.md](docs/README.md)  
+- **Repo scope & map** → [Repo_Scope_And_Map_v1.0.md](Repo_Scope_And_Map_v1.0.md)
 
 ## Live status
-- **ACS Status** → `docs/STATUS_ACS.md`
-- **Anchoring Status v9.1** → `docs/Anchoring_Status_v9.1.md`
+- **ACS Status** → [docs/STATUS_ACS.md](docs/STATUS_ACS.md)  
+- **Anchoring Status v9.1** → [docs/Anchoring_Status_v9.1.md](docs/Anchoring_Status_v9.1.md)
 
 ## NVIDIA Partner Pack
-- **Pack index** → `governance/partners/nvidia/README.md`
-- **First-contact Send Sequence** → `governance/partners/nvidia/Send_Sequence_v1.0.md`
-- **One-page bundle** → `governance/partners/nvidia/Partner_Pack_Bundle_v1.0.md`
-- **Deck outline** → `governance/partners/nvidia/Sovereign_Proposal_Deck_Outline_v1.2.md`
-- **Execution & Authority Claim** → `governance/partners/nvidia/Execution_Authority_Claim_v1.0.md`
-- **Roadmap** → `governance/partners/nvidia/TQC_Chip_Development_Roadmap_v1.1.md`
-- **ACS Validation Intro** → `governance/partners/nvidia/ACS_Validation_Report_Intro_v1.1.md`
+- **Pack index** → [governance/partners/nvidia/README.md](governance/partners/nvidia/README.md)
+- **First-contact Send Sequence** → [governance/partners/nvidia/Send_Sequence_v1.0.md](governance/partners/nvidia/Send_Sequence_v1.0.md)
+- **One-page bundle** → [governance/partners/nvidia/Partner_Pack_Bundle_v1.0.md](governance/partners/nvidia/Partner_Pack_Bundle_v1.0.md)
+- **Deck outline** → [governance/partners/nvidia/Sovereign_Proposal_Deck_Outline_v1.2.md](governance/partners/nvidia/Sovereign_Proposal_Deck_Outline_v1.2.md)
+- **Execution & Authority Claim** → [governance/partners/nvidia/Execution_Authority_Claim_v1.0.md](governance/partners/nvidia/Execution_Authority_Claim_v1.0.md)
+- **Roadmap** → [governance/partners/nvidia/TQC_Chip_Development_Roadmap_v1.1.md](governance/partners/nvidia/TQC_Chip_Development_Roadmap_v1.1.md)
+- **ACS Validation Intro** → [governance/partners/nvidia/ACS_Validation_Report_Intro_v1.1.md](governance/partners/nvidia/ACS_Validation_Report_Intro_v1.1.md)
 
 ---
 
