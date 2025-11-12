@@ -1,178 +1,222 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>TruthSeal — Local ACS + Receipt Demo (Offline, v1.2)</title>
-<style>
-  :root { color-scheme: dark; }
-  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background:#0b0f14; color:#e5eef7; }
-  .wrap { max-width: 920px; margin: 28px auto; padding: 0 16px; }
-  h1 { font-size: 22px; margin: 0 0 12px; color:#b9e6ff; }
-  .muted { color:#8aa9c1; font-size:13px; }
-  .card { background:#101826; border:1px solid #1f2a3a; border-radius:12px; padding:16px; margin:18px 0; }
-  label { display:block; font-size:13px; color:#9fb6c9; margin:12px 0 6px; }
-  input[type="number"], select { width:170px; padding:8px 10px; border-radius:8px; background:#0f1623; border:1px solid #253348; color:#dfe9f3; }
-  .row{ display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
-  .kpi{ font-size:46px; font-weight:900; letter-spacing:1px; }
-  .ok{ color:#7ef7a3; } .bad{ color:#ffbb3b; }
-  .btn{ cursor:pointer; padding:11px 16px; border-radius:10px; border:1px solid #2b3b52; background:#0f1a2a; color:#e5eef7; font-weight:700; pointer-events:auto; }
-  .btn.primary{ background:#0b3d91; border-color:#0b3d91; }
-  .pill{ display:inline-block; padding:5px 10px; border-radius:999px; font-size:12px; font-weight:700; margin-right:6px; }
-  .pill.good{ background:rgba(62,207,142,.18); border:1px solid rgba(62,207,142,.35); color:#82f7b5; }
-  .pill.bad{  background:rgba(255,183,59,.12); border:1px solid rgba(255,183,59,.35); color:#ffcc6a; }
-  pre{ background:#0c1522; border:1px solid #223149; border-radius:10px; padding:12px; overflow:auto; }
-  .hint{ font-size:12px; color:#8aa9c1; }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TruthSeal — Local ACS + Receipt Demo (Offline, v1.3)</title>
+  <style>
+    :root { color-scheme: dark; }
+    body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; background:#0b0f14; color:#e6eef7; }
+    .wrap { max-width: 920px; margin: 28px auto; padding: 0 16px; }
+    h1 { font-size: 22px; margin: 0 0 12px; }
+    .muted { color:#9ab; font-size:13px; }
+    .card { background:#101820; border:1px solid #223344; border-radius:14px; padding:16px; margin:14px 0; }
+    label { display:block; font-size:13px; color:#9ab; margin:8px 0 4px; }
+    input[type="number"], select { width:170px; padding:8px 10px; border-radius:10px; border:1px solid #2a3b4f; background:#0f151c; color:#fff; }
+    .row { display:flex; flex-wrap:wrap; gap:14px 24px; align-items:flex-end; }
+    .pill { display:inline-block; padding:5px 10px; border-radius:999px; background:#0f2432; border:1px solid #234; font-size:12px; color:#cfe7ff; margin-right:8px; }
+    .pill.good { background:#0a2a1a; border-color:#1e4; color:#bfffd1; }
+    .pill.bad  { background:#2a0a0a; border-color:#e44; color:#ffc9c9; }
+    .btn { cursor:pointer; padding:11px 16px; border-radius:12px; border:1px solid #2b3b52; background:#0f1a2a; color:#e6eef7; font-weight:700; }
+    .btn.primary { background:#0b3d91; }
+    pre { background:#0c131a; border:1px solid #1f2d3a; border-radius:12px; padding:12px; overflow:auto; font-size:12px; }
+    .kpi { font-size:44px; font-weight:800; letter-spacing:-0.02em; }
+    .ok  { color:#86f7a6; }
+    .bad { color:#ffb3b3; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .hint { font-size:12px; color:#9ab; }
+  </style>
 </head>
 <body>
   <div class="wrap">
     <h1>TruthSeal — Local ACS + Receipt Demo (Offline)</h1>
-    <p class="muted">Runs entirely in the browser. No network. Use this to show a real Aim Coherence Score and then save a receipt JSON locally.</p>
+    <p class="muted">Runs entirely in the browser. No network. Use this to show a real <em>Aim Coherence Score</em> and then save a receipt JSON locally.</p>
 
     <div class="card">
-      <label>Purity (no contradiction) — range [0…1]</label>
-      <input id="purity" type="number" step="0.0001" min="0" max="1" value="1.0000" oninput="updateACS()" onchange="updateACS()"/>
-
-      <label>Temporal drift — range [0…1]</label>
-      <input id="drift" type="number" step="0.0001" min="0" max="1" value="0.0000" oninput="updateACS()" onchange="updateACS()"/>
-
-      <label>Ethical irreversibility (LEI)</label>
-      <input id="lei" type="number" step="1" min="0" max="1" value="1" oninput="updateACS()" onchange="updateACS()"/>
-
-      <label>Secure attestation (trusted boot)</label>
-      <select id="attn" onchange="updateACS()">
-        <option value="trusted" selected>trusted</option>
-        <option value="untrusted">untrusted</option>
-      </select>
-
-      <div style="margin-top:14px">
-        <button type="button" class="btn" onclick="resetToCoherent()">Reset to Coherent</button>
+      <div class="row">
+        <div>
+          <label for="purity">Purity (no contradiction) — range [0…1]</label>
+          <input id="purity" type="number" step="0.0001" min="0" max="1" value="1.0000" />
+        </div>
+        <div>
+          <label for="drift">Temporal drift — range [0…1]</label>
+          <input id="drift" type="number" step="0.0001" min="0" max="1" value="0.0000" />
+        </div>
+        <div>
+          <label for="lei">Ethical irreversibility (LEI)</label>
+          <input id="lei" type="number" step="1" min="0" max="1" value="1" />
+        </div>
+        <div>
+          <label for="att">Secure attestation (trusted boot)</label>
+          <select id="att">
+            <option value="true" selected>trusted</option>
+            <option value="false">untrusted</option>
+          </select>
+        </div>
+        <div>
+          <button class="btn" id="btnReset" type="button">Reset to Coherent</button>
+        </div>
       </div>
     </div>
 
     <div class="card">
-      <div class="row" style="justify-content:space-between">
+      <div class="row" style="justify-content:space-between; align-items:center;">
         <div>
-          <div id="acsVal" class="kpi ok">1.0000</div>
-          <div>
-            <span id="statusPill" class="pill good">STATUS: COHERENT</span>
-            <span id="attnPill" class="pill good">ATTESTATION: TRUSTED</span>
-          </div>
+          <div class="muted">Aim Coherence Score</div>
+          <div id="kpi" class="kpi ok">1.0000</div>
+          <div id="status" class="pill good">STATUS: COHERENT</div>
+          <span id="attPill" class="pill">ATTESTATION: TRUSTED</span>
         </div>
-        <div><p class="hint">ACS = Purity × (1 − Drift) × LEI</p></div>
+        <div>
+          <button class="btn primary" id="btnReceipt" type="button">Generate Receipt</button>
+        </div>
       </div>
+      <p class="hint">ACS = Purity × (1 − Drift) × LEI (attestation is recorded separately and required for “green” status).</p>
+    </div>
 
-      <div class="row" style="margin-top:14px">
-        <button type="button" class="btn primary" onclick="generateReceipt()">Generate Receipt</button>
-        <button type="button" class="btn" onclick="downloadJSON()">Download JSON</button>
-        <button type="button" class="btn" onclick="showJSON()">Show JSON</button>
+    <div class="card">
+      <div class="row" style="justify-content:space-between; align-items:center;">
+        <div class="muted">Latest receipt (JSON)</div>
+        <div>
+          <button class="btn" id="btnCopy" type="button">Copy JSON</button>
+          <button class="btn" id="btnSave" type="button">Download JSON</button>
+          <button class="btn" id="btnShow" type="button">Show JSON</button>
+        </div>
       </div>
-      <p class="hint" style="margin-top:10px">If download is blocked on iPhone, tap “Show JSON”, then long-press to copy.</p>
-      <div id="jsonBox" style="display:none; margin-top:12px">
-        <pre id="jsonOut"></pre>
-      </div>
+      <pre id="out" class="mono">{}</pre>
     </div>
   </div>
 
-<script>
-  // --- Global state (Quick Look–safe) ---
-  let LAST_RECEIPT = null;
-
-  function clamp01(x){ x = Number(x||0); if (isNaN(x)) x = 0; return Math.max(0, Math.min(1, x)); }
-  function fmt4(x){ return Number(x).toFixed(4); }
-  function nowISO(){ return new Date().toISOString(); }
-  function nextCounter(){
-    try{
-      const k='ts_monotonic_counter';
-      const n = Number(localStorage.getItem(k) || '0') + 1;
-      localStorage.setItem(k, String(n));
-      return n;
-    }catch(e){ return 1; }
-  }
-
-  function readInputs(){
-    return {
-      purity: clamp01(document.getElementById('purity').value),
-      drift:  clamp01(document.getElementById('drift').value),
-      lei:    Number(document.getElementById('lei').value) === 1 ? 1 : 0,
-      attn:   document.getElementById('attn').value
+  <script>
+    // helpers
+    const $ = s => document.querySelector(s);
+    const bindBtn = (id, fn) => {
+      const el = $(id);
+      ['click','touchend'].forEach(evt => el.addEventListener(evt, e => { e.preventDefault(); fn(); }, {passive:false}));
     };
-  }
+    const round4 = x => Math.round((+x + Number.EPSILON) * 10000) / 10000;
 
-  function computeACS(p, d, l){ return p * (1 - d) * l; }
+    // counter persisted locally
+    function nextCounter(){
+      try{
+        const k='truthseal.counter';
+        const n = parseInt(localStorage.getItem(k) || '0',10) + 1;
+        localStorage.setItem(k, String(n));
+        return n;
+      }catch(e){ return 1; }
+    }
 
-  function paintACS(acs, attn){
-    const kpi = document.getElementById('acsVal');
-    const st  = document.getElementById('statusPill');
-    const ap  = document.getElementById('attnPill');
-    const coherent = (acs === 1.0);
-    kpi.textContent = fmt4(acs);
-    kpi.className = 'kpi ' + (coherent && attn==='trusted' ? 'ok' : 'bad');
-    st.textContent = coherent ? 'STATUS: COHERENT' : 'STATUS: DECOHERENCE';
-    st.className   = 'pill ' + (coherent ? 'good' : 'bad');
-    ap.textContent = attn==='trusted' ? 'ATTESTATION: TRUSTED' : 'ATTESTATION: UNTRUSTED';
-    ap.className   = 'pill ' + (attn==='trusted' ? 'good' : 'bad');
-  }
+    // ACS math
+    function calcACS(purity, drift, lei){
+      purity = Math.min(1, Math.max(0, +purity));
+      drift  = Math.min(1, Math.max(0, +drift));
+      lei    = (+lei === 1) ? 1 : 0;
+      return round4(purity * (1 - drift) * lei);
+    }
 
-  function updateACS(){
-    const {purity, drift, lei, attn} = readInputs();
-    const acs = Number(computeACS(purity, drift, lei).toFixed(4));
-    paintACS(acs, attn);
-  }
+    // stable stringify + SHA-256
+    function stableStringify(o){
+      return JSON.stringify(o, Object.keys(o).sort(), 2);
+    }
+    async function sha256Hex(str){
+      const enc = new TextEncoder().encode(str);
+      const digest = await crypto.subtle.digest('SHA-256', enc);
+      return Array.from(new Uint8Array(digest)).map(b=>b.toString(16).padStart(2,'0')).join('');
+    }
 
-  function resetToCoherent(){
-    document.getElementById('purity').value = '1.0000';
-    document.getElementById('drift').value  = '0.0000';
-    document.getElementById('lei').value    = '1';
-    document.getElementById('attn').value   = 'trusted';
-    updateACS();
-  }
+    // UI refs
+    const purity = $('#purity');
+    const drift  = $('#drift');
+    const lei    = $('#lei');
+    const attSel = $('#att');
+    const kpi    = $('#kpi');
+    const status = $('#status');
+    const attPill= $('#attPill');
+    const out    = $('#out');
 
-  function buildReceipt(){
-    const {purity, drift, lei, attn} = readInputs();
-    const acsRaw = computeACS(purity, drift, lei);
-    const receipt = {
-      id: 'ts_'+Date.now().toString(36),
-      created_utc: nowISO(),
-      monotonic_counter: nextCounter(),
-      attestation: attn,                       // trusted | untrusted
-      inputs: { purity, drift, lei },
-      acs: Number(acsRaw.toFixed(4)),
-      pqc_signature: "PQC_SIGNATURE_PLACEHOLDER",
-      note: "Local offline demo (no network)."
-    };
-    return receipt;
-  }
+    function refresh(){
+      const acs = calcACS(purity.value, drift.value, lei.value);
+      const att = (attSel.value === 'true');
+      kpi.textContent = acs.toFixed(4);
+      kpi.className   = 'kpi ' + ((acs === 1.0 && att) ? 'ok' : 'bad');
+      status.textContent = 'STATUS: ' + ((acs === 1.0 && att) ? 'COHERENT' : 'QUARANTINE');
+      status.className   = 'pill ' + ((acs === 1.0 && att) ? 'good' : 'bad');
+      attPill.textContent = 'ATTESTATION: ' + (att ? 'TRUSTED' : 'UNTRUSTED');
+      attPill.className   = 'pill ' + (att ? '' : 'bad');
+    }
 
-  function generateReceipt(){
-    LAST_RECEIPT = buildReceipt();
-    document.getElementById('jsonOut').textContent = JSON.stringify(LAST_RECEIPT, null, 2);
-    document.getElementById('jsonBox').style.display = 'block';
-    updateACS();
-  }
+    // inputs live-update
+    ;[purity,drift,lei].forEach(el => el.addEventListener('input', refresh));
+    attSel.addEventListener('change', refresh);
 
-  function downloadJSON(){
-    if(!LAST_RECEIPT) LAST_RECEIPT = buildReceipt();
-    const blob = new Blob([JSON.stringify(LAST_RECEIPT, null, 2)], {type:"application/json"});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    const ts = new Date().toISOString().replace(/[-:TZ.]/g,'').slice(0,14);
-    a.download = `truthseal-receipt-acs_${ts}.json`;
-    document.body.appendChild(a);
-    a.click(); // iOS: works when invoked from onclick
-    setTimeout(()=>{ URL.revokeObjectURL(url); a.remove(); }, 120);
-  }
+    // actions
+    function resetToCoherent(){
+      purity.value = '1.0000';
+      drift.value  = '0.0000';
+      lei.value    = '1';
+      attSel.value = 'true';
+      refresh();
+    }
 
-  function showJSON(){
-    if(!LAST_RECEIPT) LAST_RECEIPT = buildReceipt();
-    document.getElementById('jsonOut').textContent = JSON.stringify(LAST_RECEIPT, null, 2);
-    document.getElementById('jsonBox').style.display = 'block';
-  }
+    let lastReceipt = {};
+    async function generateReceipt(){
+      const now = new Date().toISOString();
+      const counter = nextCounter();
+      const values = {
+        purity: round4(purity.value),
+        drift:  round4(drift.value),
+        lei:    (+lei.value === 1) ? 1 : 0,
+        attested: (attSel.value === 'true')
+      };
+      const acs = calcACS(values.purity, values.drift, values.lei);
 
-  // First paint
-  updateACS();
-</script>
+      const body = { acs, values, timestamp_utc: now, monotonic_counter: counter };
+      const canon = stableStringify(body);
+      const hash_hex = await sha256Hex(canon);
+      const pqc_signature = "PQC_SIGNATURE_PLACEHOLDER";
+
+      lastReceipt = {
+        receipt_version: "v1.0",
+        body,
+        hash_sha256: hash_hex,
+        pqc_signature,
+        note: "Local demo: structural frame only. Replace signature with PQC key once available."
+      };
+      out.textContent = JSON.stringify(lastReceipt, null, 2);
+    }
+
+    async function copyJSON(){
+      if (!out.textContent.trim()) await generateReceipt();
+      await navigator.clipboard.writeText(out.textContent);
+      alert('Receipt JSON copied to clipboard.');
+    }
+
+    async function saveJSON(){
+      if (!out.textContent.trim()) await generateReceipt();
+      const blob = new Blob([out.textContent], { type: 'application/json' });
+      const a = document.createElement('a');
+      const ts = new Date().toISOString().replace(/[:.]/g,'-');
+      a.href = URL.createObjectURL(blob);
+      a.download = `truthseal-receipt-${ts}.json`;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(()=>{ URL.revokeObjectURL(a.href); a.remove(); }, 120);
+    }
+
+    function showJSON(){
+      if (!out.textContent.trim()) { generateReceipt(); return; }
+      out.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    // bind buttons (click + touchend)
+    bindBtn('#btnReset',   resetToCoherent);
+    bindBtn('#btnReceipt', generateReceipt);
+    bindBtn('#btnCopy',    copyJSON);
+    bindBtn('#btnSave',    saveJSON);
+    bindBtn('#btnShow',    showJSON);
+
+    // first paint
+    refresh();
+  </script>
 </body>
 </html>
