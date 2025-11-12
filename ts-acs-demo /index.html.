@@ -5,32 +5,30 @@
 <title>TruthSeal — Local ACS + Receipt Demo</title>
 <style>
   :root{color-scheme:dark light}
-  body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-  .wrap{max-width:900px;margin:32px auto;padding:0 16px}
+  body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:#0b1218;color:#e7eef5}
+  .wrap{max-width:900px;margin:28px auto;padding:0 16px}
   h1{font-size:28px;margin:0 0 8px}
-  p.muted{color:#9aa3ad;margin:0 0 20px}
-  .card{background:#101820;border:1px solid #22313d;border-radius:14px;padding:18px;margin:16px 0}
-  label{display:block;font-size:13px;margin:14px 0 6px}
-  input,select,textarea{width:100%;font-size:16px;border:1px solid #2a3b49;background:#0e151b;color:#e9eef2;
-    padding:12px;border-radius:10px;outline:none}
-  textarea{min-height:140px;white-space:pre-wrap}
+  p.muted{color:#9aa3ad;margin:0 0 18px}
+  .card{background:#0f171e;border:1px solid #20303c;border-radius:14px;padding:18px;margin:14px 0}
+  label{display:block;font-size:13px;margin:12px 0 6px}
+  input,select,textarea{width:100%;font-size:16px;border:1px solid #263644;background:#0c141a;color:#e7eef5;padding:12px;border-radius:10px;outline:none}
+  input:focus,select:focus,textarea:focus{border-color:#2c79ff}
+  textarea{min-height:160px;white-space:pre-wrap}
   .row{display:flex;gap:12px;flex-wrap:wrap}
   .row>div{flex:1 1 240px}
-  .kpi{display:flex;align-items:center;gap:12px;margin-top:14px}
+  .kpi{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}
   .score{font-size:56px;font-weight:800;letter-spacing:1px}
   .pill{display:inline-block;padding:8px 12px;border-radius:999px;border:1px solid #244d37;background:#0f2319;font-weight:700}
   .pill.secondary{border-color:#294861;background:#0f1e2a}
-  .btn{cursor:pointer;padding:12px 14px;border-radius:10px;border:1px solid #2b3c49;background:#0e151b}
+  .btn{cursor:pointer;padding:12px 14px;border-radius:10px;border:1px solid #2b3c49;background:#101821}
   .btn.primary{background:#0b3d91}
   .btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
   .hint{font-size:12px;color:#8d99a6;margin-top:8px}
-  .center{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 </style>
 
 <div class="wrap">
   <h1>TruthSeal — Local ACS + Receipt Demo</h1>
-  <p class="muted">Runs 100% on-device (no network). Use it to show a real
-  <em>Aim Coherence Score</em> and save a receipt JSON.</p>
+  <p class="muted">Runs 100% on-device (no network). Show a real <em>Aim Coherence Score</em> and save a receipt JSON.</p>
 
   <div class="card">
     <div class="row">
@@ -60,10 +58,8 @@
 
     <div class="kpi">
       <div id="score" class="score">1.0000</div>
-      <div class="center">
-        <span id="status" class="pill">STATUS: COHERENT</span>
-        <span id="attpill" class="pill secondary">ATTESTATION: TRUSTED</span>
-      </div>
+      <span id="status" class="pill">STATUS: COHERENT</span>
+      <span id="attpill" class="pill secondary">ATTESTATION: TRUSTED</span>
     </div>
 
     <div class="btnrow">
@@ -72,7 +68,7 @@
       <button class="btn" id="copy">Copy JSON</button>
       <button class="btn" id="download">Download JSON</button>
     </div>
-    <div class="hint">Tip: On iPhone, if download is blocked, tap “Copy JSON”.</div>
+    <div class="hint">Tip (iPhone): if download is blocked, tap “Copy JSON”.</div>
   </div>
 
   <div class="card">
@@ -84,72 +80,56 @@
 <script>
 (function(){
   const $ = id => document.getElementById(id);
-  const purity = $('purity'), drift=$('drift'), lei=$('lei'), att=$('att');
-  const score = $('score'), status=$('status'), attpill=$('attpill');
-  const out = $('out'), reset=$('reset'), gen=$('gen'), copyBtn=$('copy'), dl=$('download');
+  const purity=$('purity'), drift=$('drift'), lei=$('lei'), att=$('att');
+  const score=$('score'), status=$('status'), attpill=$('attpill');
+  const out=$('out'), reset=$('reset'), gen=$('gen'), copyBtn=$('copy'), dl=$('download');
 
-  function clamp01(x){ x=parseFloat(x); return isFinite(x)? Math.max(0, Math.min(1, x)) : 0; }
+  function clamp01(x){ x=parseFloat(x); return Number.isFinite(x)? Math.max(0,Math.min(1,x)) : 0; }
   function calc(){
-    const p = clamp01(purity.value);
-    const d = clamp01(drift.value);
-    const l = parseInt(lei.value, 10) ? 1 : 0;
-    const s = p * (1 - d) * l;
-    score.textContent = s.toFixed(4);
-    status.textContent = s >= 1 ? 'STATUS: COHERENT' : 'STATUS: GUARDED';
-    attpill.textContent = 'ATTESTATION: ' + (att.value==='trusted' ? 'TRUSTED' : 'UNTRUSTED');
+    const p=clamp01(purity.value), d=clamp01(drift.value), l=parseInt(lei.value,10)?1:0;
+    const s=p*(1-d)*l;
+    score.textContent=s.toFixed(4);
+    status.textContent=(s>=1)?'STATUS: COHERENT':'STATUS: GUARDED';
+    attpill.textContent='ATTESTATION: ' + (att.value==='trusted'?'TRUSTED':'UNTRUSTED');
     return {p,d,l,s};
   }
   function nowIso(){ return new Date().toISOString(); }
-  function nonce(){ return Math.random().toString(36).slice(2,10) + Date.now().toString(36); }
+  function nonce(){ return Math.random().toString(36).slice(2,10)+Date.now().toString(36); }
 
   function genReceipt(){
-    const {p,d,l,s} = calc();
-    const rec = {
-      ts: nowIso(),
-      monotonic_counter: Date.now(),
-      acs: Number(s.toFixed(6)),
-      purity: p, drift: d, lei: l,
-      attestation: att.value,
-      pqc_signature: "<placeholder>",
-      nonce: nonce()
+    const {p,d,l,s}=calc();
+    const rec={
+      ts:nowIso(),
+      acs:Number(s.toFixed(6)),
+      purity:p, drift:d, lei:l,
+      attestation:att.value,
+      pqc_signature:"<placeholder>",
+      nonce:nonce()
     };
-    out.value = JSON.stringify(rec, null, 2);
+    out.value=JSON.stringify(rec,null,2);
   }
 
   function copyJSON(){
-    const txt = out.value;
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(txt).catch(()=>fallback());
-    } else {
-      fallback();
-    }
-    function fallback(){
-      out.focus(); out.select();
-      try{ document.execCommand('copy'); }catch(e){}
-    }
+    const txt=out.value||"{}";
+    if(navigator.clipboard?.writeText){navigator.clipboard.writeText(txt).catch(fallback);} else fallback();
+    function fallback(){ out.focus(); out.select(); try{document.execCommand('copy');}catch(e){} }
   }
 
   function downloadJSON(){
-    const blob = new Blob([out.value || "{}"], {type:'application/json'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url; a.download = 'acs_receipt.json'; document.body.appendChild(a);
-    a.click(); a.remove(); URL.revokeObjectURL(url);
+    const blob=new Blob([out.value||"{}"],{type:'application/json'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a'); a.href=url; a.download='acs_receipt.json';
+    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
   }
 
-  function resetAll(){
-    purity.value = 1; drift.value = 0; lei.value = 1; att.value = 'trusted';
-    calc(); out.value = "{}";
-  }
+  function resetAll(){ purity.value=1; drift.value=0; lei.value=1; att.value='trusted'; calc(); out.value="{}"; }
 
-  // events
-  [purity,drift,lei,att].forEach(el=>el.addEventListener('input', calc));
-  reset.addEventListener('click', resetAll);
-  gen.addEventListener('click', genReceipt);
-  copyBtn.addEventListener('click', copyJSON);
-  dl.addEventListener('click', downloadJSON);
+  [purity,drift,lei,att].forEach(el=>el.addEventListener('input',calc));
+  reset.addEventListener('click',resetAll);
+  gen.addEventListener('click',genReceipt);
+  copyBtn.addEventListener('click',copyJSON);
+  dl.addEventListener('click',downloadJSON);
 
-  // init
   calc();
 })();
 </script>
