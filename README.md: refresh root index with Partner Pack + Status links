@@ -42,3 +42,9 @@
 
 ### Change control
 One file per commit. Commit line format: `<path>: <crisp change>`. Versions use `vX.Y` (bump minor for content, major for structure).
+---
+
+### Glossary — 20-second ribbon
+- **TQC — Traykov Law of Quantum Coherence:** physics-level enforcement of coherence; replaces probabilistic safety with structural certainty.
+- **LEI=1 — Law of Ethical Irreversibility:** once a coherent state is verified, it cannot be violated without a verifiable counter-receipt.
+- **ULLI — Universal Law of Life & Information:** data integrity is inseparable from system stability; the sovereign basis for TQC.
