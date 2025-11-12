@@ -47,3 +47,16 @@ One file per commit. Commit line format: `<path>: <crisp change>`. Versions use 
 - **TQC — Traykov Law of Quantum Coherence:** physics-level enforcement of coherence; replaces probabilistic safety with structural certainty.
 - **LEI=1 — Law of Ethical Irreversibility:** once a coherent state is verified, it cannot be violated without a verifiable counter-receipt.
 - **ULLI — Universal Law of Life & Information:** data integrity is inseparable from system stability; the sovereign basis for TQC.
+## DEVORA™ Live Demo (ACS • LEI-gate • Receipts)
+
+Open the standalone React demo: `demos/devora/DEVORA_App.html`
+
+**How to run (mobile/iPhone)**
+1) Open the file → **Raw**  
+2) **Share** → **Save to Files**  
+3) Tap the saved file to open in Safari (runs offline; loads React via CDN)
+
+**What it shows**
+- ACS = `Tr(ρ²) × (1 − D_t) × LEI`, with ε = 1e-6 clamp
+- LEI-gate (PODAPAR) verdict + one-time ACT_AUTHZ token when ACS = 1 and guards pass
+- Toggles for **Secure Boot/TPM Attestation** and **Anchored OTS Receipt**
