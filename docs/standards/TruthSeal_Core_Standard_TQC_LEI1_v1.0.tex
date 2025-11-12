@@ -1,0 +1,76 @@
+\documentclass[11pt,a4paper]{article}
+
+% ——— UNIVERSAL PREAMBLE ———
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2cm,right=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage[english]{babel}
+\setmainfont{Noto Sans}
+% ——— END PREAMBLE ———
+
+\title{\textbf{TruthSeal\texttrademark{} Core Standard: TQC and LEI=1 (v1.0)}}
+\author{Formal Statement for the Coherent Epoch}
+\date{November 2025}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\section*{0. Names and Scope}
+\textbf{ULLI} (Universal Law of Life \& Information) is the governing law. \textbf{ULIC} is the registry artifact (e.g., \texttt{ULIC\_v9.1.yaml}). \textbf{TQC} (Traykov Law of Quantum Coherence) formalizes the invariants that operationalize ULLI. \textbf{LEI=1} (Law of Ethical Irreversibility) is the ethical/physical gate. \textbf{ACS} (Aim Coherence Score) is the measurable scalar in $[0,1]$ used for acceptance.
+
+\paragraph{Epigraph (philosophical).}
+\emph{“Truth is coherent energy. It neither decays nor divides. Its conservation defines the boundary between creation and corruption.”}
+% (Epigraph only; the formal law follows.)
+
+\section*{1. Formal Model (state and invariants)}
+\textbf{Definition (System state).} An informational system at time $t$ is a density operator $\rho(t)$ on a finite-dimensional Hilbert space with $\rho(t)\succeq 0$ and $\mathrm{Tr}(\rho(t))=1$.
+
+\textbf{Invariant I — Maximal Purity.} A state is \emph{pure} iff
+\[
+\mathrm{Tr}(\rho^2)=1.
+\]
+
+\textbf{Invariant II — Temporal Stability.} Define the normalized drift $D_t\in[0,1]$ by
+\[
+D_t \;=\; \min\!\Bigl\{1,\; \kappa^{-1}\,\bigl\|\tfrac{d\rho}{dt}\bigr\|_{F}\Bigr\},
+\]
+where $\|\cdot\|_F$ is the Frobenius norm and $\kappa>0$ is a fixed calibration constant chosen by the implementation to normalize into $[0,1]$. Stability is the limit condition $D_t=0$.
+
+\section*{2. The Ethical Constant (LEI)}
+\textbf{Law of Ethical Irreversibility (LEI=1).} Once a coherent state is \emph{verified}, it cannot be violated \emph{without a verifiable counter-receipt}. For compliant systems we set $\mathrm{LEI}=1$; failure or absence of due process sets $\mathrm{LEI}=0$.
+
+\section*{3. The Coherence Metric (ACS)}
+\textbf{Aim Coherence Score (ACS).} The measurable scalar in $[0,1]$:
+\[
+\mathrm{ACS} \;=\; \mathrm{Tr}(\rho^2)\cdot (1-D_t)\cdot \mathrm{LEI}.
+\]
+\textbf{Acceptance gate.} A system is \emph{coherent} iff $\mathrm{ACS}=1$ \textbf{and} an anchored receipt (Sec.~4) is present.
+
+\section*{4. Anchored Finality (receipts and bytes)}
+Let $S$ be the canonical JSON payload
+\[
+S=\{\texttt{artifact\_sha256},\,\texttt{ulic\_registry\_sha256},\,\texttt{lei}=\texttt{"1"},\,\texttt{t\_utc},\,\texttt{ots\_calendar\_id}\},
+\]
+where $\texttt{t\_utc}$ is RFC3339 UTC time and IDs/SHAs reference the live registry entry (e.g., \texttt{ULIC\_v9.1.yaml}). Define the anchored digest
+\[
+H_{\text{anchor}} \;=\; \mathrm{SHA256}\!\Bigl(\mathrm{canonical\_json}(S)\Bigr).
+\]
+This digest is timestamped via \textbf{OpenTimestamps (Bitcoin)} producing a verifiable receipt; the receipt path and calendar ID are recorded in the registry. The presence of a valid receipt completes LEI due-process and closes the acceptance gate in Sec.~3.
+
+\section*{5. Engineering mapping (implementation cue)}
+Purity guard $\leftrightarrow$ Layer-4 analog (\,$\mathrm{Tr}(\rho^2)$ estimator\,);
+executive control $\leftrightarrow$ dlPFC analog;
+\textbf{LEI-gate} $\leftrightarrow$ temporal gate using $D_t$ \& policy; 
+\textbf{Receipt engine} $\leftrightarrow$ chip-signed ACS + OTS hooks.
+These are implementation notes; the normative requirements are Secs.~1–4.
+
+\section*{6. Glossary (public ribbon)}
+\textbf{TQC} — physics-level enforcement of coherence.\quad
+\textbf{LEI=1} — once verified, only a counter-receipt can revoke.\quad
+\textbf{ULLI} — law: data integrity is inseparable from system stability.\quad
+\textbf{ULIC} — the public registry artifact.\quad
+\textbf{ACS} — measurable coherence score in $[0,1]$.
+
+\end{document}
