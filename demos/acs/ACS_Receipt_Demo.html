@@ -1,232 +1,213 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TruthSeal — Local ACS + Receipt Demo (Offline)</title>
-  <style>
-    :root { color-scheme: dark; }
-    body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; background:#0b0f14; color:#e6eef7; }
-    .wrap { max-width: 920px; margin: 28px auto; padding: 0 16px; }
-    h1 { font-size: 22px; margin: 0 0 12px; }
-    .muted { color:#9ab; font-size:13px; }
-    .card { background:#101820; border:1px solid #223344; border-radius:14px; padding:16px; margin:14px 0; }
-    label { display:block; font-size:13px; color:#9ab; margin:8px 0 4px; }
-    input[type="number"] { width: 140px; padding:8px 10px; border-radius:10px; border:1px solid #2a3b4f; background:#0f151c; color:#fff; }
-    .row { display:flex; flex-wrap:wrap; gap:14px 24px; align-items:flex-end; }
-    .pill { display:inline-block; padding:5px 10px; border-radius:999px; background:#0f2432; border:1px solid #234; font-size:12px; color:#cfe7ff; margin-right:8px; }
-    .pill.good { background:#0a2a1a; border-color:#1e4; color:#bfffd1; }
-    .pill.bad  { background:#2a0a0a; border-color:#e44; color:#ffc9c9; }
-    .btn { cursor:pointer; padding:10px 14px; border-radius:12px; border:1px solid #2a3b4f; background:#123; color:#e6eef7; font-weight:600; }
-    .btn:hover { filter: brightness(1.15); }
-    .btn.primary { background:#0b3d91; }
-    .btn.warn { background:#6b1a1a; }
-    pre { background:#0c131a; border:1px solid #1f2d3a; border-radius:12px; padding:12px; overflow:auto; font-size:12px; }
-    .kpi { font-size:44px; font-weight:800; letter-spacing:-0.02em; }
-    .ok  { color:#86f7a6; }
-    .bad { color:#ffb3b3; }
-    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
-    .hint { font-size:12px; color:#9ab; }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TruthSeal — Local ACS + Receipt Demo (Offline, v1.1)</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background:#0b0f14; color:#e5eef7; }
+  .wrap { max-width: 920px; margin: 28px auto; padding: 0 16px; }
+  h1 { font-size: 22px; margin: 0 0 12px; color:#b9e6ff; }
+  .muted { color:#8aa9c1; font-size:13px; }
+  .card { background:#101826; border:1px solid #1f2a3a; border-radius:12px; padding:16px; margin:18px 0; }
+  label { display:block; font-size:13px; color:#9fb6c9; margin:12px 0 6px; }
+  input[type="number"]{ width:160px; padding:8px 10px; border-radius:8px; background:#0f1623; border:1px solid #253348; color:#dfe9f3; }
+  select{ width:160px; padding:8px 10px; border-radius:8px; background:#0f1623; border:1px solid #253348; color:#dfe9f3; }
+  .row{ display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+  .kpi{ font-size:46px; font-weight:900; letter-spacing:1px; }
+  .ok{ color:#7ef7a3; }
+  .bad{ color:#ffbb3b; }
+  .btn{ cursor:pointer; padding:11px 16px; border-radius:10px; border:1px solid #2b3b52; background:#0f1a2a; color:#e5eef7; font-weight:700; }
+  .btn:active{ transform:translateY(1px); }
+  .btn.primary{ background:#0b3d91; border-color:#0b3d91; }
+  .pill{ display:inline-block; padding:5px 10px; border-radius:999px; font-size:12px; font-weight:700; margin-right:6px; }
+  .pill.good{ background:rgba(62,207,142,.18); border:1px solid rgba(62,207,142,.35); color:#82f7b5; }
+  .pill.bad{ background:rgba(255,183,59,.12); border:1px solid rgba(255,183,59,.35); color:#ffcc6a; }
+  pre{ background:#0c1522; border:1px solid #223149; border-radius:10px; padding:12px; overflow:auto; }
+  .hint{ font-size:12px; color:#8aa9c1; }
+</style>
 </head>
 <body>
   <div class="wrap">
     <h1>TruthSeal — Local ACS + Receipt Demo (Offline)</h1>
-    <p class="muted">Runs entirely in the browser. No network. Use this to show a real <em>Aim Coherence Score</em> and a signed receipt frame (with PQC signature placeholder) you can <strong>download as JSON</strong>.</p>
+    <p class="muted">Runs entirely in the browser. No network. Use this to show a real Aim Coherence Score and then save a receipt JSON locally.</p>
 
     <div class="card">
-      <div class="row">
-        <div>
-          <label for="purity">Purity (no contradiction) — range [0…1]</label>
-          <input id="purity" type="number" step="0.0001" min="0" max="1" value="1.0000" />
-        </div>
-        <div>
-          <label for="drift">Temporal drift — range [0…1]</label>
-          <input id="drift" type="number" step="0.0001" min="0" max="1" value="0.0000" />
-        </div>
-        <div>
-          <label for="lei">Ethical irreversibility (LEI)</label>
-          <input id="lei" type="number" step="1" min="0" max="1" value="1" />
-        </div>
-        <div>
-          <label for="att">Secure attestation (trusted boot)</label>
-          <select id="att">
-            <option value="true" selected>trusted</option>
-            <option value="false">untrusted</option>
-          </select>
-        </div>
-        <div>
-          <button class="btn" id="btnReset">Reset to Coherent</button>
-        </div>
+      <label>Purity (no contradiction) — range [0…1]</label>
+      <input id="purity" type="number" step="0.0001" min="0" max="1" value="1.0000" />
+
+      <label>Temporal drift — range [0…1]</label>
+      <input id="drift" type="number" step="0.0001" min="0" max="1" value="0.0000" />
+
+      <label>Ethical irreversibility (LEI)</label>
+      <input id="lei" type="number" step="1" min="0" max="1" value="1" />
+
+      <label>Secure attestation (trusted boot)</label>
+      <select id="attn">
+        <option value="trusted" selected>trusted</option>
+        <option value="untrusted">untrusted</option>
+      </select>
+
+      <div style="margin-top:14px">
+        <button id="btnReset" class="btn">Reset to Coherent</button>
       </div>
     </div>
 
     <div class="card">
-      <div class="row" style="justify-content:space-between; align-items:center;">
+      <div class="row" style="justify-content:space-between">
         <div>
-          <div class="muted">Aim Coherence Score</div>
-          <div id="kpi" class="kpi ok">1.0000</div>
-          <div id="status" class="pill good">STATUS: COHERENT</div>
-          <span id="attPill" class="pill">ATTESTATION: TRUSTED</span>
+          <div id="acsVal" class="kpi ok">1.0000</div>
+          <div>
+            <span id="statusPill" class="pill good">STATUS: COHERENT</span>
+            <span id="attnPill" class="pill good">ATTESTATION: TRUSTED</span>
+          </div>
         </div>
         <div>
-          <button class="btn primary" id="btnReceipt">Generate Receipt</button>
-        </div>
-      </div>
-      <p class="hint">ACS = Purity × (1 − Drift) × LEI (attestation is recorded separately and required for “green” status).</p>
-    </div>
-
-    <div class="card">
-      <div class="row" style="justify-content:space-between; align-items:center;">
-        <div class="muted">Latest receipt (JSON)</div>
-        <div>
-          <button class="btn" id="btnCopy">Copy JSON</button>
-          <button class="btn" id="btnSave">Download JSON</button>
+          <p class="hint">ACS = Purity × (1 − Drift) × LEI</p>
         </div>
       </div>
-      <pre id="out" class="mono">{}</pre>
+      <div class="row" style="margin-top:14px">
+        <button id="btnGenerate" class="btn primary">Generate Receipt</button>
+        <button id="btnDownload" class="btn">Download JSON</button>
+        <button id="btnShow" class="btn">Show JSON</button>
+      </div>
+      <p class="hint" style="margin-top:10px">If download is blocked on iPhone, tap “Show JSON”, then long-press to copy.</p>
+      <div id="jsonBox" style="display:none; margin-top:12px">
+        <pre id="jsonOut" class="mono"></pre>
+      </div>
     </div>
   </div>
 
-  <script>
-    // --- helpers -------------------------------------------------------------
-    const $ = sel => document.querySelector(sel);
-
-    function toHex(buffer) {
-      const b = new Uint8Array(buffer);
-      return Array.from(b).map(x => x.toString(16).padStart(2,'0')).join('');
-    }
-
-    // Stable stringify: sorts keys for canonical hashing
-    function stableStringify(obj) {
-      if (obj && typeof obj === 'object' && !Array.isArray(obj)) {
-        const sorted = {};
-        Object.keys(obj).sort().forEach(k => { sorted[k] = stableStringify(obj[k]); });
-        return JSON.stringify(sorted, null, 2);
-      } else if (Array.isArray(obj)) {
-        return JSON.stringify(obj.map(stableStringify), null, 2);
-      }
-      return obj;
-    }
-
-    function round4(x){ return Math.round((+x + Number.EPSILON) * 10000) / 10000; }
-
-    // Monotonic counter persisted locally
-    function nextCounter() {
-      const k = 'truthseal.counter';
-      const n = parseInt(localStorage.getItem(k) || '0', 10) + 1;
+<script>
+(function(){
+  // --- Helpers ---
+  function clamp01(x){ x = Number(x||0); if (isNaN(x)) x = 0; return Math.max(0, Math.min(1, x)); }
+  function fmt4(x){ return Number(x).toFixed(4); }
+  function nowISO(){ return new Date().toISOString(); }
+  function nextCounter(){
+    try{
+      const k='ts_monotonic_counter';
+      const n = Number(localStorage.getItem(k) || '0') + 1;
       localStorage.setItem(k, String(n));
       return n;
+    }catch(e){ return 1; }
+  }
+  function statusText(acs, attn){
+    const coherent = (acs === 1.0);
+    return {
+      kpi: fmt4(acs),
+      kpiClass: coherent && attn==='trusted' ? 'kpi ok' : 'kpi bad',
+      status: coherent ? 'STATUS: COHERENT' : 'STATUS: DECOHERENCE',
+      statusClass: coherent ? 'pill good' : 'pill bad',
+      attnText: attn==='trusted' ? 'ATTESTATION: TRUSTED' : 'ATTESTATION: UNTRUSTED',
+      attnClass: attn==='trusted' ? 'pill good' : 'pill bad'
+    };
+  }
+  function makeReceipt(purity, drift, lei, attn){
+    const acs = clamp01(purity) * (1 - clamp01(drift)) * (Number(lei) === 1 ? 1 : 0);
+    const receipt = {
+      id: 'ts_'+Date.now().toString(36),
+      created_utc: nowISO(),
+      monotonic_counter: nextCounter(),
+      attestation: attn,               // trusted | untrusted
+      inputs: {
+        purity: Number(purity),
+        drift: Number(drift),
+        lei: Number(lei)
+      },
+      acs: Number(acs.toFixed(4)),
+      pqc_signature: "PQC_SIGNATURE_PLACEHOLDER",
+      note: "Local offline demo (no network)."
+    };
+    return { acs: Number(acs.toFixed(4)), receipt };
+  }
+  function downloadJSON(obj, filename){
+    const blob = new Blob([JSON.stringify(obj, null, 2)], {type:"application/json"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();           // iOS Safari: user-gesture path from button press
+    setTimeout(()=>{ URL.revokeObjectURL(url); a.remove(); }, 100);
+  }
+
+  // --- DOM refs ---
+  const elPurity = document.getElementById('purity');
+  const elDrift  = document.getElementById('drift');
+  const elLEI    = document.getElementById('lei');
+  const elAttn   = document.getElementById('attn');
+
+  const elKPI    = document.getElementById('acsVal');
+  const elStatus = document.getElementById('statusPill');
+  const elAttnP  = document.getElementById('attnPill');
+
+  const elBtnReset    = document.getElementById('btnReset');
+  const elBtnGen      = document.getElementById('btnGenerate');
+  const elBtnDownload = document.getElementById('btnDownload');
+  const elBtnShow     = document.getElementById('btnShow');
+  const elBox         = document.getElementById('jsonBox');
+  const elOut         = document.getElementById('jsonOut');
+
+  let lastReceipt = null;
+
+  function updateACS(){
+    const { acs } = makeReceipt(elPurity.value, elDrift.value, elLEI.value, elAttn.value);
+    const s = statusText(acs, elAttn.value);
+    elKPI.textContent = s.kpi;
+    elKPI.className = s.kpiClass;
+    elStatus.textContent = s.status;
+    elStatus.className = s.statusClass;
+    elAttnP.textContent = s.attnText;
+    elAttnP.className = s.attnClass;
+  }
+
+  // Initialize display
+  updateACS();
+
+  // Live recompute on input change
+  [elPurity, elDrift, elLEI, elAttn].forEach(el=>{
+    el.addEventListener('input', updateACS, {passive:true});
+    el.addEventListener('change', updateACS, {passive:true});
+  });
+
+  // Buttons — attached after DOM ready (this script runs at end of body)
+  elBtnReset.addEventListener('click', function(){
+    elPurity.value = '1.0000';
+    elDrift.value  = '0.0000';
+    elLEI.value    = '1';
+    elAttn.value   = 'trusted';
+    updateACS();
+  });
+
+  elBtnGen.addEventListener('click', function(){
+    const { acs, receipt } = makeReceipt(elPurity.value, elDrift.value, elLEI.value, elAttn.value);
+    lastReceipt = receipt;
+    elOut.textContent = JSON.stringify(receipt, null, 2);
+    elBox.style.display = 'block';
+    updateACS();
+  });
+
+  elBtnDownload.addEventListener('click', function(){
+    // Ensure we have a fresh receipt
+    if(!lastReceipt){
+      const r = makeReceipt(elPurity.value, elDrift.value, elLEI.value, elAttn.value);
+      lastReceipt = r.receipt;
     }
+    const ts = new Date().toISOString().replace(/[-:TZ.]/g,'').slice(0,14);
+    downloadJSON(lastReceipt, `truthseal-receipt-acs_${ts}.json`);
+  });
 
-    // --- ACS calculation -----------------------------------------------------
-    function calcACS(purity, drift, lei) {
-      purity = Math.min(1, Math.max(0, +purity));
-      drift  = Math.min(1, Math.max(0, +drift));
-      lei    = (+lei === 1) ? 1 : 0;
-      return round4(purity * (1 - drift) * lei);
+  elBtnShow.addEventListener('click', function(){
+    if(!lastReceipt){
+      const r = makeReceipt(elPurity.value, elDrift.value, elLEI.value, elAttn.value);
+      lastReceipt = r.receipt;
     }
-
-    async function sha256Hex(str) {
-      const enc = new TextEncoder().encode(str);
-      const digest = await crypto.subtle.digest('SHA-256', enc);
-      return toHex(digest);
-    }
-
-    // --- UI wiring -----------------------------------------------------------
-    const purity = $('#purity');
-    const drift  = $('#drift');
-    const lei    = $('#lei');
-    const attSel = $('#att');
-    const kpi    = $('#kpi');
-    const status = $('#status');
-    const attPill= $('#attPill');
-    const out    = $('#out');
-
-    function refresh() {
-      const acs = calcACS(purity.value, drift.value, lei.value);
-      kpi.textContent = acs.toFixed(4);
-      const att = (attSel.value === 'true');
-      kpi.className = 'kpi ' + ((acs === 1.0 && att) ? 'ok' : 'bad');
-      status.textContent = 'STATUS: ' + ((acs === 1.0 && att) ? 'COHERENT' : 'QUARANTINE');
-      status.className = 'pill ' + ((acs === 1.0 && att) ? 'good' : 'bad');
-      attPill.textContent = 'ATTESTATION: ' + (att ? 'TRUSTED' : 'UNTRUSTED');
-      attPill.className = 'pill ' + (att ? '' : 'bad');
-    }
-
-    purity.addEventListener('input', refresh);
-    drift .addEventListener('input', refresh);
-    lei   .addEventListener('input', refresh);
-    attSel.addEventListener('change', refresh);
-
-    $('#btnReset').addEventListener('click', () => {
-      purity.value = '1.0000';
-      drift.value  = '0.0000';
-      lei.value    = '1';
-      attSel.value = 'true';
-      refresh();
-    });
-
-    // --- Receipt generation --------------------------------------------------
-    let lastReceipt = {};
-
-    async function generateReceipt() {
-      const now = new Date().toISOString();
-      const counter = nextCounter();
-      const values = {
-        purity: round4(purity.value),
-        drift: round4(drift.value),
-        lei: (+lei.value === 1) ? 1 : 0,
-        attested: (attSel.value === 'true')
-      };
-      const acs = calcACS(values.purity, values.drift, values.lei);
-
-      // Canonical body (what we attest & hash)
-      const body = {
-        acs,
-        values,
-        timestamp_utc: now,
-        monotonic_counter: counter
-      };
-      const canon = stableStringify(body);
-      const hash_hex = await sha256Hex(canon);
-
-      // PQC placeholder — to be replaced by real ML-DSA/Dilithium signing later
-      const pqc_signature = "PQC_SIGNATURE_PLACEHOLDER";
-
-      lastReceipt = {
-        receipt_version: "v1.0",
-        body,
-        hash_sha256: hash_hex,
-        pqc_signature,
-        note: "Local demo: structural frame only. Replace signature with PQC key once available."
-      };
-      out.textContent = JSON.stringify(lastReceipt, null, 2);
-    }
-
-    $('#btnReceipt').addEventListener('click', generateReceipt);
-
-    $('#btnCopy').addEventListener('click', async () => {
-      if (!out.textContent.trim()) await generateReceipt();
-      await navigator.clipboard.writeText(out.textContent);
-      alert('Receipt JSON copied to clipboard.');
-    });
-
-    $('#btnSave').addEventListener('click', async () => {
-      if (!out.textContent.trim()) await generateReceipt();
-      const blob = new Blob([out.textContent], { type: 'application/json' });
-      const a = document.createElement('a');
-      const ts = new Date().toISOString().replace(/[:.]/g,'-');
-      a.href = URL.createObjectURL(blob);
-      a.download = `truthseal-receipt-${ts}.json`;
-      document.body.appendChild(a);
-      a.click();
-      URL.revokeObjectURL(a.href);
-      a.remove();
-    });
-
-    // init
-    refresh();
-  </script>
+    elOut.textContent = JSON.stringify(lastReceipt, null, 2);
+    elBox.style.display = 'block';
+  });
+})();
+</script>
 </body>
 </html>
