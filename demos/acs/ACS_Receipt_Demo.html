@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>TruthSeal — Local ACS + Receipt Demo (Offline, v1.1)</title>
+<title>TruthSeal — Local ACS + Receipt Demo (Offline, v1.2)</title>
 <style>
   :root { color-scheme: dark; }
   body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background:#0b0f14; color:#e5eef7; }
@@ -12,18 +12,15 @@
   .muted { color:#8aa9c1; font-size:13px; }
   .card { background:#101826; border:1px solid #1f2a3a; border-radius:12px; padding:16px; margin:18px 0; }
   label { display:block; font-size:13px; color:#9fb6c9; margin:12px 0 6px; }
-  input[type="number"]{ width:160px; padding:8px 10px; border-radius:8px; background:#0f1623; border:1px solid #253348; color:#dfe9f3; }
-  select{ width:160px; padding:8px 10px; border-radius:8px; background:#0f1623; border:1px solid #253348; color:#dfe9f3; }
+  input[type="number"], select { width:170px; padding:8px 10px; border-radius:8px; background:#0f1623; border:1px solid #253348; color:#dfe9f3; }
   .row{ display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
   .kpi{ font-size:46px; font-weight:900; letter-spacing:1px; }
-  .ok{ color:#7ef7a3; }
-  .bad{ color:#ffbb3b; }
-  .btn{ cursor:pointer; padding:11px 16px; border-radius:10px; border:1px solid #2b3b52; background:#0f1a2a; color:#e5eef7; font-weight:700; }
-  .btn:active{ transform:translateY(1px); }
+  .ok{ color:#7ef7a3; } .bad{ color:#ffbb3b; }
+  .btn{ cursor:pointer; padding:11px 16px; border-radius:10px; border:1px solid #2b3b52; background:#0f1a2a; color:#e5eef7; font-weight:700; pointer-events:auto; }
   .btn.primary{ background:#0b3d91; border-color:#0b3d91; }
   .pill{ display:inline-block; padding:5px 10px; border-radius:999px; font-size:12px; font-weight:700; margin-right:6px; }
   .pill.good{ background:rgba(62,207,142,.18); border:1px solid rgba(62,207,142,.35); color:#82f7b5; }
-  .pill.bad{ background:rgba(255,183,59,.12); border:1px solid rgba(255,183,59,.35); color:#ffcc6a; }
+  .pill.bad{  background:rgba(255,183,59,.12); border:1px solid rgba(255,183,59,.35); color:#ffcc6a; }
   pre{ background:#0c1522; border:1px solid #223149; border-radius:10px; padding:12px; overflow:auto; }
   .hint{ font-size:12px; color:#8aa9c1; }
 </style>
@@ -35,22 +32,22 @@
 
     <div class="card">
       <label>Purity (no contradiction) — range [0…1]</label>
-      <input id="purity" type="number" step="0.0001" min="0" max="1" value="1.0000" />
+      <input id="purity" type="number" step="0.0001" min="0" max="1" value="1.0000" oninput="updateACS()" onchange="updateACS()"/>
 
       <label>Temporal drift — range [0…1]</label>
-      <input id="drift" type="number" step="0.0001" min="0" max="1" value="0.0000" />
+      <input id="drift" type="number" step="0.0001" min="0" max="1" value="0.0000" oninput="updateACS()" onchange="updateACS()"/>
 
       <label>Ethical irreversibility (LEI)</label>
-      <input id="lei" type="number" step="1" min="0" max="1" value="1" />
+      <input id="lei" type="number" step="1" min="0" max="1" value="1" oninput="updateACS()" onchange="updateACS()"/>
 
       <label>Secure attestation (trusted boot)</label>
-      <select id="attn">
+      <select id="attn" onchange="updateACS()">
         <option value="trusted" selected>trusted</option>
         <option value="untrusted">untrusted</option>
       </select>
 
       <div style="margin-top:14px">
-        <button id="btnReset" class="btn">Reset to Coherent</button>
+        <button type="button" class="btn" onclick="resetToCoherent()">Reset to Coherent</button>
       </div>
     </div>
 
@@ -63,25 +60,25 @@
             <span id="attnPill" class="pill good">ATTESTATION: TRUSTED</span>
           </div>
         </div>
-        <div>
-          <p class="hint">ACS = Purity × (1 − Drift) × LEI</p>
-        </div>
+        <div><p class="hint">ACS = Purity × (1 − Drift) × LEI</p></div>
       </div>
+
       <div class="row" style="margin-top:14px">
-        <button id="btnGenerate" class="btn primary">Generate Receipt</button>
-        <button id="btnDownload" class="btn">Download JSON</button>
-        <button id="btnShow" class="btn">Show JSON</button>
+        <button type="button" class="btn primary" onclick="generateReceipt()">Generate Receipt</button>
+        <button type="button" class="btn" onclick="downloadJSON()">Download JSON</button>
+        <button type="button" class="btn" onclick="showJSON()">Show JSON</button>
       </div>
       <p class="hint" style="margin-top:10px">If download is blocked on iPhone, tap “Show JSON”, then long-press to copy.</p>
       <div id="jsonBox" style="display:none; margin-top:12px">
-        <pre id="jsonOut" class="mono"></pre>
+        <pre id="jsonOut"></pre>
       </div>
     </div>
   </div>
 
 <script>
-(function(){
-  // --- Helpers ---
+  // --- Global state (Quick Look–safe) ---
+  let LAST_RECEIPT = null;
+
   function clamp01(x){ x = Number(x||0); if (isNaN(x)) x = 0; return Math.max(0, Math.min(1, x)); }
   function fmt4(x){ return Number(x).toFixed(4); }
   function nowISO(){ return new Date().toISOString(); }
@@ -93,121 +90,89 @@
       return n;
     }catch(e){ return 1; }
   }
-  function statusText(acs, attn){
-    const coherent = (acs === 1.0);
+
+  function readInputs(){
     return {
-      kpi: fmt4(acs),
-      kpiClass: coherent && attn==='trusted' ? 'kpi ok' : 'kpi bad',
-      status: coherent ? 'STATUS: COHERENT' : 'STATUS: DECOHERENCE',
-      statusClass: coherent ? 'pill good' : 'pill bad',
-      attnText: attn==='trusted' ? 'ATTESTATION: TRUSTED' : 'ATTESTATION: UNTRUSTED',
-      attnClass: attn==='trusted' ? 'pill good' : 'pill bad'
+      purity: clamp01(document.getElementById('purity').value),
+      drift:  clamp01(document.getElementById('drift').value),
+      lei:    Number(document.getElementById('lei').value) === 1 ? 1 : 0,
+      attn:   document.getElementById('attn').value
     };
   }
-  function makeReceipt(purity, drift, lei, attn){
-    const acs = clamp01(purity) * (1 - clamp01(drift)) * (Number(lei) === 1 ? 1 : 0);
+
+  function computeACS(p, d, l){ return p * (1 - d) * l; }
+
+  function paintACS(acs, attn){
+    const kpi = document.getElementById('acsVal');
+    const st  = document.getElementById('statusPill');
+    const ap  = document.getElementById('attnPill');
+    const coherent = (acs === 1.0);
+    kpi.textContent = fmt4(acs);
+    kpi.className = 'kpi ' + (coherent && attn==='trusted' ? 'ok' : 'bad');
+    st.textContent = coherent ? 'STATUS: COHERENT' : 'STATUS: DECOHERENCE';
+    st.className   = 'pill ' + (coherent ? 'good' : 'bad');
+    ap.textContent = attn==='trusted' ? 'ATTESTATION: TRUSTED' : 'ATTESTATION: UNTRUSTED';
+    ap.className   = 'pill ' + (attn==='trusted' ? 'good' : 'bad');
+  }
+
+  function updateACS(){
+    const {purity, drift, lei, attn} = readInputs();
+    const acs = Number(computeACS(purity, drift, lei).toFixed(4));
+    paintACS(acs, attn);
+  }
+
+  function resetToCoherent(){
+    document.getElementById('purity').value = '1.0000';
+    document.getElementById('drift').value  = '0.0000';
+    document.getElementById('lei').value    = '1';
+    document.getElementById('attn').value   = 'trusted';
+    updateACS();
+  }
+
+  function buildReceipt(){
+    const {purity, drift, lei, attn} = readInputs();
+    const acsRaw = computeACS(purity, drift, lei);
     const receipt = {
       id: 'ts_'+Date.now().toString(36),
       created_utc: nowISO(),
       monotonic_counter: nextCounter(),
-      attestation: attn,               // trusted | untrusted
-      inputs: {
-        purity: Number(purity),
-        drift: Number(drift),
-        lei: Number(lei)
-      },
-      acs: Number(acs.toFixed(4)),
+      attestation: attn,                       // trusted | untrusted
+      inputs: { purity, drift, lei },
+      acs: Number(acsRaw.toFixed(4)),
       pqc_signature: "PQC_SIGNATURE_PLACEHOLDER",
       note: "Local offline demo (no network)."
     };
-    return { acs: Number(acs.toFixed(4)), receipt };
+    return receipt;
   }
-  function downloadJSON(obj, filename){
-    const blob = new Blob([JSON.stringify(obj, null, 2)], {type:"application/json"});
+
+  function generateReceipt(){
+    LAST_RECEIPT = buildReceipt();
+    document.getElementById('jsonOut').textContent = JSON.stringify(LAST_RECEIPT, null, 2);
+    document.getElementById('jsonBox').style.display = 'block';
+    updateACS();
+  }
+
+  function downloadJSON(){
+    if(!LAST_RECEIPT) LAST_RECEIPT = buildReceipt();
+    const blob = new Blob([JSON.stringify(LAST_RECEIPT, null, 2)], {type:"application/json"});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();           // iOS Safari: user-gesture path from button press
-    setTimeout(()=>{ URL.revokeObjectURL(url); a.remove(); }, 100);
-  }
-
-  // --- DOM refs ---
-  const elPurity = document.getElementById('purity');
-  const elDrift  = document.getElementById('drift');
-  const elLEI    = document.getElementById('lei');
-  const elAttn   = document.getElementById('attn');
-
-  const elKPI    = document.getElementById('acsVal');
-  const elStatus = document.getElementById('statusPill');
-  const elAttnP  = document.getElementById('attnPill');
-
-  const elBtnReset    = document.getElementById('btnReset');
-  const elBtnGen      = document.getElementById('btnGenerate');
-  const elBtnDownload = document.getElementById('btnDownload');
-  const elBtnShow     = document.getElementById('btnShow');
-  const elBox         = document.getElementById('jsonBox');
-  const elOut         = document.getElementById('jsonOut');
-
-  let lastReceipt = null;
-
-  function updateACS(){
-    const { acs } = makeReceipt(elPurity.value, elDrift.value, elLEI.value, elAttn.value);
-    const s = statusText(acs, elAttn.value);
-    elKPI.textContent = s.kpi;
-    elKPI.className = s.kpiClass;
-    elStatus.textContent = s.status;
-    elStatus.className = s.statusClass;
-    elAttnP.textContent = s.attnText;
-    elAttnP.className = s.attnClass;
-  }
-
-  // Initialize display
-  updateACS();
-
-  // Live recompute on input change
-  [elPurity, elDrift, elLEI, elAttn].forEach(el=>{
-    el.addEventListener('input', updateACS, {passive:true});
-    el.addEventListener('change', updateACS, {passive:true});
-  });
-
-  // Buttons — attached after DOM ready (this script runs at end of body)
-  elBtnReset.addEventListener('click', function(){
-    elPurity.value = '1.0000';
-    elDrift.value  = '0.0000';
-    elLEI.value    = '1';
-    elAttn.value   = 'trusted';
-    updateACS();
-  });
-
-  elBtnGen.addEventListener('click', function(){
-    const { acs, receipt } = makeReceipt(elPurity.value, elDrift.value, elLEI.value, elAttn.value);
-    lastReceipt = receipt;
-    elOut.textContent = JSON.stringify(receipt, null, 2);
-    elBox.style.display = 'block';
-    updateACS();
-  });
-
-  elBtnDownload.addEventListener('click', function(){
-    // Ensure we have a fresh receipt
-    if(!lastReceipt){
-      const r = makeReceipt(elPurity.value, elDrift.value, elLEI.value, elAttn.value);
-      lastReceipt = r.receipt;
-    }
     const ts = new Date().toISOString().replace(/[-:TZ.]/g,'').slice(0,14);
-    downloadJSON(lastReceipt, `truthseal-receipt-acs_${ts}.json`);
-  });
+    a.download = `truthseal-receipt-acs_${ts}.json`;
+    document.body.appendChild(a);
+    a.click(); // iOS: works when invoked from onclick
+    setTimeout(()=>{ URL.revokeObjectURL(url); a.remove(); }, 120);
+  }
 
-  elBtnShow.addEventListener('click', function(){
-    if(!lastReceipt){
-      const r = makeReceipt(elPurity.value, elDrift.value, elLEI.value, elAttn.value);
-      lastReceipt = r.receipt;
-    }
-    elOut.textContent = JSON.stringify(lastReceipt, null, 2);
-    elBox.style.display = 'block';
-  });
-})();
+  function showJSON(){
+    if(!LAST_RECEIPT) LAST_RECEIPT = buildReceipt();
+    document.getElementById('jsonOut').textContent = JSON.stringify(LAST_RECEIPT, null, 2);
+    document.getElementById('jsonBox').style.display = 'block';
+  }
+
+  // First paint
+  updateACS();
 </script>
 </body>
 </html>
