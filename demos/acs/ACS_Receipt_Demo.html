@@ -1,95 +1,115 @@
 <!doctype html>
 <html lang="en"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TruthSeal — Local ACS + Receipt Demo (Lite)</title>
+<title>TruthSeal — Local ACS + Receipt Demo (Tap-Only)</title>
 <style>
   :root { color-scheme: dark; }
   body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;background:#0b0f14;color:#d7e1ea}
   .wrap{max-width:920px;margin:28px auto;padding:0 14px}
-  h1{font-size:22px;margin:0 0 12px} .muted{color:#8aa}
+  h1{font-size:22px;margin:0 0 8px}
+  .muted{color:#8aa;margin:0 0 10px}
   .card{background:#101820;border:1px solid #24313c;border-radius:14px;padding:16px;margin:18px 0}
   label{display:block;font-size:13px;margin:10px 0 6px}
-  input,select{width:100%;font:16px ui-monospace,Menlo,Monaco,Consolas,monospace;background:#0f1a24;color:#d7e1ea;border:1px solid #2a3b48;border-radius:10px;padding:12px}
-  pre{background:#0c1520;border:1px solid #233241;border-radius:12px;padding:12px;white-space:pre-wrap;user-select:text}
-  .kpi{font-size:44px;font-weight:800;margin:8px 0}
+  input,select,textarea{
+    width:100%;font:16px ui-monospace,Menlo,Monaco,Consolas,monospace;
+    background:#0f1a24;color:#d7e1ea;border:1px solid #2a3b48;border-radius:10px;padding:12px
+  }
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media (max-width:640px){ .row{grid-template-columns:1fr} }
+  .kpi{font-size:46px;font-weight:800;margin:8px 0}
   .pill{display:inline-block;border-radius:18px;padding:6px 10px;margin:6px 6px 0 0;font-weight:700;font-size:14px}
-  .ok{background:#123c23;color:#77e18a;border:1px solid #1e6b36} .hint{font-size:12px;color:#89a}
+  .ok{background:#123c23;color:#77e18a;border:1px solid #1e6b36}
+  .warn{background:#3c2a12;color:#ffd38a;border:1px solid #6b4a1e}
+  .hint{font-size:12px;color:#89a}
+  .tap{user-select:text;-webkit-user-select:text}
 </style>
 <body>
 <div class="wrap">
-  <h1>TruthSeal — Local ACS + Receipt Demo (Lite)</h1>
-  <p class="muted">Runs 100% on-device (no network). JSON below updates automatically as you type. Long-press inside the JSON to copy.</p>
+  <h1>TruthSeal — Local ACS + Receipt Demo (Tap-Only)</h1>
+  <p class="muted">Runs 100% on-device (no network). JSON updates automatically as you type. Long-press inside the JSON to copy. Works in Files “Quick Look” and Safari.</p>
 
   <div class="card">
-    <label>Purity (0…1)</label>
-    <input id="purity" inputmode="decimal" value="1.0">
-    <label>Temporal drift (0…1)</label>
-    <input id="drift"  inputmode="decimal" value="0.0">
-    <label>Ethical irreversibility (LEI ∈ {0,1})</label>
-    <input id="lei"    inputmode="numeric" value="1">
-    <label>Secure attestation (trusted boot)</label>
-    <select id="att"><option>trusted</option><option>untrusted</option></select>
+    <div class="row">
+      <div>
+        <label>Purity (0…1)</label>
+        <input id="purity" inputmode="decimal" value="1.0">
+      </div>
+      <div>
+        <label>Temporal drift (0…1)</label>
+        <input id="drift"  inputmode="decimal" value="0.0">
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <label>Ethical irreversibility (LEI ∈ {0,1})</label>
+        <input id="lei" inputmode="numeric" value="1">
+      </div>
+      <div>
+        <label>Secure attestation (trusted boot)</label>
+        <select id="att"><option>trusted</option><option>untrusted</option></select>
+      </div>
+    </div>
+
     <div class="kpi" id="acs">1.0000</div>
     <span class="pill ok" id="status">STATUS: COHERENT</span>
     <span class="pill ok" id="attn">ATTESTATION: TRUSTED</span>
+    <p class="hint">ACS = Purity × (1 − Drift) × LEI. Attestation recorded separately.</p>
   </div>
 
   <div class="card">
-    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
-      <a href="#" id="copy" class="pill ok" style="text-decoration:none">Copy JSON</a>
-      <a href="#" id="download" class="pill ok" style="text-decoration:none">Download JSON</a>
-    </div>
-    <pre id="out">{}</pre>
-    <p class="hint">Tip: if download is blocked on iPhone, just long-press inside the JSON box → Copy.</p>
+    <label>Receipt JSON (tap/long-press to copy)</label>
+    <textarea id="out" class="tap" rows="12" readonly>{}</textarea>
+    <p class="hint">Tip: if a download button is blocked in Quick Look, just long-press inside the JSON → Copy. To save as a file, share into Notes/Files.</p>
   </div>
 </div>
 
 <script>
-(function () {
+(function(){
   const $ = id => document.getElementById(id);
-  const purity = $('purity'), drift = $('drift'), lei = $('lei'), attSel = $('att');
-  const acsEl = $('acs'), statusEl = $('status'), attnEl = $('attn'), out = $('out');
+  const purity=$('purity'), drift=$('drift'), lei=$('lei'), attSel=$('att');
+  const acsEl=$('acs'), statusEl=$('status'), attnEl=$('attn'), out=$('out');
 
-  function clamp01(x){ x=parseFloat(x); return isFinite(x) ? Math.min(1, Math.max(0, x)) : 0 }
-  function oneOrZero(x){ return String(x).trim()==='1' ? 1 : 0 }
+  const clamp01 = x => {
+    const v = parseFloat(String(x).replace(',', '.'));
+    return isFinite(v) ? Math.min(1, Math.max(0, v)) : 0;
+  };
+  const oneOrZero = x => (String(x).trim()==='1' ? 1 : 0);
 
-  function build() {
-    const p = clamp01(purity.value), d = clamp01(drift.value), L = oneOrZero(lei.value);
+  function build(){
+    const p = clamp01(purity.value);
+    const d = clamp01(drift.value);
+    const L = oneOrZero(lei.value);
     const att = attSel.value === 'trusted';
+
     const acs = +(p * (1 - d) * L).toFixed(4);
     acsEl.textContent = acs.toFixed(4);
     statusEl.textContent = acs === 1 ? 'STATUS: COHERENT' : 'STATUS: ATTENTION';
-    attnEl.textContent   = 'ATTESTATION: ' + (att ? 'TRUSTED' : 'UNTRUSTED');
+    statusEl.className = 'pill ' + (acs === 1 ? 'ok' : 'warn');
+    attnEl.textContent = 'ATTESTATION: ' + (att ? 'TRUSTED' : 'UNTRUSTED');
+    attnEl.className = 'pill ' + (att ? 'ok' : 'warn');
 
     const now = new Date();
     const frame = {
-      acs, purity: p, drift: d, lei: L,
+      acs, purity:p, drift:d, lei:L,
       attestation: att ? 'trusted' : 'untrusted',
       monotonic_counter: Math.floor(performance.now()),
       ts_utc: now.toISOString(),
       pqc_signature: "[placeholder: Dilithium]"
     };
-    out.textContent = JSON.stringify(frame, null, 2);
-
-    try {
-      const blob = new Blob([out.textContent], {type:'application/json'});
-      const url  = URL.createObjectURL(blob);
-      const dl   = document.getElementById('download');
-      dl.href = url; dl.download = `truthseal_receipt_${now.toISOString().replace(/[:.]/g,'-')}.json`;
-    } catch(e){}
+    out.value = JSON.stringify(frame, null, 2);
   }
 
   ['input','change','keyup'].forEach(ev=>{
-    purity.addEventListener(ev, build); drift.addEventListener(ev, build);
-    lei.addEventListener(ev, build);    attSel.addEventListener(ev, build);
+    purity.addEventListener(ev, build, {passive:true});
+    drift .addEventListener(ev, build, {passive:true});
+    lei   .addEventListener(ev, build, {passive:true});
+    attSel.addEventListener(ev, build, {passive:true});
   });
 
-  document.getElementById('copy').addEventListener('click', function (e) {
-    e.preventDefault();
-    const r = document.createRange(); r.selectNodeContents(out);
-    const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
-    document.execCommand('copy'); // works in Safari/Quick Look
-  }, {passive:false});
+  // Auto-select JSON on focus for quick copy
+  out.addEventListener('focus', function(){
+    this.selectionStart = 0; this.selectionEnd = this.value.length;
+  }, {passive:true});
 
   build(); // initial render
 })();
