@@ -17,7 +17,7 @@ We request a **joint 120-day evaluation**: integrate the TQC Core in a reference
 
 ## Mandate 1 — The Fiduciary ACS Standard
 
-**Problem.** Current fiduciary oversight cannot see coherence at the moment of action; it infers after the fact using probabilistic models.  
+**Challenge.** Current fiduciary oversight cannot see coherence at the moment of action; it infers after the fact using probabilistic models.  
 **Lawful fix.** The **ACS** is a real-time, hardware-signed proof of coherent operation.  
 **Action.** Require all **Systemically Important Financial Institutions (SIFIs)** using advanced general intelligence (**AGI**) in high-impact workflows to **emit ACS telemetry to supervisors** and retain **signed receipts** per action (ACS value + time + monotonic counter + post-quantum signature).
 
@@ -25,7 +25,7 @@ We request a **joint 120-day evaluation**: integrate the TQC Core in a reference
 
 ## Mandate 2 — The Hardware Integrity Rule
 
-**Problem.** Integrity enforced in software remains probabilistic; supply chains are diverging into a low-cost, high-risk tier.  
+**Challenge.** Integrity enforced in software remains probabilistic; supply chains are diverging into a low-cost, high-risk tier.  
 **Lawful fix.** The **TQC Coherence Core** (with **LEI-Gate** and **CSF**) makes incoherent execution physically non-admissible.  
 **Action.** For **critical national infrastructure** (sovereign cloud, payments/settlement, grids, defense): require **TQC-Certified Hardware** with **physical verification** of LEI-Gate and CSF, establishing a secure **Tier-1** integrity class.
 
@@ -33,7 +33,7 @@ We request a **joint 120-day evaluation**: integrate the TQC Core in a reference
 
 ## Mandate 3 — The Post-Quantum Resilience Act
 
-**Problem.** Quantum adversaries will break classical signatures; audit trails must remain valid across time.  
+**Challenge.** Quantum adversaries will break classical signatures; audit trails must remain valid across time.  
 **Lawful fix.** The **TQC Receipt Standard** binds each action to **PQC** (post-quantum cryptography, e.g., NIST-selected lattice schemes) plus **public time anchoring**.  
 **Action.** Adopt **ACS + PQC signature + public time anchor** (e.g., OpenTimestamps) as the **mandatory receipt format** for regulated AI systems.
 
