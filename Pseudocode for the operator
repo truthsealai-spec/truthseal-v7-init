@@ -1,0 +1,6 @@
+def M_R(proposal, evidence):
+    if not passes_jensen(evidence) or not lei_gate(proposal):
+        return "UNKNOWN", None
+    meaning = normalize_meaning(proposal)   # single, coherent intent
+    receipt = sign_and_stamp(meaning, evidence)  # PQC sig + counter + time (+ OTS optional)
+    return "ADOPTED", receipt
