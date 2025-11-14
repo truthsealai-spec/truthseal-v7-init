@@ -24,3 +24,11 @@ Scale races can overshoot returns. TruthSeal shifts value from **more compute** 
 3. **Attested critical AI.** Accept only **receipt-backed** incident reports and audits.
 
 > **One-liner:** *TruthSeal™ enforces LEI=1 in hardware and signs every AI action with an ACS receipt—making misinformation non-admissible, bio-threat design non-computable, and cyber incidents forensically provable.*
+>---
+
+### Receipt (Public Audit Stub)
+```yaml
+file_sha256: "TBD"
+ots_calendar_id: "TBD"
+ots_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
+timestamp_utc: "TBD"
