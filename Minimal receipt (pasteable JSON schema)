@@ -1,0 +1,13 @@
+{
+  "type": "truthseal.receipt.v1",
+  "proposal_hash": "<SHA256 of inputs>",
+  "decision": "ADOPTED | REJECTED | UNKNOWN",
+  "acs": 0.97,
+  "lei_pass": true,
+  "monotonic_counter": 184,
+  "timestamp_utc": "2025-11-15T12:34:56Z",
+  "signer": "TruthSeal-SCA",
+  "pqc_signature": "<bytes>",
+  "ots_calendar_id": "<hex or null>",
+  "notes": "Applied M_R to Ψ_P; decoherence cleared; commit issued."
+}
