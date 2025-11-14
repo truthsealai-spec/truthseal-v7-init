@@ -62,3 +62,11 @@ The world must move from unpriced tail-risk to **Structural Certainty (Cₛ ≡ 
 3) **Secure history.** Adopt the **TQC Receipt Standard** (ACS + PQC signature + public time anchor) so integrity survives the quantum era.
 
 We’re not selling compliance; **we’re laying the rail the future must run on.**
+---
+
+### Receipt (Public Audit Stub)
+```yaml
+file_sha256: "TBD"            # SHA-256 of this file
+ots_calendar_id: "TBD"        # OpenTimestamps calendar id (hex)
+ots_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
+timestamp_utc: "TBD"
