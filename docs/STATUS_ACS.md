@@ -32,3 +32,17 @@ acs: <0.00>
 | time_utc              | purity | self_reg | drift | ACS  | result | notes |
 |-----------------------|--------|----------|-------|------|--------|-------|
 | 2025-11-09T00:00:00Z  |  –     |   –      |  –    |  –   |  –     | init scaffold |
+---
+
+### ACS / SAD Internal Tools
+
+**Status:** READY (v1.0, internal only).
+
+**Components**
+- `docs/internal/acs/README.md` — overview, glossary of acronyms, and SAD explainer.
+- `docs/internal/acs/examples/SAD_Remediation_Event_v1.1.json` — canonical remediation event.
+- `docs/internal/acs/tools/validate_sad_event.py` — validator script; recomputes purity/invariants and checks TQC + LEI = 1.
+
+**Notes**
+- These tools are for Doctorantura / engineering use.
+- They prepare events for Aim Coherence Score (ACS) evaluation and the Irreversible Commitment Gate (ICG).
