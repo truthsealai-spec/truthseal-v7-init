@@ -34,22 +34,25 @@ acs: <0.00>
 | 2025-11-09T00:00:00Z  |  –     |   –      |  –    |  –   |  –     | init scaffold |
 ---
 ---
-
 ### ACS / SAD Internal Tools
 
-**Status:** READY (v1.0, internal only).
+Status: READY (v1.0, internal only).
 
-**What these tools cover (plain language)**  
-- **ACS — Aim Coherence Score**: a 0–1 score that measures how coherent and safe a proposed action is with TQC and LEI = 1. Higher ACS = more aligned, less contradictory, safer to commit.  
+What these tools are for (context)
+- These tools sit inside the TruthSeal™ coherence-safety layer for AI and AGI systems (Artificial Intelligence / Artificial General Intelligence).
+- They implement a quantum-inspired check on a single decision “qubit”: the internal state is modelled as a 2×2 density matrix.
+- The goal is simple: before any high-impact action is executed in an AI/AGI or post-quantum stack, make sure the internal state is coherent (no contradictions) and ethically admissible under LEI = 1.
+
+What these tools cover (plain language)
+- **ACS — Aim Coherence Score**: a 0–1 score that measures how coherent and safe a proposed action is with TQC and LEI = 1. Higher ACS = more aligned, less contradictory, safer to commit.
 - **SAD — Self-Adjoint Diagonalizer**: the remediation component that takes a noisy, contradictory internal state and returns a single coherent state, ready to be scored by ACS and sent to the Irreversible Commitment Gate (ICG).  
   In simple language: **SAD cleans up the confusion and picks one clear line of action.**
 
-**Components**
+Components
 - `docs/internal/acs/README.md` — overview, glossary of acronyms, and SAD explainer.
 - `docs/internal/acs/examples/SAD_Remediation_Event_v1.1.json` — canonical remediation event.
 - `docs/internal/acs/tools/validate_sad_event.py` — validator script; recomputes purity/invariants and checks TQC + LEI = 1.
 
-**Notes**
+Notes
 - These tools are for Doctorantura / engineering use.
 - They prepare events for Aim Coherence Score (ACS) evaluation and the Irreversible Commitment Gate (ICG).
-
