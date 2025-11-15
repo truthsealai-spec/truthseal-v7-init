@@ -76,34 +76,56 @@ In philosophical terms, TruthSeal moves from “AI as a tool that should be used
 
 ### 1.4 Mathematical and technical layer – from density matrices to receipts
 
-TruthSeal encodes those philosophical commitments into concrete invariants:
+TruthSeal translates the philosophical commitments above into concrete, testable invariants that can be audited by regulators and scientific bodies such as UNESCO.
 
 1. **Traykov Law of Quantum Coherence (TQC)**  
-   - The internal decision state of the system is modelled as a **density matrix** \( \rho \).  
-   - The **Purity requirement** is:
-
+   - The internal decision state of an AI or AGI system is modelled as a **density matrix** \( \rho \).  
+   - The **purity requirement** is:
+     
      \[
-     \mathrm{Tr}(\rho^2) = 1
+     \mathrm{Tr}(\rho^2) = 1.
      \]
-
+     
    - When \( \mathrm{Tr}(\rho^2) < 1 \), the state is mixed: the agent is holding incompatible alternatives at once.  
-   - Under TQC, **no high-impact action is allowed** while the state is mixed.
+   - Under TQC, **no high-impact action is permitted** while the state is mixed.
 
 2. **Self-Adjoint Diagonalizer (SAD)**  
-   - When a mixed state is detected, SAD performs an **eigenvalue decomposition** and deterministically selects the most coherent eigenstate.  
+   - **Definition.** The **Self-Adjoint Diagonalizer (SAD)** is TruthSeal’s remediation mechanism. It takes a mixed internal state and converts it into a single, mathematically pure decision state.  
+   - SAD performs an **eigenvalue decomposition** of \( \rho \), identifies the eigenstates \( \lvert \psi_i \rangle \) with eigenvalues \( \lambda_i \), and deterministically selects the eigenstate with the highest weight.  
    - The final state is
-
+     
      \[
-     \rho_{\text{final}} = \lvert \psi_1 \rangle \langle \psi_1 \rvert
+     \rho_{\text{final}} = \lvert \psi_1 \rangle \langle \psi_1 \rvert,
      \]
-
-     guaranteeing:
-
+     
+     guaranteeing
+     
      \[
-     \mathrm{Tr}(\rho_{\text{final}}^2) = 1
+     \mathrm{Tr}(\rho_{\text{final}}^2) = 1.
      \]
+     
+   - In plain language: SAD removes internal contradiction and forces the system to choose **one clear line of action**, based on the strongest internal evidence.
 
-   - In plain language: SAD forces the system to choose **one clear line of action**, based on the strongest internal evidence.
+3. **Aim Coherence Score (ACS)**  
+   - The **Aim Coherence Score (ACS)** is a scalar in the range \([0,1]\) that measures how well the now-pure decision aligns with:  
+     - the Traykov Law of Quantum Coherence (TQC) (coherence),  
+     - the **Law of Ethical Irreversibility (LEI = 1)** (accountability), and  
+     - domain constraints (risk limits, regulations, mission rules).  
+   - Decisions with ACS below the configured threshold are blocked or sent back for revision.
+
+4. **Law of Ethical Irreversibility (LEI = 1)**  
+   - **LEI = 1** requires that every committed action is bound to a **cryptographic Receipt** \( R_k \).  
+   - Each Receipt is signed, timestamped, and linked to the pair \( (\rho_{\text{final}}, \text{ACS}) \) at commit time.  
+   - Past Receipts cannot be edited or erased; corrections and compensations appear only as **new, linked Receipts** in an append-only chain.
+
+5. **Irreversible Commitment Gate (ICG)**  
+   - The **Irreversible Commitment Gate (ICG)** is the enforcement point where the system checks, in order:  
+     - *Purity:* \( \mathrm{Tr}(\rho_{\text{final}}^2) = 1 \);  
+     - *Coherence:* ACS above the agreed threshold;  
+     - *Accountability:* a valid Receipt \( R_k \) satisfying LEI = 1.  
+   - Only when all three checks pass may the action leave the simulated environment and affect real-world assets or people.
+
+> For UNESCO, this layer shows that TruthSeal is not a metaphor: it specifies verifiable mathematical conditions and audit trails that can be independently tested in code and on ledgers.
 
 3. **Aim Coherence Score (ACS)**  
    - Once the state is pure, TruthSeal computes an **Aim Coherence Score (ACS)** in the range \([0,1]\).  
