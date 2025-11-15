@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://truthseal.local/schemas/SAD_Remediation_Event_v1.1.schema.json",
+  "title": "TruthSeal SAD Remediation v1.1 — Canonical Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["process", "pre_state", "selection", "post_state", "tqc_enforcement", "lei_enforcement", "metadata"],
+  "properties": {
+    "process": { "type": "string", "const": "TruthSeal SAD Remediation v1.1" },
+
+    "pre_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bloch", "eigenvalues", "purity"],
+      "properties": {
+        "bloch": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["rx", "ry", "rz", "r_magnitude"],
+          "properties": {
+            "rx": { "type": "number" },
+            "ry": { "type": "number" },
+            "rz": { "type": "number" },
+            "r_magnitude": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+          }
+        },
+        "eigenvalues": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+        },
+        "purity": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+      }
+    },
+
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rule", "selected"],
+      "properties": {
+        "rule": { "type": "string", "enum": ["argmax_eigenvalue"] },
+        "selected": { "type": "string" }
+      }
+    },
+
+    "post_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rho", "invariants"],
+      "properties": {
+        "rho": {
+          "description": "2x2 Hermitian density matrix as complex entries {re, im}. Layout: [[a, b],[b*, d]]",
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["re", "im"],
+              "properties": {
+                "re": { "type": "number" },
+                "im": { "type": "number" }
+              }
+            }
+          }
+        },
+        "invariants": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["hermitian", "trace", "purity", "positive_semidefinite"],
+          "properties": {
+            "hermitian": { "type": "boolean", "const": true },
+            "trace": { "type": "number", "const": 1.0 },
+            "purity": { "type": "number", "const": 1.0 },
+            "positive_semidefinite": { "type": "boolean", "const": true }
+          }
+        }
+      }
+    },
+
+    "tqc_enforcement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["purity_check", "temporal_stability", "status"],
+      "properties": {
+        "purity_check": { "type": "string" },
+        "temporal_stability": { "type": "string" },
+        "status": { "type": "string", "enum": ["PASSED", "FAILED"] }
+      }
+    },
+
+    "lei_enforcement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["non_unitary_hash_spec", "proof_handles"],
+      "properties": {
+        "non_unitary_hash_spec": { "type": "string" },
+        "proof_handles": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["pqc_hash", "ich"],
+          "properties": {
+            "pqc_hash": { "type": "string", "minLength": 8 },
+            "ich": { "type": "string", "minLength": 8 }
+          }
+        }
+      }
+    },
+
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commitment_id", "timestamp_epoch", "agent_signature", "entanglement_refs"],
+      "properties": {
+        "commitment_id": { "type": "string", "minLength": 4 },
+        "timestamp_epoch": { "type": "number", "minimum": 0 },
+        "agent_signature": { "type": "string", "minLength": 2 },
+        "entanglement_refs": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}
