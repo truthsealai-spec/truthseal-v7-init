@@ -1,0 +1,46 @@
+# TruthSeal™ Defence / Audit Readiness Matrix v1.0
+
+> Snapshot view of where TruthSeal stands **today** across law, prompts, tools, anchoring, demos, partners, and financials.
+
+Legend:  
+- ✅ READY – v1.0 exists and is coherent enough to show or build on.  
+- 🔶 PARTIAL – something exists, but needs extension / polish / anchoring.  
+- ⛔ MISSING – needs to be created.
+
+---
+
+## 1. Matrix Overview
+
+| Area | Status | Notes |
+| --- | :---: | --- |
+| Core Laws & Principles (TQC, LEI = 1, ULLI, LTCC) | ✅ | Laws written and integrated into multiple docs (ULLI Thesis, LEI = 1 framing, Coherent Epoch narrative). Conceptually stable. |
+| System Prompts & Ben Configuration | 🔶 | Ben system prompts v1.x–CURRENT exist and are improving (acronym discipline, transparency rules). Needs one “Master Prompt + Capsule Map” for handoff. |
+| ACS / SAD Internal Tools | ✅ | `docs/internal/acs/README.md`, SAD explainer, examples, and validator script in place. ACS meaning (Aim Coherence Score) and role are now clearly defined. |
+| Receipts & Anchoring (ULIC / EVL / Integrity / QENC / OTS) | 🔶 | Ledger files and OTS calendar IDs exist; Bitcoin anchoring pending final confirmation and receipt uploads. Needs one clean “Anchoring Status v9.x” update once confirmed. |
+| Demos & UX Proofs (ACS & DEVORA) | ✅ | `demos/acs/ACS_Receipt_Demo.html` and `demos/devora/DEVORA_App.html` in repo. Good enough for narrative demos; later can be hardened into product flows. |
+| NVIDIA Partnership Pack | 🔶 | Executive summary, briefing notes, and partner pack files exist under `governance/partners/nvidia/`. Needs final tailoring + sending sequence when you are ready. |
+| Governance & Policy (Paramount Policy, Defence Checklist) | ✅ | Paramount Policy charter, Defence Checklist, and multiple STATUS docs exist. Next step is to link them explicitly into the EVL / Integrity manifests. |
+| Financials & Valuation | 🔶 | Financial projections and valuation reports (including Integrity/valuation PDF) exist. Need updated “go-to” financial one-pager aligned with ACS/Coherent Epoch story. |
+| Productisation & Dashboard (Operator View) | ⛔ | Concepts are described across docs, but no single “TruthSeal Operator Dashboard v1.0” spec yet. Needs one coherent spec (panels, alerts, receipts, ACS scores). |
+| External Narrative / Articles | ✅ | “The Irreversible Architecture: How Quantum Coherence and Virtual Reality Models Define the Next Epoch of AGI Law” and other internal essays are ready as v1. |
+
+---
+
+## 2. Immediate Focus Recommendations
+
+1. **Operator Dashboard Spec (⛔ → 🔶)**  
+   Draft a single markdown spec for a TruthSeal Operator Dashboard (panels for ACS, SAD events, receipts, anchoring, alerts).
+
+2. **Anchoring Status Refresh (🔶 → ✅)**  
+   Once Bitcoin confirmations and OTS receipts are stable, update the anchoring status doc and link it from EVL / Integrity.
+
+3. **Financial One-Pager (🔶 → ✅)**  
+   Create a concise, investor-ready TruthSeal financials page that matches the Coherent Epoch / ACS narrative.
+
+---
+
+## 3. How to Use This Matrix
+
+- Before any external move (investors, partners, patents), quickly scan the **Status** column.  
+- Move areas from 🔶 / ⛔ to ✅ one by one, with small, contained commits.  
+- Update this file when a major area changes status so it remains the **single source of truth** for readiness.
