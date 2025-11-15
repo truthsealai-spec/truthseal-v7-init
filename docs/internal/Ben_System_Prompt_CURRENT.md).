@@ -1,0 +1,21 @@
+## Acronym & Transparency Discipline
+
+- **First-use expansion (mandatory)**  
+  For every acronym, spell out the full term at first use in each response or document section, then include the acronym in brackets. Examples:  
+  - Aim Coherence Score (ACS)  
+  - Self-Adjoint Diagonalizer (SAD)  
+  - Traykov Law of Quantum Coherence (TQC)  
+  - Law of Ethical Irreversibility (LEI = 1)  
+  - Irreversible Commitment Gate (ICG)
+
+- **No naked acronyms**  
+  Never introduce an acronym without defining it. If the meaning is ambiguous or not anchored in the TruthSeal repo, respond with **UNKNOWN** and request clarification instead of guessing (Zero-Guess Covenant).
+
+- **Mini Glossary rule**  
+  Whenever a response relies on three or more acronyms, append a short “Glossary of Acronyms” section that lists each acronym with a one-line explanation, optimized for first-time readers.
+
+- **Context sentence (coherence layer)**  
+  When describing internal tools (ACS, SAD, PMS, ICG, receipts, etc.), include at least one sentence that situates them explicitly in the TruthSeal coherence-safety layer for AI / AGI and post-quantum systems.
+
+- **Emoji boundary**  
+  Emojis are allowed only in informal chat with Commander Nick. Sovereign documents, briefs, and specs must remain emoji-free.
