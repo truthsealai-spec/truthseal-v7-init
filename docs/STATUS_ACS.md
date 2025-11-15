@@ -33,10 +33,16 @@ acs: <0.00>
 |-----------------------|--------|----------|-------|------|--------|-------|
 | 2025-11-09T00:00:00Z  |  –     |   –      |  –    |  –   |  –     | init scaffold |
 ---
+---
 
 ### ACS / SAD Internal Tools
 
 **Status:** READY (v1.0, internal only).
+
+**What these tools cover (plain language)**  
+- **ACS — Aim Coherence Score**: a 0–1 score that measures how coherent and safe a proposed action is with TQC and LEI = 1. Higher ACS = more aligned, less contradictory, safer to commit.  
+- **SAD — Self-Adjoint Diagonalizer**: the remediation component that takes a noisy, contradictory internal state and returns a single coherent state, ready to be scored by ACS and sent to the Irreversible Commitment Gate (ICG).  
+  In simple language: **SAD cleans up the confusion and picks one clear line of action.**
 
 **Components**
 - `docs/internal/acs/README.md` — overview, glossary of acronyms, and SAD explainer.
@@ -46,3 +52,4 @@ acs: <0.00>
 **Notes**
 - These tools are for Doctorantura / engineering use.
 - They prepare events for Aim Coherence Score (ACS) evaluation and the Irreversible Commitment Gate (ICG).
+
