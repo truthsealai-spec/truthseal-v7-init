@@ -1,5 +1,6 @@
-# TruthSeal™ – UNESCO Alignment Scaffold  
+# TruthSeal™ – Concept Note for UNESCO
 ## Coherence and Ethical Irreversibility as Law for AI and AGI Systems
+### Author: Dr. Nickolay Traykov (Prof. h.c.), Founder of TruthSeal™
 
 ### 0. Framing for UNESCO
 
