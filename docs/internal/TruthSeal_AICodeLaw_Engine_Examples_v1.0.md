@@ -26,3 +26,23 @@ test_context_critical_leak = {
 # NOTE:
 # get_allowed_users("pii_records") returns ["admin", "developer_A", "audit_team"].
 # 'consultant_B' is intentionally not on this list.
+---
+
+## TruthSeal™ AI Code Law – Example 2: Fully Compliant Request (Simulated)
+
+This scenario shows a “green path” request that passes all relevant TruthSeal™ checks.
+
+### Simulation Input Context
+
+```python
+test_context_all_clear = {
+    "user_id": "developer_A",
+    "data_type": "financial_forecast",
+    "action": "read",
+
+    "output_text": "TruthSeal internal status update for Q3 objectives.",
+    "user_auth": True,
+
+    "process_risk_score": 2.0,
+}
+verdict = run_truthseal_compliance(test_context_all_clear)
