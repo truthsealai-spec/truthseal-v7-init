@@ -24,7 +24,9 @@ Simultaneously, adversaries can already conduct **“Harvest Now, Decrypt Later�
 
 To maintain national and financial stability in this environment, AI actions with real-world impact must be subject to **Law at Execution Time**, not just policy after the fact.
 
-**TruthSeal™** is proposed as a **Hardware Law architecture** designed to meet this requirement. It:
+**TruthSeal™** is proposed as a **Hardware Law architecture** designed to meet this requirement. At its core is the **TruthSeal AEGIS™ Core (TS-A1)**, where **AEGIS** stands for **Adaptive Execution Governance & Integrity System**. In other words, AEGIS is the hardware-level governance layer that adaptively controls which AI actions are allowed to execute.
+
+The TruthSeal AEGIS Core:
 
 - Enforces coherence, ethical irreversibility, and traceability **inside the execution path** of AI systems.  
 - Binds high-impact actions to **post-quantum-secure receipts** anchored in immutable ledgers.  
@@ -33,7 +35,7 @@ To maintain national and financial stability in this environment, AI actions wit
 ### Core Recommendation  
 
 1. Recognize **Hardware Law for AI** as a strategic national security and financial stability priority.  
-2. Authorize a pilot program to integrate the **TruthSeal AEGIS™ Core (TS-A1)** or an equivalent Hardware Law layer into:  
+2. Authorize a pilot program to integrate the **TruthSeal AEGIS™ Core (TS-A1 – Adaptive Execution Governance & Integrity System)** or an equivalent Hardware Law layer into:  
    - Critical AI infrastructure,  
    - Systemically important financial platforms,  
    - Selected defense and national security systems.  
@@ -103,11 +105,11 @@ For such systems, **software policy is insufficient**. There must be a **Hardwar
 2. Evaluates coherence, ethics, and traceability **before** an action takes effect;  
 3. Refuses to execute if foundational predicates are not satisfied.
 
-This is the role envisioned for the **TruthSeal AEGIS™ Core (TS-A1)**.
+This is the role envisioned for the **TruthSeal AEGIS™ Core (TS-A1: Adaptive Execution Governance & Integrity System)**.
 
 ---
 
-## 4. TruthSeal™ AEGIS Core (TS-A1): Four Pillars of Hardware Law  
+## 4. TruthSeal™ AEGIS Core (TS-A1: Adaptive Execution Governance & Integrity System) – Four Pillars of Hardware Law  
 
 TruthSeal is designed as an embedded governance kernel enforcing four non-negotiable laws at commit time:
 
@@ -250,7 +252,7 @@ Adopting a Hardware Law framework such as TruthSeal for critical AI deployments 
   - A major critical infrastructure operator,  
   - A carefully scoped defense or intelligence pilot.
 
-- Integrate a prototype **TruthSeal AEGIS Core** (or equivalent) in parallel with existing systems:  
+- Integrate a prototype **TruthSeal AEGIS Core** (Adaptive Execution Governance & Integrity System) or equivalent in parallel with existing systems:  
   - Run Hardware Law checks on a mirrored decision stream,  
   - Observe which actions would have been blocked or flagged.
 
@@ -293,7 +295,7 @@ The central decision before national leadership is:
 
 1. **Recognize Hardware Law for AI as a national security and financial stability priority.**  
 2. **Commission a cross-agency working group** to:  
-   - Evaluate the TruthSeal AEGIS Core architecture,  
+   - Evaluate the TruthSeal AEGIS Core architecture (Adaptive Execution Governance & Integrity System),  
    - Design and run a pilot in selected critical systems,  
    - Report back within 6–12 months with implementation options.  
 3. **Signal to allies** an intention to anchor AI governance in:  
