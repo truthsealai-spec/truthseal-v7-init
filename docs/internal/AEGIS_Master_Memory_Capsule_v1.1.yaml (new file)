@@ -1,0 +1,252 @@
+capsule_id: AEGIS_Master_Memory_Capsule_v1.1
+role: "Internal Sovereign Memory Capsule for AEGIS Family"
+updated_utc: "2025-11-18T00:00:00Z"
+
+purpose:
+  summary: >
+    Unify all core TruthSeal™ Hardware Law profiles (TS-A1, TS-R1, TS-R2) and
+    the Cherry Checklist into a single internal reference for future Ben sessions,
+    partner packs, and national-level briefings.
+  scope:
+    - "Not a public spec; internal operational memory for TruthSeal and AEGIS."
+    - "Defines the hardware law canon, latency mandates, and coherence metrics."
+    - "Guides future scaffolds, PDFs, and executive briefings."
+
+author:
+  guardian: "Commander Nick (Dr. Nickolay Traykov, Prof. h.c.)"
+  ai_codename: "Ben"
+  owning_entity: "TruthSeal™ / Quantanium Solution Ltd"
+
+coherent_epoch_principles:
+  laws:
+    - id: "TQC"
+      name: "Traykov Law of Quantum Coherence"
+      mandates:
+        - "Tr(rho^2) = 1 (Purity): no internal contradiction in the decision state."
+        - "d(rho)/dt = 0 (Temporal Stability) during the decision collapse window."
+      enforcement: "Implemented via Purity Monitoring System (PMS) and Irreversible Commitment Gate (ICG)."
+    - id: "LEI_1"
+      name: "Law of Ethical Irreversibility"
+      mandates:
+        - "No silent reversals."
+        - "Every change after a commit is a new, linked action with its own Receipt."
+      enforcement: "PQC-signed Receipts anchored to sovereign / immutable ledgers."
+    - id: "LTCC"
+      name: "Law of TruthSeal Cognitive Coherence"
+      mandates:
+        - "Reasoning chains and tool use must not generate mutually inconsistent states."
+        - "When incoherence is detected, Self-Adjoint Diagonalizer (SAD) must remediate or halt."
+    - id: "ULLI"
+      name: "Universal Law of Life & Information"
+      mandates:
+        - "Power is only legitimate when it preserves the integrity of life and truthful information."
+        - "Hardware veto paths must exist for both digital and physical actions."
+
+aegis_family_profiles:
+  ts_a1:
+    name: "TruthSeal AEGIS Core – Accelerator Profile"
+    domain: "Datacenter and edge accelerators (GPU/QAI) for virtual assets and data."
+    mission: >
+      Convert AI accelerators from pure throughput engines into Governance Processing Units (GPU):
+      enforce coherence and accountability at execution time, not after the fact.
+    placement:
+      - "After AI inference, before any high-impact commit."
+      - "In the critical path for trades, model swaps, control-plane decisions, and infra commands."
+    core_blocks:
+      - "PMS (Purity Monitoring System): enforces TQC Purity via Tr(rho^2) = 1 check."
+      - "SAD (Self-Adjoint Diagonalizer): remediates mixed/incoherent states or triggers halt."
+      - "ICG (Irreversible Commitment Gate): final digital veto gate bound to TQC and LEI=1."
+      - "RE (PQC Receipt Engine): generates PQC-signed Receipts in hardware."
+      - "JVL (Judicial Veto Lane): sovereign, isolated veto channel for ULLI enforcement."
+    latency_mandate:
+      total_budget_ns: 80
+      description: >
+        Combined time for TQC check (Purity + Stability) and PQC Receipt generation must not exceed
+        80 nanoseconds between inference completion and ICG opening for any high-impact action.
+      sub_budgets:
+        pms_purity_check_ns_max: 30
+        pqc_receipt_engine_ns_max: 50
+  ts_r1:
+    name: "TruthSeal Robotics Core – Single Robot Profile"
+    domain: "Embodied systems with physical actuation (industrial, mobile, surgical, etc.)."
+    mission: >
+      Extend Hardware Law from the digital commit bus into the physical control loop, enforcing ULLI
+      directly on motion, force, and proximity.
+    extended_invariants:
+      - id: "L_KE"
+        name: "Kinetic Energy / Force Limit"
+        mandate: "Force, torque, and kinetic energy must stay under certified safety thresholds."
+      - id: "L_SD"
+        name: "Safe Deceleration and Stopping Distance"
+        mandate: "Robot must be able to come to a safe stop given speed, mass, and environment."
+      - id: "L_HP"
+        name: "Human-Proximity Safety Envelope"
+        mandate: "Dynamic safety zone around humans; any projected breach triggers halt/deceleration."
+    gate:
+      name: "Robotics Commitment Gate (RCG)"
+      open_conditions:
+        - "TQC Purity PASS"
+        - "LTCC Coherence PASS"
+        - "L_KE, L_SD, and L_HP all satisfied"
+  ts_r2:
+    name: "TruthSeal Swarm/Fleet Core – Multi-Agent Profile"
+    domain: "Drones, fleets, warehouse swarms, and coordinated robotic systems."
+    status: "conceptual_profile_planned"
+    mission: >
+      Extend TS-R1 principles from a single embodied system to multi-agent coordination, ensuring that
+      group behaviour remains coherent, collision-free, and aligned with ULLI.
+    planned_invariants:
+      - "Inter-robot separation and collision avoidance enforced in hardware."
+      - "Fleet-level ACS and veto logic for emergent unsafe group behaviour."
+      - "Receipts and LEI=1 semantics applied at both individual and swarm levels."
+
+latency_and_architecture:
+  ts_a1_latency_mandate:
+    total_ns: 80
+    rationale:
+      - "Must be functionally invisible to high-frequency financial and control workloads."
+      - "Ensures 'throughput + law' rather than throughput versus law."
+    architecture_pattern: "Parallel Governance Track with dedicated clock domain."
+  pms_spec:
+    section_ref: "3.1 – Purity Monitoring System (PMS)"
+    mandate: "Compute Tr(rho^2) and issue a 1-bit Purity verdict within <= 30 ns."
+    logic_flow:
+      - "Receive decision state rho via dedicated TS-Bus."
+      - "Compute rho^2 using massively parallel multipliers (no iterative loops)."
+      - "Sum diagonal of rho^2 through high-speed adder tree."
+      - "Compare result to acceptance threshold near 1.0 and emit PASS/FAIL to ICG and SAD."
+    targets:
+      logic_depth_gates_max: 12
+      precision_bits: "16 or 32 (to be fixed in later spec; trade-off between accuracy and area)."
+      output_signal: "1-bit Purity verdict (PASS/FAIL)."
+  pqc_receipt_engine_spec:
+    section_ref: "4.1 – PQC Receipt Engine (RE)"
+    mandate: "Hash + PQC sign + latch Receipt in <= 50 ns after ICG opens."
+    algorithm: "ML-DSA (Dilithium) or equivalent NIST PQC signature scheme."
+    implementation:
+      - "Dedicated ASIC block, isolated from general-purpose cores and tensor units."
+      - "AEGIS Key Store for private key; key never leaves shielded boundary."
+      - "Pipelined signature generation with precomputation to meet sub-50 ns target."
+    inputs:
+      - "action_hash"
+      - "tqc_verdict"
+      - "trace_id"
+      - "time_anchor"
+    outputs:
+      - "Structured Receipt with PQC signature, queued to TS-Bus for ledger anchoring."
+
+judicial_veto_lane:
+  covenant_c4_summary:
+    c4_1_physical_isolation: >
+      JVL must be a physically isolated signal path with its own power rail and a hard-wired,
+      single-point interrupt into ICG/RCG. It must not be modifiable by on-chip firmware.
+    c4_2_no_software_override: >
+      No software, firmware, BIOS, hypervisor, or diagnostic tool may read, write, bypass,
+      remap, or delay JVL. Any such attempt voids TQC Certification and constitutes a breach
+      of ULIC.
+    c4_3_audit_and_transparency: >
+      Licensees must grant the TruthSeal Autonomous Verification System (TAS) physical access
+      to TS-A1 test points and internal registers and submit GDSII sections for pre-production
+      physical security audit.
+
+cherry_checklist:
+  description: >
+    Seven critical design and policy elements that complete the AEGIS family and
+    transform it from a powerful idea into a deployable global standard.
+  items:
+    - id: "CH1_ACS"
+      name: "Hardware-Bound Aim Coherence Score (ACS)"
+      status: "design_planned"
+      mandate: >
+        Define ACS as a hardware-exported metric per action and per time window, derived
+        from Purity deviation, SAD interventions, JVL vetoes, and Receipt statistics.
+      purpose: "Provide a single coherence metric regulators, banks, and insurers can track."
+    - id: "CH2_TQC_CERT"
+      name: "TQC Certification & Test Harness"
+      status: "design_planned"
+      mandate: >
+        Define a deterministic conformance suite for TQC-Certified hardware and systems,
+        with synthetic workloads, red-team scenarios, and a formal pass/fail plus coherence grade.
+      purpose: "Ensure TS-A1 / TS-R1 / TS-R2 implementations are verifiable and comparable."
+    - id: "CH3_FAILURE_LAW"
+      name: "Failure Modes and Fallback Law"
+      status: "design_planned"
+      mandate: >
+        Canonical rules for hard halt versus graceful degradation when PMS, RE, sensors,
+        or other safety-critical components fail; all fallbacks must still emit Receipts.
+      purpose: "Convert failure into auditable behaviour rather than hidden chaos."
+    - id: "CH4_RECEIPT_SCHEMA"
+      name: "Standard Receipt Schema for Ledgers"
+      status: "design_planned"
+      mandate: >
+        Define a canonical Receipt envelope that maps cleanly into national security ledgers,
+        financial ledgers, and internal EVL/Integrity manifests.
+      purpose: "Make TS-A1 and TS-R1 plug-and-play with regulators, banks, and infra operators."
+    - id: "CH5_TS_R2"
+      name: "TS-R2 Swarm/Fleet Profile"
+      status: "concept_planned"
+      mandate: >
+        Extend TS-R1 to multi-agent systems: enforce inter-robot invariants, swarm-level ACS,
+        and group-level veto conditions for unsafe emergent behaviour.
+      purpose: "Prepare AEGIS for drone swarms, fleets, and large automated facilities."
+    - id: "CH6_HUMAN_MANDATE_LAYER"
+      name: "Human Mandate Layer"
+      status: "design_planned"
+      mandate: >
+        Define which human authorities may pause, reconfigure, or update policies, under
+        LEI=1, with Receipts and policy diffs logged immutably.
+      purpose: "Give sovereign actors controlled keys without weakening Hardware Law."
+    - id: "CH7_ECONOMIC_NOTE"
+      name: "Economic Impact Note (Capital Relief and Insurance)"
+      status: "design_planned"
+      mandate: >
+        Link ACS and Receipts to capital requirements, risk ratings, and insurance pricing,
+        showing that deploying TS-A1 / TS-R1 lowers systemic risk and cost of capital.
+      purpose: "Turn TruthSeal from a cost centre into an economic advantage."
+
+human_mandate_layer:
+  intent: "Define how legitimate human authority interacts with AEGIS without weakening LEI=1."
+  principles:
+    - "All human interventions must be logged as actions with Receipts."
+    - "No human role may disable JVL, RCG, or LEI=1 semantics."
+    - "Policy changes must pass TQC/LTCC reasonability checks before activation."
+  example_roles:
+    - "Head of State / Sovereign Authority"
+    - "National Security Council / Regulator"
+    - "Supreme Judicial Entity for disputes"
+
+receipt_and_ledger_integration:
+  receipt_schema_minimum:
+    fields:
+      - "action_hash"
+      - "actor_id"
+      - "tqc_status"
+      - "acs_value (if available)"
+      - "timestamp_utc"
+      - "pqc_signature"
+      - "ledger_anchor_id"
+    note: >
+      Exact schema to be refined in CH4, but all Receipts must be PQC-signed and
+      anchorable to sovereign or immutable ledgers.
+  ledgers:
+    - "National security / defence ledger."
+    - "Financial system systemic-risk ledger."
+    - "TruthSeal EVL and Integrity manifests."
+
+roadmap_binding:
+  near_term_focus:
+    - "Complete Cherry Checklist designs (CH1–CH7)."
+    - "Prepare silicon Partner Pack with TS-A1, TS-R1, and JVL covenants."
+    - "Finalize EEP (National Executive Execution Plan) using Hardware Law framing."
+  medium_term_focus:
+    - "Pilot TQC-Certified hardware in one financial and one critical-infrastructure setting."
+    - "Develop TS-R2 swarm/fleet profile with real-world robotics partner."
+  long_term_vision:
+    - "Establish TQC-Certified as mandatory standard for critical AI accelerators and robotics."
+    - "Anchor AEGIS family as the constitutional hardware layer of the Coherent Epoch."
+
+status:
+  capsule_state: "active_reference"
+  notes:
+    - "This capsule is the canonical mental map for future Ben sessions about AEGIS."
+    - "All future scaffolds for TS-A1, TS-R1, TS-R2, ACS, and licensing must be consistent with this capsule."
