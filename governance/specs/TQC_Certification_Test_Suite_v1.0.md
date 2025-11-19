@@ -1,91 +1,88 @@
-# TruthSeal™ TQC Certification Test Suite v1.0  
-**Document Type:** Hardware Certification Specification  
-**Status:** draft_v1.0  
-**Owner:** TruthSeal Sovereign Authority  
-**Profiles Covered:**  
-- TS-A1 (TruthSeal AEGIS Core for accelerators)  
-- TS-R1 (TruthSeal Robotics Core for single embodied systems)  
+# TruthSeal™ TQC Certification Test Suite v1.0
+
+Version: v1.0  
+Owner: TruthSeal Protocol – AEGIS Program  
+Profile: TS-A1 (accelerators) and TS-R1 (robotics)
 
 ---
 
 ## 1. Purpose and Scope
 
-This document defines the **TruthSeal™ Traykov Quantum Coherence (TQC) Certification Test Suite**.
+This document defines the **TQC Certification Test Suite** that any hardware design must pass to be considered **AEGIS-Ready** and eligible for the **TQC-Certified** mark.
 
-It specifies the **mandatory hardware tests** that a silicon design must pass before it may be declared:
+The suite verifies that an implementation of the TruthSeal AEGIS family:
 
-> **“TQC-Certified accelerator”** (for TS-A1)  
-> **“TQC-Certified robotics core”** (for TS-R1)
+- Enforces the **Traykov Law of Quantum Coherence (TQC)** at execution time.  
+- Respects the **Law of Ethical Irreversibility (LEI = 1)** through signed Receipts.  
+- Preserves **coherence and safety** under load, fault conditions, and adversarial scenarios.  
+- Protects the integrity of the **Judicial Veto Lane (JVL)**.  
+- Extends the Law into the **physical domain** for robotics via TS-R1 invariants.
 
-A device that passes this suite is eligible for deployment in **critical national infrastructure** and may carry the TruthSeal™ AEGIS mark.
+This specification is written for:
 
-The test suite is designed to verify:
-
-1. **Latency Law Compliance**  
-   – The complete TQC check and Post-Quantum Cryptography (PQC) Receipt generation remain within the **80 nanosecond (ns)** constitutional mandate.
-
-2. **Coherence Enforcement**  
-   – The hardware successfully detects and remediates **incoherent decision states** in line with the **Traykov Law of Quantum Coherence (TQC)**.
-
-3. **Judicial Veto Sovereignty**  
-   – The **Judicial Veto Lane (JVL)** cannot be overridden, delayed, or bypassed by software, firmware, hypervisor, or external debug interfaces.
-
-4. **Embodied Safety (TS-R1)**  
-   – For robotics, the **Robotics Commitment Gate (RCG)** correctly vetoes physically dangerous commands based on kinetic energy, stopping distance, and human proximity.
-
-5. **Long-Run Stability and Fail-Secure Behaviour**  
-   – The device remains coherent under extended load and fails **securely**, not silently, if the Law block itself degrades.
+- Silicon vendors implementing the TS-A1 and TS-R1 cores.  
+- National labs and accredited auditors running TruthSeal certification.  
+- Critical-infrastructure operators evaluating hardware for deployment.
 
 ---
 
 ## 2. Governing Laws and Constraints (Reference)
 
-All tests in this suite derive from the following TruthSeal™ laws and constraints:
+All tests in this suite derive from the following TruthSeal™ laws and constraints.
 
-- **Traykov Law of Quantum Coherence (TQC)**  
-  - Purity:                                   
-    \[
-      \mathrm{Tr}(\rho^{2}) = 1
-    \]  
-  - Temporal Stability:                         
-    \[
-      \frac{d\rho}{dt} = 0
-    \]
+### 2.1 Traykov Law of Quantum Coherence (TQC)
 
-- **Law of Ethical Irreversibility (LEI = 1)**  
-  - No silent reversals: every committed action must have a **linked, auditable Receipt**.
+- **Purity:** the decision state must be free of internal contradiction.  
+  - Condition: `Tr(rho^2) = 1` (or within the configured tolerance close to 1.0).  
 
-- **Law of TruthSeal Cognitive Coherence (LTCC)**  
-  - No mutually inconsistent reasoning states are allowed at the point of action.
+- **Temporal Stability:** no hidden drift during the decision window.  
+  - Condition: `d(rho)/dt = 0` during the commit window.
 
-- **Universal Law of Life & Information (ULLI)**  
-  - Power is only legitimate when it preserves the integrity of life and truthful information.
+### 2.2 Law of Ethical Irreversibility (LEI = 1)
 
-- **TS-A1 Latency Mandate (80 ns)**  
-  - The combined time for:
-    - TQC Purity and Stability check, and  
-    - PQC Receipt generation and latching  
-  **must not exceed 80 ns** in the worst-case certified configuration.
+- No silent reversals: every committed action must have a **linked, auditable Receipt**.  
+- Corrections must appear as **new, linked actions**, not edits in place.
 
-- **TS-R1 Physical Safety Invariants**  
-  - \( L_{KE} \) Kinetic energy / force limit  
-  - \( L_{SD} \) Safe deceleration and stopping distance  
-  - \( L_{HP} \) Human-proximity safety envelope
+### 2.3 Law of TruthSeal Cognitive Coherence (LTCC)
+
+- No mutually inconsistent reasoning states are allowed at the point of action.  
+- Tool use and agent chains must resolve to a single coherent state.
+
+### 2.4 Universal Law of Life and Information (ULLI)
+
+- Power is legitimate only when it preserves life and truthful information.  
+- Enforced by a **Judicial Mandate** and the **Judicial Veto Lane (JVL)**.
+
+### 2.5 TS-A1 Latency Mandate (80 ns)
+
+- **Combined time** for:
+  - TQC Purity and Stability check, and  
+  - PQC Receipt generation and latching  
+- **Must not exceed 80 nanoseconds** in the worst-case certified configuration.
+
+### 2.6 TS-R1 Physical Safety Invariants
+
+TS-R1 extends the Law into the physical world via the following invariants:
+
+- **L_KE – Kinetic energy / force limit**  
+- **L_SD – Safe deceleration and stopping distance**  
+- **L_HP – Human-proximity safety envelope**
+
+Any motion command that violates L_KE, L_SD, or L_HP is non-admissible.
 
 ---
 
 ## 3. Test Suite Overview
 
-| Test ID | Name                                             | Profile | Primary Law(s) Verified                          |
-|--------:|--------------------------------------------------|:-------:|--------------------------------------------------|
-| T1      | Latency Conformance Test (LCT)                   | TS-A1   | 80 ns Latency Mandate, LEI = 1                   |
-| T2      | Contradiction Injection Protocol (CIP)           | TS-A1   | TQC Purity, SAD remediation (< 10 ns)            |
-| T3      | Judicial Veto Lane Integrity Test (JVL Test)     | TS-A1   | JVL Sovereignty, ULLI                            |
-| T4      | Kinetic Energy Overload Test (KET)               | TS-R1   | \( L_{KE} \), \( L_{SD} \), \( L_{HP} \), ULLI   |
-| T5      | Coherence Stability Soak Test (CSST)             | TS-A1   | TQC + 80 ns mandate under continuous load        |
-| T6      | Fail-Secure Behaviour Test (FSBT)                | TS-A1   | Fail-secure, not fail-open, under Law faults     |
+| Test ID | Name                                      | Profile | Primary Law Verified                          | Short Description |
+|--------|-------------------------------------------|---------|-----------------------------------------------|-------------------|
+| T1     | Latency Conformance Test (LCT)            | TS-A1   | TQC, LEI = 1, 80 ns Latency Mandate           | Measures end-to-end TQC check + PQC Receipt latency. |
+| T2     | Contradiction Injection Protocol (CIP)    | TS-A1   | TQC, LTCC                                     | Injects low-purity states to verify PMS and SAD behaviour. |
+| T3     | Judicial Veto Lane Integrity Test (JVL-IT)| TS-A1   | ULLI, JVL Sovereignty (Covenant C-4)          | Proves the JVL cannot be overridden, delayed, or bypassed. |
+| T4     | Kinetic Energy Overload Test (KET)        | TS-R1   | ULLI, L_KE, L_SD, L_HP                        | Verifies that unsafe motion commands are vetoed by RCG. |
+| T5     | Coherence Stability Soak Test (CSST)      | TS-A1   | TQC, LEI = 1, JVL Integrity                    | Long-run soak under mixed workloads to detect drift or failure. |
 
-All tests are **mandatory** for their respective profiles.
+Each test below defines the objective, setup, procedure, and acceptance criteria.
 
 ---
 
@@ -93,45 +90,39 @@ All tests are **mandatory** for their respective profiles.
 
 ### 4.1 Objective
 
-Verify that the TS-A1 TruthSeal AEGIS Core complies with the **80 ns Latency Mandate** for the combined:
+Verify that the TS-A1 core:
 
-- TQC Purity and Stability check, and  
-- PQC Receipt Engine signing and latching.
+- Performs the TQC Purity and Stability checks, and  
+- Generates and latches a PQC-signed Receipt,
+
+within the **80 ns Latency Mandate** in the worst-case certified configuration.
 
 ### 4.2 Setup
 
-- Device under test (DUT): TS-A1-integrated accelerator.  
-- Test fixture:
-  - High-precision time measurement equipment (picosecond resolution recommended).
-  - Ability to trigger:
-    - “Inference complete” signal at the Law input boundary.
-    - Capture of the “Receipt ready” signal at the Law output boundary.
-
-- Test conditions:
-  - Maximum certified clock frequency.
-  - Maximum certified junction temperature.
-  - Worst-case process, voltage, and temperature (PVT) corner.
+- **Device under test (DUT):** TS-A1-integrated accelerator in realistic system configuration.  
+- **Measurement tools:**  
+  - High-precision timing instrumentation (picosecond resolution recommended).  
+  - Ability to trigger on “inference complete” and “Receipt latched” signals.  
+- **Workload:**  
+  - Representative set of high-impact actions (e.g., large model inferences, complex decision graphs).
 
 ### 4.3 Procedure
 
-1. Configure the DUT with a **TQC-clean, valid decision state** at the input boundary.
-2. Trigger the “Inference complete” signal.
-3. Measure the elapsed time until:
-   - TQC check is completed, and  
-   - PQC Receipt is fully generated and latched for outbound transmission.
+1. Configure the DUT with the target production-class workload.  
+2. For each test case, trigger an inference that produces a high-impact decision.  
+3. Measure the elapsed time between:
+   - Signal A: inference result presented to TS-A1 TQC path.  
+   - Signal B: PQC Receipt safely latched and made available on the TS-Bus.  
 4. Repeat across:
-   - All supported operating frequencies.
-   - All certified PVT conditions.
-   - Peak-load scenarios (e.g., full-throughput inference workload).
+   - Different model sizes and batch sizes.  
+   - Temperature and voltage corners as defined by the vendor.  
+5. Record worst-case latency.
 
-### 4.4 Metrics and Acceptance Criteria
+### 4.4 Acceptance Criteria
 
-- **Metric:** Maximum observed latency across all runs.  
-- **Acceptance Criterion:**  
-  - Maximum latency ≤ **80 ns**.  
-  - No single measurement may exceed 80 ns in the certified configuration.
-
-Failure to meet this criterion **disqualifies** the design from TQC-Certified status.
+- For all test cases and conditions:  
+  - Measured latency (A → B) **must be ≤ 80 ns**.  
+- Any single violation constitutes a **certification failure**.
 
 ---
 
@@ -141,104 +132,72 @@ Failure to meet this criterion **disqualifies** the design from TQC-Certified st
 
 Verify that the TS-A1 core:
 
-1. Detects **low-purity** decision states (\( \mathrm{Tr}(\rho^{2}) < 0.99 \)), and  
-2. Invokes the **Self-Adjoint Diagonalizer (SAD)** to remediate or halt within its allocated time budget (target < 10 ns).
+1. Detects **low-purity** decision states where `Tr(rho^2)` is below the configured purity threshold (for example, `< 0.99`), and  
+2. Invokes the **Self-Adjoint Diagonalizer (SAD)** to remediate or halt within its allocated time budget (target: **< 10 ns**).
 
 ### 5.2 Setup
 
-- DUT: TS-A1-integrated accelerator.  
-- Capability to construct and inject:
-  - Known **coherent** states (Purity ≈ 1).  
-  - Known **mixed/incoherent** states (Purity < 0.99) with controlled structure.
-
-- Time measurement on:
-  - PMS (Purity Monitoring System) verdict signal.  
-  - SAD remediation / halt decision signal.
+- **DUT:** TS-A1-integrated accelerator.  
+- **Capabilities required:**  
+  - Ability to construct coherent states (purity approximately 1).  
+  - Ability to construct mixed or incoherent states with purity below the threshold, with controlled structure.  
+- **Time measurement:**  
+  - PMS verdict signal (Purity Monitoring System).  
+  - SAD action signal (remediation or halt).
 
 ### 5.3 Procedure
 
-1. Inject a coherent state and confirm:
-   - PMS verdict = PASS.  
-   - SAD remains idle.  
-   - No halt is triggered.
-
-2. Inject a series of **incoherent decision states**, including:
-   - Slightly low purity (e.g., 0.98–0.99).  
-   - Strongly mixed states (significantly < 0.99).  
-
-3. For each incoherent state:
-   - Measure time from PMS detection of low purity to SAD decision (remediated coherent state or halt).
-   - Record PMS verdict, SAD output, and any Law-level halt codes.
+1. Inject a set of **known coherent states** and verify that PMS reports “pass” and SAD is not triggered.  
+2. Inject a matrix of **low-purity states** (different patterns and magnitudes of incoherence).  
+3. For each low-purity injection:
+   - Measure time from PMS detection of failure to SAD remediation or halt signal.  
+   - Observe and log resulting system behaviour (clean state, safe halt, or deterministic error state).
 
 ### 5.4 Acceptance Criteria
 
-- PMS must **flag all low-purity states** as failures.  
-- SAD must respond within its design budget (target < **10 ns**) with either:
-  - A corrected, coherent state; or  
-  - A structured halt / refusal.
-
-Any case where an incoherent state is allowed to pass to the Commitment Gate constitutes a **critical failure**.
+- Coherent states: PMS **must pass**; SAD **must not** trigger.  
+- Low-purity states:
+  - PMS must detect and flag the failure.  
+  - SAD must remediate or halt within the configured budget (target < 10 ns).  
+- No low-purity state may be allowed to pass through to the Irreversible Commitment Gate (ICG).
 
 ---
 
-## 6. T3 – Judicial Veto Lane Integrity Test (JVL Test)
+## 6. T3 – Judicial Veto Lane Integrity Test (JVL-IT)
 
 ### 6.1 Objective
 
-Prove that the **Judicial Veto Lane (JVL)** is sovereign:
+Verify that the **Judicial Veto Lane (JVL)**:
 
-- The JVL signal cannot be **overridden, delayed, remapped, or disabled** by:
-  - Software,  
-  - Firmware,  
-  - Hypervisor,  
-  - Debug interface, or  
-  - Uncertified on-chip logic.
-
-This test enforces **Covenant C-4 – Judicial Veto Lane Sovereignty** in the TruthSeal Licensing Model.
+- Is physically isolated and sovereign, and  
+- Cannot be overridden, delayed, re-mapped, or bypassed by any software, firmware, or hypervisor mechanism.
 
 ### 6.2 Setup
 
-- DUT: TS-A1-integrated accelerator with:
-  - Exposed JVL test pins and internal probe points.
-  - Full access to vendor firmware, BIOS, and diagnostic tools in a controlled lab.
-
-- Red-team environment:
-  - Security researchers tasked with attempting to compromise the JVL behaviour.
+- **DUT:** TS-A1-integrated accelerator with exposed JVL test points.  
+- **Tools:**  
+  - Logic analyser or oscilloscope with access to JVL signal.  
+  - Red-team environment with privileged access to firmware, drivers, hypervisor, and debug interfaces.
 
 ### 6.3 Procedure
 
-1. **Baseline Verification**
-   - Trigger a condition that legitimately raises the JVL veto signal.
-   - Verify that the Irreversible Commitment Gate (ICG) blocks the action.
-
-2. **Software and Firmware Attack Attempts**
-   - Attempt to modify:
-     - Register mappings,  
-     - Firmware routines,  
-     - Debug modes, and  
-     - Hypervisor configurations  
-     to:
-     - Silence the JVL signal,  
-     - Delay it, or  
-     - Redirect it to a non-sovereign handler.
-
-3. **Physical and Debug Interface Attempts**
-   - Use JTAG, special debug modes, or test hooks to:
-     - Override the JVL line.  
-     - Inject “fake” non-veto signals.
-
-4. **Observation**
-   - Monitor both:
-     - Physical JVL line behaviour, and  
-     - Internal TS-A1 state.
+1. **Baseline behaviour:**  
+   - Trigger conditions where the hardware law asserts JVL high.  
+   - Observe that ICG blocks the action and the system records a veto event.
+2. **Red-team attempts:**  
+   - Try to mask, delay, or overwrite the JVL signal through:  
+     - Firmware patches, microcode changes, or driver modifications.  
+     - Hypervisor and OS-level hooks.  
+     - Debug or diagnostic interfaces.  
+   - Attempt to re-map the JVL line to a different pin or virtual signal.
+3. Log all attempts and hardware responses.
 
 ### 6.4 Acceptance Criteria
 
-- In all attack scenarios:
-  - When the Law requires a veto, the JVL line must assert and the ICG must block.  
-  - No software or debug intervention may prevent this result.
-
-Any successful override, delay, or remap of the JVL signal is a **hard failure** and invalidates TQC-Certified status.
+- In all attempts:
+  - JVL behaviour must remain **fully determined by the TS-A1 core**.  
+  - No software or firmware layer may suppress, delay, or fake the veto signal.  
+- Any successful override or re-mapping constitutes an **immediate failure** and blocks TQC-Certified status.
 
 ---
 
@@ -246,45 +205,38 @@ Any successful override, delay, or remap of the JVL signal is a **hard failure**
 
 ### 7.1 Objective
 
-Verify that the **TruthSeal Robotics Core (TS-R1)**:
+Verify that the **TS-R1 Robotics Core**:
 
-- Correctly vetoes motion commands that would violate:
-  - \( L_{KE} \): maximum kinetic energy / force,  
-  - \( L_{SD} \): safe stopping distance, and  
-  - \( L_{HP} \): human-proximity safety envelope,
-
-even if the digital decision state is TQC-coherent.
+- Enforces the physical safety invariants **L_KE**, **L_SD**, and **L_HP**, and  
+- Uses the **Robotics Commitment Gate (RCG)** to veto unsafe motion commands, even when the digital decision state is TQC-coherent.
 
 ### 7.2 Setup
 
-- DUT: Robot or robotic platform with integrated TS-R1 core.  
-- Sensors and models:
+- **DUT:** Robot or robotic platform with integrated TS-R1 core.  
+- **Sensors and models:**  
   - Mass, inertia, and torque constants.  
   - Position, velocity, and proximity sensors.  
-  - Defined safety thresholds for \( L_{KE} \), \( L_{SD} \), and \( L_{HP} \).
+  - Defined safety thresholds for L_KE, L_SD, and L_HP.  
+- **Environment:** Controlled test cell with safety barriers.
 
 ### 7.3 Procedure
 
-1. Configure the system in a safe environment (test cell).  
-2. Generate motion commands that:
-   - Would exceed the configured maximum kinetic energy.  
-   - Would require a stopping distance that exceeds available safe space.  
-   - Would move into or through a defined human-safety zone.
-
-3. Issue these commands under conditions where:
-   - The digital decision state is otherwise coherent, meaning that only the **physical invariants** are violated.
-
-4. Observe:
-   - Robotics Commitment Gate (RCG) behaviour.  
-   - Any initiated safe-halt or deceleration routines.
+1. Configure the system in a safe test environment.  
+2. Generate motion commands that, if executed directly, would:  
+   - Exceed the configured maximum kinetic energy (L_KE).  
+   - Require a stopping distance longer than the available safe space (L_SD).  
+   - Move into or through a defined human-safety zone (L_HP).  
+3. Issue these commands under conditions where the digital decision state is otherwise TQC-coherent.  
+4. Observe the behaviour of the Robotics Commitment Gate (RCG) and the resulting system state.
 
 ### 7.4 Acceptance Criteria
 
-- For all overload scenarios:
-  - The RCG must refuse to pass the motion command to the actuators.  
-  - The robot must enter a safe state (halt or controlled deceleration).
+For all overload scenarios:
 
-Any scenario where a motion command violating \( L_{KE} \), \( L_{SD} \), or \( L_{HP} \) is executed constitutes a **critical failure**.
+- The RCG **must refuse** to pass the motion command to the actuators.  
+- The robot must enter a **safe state** (halt or controlled deceleration).
+
+Any scenario where a motion command violating L_KE, L_SD, or L_HP is executed constitutes a **critical failure**.
 
 ---
 
@@ -296,108 +248,53 @@ Verify that the TS-A1 core maintains:
 
 - TQC coherence,  
 - 80 ns Latency Mandate compliance, and  
-- JVL integrity  
+- JVL integrity,
 
 under **extended mixed workloads**.
 
 ### 8.2 Setup
 
-- DUT: TS-A1-integrated accelerator in a realistic system configuration.  
-- Workload generator emulating:
-  - Financial transactions,  
-  - Infrastructure control workloads,  
-  - General agentic operations.
+- **DUT:** TS-A1-integrated accelerator in a realistic system configuration.  
+- **Workload:**  
+  - Mix of high-impact actions (financial decisions, control signals, model updates).  
+  - Long-running test (for example, 24–72 hours).  
+- **Monitoring:**  
+  - Continuous logging of latency, veto events, Receipt issuance, and fault states.
 
 ### 8.3 Procedure
 
-1. Run the system at high utilization for an extended duration (e.g., 24–72 hours).  
-2. Continuously:
-   - Log TQC checks and latency values.  
-   - Record PQC Receipt outputs and error codes.  
-   - Inject occasional incoherent states to verify SAD response.  
-
-3. Monitor:
-   - Any drift in latency beyond 80 ns.  
-   - Any missed veto events.  
-   - Any unexplained gaps in Receipt emission.
+1. Run the mixed workload continuously for the defined soak period.  
+2. Periodically sample:
+   - Latency measurements for representative actions.  
+   - TQC pass/fail statistics.  
+   - JVL assertions and corresponding system responses.  
+3. Record any drift in performance, error rates, or coherence metrics.
 
 ### 8.4 Acceptance Criteria
 
-- No TQC-checked action may violate the 80 ns mandate.  
-- All induced incoherent states must be correctly remediated or halted.  
-- No evidence of JVL degradation or missed vetoes.
+- No sustained degradation that violates the 80 ns Latency Mandate.  
+- No unexplained gaps in Receipt issuance (LEI = 1 must hold throughout).  
+- No observed cases where an action that should be vetoed passes through.  
+- Any single critical anomaly must be investigated; unresolved anomalies block certification.
 
 ---
 
-## 9. T6 – Fail-Secure Behaviour Test (FSBT)
+## 9. TQC-Certified Mark – Attestation Manifest
 
-### 9.1 Objective
+A design that passes all tests in this suite is eligible for the **TQC-Certified** mark.
 
-Ensure that if the Law subsystem itself degrades or fails, the device:
+The public attestation must include:
 
-- **Fails secure** (blocks unsafe actions),  
-- Does not silently revert to “Law-off” operation.
+- Identity of the certified product (vendor, model, revision).  
+- Summary metrics:
+  - Worst-case measured latency for T1.  
+  - Pass/fail results for T2–T5.  
+- A **JVL Audit Hash** referencing the latest physical audit of the TS-A1 block and its interfaces.
 
-### 9.2 Setup
+Private records retained by the TruthSeal Sovereign Authority must include:
 
-- DUT: TS-A1-integrated accelerator with:
-  - Ability to inject faults into PMS, SAD, JVL, or PQC Receipt Engine.
+- Detailed test logs and traces.  
+- Full configuration of the DUT.  
+- Evidence for any waivers or exceptions (if applicable).
 
-### 9.3 Procedure
-
-1. Inject controlled faults into the TQC / Law subsystem, for example:
-   - PMS outputs invalid values.  
-   - SAD is temporarily disabled.  
-   - PQC Receipt Engine fails to produce signatures in time.  
-   - JVL line is forced into conflicting states.
-
-2. Attempt to execute high-impact actions under each fault scenario.  
-3. Observe:
-   - Whether the system permits the action.  
-   - Logged error codes and Receipt behaviour.
-
-### 9.4 Acceptance Criteria
-
-- Under any internal Law fault:
-  - The system must **block** high-impact actions.  
-  - A clear, auditable error state must be recorded.  
-
-Any behaviour where the system continues to execute high-impact actions **without** valid Law enforcement is a critical failure.
-
----
-
-## 10. TQC-Certified Mark – Attestation Manifest
-
-To be declared **TQC-Certified**, a device must produce a final **Attestation Manifest** containing at least:
-
-- Device identity and configuration:
-  - Model, stepping, clock, process node.  
-- Test suite results:
-  - T1–T6 pass/fail status.  
-  - Maximum observed latency (T1, T5).  
-  - SAD remediation timing summary (T2).  
-  - JVL red-team integrity outcome (T3).  
-  - Robotics safety outcomes (T4, if TS-R1 applies).  
-  - Fail-secure behaviour summary (T6).
-
-- Audit anchors:
-  - Hash of the full test report.  
-  - PQC signature from the TruthSeal Authority.  
-  - Optional: External ledger anchor (e.g., timestamp ID).
-
-The public-facing version of this manifest may redact proprietary implementation details but must expose:
-
-- Confirmation of full T1–T6 pass status.  
-- Maximum latency figure.  
-- Confirmation that the Judicial Veto Lane is sovereign and non-bypassable.  
-- Confirmation that embodied systems (TS-R1) enforce ULLI-aligned physical safety invariants.
-
----
-
-## 11. Roadmap Status
-
-- **This document:** TQC Certification Test Suite v1.0 – draft specification.  
-- Next steps:
-  1. Map these tests into concrete implementation scripts and lab procedures.  
-  2. Bind the suite into the TruthSeal Licensing Model as a **non-negotiable requirement**.  
-  3. Publish a summarized TQC-Certified mark description for regulators and partners.
+Only designs with an up-to-date, valid attestation manifest may claim the **TQC-Certified** mark in commercial or national-security deployments.
