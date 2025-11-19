@@ -23,6 +23,38 @@ TruthSeal™ provides that Hardware Law via the **AEGIS Core family**.
 
 ---
 
+### 0.1 What “AEGIS” Means
+
+For a first-time reader, **AEGIS** is not just a brand name; it is a precise technical and legal concept.
+
+- **AEGIS = Adaptive Execution Governance & Integrity System.**  
+- It is a **hardware law core** that sits *after* AI inference but *before* any high-impact commit (money moved, switch flipped, robot moved).  
+- It does not replace GPUs or quantum accelerators; it **wraps them in a non-bypassable governance layer.**
+
+The AEGIS family has three main profiles:
+
+- **TS-A1 – Accelerator Core**  
+  Adaptive Execution Governance & Integrity System for **data, finance, cyber, and control systems.**  
+  Sits inside or alongside GPUs / NPUs / QPUs and enforces:
+  - The **Traykov Law of Quantum Coherence (TQC)**,  
+  - The **Law of Ethical Irreversibility (LEI = 1)**, and  
+  - PQC-signed Receipts for every high-impact action.
+
+- **TS-R1 – Robotics Core**  
+  AEGIS profile for **single embodied systems** (industrial arms, surgical robots, mobile platforms).  
+  Extends the same laws into **kinetic energy, force, and human-proximity safety**.
+
+- **TS-R2 – Swarm/Fleet Core**  
+  AEGIS profile for **multi-system coordination** (drone swarms, autonomous fleets, distributed robotics).  
+  Ensures that **coordination does not dilute responsibility** and that fleet-level actions remain governed by the same Hardware Law.
+
+In short:
+
+> **AEGIS turns raw accelerators into governed accelerators:  
+> compute stays where it is; the Law is added beneath the software.**
+
+---
+
 ### 1. Situation Summary: The Quantum Governance Gap
 
 1. **Exponential AI + Quantum Acceleration**  
@@ -68,8 +100,8 @@ The AEGIS family implements four foundational laws at hardware level:
 
 1. **Traykov Law of Quantum Coherence (TQC)**  
    - At the moment of commitment, the decision state ρ must satisfy:  
-     - **Purity:** `Tr(ρ²) = 1` — no internal contradiction.  
-     - **Temporal Stability:** `dρ/dt = 0` during the decision window — no hidden drift.  
+     - **Purity:** Tr(ρ²) = 1 — no internal contradiction.  
+     - **Temporal Stability:** dρ/dt = 0 during the decision window — no hidden drift.  
    - If these conditions fail, the action is **non-admissible**.
 
 2. **Law of Ethical Irreversibility (LEI = 1)**  
@@ -80,7 +112,7 @@ The AEGIS family implements four foundational laws at hardware level:
    - Complex chains of reasoning and tool use must **not produce mutually inconsistent states**.  
    - If incoherence is detected, the system either:
      - **Remediates** to a single coherent state, or  
-     - **Halt / refuses**, with a recorded reason.
+     - **Halts / refuses**, with a recorded reason.
 
 4. **Universal Law of Life & Information (ULLI)**  
    - Power is legitimate only when it preserves the integrity of **life** and **truthful information**.  
@@ -101,18 +133,18 @@ These laws are enforced by the **TruthSeal AEGIS™ Core** as part of the accele
 To remain viable in high-performance environments, TS-A1 obeys a strict latency ceiling:
 
 > **TS-A1 Latency Mandate:**  
-> The total time consumed by the TQC Check (Purity `Tr(ρ²) = 1` and Stability `dρ/dt = 0`) **and** the PQC Receipt generation must not exceed **80 nanoseconds (ns)** from the end of inference to the final commit signal.
+> The total time consumed by the TQC Check (Purity Tr(ρ²) = 1 and Stability dρ/dt = 0) **and** the PQC Receipt generation must not exceed **80 nanoseconds (ns)** from the end of inference to the final commit signal.
 
 This mandate is split into two sub-budgets:
 
-- **Purity Monitoring System (PMS):** ≤ **30 ns**  
-- **PQC Receipt Engine (RE):** ≤ **50 ns**
+- **Purity Monitoring System (PMS):** ≤ 30 ns  
+- **PQC Receipt Engine (RE):** ≤ 50 ns
 
 #### 4.2. Purity Monitoring System (PMS) – Section 3.1 Summary
 
 - Receives the decision state ρ from the accelerator via a dedicated **TS-Bus**.  
-- Computes `ρ²` using **massively parallel multipliers** (no iterative loops).  
-- Computes `Tr(ρ²)` via a high-speed adder tree on the diagonal.  
+- Computes ρ² using **massively parallel multipliers** (no iterative loops).  
+- Computes Tr(ρ²) via a high-speed adder tree on the diagonal.  
 - Outputs a 1-bit **Purity Verdict** (PASS / FAIL) directly to:
   - The **Irreversible Commitment Gate (ICG)**, and  
   - The **Self-Adjoint Diagonalizer (SAD)** for remediation on failure.
@@ -134,9 +166,9 @@ Once the ICG opens (TQC passed), the **PQC Receipt Engine**:
   - TQC verdict,  
   - Trace ID,  
   - High-precision timestamp.  
-- Uses a dedicated **ASIC block** implementing a NIST-standard PQC scheme (e.g. ML-DSA / Dilithium or equivalent).  
+- Uses a dedicated **ASIC block** implementing a NIST-standard PQC scheme (for example ML-DSA / Dilithium or equivalent).  
 - Fetches the private key from the **AEGIS Key Store** (tamper-resistant memory).  
-- Emits a structured, quantum-safe **Receipt** and queues it for anchoring to a sovereign / regulated ledger.
+- Emits a structured, quantum-safe **Receipt** and queues it for anchoring to a sovereign or regulated ledger.
 
 **Engineering Targets:**
 
@@ -294,7 +326,7 @@ To ensure the Hardware Law cannot be weakened in practice, TruthSeal Licensing r
 
 3. **Audit and Transparency**  
    - TruthSeal Autonomous Verification System (TAS) must have **physical audit access** to:
-     - TS-A1 / TS-R1 TS-R2 IP block test points,  
+     - TS-A1 / TS-R1 / TS-R2 IP block test points,  
      - Internal registers relevant to JVL.  
    - Final silicon layout for the AEGIS regions must be available for pre-production security audit.
 
