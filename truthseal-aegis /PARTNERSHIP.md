@@ -9,6 +9,6 @@ Looking for:
 - Chip vendor or startup partner for FPGA → ASIC (equity or licensing deal)
 - Grant funding bodies
 
-Contact: nick.traykov@truthseal.ai (forwarding active soon) or DM
+Contact: nickolay0612@gmail.com (forwarding active soon) or DM
 
 First serious partner gets the exclusive first deal.
