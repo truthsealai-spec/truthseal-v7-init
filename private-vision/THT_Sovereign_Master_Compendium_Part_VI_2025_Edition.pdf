@@ -1,0 +1,16 @@
+# TruthSeal™ AEGIS — Hardware-Enforced Governance for High-Impact AI
+
+**November 20, 2025 – Public Proposal**
+
+Goal: No high-impact AI action (trade, grid switch, robot motion) may execute without proving coherence, irreversibility, and life-preservation — all enforced in hardware below the OS.
+
+Status: Detailed, buildable specification. Seeking national pilot in finance, energy, or robotics.
+
+Core components (all classical, 5–20 µs added latency on 5 nm / 3 nm):
+- Traykov Decision Coherence (TDC) – canary vector + multi-sample + drift monitor
+- Judicial Veto Lane (JVL) – non-bypassable hardware kill
+- Post-Quantum Receipts (LEI=1)
+- Aim Coherence Score (ACS) – single regulatory metric
+
+Author: Dr. Nickolay Traykov  
+License: MIT (code) + CC-BY-4.0 (documents)
