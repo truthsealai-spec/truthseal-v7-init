@@ -1,0 +1,60 @@
+# TruthSeal™ Internal Docs — TS-A1 ↔ RRAM Pack (v1.0)
+
+**Purpose:** One-page index for the internal TS-A1 (TruthSeal AEGIS Core) ↔ RRAM integration materials, plus live ledger references.
+
+---
+
+## Quick links
+- **Integration brief:** [`docs/internal/TS-A1_RRAM_Integration_Brief_v1.0.md`](./TS-A1_RRAM_Integration_Brief_v1.0.md)
+- **Operator runtime checklist:** [`docs/internal/checklists/TS-A1_RRAM_Runtime_Checklist_v1.0.md`](./checklists/TS-A1_RRAM_Runtime_Checklist_v1.0.md)
+- **Deployment acceptance template:** [`docs/internal/templates/TS-A1_RRAM_Acceptance_Template_v1.0.md`](./templates/TS-A1_RRAM_Acceptance_Template_v1.0.md)
+
+> If a `receipts/` folder doesn’t exist yet, keep receipts under `governance/ledger/` (temporary).
+
+---
+
+## How to use (3 steps)
+1) **Calibrate** the specific RRAM chip/firmware with TS-A1 → record `sha256` and baseline Aim Coherence Score (ACS).  
+2) **Run** workloads behind gates: Purity Gate (ACS drop ≤ 0.01), Stability Gate (24h drift ≤ 1e-3), Receipt Gate (hash every batch).  
+3) **Anchor**: queue OpenTimestamps (or OriginStamp/BTCStamp) when services are live; keep local receipts until then.
+
+---
+
+## Ledger references (live)
+- **ULIC v9.1 (registry block)**  
+  Path: `governance/ledger/ULIC_v9.1.yaml`  
+  `registry_sha256`: `f46a18bb37d24f035ab5fefa0b6a024d40ff98ad64acfe3710fb9ecc924477ab`  
+  Status: “Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)”
+
+- **EVL v9.0 (epoch ledger)**  
+  Path: `governance/ledger/EVL_v9.0.yaml`  
+  `sha256`:  
+  - `173703a64fa4c18948f439b85c16627f6ee47a9b66c7f8008505062b0b45447d`  
+  - `55f6ea93192b3a490b5b65dfc0ff4275358d92f237134cea54437bdcdf144bbb`  
+  `ulic_registry_sha256`: `f46a18bb37d24f035ab5fefa0b6a024d40ff98ad64acfe3710fb9ecc924477ab`  
+  OTS calendar id: `ae277fd4755d3eef0c4ad21a2ef94b9c9239a37cdc9f8de1ba930fcf104b9960`
+
+- **QCEP Epoch Manifest v9.0 (linked to ULIC v9.1)**  
+  Path: `governance/ledger/seals/QCEP_Epoch_Manifest_v9.0.yaml`  
+  Anchor status: “Anchored — OpenTimestamps” (tx recorded in file)
+
+- **Integrity Manifest v8_pre**  
+  Path: `governance/ledger/seals/Integrity_Manifest_v8_pre.yaml`  
+  `composite_update.timestamp_utc`: set; anchor follow-up pending for any new receipts.
+
+---
+
+## Operator gates (at a glance)
+- **Purity Gate:** ACS drop ≤ **0.01** from calibrated baseline  
+- **Stability Gate:** 24h drift ≤ **1e-3**  
+- **Receipt Gate:** all batches hashed; OTS queued when live  
+- **Fail-safe:** auto-halt on violation (LEI=1)
+
+---
+
+## Notes & boundaries
+- ULIC internals remain classified; referenced by name + path only.  
+- When external anchoring is down, never skip receipts—anchor later.  
+- Vendor-specific calibration scripts live under `docs/internal/calibration/` (add per vendor).
+
+*© 2025 TruthSeal™ — Internal use only.*
