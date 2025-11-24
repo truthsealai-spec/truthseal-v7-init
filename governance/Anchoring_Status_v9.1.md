@@ -19,13 +19,21 @@ This page tracks the anchoring state of the v9.1 registry and linked epoch artif
 
 ## Epoch Verification Ledger (EVL v9.0)
 
-- **File:** `governance/ledger/EVL_v9.0.yaml`  
+- **File:**  
+  `governance/ledger/EVL_v9.0.yaml`
+
 - **sha256:**  
   - `173703a64fa4c18948f439b85c16627f6ee47a9b66c7f8008505062b0b45447d`  
-  - `55f6ea93192b3a490b5b65dfc0ff4275358d92f237134cea54437bdcdf144bbb`  
-- **ots_calendar_id:** `ae277fd4755d3eef0c4ad21a2ef94b9c9239a37cdc9f8de1ba930fcf104b9960`  
-- **ots_receipt:** `governance/ledger/EVL_v9.0.ots` (upload when available)  
-- **status:** Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)  
+  - `55f6ea93192b3a490b5b65dfc0ff4275358d92f237134cea54437bdcdf144bbb`
+
+- **ots_calendar_id:**  
+  `ae277fd4755d3eef0c4ad21a2ef94b9c9239a37cdc9f8de1ba930fcf104b9960`
+
+- **ots_receipt:**  
+  `governance/ledger/EVL_v9.0.ots` (upload when available)
+
+- **status:**  
+  Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)
 - **timestamp:** `2025-11-05T06:54:00+11:00`
 
 ---
