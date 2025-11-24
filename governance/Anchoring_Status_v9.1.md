@@ -68,3 +68,10 @@ This page tracks the anchoring state of the v9.1 registry and linked epoch artif
 - When OTS/OriginStamp/BTCStamp are live, upload the missing `.ots` files under `governance/ledger/receipts/` and flip any **status** lines from “Receipt issued — …” to “Anchored — <UTC time>”.  
 - When anchoring confirms, record **TX id(s)** where applicable.  
 - (Planned) Normalize `governance/governance/ledger/seals/` → `governance/ledger/seals/` in a dedicated follow-up commit and update paths here accordingly.
+- ---
+
+## Receipts (queue)
+
+For the live JSON receipts (one per artifact/batch), see the index:
+
+- `governance/ledger/receipts/INDEX_v1.0.md`
