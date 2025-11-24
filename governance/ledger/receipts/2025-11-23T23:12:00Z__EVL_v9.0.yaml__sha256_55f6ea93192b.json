@@ -1,0 +1,12 @@
+{
+  "artifact_path": "governance/ledger/EVL_v9.0.yaml",
+  "sha256": "55f6ea93192b3a490b5b65dfc0ff42755358d92f237134cea54437bdcdf144bbb",
+  "created_utc": "2025-11-23T23:12:00Z",
+  "source": "Aim Coherence Score demo — EVL composite pair, second hash",
+  "note": "Single-hash receipt for EVL v9.0 file hash (second of two). Queue OTS when live.",
+  "ots_status": "pending",
+  "ots_calendar_id": "ae277fd4755d3eef0c4ad21a2ef94b9c9239a37cdc9f8de1ba930fcf104b9960",
+  "ots_receipt_path": "governance/ledger/EVL_v9.0.ots",
+  "ots_tx": "",
+  "anchor_utc": ""
+}
