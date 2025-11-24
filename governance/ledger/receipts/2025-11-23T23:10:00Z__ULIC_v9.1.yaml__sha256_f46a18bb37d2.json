@@ -1,0 +1,9 @@
+{
+  "artifact_path": "governance/ledger/ULIC_v9.1.yaml",
+  "sha256": "f46a18bb37d24f035ab5fefa0b6a024d40ff98ad64acfe3710fb9ecc924477ab",
+  "queued_at_utc": "2025-11-23T23:10:00Z",
+  "ots_calendar_id": "0562721047c137584caa1fa57effdbc6f3a83fb47b5f7150faa04d4789bf2c7d",
+  "ots_receipt_path": "governance/ledger/ULIC_v9.1.ots",
+  "anchor_status": "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)",
+  "notes": "Local receipt queued while external anchoring services are intermittent."
+}
