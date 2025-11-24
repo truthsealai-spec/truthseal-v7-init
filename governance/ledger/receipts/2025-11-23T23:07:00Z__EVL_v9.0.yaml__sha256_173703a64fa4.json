@@ -1,0 +1,12 @@
+{
+  "artifact_path": "governance/ledger/EVL_v9.0.yaml",
+  "sha256": "173703a64fa4c18948f439b85c16627f6ee47a9b66c7f8008505062b0b45447d",
+  "created_utc": "2025-11-23T23:07:00Z",
+  "source": "Aim Coherence Score demo — EVL primary file hash",
+  "note": "Single-hash receipt for EVL v9.0.yaml (primary file). Queue OpenTimestamps when services are live.",
+  "ots_status": "pending",
+  "ots_calendar_id": "ae277fd4755d3eef0c4ad21a2ef94b9c9239a37cdc9f8de1ba930fcf104b9960",
+  "ots_receipt_path": "governance/ledger/EVL_v9.0.ots",
+  "ots_tx": "",
+  "anchor_utc": ""
+}
