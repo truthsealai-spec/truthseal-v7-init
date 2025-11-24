@@ -1,12 +1,12 @@
 {
-  "artifact_path": "governance/ledger/EVL_v9.0.yaml",
-  "sha256": "3517d0c0d0698feea70e28c10905351f6dd1aa9042a03d435f2d575b31b2f374",
-  "created_utc": "2025-11-23T23:33:00Z",
-  "source": "ACS demo — EVL composite pair",
-  "note": "Two-hash composite of EVL v9.0; values taken from Anchoring_Status_v9.1.md",
+  "artifact_path": "governance/ledger/ULIC_v9.1.yaml",
+  "sha256": "f46a18bb37d24f035ab5fefa0b6a024d40ff98ad64acfe3710fb9ecc924477ab",
+  "created_utc": "2025-11-23T23:10:00Z",
+  "source": "ACS demo — ULIC registry hash",
+  "note": "Registry block hash (registry_sha256). OTS receipt will be uploaded when available.",
   "ots_status": "pending",
-  "ots_calendar_id": "ae277fd4755d3eef0c4ad21a2ef94b9c9239a37cdc9f8de1ba930fcf104b9960",
-  "ots_receipt_path": "governance/ledger/EVL_v9.0.ots",
+  "ots_calendar_id": "0562721047c137584caa1fa57effdb6cf3a83fb47b5f7150faa04d4789bf2c7d",
+  "ots_receipt_path": "governance/ledger/ULIC_v9.1.ots",
   "ots_tx": "",
   "anchor_utc": ""
-}
+} 
