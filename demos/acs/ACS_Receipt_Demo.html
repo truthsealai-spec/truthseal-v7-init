@@ -1,117 +1,171 @@
-<!doctype html>
-<html lang="en"><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TruthSeal — Local ACS + Receipt Demo (Tap-Only)</title>
-<style>
-  :root { color-scheme: dark; }
-  body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;background:#0b0f14;color:#d7e1ea}
-  .wrap{max-width:920px;margin:28px auto;padding:0 14px}
-  h1{font-size:22px;margin:0 0 8px}
-  .muted{color:#8aa;margin:0 0 10px}
-  .card{background:#101820;border:1px solid #24313c;border-radius:14px;padding:16px;margin:18px 0}
-  label{display:block;font-size:13px;margin:10px 0 6px}
-  input,select,textarea{
-    width:100%;font:16px ui-monospace,Menlo,Monaco,Consolas,monospace;
-    background:#0f1a24;color:#d7e1ea;border:1px solid #2a3b48;border-radius:10px;padding:12px
-  }
-  .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  @media (max-width:640px){ .row{grid-template-columns:1fr} }
-  .kpi{font-size:46px;font-weight:800;margin:8px 0}
-  .pill{display:inline-block;border-radius:18px;padding:6px 10px;margin:6px 6px 0 0;font-weight:700;font-size:14px}
-  .ok{background:#123c23;color:#77e18a;border:1px solid #1e6b36}
-  .warn{background:#3c2a12;color:#ffd38a;border:1px solid #6b4a1e}
-  .hint{font-size:12px;color:#89a}
-  .tap{user-select:text;-webkit-user-select:text}
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TruthSeal™ — ACS Receipt Demo (v1.1)</title>
+  <style>
+    :root {
+      --bg:#0a0f14; --panel:#101822; --ink:#c9d1d9; --ink-dim:#8b949e;
+      --brand:#58A6FF; --ok:#00FF88; --warn:#ffb86c; --btn:#238636; --btn2:#2d333b;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      --sans: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+    html,body{background:var(--bg);color:var(--ink);font-family:var(--sans);margin:0}
+    header{padding:24px 16px;border-bottom:1px solid #111c28}
+    h1{margin:0;font-size:1.6rem;color:var(--brand)}
+    .wrap{max-width:980px;margin:0 auto;padding:16px}
+    .card{background:var(--panel);border:1px solid #142030;border-radius:12px;padding:16px;margin:16px 0}
+    label{display:block;font-weight:600;margin:6px 0 6px 2px}
+    textarea{width:100%;min-height:160px;border-radius:10px;border:1px solid #203045;background:#0f1722;color:var(--ink);padding:12px}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{appearance:none;border:0;border-radius:10px;padding:12px 16px;font-weight:700;color:#fff;background:var(--btn);cursor:pointer}
+    .btn.secondary{background:var(--btn2)}
+    .btn.ghost{background:transparent;border:1px solid #2a3c51;color:var(--ink)}
+    .mono{font-family:var(--mono);font-size:.9rem}
+    .kv{display:grid;grid-template-columns: 180px 1fr;gap:8px 16px}
+    .pill{display:inline-block;padding:3px 8px;border-radius:999px;background:#142030;color:var(--ink-dim);font-size:.8rem}
+    .muted{color:var(--ink-dim)}
+    pre{background:#0f1722;border:1px solid #203045;border-radius:10px;padding:12px;overflow:auto}
+    .footer{margin:24px 0 8px;color:var(--ink-dim);font-size:.85rem}
+  </style>
+</head>
 <body>
-<div class="wrap">
-  <h1>TruthSeal — Local ACS + Receipt Demo (Tap-Only)</h1>
-  <p class="muted">Runs 100% on-device (no network). JSON updates automatically as you type. Long-press inside the JSON to copy. Works in Files “Quick Look” and Safari.</p>
+  <header class="wrap">
+    <h1>TruthSeal™ — ACS Receipt Demo</h1>
+    <div class="muted">Local demo: hash input, generate a <span class="pill">non-binding</span> receipt, and test copy/download/print. Live anchoring uses your ledger.</div>
+  </header>
 
-  <div class="card">
-    <div class="row">
-      <div>
-        <label>Purity (0…1)</label>
-        <input id="purity" inputmode="decimal" value="1.0">
+  <main class="wrap">
+    <section class="card">
+      <label for="inputText">Input text (paste AI output)</label>
+      <textarea id="inputText" placeholder="Paste the AI-generated text here…"></textarea>
+      <div class="row" style="margin-top:10px">
+        <button class="btn" id="btnGen">Generate demo receipt</button>
+        <button class="btn secondary" id="btnClear">Clear</button>
       </div>
-      <div>
-        <label>Temporal drift (0…1)</label>
-        <input id="drift"  inputmode="decimal" value="0.0">
+    </section>
+
+    <section class="card">
+      <h3 style="margin:0 0 8px 0;color:#fff">Result</h3>
+      <div class="kv mono">
+        <div>input_sha256</div><div id="outHash" class="muted">—</div>
+        <div>acs_score</div><div id="outACS">—</div>
+        <div>purity_gate</div><div id="outPurity" class="muted">—</div>
+        <div>stability_gate</div><div id="outStability" class="muted">—</div>
+        <div>timestamp_utc</div><div id="outTime" class="muted">—</div>
       </div>
-    </div>
-    <div class="row">
-      <div>
-        <label>Ethical irreversibility (LEI ∈ {0,1})</label>
-        <input id="lei" inputmode="numeric" value="1">
+
+      <h4 style="margin:16px 0 6px 0">Receipt (JSON)</h4>
+      <pre id="receiptBox" class="mono">{ }</pre>
+
+      <div class="row">
+        <button class="btn ghost" id="btnCopy">Copy JSON</button>
+        <button class="btn ghost" id="btnDownload">Download .json</button>
+        <button class="btn ghost" id="btnPrint">Print / Save as PDF</button>
       </div>
-      <div>
-        <label>Secure attestation (trusted boot)</label>
-        <select id="att"><option>trusted</option><option>untrusted</option></select>
-      </div>
-    </div>
 
-    <div class="kpi" id="acs">1.0000</div>
-    <span class="pill ok" id="status">STATUS: COHERENT</span>
-    <span class="pill ok" id="attn">ATTESTATION: TRUSTED</span>
-    <p class="hint">ACS = Purity × (1 − Drift) × LEI. Attestation recorded separately.</p>
-  </div>
+      <p class="footer">
+        Ledger refs (current): ULIC v9.1 <span class="mono pill">f46a18bb…477ab</span>,
+        EVL v9.0 <span class="mono pill">173703a6…5447d</span>,
+        EVL v9.0 <span class="mono pill">55f6ea93…44bbb</span> •
+        OTS status: <span class="pill">Receipt issued — awaiting Bitcoin confirmation</span> (calendar <span class="mono">05627210…c2c7d</span>)
+      </p>
+    </section>
 
-  <div class="card">
-    <label>Receipt JSON (tap/long-press to copy)</label>
-    <textarea id="out" class="tap" rows="12" readonly>{}</textarea>
-    <p class="hint">Tip: if a download button is blocked in Quick Look, just long-press inside the JSON → Copy. To save as a file, share into Notes/Files.</p>
-  </div>
-</div>
+    <section class="card muted">
+      <strong>Disclaimer.</strong> This is a **demo** (no network calls, no external anchoring).
+      Use for UI/tests only. Production receipts must be anchored via OpenTimestamps / OriginStamp / BTCStamp and written to EVL.
+    </section>
+  </main>
 
-<script>
-(function(){
-  const $ = id => document.getElementById(id);
-  const purity=$('purity'), drift=$('drift'), lei=$('lei'), attSel=$('att');
-  const acsEl=$('acs'), statusEl=$('status'), attnEl=$('attn'), out=$('out');
+  <script>
+    // --- tiny helpers ---
+    const $ = s => document.querySelector(s);
+    const toHex = buf => [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,"0")).join("");
 
-  const clamp01 = x => {
-    const v = parseFloat(String(x).replace(',', '.'));
-    return isFinite(v) ? Math.min(1, Math.max(0, v)) : 0;
-  };
-  const oneOrZero = x => (String(x).trim()==='1' ? 1 : 0);
+    async function sha256(text){
+      const data = new TextEncoder().encode(text);
+      return toHex(await crypto.subtle.digest("SHA-256", data));
+    }
 
-  function build(){
-    const p = clamp01(purity.value);
-    const d = clamp01(drift.value);
-    const L = oneOrZero(lei.value);
-    const att = attSel.value === 'trusted';
+    // very lightweight demo "ACS": purely illustrative (do not use in prod)
+    function demoACS(text){
+      if(!text || !text.trim()) return 0.00;
+      const len = Math.min(text.length, 5000);
+      // toy heuristic: length + basic punctuation balance
+      const p = (text.match(/[.!?]/g)||[]).length;
+      const score = Math.max(0, Math.min(1, (0.6*len/2000) + 0.4*Math.min(1, p/40)));
+      return Math.round(score*100)/100;
+    }
 
-    const acs = +(p * (1 - d) * L).toFixed(4);
-    acsEl.textContent = acs.toFixed(4);
-    statusEl.textContent = acs === 1 ? 'STATUS: COHERENT' : 'STATUS: ATTENTION';
-    statusEl.className = 'pill ' + (acs === 1 ? 'ok' : 'warn');
-    attnEl.textContent = 'ATTESTATION: ' + (att ? 'TRUSTED' : 'UNTRUSTED');
-    attnEl.className = 'pill ' + (att ? 'ok' : 'warn');
+    function isoNow(){
+      return new Date().toISOString().replace(/\.\d{3}Z$/,"Z");
+    }
 
-    const now = new Date();
-    const frame = {
-      acs, purity:p, drift:d, lei:L,
-      attestation: att ? 'trusted' : 'untrusted',
-      monotonic_counter: Math.floor(performance.now()),
-      ts_utc: now.toISOString(),
-      pqc_signature: "[placeholder: Dilithium]"
-    };
-    out.value = JSON.stringify(frame, null, 2);
-  }
+    function buildReceipt({hash, acs}){
+      const purityPass   = (acs_drop => acs_drop <= 0.01)(0.00);    // baseline demo
+      const stabilityPass= (drift => drift <= 1e-3)(0.000);         // demo
+      return {
+        version: "acs-receipt-demo-v1.1",
+        created_utc: isoNow(),
+        input_sha256: hash,
+        acs_score: acs,
+        gates: {
+          purity: {threshold: 0.01, measured_drop: 0.00, pass: purityPass},
+          stability: {threshold: 1e-3, measured_drift: 0.000, pass: stabilityPass},
+          receipt: {hashed: true, anchored: false, note: "Queue OTS when live"}
+        },
+        ledger_refs: {
+          ulic_v9_1_sha256: "f46a18bb37d24f035ab5fefa0b6a024d40ff98ad64acfe3710fb9ecc924477ab",
+          evl_v9_0_sha256: [
+            "173703a64fa4c18948f439b85c16627f6ee47a9b66c7f8008505062b0b45447d",
+            "55f6ea93192b3a490b5b65dfc0ff4275358d92f237134cea54437bdcdf144bbb"
+          ],
+          qcep_anchor_status: "Anchored — OpenTimestamps"
+        },
+        ots: {
+          status: "Receipt issued — awaiting Bitcoin confirmation",
+          calendar_id: "0562721047c137584caa1fa57effdb6cf3a83fb47b5f7150faa04d4789bf2c7d",
+          receipt_path_hint: "governance/ledger/ULIC_v9.1.ots (upload when available)"
+        },
+        disclaimer: "DEMO ONLY — no external anchoring performed."
+      };
+    }
 
-  ['input','change','keyup'].forEach(ev=>{
-    purity.addEventListener(ev, build, {passive:true});
-    drift .addEventListener(ev, build, {passive:true});
-    lei   .addEventListener(ev, build, {passive:true});
-    attSel.addEventListener(ev, build, {passive:true});
-  });
+    async function generate(){
+      const text = $("#inputText").value || "";
+      const hash = await sha256(text);
+      const acs  = demoACS(text);
+      const rec  = buildReceipt({hash, acs});
+      $("#outHash").textContent = hash;
+      $("#outACS").textContent = acs.toFixed(2);
+      $("#outPurity").textContent = rec.gates.purity.pass ? "pass" : "fail";
+      $("#outStability").textContent = rec.gates.stability.pass ? "pass" : "fail";
+      $("#outTime").textContent = rec.created_utc;
+      $("#receiptBox").textContent = JSON.stringify(rec, null, 2);
+    }
 
-  // Auto-select JSON on focus for quick copy
-  out.addEventListener('focus', function(){
-    this.selectionStart = 0; this.selectionEnd = this.value.length;
-  }, {passive:true});
+    function downloadJSON(){
+      const data = $("#receiptBox").textContent || "{}";
+      const blob = new Blob([data], {type:"application/json"});
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "ACS_Receipt_Demo.json";
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
 
-  build(); // initial render
-})();
-</script>
-</body></html>
+    function copyJSON(){
+      navigator.clipboard.writeText($("#receiptBox").textContent || "{}");
+    }
+
+    // wire up
+    $("#btnGen").addEventListener("click", generate);
+    $("#btnClear").addEventListener("click", ()=>{ $("#inputText").value=""; $("#outHash").textContent="—"; $("#outACS").textContent="—"; $("#outPurity").textContent="—"; $("#outStability").textContent="—"; $("#outTime").textContent="—"; $("#receiptBox").textContent="{ }"; });
+    $("#btnCopy").addEventListener("click", copyJSON);
+    $("#btnDownload").addEventListener("click", downloadJSON);
+    $("#btnPrint").addEventListener("click", ()=>window.print());
+  </script>
+</body>
+</html>
