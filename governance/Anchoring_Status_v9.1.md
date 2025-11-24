@@ -29,7 +29,12 @@ This page tracks the anchoring state of the v9.1 registry and linked epoch artif
 - **timestamp:** `2025-11-05T06:54:00+11:00`
 
 ---
+### QCEP Epoch Manifest (v9.0)
 
+- **File:** `governance/ledger/seals/QCEP_Epoch_Manifest_v9.0.yaml`
+- **sha256:** `251463d574b1cca2ccf8e68879a12019e94b3a057638d330af273b3824514e9`
+- **ots_receipt:** `governance/ledger/receipts/2025-11-23T23:15:00Z__QCEP_Epoch_Manifest_v9.0.yaml__sha256_251463d574b1.json`
+- **status:** Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)
 ## QCEP Epoch Manifest (v9.0)
 
 - **File:** `governance/governance/ledger/seals/QCEP_Epoch_Manifest_v9.0.yaml`  
