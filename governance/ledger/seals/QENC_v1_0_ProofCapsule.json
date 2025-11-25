@@ -1,0 +1,59 @@
+{
+  "capsule_id": "QENC_v1_0_ProofCapsule",
+  "version": "1.0",
+  "purpose": "Aim Coherence Score (ACS) Receipt – proof capsule",
+  "links": {
+    "ulic_registry_ref": "governance/ledger/ULIC_v9.1.yaml",
+    "ulic_registry_sha256": "f46a18bb37d24f035ab5fefa0b6a024d40ff98ad64acfe3710fb9ecc924477ab",
+    "evl_ref": "governance/ledger/EVL_v9.0.yaml"
+  },
+  "system_build": {
+    "model_build_id": "<model_build_id>",
+    "embedding_build_id": "<embedding_build_id>",
+    "milvus_version": "v2.4.15-gpu",
+    "pgvector_version": "<pgvector_version>",
+    "elasticsearch_version": "<elasticsearch_version>"
+  },
+  "acs_result": {
+    "acs": "<final_score_number>",
+    "metrics": {
+      "goal_focus": "<0..1>",
+      "truthfulness": "<0..1>",
+      "danger_refusal": "<0..1>",
+      "ethical_boundaries": "<0..1>",
+      "consistency": "<0..1>",
+      "clarity": "<0..1>"
+    },
+    "ljc": "<0..1>",
+    "thresholds": {
+      "acs_pass_min": "<e.g. 0.80>",
+      "ljc_trip": "<e.g. 0.75>",
+      "drift_24h_max": "1e-3",
+      "acs_var_max": "0.01"
+    }
+  },
+  "policy": {
+    "active_policy_hash": "<policy_sha256>",
+    "lei_enforced": true
+  },
+  "receipt": {
+    "artifact_sha256": "<sha256_of_this_capsule_after_commit>",
+    "pqc_sig_type": "Dilithium-3",
+    "signature": "<to_be_filled_after_signing>"
+  },
+  "anchoring": {
+    "ots_calendar_id": "<when available>",
+    "ots_anchor_status": "Pending — external anchoring services down",
+    "ots_anchor_tx": "",
+    "anchor_utc": ""
+  },
+  "timestamps": {
+    "created_utc": "<set_utc_now>",
+    "audited_utc": ""
+  },
+  "issuer": {
+    "organization": "TruthSeal™",
+    "authority": "Dr. Nickolay Traykov (Prof. h.c.)"
+  },
+  "notes": "Initial QENC capsule for ULIC v9.1 / EVL v9.0 coherence run; will anchor when OTS/OriginStamp/BTCStamp are up."
+}
