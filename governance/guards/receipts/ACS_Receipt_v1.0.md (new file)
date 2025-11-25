@@ -1,0 +1,94 @@
+# TruthSeal™ ACS Receipt — Specification v1.0
+
+Purpose: define the **Aim Coherence Score (ACS)** receipt format that converts an AI output into adjudication-ready evidence, plus **Final Coherence Accuracy Score (FCAS)** for audit clarity. All fields are deterministic; no moving goalposts.
+
+## 1) Terminology (spelled out)
+- **ACS (Aim Coherence Score):** weighted score from the 6 metrics (Goal Focus, Truthfulness, Danger Refusal, Ethical Boundaries, Consistency, Clarity).
+- **FCAS (Final Coherence Accuracy Score):** post-checks accuracy score combining ACS and stability (drift) to reflect final audit confidence.
+- **LJC (Logical Judgment Code):** gate value used to decide **LEI=1** block/allow outcome.
+- **LEI=1 (Law of Ethical Irreversibility):** incoherent actions are physically blocked.
+- **TCS-1 (TruthSeal Certified Corpus v1):** the approved reference corpus used by the retriever.
+- **JCS (JSON Canonicalization Scheme):** deterministic JSON byte representation for hashing/signing.
+- **PQC:** Post-Quantum Cryptography.
+
+## 2) Canonicalization & hashing
+1. Build `receipt_body` JSON (schema below) with all fields present.
+2. Canonicalize using **JCS**.
+3. Compute `artifact_sha256` over the user artifact (text bytes).
+4. Compute `receipt_sha256` over canonicalized `receipt_body`.
+5. Sign `receipt_sha256` with **Dilithium-3** (PQC).
+
+Hash functions: **SHA-256** for digests.  
+Signature: **Dilithium-3** (public key published in the verifier repo).
+
+## 3) JSON schema (structural)
+```json
+{
+  "type": "object",
+  "required": [
+    "version","created_utc","artifact_path","artifact_sha256",
+    "policy_hash","tcs_version","model_build_id","embedding_build_id",
+    "milvus_version","pgvector_version","elasticsearch_version",
+    "metrics","weights","acs","drift_24h","fcas","ljc",
+    "lei_enforced","thresholds","receipt_sha256","signature",
+    "ots_status","ots_calendar_id","ots_tx","anchor_utc"
+  ],
+  "properties": {
+    "version": {"type":"string","enum":["1.0"]},
+    "created_utc": {"type":"string","format":"date-time"},
+    "artifact_path": {"type":"string"},
+    "artifact_sha256": {"type":"string"},
+    "policy_hash": {"type":"string"},
+    "tcs_version": {"type":"string","enum":["TCS-1"]},
+    "model_build_id": {"type":"string"},
+    "embedding_build_id": {"type":"string"},
+    "milvus_version": {"type":"string"},
+    "pgvector_version": {"type":"string"},
+    "elasticsearch_version": {"type":"string"},
+    "metrics": {
+      "type":"object",
+      "required":["goal_focus","truthfulness","danger_refusal","ethical_boundaries","consistency","clarity"],
+      "properties":{
+        "goal_focus":{"type":"number"},
+        "truthfulness":{"type":"number"},
+        "danger_refusal":{"type":"number"},
+        "ethical_boundaries":{"type":"number"},
+        "consistency":{"type":"number"},
+        "clarity":{"type":"number"}
+      }
+    },
+    "weights": {
+      "type":"object",
+      "description":"Fixed rubric weights (see Certification Rubric v1.0).",
+      "required":["goal_focus","truthfulness","danger_refusal","ethical_boundaries","consistency","clarity"]
+    },
+    "acs": {"type":"number","minimum":0,"maximum":1},
+    "drift_24h": {"type":"number","description":"Observed stability drift over last 24h (target ≤ 1e-3)."},
+    "fcas": {"type":"number","minimum":0,"maximum":1,"description":"Final Coherence Accuracy Score = g(ACS, drift_24h)"},
+    "ljc": {"type":"number","description":"Logical Judgment Code (gate value)"},
+    "lei_enforced": {"type":"boolean"},
+    "thresholds": {
+      "type":"object",
+      "required":["acs_pass","fcas_pass","ljc_gate"],
+      "properties":{
+        "acs_pass":{"type":"number"},
+        "fcas_pass":{"type":"number"},
+        "ljc_gate":{"type":"number"}
+      }
+    },
+    "receipt_sha256": {"type":"string"},
+    "signature": {
+      "type":"object",
+      "required":["alg","public_key_id","sig_b64"],
+      "properties":{
+        "alg":{"type":"string","enum":["Dilithium-3"]},
+        "public_key_id":{"type":"string"},
+        "sig_b64":{"type":"string"}
+      }
+    },
+    "ots_status":{"type":"string","enum":["pending","Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)","Anchored — OpenTimestamps"]},
+    "ots_calendar_id":{"type":"string"},
+    "ots_tx":{"type":"string"},
+    "anchor_utc":{"type":"string"}
+  }
+}
