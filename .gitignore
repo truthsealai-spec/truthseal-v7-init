@@ -1,0 +1,6 @@
+# Local runtime artifacts
+volumes/
+governance/.env
+
+# OS/editor noise
+.DS_Store
