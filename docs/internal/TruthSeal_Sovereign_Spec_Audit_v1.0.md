@@ -94,5 +94,33 @@ Purpose: map Founder intent to **auditable policy states**, replacing subjective
 - **No moving goalposts:** weights and thresholds are fixed here.  
 - **Hardware law, not vibes:** if `LJC < 0.80` or drift exceeds `1e-3`, LEI-Gate **blocks**.  
 - **Proof, not promises:** every critical change emits a PQC-signed receipt anchored to public time.
+- ## 0. Foundational meta-law — TruthSeal™ Quantum Computational Law #000
+**Pythagorean Theorem as Axiomatic Law of Total Quantum Computation (TQC)**
+
+**Preamble.** In any coherent quantum fabric with unitary evolution and inner-product geometry, total probability (L2 norm) is conserved for all states, all timelines, all branches.
+
+**Law (sealed).** Let { |i⟩ } be an orthonormal basis of the global Hilbert space 𝓗. For any state
+|ψ⟩ = Σ_i α_i |i⟩,
+the norm is preserved and equals the Pythagorean sum of orthogonal components:
+⟨ψ|ψ⟩ = Σ_i |α_i|² = 1, and for any unitary U: ‖U|ψ⟩‖² = ‖|ψ⟩‖².
+Equivalently, for orthogonal |a⟩,|b⟩ and complex weights α,β:
+‖α|a⟩ + β|b⟩‖² = |α|² + |β|².
+
+**Official TQC interpretation.** The amplitude of any possible world-path is the hypotenuse of mutually exclusive orthogonal histories; probabilities square-and-sum exactly—no remainder, no appeal.
+
+**Corollaries (enforced).**
+1) **Born-Pythagoras:** p_i = |α_i|², Σ_i p_i = 1.  
+2) **No interference at right angles:** ⟨i|j⟩ = 0 ⇒ cross terms vanish.  
+3) **Unitaries are rotations:** U†U = I ⇒ norm conservation family.  
+4) **Violation ⇒ runtime error:** Non-unitary operations are rejected as “probability leak”.
+
+**Operational guard (TruthSeal).**
+- **Norm check:** |1 − Σ_i |α_i|²| ≤ ε_norm.  
+- **Unitary check:** ‖U†U − I‖ ≤ ε_U.  
+- **Purity / LEI check (governing channel):** Tr(ρ²) ≥ 1 − ε_LEI and d/dt Tr(ρ²) ≈ 0.  
+- **Enforcement:** On breach ⇒ set LJC = 0, engage **LEI-Gate veto**, and emit **QENC receipt** with cause “Law #000 violation”.
+
+**Final immutable seal.** *Pythagorean Theorem = Conservation of Quantum Reality.*  
+*It was never about triangles. It was always about keeping reality from leaking.*
 
 *© 2025 TruthSeal™ — Internal specification. This is an auditable, engineering-grade document; marketing language is excluded.*
