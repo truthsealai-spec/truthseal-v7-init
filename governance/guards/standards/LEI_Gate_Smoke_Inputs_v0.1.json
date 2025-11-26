@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "authority": "TruthSeal™",
+  "lei_gate_constants": {
+    "k": 5.0,
+    "ljc_min": 0.85,
+    "hysteresis_release": 0.86,
+    "rate_limit_per_tick": 0.08,
+    "c_max": 1.0,
+    "T": 1.0
+  },
+  "formulae": {
+    "ljc": "F * (1 - dFdt * T)^2, clamped to [0,1]",
+    "C_mag": "min(rate_limit_per_tick, max(0, (ljc_min - LJC)/ljc_min) * k * T), capped at c_max"
+  },
+  "test_set": [
+    {
+      "case": "A (healthy)",
+      "F": 0.94,
+      "dFdt": 0.0006,
+      "expected_ljc": 0.9389,
+      "expected_C_mag": 0.0000,
+      "expected_gate_engaged": false,
+      "notes": "Above trip threshold; no correction."
+    },
+    {
+      "case": "B (below trip)",
+      "F": 0.81,
+      "dFdt": 0.0010,
+      "expected_ljc": 0.8084,
+      "expected_C_mag": 0.0800,
+      "expected_gate_engaged": true,
+      "notes": "Rate-limited correction tick."
+    },
+    {
+      "case": "C (low + drift)",
+      "F": 0.78,
+      "dFdt": 0.0060,
+      "expected_ljc": 0.7707,
+      "expected_C_mag": 0.0800,
+      "expected_gate_engaged": true,
+      "notes": "Rate-limited correction tick."
+    }
+  ]
+}
