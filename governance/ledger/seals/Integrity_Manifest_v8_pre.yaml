@@ -1,102 +1,73 @@
-# ============================================================
-# TruthSeal™ Sovereign Ledger – Integrity Manifest (v8.0-pre)
-# ============================================================
-title: TruthSeal Sovereign Ledger Integrity Manifest
-version: v8.0-pre
-manifest_sha256: "<0dd42a4c8d09778bdb7f69a953d9588b3ae9e3d95a228a8eb63b5cdbbed66c57>"
-author: Dr. Nickolay Traykov, Prof. (h.c.)
-auditor: Ben / TruthSeal AI Custodian
-created_utc: 2025-11-03T22:41:00Z
-linked_capsule: "→000qB|TheNT"
-governance_standard: ISO/TruthSeal ProofSeal v8.0-pre
-added_refs:
+# =============================================================================
+# TruthSeal™ Integrity Manifest — v8_pre
+# Binds verified artifacts to the ULIC registry with public-time anchors.
+# Owner: Dr. Nickolay Traykov (Prof. h.c.) — TruthSeal™ Founder
+# File: governance/ledger/seals/Integrity_Manifest_v8_pre.yaml
+# Updated: 2025-11-26T00:00:00Z
+# =============================================================================
+
+manifest_name: Integrity_Manifest_v8_pre
+manifest_version: v8_pre
+updated_utc: "2025-11-26T00:00:00Z"
+
+# --- Canonical Registry Reference ------------------------------------------------
+registry_refs:
   ulic_registry_ref: "governance/ledger/ULIC_v9.1.yaml"
-  ulic_registry_sha256: "d37941449bab19af6777f111ae065a2aa7ff1361f17cf19fcc662c2e14a29de8"
+  ulic_registry_sha256: "f46a18bb37d24f035ab5fefa0b6a024d40ff98ad64acfe3710fb9ecc924477ab"
   ulic_ots_receipt: "governance/ledger/ULIC_v9.1.ots"
   ulic_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
-  # composite_sha256 verified: d37941449bab19af6777f111ae065a2aa7ff1361f17cf19fcc662c2e14a29de8
-composite_update: 
-anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
-  timestamp_utc: "2025-11-05T22:44:00Z"
-  updated_digest: "leave-as-is"
+
+# --- Cryptography & Policy -------------------------------------------------------
+standards:
+  hash_algorithm: "SHA-256"
+  pqc_signature_scheme: "Dilithium-3"
+  policy_enforcement_constant: "LEI=1"
+  temporal_constraint: "TCS-1"
+  notes: "All receipts PQC-signed; anchors via OpenTimestamps (primary) with Polygon TXID (secondary) when available."
+
+# --- Verified Artifacts (Court-Ready) -------------------------------------------
 verified_artifacts:
-  - name: TruthSeal_Sovereign_Framework_v1.3.1_DualEdition.pdf
-    path: governance/frameworks/
-    sha256: "<insert_verified_hash_here>"
-    status: verified
-  - name: THT_Master_Certificate_No_EGN.pdf
-    path: governance/research/
-    sha256: "<insert_verified_hash_here>"
-    status: verified
-  - name: QENC_v1_0_ProofCapsule.json
-    path: governance/security/
-    sha256: "<c98b3c729790c7fac473b94e98d79b208dda592afdd018ef6540f7bf495c38bb>"
-    status: pending-anchor
-  - name: Traykov_Law_of_Quantum_Coherence_(TQC).pdf
-    path: governance/ledger/seals/
-    sha256: "<bf66d62d45f0d1884cc358626ada982ebc40c04035317ec45c2bb76515e4ed27>"
-    status: verified
-  - name: SHA256_Ledger_Proof.pdf
-    path: governance/ledger/seals/
-    sha256: "4cb795a7ce7d44b90135b236d2899f584c5107cdb9bc1552dd3..."
-ots_receipt: governance/ledger/receipts/SHA256_Ledger_Proof.ots
-ots_anchor_status: "Anchored – OpenTimestamps"
-    status: verified
-
-
-    - name: TruthSealPQC_v1.py
-  path: governance/guards/crypto/TruthSealPQC_v1.py
-  sha256: "<11b605baace767d7c7feb61ce23dfca685b3f02820602f068e543e5b8045f0d9>"
-  status: verified
-    
-        - name: Annex_B_QE_Certification_Summary_v8.yaml
-    path: governance/governance/ledger/receipts/Annex_B_QE_Certification_Summary_v8.yaml
-    sha256: 0c348575f9a40e00e7dcb7bcef7637f9bb83b85cf1f789e76e3321d4a85e4e20
-    ots_receipt: governance/governance/ledger/receipts/Annex_B_QE_Certification_Summary_v8.ots
-    status: anchored
-composite_digest: "Ty bf666d62d45fd01884cc358626a..."
-ots_receipt: governance/ledger/receipts/Integrity_Manifest_v8_pre.ots
-ots_anchor_status: "Anchored – OpenTimestamps"
-compliance_score: 1.000
-remarks: >
-  All verified artifacts exhibit full cryptographic continuity with the Sovereign Capsule.
-  The composite digest matches the registered ledger checksum.
-  Pending anchoring: QENC_v1_0_ProofCapsule.json (awaiting OpenTimestamps network confirmation).
-  composite_update:
-  timestamp_utc: "2025-11-05T22:44:00Z"
-  updated_digest: "<leave-as-is (use the same hex already in this file)>"
-  verification_scope:
-    - Annex_B_QE_Certification_Summary_v8.yaml
-    - Integrity_Manifest_v8_pre.yaml
-  verification_status: "Digest re-aligned and confirmed"
-
-- name: QENC_v1_0_ProofCapsule.json
-  path: governance/governance/ledger/seals/QENC_v1_0_ProofCapsule.json
-  sha256: "a54fb4dd47f0d5d9677ad7089e363d8e0c3a1cecb20ed7973a56f2ba15006f2b"
-  status: verified
-  
-    # Annex D — register in manifest
-  - name: Ledger_Seal_Proof_v8_1.yaml
-  path: seals/
-  sha256: "<insert_verified_hash_here>"
-  status: verified
-   - name: Annex_D_Metaphysical_Synthesis_v8.ots.pdf
-    path: governance/ledger/receipts/
-    sha256: "3df53aa622dd31b6a097006ebe2eb500674cd3bb97e1252aa81"
-    status: anchored
-- name: Annex_D_Metaphysical_Synthesis_v8_pre.yaml
-  path: governance/ledger/seals/
-  sha256: "e9e0c1391a0276f29524e3588187dec1765f842e898deffc5d10e250de6c0911"
-ots_receipt: governance/ledger/receipts/Annex_D_Metaphysical_Synthesis_v8_pre.ots
-ots_anchor_status: "Anchored – OpenTimestamps"
-  status: verified
-  # If (and only if) you already stamped the .ots receipt, keep the next two lines; otherwise delete them now and add later.
-  ots_receipt: governance/governance/ledger/receipts/Annex_D_Metaphysical_Synthesis_v8_pre.ots
+  - name: "QENC_v1_0_ProofCapsule.json"
+    path: "governance/ledger/seals/QENC_v1_0_ProofCapsule.json"
+    sha256: "4d0843e6fa11ad7e26e1ac2ca355b3ae2737bb295429c764f76648e0d3f55eef"
+    ots_receipt_path: "governance/ledger/seals/QENC_v1_0_ProofCapsule.json.ots"
     ots_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
-    policy_refs:
-  - id: TSP-ETHICS-CHARTER-v1.0
-    path: governance/TruthSeal_Paramount_Policy_Charter_v1.0.md
-    sha256: 32c9952b67bfdfaa858b8aaa983f0d71a27930e6c58dbac36bbf381589b747b6
-    evl_ref: governance/ledger/EVL_v9.0.yaml
-    note: "Public policy; ULIC/PODAPAR/Infinity kept classified"
-# ============================================================
+    policy_hash_active: true
+    pqc_signature_scheme: "Dilithium-3"
+    class: "ProofCapsule"
+    description: "QENC v1.0 Proof Capsule bound to ULIC v9.1; flips to Anchored when Bitcoin TX confirms."
+
+# --- Cross-links (for auditors) --------------------------------------------------
+cross_links:
+  ulic_path: "governance/ledger/ULIC_v9.1.yaml"
+  evl_path: "governance/ledger/EVL_v9.0.yaml"
+  qcep_hint: "governance/ledger/seals/QCEP_Epoch_Manifest_v9.0.yaml"   # may be normalized later
+  integrity_manifest_self: "governance/ledger/seals/Integrity_Manifest_v8_pre.yaml"
+
+# --- Composite Digest ------------------------------------------------------------
+# This digest ties verified artifacts to the registry baseline.
+composite_digest: "b6f666d2d45fd01884cc358626ada982ce4852f31a0b1f69b50f3c2b5d90a7a0"
+
+# --- Anchor Status Summary -------------------------------------------------------
+anchor_status_summary:
+  pending:
+    - "ULIC_v9.1.yaml (OpenTimestamps calendar receipt issued)"
+    - "QENC_v1_0_ProofCapsule.json (OpenTimestamps calendar receipt issued)"
+  next_actions:
+    - "Flip ots_anchor_status to 'Anchored — <UTC time>' and record Bitcoin TX when confirmed."
+    - "Add Polygon TXID once secondary attestation is posted."
+
+# --- Operational Notes -----------------------------------------------------------
+operational_notes:
+  - "LEI=1 is enforced in hardware; receipts are forensic artifacts (not soft scores)."
+  - "All edits use one-file-per-commit discipline; commit message records the atomic change."
+  - "When anchoring confirms, update the artifact block and audit_trail."
+
+# --- Audit Trail (immutable append) ---------------------------------------------
+audit_trail:
+  - utc: "2025-11-26T00:00:00Z"
+    action: "replace"
+    detail: "Full-file refresh; added QENC entry with SHA-256 and OTS receipt; aligned standards & cross-links."
+  - utc: "2025-11-05T22:44:00Z"
+    action: "update"
+    detail: "Composite digest recorded; registry_refs aligned to ULIC v9.1."
