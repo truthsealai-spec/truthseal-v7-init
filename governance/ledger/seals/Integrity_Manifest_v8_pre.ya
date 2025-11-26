@@ -13,12 +13,13 @@ registry_refs:
 verified_artifacts:
   - name: QENC ProofCapsule v1.0
     path: governance/ledger/seals/QENC_v1_0_ProofCapsule.json
-    sha256: 4d0843e6fa11ad7e26e1ac2ca355b3ae2737bb295429c764f76648e0d3f55eef
+    sha256: "<PASTE_THE_EXACT_64-HEX_SHA256_OF_QENC_JSON_HERE>"
     pqc_sig_type: Dilithium-3
-    ots_anchor_status: "Pending — external anchoring services offline"
-    ots_calendar_id: ""
-    ots_tx: ""
-    anchor_utc: ""
+    ots_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
+    ots_receipt_path: governance/ledger/seals/QENC_v1_0_ProofCapsule.json.ots
+    ots_calendar_id: ""      # optional; fill if you extract it from the .ots
+    ots_tx: ""               # fill when Bitcoin anchor confirms
+    anchor_utc: ""           # fill when Bitcoin anchor confirms
 
 composite_digest: UNKNOWN  # recompute after all artifact hashes are fixed
 composite_update:
