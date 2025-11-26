@@ -1,0 +1,30 @@
+# TruthSeal™ Integrity Manifest (v8_pre)
+version: v8_pre
+updated_utc: "<set_utc_now>"
+purpose: >
+  Record the composite integrity state for ULIC v9.1; list verified artifacts,
+  their hashes, and current anchoring status.
+
+registry_refs:
+  ulic_registry_ref: governance/ledger/ULIC_v9.1.yaml
+  ulic_registry_sha256: f46a18bb37d24f035ab5fefa0b6a024d40ff98ad64acfe3710fb9ecc924477ab
+  evl_ref: governance/ledger/EVL_v9.0.yaml
+
+verified_artifacts:
+  - name: QENC ProofCapsule v1.0
+    path: governance/ledger/seals/QENC_v1_0_ProofCapsule.json
+    sha256: 4d0843e6fa11ad7e26e1ac2ca355b3ae2737bb295429c764f76648e0d3f55eef
+    pqc_sig_type: Dilithium-3
+    ots_anchor_status: "Pending — external anchoring services offline"
+    ots_calendar_id: ""
+    ots_tx: ""
+    anchor_utc: ""
+
+composite_digest: UNKNOWN  # recompute after all artifact hashes are fixed
+composite_update:
+  timestamp_utc: ""
+  method: "sha256(hex(join(sorted(verified_artifacts.sha256))))"
+
+notes:
+  - When OTS/OriginStamp/BTCStamp are up, anchor QENC and fill calendar/tx/utc.
+  - After anchoring, recompute composite_digest and set composite_update.timestamp_utc.
