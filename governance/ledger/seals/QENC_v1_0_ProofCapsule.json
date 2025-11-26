@@ -61,8 +61,9 @@
 # QENC ProofCapsule (v1.0)
 verified_artifacts:
   - name: "QENC_v1_0_ProofCapsule.json"
-    path: "governance/ledger/receipts/QENC_v1_0_ProofCapsule.json"
-    sha256: "4d0843e6fa11ad7e26e1ac2ca355b3ae2737bb295429c764f76648e0d3f55eef"
-    ots_receipt_path: "governance/ledger/receipts/QENC_v1_0_ProofCapsule.json.ots"
+    path: "governance/ledger/seals/QENC_v1_0_ProofCapsule.json"
+    sha256: "<4d0843e6fa11ad7e26e1ac2ca355b3ae2737bb295429c764f76648e0
+d3f55eef>"
+    ots_receipt_path: "governance/ledger/seals/QENC_v1_0_ProofCapsule.json.ots"
     ots_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
 
