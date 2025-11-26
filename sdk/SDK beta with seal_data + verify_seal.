@@ -1,0 +1,35 @@
+export async function sealData(record: unknown): Promise<Certificate> {
+  const canon = jcsCanonicalize(record);
+  const hash = sha256Hex(canon);
+  const acs = await computeACS(record);   // call nemo-retriever
+  const ljc = await computeLJC(record);   // GPU-backed service
+  const cert: Certificate = {
+    certificate_id: ulid(),
+    artifact_sha256: hash,
+    policy_hash: env.ACTIVE_POLICY_SHA256 ?? "",
+    model_build_id: env.MODEL_BUILD_ID ?? "",
+    embedding_build_id: env.EMBEDDING_BUILD_ID ?? "",
+    milvus_version: "v2.4.15-gpu",
+    pgvector_version: "pg16/pgvector",
+    acs,
+    ljc,
+    thresholds: { ljc_min: 0.85 },
+    pqc_sig_type: "Dilithium-3 (placeholder)",
+    sig: pqcPlaceholderSign(hash),
+    ots_calendar_id: await enqueueOTS(hash),
+    ots_tx: null,
+    anchor_utc: null,
+  };
+  await storeCertificate(cert);
+  await logChainOfCustody(hash, cert);
+  return cert;
+}
+
+export async function verifySeal(certificate_id: string): Promise<VerifyResult> {
+  const cert = await fetchCertificate(certificate_id);
+  if (!cert) return { status: "NOT VERIFIED", hash_ok: false, anchor_ok: false };
+  const hash_ok = await hashExistsInManifest(cert.artifact_sha256);
+  const anchor_ok = await checkOTSorPolygon(cert);
+  const verdict = hash_ok && cert.ljc >= cert.thresholds.ljc_min;
+  return { status: verdict && anchor_ok ? "VERIFIED" : "NOT VERIFIED", hash_ok, anchor_ok, acs: cert.acs, ljc: cert.ljc };
+}
