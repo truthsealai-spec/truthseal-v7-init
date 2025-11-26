@@ -10,16 +10,13 @@ registry_refs:
   ulic_registry_sha256: f46a18bb37d24f035ab5fefa0b6a024d40ff98ad64acfe3710fb9ecc924477ab
   evl_ref: governance/ledger/EVL_v9.0.yaml
 
+# QENC ProofCapsule (v1.0)
 verified_artifacts:
-  - name: QENC ProofCapsule v1.0
-    path: governance/ledger/seals/QENC_v1_0_ProofCapsule.json
-    sha256: "<PASTE_THE_EXACT_64-HEX_SHA256_OF_QENC_JSON_HERE>"
-    pqc_sig_type: Dilithium-3
+  - name: "QENC_v1_0_ProofCapsule.json"
+    path: "governance/ledger/seals/QENC_v1_0_ProofCapsule.json"
+    sha256: "4d0843e6fa11ad7e26e1ac2ca355b3ae2737bb295429c764f76648e0d3f55eef"
+    ots_receipt_path: "governance/ledger/seals/QENC_v1_0_ProofCapsule.json.ots"
     ots_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
-    ots_receipt_path: governance/ledger/seals/QENC_v1_0_ProofCapsule.json.ots
-    ots_calendar_id: ""      # optional; fill if you extract it from the .ots
-    ots_tx: ""               # fill when Bitcoin anchor confirms
-    anchor_utc: ""           # fill when Bitcoin anchor confirms
 
 composite_digest: UNKNOWN  # recompute after all artifact hashes are fixed
 composite_update:
