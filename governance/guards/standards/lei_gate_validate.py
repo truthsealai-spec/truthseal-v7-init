@@ -1,3 +1,9 @@
+# TruthSeal™ — Sovereign Author Header v1.0
+# Authority: Dr. Nickolay Traykov (Prof. h.c.)
+# Organization: TruthSeal™
+# File: governance/guards/standards/lei_gate_validate.py
+# Purpose: LEI-Gate validation harness (CPU reference)
+# Timestamp_utc: <set_utc_now>
 #!/usr/bin/env python3
 # TruthSeal™ LEI-Gate — validation harness (CPU ref + optional GPU comparison)
 # Usage:
