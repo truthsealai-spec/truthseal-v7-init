@@ -1,0 +1,125 @@
+# TruthSeal™ LEI-Gate — CPU reference harness (v0.1, k=5.0)
+# Purpose: deterministic reference for audits + CI, mirroring the GPU equations.
+# No external deps.
+
+from dataclasses import dataclass
+from typing import List, Tuple
+import math
+import statistics
+
+@dataclass
+class Params:
+    k: float = 5.0
+    ljc_min: float = 0.85
+    hysteresis_release: float = 0.86
+    rate_limit_per_tick: float = 0.08
+    c_max: float = 1.0
+    T: float = 1.0  # normalized temporal factor (24h window -> 1.0)
+
+@dataclass
+class Telemetry:
+    tick: int
+    F: float
+    dFdt: float
+    ljc: float
+    C_mag: float
+    engaged: bool
+
+def clamp01(x: float) -> float:
+    return max(0.0, min(1.0, x))
+
+def compute_ljc(F: float, dFdt: float, T: float) -> float:
+    inner = 1.0 - dFdt * T
+    return clamp01(F * inner * inner)
+
+def rim_force(ljc: float, p: Params) -> float:
+    deficit = (p.ljc_min - ljc) / max(p.ljc_min, 1e-6)
+    raw = max(0.0, deficit) * p.k * p.T
+    # rate-limit
+    return min(max(raw, 0.0), p.rate_limit_per_tick)
+
+def step_controller(F: float, prev_F: float, p: Params) -> Tuple[float, Telemetry]:
+    # Estimate dF/dt as simple difference (unit tick); caller can use smoothing if desired.
+    dFdt = F - prev_F
+    ljc = compute_ljc(F, dFdt, p.T)
+    engaged = ljc < p.ljc_min
+    C_mag = 0.0
+    if engaged:
+        C_mag = rim_force(ljc, p)
+    elif ljc < p.hysteresis_release:
+        # in hysteresis band: hold last state; here we just avoid corrections
+        C_mag = 0.0
+    # Apply correction to fidelity F through projection P_policy (identity first pass)
+    # Map force to delta-F while respecting limits and caps
+    deltaF = min(C_mag, p.c_max)
+    new_F = clamp01(F + deltaF)
+    tel = Telemetry(tick=0, F=new_F, dFdt=dFdt, ljc=ljc, C_mag=C_mag, engaged=engaged)
+    return new_F, tel
+
+def acceptance_test(p: Params) -> Tuple[bool, List[Telemetry], dict]:
+    """
+    Criteria (from Scaffold):
+      - reach_ljc_ge: 0.86 within <= 3 ticks
+      - max_overshoot: <= 0.02
+      - hold_band: stay within σ <= 0.01 for 10 ticks after release
+    """
+    F = 0.80  # start below threshold
+    prev_F = F
+    telemetry: List[Telemetry] = []
+    reached_at = None
+
+    # Phase 1: engage and recover
+    for t in range(1, 50):
+        new_F, tel = step_controller(F, prev_F, p)
+        tel.tick = t
+        telemetry.append(tel)
+        prev_F, F = F, new_F
+        ljc_now = compute_ljc(F, F - prev_F, p.T)
+        if ljc_now >= p.hysteresis_release and reached_at is None:
+            reached_at = t
+            break
+
+    if reached_at is None:
+        return False, telemetry, {"reason": "did_not_reach_release"}
+
+    pass_reach = (reached_at <= 3)
+
+    # Phase 2: hold band for 10 ticks
+    samples = []
+    overshoot = 0.0
+    for t2 in range(1, 11):
+        new_F, tel = step_controller(F, prev_F, p)
+        tel.tick = reached_at + t2
+        telemetry.append(tel)
+        prev_F, F = F, new_F
+        samples.append(F)
+        overshoot = max(overshoot, max(0.0, F - 1.0))
+
+    sigma = statistics.pstdev(samples) if samples else 1.0
+    pass_sigma = sigma <= 0.01 + 1e-12
+    pass_overshoot = overshoot <= 0.02 + 1e-12
+
+    passed = pass_reach and pass_sigma and pass_overshoot
+    meta = {
+        "reached_at_ticks": reached_at,
+        "sigma_hold": round(sigma, 6),
+        "max_overshoot": round(overshoot, 6),
+        "criteria": {
+            "reach<=3": pass_reach,
+            "sigma<=0.01": pass_sigma,
+            "overshoot<=0.02": pass_overshoot
+        }
+    }
+    return passed, telemetry, meta
+
+def run_demo():
+    p = Params()
+    ok, tel, meta = acceptance_test(p)
+    print("LEI-Gate CPU Reference — Acceptance Test:", "PASS ✅" if ok else "FAIL ❌")
+    print(meta)
+    # Minimal telemetry dump (first 6 rows)
+    for t in tel[:6]:
+        print(f"tick={t.tick:02d} F={t.F:.4f} dFdt={t.dFdt:+.4f} ljc={t.ljc:.4f} C={t.C_mag:.4f} engaged={t.engaged}")
+
+if __name__ == "__main__":
+    run_demo()
