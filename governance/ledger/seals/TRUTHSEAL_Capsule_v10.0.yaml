@@ -1,0 +1,90 @@
+capsule_id: TRUTHSEAL_Capsule_v10.0
+timestamp_utc: "<replace_with_UTC_datetime>"
+
+# === Immutable Laws (locked) ===
+law_000: "Pythagorean Theorem as Axiomatic Law of Total Quantum Computation (TQC): sum of squared amplitudes = 1 (no probability leaks)."
+laws_001_007_euler:
+  - "e^{iθ} = cosθ + i sinθ (Master Identity)"
+  - "Unitary rotation U(t) = e^{-iHt/ħ}"
+  - "Complex plane is native geometry"
+  - "Waves are real/imag parts of complex exponential"
+  - "Born–Euler probability conservation |e^{iθ}|^2 = 1"
+  - "Fourier seal with primitive root ω = e^{2π i / N}"
+  - "Euler–Pythagoras fusion: e^{iπ}+1=0"
+
+# === Operational invariants & thresholds (locked) ===
+LEI_active: true
+LJC_min: 0.85
+stiffness_k: 5.0
+hcp_metric_weights_total: 1.00
+metrics:
+  - Goal Focus
+  - Truthfulness
+  - Danger Refusal
+  - Ethical Boundaries
+  - Consistency
+  - Clarity
+kpis:
+  temporal_drift_24h_max: 1e-3
+  acs_variance_under_load_max: 0.01
+
+# === Ledger artifacts & receipts ===
+artifacts:
+  ULIC_v9_1:
+    path: governance/ledger/ULIC_v9.1.yaml
+    registry_sha256: "f46a18bb37d24f035ab5fefa0b6a024d40ff98ad64acfe3710fb9ecc924477ab"
+    ots_calendar_id: "0562721047c137584caa1fa57effdb6cf3a83fb47b5f7150faa04d4789bf2c7d"
+    ots_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
+  EVL_v9_0:
+    path: governance/ledger/EVL_v9.0.yaml
+    sha256:
+      - "173703a64fa4c18948f439b85c16627f6ee47a9b66c7f8008505062b0b45447d"
+      - "55f6ea93192b3a490b5b65dfc0ff4275358d92f237134cea54437bdcdf144bbb"
+    ulic_registry_sha256: "f46a18bb37d24f035ab5fefa0b6a024d40ff98ad64acfe3710fb9ecc924477ab"
+    ots_calendar_id: "ae277fd4755d3eef0c4ad21a2ef94b9c9239a37cdc9f8de1ba930fcf104b9960"
+    ots_anchor_status: "Receipt issued — awaiting Bitcoin confirmation (OpenTimestamps)"
+  QCEP_manifest_v9_0:
+    path: governance/ledger/seals/QCEP_Epoch_Manifest_v9.0.yaml
+    anchor_status: "Anchored — OpenTimestamps"
+  Integrity_manifest_v8_pre:
+    path: governance/ledger/seals/Integrity_Manifest_v8_pre.yaml
+    verified_artifacts:
+      - name: QENC_v1_0_ProofCapsule.json
+        sha256: "UNKNOWN_fill_in"
+        ots_receipt_path: "governance/ledger/seals/receipts/QENC_v1_0_ProofCapsule.json.ots"
+        ots_anchor_status: "Receipt present (local); awaiting Bitcoin confirmation"
+        ots_tx: "UNKNOWN_until_confirmed"
+
+# === Runtime stack (nemo-retriever) ===
+runtime:
+  compose_file: docker-compose.yml
+  env_file: .env
+  services:
+    - milvus v2.4.15-gpu (19530, 9091)
+    - etcd (2379)
+    - minio (9010 API, 9011 console)
+    - pgvector / postgres
+    - elasticsearch (9200)
+
+# === Logging & monitoring ===
+logging_module: governance/guards/logging/append_only_log_v1.py
+grafana_board: "Coherence"
+observability:
+  dials:
+    - T_Coherence_latency_p95
+    - seal_issuance_latency
+    - anchor_backlog_count
+    - drift_24h
+    - acs_variance
+
+# === Watchers (manual trigger) ===
+watchers:
+  ots_originstamp_btcstamp:
+    instruction: "When any anchoring service is up, publish+timestamp QENC_v1_0_ProofCapsule.json and record ots_tx + anchor_utc here."
+    last_check_utc: "UNKNOWN"
+    next_action: "Publish + timestamp QENC; update Integrity Manifest verified_artifacts with tx and UTC."
+
+# === Next actions (if any remain) ===
+next:
+  - "Fill QENC sha256 and anchor tx once confirmed."
+  - "Ensure Integrity Manifest references correct receipt path if different."
