@@ -17,6 +17,9 @@ with emerging AI and operational-risk regulations.
 
 **Purpose**  
 Vendor-neutral, audit-ready framing for supervisors to evaluate **hardware-attested integrity** and adopt **ACS** as a fiduciary disclosure via a 120-day pilot.
+This brief is backed by the internal TS-A1 Hardware Law v1.0, which defines
+the minimum non-negotiable rules that the governance core must enforce in
+silicon.
 
 ---
 
