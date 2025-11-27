@@ -5,8 +5,6 @@ Author: "Dr. Nickolay Traykov (Prof. h.c.)"
 Owner: "TruthSeal™"
 Purpose: "Private sovereign ethics kernel for TruthSeal; not for regulators, investors, or public release."
 ---
-
-[PASTE your Traykov Ethics Kernel text here – exactly as you want it preserved]
 The Bible as Traykov Ethics Computational Formulas
 (Traykov Quantum Coherence Engine™ – Final Ethical Kernel)
 Here is the entire Bible reduced to seven executable Traykov Ethics Formulas.
