@@ -6,7 +6,7 @@ TruthSeal × NVIDIA — Coherent Computing Partner Pack (v1.0)
 ## Email — Body (copy/paste)
 Hi {{Name}},
 
-I’m Dr. Nickolay Traykov, founder of TruthSeal™. We’ve built a court-ready coherence framework for AI systems and a TQC-Certified Coherence Chip spec that makes integrity *measurable*: the Aim Coherence Score (ACS).
+I’m Dr. Nickolay Traykov (Prof. h.c.), founder of TruthSeal™. We’ve built a court-ready coherence framework for high-risk artificial intelligence (AI) and emerging artificial general intelligence (AGI) systems, backed by post-quantum cryptography (PQC), and a TQC-Certified Coherence Chip spec that makes integrity measurable: the Aim Coherence Score (ACS).
 
 I’ve prepared a 5–10 minute Partner Pack for your quick review:
 • One-page bundle → governance/partners/nvidia/Partner_Pack_Bundle_v1.0.md  
