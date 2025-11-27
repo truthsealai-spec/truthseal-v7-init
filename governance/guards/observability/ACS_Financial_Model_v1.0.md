@@ -1,6 +1,6 @@
 # 📊 ACS Financial Model v1.0
-**File:** governance/guards/observability/ACS_Financial_Model_v1.0.md  
-**Purpose:** Quantify the financial value of guaranteed coherence and define pricing, telemetry, and ROI mechanics for TruthSeal™.
+**File:** 
+The Aim Coherence Score (ACS) is a quantitative integrity instrument for high-risk artificial intelligence (AI) and emerging artificial general intelligence (AGI) systems. ACS ties model behavior to verifiable evidence, hardware-enforced receipts, and post-quantum cryptography (PQC), so vendors, boards, and supervisors can treat integrity as a measurable constant, not a marketing claim.
 
 ---
 
