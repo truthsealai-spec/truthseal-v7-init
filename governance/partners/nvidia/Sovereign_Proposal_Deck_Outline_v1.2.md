@@ -6,6 +6,11 @@
 **Framing:** Physics-level invariants, stage-gated execution, receipts.
 
 ---
+### Slide X – TS-A1 Coherence Core
+
+- TS-A1 sits alongside GPUs as a governance processing core that enforces receipts and coherence checks in hardware.
+- Every high-risk AI run emits a cryptographic receipt (inputs, model, policy, outcome) for audit and real-time veto.
+- Vendors ship TS-A1 to meet upcoming AI safety and accountability mandates without sacrificing performance.
 
 ## SLIDE 0 — 20-SECOND GLOSSARY (thin footer ribbon across slides 1–8)
 - **TQC** — Traykov Law of Quantum Coherence: physics-level enforcement of coherence.  
