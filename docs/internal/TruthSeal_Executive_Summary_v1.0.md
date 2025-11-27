@@ -7,6 +7,11 @@ Export Control: Pre-patent concepts; external circulation prohibited
 # TruthSeal™ Executive Summary — INTERNAL (v1.0)
 ## Introduction  Why TruthSeal™ exists
 TruthSeal™ exists to make truth and accountability technically unavoidable in advanced computing systems. We design hardware and software that bind every critical decision to verifiable evidence and cryptographic receipts, so incoherent or harmful actions cannot quietly pass. At its core, TruthSeal treats human life, dignity, and reality itself as non-negotiable invariants, never to be traded for speed or scale.
+Internally, TruthSeal™ is anchored by the AEGIS TS-A1 Hardware Law v1.0, which
+defines the minimum non-negotiable rules that any governance processing core
+must enforce in silicon: every high-risk run must emit a verifiable receipt,
+the system must expose a real-time veto lane, and all receipts must be
+checkable against the Integrity Manifest and external timestamping.
 
 ## 0) One-page overview (plain language)
 TruthSeal™ is a sovereignty-grade integrity system that makes digital decisions **structurally coherent by design**. We do this by enforcing three simple, testable conditions **in hardware**:
