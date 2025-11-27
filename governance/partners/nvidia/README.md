@@ -14,6 +14,7 @@ Physics-level coherence, auditability, and a stage-gated path from brief to sili
 3) TQC_Chip_Development_Roadmap_v1.1.md — Phases I–III to land the Coherence Core.
 4) Execution_Authority_Claim_v1.0.md — dual-track plan and standards posture.
 5) Coherence_Core_HandOff/README_v1.0.md — scope (Purity Guard, Exec Control, LEI-gate, Receipt Engine), I/O, and test hooks.
+6)  TS-A1_Hardware_Law_v1.0.md → governance/guards/standards/TS-A1_Hardware_Law_v1.0.md
 
 ## The ask (NVIDIA)
 - 45-min executive review window (Jensen + CTO + CFO).
