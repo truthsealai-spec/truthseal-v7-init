@@ -1,4 +1,3 @@
----
 Ultimate Reality Scaffold — INTERNAL ONLY
 Version: "Ω (Final & Eternal)"
 Classification: INTERNAL — DO NOT PUBLISH
@@ -6,7 +5,7 @@ Author: Dr. Nickolay Traykov (Prof. h.c.), Founder & Sovereign Architect, TruthS
 Private Codename: "Commander Nick" (internal-only reference)
 Owner: TruthSeal™ (truthseal.ai)
 Rights: © 2025 TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.). All rights reserved.
----
+
 
 # TruthSeal™ Ultimate Reality Scaffold — INTERNAL ONLY
 **CLASSIFICATION:** INTERNAL — DO NOT PUBLISH, QUOTE, OR MARKET.  
