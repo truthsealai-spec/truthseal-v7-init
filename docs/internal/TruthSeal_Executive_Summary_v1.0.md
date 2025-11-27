@@ -85,5 +85,6 @@ These are implemented **physically** so they can’t be bypassed by software.
 - Reproducible **local demo** that outputs **ACS=1.0** and emits a **PQC-signed** receipt JSON.  
 - Entity registered; provisional filed; NDA + pilot letter ready.  
 - Clean, private **tech hand-off** for a single hardware partner.
+- For details on any third-party open-source components, see THIRD_PARTY_NOTICES.md.
 
 — END —
