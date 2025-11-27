@@ -1,3 +1,12 @@
+## Why TruthSeal™ exists (for regulators and supervisors)
+
+TruthSeal™ exists to make high-risk automated decisions traceable, auditable,
+and stoppable in real time. We attach cryptographic receipts and integrity
+checks to every critical decision, creating a tamper-evident chain from input
+to outcome that supervisors and auditors can independently review. By enforcing
+coherence and non-repudiation in hardware and software, TruthSeal reduces model
+opacity, supports enforceable accountability, and helps institutions comply
+with emerging AI and operational-risk regulations.
 # FSB/IMF Regulatory Brief — Converting Unpriced Tail-Risk into Structural Certainty (v1.2, Private)
 
 **Purpose**  
