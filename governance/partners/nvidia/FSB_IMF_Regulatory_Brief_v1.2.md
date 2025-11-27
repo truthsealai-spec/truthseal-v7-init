@@ -7,6 +7,12 @@ to outcome that supervisors and auditors can independently review. By enforcing
 coherence and non-repudiation in hardware and software, TruthSeal reduces model
 opacity, supports enforceable accountability, and helps institutions comply
 with emerging AI and operational-risk regulations.
+
+### What supervisors actually get
+- A tamper-evident receipt for every high-risk automated decision (who, what, when, under which policy).
+- A real-time veto lane: hardware-backed signals that can pause or block incoherent or non-compliant runs.
+- An audit-ready trail that maps model behavior to accountable humans and institutions, not just to “the system”.
+- 
 # FSB/IMF Regulatory Brief — Converting Unpriced Tail-Risk into Structural Certainty (v1.2, Private)
 
 **Purpose**  
