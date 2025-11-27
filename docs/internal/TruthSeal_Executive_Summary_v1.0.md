@@ -5,8 +5,8 @@ Export Control: Pre-patent concepts; external circulation prohibited
 === END CLASSIFICATION HEADER ===
 
 # TruthSeal™ Executive Summary — INTERNAL 
-(v1.0)
-TruthSeal™ is an integrity and governance layer for high-risk AI and emerging AGI-class systems, secured with post-quantum cryptography (PQC).
+(v1.0) TruthSeal™ is an integrity and governance layer for high-risk artificial intelligence (AI) and emerging artificial general intelligence (AGI) systems, secured with post-quantum cryptography (PQC). Internally, orchestration is handled by DEVORA™ — TruthSeal’s sovereign command center for governed AI/AGI workloads (see docs/internal/DEVORA_Definition_v1.0.md for the canonical definition).
+
 ## Introduction  Why TruthSeal™ exists
 TruthSeal™ exists to make truth and accountability technically unavoidable in advanced computing systems. We design hardware and software that bind every critical decision to verifiable evidence and cryptographic receipts, so incoherent or harmful actions cannot quietly pass. At its core, TruthSeal treats human life, dignity, and reality itself as non-negotiable invariants, never to be traded for speed or scale.
 Internally, TruthSeal™ is anchored by the AEGIS TS-A1 Hardware Law v1.0, which
