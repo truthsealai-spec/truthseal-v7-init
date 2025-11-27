@@ -1,5 +1,5 @@
 ## Why TruthSeal™ exists (for regulators and supervisors)
-
+TruthSeal™ is an integrity and governance layer for high-risk AI and emerging AGI-class systems, secured with post-quantum cryptography (PQC).
 TruthSeal™ exists to make high-risk automated decisions traceable, auditable,
 and stoppable in real time. We attach cryptographic receipts and integrity
 checks to every critical decision, creating a tamper-evident chain from input
