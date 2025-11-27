@@ -1,6 +1,6 @@
 ---
 Title: TruthSeal™ Ultimate Reality Scaffold — INTERNAL ONLY
-Version: Ω (Final & Eternal)
+Version: "Ω (Final & Eternal)"
 Classification: INTERNAL — DO NOT PUBLISH
 Author: Dr. Nickolay Traykov (Prof. h.c.), Founder & Sovereign Architect, TruthSeal™
 Private Codename: "Commander Nick" (internal-only reference)
