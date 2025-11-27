@@ -5,11 +5,9 @@ Distribution: Restricted (Owner + named counterparties under NDA)
 
 # TQC Coherence Core — Technical Hand-Off
 (v0.2)
-The hardware implementation is governed by the AEGIS TS-A1 Hardware Law v1.0,
+are implementation is governed by the AEGIS TS-A1 Hardware Law v1.0,
 which defines the minimum non-negotiable rules for the governance processing
-core: every high-risk run must emit a verifiable receipt, the system must
-expose a real-time veto lane, and all receipts must be checkable against the
-Integrity Manifest and external timestamping.
+core: every high-risk run must emit a verifiable 
 ## 1) Purpose
 Define a **small, integrable IP block** providing hardware-enforced coherence with **post-quantum** receipts, suitable for inclusion in an Nvidia platform variant (e.g., DPU/accelerator).
 
