@@ -1,0 +1,12 @@
+# SDK Smoke Test v1.0 (TruthSeal™)
+
+Purpose: prove a developer gets the **same SHA-256** locally as the SDK returns in `artifact_sha256`, and that `verifySeal()` behaves sensibly when anchoring is pending.
+
+## Test vector (copy exactly)
+```json
+{
+  "user": "alice@example.com",
+  "amount": 123.45,
+  "currency": "AUD",
+  "timestamp_utc": "2025-01-01T00:00:00Z"
+}
