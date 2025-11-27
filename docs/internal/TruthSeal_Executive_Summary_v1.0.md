@@ -5,6 +5,8 @@ Export Control: Pre-patent concepts; external circulation prohibited
 === END CLASSIFICATION HEADER ===
 
 # TruthSeal™ Executive Summary — INTERNAL (v1.0)
+## introduction Why TruthSeal™ exists
+TruthSeal™ exists to make truth and accountability technically unavoidable in advanced computing systems. We design hardware and software that bind every critical decision to verifiable evidence and cryptographic receipts, so incoherent or harmful actions cannot quietly pass. At its core, TruthSeal treats human life, dignity, and reality itself as non-negotiable invariants, never to be traded for speed or scale.
 
 ## 0) One-page overview (plain language)
 TruthSeal™ is a sovereignty-grade integrity system that makes digital decisions **structurally coherent by design**. We do this by enforcing three simple, testable conditions **in hardware**:
