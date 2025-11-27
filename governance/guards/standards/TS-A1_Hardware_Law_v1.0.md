@@ -4,6 +4,7 @@
 **Author:** Dr. Nickolay Traykov (Prof. h.c.)  
 **Purpose:** Define the minimum non-negotiable safety and accountability rules
 that any TS-A1 governance processing core must enforce in silicon.
+TS-A1 governs high-risk AI / AGI workloads and enforces PQC receipts.
 
 ## 1. Scope
 
