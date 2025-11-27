@@ -1,6 +1,5 @@
 # TruthSeal™ Observability — ACS (Audit Coherence Scores)
-
-![badge](https://img.shields.io/badge/Emit%20ACS%20sample-passing-brightgreen)
+TruthSeal™ Observability provides an Audit Coherence Score (ACS) pipeline for high-risk artificial intelligence (AI) and emerging artificial general intelligence (AGI) systems. It turns raw telemetry from models, GPUs, and governance cores into a single integrity signal backed by cryptographic receipts and post-quantum cryptography (PQC).
 
 This guard computes and reports four metrics on every run:
 
