@@ -11,7 +11,7 @@ Email — Body (copy/paste)
 
 Dear {{Name}},
 
-My name is Dr. Nickolay Traykov (Prof. h.c.), founder of TruthSeal™. I am writing to share a concise regulatory brief and propose a contained 120-day pilot on hardware-attested integrity for high-risk **artificial intelligence (AI)** and emerging **advanced-general-intelligence (AGI-class)** systems, secured with **post-quantum cryptography (PQC)**.
+My name is Dr. Nickolay Traykov (Prof. h.c.), founder of TruthSeal™. I am writing to share a concise regulatory brief and propose a contained 120-day pilot on hardware-attested integrity for high-risk **artificial intelligence (AI)** and emerging **artificial general intelligence (AGI) systems**, secured with **post-quantum cryptography (PQC)**.
 
 TruthSeal™ is an integrity and governance layer for high-risk automated decisions in advanced computing systems. We bind those decisions to cryptographic receipts and **hardware-backed coherence checks**, so that supervisors can independently verify **who** did **what**, **under which policy**, and **with which model version** — and, if necessary, stop incoherent or non-compliant AI runs in real time.
 
