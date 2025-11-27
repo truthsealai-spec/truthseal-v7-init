@@ -3,6 +3,8 @@ TruthSeal AEGIS™ TS-A1 is a governance processing core that sits alongside
 GPUs and accelerators, enforcing cryptographic receipts and coherence checks
 in hardware so that high-risk AI workloads have a deterministic, auditable
 safety and accountability layer.
+TruthSeal™ AEGIS™ TS-A1 is a governance processing core that sits alongside GPUs and accelerators, enforcing cryptographic receipts and coherence checks in hardware for high-risk artificial intelligence (AI) and emerging artificial general intelligence (AGI) workloads, secured with post-quantum cryptography (PQC).
+
 - **DEVORA™ Coherence Gate (live demo)** → demos/devora/DEVORA_App.html  _(runs offline; open → Raw → Save to Files → tap to run)_
 
 ## What this package proves
