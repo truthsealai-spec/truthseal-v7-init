@@ -1,3 +1,13 @@
+## Why TruthSeal™ exists (for hardware & cloud vendors)
+
+TruthSeal™ exists to give hardware and cloud vendors a deterministic safety and
+accountability layer for advanced AI workloads. We bind every critical model
+decision to verifiable evidence, cryptographic receipts, and hardware-enforced
+coherence checks, so incoherent or harmful actions cannot silently pass through
+the stack. TruthSeal turns GPUs and accelerators into governance-aware devices
+that are ready for upcoming regulatory, fiduciary, and safety requirements
+without slowing performance-critical workloads.
+
 # TRUTHSEAL™ × NVIDIA — Executive Summary (TQC-Certified Coherence Chip)
 
 **Purpose**  
