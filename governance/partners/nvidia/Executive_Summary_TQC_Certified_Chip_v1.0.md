@@ -48,7 +48,7 @@ TruthSeal™ contributes:
 
 - the **Traykov Coherence Score (TCS v0.1)** metric,  
 - the **DEVORA™ Command Center** for operator control, and  
-- the **Attested Coherence Seal (ACS)** receipts and governance protocols.
+- the **Aim Coherence Score  (ACS)** receipts and governance protocols.
 
 NVIDIA contributes:
 
