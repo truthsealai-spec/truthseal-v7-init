@@ -29,7 +29,7 @@ The result is simple: incoherent or harmful actions cannot silently pass through
 With TruthSeal™, GPUs and accelerators become **governance-aware devices**. Each governed workload carries:
 
 - a **Traykov Coherence Score (TCS v0.1)**, and  
-- an **Attested Coherence Seal (ACS Certificate)**
+- an ** Aim Coherence Score (ACS Certificate)**
 
 showing that it ran within defined truth, security, and policy bounds. This lets vendors satisfy upcoming regulatory, fiduciary, and safety requirements **without** sacrificing performance on critical workloads.
 
@@ -111,7 +111,7 @@ The TQC-Certified Coherence Chip concept couples TCS v0.1 to governance gates on
 	•	Hard veto on lethal or systemically risky actions when coherence falls into the unsafe band.
 	•	These actions are bound to TS-A1-style hardware or driver-level hooks, providing deterministic behavior.
 	4.	Receipt & Audit Layer
-	•	Every enforcement decision emits an Attested Coherence Seal (ACS),
+	•	Every enforcement decision emits an Aim  Coherence Score (ACS),
 anchored to external timestamping services and the TruthSeal Integrity Manifest.
 	•	This creates a court-ready audit trail for vendors and regulators.
 
@@ -139,7 +139,7 @@ This aligns with emerging demands for:
 On the customer side, the complexity collapses into three visible elements:
 	1.	Traykov Coherence Score badge
 	•	Displayed per model / deployment (e.g., “TCS v0.1 = 0.87 — AGI-safe”).
-	2.	Attested Coherence Seal (ACS Certificate)
+	2.	Aim Coherance Score  (ACS Certificate)
 	•	Human-readable summary (PASS/FAIL + Integrity Statement)
 	•	Machine-readable JSON for dashboards, billing, and audit logs.
 	3.	Operational Integrity Status block
