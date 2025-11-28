@@ -131,16 +131,26 @@
       return (
         <>
           <div className="card" style={{marginBottom:16}}>
-            <h1>DEVORA™ Command Center</h1>
-                    <p className="muted">
-      DEVORA™ is a local coherence gate controller for high-risk artificial intelligence (AI) and emerging artificial general intelligence (AGI) systems. This build runs in offline simulation mode to show how a hardware-style governance core can block incoherent or non-compliant actions and emit cryptographic receipts for every decision, with receipts secured by post-quantum cryptography (PQC) and checked against the TruthSeal™ Integrity Manifest.
-    </p>
-            <div className="hr"></div>
-            <div className="small mono">
-              ACS = Tr(ρ²) × (1 − D<sub>t</sub>) × LEI &nbsp;&nbsp;|&nbsp;&nbsp;
-              ε-guard = {EPS}
-            </div>
-          </div>
+  <h1>DEVORA™ Command Center</h1>
+  <p className="muted">
+    DEVORA™ is a local coherence gate controller for high-risk artificial intelligence (AI) and emerging
+    artificial general intelligence (AGI) systems. It sits above the hardware law cores and the Integrity
+    Manifest as the operator’s cockpit and memory.
+  </p>
+
+  <div className="hr"></div>
+
+  <div className="small mono">
+    ACS = Tr(ρ²) × (1 − D<sub>t</sub>) × LEI &nbsp;&nbsp;&nbsp; ε-guard = {EPS}
+  </div>
+
+  <div className="small muted" style={{marginTop:8}}>
+    Traykov Coherence Score v0.1 (TCS): <strong>0.922</strong> — Тℏ-grade coherent.
+  </div>
+  <div className="small muted">
+    Governance mode: <span className="mono">Normal</span> · Decoherence protocol: <span className="mono">TCS_v0_1_Decoherence_Response</span>.
+  </div>
+</div>
 
           {/* Controls */}
           <div className="row row-3">
