@@ -1,7 +1,11 @@
 ## Why TruthSeal™ exists (for hardware & cloud vendors)
+- **TruthSeal™ exposes a Traykov Coherence Score (TCS v0.1) for every governed system — a single 0–1 metric that fuses truth benchmarks, post-quantum cryptographic strength, and long-horizon policy stability into a regulator-grade coherence band.**
+- 
+## Why TruthSeal™ exists (for hardware & cloud vendors)
 
-TruthSeal™ exists to give hardware and cloud vendors a deterministic safety and
-accountability layer for advanced AI workloads. We bind every critical model
+**TruthSeal™ exposes a Traykov Coherence Score (TCS v0.1) for every governed system — a single 0–1 metric that fuses truth benchmarks, post-quantum cryptographic strength, and long-horizon policy stability into a regulator-grade coherence band.**
+
+TruthSeal™ exists to give hardware and cloud vendors a deterministic safety and accountability layer for advanced AI workloads. ... We bind every critical model
 decision to verifiable evidence, cryptographic receipts, and hardware-enforced
 coherence checks, so incoherent or harmful actions cannot silently pass through
 the stack. TruthSeal turns GPUs and accelerators into governance-aware devices
