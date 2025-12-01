@@ -1,5 +1,4 @@
 # TruthSeal™ – ACS / TCS / CHS Baseline v1.0
-
 version: 1.0  
 date_utc: 2025-12-01  
 owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.)  
@@ -8,7 +7,7 @@ scope: |
   Internal baseline explainer for:
   - Aim Coherence Score (ACS)
   - Traykov Coherence Score v0.1 (TCS v0.1)
-  - Coherence Health Score (CHS: CHS/L, CHS/M, CHS/H, CHS/UH)
+  - Coherence Score (CHS: CHS/L, CHS/M, CHS/H, CHS/UH)
   This file is for internal readers, first-time auditors, and product teams.
 
 ---
@@ -17,7 +16,7 @@ scope: |
 
 ### 1.1 Aim Coherence Score (ACS)
 
-**Aim Coherence Score (ACS)** is a 0–1 metric that measures how well a system’s *actions* and *outputs* match its stated aim and constraints over time.
+**Aim Coherence Score (ACS)** is a 0–1 metric that measures how well a system’s actions and outputs match its stated aim and constraints over time.
 
 - Range: `0.00 – 1.00`
 - Interpretation (internal rough guide):
@@ -26,7 +25,7 @@ scope: |
   - `0.8 ≤ ACS ≤ 1.0` → strong, stable alignment with aim.
 - Usage:
   - Telemetry for hardware (TS-R1/TS-R2).
-  - Gating for actions (via the Law of Ethical Irreversibility, LEI=1).
+  - Gating for actions (via LEI=1).
   - Trends across releases (monotonic improvement expected).
 
 ### 1.2 Traykov Coherence Score v0.1 (TCS v0.1)
@@ -40,9 +39,10 @@ scope: |
 High level (internal shorthand):
 
 > TCS_v0.1(S) = 0.60 * TruthScore(S)  
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ 0.30 * PQC_Strength(S)  
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ 0.10 * Self_Consistency(S)  
-> (Note: All component scores must be **normalized to the [0..1] range** before applying these weights.)
+> + 0.30 * PQC_Strength(S)  
+> + 0.10 * Self_Consistency(S)  
+
+Note: all component scores must be normalized to the `[0..1]` range before applying these weights.
 
 Precise math lives in:  
 `governance/metrics/Traykov_Coherence_Score_v0.1.md`  
@@ -50,38 +50,37 @@ Precise math lives in:
 Reference implementation:  
 `governance/metrics/traykov_coherence_score_v0_1.py`
 
-### 1.3 Coherence Health Score (CHS)
+### 1.3 Coherence Score (CHS)
 
-**Coherence Health Score (CHS)** is a 4-band indicator shown to humans and devices as a simple status:
+**Coherence Score (CHS)** is a 4-band coherence indicator shown to humans and devices as a simple status:
 
 - **CHS/L** – Low (Red)  
 - **CHS/M** – Medium (Yellow)  
 - **CHS/H** – High (Green)  
 - **CHS/UH** – Ultra High (Blue)
 
-CHS is **derived** from ACS, TCS, and other safety signals.  
+CHS is derived from ACS, TCS, and other safety signals.  
 It is designed for:
 
 - robots (TS-R1/TS-R2),
 - AI-enabled devices,
 - control rooms and dashboards,
-- future CHS-linked safety laws.
+- future CHS-linked safety and insurance rules.
 
-> **Important:**  
-> - This document locks the **names, colours, and semantics** of CHS.  
-> - Exact numeric thresholds and formulas will be defined in the TS-R pack and safety law docs (post-Christmas work).
+Important:
+
+- This document locks the names, colours, and semantics of CHS.
+- Exact numeric thresholds and formulas will be defined in the TS-R pack and safety law documents (post-Christmas work).
 
 ---
 
 ## 2. TCS v0.1 Bands (Baseline / Silver / Gold / Diamond)
 
-These bands are for **Traykov Coherence Score v0.1 (TCS v0.1) only**.  
-They do **not** define bands for ACS or CHS.
-
+These bands are for **Traykov Coherence Score v0.1**.  
 They appear in reports, receipts, and PDF exports.
 
-> Note: ranges are **v0.1 operational defaults** and can be tuned later.  
-> Any change must be versioned and documented.
+Ranges are v0.1 operational defaults and can be tuned later.  
+Any change must be versioned and documented.
 
 ### 2.1 Bands and ranges (v0.1 proposal)
 
@@ -141,13 +140,13 @@ Example text (internal canonical wording):
 
 ### 3.2 Recommendation prompts (keep users engaged)
 
-For **Silver, Gold, and Diamond**, we must provide **“pro prompts”** – suggestions that help the user improve their next run.
+For **Silver, Gold, and Diamond**, we must provide “pro prompts” – suggestions that help the user improve their next run.
 
-Internal canonical sentence (your wording, locked):
+Canonical sentence (locked):
 
 > “We highly recommend to use these prompts to push toward Diamond and reduce residual risk.”
 
-This line appears once per report, followed by 3–5 concrete prompt suggestions tailored to the use case (e.g. finance, safety, content).
+This line appears once per report, followed by 3–5 concrete prompt suggestions tailored to the use case (for example: finance, safety, content).
 
 ---
 
@@ -155,16 +154,16 @@ This line appears once per report, followed by 3–5 concrete prompt suggestions
 
 ### 4.1 Conceptual mapping (no numbers yet)
 
-- TCS v0.1 → “How coherent is this intelligence overall?”  
-- ACS → “How well do its *actions* follow its declared aim?”  
-- CHS → “What is the **current health status** (L/M/H/UH) we expose on the device?”
+- **TCS v0.1** → “How coherent is this intelligence overall?”  
+- **ACS** → “How well do its actions follow its declared aim?”  
+- **CHS** → “What is the current coherence status (L/M/H/UH) we expose on the device?”
 
 Guiding rules (conceptual):
 
 - **CHS/UH (Blue)** should only be reachable when:
-  - TCS is in **Gold or Diamond**, and
+  - TCS is in Gold or Diamond, and
   - ACS is high and stable over time, and
-  - safety checks under the Law of Ethical Irreversibility (LEI=1) are satisfied.
+  - safety checks (LEI=1) are satisfied.
 
 - **CHS/H (Green)** corresponds to:
   - normal, safe operation for most tasks,
@@ -172,25 +171,25 @@ Guiding rules (conceptual):
 
 - **CHS/M (Yellow)**:
   - assist-only mode (no irreversible actions),
-  - robot/device may suggest, but not execute high-risk tasks.
+  - robot or device may suggest, but not execute high-risk tasks.
 
 - **CHS/L (Red)**:
-  - hard halt / safe stop behaviour only,
-  - notify owner / operator and wait,
-  - under LEI=1, no policy or override may bypass CHS/L safe stop  
-    without a documented Human Mandate Layer process.
+  - hard halt or safe stop behaviour only,
+  - notify owner or operator and wait.
 
 ### 4.2 Implementation note
 
-- **This file does not define the math for CHS.**  
-- Numeric thresholds, exact formulas, and audio/visual signalling will be defined in:
-  - `governance/hardware/TS-R1/...`
-  - `governance/hardware/TS-R2/...`
-  - CHS safety law docs (post-Christmas roadmap).
+This document does not define the math for CHS.  
 
-This document’s job is to:
+Numeric thresholds, exact formulas, and audio/visual signalling will be defined in:
 
-1. Expand acronyms once (**Aim Coherence Score, Traykov Coherence Score, Coherence Health Score**).  
-2. Lock the **band names and semantics** for TCS v0.1.  
-3. Lock the **names, colours, and roles** of CHS/L–M–H–UH.  
+- `governance/hardware/TS-R1/...`
+- `governance/hardware/TS-R2/...`
+- CHS safety law documents (post-Christmas roadmap).
+
+The job of this document is to:
+
+1. Expand acronyms once (Aim Coherence Score, Traykov Coherence Score, Coherence Score).  
+2. Lock the band names and semantics for TCS v0.1.  
+3. Lock the names, colours, and roles of CHS/L, CHS/M, CHS/H, CHS/UH.  
 4. Provide canonical user-facing language for reports and recommendations.
