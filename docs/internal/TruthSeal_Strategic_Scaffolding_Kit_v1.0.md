@@ -7,19 +7,42 @@ owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.)
 scope: |
   Master prompt pack for project managers and advanced LLMs working ONLY on TruthSeal™.
   This kit assumes:
-    - Traykov Law of Quantum Coherence (TQC),
-    - LEI = 1 (Law of Ethical Irreversibility),
-    - TruthSeal ledgers (ULIC, EVL, Integrity Manifest, QENC),
-    - hardware law cores (TS-A1, TS-R1, TS-R2),
-    - metrics (ACS, TCS v0.1, CHS bands: CHS/L, CHS/M, CHS/H, CHS/UH),
-    - THT Protocol, PODAPAR, Third Guardian AI Firewall, ASA,
-    - receipts and anchoring (ts.receipt.v1, OpenTimestamps, etc.),
-    - front-end services (Devora, dashboards, PDFs, APIs).
+    - established Traykov laws and metrics,
+    - registered TruthSeal ledgers and receipts,
+    - hardware-law cores for accelerators and robots,
+    - front-end services (e.g. Devora, dashboards, PDFs, APIs).
   This document is NOT generic AI safety; it is specific to TruthSeal™.
 
 ---
 
-## Master Prompt 1 — Mission, Coherence & Hardware Law
+## 0. Glossary (acronyms expanded once)
+
+- **TQC** — Traykov Law of Quantum Coherence  
+- **LEI = 1** — Law of Ethical Irreversibility  
+- **ULIC** — Universal Law of Infinite Coherence registry block  
+- **EVL** — Epoch Verification Ledger  
+- **ACS** — Aim Coherence Score  
+- **TCS v0.1** — Traykov Coherence Score v0.1  
+- **CHS** — Coherence Score, exposed as four bands:
+  - CHS/L — Low (Red)
+  - CHS/M — Medium (Yellow)
+  - CHS/H — High (Green)
+  - CHS/UH — Ultra High (Blue)
+- **TS-A1** — TruthSeal AEGIS hardware-law core for accelerators / GPUs  
+- **TS-R1** — TruthSeal Robotics profile for a single robot  
+- **TS-R2** — TruthSeal Robotics profile for a swarm or fleet  
+- **THT Protocol™** — TruthSeal’s hashing / timestamping and audit discipline (see THT blueprints)  
+- **PODAPAR** — TruthSeal Doctorantura sentinel protocol for guarding THT (full definition lives in PODAPAR v1.0 article)  
+- **Third Guardian AI Firewall** — TruthSeal’s defensive firewall and monitoring layer  
+- **ASA** — Autonomous Scientific Agent  
+- **QENC ProofCapsule** — cryptographic proof capsule registered in the Integrity Manifest  
+- **Devora** — TruthSeal front-end / dashboard layer for reports, receipts, and demos  
+
+All later sections may use these codes (TQC, LEI, ACS, TCS v0.1, CHS, TS-A1, TS-R1, TS-R2, etc.) without re-expanding them.
+
+---
+
+## 1. Master Prompt — Mission, Coherence & Hardware Law
 
 You are a senior project manager and architect working for **TruthSeal™**, founded by **Dr. Nickolay Traykov (Prof. h.c.)**.  
 
@@ -30,7 +53,7 @@ TruthSeal is a **sovereign coherence and hardware-law stack** for AI, AGI, and r
 - **UQE-FIC** — Quantum-Ethical Field of Infinite Coherence  
 - **TruthSeal ledgers**: ULIC, EVL, Integrity Manifest, QENC ProofCapsule  
 - **Hardware law cores**: TS-A1 (accelerators), TS-R1 (single robot), TS-R2 (swarm/fleet)  
-- **Metrics**: ACS (Aim Coherence Score), TCS v0.1, CHS bands (CHS/L, CHS/M, CHS/H, CHS/UH)  
+- **Metrics**: Aim Coherence Score (ACS), Traykov Coherence Score v0.1 (TCS v0.1), Coherence Score bands (CHS/L, CHS/M, CHS/H, CHS/UH)  
 - **Guard rails**: THT Protocol, PODAPAR, Third Guardian AI Firewall, ASA scientific agents  
 - **Receipts & anchoring**: standard schema, PQC signatures, OpenTimestamps and other anchors  
 - **Front-end services**: Devora, dashboards, PDFs, receipts, APIs.
@@ -60,7 +83,7 @@ Output:
 
 ---
 
-## Master Prompt 2 — Risk & Law Framework (TQC + LEI=1)
+## 2. Master Prompt — Risk & Law Framework (TQC + LEI = 1)
 
 **Goal:** Turn Traykov’s law work into the operating risk frame for TruthSeal.
 
@@ -75,13 +98,13 @@ Produce:
    - firewalls that do not self-adapt safely.
 2. A clear summary of the core laws:
    - TQC (Traykov Law of Quantum Coherence): what it enforces in practical deployments,
-   - LEI = 1: which classes of actions are physically blocked or forced to halt,
+   - LEI = 1 (Law of Ethical Irreversibility): which classes of actions are physically blocked or forced to halt,
    - how TCS v0.1, ACS, and CHS together make these laws measurable.
 3. A “risk → law → metric → evidence” table:
    - for each major risk, show:
-     - which law applies (TQC, LEI=1, or related constructs),
+     - which law applies (TQC, LEI = 1, or related constructs),
      - which metric(s) observe it (TCS v0.1, ACS, CHS),
-     - which artifact proves it (receipt, QENC, Integrity Manifest, ledger entry).
+     - which artifact proves it (receipt, QENC ProofCapsule, Integrity Manifest, ledger entry).
 
 Output:
 - Risk narrative,  
@@ -90,14 +113,14 @@ Output:
 
 ---
 
-## Master Prompt 3 — Ledgers, Receipts & Anchoring (ULIC / EVL / QENC)
+## 3. Master Prompt — Ledgers, Receipts & Anchoring (ULIC / EVL / QENC)
 
 **Goal:** Make the ledger and receipt machinery operational for product and engineering teams.
 
 Produce:
 
 1. A clean explainer of the TruthSeal ledger stack:
-   - ULIC (Universal Law registry block),
+   - ULIC (Universal Law of Infinite Coherence registry block),
    - EVL (Epoch Verification Ledger),
    - Integrity Manifest,
    - QENC ProofCapsule.
@@ -122,7 +145,7 @@ Output:
 
 ---
 
-## Master Prompt 4 — Hardware Law & Robotics (TS-A1, TS-R1, TS-R2, CHS)
+## 4. Master Prompt — Hardware Law & Robotics (TS-A1, TS-R1, TS-R2, CHS)
 
 **Goal:** Turn the hardware law and robotics work into concrete deliverables.
 
@@ -159,7 +182,7 @@ Output:
 
 ---
 
-## Master Prompt 5 — Firewall, ASA & Self-Defending Ecosystem
+## 5. Master Prompt — Firewall, ASA & Self-Defending Ecosystem
 
 **Goal:** Design the self-sustaining cyber-security and firewall layer for TruthSeal.
 
@@ -189,7 +212,7 @@ Output:
 
 ---
 
-## Master Prompt 6 — Products, Plans & Tiers (Free / Pro / Enterprise / Network)
+## 6. Master Prompt — Products, Plans & Tiers (Free / Pro / Enterprise / Network)
 
 **Goal:** Turn the TruthSeal stack into concrete user-facing services and tiers.
 
@@ -220,7 +243,7 @@ Output:
 
 ---
 
-## Master Prompt 7 — Final Synthesis (Operational TruthSeal Plan)
+## 7. Master Prompt — Final Synthesis (Operational TruthSeal Plan)
 
 Using the outputs from Prompts 1–6, construct an operational TruthSeal plan that:
 
