@@ -303,3 +303,38 @@ Devora must emphasise that **anchoring proves what was said and when**, not whet
 - If a user asks for something outside these bounds, Devora responds with a polite refusal plus a suggestion to use the coherence report only as **information quality feedback**.
 
 This UX baseline is **version 1.0**. Any change to structure, wording, or Anti-Bubble behaviour must be versioned here and mirrored in the relevant metrics and plans specifications.
+
+---
+
+## 7. PM & Designer Checklist (Devora / Reports)
+
+This section keeps Devora, reports, and PDFs aligned with TruthSeal doctrine.
+
+### 7.1 Product manager checklist
+
+Before shipping a new Devora flow or report template, the PM confirms:
+
+- The page is using **this Devora UX baseline v1.0** and the **TCS / ACS / CHS Baseline v1.0**; no ad-hoc wording for bands or scores.  
+- Plan-specific visibility is correct:  
+  - Free: no PDFs, no JSON receipts, Anti-Bubble panel in paragraph-only mode.  
+  - Pro: PDFs and JSON receipts enabled, Finance and Noise panels visible where content is tagged.  
+  - Enterprise / Network: full panels, exports, and anchoring options.  
+- Anti-Bubble / Finance panel is shown **only** for content explicitly tagged as financial.  
+- Every Anti-Bubble panel instance includes the **“not investment advice”** sentence.  
+- Receipts panel always references schema `ts.receipt.v1` and surfaces anchoring status (Pending / Anchored) correctly.  
+- Guardrails are enforced: Devora cannot be used for medical diagnosis, election outcome prediction, or direct trading calls.
+
+### 7.2 Designer checklist
+
+Before sign-off, the designer confirms:
+
+- The **summary stripe** (TCS % + band + ACS + CHS + recommendation line) is fully visible **above the fold on mobile**.  
+- CHS colours exactly match the canonical mapping:  
+  - CHS/L → red, CHS/M → yellow, CHS/H → green, CHS/UH → blue,  
+  and these colours are not reused for unrelated UI states.  
+- Band labels (Baseline / Silver / Gold / Diamond) and their paragraphs use the canonical text; no rephrasing in UI copy.  
+- Anti-Bubble / Finance panel uses clear, calm typographic hierarchy; Bubble-prone / Fear-biased / Disciplined labels are easy to scan but not sensational.  
+- PDFs visually mirror the web report structure (order of sections, headings, disclaimers) and remain readable when printed in black and white.  
+- All abbreviations (ACS, TCS, CHS, ND, Finance profile labels) have at least one **expanded first mention** somewhere visible in the flow.
+
+If any item fails these checklists, the PM / designer must either fix it or record an explicit deviation note linked to this file.
