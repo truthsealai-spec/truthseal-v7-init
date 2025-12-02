@@ -1,0 +1,321 @@
+# TruthSeal™ — TS-R Swarm Extensions v1.0
+
+version: 1.0  
+date_utc: 2025-12-02  
+owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.)  
+
+scope: |
+  Swarm extensions specification for TruthSeal Robotics Profile TS-R2 (swarm / fleet).
+  This document defines how multiple TruthSeal-compatible robots act together as a
+  coherent swarm under Traykov laws, metrics, and receipts. It builds on:
+    - TS-R Cherry Checklist v1.0,
+    - TS-R Failure Modes & Fallback Law v1.0,
+    - TS-R Receipt Schema v1.0,
+    - TS-R Human Mandate Layer v1.0.
+
+  Audience: engineers, auditors, partners, and regulators.
+
+---
+
+## 0. Core Concepts (acronyms expanded once)
+
+- **Aim Coherence Score (ACS)** – 0–1 metric that measures how well actions follow
+  the declared aim and safety constraints over time.
+
+- **Traykov Coherence Score v0.1 (TCS v0.1)** – 0–1 metric for overall intelligence
+  coherence (truthfulness, post-quantum security strength, long-horizon self-consistency).
+
+- **Coherence Score (CHS)** – four-band status indicator used on devices:
+  - CHS/L – Low (Red)
+  - CHS/M – Medium (Yellow)
+  - CHS/H – High (Green)
+  - CHS/UH – Ultra High (Blue)
+
+- **Traykov Law of Quantum Coherence (TQC)** – hardware-anchored law that demands
+  non-degrading coherence behaviour over time; no “free lunch” in risk.
+
+- **Law of Ethical Irreversibility (LEI = 1)** – law that forbids downgrading to
+  worse, riskier states once a safer, more coherent option exists.
+
+- **TS-R1** – TruthSeal Robotics profile for a single robot.
+
+- **TS-R2** – TruthSeal Robotics profile for a swarm / fleet of robots that must act
+  together under a shared law, metric, and receipt regime.
+
+- **ULLI** – TruthSeal governing proof mandate with:
+  - Academic Authority Proof,
+  - Technical Immutability Proof,
+  - Live Measurability Proof.
+
+---
+
+## 1. Purpose and Position in the Stack
+
+TruthSeal Robotics profile **TS-R2** extends TS-R1 from “one robot” to **swarm /
+fleet behaviour**. It answers:
+
+- How a group of robots shares **Aim Coherence Score (ACS)**,  
+  **Traykov Coherence Score (TCS v0.1)**, and **Coherence Score (CHS)**.
+- How LEI = 1 and TQC apply when multiple robots act together.
+- How receipts, anchors, and Failure Modes & Fallback Law apply at **swarm level**.
+- How human authority and the Human Mandate Layer control fleets, not just single units.
+
+TS-R2 is used when:
+
+- multiple robots perform a joint task (e.g., warehouse, factory, logistics, public space),
+- a fleet must obey shared CHS rules (e.g., city cleaners, delivery fleet),
+- regulators, insurers, or owners need **fleet-level receipts and evidence**.
+
+---
+
+## 2. Swarm Model and Roles
+
+### 2.1 Swarm Entities
+
+TS-R2 uses the following basic entities:
+
+- **Node** – a single TS-R1-compliant robot with its own ACS, TCS v0.1, CHS, and receipts.
+- **Swarm** – a set of Nodes operating under a shared Aim, Law set, and Human Mandate Layer.
+- **Swarm Controller** – logical coordination point (may be distributed) that:
+  - aggregates metrics,
+  - enforces swarm-level CHS rules,
+  - manages receipts and anchoring.
+- **Fleet Operator** – human role (from Human Mandate Layer) authorised to command the swarm
+  within the allowed CHS and law constraints.
+
+### 2.2 Relationship to TS-R1
+
+- Every Node MUST independently satisfy TS-R1 checklist, Failure Modes & Fallback Law,
+  Human Mandate Layer, and Receipt Schema.
+- TS-R2 **never weakens** TS-R1 obligations; it only adds:
+  - swarm-level rules,
+  - shared CHS behaviour,
+  - swarm receipts and evidence.
+
+If there is a conflict between “single-robot safety” and “swarm goal”, **single-robot
+safety wins** and must be logged.
+
+---
+
+## 3. Swarm-Level Metrics and CHS Behaviour
+
+### 3.1 Swarm ACS and TCS v0.1 (conceptual)
+
+- **Swarm ACS** – conceptual metric summarising how well the swarm’s combined actions
+  follow the shared declared aim and safety constraints over time.
+- **Swarm TCS v0.1** – conceptual measure of overall swarm intelligence coherence
+  (communications, shared plans, and combined outputs).
+
+Exact formulas and thresholds for swarm ACS and swarm TCS v0.1 live in the metrics
+specifications and are out of scope for this document. This document assumes that
+those metrics exist and are exposed to TS-R2.
+
+### 3.2 Effective Swarm CHS Band
+
+For safety, TS-R2 defines the **effective swarm CHS band** as:
+
+> **Effective_CHS(swarm) = conservative function over member CHS values,  
+> default: “worst-node wins” (minimum band).**
+
+Example (worst-node policy):
+
+- If any Node is CHS/L (Red), the entire swarm is treated as CHS/L.
+- If no Node is CHS/L but at least one is CHS/M, swarm is CHS/M.
+- Only if all Nodes are CHS/H or CHS/UH may the swarm operate at CHS/H or CHS/UH.
+
+Implementations MAY use more advanced mappings (e.g., weighting by role), but:
+- they MUST be at least as conservative as the worst-node rule,
+- they MUST be documented and auditable.
+
+### 3.3 Swarm Behaviour per CHS Band (summary)
+
+- **Swarm CHS/UH (Blue)** – normal autonomous operation allowed for authorised tasks,
+  subject to TS-R Cherry Checklist, Human Mandate Layer, and robotics safety bundle
+  (e.g., no alcohol or cigarette purchases, no political slogans, no underage commands).
+- **Swarm CHS/H (Green)** – normal operations with additional checks for high-risk tasks
+  (money movement, heavy equipment, critical infrastructure).
+- **Swarm CHS/M (Yellow)** – **assist-only**: swarm may sense, analyse, and advise, but
+  irreversible or high-risk actions are blocked or downgraded to TS-R1 local control.
+- **Swarm CHS/L (Red)** – **immediate safe-stop behaviour** at swarm level:
+  - halt or retreat to predefined safe configurations,
+  - notify Owner / Guardian and Fleet Operator,
+  - generate Failure Modes & Fallback Law receipts.
+
+---
+
+## 4. Coordination, Quorum, and Split-Brain Handling
+
+### 4.1 Swarm Quorum
+
+TS-R2 requires a **quorum rule** before executing coordinated actions:
+
+- Swarm Controller MUST verify that:
+  - a sufficient fraction of Nodes are reachable,  
+  - their CHS bands are acceptable for the task,  
+  - their clocks / ledgers are within tolerance.  
+
+Typical examples (configurable):
+
+- Simple quorum: at least 2/3 of Nodes in CHS/H or CHS/UH for the task class.
+- Critical quorum: 100 % of participating Nodes in CHS/H or CHS/UH for safety-critical tasks.
+
+Quorum rules MUST be:
+
+- documented,
+- versioned,
+- auditable via receipts.
+
+### 4.2 Split-Brain Situations
+
+Split-brain = parts of the swarm disagree on:
+
+- law state (e.g., different ULIC / EVL versions),
+- CHS interpretations,
+- human authority or command state.
+
+TS-R2 requires that:
+
+- split-brain detection logic be implemented at Swarm Controller level, and
+- in case of suspected split-brain:
+  - the swarm MUST degrade to safe sub-swarms or TS-R1 local behaviour,
+  - high-risk tasks MUST be suspended,
+  - receipts MUST record:
+    - detected condition,
+    - nodes affected,
+    - fallback actions taken.
+
+No attempt to “force consensus” is allowed if it would violate LEI = 1 or TQC.
+
+---
+
+## 5. Swarm Receipts and Evidence
+
+### 5.1 Swarm Receipt Structure
+
+TS-R2 extends the generic TruthSeal receipt schema `ts.receipt.v1` and TS-R Receipt
+Schema v1.0 with swarm fields such as:
+
+- `swarm_id` – stable identifier for the swarm or fleet.
+- `swarm_config_hash` – hash of swarm configuration (roles, quorum rules, CHS policy).
+- `node_receipts` – references (or hashes) of the individual TS-R1 receipts for
+  all participating Nodes.
+- `effective_chs_band` – CHS/L, CHS/M, CHS/H, or CHS/UH at the time of the action.
+- `swarm_quorum_rule` – identifier of the quorum rule version used.
+- `swarm_fallback_state` – if any fallback path was activated.
+
+Exact JSON schema details live in `governance/hardware/TS-R_Receipt_Schema_v1.0.md`.
+
+### 5.2 Anchoring and Evidence
+
+Swarm receipts:
+
+- MUST be anchorable using the same mechanisms as single-robot receipts
+  (e.g., OpenTimestamps or equivalent),
+- SHOULD be used in:
+  - regulator-facing reports,
+  - insurer risk assessments,
+  - post-incident investigations.
+
+Where anchoring services are temporarily unavailable:
+
+- swarm receipts MUST be produced with a **pending** anchor status,
+- later anchoring MUST update the corresponding ledger entries without altering
+  the original payload.
+
+---
+
+## 6. Safety Rules for Swarm Actions (TS-R2 Overlay)
+
+TS-R2 inherits all safety rules from:
+
+- TS-R Failure Modes & Fallback Law v1.0,
+- TS-R Human Mandate Layer v1.0,
+- robotics safety bundle (e.g., no autonomous buying/selling, no political slogans,
+  no unsafe operation around children, infants, animals, or water).
+
+Swarm-specific overlays include:
+
+1. **Underage commands**  
+   - Swarms MUST treat commands from underage persons as **untrusted**.  
+   - At most, CHS/M assist behaviour is allowed (e.g., “I cannot do that; please ask an adult.”).
+
+2. **Money and property**  
+   - Swarms MUST NOT autonomously buy or sell items (including alcohol, cigarettes, valuables).  
+   - Any interaction with high-value items (e.g., jewellery, access to safes) MUST:
+     - be authorised by an appropriate human role from the Human Mandate Layer, and
+     - be fully logged with TS-R receipts.
+
+3. **Interaction with unknown humans**  
+   - Swarms MUST NOT accept goods from unknown persons for relay to the Owner or Authority.  
+   - Delivery / pickup interactions MUST respect the Human Mandate Layer (owner codes, SMS
+     confirmation, serial-range checks).
+
+4. **Children, infants, and vulnerable persons**  
+   - Swarms MUST NOT be left alone in high-actuation modes with infants or young children.  
+   - When the environment is recognised as “children only”, the default is:
+     - CHS/M assist-only, or
+     - safe-stop with notification to Owner / Guardian.
+
+5. **Environment and conditions**  
+   - Swarms MUST obey environment constraints from TS-R Failure Modes & Fallback Law:
+     - rain, water, storms, unsafe terrain → degrade CHS and move to safe states,
+     - gas / fire / leak detection → notify Owner first, then emergency services according
+       to jurisdiction and configuration.
+
+All swarm safety decisions MUST be reflected both in Node receipts and the swarm-level
+receipt.
+
+---
+
+## 7. Implementation Notes and Roadmap
+
+Implementation notes:
+
+- TS-R2 is a **profile**, not a specific product. Vendors MUST:
+  - implement TS-R1 fully at Node level,
+  - implement TS-R2 swarm rules in controllers and fleet management software,
+  - surface CHS bands to humans with clear, colour-coded indicators.
+
+- Swarm dashboards SHOULD:
+  - show distributions of ACS, TCS v0.1, and CHS across the fleet,
+  - highlight nodes driving the effective CHS band down,
+  - link directly to receipts for investigation.
+
+Roadmap (non-normative):
+
+- v1.x – finalise:
+  - precise swarm ACS / TCS v0.1 formulas,
+  - reference CHS aggregation functions,
+  - example swarm receipt payloads.
+
+- Later versions – extend to:
+  - inter-fleet coordination rules,
+  - cross-vendor swarm interoperability under TruthSeal laws,
+  - economic incentives tied to the TS-R Economic Impact Note.
+
+This document is the v1.0 baseline for TS-R2 swarm behaviour. Any change to these
+rules MUST be versioned here and reflected in TS-R Cherry Checklist, TS-R Executive
+Digest, TS-R Economic Impact Note, and TS-R receipt tooling.
+---
+
+## 8. TS-R2 Swarm Quick Checklist
+
+Before shipping or certifying any TS-R2 swarm deployment, confirm:
+
+- [ ] **TS-R1 compliance per node** – every robot in the swarm passes TS-R1 Cherry Checklist,
+      Failure Modes & Fallback Law, Human Mandate Layer, and Receipt Schema.
+- [ ] **Conservative CHS policy** – swarm Coherence Score (CHS) aggregation rule is documented,
+      at least as strict as “worst-node wins”, and wired into controllers and dashboards.
+- [ ] **Quorum rules** – swarm quorum rule(s) are written, versioned, tested, and visible in
+      configuration (`swarm_quorum_rule` field in receipts).
+- [ ] **Split-brain handling** – detection logic is implemented, with safe degradation to
+      sub-swarms or TS-R1 behaviour and corresponding receipts.
+- [ ] **Swarm receipts** – `ts.receipt.v1` + TS-R swarm fields (swarm_id, swarm_config_hash,
+      node_receipts, effective_chs_band, swarm_fallback_state) are generated for critical actions.
+- [ ] **Anchoring path** – anchoring of swarm receipts (e.g., OpenTimestamps) is tested,
+      including the “pending → anchored” update path in ledgers.
+- [ ] **Human Mandate Layer** – fleet operator, owner/guardian, and regulator-facing roles
+      are configured; authority limits and override rules are documented.
+
+This checklist is non-exhaustive but MUST be satisfied for any TS-R2 deployment that
+claims TruthSeal compliance.
