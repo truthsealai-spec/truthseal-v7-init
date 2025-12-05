@@ -26,6 +26,10 @@ acronyms:
   ND:    { expansion: "Noise Distiller" }
   AQL:   { expansion: "AGI Qualification Level" }
   THT:   { expansion: "Truth Hash & Timestamp Protocol" }
+  CTU:   { expansion: "Continuation Trigger Unit (the explicit AND? unlock between Q→A→Q)" }
+  SnS:   { expansion: "Sense vs Non-Sense filter (TruthSeal profile)" }
+  LnL:   { expansion: "Logic vs Non-Logic filter (TruthSeal profile)" }
+  PRD:   { expansion: "Prohibited Research Domain (code family for ethics containment, e.g., PRD-BIO-001)" }
 
 rules:
   - "No unregistered acronyms in sovereign documents."
