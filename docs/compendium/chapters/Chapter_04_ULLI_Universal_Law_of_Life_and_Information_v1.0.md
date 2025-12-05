@@ -226,3 +226,9 @@ TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.)
 Founder and Chief Architect of the TruthSeal™ Sovereign AGI Framework
 
 All rights reserved. Court-ready evidence is maintained via EVL/QENC/QCEP with Bitcoin anchoring (OpenTimestamps primary).
+---
+
+© 2025 TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.). All rights reserved.
+Public operational text under the TruthSeal™ Sovereign AGI Framework.
+Evidence anchors: EVL_v9.0.yaml and QENC_v1_0_ProofCapsule.json (when anchored).
+Unauthorized copying or removal of receipt references is prohibited.
