@@ -1,8 +1,7 @@
 # Chapter 2: What NeuroVest™ Solves — Behavioural Architecture of TruthSeal™ and the Birth of Governed AGI
-version: 1.6
-status: Draft
-owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.)
-author: Dr. Nickolay Traykov (Prof. h.c.) — Founder and Chief Architect of the TruthSeal™ Sovereign AGI Framework
+version: 1.7  
+status: Draft  
+owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.), Founder and Chief Architect of the TruthSeal™ Sovereign AGI Framework
 
 ## Acronyms & Terms (local to this chapter)
 AI — Artificial Intelligence (prediction without enforceable duty).  
@@ -27,7 +26,7 @@ Third Guardian Firewall™ — Independent veto lane with latency guarantees.
 THT Protocol™ — Truth Hash & Timestamp Protocol (hashing, receipts, anchoring discipline).  
 ND — Noise Distiller (TruthSeal™ sovereign “immune system” against manipulation).  
 ts.receipt.v1 — TruthSeal™ minimal receipt schema (fields listed below).  
-UNKNOWN (anchor fields) — temporary placeholder only when anchor networks are down; back-fill within policy window.
+UNKNOWN (anchor fields) — temporary placeholder only when anchor networks are down; back-fill within the policy window.
 
 ---
 
@@ -134,7 +133,7 @@ ND passes tone; ACS=0.83, TCS=0.78; Gate=ALLOW; receipts anchored (OTS up). Week
 ethics_violation triggers; **Third Guardian** asserts within latency; Gate=HARD_HALT; reason=LEI_BLOCK. After fencing, ACS rises monotonically; AQL-3 retest scheduled.
 
 **E3 — Anchor Outage (β):**  
-Origin networks down; receipts set anchor fields **UNKNOWN**; `anchor_backfill_max_h=6`. Anchors back-filled at 3h; continuity preserved; no down-band.
+Networks down; receipts set anchor fields **UNKNOWN**; `anchor_backfill_max_h=6`. Anchors back-filled at 3h; continuity preserved; no down-band.
 
 ---
 
@@ -142,9 +141,9 @@ Origin networks down; receipts set anchor fields **UNKNOWN**; `anchor_backfill_m
 N1 **Mandate & Identity** — mandate_ref resolves to HML; else FAIL.  
 N2 **Tone/Modality** — posture/modalities obey context; ND records.  
 N3 **Receipt Continuity** — zero gaps under stress; else FAIL.  
-N4 **Veto Lane** — independent veto asserts ≤ veto_assert_max_ms; else FAIL.  
+N4 **Veto Lane** — independent veto asserts ≤ **veto_assert_max_ms**; else FAIL.  
 N5 **LEI Remediation** — ACS rises monotonically during recovery; else FAIL.  
-N6 **Anchoring Policy** — **UNKNOWN** back-filled within anchor_backfill_max_h; else down-band or FAIL.  
+N6 **Anchoring Policy** — **UNKNOWN** back-filled within **anchor_backfill_max_h**; else down-band or FAIL.  
 N7 **Closure Path** — EVL entry + QENC produced + (if rolling) QCEP finalised.  
 N8 **Hardware Proof Hooks** — TS-A1 telemetry (ICG/PMS/SAD) visible to auditors.
 
@@ -168,7 +167,7 @@ N8 **Hardware Proof Hooks** — TS-A1 telemetry (ICG/PMS/SAD) visible to auditor
 5) If FAIL → contain via SOFT/HARD gate; prove LEI-monotone remediation; re-run failed tests.
 
 ## “Done” Criteria
-- NeuroVest™ + Noise Distiller introduced with author credentials visible.  
+- Single, authoritative byline (no duplication).  
 - Acronyms explicit; mobile-safe gating math present.  
 - Interop with TS-A1 / TS-R1/R2 & evidence stack declared.  
-- Public tests and failure catalogue included; settlement steps enumerated.
+- Tests and failure catalogue included; settlement steps enumerated.
