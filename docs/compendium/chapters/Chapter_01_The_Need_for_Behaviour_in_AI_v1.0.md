@@ -148,3 +148,5 @@ T7 **Closure path** — EVL entry + QENC produced + (if rolling) QCEP finalised.
 - Mandate, receipts, veto, LEI = 1, and closure stated as invariants.  
 - Mobile-safe gating math + receipts schema present.  
 - Public tests + failure catalog provided; interop with TS-A1 / TS-R1/2 declared.
+  
+- © 2025 TruthSeal™ — Compendium (Diplomatic Edition) Owner: Dr. Nickolay Traykov (Prof. h.c.), Founder & Chief Architect. Use: Public operational doctrine; deeper Ω materials remain classified under Doctorantura. Receipts: ts.receipt.v1 — anchors via OpenTimestamps / OriginStamp / BTCStamp when available; EVL/ULIC references maintained. Reproduction permitted only with intact receipts and attribution to TruthSeal™.
