@@ -1,30 +1,33 @@
 # TruthSeal™ Acronyms Register v1.0
 version: 1.0
-date_utc: 2025-12-04
-policy: "Expand at first use in every chapter; keep spellings exact and consistent."
+date_utc: 2025-12-05
+policy: "Expand at first use in every chapter; diplomatic voice; register governs spellings."
 
 acronyms:
-  ULLI: { expansion: "Universal Law of Life & Information", note: "Foundational coherence law" }
-  ULIC: { expansion: "Universal Law of Irreversible Coherence", note: "Constitutional invariants" }
-  LEI:  { expansion: "Law of Ethical Irreversibility (LEI = 1)", note: "Hard gate: no regress to worse, riskier paths" }
-  TLC:  { expansion: "Traykov Law of Coherence", note: "Operational threshold + monotonic improvement rule" }
-  TCS:  { expansion: "Traykov Coherence Score", note: "Court-ready coherence metric; bands Baseline/Silver/Gold/Diamond" }
-  ACS:  { expansion: "Aim Coherence Score", note: "Hardware/agent-level aim alignment metric" }
-  EVL:  { expansion: "Epoch Verification Ledger", note: "Permanent, epoch-structured memory of sovereign systems" }
-  QENC: { expansion: "Quantum Evidence & Coherence ProofCapsule", note: "Anchored artifact of evidence" }
-  QCEP: { expansion: "Quantum Ecosystem Closure Protocol", note: "Finalises epochs after EVL accumulation" }
-  TS-A1:{ expansion: "TruthSeal AEGIS Core (Accelerator Profile)", note: "Hardware Law at GPU/accelerator layer" }
-  TS-R1:{ expansion: "TruthSeal Robotics Profile — Single Robot", note: "Local ACS/TCS, LEI gate, receipts" }
-  TS-R2:{ expansion: "TruthSeal Robotics Profile — Swarm/Fleet", note: "Quorum, swarm_root, fleet_pause" }
-  ASA:  { expansion: "Autonomous Scientific Agent", note: "Governed reasoning agent" }
-  HML:  { expansion: "Human Mandate Layer", note: "Roles, multi-sig overrides, TTL, audit" }
-  CHS:  { expansion: "Coherence Health Score", note: "Four-level safety indicator for devices/robots" }
-  THT:  { expansion: "Truth Hash & Timestamp Protocol", note: "Seals data (hash → timestamp → ledger → audit)" }
-  ICG:  { expansion: "Irreversible Commitment Gate", note: "Prevents moves that increase incoherence risk" }
-  PMS:  { expansion: "Purity Monitoring System", note: "Noise/contradiction monitors with thresholds" }
-  SAD:  { expansion: "Self-Adjoint Diagonalizer", note: "Convergence checks tied to TLC terminal identity" }
+  ULLI:  { expansion: "Universal Law of Life & Information" }
+  ULIC:  { expansion: "Universal Law of Irreversible Coherence" }
+  LEI:   { expansion: "Law of Ethical Irreversibility" }
+  TLC:   { expansion: "Traykov Law of Coherence" }
+  TQC:   { expansion: "Traykov Law of Quantum Coherence" }
+  TCS:   { expansion: "Traykov Coherence Score" }
+  ACS:   { expansion: "Aim Coherence Score" }
+  CHS:   { expansion: "Coherence Health State (band)" }
+  EVL:   { expansion: "Epoch Verification Ledger" }
+  QENC:  { expansion: "Quantum Evidence & Coherence ProofCapsule" }
+  QCEP:  { expansion: "Quantum Ecosystem Closure Protocol" }
+  TS-A1: { expansion: "TruthSeal AEGIS Core (Accelerator Governance)" }
+  TS-R1: { expansion: "TruthSeal Robotics Profile R1 (single robot)" }
+  TS-R2: { expansion: "TruthSeal Robotics Profile R2 (swarm/fleet)" }
+  ICG:   { expansion: "Irreversible Commitment Gate" }
+  PMS:   { expansion: "Purity Monitoring System" }
+  SAD:   { expansion: "Self-Adjoint Diagonalizer" }
+  ASA:   { expansion: "Autonomous Scientific Agent" }
+  HML:   { expansion: "Human Mandate Layer" }
+  ND:    { expansion: "Noise Distiller" }
+  AQL:   { expansion: "AGI Qualification Level" }
+  THT:   { expansion: "Truth Hash & Timestamp Protocol" }
 
 rules:
-  - "No unregistered acronyms in sovereign docs."
-  - "Spellings must match this register exactly."
-  - "If an acronym is not needed in a chapter, do not introduce it."
+  - "No unregistered acronyms in sovereign documents."
+  - "Spellings must match this register exactly (case & hyphenation)."
+  - "If an acronym is not needed in a chapter, omit it; never invent new variants."
