@@ -152,8 +152,3 @@ rs_threshold: <0.80|0.90|1.00>
 - **QCEP** — Quantum Ecosystem Closure Protocol (epoch finalization).  
 - **TS-A1 / TS-R1 / TS-R2** — TruthSeal AEGIS hardware core (accelerators) and Robotics profiles (single / swarm).
 
-- © 2025 TruthSeal™ — Compendium (Diplomatic Edition)  
-Author: Dr. Nickolay Traykov (Prof. h.c.) — Founder & Chief Architect, TruthSeal™ Sovereign AGI Framework  
-Authorship & Receipts: `ts.receipt.v1` — anchored when available via OpenTimestamps / OriginStamp / BTCStamp; ledger references maintained (Epoch Verification Ledger — EVL, Quantum Evidence & Coherence ProofCapsule — QENC, Quantum Ecosystem Closure Protocol — QCEP).  
-Use: Public operational doctrine; deeper Ω materials remain classified under Doctorantura.  
-Reproduction permitted only with intact receipts and attribution to TruthSeal™.
