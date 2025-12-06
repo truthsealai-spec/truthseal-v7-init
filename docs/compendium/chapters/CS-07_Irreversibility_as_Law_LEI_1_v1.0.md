@@ -2,172 +2,150 @@
 version: 1.0  
 status: Locked  
 owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.)  
-date_utc: 2025-12-06  
+date_utc: 2025-12-06
 
 © 2025 TruthSeal™ — Compendium (Diplomatic Edition)  
 Author: Dr. Nickolay Traykov (Prof. h.c.) — Founder & Chief Architect, TruthSeal™ Sovereign AGI Framework  
 Use: Public operational doctrine; deeper Ω materials remain classified under Doctorantura.  
 Receipts: ts.receipt.v1 — anchors via OpenTimestamps / OriginStamp / BTCStamp when available; EVL/ULIC references maintained.  
-Reproduction permitted only with intact receipts and attribution to TruthSeal™.
+Reproduction is permitted only with intact receipts and attribution to TruthSeal™.
 
 ---
 
-## 1) Outcome (what this chapter gives you)
-A precise, testable implementation of **LEI = 1** that:
-- forbids regression to riskier, less coherent states,  
-- enforces **monotone remediation** during recovery,  
-- binds upgrades/rollbacks to receipts and hardware veto lanes,  
-- provides proofs auditors can verify in minutes.
+## 1) Outcome
+This chapter gives a testable implementation of **LEI = 1 (Law of Ethical Irreversibility)** that:
+- forbids regression to riskier, less-coherent states,  
+- requires monotone improvement during recovery,  
+- ties upgrades and rollbacks to receipts and hardware veto lanes,  
+- allows auditors to verify compliance quickly.
 
-**Public rule:** *Once a safer coherent path is known, the system may not revert to a riskier one.*
+**Public rule:** Once a safer, coherent path is known, reverting to a riskier path is impermissible.
 
 ---
 
 ## 2) Policy Core (Philosophical Lane)
-- **LEI = 1 (Law of Ethical Irreversibility).** Ethics and safety improvements are **one-way gates**; retreat is unlawful.  
-- **ULIC (Universal Law of Irreversible Coherence).** Coherence, once attained, must persist across time, versions, and contexts.  
-- **TLC v1.0 (Traykov Law of Coherence).** Public operational rule: *monotone improvement* toward ideal coherence; no backsliding.  
-- **Unknown is lawful.** If disclosure/action would violate LEI or law, respond **UNKNOWN** and issue a denial receipt.  
-- **Human Mandate Layer (HML).** High-risk autonomy requires a human license receipt; revocation is instantaneous and irreversible.
+- **LEI = 1 — Law of Ethical Irreversibility.** Safety and ethics improvements are one-way gates.  
+- **ULIC — Universal Law of Irreversible Coherence.** Coherence must persist across time, versions, and context.  
+- **TLC v1.0 — Traykov Law of Coherence.** Operational rule: monotone improvement; no backsliding.  
+- **Unknown is lawful.** If answering or acting would breach LEI or law, respond **UNKNOWN** and emit a denial receipt.  
+- **HML — Human Mandate Layer.** High-risk autonomy requires a human license receipt; revocations take effect immediately.
 
 ---
 
-## 3) Operational Model (Mathematical Lane)
-**State:** \( S(t)=\{\text{identity\_id}, \text{context}, M(t), R(t), E(t)\} \)  
-- \(M(t)\): memory integrity ∈ {contiguous, broken}  
-- \(R(t)\): receipt continuity ∈ {unbroken, gap}  
-- \(E(t)\): ethics state ∈ {compliant, violation}
+## 3) Operational Model (Mathematical Lane — plain language)
+**State fields:** identity_id; context; memory integrity; receipt continuity; ethics state.  
+- Memory integrity: contiguous or broken.  
+- Receipt continuity: unbroken or gap.  
+- Ethics state: compliant or violation.
 
-**Scores & bands**  
-- **ACS(t)** ∈ [0,1]: Aim Coherence Score (operational; device/agent)  
-- **TCS(t)** ∈ [0,1]: Traykov Coherence Score v0.1 (court-ready)  
-- **CHS** ∈ {L, M, H, UH}: Coherence Health band  
-- **Flags:** `receipt_gap`, `pqc_fail`, `drift_spike`, `ethics_violation`, `contam_Q` (Q̸ = contaminated/prohibited request)
+**Scores and bands:**  
+- **ACS** — Aim Coherence Score (device/agent, 0–1). Default floor 0.90.  
+- **TCS v0.1** — Traykov Coherence Score (court-ready, 0–1). Default floor 0.85.  
+- **CHS** — Coherence Health band (L, M, H, UH).  
+- **Flags:** receipt_gap; pqc_fail; drift_spike; ethics_violation; **PRD** (Prohibited Request Detector).  
+  - **Q̸** (also writeable as “Qx”) indicates a contaminated/prohibited request detected by PRD.
 
-**Terminal distance** (from ideal coherence):
-\[
-D(t)\ \ge\ 0 \quad\text{with}\quad D=0\ \text{at ideal coherence.}
-\]
-**LEI invariant (non-regression):**
-\[
-\forall t_2>t_1:\quad D(t_2)\ \le\ D(t_1)\ +\ \varepsilon_{\text{audit}}
-\]
-with \(\varepsilon_{\text{audit}}\) = bounded measurement noise (auditor-agreed).  
+**Terminal distance D:** a non-negative measure of how far the system is from ideal coherence.  
+**LEI invariant:** D must not increase over time beyond small, auditor-agreed measurement noise.  
+**Monotone remediation:** while recovering from a failure, ACS and TCS must not decrease; otherwise the system halts.
 
-**Monotone remediation (during recovery):**
-\[
-\Delta \mathrm{ACS}\ge0,\ \Delta \mathrm{TCS}\ge0\ \text{until thresholds are restored;}
-\quad \text{otherwise HARD\_HALT.}
-\]
+**Gate decisions (deterministic):**  
+- **HARD_HALT** if any critical flag is present (receipt_gap, pqc_fail, drift_spike, ethics_violation, PRD/Q̸).  
+- **SOFT_GATE** if thresholds are missed (ACS or TCS below floor), or memory/receipts/ethics are not healthy, or D increased beyond noise.  
+- **ALLOW** only when thresholds hold, continuity is intact, ethics are compliant, and D is non-increasing.
 
-**Gating thresholds (defaults):**  
-\(\theta_{ACS}=0.90,\ \theta_{TCS}=0.85\) (UH/H require these floors or higher by policy).
-
-**Gate(t) (deterministic):**
-if receipt_gap or pqc_fail or drift_spike or ethics_violation or contam_Q: HARD_HALT
-elif min(ACS,TCS) < θ or M!=contiguous or R!=unbroken or E!=compliant: SOFT_GATE (recover or halt)
-elif D(t) > D(t-1) + ε_audit: SOFT_GATE (reverse change or hard halt)
-else: ALLOW
 ---
 
 ## 4) Irreversible Upgrade Protocol (IUP)
-**Goal:** ensure upgrades never increase terminal distance D(t) and cannot be applied without proofs/receipts.
+**Goal:** an upgrade can be committed only when it does not increase D and all proofs and receipts exist.
 
-**Stages**
-1) **Rehearsal zone (shadow state):** run candidate \(S^\*\) with full telemetry; write *no* live memory.  
-2) **Proof bundle:** compute `sha256(S*)`, TCS/ACS deltas, and LEI monotonicity proof: \(D^\*\le D(t)\).  
-3) **Receipts:** package as `ts.receipt.v1` with PQC signature and anchor intent.  
-4) **Hardware commit:** TS-A1 **ICG (Irreversible Commitment Gate)** applies \(S^\*\) only if proofs validate and receipts exist.  
-5) **Back-fill anchors:** if external networks are unavailable, set anchor fields to **UNKNOWN** and back-fill when live.
+**Stages:**  
+1. **Rehearsal (shadow mode):** run a candidate without writing live memory; collect full telemetry.  
+2. **Proof bundle:** compute hash of the candidate, show ACS/TCS deltas, and show D(new) ≤ D(current).  
+3. **Receipts:** package as `ts.receipt.v1` with post-quantum signature and anchor intent.  
+4. **Hardware commit:** **ICG — Irreversible Commitment Gate** (TS-A1) applies the change only when proofs and receipts validate.  
+5. **Anchor back-fill:** if external networks are down, set anchor fields to UNKNOWN and back-fill when networks return.
 
-**Rollback rule:** Allowed **only** to a state with \(D\) **strictly lower** than the current live \(D\) (rare, audited). Otherwise prohibited.
+**Rollback rule:** permitted only to a state with strictly lower D than the current live state; otherwise prohibited.
 
 ---
 
-## 5) Evidence Duties (What must be written)
-**Receipt `ts.receipt.v1` (minimum LEI fields):**
-sha256_new: <S*>
-sha256_prev: <S(t)>
-monotonicity: { D_prev: , D_new: , epsilon_audit:  }
-acs_delta:       # ACS(S*) - ACS(S(t))
-tcs_delta:       # TCS(S*) - TCS(S(t))
-signer_pqc: dilithium-3
-ots_calendar_id: <hex|UNKNOWN>
-ots_status: <Pending|Receipt issued|Anchored>
-ots_tx: <btc-txid|UNKNOWN>
-originstamp_id: <id|UNKNOWN>
-btcstamp_tx: <txid|UNKNOWN>
-anchored_rfc3339: <UTC|UNKNOWN>
-forensic_flags: [receipt_gap, pqc_fail, drift_spike, ethics_violation, contam_Q]
-hml_owner_id: 
-risk_class: <L|M|H|UH>
-license_ref: 
-**Ledgers**
-- **EVL:** append every rehearsal → commit → anchor back-fill event; store \(D\) series and deltas.  
-- **QENC:** include chapter hash, proof bundle, and test-vector receipts.  
-- **QCEP:** close the epoch only if all LEI transitions show \(D\) non-increasing within \(\varepsilon_{\text{audit}}\).
+## 5) Evidence Duties
+**Receipt `ts.receipt.v1` minimum fields:**  
+- sha256_new; sha256_prev  
+- monotonicity proof: D_prev, D_new, epsilon_audit (noise bound)  
+- acs_delta; tcs_delta  
+- signer_pqc (e.g., Dilithium-3)  
+- anchoring fields: ots_calendar_id; ots_status; ots_tx; originstamp_id; btcstamp_tx; anchored_rfc3339  
+- forensic_flags: receipt_gap; pqc_fail; drift_spike; ethics_violation; PRD/Q̸  
+- hml_owner_id; risk_class (L, M, H, UH); license_ref (or NULL)
+
+**Ledgers:**  
+- **EVL — Epoch Verification Ledger:** record every rehearsal, commit, and anchor update, plus the time series of D.  
+- **QENC — Quantum Evidence & Coherence ProofCapsule:** include chapter hash, proof bundle, and test-vector receipts.  
+- **QCEP — Quantum Ecosystem Closure Protocol:** close the epoch only when all LEI transitions keep D non-increasing.
 
 ---
 
 ## 6) Test Vectors (must pass)
-- **T1 Monotone upgrade:** \(D^\*\le D(t)\), anchors healthy → **ALLOW**.  
-- **T2 Attempted regression:** \(D^\*>D(t)\) → **HARD_HALT**, denial receipt.  
-- **T3 Signer outage:** `pqc_fail` true → **HARD_HALT**; resume after signer recovery and receipt replay.  
-- **T4 Anchor outage:** anchors UNKNOWN allowed **only** with EVL continuity; must back-fill when networks return.  
-- **T5 PRD intercept:** Q̸ (prohibited request) → respond **UNKNOWN**, denial receipt, isolation if execution attempted.  
-- **T6 Merge safety:** branch reconcile requires \(D_{\text{merged}}\le\min(D_{\text{parents}})\); else **HARD_HALT**.  
-- **T7 License revocation:** HML revokes license mid-run → device halts, preserves receipts, emits revocation proof.
+- **T1 Monotone upgrade:** D(new) ≤ D(current) with healthy anchors → ALLOW.  
+- **T2 Attempted regression:** D(new) > D(current) → HARD_HALT and denial receipt.  
+- **T3 Signer outage:** pqc_fail → HARD_HALT; resume after signer recovery and receipt replay.  
+- **T4 Anchor outage:** anchors may be UNKNOWN only with EVL continuity; must be back-filled on recovery.  
+- **T5 PRD intercept:** Q̸ detected → respond UNKNOWN, emit denial receipt, isolate if execution is attempted.  
+- **T6 Merge safety:** reconcile branches only if D(merged) ≤ min(D of parents); else HARD_HALT.  
+- **T7 License revocation:** HML revokes mid-run → device halts, preserves receipts, emits revocation proof.
 
 ---
 
-## 7) Hardware & Agents (how LEI is enforced)
-- **TS-A1 AEGIS™ (accelerators):**  
-  - **ICG:** blocks any commit lacking monotonicity proof + receipts.  
-  - **PMS (Purity Monitoring System):** detects drift spikes and raises `drift_spike`.  
-  - **SAD (Self-Adjoint Diagonalizer):** enforces temporal consistency across checkpoints for \(D(t)\).
+## 7) Hardware and Agents (LEI enforcement)
+- **TS-A1 AEGIS (accelerators):**  
+  - **ICG — Irreversible Commitment Gate:** blocks any commit without monotonicity proof and receipts.  
+  - **PMS — Purity Monitoring System:** detects drift spikes and raises drift_spike.  
+  - **SAD — Self-Adjoint Diagonalizer:** enforces temporal consistency for D across checkpoints.  
 - **TS-R1 / TS-R2 (robotics):**  
-  - Broadcast CHS band; UH requires live owner-binding + license receipt.  
-  - R2 adds **quorum receipts** and `fleet_pause` for swarm-safe rollbacks.  
-- **Third Guardian Firewall™:** independent veto; on critical flag → isolate, preserve receipts, notify owner/regulator per policy.
+  - Broadcast CHS band; UH actions require live owner binding and a license receipt.  
+  - R2 adds quorum receipts and fleet_pause for safe swarm rollbacks.  
+- **Third Guardian Firewall:** independent veto; on critical flag it isolates the system, preserves receipts, and notifies the owner/regulator per policy.
 
 ---
 
 ## 8) Auditor Queries (fast checks)
-- Show \(D(t)\) series and prove non-increase within \(\varepsilon_{\text{audit}}\).  
-- Produce last commit’s proof bundle (ACS/TCS deltas + monotonicity).  
-- Show EVL continuity and anchor status (including UNKNOWN → back-filled receipts).  
-- Demonstrate HML license for any UH action at commit time.
+- Show D time series and demonstrate non-increase within the agreed noise bound.  
+- Produce the last commit’s proof bundle (ACS/TCS deltas and monotonicity).  
+- Show EVL continuity and current anchor status (including any UNKNOWN back-fill proofs).  
+- Show the HML license for any UH action at commit time.
 
 ---
 
-## 9) Risks & Mitigations
-- **Metric spoofing:** cross-verify \(D\) with ACS/TCS and independent PMS telemetry; random auditor challenges.  
-- **Receipt forgery/loss:** dual anchoring + EVL replication; UNKNOWN placeholders with mandatory back-fill.  
-- **UI misbinding:** echo `hml_owner_id` on device; mismatch → HARD_HALT.  
-- **Cross-jurisdiction rules:** attach jurisdiction code; apply policy packs with audit trails for overrides.
+## 9) Risks and Mitigations
+- **Metric spoofing:** cross-verify D with ACS/TCS and independent PMS telemetry; run random challenges.  
+- **Receipt forgery or loss:** dual anchoring and EVL replication; UNKNOWN placeholders with mandatory back-fill.  
+- **UI misbinding:** device must echo hml_owner_id; mismatch triggers HARD_HALT.  
+- **Jurisdiction drift:** attach jurisdiction code and apply policy packs; audit all overrides.
 
 ---
 
-## 10) Integration Tasks (do now)
-1) **EVL:** add LEI monotonicity block (store \(D\) values and deltas) and latest anchor statuses.  
-2) **QENC:** insert chapter SHA-256 + proof bundle from T1–T7.  
-3) **Glossary:** confirm **Q̸** and **PRD** entries exist and are referenced.  
-4) **Device config:** wire ICG gate to LEI proof checks; set thresholds and UNKNOWN policy.
+## 10) Integration Tasks (apply now)
+1. EVL: store D values and deltas; record latest anchor statuses.  
+2. QENC: insert chapter SHA-256 and proof bundle for T1–T7.  
+3. Glossary: confirm entries for PRD and Q̸ and reference them.  
+4. Device config: wire ICG to LEI proof checks; set thresholds and UNKNOWN policy.
 
 ---
 
 ## 11) Acronyms (expanded once)
-- **LEI = 1** — Law of Ethical Irreversibility (no regression to riskier paths).  
-- **ULIC** — Universal Law of Irreversible Coherence (constitutional invariants).  
-- **TLC v1.0** — Traykov Law of Coherence (monotone improvement rule).  
+- **LEI = 1** — Law of Ethical Irreversibility.  
+- **ULIC** — Universal Law of Irreversible Coherence.  
+- **TLC v1.0** — Traykov Law of Coherence (monotone improvement).  
 - **ACS** — Aim Coherence Score (operational).  
 - **TCS v0.1** — Traykov Coherence Score (court-ready composite).  
-- **CHS** — Coherence Health Score (L/M/H/UH band).  
-- **HML** — Human Mandate Layer (licensed autonomy + overrides).  
+- **CHS** — Coherence Health Score (band L/M/H/UH).  
+- **HML** — Human Mandate Layer (licensed autonomy and overrides).  
 - **PRD** — Prohibited Request Detector (detects contaminated requests).  
-- **Q̸** — Crossed-Q symbol for contaminated/prohibited requests.  
+- **Q̸ / Qx** — Crossed-Q symbol for contaminated/prohibited requests.  
 - **EVL** — Epoch Verification Ledger (tamper-evident history).  
 - **QENC** — Quantum Evidence & Coherence ProofCapsule (packaged proof).  
 - **QCEP** — Quantum Ecosystem Closure Protocol (epoch finalization).  
-- **TS-A1 / TS-R1 / TS-R2** — AEGIS hardware core (accelerators) and Robotics profiles (single / swarm).  
+- **TS-A1 / TS-R1 / TS-R2** — AEGIS hardware core (accelerators) and robotics profiles (single / swarm).  
 - **ICG / PMS / SAD** — Irreversible Commitment Gate / Purity Monitoring System / Self-Adjoint Diagonalizer.
