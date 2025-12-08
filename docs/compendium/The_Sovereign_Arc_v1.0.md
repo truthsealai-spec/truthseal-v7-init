@@ -26,7 +26,9 @@ It consolidates the doctrinal spine of AGI trust into one coherent narrative:
 • **The Sovereign Arc** as the non-bypassable external accountability loop that returns responsibility to the human system parent through verifiable evidence.  
 • **HML™ (Human Mandate Layer)** as the constitutional policy baseline for lawful autonomy.  
 • **ACS™ (Aim Coherence Score)** as the measurable fiduciary trust signal for institutional adoption.  
-• **LEI-Gate + ICG** inside **TS-A1 (TruthSeal AEGIS™)** as hardware admission before high-stakes execution.  
+
+• **LEI-Gate + ICG (Irreversible Commitment Gate) inside TS-A1 (TruthSeal AEGIS™) as hardware admission before high-stakes execution.
+
 • **SLU (Sovereign Logic Unit)** as the analog last-line safety boundary (committee-level description only).  
 • **ts.receipt.v1** as the canonical evidence chain enabling audit, regulation, and capital-grade trust.
 
