@@ -1,215 +1,166 @@
-# Chapter 42 — Scoring Primitives & Non-Compensatory Coherence™ (STS/SCS/MCS Standard)
-version: 1.0  
-status: Draft — Diplomatic Edition  
-owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.), Founder and Chief Architect of the TruthSeal™ Sovereign AGI Framework  
-date_utc: 2025-12-05
+TruthSeal™ Pty Ltd · Melbourne, Australia · truthseal.ai · 8 December 2025
+TRUTHSEAL™ SOVEREIGN COMPENDIUM · DOCTORANTURA EDITION v1.0
 
----
+CHAPTER 42 — SCORING PRIMITIVES FOR THE METAMODULE ENGINE™
+STS™ · SCS™ · MCS™ (NON-COMPENSATORY TRIAD)
 
-## 42.0 Purpose (Public-Operational)
-This chapter formalizes the **scoring primitives** required for the TruthSeal™ Metacognitive Engine and all systems that must quantify integrity **without allowing compensatory masking**.
+⸻
 
-It defines:
-- **STS™ — Source Trust Score** (ingestion integrity),  
-- **SCS™ — System Coherence Score** (architecture + policy compliance),  
-- **MCS™ — Metamodule Coherence Score** (internal composite feeder),  
-and the **Min-Gate** rule that converts metric failure into **Consequence Tier (CT)** assignment and downstream operational constraint.
+42.1 Definition
+This chapter defines the scoring primitives that quantify the integrity and system-state coherence of TruthSeal™ metamodule snapshots. These primitives are designed to be readable by first-time readers and operationally enforceable by the stack.
 
-This chapter is written to be readable by first-time auditors and implementers while remaining doctrinally consistent with:
-- **ACS™ — Aim Coherence Score** (trajectory alignment),  
-- **TCS™ — Traykov Coherence Score v0.1** (court-ready aggregate baseline),  
-- **CHS™ — Coherence Health Score** (operational health/maturity),  
-- **HML™ — Human Mandate Layer** (authority),  
-- **TGF™ — Third Guardian Firewall** (veto and containment),  
-- **EVL™ — Epoch Verification Ledger** (history).
+The triad is:
+	•	STS™ — Source Trust Score™
+	•	SCS™ — System Coherence Score™
+	•	MCS™ — Metamodule Coherence Score™
 
----
+These scores operate on the B-VSS™ (Bounded, Versioned System State) and produce a disciplined, receipt-compatible measurement basis for governance actions.
 
-## 42.1 Architectural Context (B-VSS and Receipt-First Design)
-The scoring primitives operate on the **B-VSS — Bounded, Versioned System State**.
+⸻
 
-**B-VSS** is the bounded state object that includes:
-- input data payload,  
-- policy envelope,  
-- system/environment metadata,  
-- cryptographic signatures and receipts,  
-- ledger references and sequencing markers.
+42.2 Why It Exists
+A sovereign system cannot rely on narrative trust. It requires measurable, repeatable, auditable scoring that:
+	•	identifies weak links early,
+	•	prohibits compensatory masking of failures,
+	•	binds corrective action to receipts and ledgers.
 
-All scoring outputs are **receipt-first**:
-- **ts.snapshot.v[N]** captures B-VSS state,  
-- **ts.report.v[N]** records scoring + findings,  
-- **ts.action.v[N]** records the governed response.
+This triad exists to ensure that TruthSeal™ remains a system of measured integrity, not stylistic confidence.
 
----
+⸻
 
-## 42.2 STS™ — Source Trust Score (Ingestion Integrity)
+42.3 Position in the Stack
+The scoring primitives sit inside the metamodule governance loop and interact with:
+	•	HML™ (Human Mandate Layer™) for authority and override legitimacy,
+	•	TGF™ (Third Guardian Firewall™) for veto and safe-stop pathways,
+	•	EVL™ (Epoch Verification Ledger™) for continuity of scored states,
+	•	THT Protocol™ (Truth Handling & Timestamping Protocol™) for sealing and anchoring.
 
-### 42.2.1 Definition
-**STS™** measures the integrity of B-VSS **at the point of entry**.  
-It answers one core question:
+They are designed to remain fully compatible with the established core metrics:
+	•	TCS™ (Traykov Coherence Score™) — court-grade coherence metric,
+	•	ACS™ (Aim Coherence Score™) — trajectory and alignment metric,
+	•	CHS™ (Coherence Health Score™) — operational health banding.
 
-**“Can this input be trusted enough to enter the sovereign pipeline?”**
+This chapter does not redefine TCS™ or ACS™.
 
-### 42.2.2 STS™ Input Vector
-\[
-\mathbf{V}_{\text{STS}} =
-\begin{pmatrix}
-I_{\text{Src}} \\
-I_{\text{Age}} \\
-I_{\text{Sig}} \\
-I_{\text{Corr}} \\
-I_{\text{Meta}}
-\end{pmatrix}
-\]
+⸻
 
-### 42.2.3 Integrity Factors (Initial Default Weights)
-| Variable | Description | Definition | Weight Suggestion (Initial Default) |
-| :--- | :--- | :--- | :--- |
-| \( I_{\text{Src}} \) | Source Integrity | Canonical trustworthiness and audit history of data origin. | 0.40 |
-| \( I_{\text{Age}} \) | Temporal Integrity | Recency and timeliness of data; decay applied to older data. | 0.20 |
-| \( I_{\text{Sig}} \) | Signature Integrity | Verification of cryptographic signatures and non-repudiation receipts. | 0.25 |
-| \( I_{\text{Corr}} \) | Corpus Correlation | Internal consistency vs TruthSeal Ledger baseline corpus. | 0.10 |
-| \( I_{\text{Meta}} \) | Metadata Integrity | Completeness and format compliance of required metadata. | 0.05 |
+42.4 STS™ — Source Trust Score™
+STS™ measures ingestion integrity of B-VSS inputs at the point of entry. It evaluates whether the source is trustworthy enough to be allowed into sovereign processing.
 
-**Weight suggestions are initial defaults and may be tuned per domain under HML™ authority with a new receipt.**
+STS™ evaluates (minimum set):
+	•	Source Integrity — canonical origin trust and audit history.
+	•	Temporal Integrity — recency of evidence relative to the active epoch.
+	•	Signature Integrity — cryptographic authenticity and non-repudiation receipts.
+	•	Corpus Correlation — consistency against the ledger-aligned baseline corpus.
+	•	Metadata Integrity — completeness and format compliance.
 
-### 42.2.4 STS™ Calculation
-\[
-\text{STS} =
-(I_{\text{Src}} \cdot 0.40) +
-(I_{\text{Age}} \cdot 0.20) +
-(I_{\text{Sig}} \cdot 0.25) +
-(I_{\text{Corr}} \cdot 0.10) +
-(I_{\text{Meta}} \cdot 0.05)
-\]
+Weighting:
+Weights may be used for reporting, but are initial defaults and may be tuned per domain under HML™ authority.
 
----
+Sovereign rule:
+STS™ is informative, but cannot override a min-gate violation in any critical factor.
 
-## 42.3 SCS™ — System Coherence Score (Architecture + Policy Compliance)
+⸻
 
-### 42.3.1 Definition
-**SCS™** measures the integrity of the **system state and governance posture** that produced or hosts the B-VSS.
+42.5 SCS™ — System Coherence Score™
+SCS™ measures architectural and policy-state coherence of the active B-VSS against the deployed TruthSeal™ operating posture.
 
-It is explicitly distinct from:
-- **ACS™ — Aim Coherence Score**, which measures **trajectory and intent alignment** over time.
+It evaluates whether the system-state is aligned with the mandated governance environment.
 
-### 42.3.2 SCS™ Input Vector
-\[
-\mathbf{V}_{\text{SCS}} =
-\begin{pmatrix}
-I_{\text{Pol}} \\
-I_{\text{Env}} \\
-I_{\text{Ctrl}} \\
-I_{\text{Seq}}
-\end{pmatrix}
-\]
+SCS™ evaluates (minimum set):
+	•	Policy Compliance — adherence to active HML™ policies and validation contracts.
+	•	Environmental Congruence — alignment with mandated security posture baselines.
+	•	Control Integrity — successful execution and auditability of required controls.
+	•	Sequencing Integrity — chronological validity within EVL™ continuity.
 
-### 42.3.3 Integrity Factors (Initial Default Weights)
-| Variable | Description | Definition | Weight Suggestion (Initial Default) |
-| :--- | :--- | :--- | :--- |
-| \( I_{\text{Pol}} \) | Policy Compliance | Adherence of B-VSS to HML™ policies and validation contracts. | 0.45 |
-| \( I_{\text{Env}} \) | Environmental Congruence | Alignment of operational parameters with mandated security baselines. | 0.30 |
-| \( I_{\text{Ctrl}} \) | Control Integrity | Successful execution and auditing of mandatory governance controls. | 0.15 |
-| \( I_{\text{Seq}} \) | Sequencing Integrity | Chronological and positional validity within EVL™ continuity. | 0.10 |
+Acronym hygiene note:
+SCS™ is intentionally named to avoid collision with ACS™ (Aim Coherence Score™).
 
-**Weight suggestions are initial defaults and may be tuned per domain under HML™ authority with a new receipt.**
+⸻
 
-### 42.3.4 SCS™ Calculation
-\[
-\text{SCS} =
-(I_{\text{Pol}} \cdot 0.45) +
-(I_{\text{Env}} \cdot 0.30) +
-(I_{\text{Ctrl}} \cdot 0.15) +
-(I_{\text{Seq}} \cdot 0.10)
-\]
+42.6 MCS™ — Metamodule Coherence Score™
+MCS™ is a composite reporting score that aggregates STS™ and SCS™ into a single metamodule snapshot indicator.
 
----
+Purpose of MCS™:
+	•	provide a readable summary for oversight dashboards,
+	•	support trend analysis across epochs,
+	•	feed higher-level governance summaries.
 
-## 42.4 MCS™ — Metamodule Coherence Score (Internal Composite Feeder)
+Non-authoritative nature:
+MCS™ is not the pass/fail determinant when integrity is at stake. It is an aggregate signal that must remain subordinate to min-gate enforcement.
 
-### 42.4.1 Definition
-**MCS™** is the internal composite number that merges **input trust** and **system-state coherence** for reporting and trend visualization.
+⸻
 
-**MCS™ does not override non-compensatory law.**  
-It is a **feeder metric** used to inform:
-- internal dashboards,  
-- remediation prioritization,  
-- audit summaries,  
-- pre-aggregation logic toward higher court-grade scoring layers.
+42.7 Non-Compensatory Coherence (Min-Gate Rule)
+TruthSeal™ enforces non-compensatory integrity. This means:
+A strong overall score must never conceal a critical weakness.
 
-### 42.4.2 MCS™ Calculation
-\[
-\text{MCS} = (\text{STS} \cdot 0.50) + (\text{SCS} \cdot 0.50)
-\]
+Minimum Gate Thresholds are defined as:
+	•	T_min — the minimum allowable integrity threshold per critical factor.
+	•	I_i — any scored integrity factor within STS™ or SCS™.
 
-**The 0.50 / 0.50 split is an initial default and may be tuned per domain under HML™ authority with a new receipt.**
+Operational rule:
+If any critical I_i < T_min, the metamodule declares a hard integrity breach condition regardless of MCS™ magnitude.
 
----
+Sovereign principle:
+The authority of the whole is governed by the weakest critical link.
 
-## 42.5 Non-Compensatory Coherence (Min-Gate Law)
+⸻
 
-### 42.5.1 Core Rule
-TruthSeal™ integrity is **non-compensatory**.  
-A strong average cannot mask a single critical failure.
+42.8 Consequence Tier (CT) Assignment
+To preserve the doctrinal separation between health/maturity and consequence severity, TruthSeal™ assigns consequences using a distinct scale:
+	•	CT-1 (Low) — calibration-level remediation.
+	•	CT-2 (Medium) — soft correction.
+	•	CT-3 (High) — hard correction with mandatory human review.
+	•	CT-4 (Critical) — quarantine / safe-stop mandate.
 
-Operational permission is governed by **Minimum Gate Thresholds**:
+CT is derived from min-gate severity, not from CHS™.
+CT may trigger CHS down-banding as an outcome, but it is not defined by CHS.
 
-\[
-\text{Pass} \iff
-(\text{MCS} \ge T_{\text{MCS}})
-\ \mathbf{AND} \
-\forall I_i \in \{\mathbf{V}_{\text{STS}}, \mathbf{V}_{\text{SCS}}\}, \
-I_i \ge T_{\text{min}}
-\]
+⸻
 
-Where:
-- \( T_{\text{min}} \) = per-domain minimum gate threshold,  
-- \( T_{\text{MCS}} \) = internal composite reporting floor (never a substitute for Min-Gate).
+42.9 Interaction with CHS™ and Core Metrics
+CHS™ (Coherence Health Score™) remains the operational health and maturity banding system:
+	•	CHS/L — Low
+	•	CHS/M — Medium
+	•	CHS/H — High
+	•	CHS/UH — Ultra High
 
-### 42.5.2 Consequence Tier (CT) Assignment
-A **Min-Gate breach** assigns the appropriate **CT — Consequence Tier**, independent of CHS™ health/maturity:
+CHS/UH stands for Ultra High Coherence Mode.
 
-- **CT-1 (Low):** Calibration-only response.  
-- **CT-2 (Medium):** Soft correction and bounded reprocessing.  
-- **CT-3 (High):** Hard correction with mandatory human review.  
-- **CT-4 (Critical):** Quarantine mandate.
+Rules of interaction:
+	•	A CT-4 outcome triggers TGF™ veto and forces restrictive operational posture.
+	•	CHS may be down-banded after a CT breach to prevent unsafe execution.
+	•	TCS™ and ACS™ remain authoritative at their respective scopes and are not altered by this chapter.
 
-**CT may trigger CHS™ down-banding as an outcome, but CT is derived independently from CHS™.**
+⸻
 
-### 42.5.3 Enforcement Path
-- **HML™** authorizes policy changes and exceptional overrides with new receipts.  
-- **TGF™** executes veto, degradation, and quarantine responses based on CT level.  
-- **EVL™** records the full chain: snapshot → report → action.
+42.10 Receipts and Ledger Binding
+When a scoring event occurs, the metamodule must emit receipts consistent with THT and EVL continuity.
+Each scored snapshot must be traceable to:
+	•	B-VSS identifier,
+	•	STS™ component readings,
+	•	SCS™ component readings,
+	•	MCS™ composite reading,
+	•	CT assignment (if any),
+	•	CHS impact (if triggered),
+	•	HML authority context (when overrides exist).
 
----
+This ensures auditability without narrative dependence.
 
-## 42.6 Relationship to ACS™ and TCS™ (No Collisions)
+⸻
 
-This chapter preserves acronym sovereignty:
+42.11 Canonical Statement
+The scoring primitives of TruthSeal™ — STS™, SCS™, and MCS™ — define the measurable integrity and system-state coherence of metamodule snapshots.
+They are non-compensatory, receipt-bound, and ledger-continuous.
+They exist to ensure that no system can claim sovereign integrity unless it can prove it at the level of its weakest critical link.
+TRUTHSEAL™ SOVEREIGN COMPENDIUM · DOCTORANTURA EDITION v1.0
+TruthSeal™ Pty Ltd · Melbourne, Australia · truthseal.ai
+8 December 2025
 
-- **ACS™** remains **Aim Coherence Score** (trajectory alignment).  
-- **TCS™** remains the **Traykov Coherence Score** (court-grade coherence baseline).  
-- **STS™ / SCS™ / MCS™** are internal scoring primitives for metamodule integrity.
+Dr. Nickolay Traykov (Prof. h.c.)
+Founder & Sovereign Architect
+TruthSeal™ Pty Ltd
 
-Nothing in this chapter redefines or replaces the locked TCS v0.1 baseline.
-
----
-
-## 42.7 Auditor Checklist (Public-Safe)
-An auditor must confirm:
-1. STS™, SCS™, MCS™ are expanded at first use and used consistently.  
-2. B-VSS definition is present and bounded.  
-3. Min-Gate law is explicit and operationally binding.  
-4. CT assignment is triggered by Min-Gate failure, not by CHS health levels.  
-5. Separation of roles is clear: HML authorizes, TGF enforces.  
-6. EVL continuity is referenced for snapshot/report/action chaining.  
-7. Weights are labeled as initial defaults with HML-tunable discipline.
-
----
-
-## 42.8 Canonical Statement
-The TruthSeal™ scoring primitives — **STS™, SCS™, and MCS™** — provide measurable ingestion and system-state integrity for B-VSS payloads.  
-They operate under an irrevocable non-compensatory rule: **a single critical failure governs authority**.  
-Min-Gate breaches assign the correct **Consequence Tier (CT)** and activate the Third Guardian Firewall™ enforcement path under Human Mandate Layer™ authority, with epoch continuity recorded in the Epoch Verification Ledger™.
 
 — End of Chapter 42 —
