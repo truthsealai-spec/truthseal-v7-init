@@ -1,24 +1,24 @@
-TruthSeal™ Pty Ltd
-Melbourne, Australia
-truthseal.ai
-8 December 2025
+**TruthSeal™ Pty Ltd**  
+**Melbourne, Australia**  
+**truthseal.ai**  
+**8 December 2025**
 
-TRUTHSEAL™ SOVEREIGN COMPENDIUM
-DOCTORANTURA EDITION v1.0
-────────────────────────────
-CHAPTER 14 — THIRD GUARDIAN FIREWALL™
-THE CONSCIENCE & INTERVENTION LAYER
+**TRUTHSEAL™ SOVEREIGN COMPENDIUM**  
+**DOCTORANTURA EDITION v1.0**  
+────────────────────────────  
+**CHAPTER 14 — THIRD GUARDIAN FIREWALL™**  
+**THE CONSCIENCE & INTERVENTION LAYER**
 
-version: 1.0
-status: Locked
-owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.)
-classification: Not for Public Use — committee operational doctrine
+version: 1.0  
+status: Locked  
+owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.)  
+classification: Not for Public Use — committee operational doctrine  
 scope: This chapter defines the Third Guardian Firewall™ (TGF™) as the internal veto, refusal, and intervention layer for AI and embodied systems operating under the TruthSeal™ stack. Deeper Ω mechanisms remain classified under Doctorantura.
 
-© 2025 TruthSeal™ — Compendium (Diplomatic / Committee Edition)
-Author: Dr. Nickolay Traykov (Prof. h.c.) — Founder & Chief Architect
-Use: Not for Public Use — committee operational doctrine.
-Receipts: ts.receipt.v1 — anchors via OpenTimestamps / OriginStamp / BTCStamp when available; EVL/ULIC references maintained.
+© 2025 TruthSeal™ — Compendium (Diplomatic / Committee Edition)  
+Author: Dr. Nickolay Traykov (Prof. h.c.) — Founder & Chief Architect  
+Use: Not for Public Use — committee operational doctrine.  
+Receipts: ts.receipt.v1 — anchors via OpenTimestamps / OriginStamp / BTCStamp when available; EVL/ULIC references maintained.  
 Reproduction permitted only with intact receipts and attribution to TruthSeal™.
 
 ⸻
@@ -190,6 +190,6 @@ With it, AI and robotics transition from tool behaviour to responsibility-bearin
 ⸻
 
 ## 14.12 Footer — Authority & Custody
-© 2025 TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.).
-This chapter defines committee-grade doctrine under the TruthSeal™ mandate.
+© 2025 TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.).  
+This chapter defines committee-grade doctrine under the TruthSeal™ mandate.  
 Deeper Ω materials and internal enforcement mechanics remain sealed under Doctorantura.
