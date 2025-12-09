@@ -1,183 +1,7 @@
-CHAPTER 13 — HUMAN MANDATE LAYER™
-OWNER · GUARDIAN · OPERATOR SOVEREIGNTY
+**CHAPTER 13 — HUMAN MANDATE LAYER™**  
+**OWNER · GUARDIAN · OPERATOR SOVEREIGNTY**
 
-This chapter establishes the Human Mandate Layer™ (HML™) as the constitutional custody system for governed intelligence.
-It applies to advanced AI systems and embodied agents operating under TruthSeal™—including single robots under TS-R1™
-and fleets under TS-R2™—ensuring that sovereignty cannot drift from humans to machines.
-
-13.1 Definition  
-The Human Mandate Layer™ (HML™) defines who may command, own, supervise, and be
-held responsible for AI and robotic systems operating under TruthSeal™. It is the layer that
-says, in law and in ledgers:
-
-“This human, or this institution, carries the mandate and the
-liability for what the system does.”
-
-Without HML™, sovereignty would drift toward machines. HML™ fixes sovereignty in
-human and institutional hands.
-
-13.2 Position in the Stack  
-HML™ sits above TS-A1 AEGIS™, TS-R1™, TS-R2™, NeuroVest™, and the metric triad
-(TCS™, ACS™, CHS™).
-
-• TS-A1 AEGIS™ governs computation.  
-• TS-R1™ and TS-R2™ govern robots and fleets.  
-• NeuroVest™ governs behaviour and memory.  
-• HML™ governs who is allowed to instruct, override, and answer for these systems.
-
-No TruthSeal™ deployment is complete without a defined HML™.
-
-13.3 Roles  
-HML™ recognises four primary human roles:
-
-1. Owner / Sovereign Principal – legal holder of ultimate authority and liability for a
-given system or fleet.  
-2. Guardian – appointed party responsible for day-to-day standards, safety, and CHS™
-policy adherence.  
-3. Operator – individual permitted to issue direct commands within defined scope and
-CHS™ limits.  
-4. Auditor / Regulator – legally empowered entity entitled to inspect receipts, EVL™
-entries, and QENC™ capsules.
-
-Every command, override, or configuration change must be traceable back to one or more of
-these roles.
-
-13.4 Identification and Authentication  
-HML™ requires that each role be bound to a strong identity:
-
-• verified person or institution;  
-• authenticated channel (keys, credentials, hardware token, or equivalent);  
-• jurisdiction and legal contact.
-
-Anonymous control is not allowed under HML™.
-
-If identity cannot be established at the required assurance level, TS-A1/TS-R1/TS-R2 must
-treat the instruction as invalid and record a rejected-command event.
-
-13.5 Rights  
-Under HML™, human roles hold the following core rights:
-
-• Owner / Sovereign Principal: define policy envelopes; set CHS™ band ceilings;
-approve or revoke deployment; appoint and revoke Guardians and Operators.  
-• Guardian: adjust operational parameters within Owner-defined boundaries; request
-CHS™ upgrades or downgrades; approve updates to NeuroVest™ profiles; initiate
-safe-stop or shutdown.  
-• Operator: issue task-level commands within CHS™ limits; request clarification from
-the system; trigger local safe-stop where immediate danger is perceived.  
-• Auditor / Regulator: access logs, receipts, EVL™ entries, and QENC™ proofs;
-demand explanations; require corrective plans under applicable law.
-
-Rights are conditional: they exist only while identity, jurisdiction, and CHS™ rules are
-satisfied.
-
-13.6 Duties and Liabilities  
-HML™ does not grant power without responsibility.
-
-• Owner accepts ultimate civil and, where applicable, criminal liability for how the
-system is deployed.  
-• Guardian is responsible for ongoing configuration, risk monitoring, and ensuring
-CHS™ bands match real-world risk.  
-• Operator must follow operational standards, refuse unsafe instructions, and report
-anomalies.  
-• Auditor / Regulator must handle receipt data lawfully and avoid misuse of forensic
-insight.
-
-TruthSeal™ makes these duties traceable; failing them is not abstract, it is ledger-visible.
-
-13.7 Interaction with CHS™, TS-R1™, and TS-R2™  
-HML™ is tightly coupled to CHS™ bands and robotic law:
-
-• At CHS/L, only the Owner or Guardian may authorise resumption of activity after
-investigation; Operators are limited to emergency safe-stop.  
-• At CHS/M, Operators may command within a restricted playbook; high-risk tasks still
-require Guardian or Owner approval.  
-• At CHS/H, Operators gain routine authority, but certain actions (for example high-energy,
-high-speed, medical, or financial operations) still require higher-tier confirmation.  
-• At CHS/UH, autonomy is high, but HML™ still retains the right to revoke: a single
-instruction from Owner or designated authority can down-band and force safe-stop.
-
-TS-R1™ and TS-R2™ must enforce these bindings in the control system, not just on paper.
-
-13.8 Command Accept / Reject Logic  
-Under HML™, every command passes through a simple decision chain:
-
-1. Who issued the command? (identity + role)  
-2. Is this role authorised at the current CHS™ level?  
-3. Is the requested action allowed in the current context? (environment, time,
-jurisdiction, risk)  
-4. Does it violate ULLI™, LEI = 1™, ULIC™, or LTCC™?
-
-If any condition fails, the system must reject or degrade the command and generate a receipt
-indicating: issuer, reason for rejection, and current CHS™ band. This protects both the
-human and the wider environment.
-
-13.9 Override and Emergency Powers  
-HML™ defines three override paths:
-
-• Soft Override (Guardian / Owner): adjust CHS™ down, suspend certain behaviours,
-schedule review.  
-• Hard Override (Owner or authorised authority): immediate safe-stop, isolation from
-networks, freezing of fleet coordination (for TS-R2™).  
-• Regulatory Override (Auditor / Regulator): under legal mandate, require system
-shutdown or configuration change; the system records this as an external legal-
-override event.
-
-NeuroVest™ and TS-A1 must respect these overrides as binding, not advisory.
-
-13.10 Receipts and Legal Interface  
-HML™ ensures that every significant human–system interaction is receipted:
-
-• role identity,  
-• time,  
-• command or override,  
-• outcome (accepted / rejected / degraded),  
-• CHS™ state before and after.
-
-These entries appear in EVL™ and, where needed, are consolidated into QENC™
-ProofCapsules for long-term sovereign evidence. This is how HML™ connects technical
-behaviour with courts, regulators, insurers, and contracts.
-
-13.11 Canonical Statement  
-The Human Mandate Layer™ is the TruthSeal™ construct that fixes sovereignty in human
-and institutional hands. It specifies who may command, who must answer, and how that
-relationship is recorded and enforced across all hardware, software, and robotic layers.
-
-Without HML™, sovereignty would drift toward machines. With HML™, every intelligent
-system remains anchored to named, accountable, human authority.
-
-13.12 Acronyms (expanded once)  
-HML™ — Human Mandate Layer.  
-TS-A1 AEGIS™ — TruthSeal™ accelerator governance core.  
-TS-R1™ — Single-agent robotic sovereignty regime.  
-TS-R2™ — Swarm / fleet robotic sovereignty doctrine.  
-ACS™ — Aim Coherence Score.  
-CHS™ — Coherence Health Score.  
-TCS™ — Traykov Coherence Score.  
-EVL™ — Epoch Verification Ledger.  
-QENC™ — Quantum Evidence & Coherence ProofCapsule.  
-ULLI™ — Universal Law of Life & Information.  
-LEI = 1™ — Law of Ethical Irreversibility.  
-ULIC™ — Universal Law of Irreversible Coherence.  
-LTCC™ — Law of TruthSeal™ Cognitive Coherence.
-13.12 Acronyms (expanded once)
-
-HML™ — Human Mandate Layer.  
-CHS™ — Coherence Health Score.  
-CHS/L — Coherence Health Score / Low.  
-CHS/M — Coherence Health Score / Medium.  
-CHS/H — Coherence Health Score / High.  
-CHS/UH — Coherence Health Score / Ultra-High.  
-TS-A1 AEGIS™ — TruthSeal AEGIS™ accelerator core.  
-TS-R1™ — single-agent robotic sovereignty regime.  
-TS-R2™ — swarm / fleet sovereignty doctrine.  
-EVL™ — Epoch Verification Ledger.  
-QENC™ — Quantum Evidence & Coherence ProofCapsule.  
-ULIC™ — Universal Law of Irreversible Coherence.  
-ULLI™ — Universal Law of Life & Information.  
-LEI = 1™ — Law of Ethical Irreversibility.  
-TLC™ — Traykov Legal Covenant.  
-TCS™ — Traykov Coherence Score.  
-ACS™ — Aim Coherence Score.
+Not for Public Use — committee operational doctrine; deeper Ω materials remain classified under Doctorantura.  
 version: 1.0  
 status: Locked  
 owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.)  
@@ -188,3 +12,269 @@ Author: Dr. Nickolay Traykov (Prof. h.c.) — Founder & Chief Architect
 Use: Not for Public Use — committee operational doctrine; deeper Ω materials remain classified under Doctorantura.  
 Receipts: ts.receipt.v1 — anchors via OpenTimestamps / OriginStamp / BTCStamp when available; EVL/ULIC references maintained.  
 Reproduction permitted only with intact receipts and attribution to TruthSeal™.
+
+⸻
+
+## 1) Outcome (what this chapter gives you)
+
+This chapter defines the **Human Mandate Layer™ (HML™)** as the constitutional custody system for governed intelligence.
+
+It clarifies, at committee-operational level:
+
+• who may **own**, **command**, **supervise**, **override**, and **audit** systems under TruthSeal™  
+• how authority is **proven**, **limited**, and **logged**  
+• how liability remains **human-anchored** across TS-A1™, NeuroVest™, TS-R1™, and TS-R2™
+
+This chapter avoids repeating hardware or robotics doctrine already defined elsewhere; it focuses on **human authority, legal custody, and command legitimacy**.
+
+⸻
+
+## 2) Purpose (why this chapter exists)
+
+Advanced AI and embodied agents can only be deployed at scale if responsibility remains **assignable**.
+
+Without HML™:
+
+• mandate becomes ambiguous  
+• liability becomes disputable  
+• sovereignty risks drifting from institutions to machines
+
+HML™ prevents that drift by binding every significant instruction to a **named, authenticated, jurisdiction-bound human or institution**.
+
+⸻
+
+## 3) Doctrine boundary
+
+This is committee operational doctrine.
+
+It defines HML™ in terms of:
+
+• enforceable authority roles  
+• identity requirements  
+• command accept/reject logic  
+• audit visibility
+
+It does not disclose:
+
+• classified Ω enforcement mechanics  
+• internal deployment thresholds  
+• sealed control mathematics reserved for Doctorantura
+
+⸻
+
+## 4) Position in the stack
+
+HML™ sits above the TruthSeal governance stack:
+
+• **TS-A1 AEGIS™** governs computation admission and lawful execution.  
+• **NeuroVest™** governs behavioural discipline, memory, and consequence continuity.  
+• **TS-R1™** governs single-agent physical sovereignty.  
+• **TS-R2™** governs swarm/fleet sovereignty.  
+• **TCS™, ACS™, CHS™** provide institutional-grade coherence, aim, and operational health signals.
+
+HML™ defines **who is allowed to instruct, override, and answer** for every layer.
+
+No TruthSeal™ deployment is complete without a defined HML™.
+
+⸻
+
+## 5) Core roles (authority map)
+
+HML™ recognises four primary human roles:
+
+1) **Owner / Sovereign Principal**  
+Legal holder of ultimate authority and liability for a system or fleet.
+
+2) **Guardian**  
+Appointed party responsible for safety standards, configuration integrity, and CHS™ policy adherence.
+
+3) **Operator**  
+Individual permitted to issue direct commands within defined scope and CHS™ limits.
+
+4) **Auditor / Regulator**  
+Legally empowered entity entitled to inspect receipts, relevant EVL™ records, and QENC™ ProofCapsules.
+
+Every command, override, or configuration change must be traceable to one or more of these roles.
+
+⸻
+
+## 6) Identity and authentication
+
+HML™ requires each role to be bound to:
+
+• a verified person or institution  
+• an authenticated channel (keys, credentials, hardware token, or equivalent)  
+• jurisdiction and legal contact metadata
+
+**Anonymous control is not permitted.**
+
+If identity cannot be established at the required assurance level,  
+TS-A1/TS-R1/TS-R2 must treat the instruction as invalid and generate a rejected-command receipt.
+
+⸻
+
+## 7) Rights (what each role may do)
+
+• **Owner / Sovereign Principal**  
+  - define policy envelopes  
+  - set CHS™ ceilings  
+  - approve or revoke deployment  
+  - appoint or revoke Guardians and Operators
+
+• **Guardian**  
+  - adjust operational parameters within Owner-defined boundaries  
+  - request CHS™ upgrades/downgrades  
+  - approve updates to NeuroVest™ profiles  
+  - initiate safe-stop or shutdown
+
+• **Operator**  
+  - issue task-level commands within CHS™ limits  
+  - request clarification  
+  - trigger local emergency safe-stop where immediate danger is perceived
+
+• **Auditor / Regulator**  
+  - access lawful logs/receipts  
+  - demand explanations  
+  - require corrective plans under applicable law
+
+Rights are conditional and remain valid only while identity, jurisdiction, and CHS™ rules are satisfied.
+
+⸻
+
+## 8) Duties and liabilities
+
+HML™ does not grant power without responsibility:
+
+• **Owner** accepts ultimate civil and, where applicable, criminal liability for deployment and mandate scope.  
+• **Guardian** is responsible for configuration integrity, safety posture, and correct CHS™ banding.  
+• **Operator** must follow operational standards, refuse unsafe instructions, and report anomalies.  
+• **Auditor / Regulator** must handle receipt data lawfully and avoid abuse of forensic insight.
+
+TruthSeal™ makes these duties **ledger-visible**.
+
+⸻
+
+## 9) CHS™ authority binding (no repetition, clear mapping)
+
+HML™ binds authority to CHS™ bands enforced by TS-A1/TS-R1/TS-R2:
+
+• **CHS/L (Low)**  
+  - system is in safe-stop or restricted state  
+  - only Owner or Guardian may authorise resumption after review  
+  - Operators are limited to emergency safe-stop and reporting
+
+• **CHS/M (Medium)**  
+  - Operators may command within a restricted playbook  
+  - elevated-risk tasks require Guardian or Owner confirmation
+
+• **CHS/H (High)**  
+  - Operators gain routine authority  
+  - high-energy, high-speed, medical, financial, or public-risk actions remain gated by higher-tier confirmation
+
+• **CHS/UH (Ultra-High)**  
+  - autonomy windows expand only with proven stability and ledger history  
+  - HML™ retains absolute revocation power  
+  - a single Owner/authority instruction can down-band and force safe-stop
+
+Robotic layers must enforce these rules in control systems, not on paper.
+
+⸻
+
+## 10) Command accept / reject logic
+
+Every instruction passes a simple decision chain:
+
+1) **Who issued the command?** (identity + role)  
+2) **Is this role authorised at the current CHS™ level?**  
+3) **Is the action allowed in the current context?**  
+4) **Does it violate governing TruthSeal laws and policy?**
+
+If any condition fails, the system must reject or degrade the command and issue a receipt stating:
+
+• issuer role identity  
+• reason for rejection  
+• current CHS™ band  
+• time and mandate reference
+
+This protects both the human authority and the operational environment.
+
+⸻
+
+## 11) Override and emergency powers
+
+HML™ defines three override paths:
+
+• **Soft Override (Guardian / Owner)**  
+  - CHS™ down-band  
+  - suspend specific behaviours  
+  - schedule review
+
+• **Hard Override (Owner or authorised authority)**  
+  - immediate safe-stop  
+  - isolation from networks  
+  - freeze of fleet coordination where applicable
+
+• **Regulatory Override (Auditor / Regulator)**  
+  - lawful mandate to require shutdown or configuration changes  
+  - recorded as an external legal-override event
+
+NeuroVest™ and TS-A1 must treat these as binding.
+
+⸻
+
+## 12) Receipts and legal interface
+
+HML™ ensures that every significant human–system interaction is receipted:
+
+• role identity  
+• time  
+• command or override  
+• outcome (accepted / rejected / degraded)  
+• CHS™ state before and after
+
+These entries appear in EVL™ and may be consolidated into QENC™ ProofCapsules  
+when long-term sovereign evidence is required.
+
+⸻
+
+## 13) Canonical statement
+
+The Human Mandate Layer™ is the TruthSeal™ construct that fixes sovereignty in human and institutional hands.
+
+It specifies:
+
+• who may command  
+• who must answer  
+• how authority is verified  
+• how that relationship is recorded and enforced across hardware, software, and robotics
+
+Without HML™, sovereignty would drift toward machines.  
+With HML™, every intelligent system remains anchored to named, accountable human authority.
+
+⸻
+
+## 14) Acronyms (expanded once)
+
+HML™ — Human Mandate Layer.  
+CHS™ — Coherence Health Score.  
+CHS/L — Low CHS band.  
+CHS/M — Medium CHS band.  
+CHS/H — High CHS band.  
+CHS/UH — Ultra-High CHS band.  
+TS-A1™ — TruthSeal AEGIS™ accelerator core.  
+TS-R1™ — Single-agent robotic sovereignty regime.  
+TS-R2™ — Swarm / fleet sovereignty regime.  
+TCS™ — Traykov Coherence Score.  
+ACS™ — Aim Coherence Score.  
+EVL™ — Epoch Verification Ledger.  
+QENC™ — Quantum Evidence & Coherence ProofCapsule.  
+PQC — Post-Quantum Cryptography.  
+UNKNOWN — Allowed outage placeholder for anchor fields with mandatory later back-fill.
+
+⸻
+
+## 15) Footer — Authority & custody
+
+© 2025 TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.).  
+This chapter defines committee-level Human Mandate doctrine under the TruthSeal™ compendium.  
+Deeper Ω materials and internal enforcement mechanics remain sealed under Doctorantura.
