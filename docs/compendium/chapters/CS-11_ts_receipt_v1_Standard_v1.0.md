@@ -1,164 +1,166 @@
-# TruthSeal™ — Compendium (Diplomatic / Committee Edition)
-# CS-11 — TS-R1™: Single-Agent Robotic Sovereignty
-# Not for public use; deeper Ω materials remain classified under Doctorantura.
+The TruthSeal™ Compendium
 
+CHAPTER 11 — TS-R1™  
+Single-Agent Robotic Sovereignty
+
+Not for public use; deeper Ω materials remain classified under Doctorantura.
 version: 1.0
-status: Locked
+status: Draft
 owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.)
-date_utc: 2025-12-08
+date_utc: 2025-12-09
 
-© 2025 TruthSeal™ — Compendium (Diplomatic / Committee Edition)  
-Author: Dr. Nickolay Traykov (Prof. h.c.) — Founder & Chief Architect  
-Use: Not for Public Use — committee operational doctrine; deeper Ω materials remain classified under Doctorantura.  
-Receipts: ts.receipt.v1 — anchors via OpenTimestamps / OriginStamp / BTCStamp when available; EVL/ULIC references maintained.  
+© 2025 TruthSeal™ — Compendium (Diplomatic / Committee Edition)
+Author: Dr. Nickolay Traykov (Prof. h.c.) — Founder & Chief Architect
+Use: Not for Public Use — committee operational doctrine; deeper Ω materials remain classified under Doctorantura.
+Receipts: ts.receipt.v1 — anchors via OpenTimestamps / OriginStamp / BTCStamp when available; EVL/ULIC references maintained.
 Reproduction permitted only with intact receipts and attribution to TruthSeal™.
 
----
+⸻
 
 ## 1) Outcome (what this chapter gives you)
 
-This chapter defines **TS-R1™** as the sovereignty regime for **one embodied agent**—robot, drone, vehicle, or assistant machine.
+This chapter defines **single-agent robotic sovereignty** under TruthSeal™.
 
-It clarifies how a single physical intelligence unit becomes:
+It explains how one embodied system—robot, drone, vehicle, or assistant machine—becomes a **responsibility-bearing, insurable, auditable actor**, rather than unmanaged automation.
 
-- privilege-bounded,
-- safety-constrained,
-- duty-persistent,
-- receipt-accountable,
-- legally reconstructable.
+By the end, a first-time reader will understand:
 
-TS-R1™ is the doctrine that turns embodiment into audited responsibility.
+• What TS-R1™ governs in the physical world.  
+• How privilege is bound to CHS™ banding.  
+• Why receipts and ledger continuity are mandatory for real-world autonomy.  
+• The minimum compliance conditions for declaring a unit TS-R1™-ready.
 
----
+This chapter is written at committee doctrine level and does not expose Ω control mechanics.
+
+⸻
 
 ## 2) Purpose (why this chapter exists)
 
-A robot without sovereignty is machinery.
+Embodied intelligence creates a distinct governance risk:
 
-A robot with TS-R1™ becomes a governed actor whose autonomy is:
+**physical action has irreversible consequences.**
 
-- limited by verified maturity,
-- constrained by safety law,
-- bound to human mandate,
-- recorded for institutional liability custody.
+TS-R1™ exists to ensure that a single robotic unit:
 
-TS-R1™ exists to make single-agent autonomy deployable in regulated real-world environments.
+• cannot exceed its verified trust band  
+• cannot bypass human mandate authority  
+• cannot erase learned duty  
+• cannot perform high-risk acts without audit evidence
 
----
+This chapter therefore formalizes the **legal and operational bridge** between:
 
-## 3) Placement in the stack (committee view)
+policy-defined sovereignty and real-world actuation.
 
-TS-R1™ sits between:
+⸻
 
-- **TS-A1 AEGIS™** (chip-level lawful computation)  
-and  
-- **NeuroVest™** (behavioural discipline, consequence memory, foresight).
+## 3) The doctrine boundary
 
-Committee translation:
+This chapter defines TS-R1™ in terms of:
 
-- TS-A1 makes computation lawful.  
-- NeuroVest™ makes behaviour coherent.  
-- **TS-R1™ makes embodiment accountable.**
+• physical permission structure  
+• safety prohibitions  
+• duty persistence  
+• provable accountability
 
----
+It does not disclose:
 
-## 4) The four obligations of a TS-R1™ agent
+• internal Ω prompts or sealed enforcement mathematics  
+• deployment thresholds that would reveal sovereign defence posture  
+• low-level circuit logic for analog safety boundaries
 
-A TS-R1™ agent must obey:
+⸻
+
+## 4) Canonical definition
+
+TS-R1™:  
+**The sovereignty regime that turns a single physical agent into a coherence-bounded, privilege-gated, receipt-accountable actor under lawful human custody.**
+
+⸻
+
+## 5) The four obligations of TS-R1™
+
+A TS-R1™ unit must obey:
 
 1) **Privilege Binding**  
-   Its actions cannot exceed its active **CHS™ band**.
+Its actions cannot exceed its active CHS™ band.
 
 2) **Safety Prohibitions**  
-   It is forbidden autonomous operation around children, infants, animals, storms, hazards, criminal hand-offs, underage command, or unsupervised commerce.
+Autonomous operation is forbidden around protected or high-risk contexts  
+(children, infants, animals, storms, hazards, underage command, criminal hand-offs, or unsupervised commerce),  
+unless explicitly authorised by mandate and band eligibility.
 
 3) **Duty Persistence**  
-   Learned responsibility cannot be erased.  
-   ULIC™ + LEI = 1™ enforce permanent behavioural inheritance.
+Learned responsibility cannot be erased.  
+ULIC™ + LEI = 1™ enforce permanent behavioural inheritance.
 
 4) **Provable Accountability**  
-   Significant acts emit receipts and ledger proofs.
+Material acts emit receipts and ledger proofs.
 
----
+⸻
 
-## 5) CHS™ as physical permission law (committee banding)
+## 6) CHS™ banding as physical permission
 
-CHS™ drives actuation permission:
+CHS™ drives real-world permissions:
 
-- **CHS/L** — safe-stop  
-- **CHS/M** — assist-only  
-- **CHS/H** — normal execution with checks  
-- **CHS/UH** — sovereign autonomy only with demonstrated stability and ledger history
+• **CHS/L** — safe-stop only  
+• **CHS/M** — assist-only  
+• **CHS/H** — normal execution with checks  
+• **CHS/UH** — sovereign autonomy only with demonstrated stability and ledger history
 
 Regression forces down-banding automatically.
 
-A robot cannot self-declare maturity.  
-It must prove it.
+A robot cannot self-declare maturity; it must prove it.
 
----
+⸻
 
-## 6) Human Mandate binding
+## 7) Human Mandate authority
 
-TS-R1™ encodes HML™ authority as:
+TS-R1™ embeds an Owner/Guardian mandate.
 
-- Owner / Guardian authority  
-- authenticated Operator permissions
+• Authorized human scope defines lawful tasks.  
+• Authenticated operator permissions are subordinate to the mandate.  
+• Anonymous or unverified commands are rejected and logged.
 
-Anonymous or unverified commands are rejected and logged.
+⸻
 
----
+## 8) Receipts under TS-R1™
 
-## 7) Receipts under TS-R1™
+The following events must generate evidence:
 
-Committee-scope receipts include:
+• safe-stop activations  
+• override attempts  
+• blocked or out-of-band commands  
+• entry into high-risk contexts  
+• mandate digest changes affecting physical privilege
 
-- safe-stop events  
-- override attempts  
-- blocked commands  
-- high-risk task entries  
-- mandate conflicts
+These records are written to EVL™ and supported by QENC™ ProofCapsules  
+to guarantee reconstructable liability history.
 
-These are written to EVL™ and associated QENC™ ProofCapsules so that the unit’s history becomes legally reconstructable.
+⸻
 
----
-
-## 8) Minimum compliance gate (committee checklist)
+## 9) Minimum compliance checklist (committee level)
 
 A unit is not TS-R1™ compliant unless:
 
-- TS-A1 AEGIS™ is present  
-- NeuroVest™ is active  
-- CHS™ gating controls actuation  
-- override rights exist  
-- ledger output is configured  
-- safety exclusions are applied
+• TS-A1 AEGIS™ foundations are present  
+• NeuroVest™ behaviour discipline is active  
+• CHS™ gating controls actuation  
+• Owner/Guardian override rights exist  
+• ledger output is configured  
+• safety exclusions are applied
 
 Any missing element disqualifies sovereignty.
 
----
-
-## 9) Institutional value
-
-TS-R1™ enables:
-
-- insurable robotics  
-- licensable autonomy  
-- sanctionable behaviour  
-- lawful single-agent deployment
-
-across domestic, industrial, infrastructure, and sovereign contexts.
-
----
+⸻
 
 ## 10) Transition note
 
-TS-R1™ governs one robot.  
-TS-R2™ governs many robots acting together.
+TS-R1™ governs one robot.
 
-Where TS-R1™ asserts individual duty,  
-TS-R2™ defines collective ethics, hierarchy, fault isolation, and fleet irreversibility.
+TS-R2™ governs many robots acting together  
+with hierarchy, fault isolation, and collective consequence.
 
----
+⸻
 
 ## 11) Acronyms (expanded once)
 
@@ -167,15 +169,18 @@ CHS™ — Coherence Health Score.
 EVL™ — Epoch Verification Ledger.  
 HML™ — Human Mandate Layer.  
 LEI = 1™ — Law of Ethical Irreversibility.  
-TS-A1 AEGIS™ — TruthSeal™ chip-level governance core.  
+NeuroVest™ — Behavioural governance architecture for advanced intelligence.  
+QENC™ — Quantum Evidence & Coherence ProofCapsule.  
+TS-A1 AEGIS™ — Hardware sovereignty core for admission, privilege gating, and receipt pre-validation.  
 TS-R1™ — Single-Agent Robotic Sovereignty regime.  
 TS-R2™ — Swarm / Fleet Sovereignty regime.  
-ULIC™ — Universal Law of Irreversible Coherence.
+ULIC™ — Universal Law of Irreversible Coherence.  
+ts.receipt.v1 — Canonical evidence chain for governance continuity.
 
----
+⸻
 
 ## 12) Footer — Authority & Custody
 
 © 2025 TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.).  
-This chapter defines TS-R1™ committee operational doctrine under the TruthSeal™ mandate.  
+This section defines TS-R1™ committee operational doctrine under the TruthSeal™ mandate.  
 Deeper Ω materials and internal enforcement mechanics remain sealed under Doctorantura.
