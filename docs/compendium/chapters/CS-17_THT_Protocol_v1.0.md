@@ -1,10 +1,11 @@
-TruthSeal™ Pty Ltd
-Melbourne, Australia
-truthseal.ai
-8 December 2025
+**TruthSeal™ Pty Ltd**
+**Melbourne, Australia**
+**truthseal.ai**
+**8 December 2025**
 
-TRUTHSEAL™ SOVEREIGN COMPENDIUM
-DOCTORANTURA EDITION v1.0
+**TRUTHSEAL™ SOVEREIGN COMPENDIUM**
+**DOCTORANTURA EDITION v1.0**
+──────────────────────────────
 ────────────────────────────────
 
 **CHAPTER 17 — THT PROTOCOL™**
