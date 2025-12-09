@@ -159,3 +159,32 @@ ULLI™ — Universal Law of Life & Information.
 LEI = 1™ — Law of Ethical Irreversibility.  
 ULIC™ — Universal Law of Irreversible Coherence.  
 LTCC™ — Law of TruthSeal™ Cognitive Coherence.
+13.12 Acronyms (expanded once)
+
+HML™ — Human Mandate Layer.  
+CHS™ — Coherence Health Score.  
+CHS/L — Coherence Health Score / Low.  
+CHS/M — Coherence Health Score / Medium.  
+CHS/H — Coherence Health Score / High.  
+CHS/UH — Coherence Health Score / Ultra-High.  
+TS-A1 AEGIS™ — TruthSeal AEGIS™ accelerator core.  
+TS-R1™ — single-agent robotic sovereignty regime.  
+TS-R2™ — swarm / fleet sovereignty doctrine.  
+EVL™ — Epoch Verification Ledger.  
+QENC™ — Quantum Evidence & Coherence ProofCapsule.  
+ULIC™ — Universal Law of Irreversible Coherence.  
+ULLI™ — Universal Law of Life & Information.  
+LEI = 1™ — Law of Ethical Irreversibility.  
+TLC™ — Traykov Legal Covenant.  
+TCS™ — Traykov Coherence Score.  
+ACS™ — Aim Coherence Score.
+version: 1.0  
+status: Locked  
+owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.)  
+date_utc: 2025-12-08  
+
+© 2025 TruthSeal™ — Compendium (Diplomatic / Committee Edition)  
+Author: Dr. Nickolay Traykov (Prof. h.c.) — Founder & Chief Architect  
+Use: Not for Public Use — committee operational doctrine; deeper Ω materials remain classified under Doctorantura.  
+Receipts: ts.receipt.v1 — anchors via OpenTimestamps / OriginStamp / BTCStamp when available; EVL/ULIC references maintained.  
+Reproduction permitted only with intact receipts and attribution to TruthSeal™.
