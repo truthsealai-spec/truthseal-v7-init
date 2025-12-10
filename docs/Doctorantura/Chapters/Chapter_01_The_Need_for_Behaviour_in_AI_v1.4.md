@@ -10,7 +10,8 @@ truthseal.ai
 
   TRUTHSEAL™ COMPENDIUM
   DOCTORANTURA EDITION v1.0
-" THE SOVEREIGN ARC of AGI "
+  
+THE SOVEREIGN ARC of AGI 
 ---
 
 # Chapter 01 — The Need for Behaviour in AI
