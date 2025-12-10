@@ -3,13 +3,14 @@ Melbourne, Australia
 truthseal.ai
 10 December 2025
 
-Sovereign Compendium
+  Sovereign Compendium
 → Doctorantura Edition
 → Sovereign Arc of AGI Framework
 
-TRUTHSEAL™ SOVEREIGN COMPENDIUM
-DOCTORANTURA EDITION v1.0
 
+  TRUTHSEAL™ COMPENDIUM
+  DOCTORANTURA EDITION v1.0
+" THE SOVEREIGN ARC of AGI "
 ---
 
 # Chapter 01 — The Need for Behaviour in AI
