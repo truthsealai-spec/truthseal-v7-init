@@ -13,7 +13,9 @@ Sharing or distribution without TruthSeal™ consent is prohibited.
 
 # Sovereign Compendium Closure Standard™ (SCCS™):
 
-# The Final Doctrine Lock and Public Release Gate
+# Doctrine v1.0 Closure and Public Release Gate
+
+This chapter closes the Doctorantura Edition Doctrine v1.0 cycle; it does not close the broader TruthSeal™ Compendium roadmap.
 
 version: 1.0  
 status: Draft — Doctorantura Edition  
