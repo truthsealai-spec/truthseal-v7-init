@@ -202,9 +202,6 @@ without humans understanding *who it is being* while it acts.
 
 ---
 
-## Acronyms (Doctorantura Standard)
-
-A compact chapter glossary for fast human audit.
 
 ## Acronyms (Doctorantura Standard)
 
@@ -236,8 +233,6 @@ an AGI can be powerful **and** predictable,
 intelligent **and** socially legible,  
 adaptive **and** permanently accountable.
 
-
----
 
 ---
 
