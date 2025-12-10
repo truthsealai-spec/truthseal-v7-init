@@ -193,3 +193,7 @@ It embodies the doctrine that:
 **civilisational-scale intelligence is legitimate only when its learning is lawful,  
 its experiments are accountable,  
 and its improvements remain permanently inheritable.**
+
+© 2025 TruthSeal™ — Coherent Epoch
+
+— End of Chapter 20 —
