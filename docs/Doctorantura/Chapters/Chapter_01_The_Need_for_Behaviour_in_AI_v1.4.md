@@ -2,6 +2,7 @@ TruthSeal™ Pty Ltd
 
 Melbourne, Australia
 truthseal.ai
+
 10 December 2025
 
   Sovereign Compendium
