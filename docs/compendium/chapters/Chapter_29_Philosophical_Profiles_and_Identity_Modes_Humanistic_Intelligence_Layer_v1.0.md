@@ -206,14 +206,23 @@ without humans understanding *who it is being* while it acts.
 
 A compact chapter glossary for fast human audit.
 
+## Acronyms (Doctorantura Standard)
+
+A compact chapter glossary for fast human audit.
+
+<details>
+<summary><strong>Show acronyms used in Chapter 29</strong></summary>
+
 | Acronym | Expansion | Meaning in this chapter |
 |---|---|---|
-| AGI | Artificial General Intelligence | A system requiring identity legibility and lawful behavioural stance. |
-| ASA™ | Autonomous Scientific Agent™ | The governed discovery engine that can operate under specific identity modes. |
-| DRS™ | Discovery Receipt Standard™ | The evidence spine that validates discovery claims produced under any profile. |
-| LEI | Law of Ethical Irreversibility | The constraint that prevents coherent systems from recommending or executing worse ethical paths. |
-| OPS™ | Operational Prompts Standard™ | The rules that determine when profiles must escalate, refuse, or generate receipts. |
-| TQC | Traykov Quantum Coherence | The coherence foundation that profiles must never violate. |
+| AGI | Artificial General Intelligence | The governed intelligence subject to identity modes and lawful behavioural stance. |
+| ASA™ | Autonomous Scientific Agent™ | The governed discovery engine operating under identity policies. |
+| DRS™ | Discovery Receipt Standard™ | The evidence spine that validates discovery claims under any profile. |
+| LEI | Law of Ethical Irreversibility | Prevents a coherent system from recommending or executing worse ethical paths. |
+| OPS™ | Operational Prompts Standard™ | Rules that determine when profiles must refuse, escalate, or generate receipts. |
+| TQC | Traykov Quantum Coherence | The coherence foundation that identity modes must never violate. |
+
+</details>
 
 ---
 
