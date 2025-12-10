@@ -67,6 +67,14 @@ A discovery without a valid DRS™ chain is **non-legitimate** for sovereign or 
 
 ---
 
+## Acronyms (Doctorantura Standard)
+
+- **DRS™ — Discovery Receipt Standard™:** the canonical receipt framework that proves discovery lifecycle integrity and court-admissible legitimacy.  
+- **OPS™ — Operational Prompts Standard™:** the rule layer that defines when discovery receipts are mandatory and what minimum evidence must be captured.  
+- **ASA™ — Autonomous Scientific Agent™:** the governed discovery engine that executes experiments or research workflows and generates structured evidence for DRS™ binding.  
+
+---
+
 ## 27.4 The DRS™ Lifecycle
 
 DRS™ defines a five-stage lifecycle.
@@ -216,16 +224,6 @@ The **Discovery Receipt Standard™ (DRS™)** is TruthSeal’s court-ready doct
 
 In TruthSeal™, discovery is not a claim.  
 It is a **receipt-bound, lifecycle-verified event**.
-
----
-
-## Acronyms (Doctorantura Standard)
-
-| Acronym | Expansion | Meaning in this chapter |
-|---|---|---|
-| DRS™ | Discovery Receipt Standard™ | The canonical receipt framework that proves discovery lifecycle integrity and court-admissible legitimacy. |
-| OPS™ | Operational Prompts Standard™ | The rule layer that defines when discovery receipts are mandatory and what minimum evidence must be captured. |
-| ASA™ | Autonomous Scientific Agent™ | The governed discovery engine that executes experiments or research workflows and generates structured evidence for DRS™ binding. |
 
 ---
 
