@@ -1,19 +1,34 @@
-# TruthSeal™ Sovereign Compendium — Doctorantura Edition v1.0  
-**Canonical Working Folder**
+# TruthSeal™ Sovereign Compendium — Doctorantura Edition v1.0
 
-This folder is the controlled, internal Doctorantura workspace for rebuilding the TruthSeal™ Sovereign Compendium **Chapter 1 through Chapter 50** under a single unified standard.
+## Canonical Working Folder
+This folder is the controlled, internal Doctorantura workspace for rebuilding the TruthSeal™ Sovereign Compendium from **Chapter 01 through Chapter 50** under a single unified standard.
 
-## Internal Doctrine Notice  
-This Doctorantura Edition content is not for public use.  
-Sharing or distribution without TruthSeal™ consent is prohibited.
+---
 
-## Purpose of This Folder  
+## Internal Doctrine Notice (STRICT)
+This Doctorantura Edition content is **strictly confidential** and **not for public use**.
+
+**Unauthorised copying, republishing, redistribution, summarising, quoting, screenshotting, or training use is strictly prohibited.**
+
+This material must remain within **authorised TruthSeal™ custodianship only**.  
+Any breach is treated as a **sovereign governance and custody violation**.
+
+If a document must be shared internally, it must be shared only:
+1) with explicit permission from TruthSeal™ custodians, and  
+2) with intact provenance, custody context, and chapter integrity.
+
+---
+
+## Purpose of This Folder
 1. Establish a clean canonical Doctorantura baseline independent of older mixed-standard chapter paths.  
 2. Rebuild the full doctrine sequentially, with consistent structure, tone, and custody language.  
-3. Ensure every chapter formalises lawful boundaries without premature “final” claims that contradict later chapters.
+3. Ensure every chapter formalises lawful boundaries without premature “final” claims that contradict later chapters.  
+4. Protect internal doctrine from uncontrolled leakage during the rebuild cycle.
 
-## Operating Rule  
-We will rebuild **one chapter at a time**, in strict order:
+---
+
+## Operating Rule
+We will rebuild one chapter at a time, in strict order:
 
 - Chapter 01  
 - Chapter 02  
@@ -21,12 +36,13 @@ We will rebuild **one chapter at a time**, in strict order:
 - …  
 - Chapter 50  
 
-Each chapter will be regenerated after you paste the source text you want used for that chapter.
+Each chapter must:
+- carry the Doctorantura header and strict notice,  
+- include a local acronym list,  
+- maintain consistent structure and closure signals,  
+- avoid premature “final” language unless the numbered sequence supports it.
 
-## Standard Commit Discipline  
-- One file per commit.  
-- Each chapter will be written into this folder as a standalone Doctorantura-standard chapter file.  
-- Naming will be locked as we progress to avoid cross-standard drift.
+---
 
-## Status  
-Doctorantura rebuild sequence is active and will begin with **Chapter 01** immediately after this folder index is committed.
+© 2025 TruthSeal™ — Coherent Epoch  
+Doctorantura Edition — Internal Custody Only
