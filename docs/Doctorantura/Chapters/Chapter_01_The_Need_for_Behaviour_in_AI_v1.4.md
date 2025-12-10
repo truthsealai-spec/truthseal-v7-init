@@ -15,12 +15,14 @@ truthseal.ai
   DOCTORANTURA EDITION v1.0
   
 THE SOVEREIGN ARC of AGI 
+Framework
 ---
 
 # Chapter 01 — The Need for Behaviour in AI
 version: 1.0  
 status: Draft — Doctorantura Edition — Internal Custody  
-owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.), Founder & Chief Architect of the TruthSeal™ Sovereign Arc of AGI Framework  
+owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.), Founder & Chief Architect of the TruthSeal™ 
+The Sovereign Arc of AGI Framework  
 date: 10 December 2025  
 
 ---
