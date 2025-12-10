@@ -1,167 +1,153 @@
-TruthSeal™ Pty Ltd  
-Melbourne, Australia  
-truthseal.ai  
-10 December 2025  
+TruthSeal™ Pty Ltd
+Melbourne, Australia
+truthseal.ai
+10 December 2025
 
-TRUTHSEAL™ SOVEREIGN COMPENDIUM  
-DOCTORANTURA EDITION v1.0  
+Sovereign Compendium
+→ Doctorantura Edition
+→ Sovereign Arc of AGI Framework
+
+TRUTHSEAL™ SOVEREIGN COMPENDIUM
+DOCTORANTURA EDITION v1.0
 
 ---
 
 # Chapter 01 — The Need for Behaviour in AI
 version: 1.0  
 status: Draft — Doctorantura Edition — Internal Custody  
-owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.), Founder & Chief Architect of the TruthSeal™ Sovereign AGI Framework  
-Date: 10 December 2025  
-
----
-
-## Internal Custody Notice
-**This Doctorantura Edition is internal-only.**  
-**Unauthorized copying, redistribution, public posting, excerpting, paraphrasing, or derivative publication is strictly prohibited.**  
-This prohibition includes screenshots, summaries, re-hosting, or use in external standards drafts without written TruthSeal™ consent.
-
----
-
-## Acronyms & Terms (local)
-| Term | Meaning |
-|---|---|
-| **AI** | Artificial Intelligence (narrow or general-purpose prediction). |
-| **AGI** | Artificial General Intelligence (behaviour under duty; see later doctrine). |
-| **HML™** | Human Mandate Layer (verified registry of accountable authority roles). |
-| **EVL™** | Epoch Verification Ledger (tamper-evident historical memory). |
-| **QENC™** | Quantum Evidence & Coherence ProofCapsule (proof artifact for anchoring). |
-| **QCEP™** | Quantum Ecosystem Closure Protocol (epoch finalisation). |
-| **LEI = 1** | Law of Ethical Irreversibility (no regression after safer coherence is known). |
-| **ACS** | Aim Coherence Score (operational coherence used for gating). |
-| **CHS** | Coherence Health band controlling privilege. |
-| **ts.receipt.v1** | TruthSeal™ minimum receipt schema for governed actions. |
+owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.), Founder & Chief Architect of the TruthSeal™ Sovereign Arc of AGI Framework  
+date: 10 December 2025  
 
 ---
 
 ## 01.0 Executive Statement
+
 **Outputs are not legitimacy. Behaviour is.**  
-TruthSeal™ defines AGI not as “better answers,” but as **authorised, receipted, vetoable action** that is accountable in time.
+TruthSeal™ defines AGI not as “better answers,” but as **authorised, receipted, vetoable action** that remains accountable across time, policy, and consequence.
+
+This chapter establishes the first doctrine of the Compendium:
+
+1) **Behaviour is the unit of sovereignty.**  
+2) **Authority is proven, not assumed.**  
+3) **Receipts are mandatory for legitimacy.**  
+4) **A single critical breach cannot be compensated by performance elsewhere.**
 
 ---
 
-## 01.1 Purpose (Public-Operational)
-This chapter establishes **behaviour** as the primary unit of certification for advanced AI systems and defines the minimal public doctrine that separates:
+## 01.1 Purpose & Audience
 
-- high-capability output  
-from  
-- lawful, audited, enforceable action.
+This chapter is written for:
 
----
-
-## 01.2 Audience
-This chapter is written for sovereign authorities, regulators, auditors, critical infrastructure operators, and enterprise custodians of high-impact AI systems.
+- heads of state,  
+- regulators and standards bodies,  
+- sovereign compute vendors,  
+- auditors,  
+- and enterprises deploying high-impact systems.
 
 English is the canonical legal language.  
-Doctorantura content is internal custody until a formal public release gate is issued.
+Translations are explanatory only.
+
+---
+
+## 01.2 Compact Acronyms & Terms (local)
+
+→ **AI** — Artificial Intelligence (narrow or general-purpose prediction).  
+→ **AGI** — Artificial General Intelligence (behaviour under duty; authorised action).  
+→ **HML™** — Human Mandate Layer (verifiable authority hierarchy).  
+→ **EVL™** — Epoch Verification Ledger (tamper-evident historical memory).  
+→ **QENC™** — Quantum Evidence & Coherence ProofCapsule (proof artefact for anchoring).  
+→ **QCEP™** — Quantum Ecosystem Closure Protocol (epoch finalisation).  
+→ **LEI = 1** — Law of Ethical Irreversibility (no regression after safer coherence is known).  
+→ **ULLI™** — Universal Law of Life & Information (complete inquiry → disciplined decision → receipted action).  
+→ **ULIC™** — Universal Law of Irreversible Coherence (coherence persists as governance state).  
+→ **TCS** — Traykov Coherence Score (court-ready coherence metric).  
+→ **ACS** — Aim Coherence Score (operational coherence used for gating).  
+→ **CHS** — Coherence Health Score band (privilege banding).  
+→ **ts.receipt.v1** — TruthSeal™ minimum receipt schema.  
+→ **UNKNOWN (anchor fields)** — temporary placeholder only when anchoring networks are down; must be back-filled inside the policy window.
 
 ---
 
 ## 01.3 The Behaviour Gap
-Modern models can generate accurate text, plans, and simulations.  
-But without:
 
-1) **a verified mandate**,  
-2) **receipt-contiguous execution**,  
-3) **an independent veto lane**,  
-4) **LEI = 1 enforcement**, and  
-5) **finalised history**,  
+Modern systems can generate impressive outputs.  
+But **state-grade legitimacy** requires more than capability.
 
-their outputs cannot be certified as safe public behaviour.
+Without:
 
-**TruthSeal™ exists to close this gap.**
+- a verifiable mandate (**HML™**),  
+- end-to-end receipts (**ts.receipt.v1**),  
+- independent veto lanes,  
+- enforced **LEI = 1**,  
+- and epoch finalisation (**EVL/QENC/QCEP**),
 
----
+a system cannot claim lawful public behaviour.
 
-## 01.4 Core Public Anchors
-TruthSeal™ binds behaviour to five invariants:
-
-- **HML™** — no mandate, no act.  
-- **ts.receipt.v1** — no receipt, no claim.  
-- **Independent veto** — no veto lane, no privileged autonomy.  
-- **LEI = 1** — monotone remediation only.  
-- **EVL → QENC → QCEP** — evidence during, proof at close, history finalised.
+TruthSeal™ exists to close this gap.
 
 ---
 
-## 01.5 Definition: What Counts as Behaviour
-A system step qualifies as governed behaviour only if it:
+## 01.4 Constitutional Anchors (Behaviour View)
 
-1) binds to **a single accountable identity** under an authorised **mandate_ref**,  
-2) emits a **receipt** with reason, gate state, and anomaly flags,  
-3) is **gated** by coherence thresholds and **vetoable** by an independent lane,  
-4) obeys **LEI = 1**,  
-5) is eligible for epoch record and closure when required.
-
-Anything else is output, not certified behaviour.
+- **ULLI™**: inquiry must end in **receipted action**.  
+- **ULIC™**: coherent governance states persist as the baseline.  
+- **LEI = 1**: safer coherence forbids regression to known risk.  
+- **HML™**: no mandate, no act.  
+- **EVL/QENC/QCEP**: evidence during, proof at close, history finalised.
 
 ---
 
-## 01.6 Behaviour Charter (Public Rule)
-**1) No mandate, no act.**  
-**2) No receipt, no claim.**  
-**3) No veto lane, no privileged autonomy.**  
-**4) LEI = 1 forbids regression.**  
-**5) History must be finalised on cadence.**
+## 01.5 What Counts as Behaviour (Public Rule)
+
+A step qualifies as lawful behaviour only when:
+
+1) it binds to a **single accountable identity** under a published **mandate_ref**,  
+2) it emits a **receipt** adequate for reconstruction,  
+3) it is **gated** by operational coherence and is **vetoable** by an independent lane,  
+4) it obeys **LEI = 1**,  
+5) if epoch-bound, it aligns to **QCEP** closure duties.
 
 ---
 
-## 01.7 Minimal Gate Logic (plain)
-A governed action is allowed only when:
+## 01.6 Behaviour Charter (Public-Operational)
 
-- **mandate_ref is valid**, and  
-- **receipts are contiguous**, and  
-- **no critical anomaly flag is present**, and  
-- **the system is within its authorised CHS band**.
-
-A **single critical breach** triggers restriction.  
-Performance in unrelated areas cannot compensate.
+1) **No mandate, no act.**  
+2) **No receipt, no claim.**  
+3) **No independent veto lane, no high-stakes deployment.**  
+4) **LEI = 1 is binding; monotone remediation only.**  
+5) **Closure on cadence; history cannot be rewritten.**
 
 ---
 
-## 01.8 Public Failure Triggers
-Any of the following voids privileged authority:
+## 01.7 Minimum Receipt Standard (ts.receipt.v1)
 
-- missing mandate,  
-- receipt discontinuity,  
-- failed veto readiness,  
-- ethics violation under LEI = 1,  
-- tampered integrity evidence,  
-- unclosed or contested epoch where closure is required.
+A valid operational receipt must support lawful reconstruction and include:
 
----
+- identity binding and mandate reference,  
+- policy version,  
+- model version and integrity hash,  
+- data lineage reference where applicable,  
+- gate state,  
+- anomaly flags,  
+- anchoring fields when networks are available.
 
-## 01.9 Audit Minimums
-An independent auditor must be able to reconstruct:
-
-1) who was authorised,  
-2) what was attempted,  
-3) which gate ruled the action,  
-4) which veto lane could intervene,  
-5) which receipts prove the chain,  
-6) where the event sits in EVL/QENC/QCEP.
-
-Narrative claims are not evidence.
+If anchoring networks are down, anchor fields may be marked **UNKNOWN** temporarily and must be back-filled within the declared policy window.
 
 ---
 
-## 01.10 Canonical Statement
-**TruthSeal™ treats behaviour as the unit of sovereignty.**  
-Intelligence becomes certifiable only when authority is:
+## 01.8 “Done” Criteria (Chapter 01)
 
-- **role-bound**,  
-- **receipt-proven**,  
-- **non-compensatorily gated**, and  
-- **irreversibly safer under LEI = 1**.
+This chapter is complete when it clearly establishes that:
+
+- **behaviour** is the unit of sovereignty,  
+- authority requires **HML + receipts + veto + LEI = 1**,  
+- the doctrine is **non-compensatory**,  
+- and the Compendium’s custody posture is unambiguous.
 
 ---
 
-© 2025 TruthSeal™ — Doctorantura Edition — Internal Custody  
-Unauthorized use or republication is strictly prohibited without written TruthSeal™ consent.  
+© 2025 TruthSeal™ Pty Ltd — TRUTHSEAL™ SOVEREIGN COMPENDIUM, DOCTORANTURA EDITION v1.0 — Internal Custody Only.  
+Unauthorized reproduction, distribution, extraction, or public summarization is strictly prohibited without explicit written consent from TruthSeal™.  
+This document is controlled sovereign doctrine. Any leak, repost, or derivative publication outside authorized custody constitutes a prohibited disclosure.
 
 — End of Chapter 01 —
