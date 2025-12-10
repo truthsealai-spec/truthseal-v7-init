@@ -21,7 +21,8 @@ Framework
 # Chapter 01 — The Need for Behaviour in AI
 version: 1.0  
 status: Draft — Doctorantura Edition — Internal Custody  
-owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.), Founder & Chief Architect of the TruthSeal™ 
+owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.), Founder & Chief Architect of TruthSeal™ ltd Pty
+
 The Sovereign Arc of AGI Framework  
 date: 10 December 2025  
 
