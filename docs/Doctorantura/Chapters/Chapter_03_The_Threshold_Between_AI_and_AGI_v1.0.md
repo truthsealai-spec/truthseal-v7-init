@@ -23,7 +23,7 @@ Owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.), Founder & Chief Archi
 **AQL** — AGI Qualification Level (policy-facing qualification grade 0–4 awarded after public tests pass under declared thresholds/latencies; used for procurement, certification, and deployment claims).  
 **AI** — Artificial Intelligence (narrow or general-purpose prediction without duty).  
 **AGI** — Artificial General Intelligence (behaviour under duty; see “Governing Definition”).  
-**CHS** — Coherence Health band (L/M/H/UH) controlling privilege.  
+**CHS** — Coherence Health Score band; canonical codes **CHS/L, CHS/M, CHS/H, CHS/UH** (Low/Medium/High/Ultra High). In some profiles these bands are also labelled Baseline/Silver/Gold/Diamond; the mapping is fixed by the CHS standard in this doctrine.
 **EVL™** — Epoch Verification Ledger (tamper-evident historical memory).  
 **HML™** — Human Mandate Layer (registry of Owners/Guardians/Operators/Regulators with verifiable authority).  
 **LEI = 1** — Law of Ethical Irreversibility (once a safer coherent path is known, regression to risk is impermissible).  
