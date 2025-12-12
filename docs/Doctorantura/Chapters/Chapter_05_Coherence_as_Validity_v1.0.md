@@ -206,3 +206,13 @@ If external anchoring is temporarily unavailable, mark anchor fields as **UNKNOW
 ## 15) Closing
 
 TruthSeal™ equates **coherence with validity** so that institutions can rely on AI systems whose behavior is not only capable—but also **provable, lawful, and durable in time**. Public rules remain readable; proof remains machine-verifiable; sovereignty remains human.
+
+© 2025 TruthSeal™ Pty Ltd, Melbourne, Australia — all rights reserved.
+
+This Doctorantura Edition chapter is classified intellectual property of Dr. Nickolay Traykov (Prof. h.c.), Founder & Chief Architect of the TruthSeal™ Sovereign Arc of AGI Framework.
+
+This material is strictly confidential. It is not for public distribution, citation, teaching, or use in training external AI systems without explicit written consent from TruthSeal™ Pty Ltd.
+
+Unauthorised copying, translation, adaptation, or incorporation into external standards, academic work, patents, or commercial systems is strictly prohibited.
+
+Working copies must remain under controlled custody and be linked to verifiable TruthSeal™ receipts (ts.receipt.v1 and EVL™ entries). Any detected unlicensed use is to be treated as both an integrity breach under the TruthSeal™ governance regime and a violation of applicable intellectual property law.
