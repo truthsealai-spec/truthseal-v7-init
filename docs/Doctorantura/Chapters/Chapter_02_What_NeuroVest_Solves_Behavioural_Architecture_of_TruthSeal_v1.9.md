@@ -18,21 +18,21 @@ date: 10 December 2025
 ⸻
 
 ## Acronyms & Terms (local to this chapter)
-AI — Artificial Intelligence (prediction without enforceable duty).  
-AGI — Artificial General Intelligence (behaviour under mandate; see Chapter 3).  
-HML™ — Human Mandate Layer (Owners/Guardians/Operators/Regulators with verifiable authority).  
-EVL™ — Epoch Verification Ledger (tamper-evident historical memory).  
-QENC™ — Quantum Evidence & Coherence ProofCapsule (packaged proof artifact for anchoring).  
-QCEP™ — Quantum Ecosystem Closure Protocol (epoch finalisation so history cannot be rewritten).  
-LEI = 1 — Law of Ethical Irreversibility (no regression to a riskier path once a safer coherent path is known).  
-ND — Noise Distiller (sovereign immune system separating truth from manipulation).  
-AQL — AGI Qualification Level (policy-grade maturity 0–4).  
-ACS — Aim Coherence Score (operational 0–1).  
+**AI** — Artificial Intelligence (prediction without enforceable duty).  
+**AGI** — Artificial General Intelligence (behaviour under mandate; see Chapter 3).  
+**HML™** — Human Mandate Layer (Owners/Guardians/Operators/Regulators with verifiable authority).  
+**EVL™** — Epoch Verification Ledger (tamper-evident historical memory).  
+**QENC** — Quantum Evidence & Coherence ProofCapsule (packaged proof artifact for anchoring).  
+**QCEP™** — Quantum Ecosystem Closure Protocol (epoch finalisation so history cannot be rewritten).  
+**LEI = 1** — Law of Ethical Irreversibility (no regression to a riskier path once a safer coherent path is known).  
+**ND** — Noise Distiller (sovereign immune system separating truth from manipulation).  
+**AQL** — AGI Qualification Level (policy-grade maturity 0–4).  
+**ACS** — Aim Coherence Score (operational 0–1).  
 TCS — Traykov Coherence Score (court-ready 0–1; banded).  
-CHS — Coherence Health State (Baseline, Silver, Gold, Diamond).  
-TS-A1 — TruthSeal AEGIS Core (accelerator governance: ICG, PMS, SAD).  
+**CHS** — Coherence Health Score band; canonical codes **CHS/L, CHS/M, CHS/H, CHS/UH** (Low/Medium/High/Ultra High). In some profiles these bands are also labelled **Baseline/Silver/Gold/Diamond**; the mapping is fixed by the CHS standard in this doctrine.
+**TS-A1** — TruthSeal AEGIS Core (accelerator governance: ICG, PMS, SAD).  
 Third Guardian Firewall™ — independent safety veto lane with evidentiary receipts.  
-THT Protocol™ — Truth Hash & Timestamp Protocol (hashing, signing, anchoring discipline).
+**THT Protocol™** — Truth Hash & Timestamp Protocol (hashing, signing, anchoring discipline).
 
 ---
 
@@ -72,13 +72,13 @@ Once a safer coherent path is known,
 regressing to a riskier one is impermissible (**LEI = 1**).
 
 **Constitutional anchors.**
-ULLI™ — life & information governed by coherence and responsibility.  
-ULIC™ — coherence, once attained, becomes a governance state that must not drift.  
-TLC v1.0 — operational rule: monotonic improvement toward perfect coherence; no regression allowed.  
-TQC discipline — non-degrading coherence treated as a physical-style law.
+**ULLI™** — life & information governed by coherence and responsibility.  
+**ULIC™** — coherence, once attained, becomes a governance state that must not drift.  
+**TLC v1.0** — operational rule: monotonic improvement toward perfect coherence; no regression allowed.  
+**TQC** discipline — non-degrading coherence treated as a physical-style law.
 
 **Mandate & authority.**
-HML™ registers who may authorise,
+**HML™** registers who may authorise,
 pause,
 promote,
 or demote capability.
