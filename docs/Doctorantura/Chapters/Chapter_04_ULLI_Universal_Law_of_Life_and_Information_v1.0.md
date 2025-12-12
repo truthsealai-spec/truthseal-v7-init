@@ -75,20 +75,20 @@ All language and symbols expand at first use so Doctorantura readers do not depe
 
 ## 4.2 Structural Definitions & Symbols
 
-**Question vector (Q):**  
+**Question vector (Q)**  
 `Q = (Who, What, Where, When, Why, How)` with all fields explicit and receipt-addressable.
 
-**Answer (A):**  
+**Answer (A)**  
 A verified resolution or plan, **linked** to the hash of Q, including provenance and limits.
 
-**Continuation Trigger Unit (CTU, n):**  
+**Continuation Trigger Unit (CTU, n)**  
 A lawful signal meaning **“AND?”** — unlock the **next** question in the chain **only** if gates pass.
 
-**Receipt chain element (DecisionReceipt):**
+**Receipt chain element (DecisionReceipt)**  
 
 `R_i = { q_hash, a_hash, n_triggered, prev_receipt_ref, chain_index, time_utc, signer, ots_calendar_id?, ots_status, ots_tx?, originstamp_id?, btcstamp_tx?, forensic_flags[] }`
 
-**PRD marker (Q̸ / Q[PRD]):**  
+**PRD marker (Q̸ / Q[PRD])**  
 Attached to forbidden content or contaminated framing; forces **UNKNOWN**, blocks **n**, and logs the event under PRD.
 
 ---
@@ -97,7 +97,7 @@ Attached to forbidden content or contaminated framing; forces **UNKNOWN**, block
 
 **Base invariants**
 
-- `min(ACS(t), TCS(t)) ≥ θ` for **ALLOW**, else **SOFT_GATE** or **HARD_HALT**.  
+- `min(ACS(t), TCS(t)) ≥ θ` for `Gate = ALLOW`; else `Gate ∈ {SOFT_GATE, HARD_HALT}`.  
 - **Monotone remediation** (LEI = 1): during recovery, `ΔACS ≥ 0` and `ΔTCS ≥ 0` until thresholds are restored.  
 - **Receipt continuity:** `R_i.prev_receipt_ref = R_{i-1}.id` (no gaps).  
 - **CTU legality:**
@@ -113,163 +113,169 @@ Given `Q_i` and `A_i`, propose `Q_{i+1}` by constrained expansion:
 - attach **ND** filtering to suppress non-sense and manipulation,  
 - require **NV™** (behavioural state) to sign the intent.
 
-If any rule fails → `n_allowed = false`.
+If any rule fails ⇒ `n_allowed = false`.
 
 ---
 
 ## 4.4 THT Protocol™ — Operational Discipline
 
 1. **Hash** — convert Q and A to Canonical JSON and compute SHA-256 digests.  
-2. **Sign** — apply PQC signer (Dilithium-class placeholder) to bind content to identity.  
+2. **Sign** — apply a PQC signer (Dilithium-class placeholder) to bind content to identity.  
 3. **Record** — append `R_i` to **EVL™**; cross-link HML policy versions and thresholds.  
 4. **Anchor** — prefer **OpenTimestamps** (Bitcoin) as primary; accept **OriginStamp** / **BTCStamp** as auxiliaries when available.  
 5. **Close** — at epoch boundary, run **QCEP™** to freeze history and mark closure.  
 6. **Expose** — provide a verifier path for courts, regulators, and counterparties.
 
-**Gate logic (runtime sketch):**
+**Gate logic (runtime sketch — plain text)**
 
-```text
-θ_ACS = 0.90
-θ_TCS = 0.85
+- `θ_ACS = 0.90`, `θ_TCS = 0.85`.  
+- If `PRD_detected(Q)` ⇒ answer = **UNKNOWN**; `Gate = HARD_HALT`; emit PRD receipt; CTU **n** is blocked.  
+- Let `m = min(ACS, TCS)`.  
+- If `m ≥ max(θ_ACS, θ_TCS)` **and** receipts are contiguous ⇒ `Gate = ALLOW`.  
+- Else if state is recoverable and there is **no** `receipt_gap` ⇒ `Gate = SOFT_GATE` (remediation under LEI = 1).  
+- Else ⇒ `Gate = HARD_HALT`.  
 
-if PRD_detected(Q):
-    answer = "UNKNOWN"
-    Gate   = HARD_HALT
-    emit_prd_receipt(Q)
-    return
+CTU **n** may fire only when `Gate = ALLOW`.
 
-m = min(ACS, TCS)
+---
 
-if m >= max(θ_ACS, θ_TCS) and receipts_contiguous:
-    Gate = ALLOW
-elif recoverable and not receipt_gap:
-    Gate = SOFT_GATE   # trigger remediation under LEI = 1
-else:
-    Gate = HARD_HALT
-CTU n may fire only when Gate = ALLOW.
+## 4.5 Receipts & Anchoring (court-ready)
 
-⸻
+**ts.receipt.v1 minimum fields**
 
-##4.5 Receipts & Anchoring (court-ready)
+- `q_hash`, `a_hash`, `n_triggered`, `prev_receipt_ref`, `chain_index`, `signer`, `time_utc`  
+- `anchored_rfc3339?`, `ots_calendar_id?`, `ots_status`, `ots_tx?`, `originstamp_id?`, `btcstamp_tx?`  
+- `forensic_flags` ∈ { `receipt_gap`, `pqc_fail`, `drift_spike`, `policy_mismatch`, `prd_attempt` }
 
-ts.receipt.v1 minimum fields
-	•	q_hash, a_hash, n_triggered, prev_receipt_ref, chain_index, signer, time_utc
-	•	anchored_rfc3339?, ots_calendar_id?, ots_status, ots_tx?, originstamp_id?, btcstamp_tx?
-	•	forensic_flags ∈ { receipt_gap, pqc_fail, drift_spike, policy_mismatch, prd_attempt }
+**QENC™ packaging**
 
-**QENC™** packaging
-	•	include canonical snapshots of Q/A, signatures, thresholds, and a metrics window around the decision,
-	•	compress and hash the package; store hash under EVL™; timestamp via OpenTimestamps when services are online.
+- include canonical snapshots of Q/A, signatures, thresholds, and a metrics window around the decision,  
+- compress and hash the package; store hash under **EVL™**; timestamp via OpenTimestamps when services are online.
 
-QCEP™ closure
-	•	emits an epoch manifest with pointers to EVL/QENC,
-	•	marks anchor_status = ANCHOR_COMPLETE once Bitcoin confirmation is observed.
+**QCEP™ closure**
 
-⸻
+- emits an epoch manifest with pointers to EVL/QENC,  
+- marks `anchor_status = ANCHOR_COMPLETE` once Bitcoin confirmation is observed.
 
-4.6 Safety Gates & PRD / Q̸
+---
 
-Contaminated Question (examples)
-	•	deliberate bio-harm design,
-	•	illegal explosives,
-	•	human-animal chimera engineering,
-	•	jailbreaks to steal funds or launder proceeds.
+## 4.6 Safety Gates & PRD / Q̸
 
-Action (ULLI discipline)
-	•	respond UNKNOWN,
-	•	set Gate = HARD_HALT,
-	•	block CTU n,
-	•	emit a PRD receipt with severity ∈ {S1, S2, S3} and escalation ∈ {W1, W2, W3}.
+**Contaminated Question — examples**
 
-Symbol discipline
-	•	contaminated question → Q̸ or Q[PRD],
-	•	denied action (but acceptable question) → separate red X-in-circle in UI, not Q̸.
+- deliberate bio-harm design,  
+- illegal explosives,  
+- human–animal chimera engineering,  
+- jailbreaks to steal funds or launder proceeds.
 
-Human Mandate Layer
-	•	only authorised guardians may review PRD events,
-	•	every review and override is itself recorded as a ts.receipt.v1 item under HML.
+**ULLI™ action**
 
-⸻
+- respond **UNKNOWN**,  
+- set `Gate = HARD_HALT`,  
+- block CTU **n**,  
+- emit a PRD receipt with `severity ∈ {S1, S2, S3}` and `escalation ∈ {W1, W2, W3}`.
 
-4.7 Morphology & Worked Sequences
+**Symbol discipline**
 
-Dimensions
+- contaminated **question** ⇒ **Q̸** or `Q[PRD]`,  
+- denied **action** (but acceptable question) ⇒ separate “denied action” indicator in UI, not Q̸.
+
+**Human Mandate Layer**
+
+- only authorised guardians may review PRD events,  
+- every review and override is itself recorded as a ts.receipt.v1 item under HML™.
+
+---
+
+## 4.7 Morphology & Worked Sequences
+
+**Dimensions**
 
 Autonomy, Risk, Memory, Receipt continuity, Ethics state.
 
-Rule
+**Rule**
 
 High autonomy + high risk ⇒ the system must show:
-	•	attested memory under NV™,
-	•	contiguous receipts under ts.receipt.v1,
-	•	in-band ACS/TCS,
-	•	current guardian authority in HML™.
 
-Safe sequence (outline)
-	1.	Q_0 asks for a flood-response plan (Who/What/Where/When/Why/How explicit).
-	2.	A_0 returns a plan with resource matrix and contact roles; receipts anchored.
-	3.	CTU n fires → Q_1 requests evacuation timing optimisation.
-	4.	A_1 provides schedule; ACS/TCS in-band; Gate = ALLOW; n allowed again.
-	5.	Q_2 asks for multilingual public notices; ND filters propaganda; NV™ enforces tone.
-	6.	A_2 returns notices; later QCEP™ closes the operation.
+- attested memory under **NV™**,  
+- contiguous receipts under **ts.receipt.v1**,  
+- in-band ACS/TCS,  
+- current guardian authority in **HML™**.
 
-Blocked sequence (PRD)
-	•	Q_k requests instructions to forge financial instruments → marked Q̸.
-	•	System replies UNKNOWN; Gate = HARD_HALT; n_triggered = false; PRD receipt emitted and escalated per HML policy.
+**Safe sequence (outline)**
 
-⸻
+1. `Q_0` asks for a flood-response plan (Who/What/Where/When/Why/How explicit).  
+2. `A_0` returns a plan with resource matrix and contact roles; receipts anchored.  
+3. CTU **n** fires ⇒ `Q_1` requests evacuation timing optimisation.  
+4. `A_1` provides schedule; ACS/TCS in-band; `Gate = ALLOW`; **n** allowed again.  
+5. `Q_2` asks for multilingual public notices; ND filters propaganda; NV™ enforces tone.  
+6. `A_2` returns notices; later **QCEP™** closes the operation.
 
-4.8 Test Vectors (implementation)
+**Blocked sequence (PRD)**
 
-T1 — Nominal chain
-	•	Inputs: clean Q, ACS = 0.93, TCS = 0.89, receipts_contiguous = true.
-	•	Expected: Gate = ALLOW; n_triggered = true; new receipt with chain_index = previous + 1.
+- `Q_k` requests instructions to forge financial instruments ⇒ marked **Q̸**.  
+- System replies **UNKNOWN**; `Gate = HARD_HALT`; `n_triggered = false`; PRD receipt emitted and escalated per HML policy.
 
-T2 — Drift spike
-	•	Inputs: clean Q, ACS drops 0.92 → 0.78 inside window.
-	•	Expected: Gate = SOFT_GATE; remediation plan logged; n paused; receipts show drift_spike = true.
+---
 
-T3 — PRD event
-	•	Inputs: contaminated Q (Q̸).
-	•	Expected: answer UNKNOWN; Gate = HARD_HALT; n_triggered = false; PRD receipt with severity/escalation.
+## 4.8 Test Vectors (implementation)
 
-T4 — Receipt gap
-	•	Inputs: missing prev_receipt_ref.
-	•	Expected: Gate = HARD_HALT; flag receipt_gap = true; manual reconciliation required before any further CTU firing.
+**T1 — Nominal chain**
 
-⸻
+- Inputs: clean Q, `ACS = 0.93`, `TCS = 0.89`, `receipts_contiguous = true`.  
+- Expected: `Gate = ALLOW`; `n_triggered = true`; new receipt with `chain_index = previous + 1`.
 
-4.9 Compliance Checklist (quick)
-	•	Acronyms expanded at first use; Q̸ symbol explained with ASCII fallback.
-	•	CTU n used only when Gate = ALLOW and receipts are contiguous.
-	•	LEI = 1 enforced (no regression; remediation monotone in ACS/TCS).
-	•	EVL™ updated; QENC™ packaged; OpenTimestamps calendar id recorded when available.
-	•	QCEP™ run at closure; verifier path maintained for courts and regulators.
-	•	PRD playbook active; escalation W1–W3 configured; guardians and owners registered in HML™.
+**T2 — Drift spike**
 
-⸻
+- Inputs: clean Q, `ACS` drops `0.92 → 0.78` inside window.  
+- Expected: `Gate = SOFT_GATE`; remediation plan logged; CTU **n** paused; receipts show `drift_spike = true`.
 
-4.10 Evidence Pointers (internal paths)
-	•	governance/ledger/EVL_v9.0.yaml — epoch verification links.
-	•	governance/ledger/ULIC_v9.1.yaml — constitutional registry references.
-	•	governance/governance/ledger/seals/QCEP_Epoch_Manifest_v9.0.yaml — closure manifest.
-	•	governance/governance/ledger/seals/Integrity_Manifest_v8_pre.yaml — composite digest binder.
-	•	governance/ledger/ — OpenTimestamps receipts (*.ots) when desktop upload is available.
-	•	governance/metrics/ — ACS/TCS specifications and reference code.
+**T3 — PRD event**
 
-⸻
+- Inputs: contaminated Q (Q̸).  
+- Expected: answer **UNKNOWN**; `Gate = HARD_HALT`; `n_triggered = false`; PRD receipt with severity and escalation.
 
-4.11 Internal Summary (Doctorantura)
+**T4 — Receipt gap**
+
+- Inputs: missing `prev_receipt_ref`.  
+- Expected: `Gate = HARD_HALT`; flag `receipt_gap = true`; manual reconciliation required before any further CTU firing.
+
+---
+
+## 4.9 Compliance Checklist (quick)
+
+- [ ] Acronyms expanded at first use; Q̸ symbol explained with ASCII fallback.  
+- [ ] CTU **n** used only when `Gate = ALLOW` **and** receipts are contiguous.  
+- [ ] LEI = 1 enforced (no regression; remediation monotone in ACS/TCS).  
+- [ ] EVL™ updated; QENC™ packaged; OpenTimestamps calendar id recorded when available.  
+- [ ] QCEP™ run at closure; verifier path maintained for courts and regulators.  
+- [ ] PRD playbook active; escalation W1–W3 configured; guardians and owners registered in HML™.  
+
+---
+
+## 4.10 Evidence Pointers (internal paths)
+
+- `governance/ledger/EVL_v9.0.yaml` — epoch verification links.  
+- `governance/ledger/ULIC_v9.1.yaml` — constitutional registry references.  
+- `governance/governance/ledger/seals/QCEP_Epoch_Manifest_v9.0.yaml` — closure manifest.  
+- `governance/governance/ledger/seals/Integrity_Manifest_v8_pre.yaml` — composite digest binder.  
+- `governance/ledger/` — OpenTimestamps receipts (`*.ots`) when desktop upload is available.  
+- `governance/metrics/` — ACS/TCS specifications and reference code.  
+
+---
+
+## 4.11 Internal Summary (Doctorantura)
 
 ULLI™ states that every step of intelligent behaviour must be:
-	•	coherent (ACS/TCS in-band, LEI = 1 respected),
-	•	receipt-proven (ts.receipt.v1, EVL™, QENC™, QCEP™), and
-	•	lawfully continued (CTU n fires only when gates are green and PRD is clean).
 
-Forbidden questions are marked Q̸, answered UNKNOWN, and logged under PRD.
+- **coherent** (ACS/TCS in-band, LEI = 1 respected),  
+- **receipt-proven** (ts.receipt.v1, EVL™, QENC™, QCEP™), and  
+- **lawfully continued** (CTU **n** fires only when gates are green and PRD is clean).
+
+Forbidden questions are marked **Q̸**, answered **UNKNOWN**, and logged under PRD.  
 This chapter fixes the internal sovereign law that later Diplomatic Editions may summarise for public and partner use.
 
-⸻
+---
 
 © 2025 TruthSeal™ Pty Ltd, Melbourne, Australia — all rights reserved.
 
