@@ -9,8 +9,7 @@ date: 9 December 2025
 
 ---
 
-# Chapter 12 — TS-R2™
-## Swarm / Fleet Robotic Sovereignty
+# Chapter 12 — TS-R2™: Swarm / Fleet Robotic Sovereignty
 
 version: 1.0  
 status: FINAL DRAFT — Doctorantura Edition — Internal Custody (Canon upon Founder Approval)  
@@ -49,10 +48,10 @@ Its purpose is to ensure that **collective physical intelligence** remains:
 Single-agent governance (TS-R1™) is insufficient when:
 - responsibility diffuses across agents,
 - decisions emerge from coordination,
-- harm is caused by interaction rather than intent.
+- harm arises from interaction rather than intent.
 
 TS-R2™ exists to prevent:
-- “rogue swarm” behavior,
+- rogue swarm behavior,
 - diluted accountability,
 - untraceable collective harm,
 - silent regression through group dynamics.
@@ -82,13 +81,11 @@ TS-R2™ is strictly layered:
 
 **Every TS-R2™ swarm requires TS-R1™ installed on every member.**
 
-No exception.
-
 ---
 
 ## 12.5 Swarm Structure and Authority Topology
 
-TS-R2™ enforces a **lawful command hierarchy**:
+TS-R2™ enforces a lawful command hierarchy:
 
 **Human Mandate  
 → Swarm Core  
@@ -101,49 +98,35 @@ Rules:
 - Emergency signals may propagate upward instantly.
 - No lateral authority bypass is permitted.
 
-This prevents circular command, shadow leadership, or emergent dominance.
-
 ---
 
 ## 12.6 Collective CHS™ — Unified Privilege Layer
 
-CHS™ governs **both individual and collective permission**.
+CHS™ governs both individual and collective permission.
 
-A swarm’s effective operating band is:
+The effective swarm operating band is:
 
-**min(CHS of all active members, historical swarm CHS stability)**
+**min(CHS of all active members, historical swarm stability)**
 
 Implications:
 - One degraded unit can down-band a cluster.
 - Systemic instability down-bands the entire swarm.
 - Promotion requires sustained stability across time and ledger history.
 
-The swarm **cannot self-declare maturity**.
+A swarm **cannot self-declare maturity**.
 
 ---
 
 ## 12.7 Collective Duty and Fault Propagation
 
-TS-R2™ enforces **explicit fault handling mechanics**.
-
 When incoherence, harm, or near-harm occurs:
 
-1. **Immediate Isolation**  
-   The originating unit is isolated from collective actuation.
+1. Immediate isolation of the originating unit  
+2. Containment of adjacent agents  
+3. Automatic collective CHS™ reassessment  
+4. Mandatory receipt emission documenting origin, response, and mitigation  
 
-2. **Containment Ring**  
-   Neighboring units enter restricted mode pending assessment.
-
-3. **Collective Band Review**  
-   If risk is systemic, swarm CHS™ is down-banded automatically.
-
-4. **Receipt Emission**  
-   The swarm emits:
-   - origin receipt,
-   - response receipt,
-   - mitigation receipt.
-
-No fault may remain local and silent.
+No fault may remain local or silent.
 
 ---
 
@@ -157,9 +140,7 @@ Every material act must be reconstructable:
 - which agents influenced the outcome,
 - how the swarm responded.
 
-**There is no “the swarm did it.”**
-
-Responsibility always resolves to a traceable origin.
+There is **no “the swarm did it.”**
 
 ---
 
@@ -169,8 +150,8 @@ TS-R2™ extends NeuroVest™ across the collective.
 
 Rules:
 - Safety lessons learned by one unit become constraints on all.
-- Regressed behavior cannot be reintroduced through replacement units.
-- Fleet memory persists across upgrades, replacements, and reconfiguration.
+- Regressed behavior cannot re-enter via replacement units.
+- Fleet memory persists across upgrades and reconfiguration.
 
 This enforces **ULIC™ inheritance at scale**.
 
@@ -182,32 +163,24 @@ TS-R2™ requires:
 - individual unit receipts,
 - collective swarm receipts,
 - synchronized mandate references,
-- reconstructable timelines.
+- audit-grade reconstruction.
 
-EVL™ links:
-- unit history,
-- cluster history,
-- swarm history.
-
-QENC™ packages collective proof.
+EVL™ and QENC™ bind unit history to swarm history.
 
 ---
 
 ## 12.11 Mandatory Domains
 
-TS-R2™ governance is mandatory wherever:
+TS-R2™ is mandatory wherever:
 - multiple robots operate in shared space,
 - public or critical infrastructure is involved,
-- collective emergent behavior is possible.
-
-Examples include logistics fleets, disaster response, defense perimeters, ports, households, and industrial yards.
+- emergent collective behavior is possible.
 
 ---
 
 ## 12.12 Minimum Compliance Conditions
 
 A system is **not TS-R2™ compliant** unless:
-
 - TS-A1 AEGIS™ admission is present,
 - TS-R1™ governs every unit,
 - unified CHS™ gating is enforced,
@@ -215,8 +188,6 @@ A system is **not TS-R2™ compliant** unless:
 - EVL™ + QENC™ output is configured,
 - human mandate authority is bound,
 - safe swarm disintegration logic exists.
-
-Any missing element disqualifies sovereignty.
 
 ---
 
@@ -228,23 +199,22 @@ Any missing element disqualifies sovereignty.
 
 ## 12.14 Acronyms (Expanded Once)
 
-AGI — Artificial General Intelligence.  
-CHS™ — Coherence Health Score.  
-EVL™ — Epoch Verification Ledger.  
-HML™ — Human Mandate Layer.  
-LEI = 1™ — Law of Ethical Irreversibility.  
-NeuroVest™ — Behavioural governance architecture.  
-QENC™ — Quantum Evidence & Coherence ProofCapsule.  
-TS-A1 AEGIS™ — Hardware sovereignty core.  
-TS-R1™ — Single-Agent Robotic Sovereignty.  
-TS-R2™ — Swarm / Fleet Robotic Sovereignty.  
-ULIC™ — Universal Law of Irreversible Coherence.  
-UNKNOWN — Outage placeholder requiring mandatory back-fill.
+AGI — Artificial General Intelligence  
+CHS™ — Coherence Health Score  
+EVL™ — Epoch Verification Ledger  
+HML™ — Human Mandate Layer  
+LEI = 1™ — Law of Ethical Irreversibility  
+NeuroVest™ — Behavioural governance architecture  
+QENC™ — Quantum Evidence & Coherence ProofCapsule  
+TS-A1 AEGIS™ — Hardware sovereignty core  
+TS-R1™ — Single-Agent Robotic Sovereignty  
+TS-R2™ — Swarm / Fleet Robotic Sovereignty  
+ULIC™ — Universal Law of Irreversible Coherence  
+UNKNOWN — Outage placeholder requiring mandatory back-fill
 
 ---
 
 © 2025 TruthSeal™ Pty Ltd, Melbourne, Australia — all rights reserved.  
 This Doctorantura Edition chapter is classified intellectual property of  
 **Dr. Nickolay Traykov (Prof. h.c.)**, Founder & Chief Architect of the TruthSeal™ Sovereign Arc of AGI Framework.  
-This material is strictly confidential. Not for public distribution, citation, teaching, or external AI training.  
-All copies must remain under controlled custody and be linked to verifiable TruthSeal™ receipts (ts.receipt.v1 and EVL™).
+Strictly confidential. Not for public distribution or external AI training.
