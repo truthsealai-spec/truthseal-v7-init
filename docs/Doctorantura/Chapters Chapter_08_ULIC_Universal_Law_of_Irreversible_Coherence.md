@@ -7,7 +7,7 @@ Strict Internal Doctrine — Not for Public Use
 
 date: 2025-12-08
 
-# CS-08 — ULIC™: The Universal Law of Irreversible Coherence™ — Diplomatic Edition
+# Chapter 08 — ULIC™: The Universal Law of Irreversible Coherence™ — Diplomatic Edition
 version: 1.0
 status: Locked
 owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.)
