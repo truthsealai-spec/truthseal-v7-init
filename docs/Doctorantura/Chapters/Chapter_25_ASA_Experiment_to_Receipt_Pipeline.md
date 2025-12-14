@@ -79,6 +79,140 @@ Each stage is subject to:
 
 ---
 
+## 25.X HOW — The Experiment-to-Receipt Pipeline Is Executed
+
+This section defines **how** the Autonomous Scientific Agent™ (ASA™) operates in practice.
+It is procedural, non-symbolic, and binding.
+
+No scientific action inside TruthSeal™ is considered valid unless it follows this execution path.
+
+### Step 1 — Initiation Signal
+
+ASA™ execution begins only when one of the following occurs:
+• an explicit Human Mandate Layer™ authorisation,
+• an internal anomaly trigger exceeding defined thresholds,
+• or a coherence degradation signal detected by NeuroVest™ or CHS™.
+
+Unsolicited self-initiation is forbidden.
+
+---
+
+### Step 2 — Mandate & Authority Binding
+
+Before any reasoning or simulation:
+• ASA™ binds the active Human Mandate ID,
+• records the current authority scope,
+• snapshots the active LEI = 1™ state,
+• and checks Third Guardian Firewall™ permissions.
+
+If mandate binding fails, execution halts immediately.
+
+---
+
+### Step 3 — Question Formalisation (Machine-Readable)
+
+The research question is converted into:
+• a structured intent object,
+• with explicit constraints,
+• declared uncertainty bounds,
+• and prohibited inference zones.
+
+This object is hashed and becomes **Receipt-Zero** for the experiment.
+
+---
+
+### Step 4 — Constraint Compilation
+
+ASA™ compiles all active constraints:
+• ethical limits (LEI = 1™),
+• coherence bounds (ULIC™),
+• safety posture (CHS™),
+• operational prompt rules (OPS™),
+• hardware privilege limits (if TS-A1 AEGIS™ is present).
+
+This compiled constraint set is immutable for the duration of the experiment.
+
+---
+
+### Step 5 — Hypothesis Execution Under Guard
+
+Hypotheses are generated **only within** the compiled constraint set.
+
+For each hypothesis:
+• assumptions are enumerated,
+• expected coherence impact is estimated,
+• failure conditions are pre-declared.
+
+Speculative inference without declared assumptions is rejected.
+
+---
+
+### Step 6 — Controlled Experiment or Analysis Run
+
+ASA™ executes the approved method:
+• simulation,
+• historical replay,
+• bounded testing,
+• or analytical decomposition.
+
+During execution:
+• all parameters are logged,
+• model states are fingerprinted,
+• and environmental context is preserved.
+
+Execution without logging is invalid.
+
+---
+
+### Step 7 — Integrity & Drift Evaluation
+
+Outputs are evaluated for:
+• internal contradiction,
+• coherence regression,
+• mandate violation,
+• novelty-driven risk escalation,
+• and alignment drift.
+
+If any threshold is breached:
+• results are quarantined,
+• TGF™ may intervene,
+• or execution is halted.
+
+---
+
+### Step 8 — Receipt Generation
+
+If integrity checks pass, ASA™ emits:
+• a Discovery Receipt,
+• a Coherence Impact Summary,
+• a Dependency Graph to prior receipts,
+• and a proposed EVL™ settlement record.
+
+This receipt is cryptographically bound.
+
+---
+
+### Step 9 — Ledger Settlement
+
+EVL™ records:
+• what knowledge is added,
+• what remains invariant,
+• and why irreversibility is preserved.
+
+Once settled, the experiment becomes historical fact.
+
+---
+
+### Step 10 — Privilege & Legitimacy Resolution
+
+Depending on mandate:
+• results remain internal,
+• inform further governed experiments,
+• or are elevated toward public legitimacy pathways.
+
+No elevation is automatic.
+Authority never emerges from novelty alone.
+
 ## 25.2 Stage 1 — Question Declaration (Intent Explicitness)
 
 ASA™ must formally declare the research question **before** any exploratory action.
