@@ -16,7 +16,7 @@ version: 1.0
 status: FINAL DRAFT — Doctorantura Edition — Internal Custody (Canon upon Founder Approval)  
 owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.), Founder & Chief Architect of the TruthSeal™ Sovereign Arc of AGI Framework  
 
-© 2025 TruthSeal™ — Compendium (Diplomatic / Committee Edition)  
+© 2025 TruthSeal™ —  (Diplomatic / Committee Edition)  
 Use: Not for Public Use — committee operational doctrine; deeper Ω materials remain classified under Doctorantura.  
 Receipts: ts.receipt.v1 — anchors via OpenTimestamps / OriginStamp / BTCStamp when available; EVL/ULIC references maintained.  
 Reproduction permitted only with intact receipts and attribution to TruthSeal™.
