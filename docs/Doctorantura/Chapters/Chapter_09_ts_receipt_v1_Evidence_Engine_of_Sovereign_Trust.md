@@ -12,9 +12,9 @@ date: 8 December 2025
 # Chapter 09 — ts.receipt.v1
 ## The Evidence Engine of Sovereign Trust
 
-version: 1.0
-status: LOCKED — Doctorantura Edition — Internal Custody
-owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.)
+version: 1.0  
+status: FINAL DRAFT — Doctorantura Edition — Internal Custody (Canon upon Founder Approval)  
+owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.), Founder & Chief Architect of the TruthSeal™ Sovereign Arc of AGI Framework
 
 ---
 
