@@ -221,7 +221,105 @@ Through DEVORA™, democratic authority is preserved under AGI conditions.
 This chapter is canonical and binding.
 
 
----
+------------------------
+
+## 51.10 Linguistic Sovereignty and Interpretive Integrity
+
+51.10.1 Foundational Language of Origin
+
+DEVORA™ is authored, defined, and constitutionally anchored in English.
+
+English is the foundational authorial, constitutional, and sovereign language of origin for the TruthSeal™ Sovereign Arc and for all DEVORA™ semantics.
+All canonical definitions, invariants, mandates, and interpretive rules originate exclusively in English.
+No other language constitutes a source of semantic authority.
+No translation may supersede, amend, or reinterpret English-origin meaning.
+
+This establishes a single, immutable semantic root for DEVORA™ across all deployments, jurisdictions, and epochs.
+The use of additional languages exists solely to render canonical meaning intelligible, not to generate meaning.
+
+Any conflict between a translated output and the English canonical source is resolved in favour of the English original without exception.
+
+This rule is non-negotiable and binding.
+
+⸻
+
+51.10.2 Supported Sovereign Languages (Canonical Set)
+
+DEVORA™ supports sovereign command-intelligence output in eleven (11) canonical human languages.
+
+These languages are selected based on constitutional governance use, institutional continuity, and long-horizon civilisational relevance.
+Selection is explicitly not driven by market demand, political alignment, or commercial considerations.
+
+The canonical supported languages are:
+	1.	English — foundational authorial and constitutional language of origin
+	2.	French — diplomatic, treaty, and multilateral governance
+	3.	German — constitutional-technical and regulatory systems
+	4.	Spanish — transnational civil and regulatory coordination
+	5.	Italian — civil-law institutional interpretation
+	6.	Russian — strategic, scientific, and security governance
+	7.	Arabic — sovereign legal, regulatory, and administrative governance
+	8.	Chinese (Mandarin) — large-scale institutional and state administration
+	9.	Japanese — advanced industrial, technical, and regulatory environments
+	10.	Bulgarian — regional constitutional, legal, and scholarly governance usage
+	11.	Hungarian — Central European legal-administrative governance tradition
+
+No additional language support is implied, planned, or authorised outside this set.
+
+⸻
+
+51.10.3 Semantic Invariance Across Languages
+
+DEVORA™ operates on a single semantic core defined in English.
+
+All multilingual outputs are deterministic projections of that core.
+They do not introduce interpretation, discretion, or contextual adaptation beyond linguistic rendering.
+
+Accordingly:
+	•	Ethical constraints remain invariant across languages.
+	•	Mandate scope and authority boundaries remain invariant.
+	•	DEVORA™ ↔ SLU™ interpretive boundaries remain invariant.
+	•	Receipt references, coherence states, and escalation semantics remain invariant.
+
+A translation error is treated as a governance defect, not a linguistic preference.
+Any detected semantic divergence triggers correction at the source, not compensatory explanation.
+
+⸻
+
+51.10.4 Language as a Governance Surface (Not a UI Feature)
+
+Language within DEVORA™ is treated as a governance surface, not a user-experience layer.
+
+Multilingual output exists to ensure that sovereign authorities, regulators, auditors, and institutional decision-makers receive unambiguous meaning in their working language, without loss of legal or ethical precision.
+
+DEVORA™ does not localise tone, soften constraints, or adapt authority semantics based on language.
+All outputs preserve identical force, obligation, and limitation.
+
+This prevents:
+	•	authority dilution through translation,
+	•	semantic drift across jurisdictions, and
+	•	retrospective reinterpretation of mandate intent.
+
+Language choice affects readability, never authority.
+
+⸻
+
+51.10.5 Audit and Custody Implications
+
+All DEVORA™ multilingual outputs remain fully receipt-bound.
+
+Audit trails reference the English canonical source alongside the rendered language output.
+This ensures that any review, dispute, or judicial reconstruction can always resolve meaning at the constitutional origin.
+
+Language therefore does not fragment custody.
+It reinforces traceability.
+
+⸻
+
+51.10.6 Canonical Statement
+
+English is the sole sovereign language of origin for DEVORA™.
+Multilingual support exists to preserve interpretive clarity, not to create alternative authority.
+
 
 ## 60. Premise & Scope — DEVORA™ (Historical Ethical Gate Doctrine)
 
