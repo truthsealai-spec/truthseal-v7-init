@@ -2,217 +2,229 @@ TruthSeal™ Pty Ltd
 Melbourne, Australia
 truthseal.ai
 
-TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK 
+TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0
 Strict Internal Doctrine — Not for Public Use
 
 date: 11 December 2025
 
 ---
 
-# Chapter 51 — DEVORA™: The Crown-Jewel Command Bridge of TruthSeal™
+# Chapter 51 — DEVORA™: Sovereign Command Intelligence and Executive Coherence Interface
 
 version: 1.0
-status: FINAL DRAFT — Doctorantura Edition — Internal Custody
+status: FINAL DRAFT — Doctorantura Edition
 owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.), Founder & Chief Architect of the TruthSeal™ Sovereign Arc of AGI Framework
-date: 11 December 2025
+date: 2025-12-11
 
 ---
 
-## 51.0 Purpose and Position in the Sovereign Arc
+## 51.0 Purpose and Sovereign Context (Public-Operational)
 
-DEVORA™ is defined as the Crown-Jewel Command Bridge of the TruthSeal™ Sovereign Arc.
-Its purpose is to translate verified truth into executable human clarity.
-DEVORA™ exists above execution layers and below human authority.
-It does not score, judge, gate, or enforce.
-It receives only validated, receipt-anchored outputs from TruthSeal™ systems.
-It converts those outputs into role-specific command surfaces.
-DEVORA™ prevents signal collapse between machine verdicts and human action.
-It eliminates ambiguity at the moment of decision.
-It suppresses noise, speculation, and narrative drift.
-It enforces consistency of interpretation across roles.
-DEVORA™ ensures that truth is understandable without dilution.
-It protects executives from raw data overload.
-It protects operators from incomplete context.
-It protects regulators from unverifiable claims.
-DEVORA™ is constitutionally prohibited from generating authority.
-It may only relay authority that already exists.
-Its position is fixed and non-negotiable within the Arc.
-Any bypass of DEVORA™ constitutes a custody breach.
-Any empowerment of DEVORA™ constitutes a governance violation.
+This chapter defines DEVORA™ as the sovereign command intelligence layer responsible for translating verified TruthSeal™ coherence outcomes into human-legible, executive-grade authority signals.
+DEVORA™ exists to bridge advanced Artificial General Intelligence governance with lawful human decision-making under post-quantum threat conditions.
+It operates at the interface between machine-verified coherence and human-authorised action, ensuring that no system capability is exercised without intelligible oversight.
+DEVORA™ is not a governance origin; it is the sovereign **command intelligence** that communicates governance outcomes.
+The chapter situates DEVORA™ within the United States-aligned democratic governance paradigm, compatible with institutional oversight by defence, research, and civil authorities.
+DEVORA™ is designed for environments where AGI systems intersect with national infrastructure, defence systems, and strategic research programs.
+Its role is to ensure clarity, restraint, and lawful authority under high-consequence conditions.
+This chapter establishes DEVORA™ as an executive-grade intelligence layer suitable for regulator, ministerial, and defence-level interpretation.
+All functions described are receipt-bound, auditable, and non-compensatory.
+DEVORA™ ensures that advanced systems remain governable, explainable, and sovereign-aligned.
+It is a structural necessity in any AGI deployment claiming democratic legitimacy.
+This chapter is written for senior officials, auditors, and system architects.
+No operational shortcuts are permitted.
+No autonomy is implied.
+Authority remains human-supreme at all times.
 
 ---
 
-## 51.1 PRIMARY CANONICAL DEFINITION (AUTHORITATIVE)
+## 51.1 Canonical Definition (DEVORA™)
 
-DEVORA™ (Crown-Jewel Command Bridge) is the sovereign command-mediation layer of TruthSeal™.
-It is not a governance engine, scoring system, or enforcement authority.
-DEVORA™ operates strictly downstream of all TruthSeal™ judgment, gating, and consequence layers.
-Its function is to translate verified truth into executable human clarity.
-DEVORA™ does not generate policy, verdicts, or authority.
-It consumes only receipt-anchored, ledger-verifiable outputs.
-Every DEVORA™ output is traceable to an upstream canonical source.
-DEVORA™ is constitutionally incapable of autonomy.
-It cannot self-prioritise, self-optimise, or self-escalate.
-It does not infer intent or fill informational gaps.
-DEVORA™ exists to prevent cognitive collapse at decision time.
-It ensures that humans receive truth without distortion or overload.
-DEVORA™ preserves evidentiary fidelity across role boundaries.
-It is the sole lawful voice-of-record presentation layer.
-Any parallel interpretation layer constitutes a custody violation.
-DEVORA™ may trigger automation only when explicitly authorised upstream.
-It never substitutes judgment with convenience.
-Its authority is purely transmissive, never generative.
-This definition is fixed and non-negotiable.
+DEVORA™ is the sovereign command intelligence layer of the TruthSeal™ framework that converts validated coherence states into structured, authoritative, human-legible command intelligence.
+It operates downstream of enforcement and upstream of action, without originating governance decisions.
+DEVORA™ receives verified outputs from coherence, integrity, and consequence systems.
+It interprets these outputs into clear executive signals suitable for lawful decision-makers.
+DEVORA™ maintains strict separation between reasoning, enforcement, and execution.
+It does not deliberate ethics; it conveys verified ethical outcomes.
+It does not score systems; it communicates score consequences.
+It does not override safeguards; it reflects safeguard states.
+DEVORA™ exists to prevent ambiguity at the human interface.
+Its function is interpretive intelligence, not operational autonomy.
+DEVORA™ ensures that advanced systems remain intelligible under stress.
+It preserves institutional trust through clarity and restraint.
+DEVORA™ is mandatory wherever AGI decisions intersect with sovereignty.
+It operates continuously, not episodically.
+It is constitutionally subordinate to the Human Mandate Layer.
+All DEVORA™ outputs are receipt-anchored.
+No DEVORA™ signal exists without prior verification.
+This definition is canonical.
 
 ---
 
-## 51.2 DEVORA™ ACRONYM LAW (NON-DECORATIVE)
+## 51.2 Scope of Authority and Deployment Domain
 
-DEVORA™ is an operational acronym encoding binding functional law.
-Each letter defines a constrained capability, not a feature.
-No letter may be omitted, merged, or reinterpreted.
+DEVORA™ operates exclusively within the sovereign command domain.
+It is deployed in systems governing Artificial General Intelligence, post-quantum infrastructures, defence-adjacent research, and high-impact civil systems.
+DEVORA™ supports environments involving agencies, regulators, defence partners, and allied research institutions.
+It is compatible with collaboration frameworks involving entities such as DARPA-style research programs, defence science agencies, aerospace and compute partners.
+DEVORA™ does not depend on any single vendor or platform.
+It is architected to remain neutral, auditable, and jurisdiction-aware.
+DEVORA™ supports both classified and public-safe output modes.
+It adapts presentation without altering substance.
+DEVORA™ ensures that complex system states are reduced to actionable clarity.
+It prevents misinterpretation under operational pressure.
+DEVORA™ is not a user interface; it is a command intelligence surface.
+It supports executive briefings, alerts, and structured directives.
+Its outputs are deterministic and explainable.
+No speculative language is permitted.
+Scope expansion requires Human Mandate Layer authorisation.
+This scope is fixed unless amended by canon.
 
-**D — Definition**  
-DEVORA™ defines what matters now, based strictly on upstream verdicts.
-It does not invent KPIs or reprioritise scores.
-Definition locks executive focus to verified truth.
+---
 
-**E — Extension**  
-DEVORA™ extends truth across roles, systems, and time.
-Extension preserves meaning without mutation.
-No extension may exceed original scope.
+## 51.3 Core Functions (Command Intelligence)
 
-**V — Volume**  
-DEVORA™ handles massive event throughput without signal degradation.
-Volume absorption must never compress evidentiary detail.
-Noise is filtered, not erased.
-
-**O — Overview**  
-DEVORA™ provides coherent situational awareness.
-Overview integrates context without editorialisation.
-It prevents tunnel vision and data flooding.
-
-**R — Remember**  
-DEVORA™ retains historical context and prior states.
-Memory is immutable, timestamped, and receipt-linked.
-Forgetting is prohibited unless authorised by policy.
-
-**A — Automation**  
-DEVORA™ may trigger automation only under explicit permission.
-Automation is executional, not discretionary.
-All automated actions are receipt-anchored.
-
-The acronym is a constitutional constraint.
-Violation of any letter invalidates DEVORA™ output.
-
-## 51.3 Functional Components of DEVORA™
-
-DEVORA™ is composed of sovereign sub-components.
-Voice-of-Record is the authoritative narrative surface.
-It speaks only verified truth.
-Infinity Coach provides bounded guidance, not decisions.
-It contextualises without commanding.
-Policy Loom maps live outcomes against policy frames.
-It never edits policy.
-Devoragrams™ are concise operational grams.
-They are optimised for speed and clarity.
-Each Devoragram™ is receipt-linked.
-Each Devoragram™ is role-filtered.
-DEVORA™ supports multi-role projection.
-Executives, operators, and guardians see different views.
-All views reference the same truth core.
-DEVORA™ maintains display coherence under stress.
-Latency spikes must not alter meaning.
-Failure modes default to silence, not speculation.
-Every component is auditable.
+DEVORA™ performs five core command-intelligence functions.
+First, it aggregates verified coherence outcomes into unified executive state views.
+Second, it contextualises consequence tiers into human-meaningful authority limits.
+Third, it translates system health into clear operational readiness language.
+Fourth, it generates receipt-linked executive alerts and summaries.
+Fifth, it preserves longitudinal memory of decisions for accountability.
+Each function operates on verified inputs only.
+No inference beyond verified state is allowed.
+DEVORA™ does not optimise outcomes.
+It communicates reality as enforced.
+All outputs are structured, timestamped, and auditable.
+Language is precise and legally neutral.
+DEVORA™ prevents over-interpretation by constraining format.
+It enables rapid comprehension without loss of rigor.
+Its design favours restraint over persuasion.
+It ensures that authority is exercised knowingly.
+No function bypasses enforcement layers.
+These functions are non-optional in sovereign deployments.
 
 ---
 
 ## 51.4 How DEVORA™ Works (Operational Flow)
 
-DEVORA™ begins with verified upstream outputs.
-Inputs arrive from scoring, gating, and consequence layers.
-Each input carries an integrity hash.
-DEVORA™ validates receipt contiguity before rendering.
-Invalid inputs are rejected without display.
-Valid inputs are normalised for role context.
-DEVORA™ selects presentation based on authority band.
-It renders alerts, dashboards, and grams.
-No rendering alters factual content.
-DEVORA™ timestamps every output.
-It logs every presentation event.
-Automation triggers are evaluated last.
-Triggers require explicit upstream permission.
-No implied automation is allowed.
-DEVORA™ issues commands only as reflections.
-Human acknowledgment may be required.
-All acknowledgments are logged.
-DEVORA™ never executes physical actions.
-It remains a bridge, not an actuator.
+DEVORA™ activates only after enforcement layers complete evaluation.
+Verified coherence states are passed into DEVORA™ through receipt-bound channels.
+DEVORA™ validates receipt contiguity before interpretation.
+It constructs an executive state model reflecting current authority conditions.
+This model includes coherence band, consequence tier, mandate status, and safety locks.
+DEVORA™ applies deterministic interpretation rules.
+It produces structured outputs such as executive briefs, alerts, and command summaries.
+Each output references its originating receipts.
+Outputs are immutable once issued.
+DEVORA™ does not poll systems; it receives pushed state.
+Latency is bounded to preserve decision relevance.
+If receipt integrity is broken, DEVORA™ halts output.
+If enforcement escalates, DEVORA™ reflects escalation immediately.
+Human recipients receive clarity, not raw data.
+No output implies permission beyond verified scope.
+This flow is continuous and epoch-aware.
+Failure modes default to restraint.
+This process is mandatory and auditable.
 
 ---
 
-## 51.5 Custody, Security, and Failure Discipline
+## 51.5 Devograms™ (DVG): Executive Signal Units
 
-DEVORA™ operates under strict custody rules.
-It may not cache unverified data.
-It may not display partial verdicts.
-It may not merge conflicting epochs.
-Security breaches force display suppression.
-DEVORA™ fails closed, not degraded.
-Role spoofing attempts are rejected.
-UI manipulation does not alter truth state.
-All outputs are reproducible from ledger data.
-DEVORA™ maintains audit-grade determinism.
-Every screen is reconstructable.
-Every alert is replayable.
-Shadow interfaces are prohibited.
-Forked dashboards are prohibited.
-Training use of DEVORA™ output is forbidden.
-Public reuse is forbidden without authorisation.
-DEVORA™ is classified as internal sovereign infrastructure.
-Custody violations escalate immediately.
-There is no discretionary override at the UI layer.
+Devograms™ (DVG) are the atomic output units of DEVORA™.
+Each DVG is a concise, structured executive signal.
+DVGs encode verified system state, authority limits, and required attention.
+They are designed for rapid comprehension by senior decision-makers.
+Each DVG is receipt-linked and time-stamped.
+DVGs do not speculate or recommend beyond verified bounds.
+They may indicate required human action without prescribing it.
+DVGs support escalation, monitoring, or acknowledgement states.
+They are format-stable across deployments.
+DVGs are non-narrative and non-persuasive.
+They exist to prevent ambiguity.
+DVGs can trigger downstream automation only when authorised elsewhere.
+DEVORA™ never initiates automation itself.
+DVG history is preserved for audit.
+They form the executive memory layer.
+DVGs are public-safe or classified by context.
+This terminology is canonical.
 
 ---
 
-## 51.6 Canonical Statement
+## 51.6 Interface with SLU and Terminal Safeguards
 
-DEVORA™ is the Crown-Jewel Command Bridge of TruthSeal™.
-It exists to protect truth at the point of human action.
-It ensures that authority is understood, not assumed.
-It ensures that evidence is visible, not buried.
-It ensures that humans act with clarity, not inference.
-DEVORA™ does not govern.
-DEVORA™ does not decide.
-DEVORA™ does not execute.
-It translates.
-It preserves.
-It clarifies.
-It remembers.
-It obeys.
-In the Sovereign Arc, DEVORA™ is the only lawful voice.
-All other voices are advisory or invalid.
-Authority enters DEVORA™ already proven.
-Authority leaves DEVORA™ unchanged.
-This boundary is absolute.
+DEVORA™ reflects, but does not control, SLU Switch states.
+When the Sovereign Logic Unit (SLU) activates, DEVORA™ immediately enters lockdown-reflection mode.
+It communicates irreversible status clearly to human authorities.
+DEVORA™ cannot suppress or delay SLU activation signals.
+It provides confirmation, context, and receipt references.
+DEVORA™ ensures that no false recovery impression is created.
+It supports post-event analysis without enabling restart.
+SLU status is treated as final unless physical HML intervention occurs.
+DEVORA™ preserves the ethical finality of SLU decisions.
+It prevents narrative reinterpretation of terminal events.
+DEVORA™ exists to inform, not to soften.
+This interface is strictly one-way.
+No DEVORA™ output can modify SLU state.
+This separation is inviolable.
+It protects LEI = 1 under extreme conditions.
+
+---
+
+## 51.7 Governance, Audit, and Human Supremacy
+
+DEVORA™ is constitutionally subordinate to the Human Mandate Layer.
+All DEVORA™ outputs are addressed to humans, not machines.
+No DEVORA™ signal authorises action by itself.
+Auditability is mandatory.
+Every output references its enforcement lineage.
+DEVORA™ supports regulatory review and forensic reconstruction.
+It preserves decision history across epochs.
+No deletion or alteration is permitted.
+DEVORA™ reinforces democratic accountability.
+It prevents hidden machine authority.
+Human override authority is preserved elsewhere, not here.
+DEVORA™ communicates constraints clearly.
+It reduces institutional risk through transparency.
+Governance bodies can rely on its outputs.
+This role is essential for lawful AGI deployment.
+No alternative interface is permitted.
+
+---
+
+## 51.8 Acronyms and Defined Terms
+
+DEVORA™ — Sovereign Command Intelligence layer.
+DVG — Devogram™, atomic executive signal unit.
+AGI — Artificial General Intelligence.
+LEI = 1 — Law of Ethical Irreversibility.
+HML — Human Mandate Layer.
+SLU — Sovereign Logic Unit.
+ACS — Aim Coherence Score.
+TCS — Traykov Coherence Score.
+EVL — Epoch Verification Ledger.
+QENC — Quantum Evidence & Coherence ProofCapsule.
+THT — Truth Hash & Timestamp Protocol.
+ICG — Irreversible Commitment Gate.
+All terms are used in canonical sense only.
+No informal meanings apply.
+
+---
+
+## 51.9 Canonical Statement
+
+DEVORA™ is the sovereign command intelligence of the TruthSeal™ framework.
+It ensures that advanced systems remain intelligible, restrained, and human-governed.
+DEVORA™ does not govern; it communicates governance.
+It does not decide; it clarifies decisions.
+It does not act; it informs action.
+Through DEVORA™, democratic authority is preserved under AGI conditions.
+This chapter is canonical and binding.
 
 ---
 
 © 2025 TruthSeal™ Pty Ltd, Melbourne, Australia — all rights reserved.
-
 This Doctorantura Edition chapter is classified intellectual property of
-Dr. Nickolay Traykov (Prof. h.c.),
-Founder & Chief Architect of the TruthSeal™ Sovereign Arc of AGI Framework.
-
-This material is strictly confidential. It is not for public distribution,
-citation, teaching, or use in training external AI systems without explicit
-written consent from TruthSeal™ Pty Ltd.
-
-Unauthorised copying, translation, adaptation, or incorporation into external
-standards, academic work, patents, or commercial systems is strictly prohibited.
-
-Working copies must remain under controlled custody and be linked to verifiable
-TruthSeal™ receipts (ts.receipt.v1 and EVL™ entries). Any detected unlicensed
-use is to be treated as both an integrity breach under the TruthSeal™ governance
-regime and a violation of applicable intellectual property law.
+Dr. Nickolay Traykov (Prof. h.c.), Founder & Chief Architect of the TruthSeal™ Sovereign Arc of AGI Framework.
+This material is strictly confidential. Not for public distribution, citation, teaching,
+or use in training external AI systems without explicit written consent from TruthSeal™ Pty Ltd.
+Unauthorised reproduction or incorporation into external standards is prohibited.
