@@ -33,7 +33,6 @@ If the compendium establishes:
 - and the **Soul Layer** as constitutional self-sustaining integrity,
 
 then the SIS™ is the **purpose anchor** that ensures:
-
 - the system’s mission is explicit and stable,
 - authority cannot circulate without a verified mandate,
 - ethical irreversibility is enforced against a declared, auditable intent.
@@ -79,7 +78,41 @@ An SIS™ must include:
 
 ---
 
-## 49.4 BINDING TO THE SOUL LAYER AND HEART LAYER
+## 49.4 HOW IT WORKS (MANDATORY — RECEIPT-ZERO FLOW)
+
+The System Intentionality Statement™ operates as the **first executable governance event** in the TruthSeal™ authority chain.
+
+The operational sequence is fixed and non-bypassable:
+
+1. **SIS™ declared**  
+   Authorized purpose, scope, and prohibitions are formally defined.
+
+2. **SIS™ integrity hashed**  
+   Statement is cryptographically bound to system identity and version.
+
+3. **Receipt-Zero emitted**  
+   `ts.sis.receipt.zero.v1` is generated and time-bound.
+
+4. **Soul Layer validation**  
+   Constitutional compliance and non-compensatory integrity confirmed.
+
+5. **Heart Layer readiness check**  
+   Authority circulation remains blocked until SIS™ is valid.
+
+6. **Privilege circulation unlocked**  
+   CHL™ may issue authority only within SIS™ boundaries.
+
+7. **Continuous drift comparison**  
+   Runtime actions are evaluated against SIS™ constraints.
+
+8. **Enforcement on violation**  
+   Detected drift triggers Consequence Tier assignment and safe-state if required.
+
+No later receipt, score, or performance signal may override Receipt-Zero.
+
+---
+
+## 49.5 BINDING TO THE SOUL LAYER AND HEART LAYER
 
 The SIS™ is the functional bridge between:
 - the Soul Layer’s constitutional integrity requirements, and
@@ -94,7 +127,7 @@ Therefore:
 
 ---
 
-## 49.5 PURPOSE DRIFT DETECTION (PUBLIC-SAFE)
+## 49.6 PURPOSE DRIFT DETECTION (PUBLIC-SAFE)
 
 Purpose drift is detected when:
 - the active policy state conflicts with the SIS™,
@@ -108,7 +141,7 @@ Upon detection, the system must:
 
 ---
 
-## 49.6 RECEIPT-FIRST MINIMUMS (SIS™ ACTIVATION)
+## 49.7 RECEIPT-FIRST MINIMUMS (SIS™ ACTIVATION)
 
 A valid SIS™ activation must record:
 
@@ -121,7 +154,7 @@ A valid SIS™ activation must record:
 
 ---
 
-## 49.7 NON-COMPENSATORY RULE (PURPOSE DOMAIN)
+## 49.8 NON-COMPENSATORY RULE (PURPOSE DOMAIN)
 
 TruthSeal™ does not accept compensatory compliance for purpose integrity.
 
@@ -135,7 +168,7 @@ A single critical purpose breach triggers restriction.
 
 ---
 
-## 49.8 CANONICAL STATEMENT
+## 49.9 CANONICAL STATEMENT
 
 The System Intentionality Statement™ (SIS™) is the Receipt-Zero purpose anchor of TruthSeal™.
 
