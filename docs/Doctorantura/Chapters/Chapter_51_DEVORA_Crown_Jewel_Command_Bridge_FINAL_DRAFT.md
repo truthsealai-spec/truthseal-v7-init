@@ -893,6 +893,21 @@ In the TruthSeal™ architecture, ICG commits, SLU locks, but DEVORA™ explains
 That explanation is not optional.
 It is the condition under which advanced intelligence remains governable.
 
+**Disclosure:In the event of a quantum attack, DEVORA™ activates the SLU™ switch.
+
+What that means (precisely, not rhetorically)
+	•	DEVORA™ activates the SLU™ switch by issuing a receipt-bound interpretive verdict that continued operation violates LEI = 1.
+	•	SLU™ (Sovereign Logic Unit) then executes the terminal hardware action:
+	•	irreversible electrical isolation,
+	•	hardware latch into lockdown,
+	•	cryptographic state destruction where applicable.
+	•	Once the SLU™ switch is activated, the system exits the computational domain entirely.
+	•	Quantum computation is rendered irrelevant because the system is no longer operating in a state that can be influenced, reversed, or forged mathematically.
+
+One-line sovereign formulation (safe to use anywhere)
+
+Upon confirmed quantum attack or coherence failure, DEVORA™ activates the SLU™ switch, enforcing irreversible hardware isolation that places sovereign systems beyond computational or quantum interference.
+
 --------------------------
 
 Sovereign Closing Statement
