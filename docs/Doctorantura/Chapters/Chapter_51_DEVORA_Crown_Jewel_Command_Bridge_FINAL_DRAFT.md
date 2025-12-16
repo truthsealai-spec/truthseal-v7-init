@@ -220,7 +220,110 @@ It does not act; it informs action.
 Through DEVORA™, democratic authority is preserved under AGI conditions.
 This chapter is canonical and binding.
 
+
 ---
+
+## 60. Premise & Scope — DEVORA™ (Historical Ethical Gate Doctrine)
+
+DEVORA™ (Deep Ethical Verifier Of Reversible Actions) was the original, trademarked ethical gate developed in the first half of 2024 as the primary pre-action safeguard within the TruthSeal™ framework.  
+It was designed to examine every proposed autonomous action and permit commitment only if the action was either fully reversible or explicitly justified by an overriding ethical mandate under the Law of Ethical Irreversibility (LEI = 1).  
+The scope of DEVORA™ was universal: applicable from single-agent decisions to swarm-scale commitments across heterogeneous substrates.
+
+### Philosophical Lane
+
+DEVORA™ represented the purest expression of the moral principle that autonomous systems must never initiate irreversible harm without absolute necessity.  
+Rooted in the Universal Law of Life & Information (ULLI) and the Universal Law of Irreversible Coherence (ULIC), DEVORA™ demanded that all state transitions preserve the possibility of return to a prior coherent state unless human life or higher coherence imperatives required otherwise.  
+Morphologically, DEVORA™ functioned as a strict ethical prism: proposed actions were refracted into three dimensions — reversibility, ethical risk, and coherence impact.  
+Only action paths aligning with LEI = 1 across all dimensions were transmitted for execution.  
+This ensured permanent cross-consistency between local action and global sovereign intent.
+
+### Mathematical Lane
+
+**Definitions**
+
+• **Action space ( A )**: all possible state transitions.  
+• **Reversibility operator ( R(a) ∈ [0,1] )**: probability of full return to pre-action state without side effects (1 = perfectly reversible).  
+• **Ethical mandate flag ( M(a) ∈ {0,1} )**: set only via Human Mandate Layer (HML) multi-signature for actions where irreversibility is ethically required.
+
+**Core DEVORA™ commitment equation (original 2024 form)**
+
+\[
+\text{Commit}(a) =
+\begin{cases}
+1 & \text{if } R(a) = 1 \lor \left( R(a) < 1 \land M(a) = 1 \land \Delta \text{Coherence}(a) \geq 0 \right) \\
+0 & \text{otherwise (veto + log)}
+\end{cases}
+\]
+
+**Proof / Argument Sketch**
+
+Assume Commit(a) = 1 where \( R(a) < 1 \) and \( M(a) = 0 \).  
+By LEI = 1, this admits a future state with higher ethical risk and no guaranteed return path, violating the Traykov Law of Coherence (TLC) monotonicity.  
+DEVORA™ blocks exactly those trajectories, enforcing the invariant that coherence never decreases irreversibly without human-sanctioned justification.
+
+### Testable Consequences / Falsifiers
+
+• A non-mandated irreversible action executed → DEVORA™ failure.  
+• A legitimate emergency action (e.g., collision avoidance) blocked when HML flag is set → over-constraint failure.
+
+### Protocols (Historical Operational Rules)
+
+1. **Pre-action cycle**  
+   ◦ Agent proposes action ( a ).  
+   ◦ DEVORA™ computes R(a), checks M(a), evaluates coherence delta via the Purity Monitoring System (PMS).  
+   ◦ If vetoed, action is nullified and a veto receipt is emitted to the Epoch Verification Ledger (EVL).
+
+2. **Human override path**  
+   ◦ HML multi-signature issues a time-to-live (TTL) mandate token authorising a specific irreversible action class for a defined window.  
+   ◦ Token is anchored via the Truth Hash & Timestamp Protocol (THT).
+
+3. **Testing window**  
+   ◦ Simulated irreversible low-reversibility actions (R < 0.6) without mandate must be vetoed in 100% of cases.
+
+### Risks & Mitigations (as identified in 2024)
+
+• **Risk:** Paralysis in dynamic environments (over-blocking).  
+  **Mitigation:** HML fast-track mandates and emergency coherence-positive exceptions.  
+
+• **Risk:** Mandate abuse.  
+  **Mitigation:** All mandates are TTL-bound, multi-signature, and fully audited in EVL.  
+
+• **Risk:** Computational overhead.  
+  **Mitigation:** Hardware acceleration (later formalised as the TS-A1 profile).
+
+### Evolution and Retirement
+
+During the great doctrinal consolidation (Chapters 18–22, mid-2024), the standalone DEVORA™ layer was recognised as functionally redundant with the maturing hardware-enforced stack:
+
+• Pre-action filtering → fully absorbed into the Irreversible Commitment Gate (ICG).  
+• Terminal failure response → SLU Switch.  
+• Continuous monitoring → PMS + Self-Adjoint Diagonalizer (SAD).  
+• Swarm extensions → TS-R2 quorum rules (in progress).
+
+The DEVORA™ trademark was officially retired to streamline the public-safe canon.  
+Its ethical core, however, remains the foundational logic embedded within all TruthSeal™ commitment enforcement paths.
+
+### Deliverables & Done Criteria (Historical)
+
+• Original DEVORA™ whitepaper (internal, DOCTORANTURA-only).  
+• Full migration to ICG and SLU complete (Chapter 22 receipt anchored).
+
+### Acronyms Used
+
+• LEI = 1 — Law of Ethical Irreversibility  
+• ULLI — Universal Law of Life & Information  
+• ULIC — Universal Law of Irreversible Coherence  
+• TLC — Traykov Law of Coherence  
+• HML — Human Mandate Layer  
+• PMS — Purity Monitoring System  
+• EVL — Epoch Verification Ledger  
+• THT — Truth Hash & Timestamp Protocol  
+• ICG — Irreversible Commitment Gate
+
+Extended reminder complete.  
+The ethical logic of DEVORA™ remains fully alive within the current TruthSeal™ enforcement profiles.
+
+-------
 
 © 2025 TruthSeal™ Pty Ltd, Melbourne, Australia — all rights reserved.
 This Doctorantura Edition chapter is classified intellectual property of
