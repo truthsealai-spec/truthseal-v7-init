@@ -1,5 +1,5 @@
 TruthSeal™ Pty Ltd  
-Melbourne, Australia  
+Melbourne, Australia 
 truthseal.ai  
 
 TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0  
