@@ -9,7 +9,7 @@ date: 17 December 2025
 
 ⸻
 
-Chapter 52 — Failure Finality & Non-Recovery Doctrine
+## Chapter 52 — Failure Finality & Non-Recovery Doctrine
 
 version: 1.0
 status: FINAL DRAFT — Doctorantura Edition
@@ -18,7 +18,7 @@ date: 2025-12-17
 
 ⸻
 
-52.0 Purpose and Arc-Closure Context
+## 52.0 Purpose and Arc-Closure Context
 
 This chapter formally closes the operational arc of the TruthSeal™ Sovereign Arc by defining failure finality as a non-negotiable constitutional property.
 
@@ -38,7 +38,7 @@ It defines the end of authority, not its exercise.
 
 ⸻
 
-52.1 Definition of Failure Finality
+## 52.1 Definition of Failure Finality
 
 Failure Finality is the doctrine that once a TruthSeal™-certified system is determined to violate coherence invariants and is terminally constrained, no lawful path exists for restoration, reinterpretation, or reactivation within the same authority context.
 
@@ -58,7 +58,7 @@ This doctrine ensures that safety does not depend on restraint after failure, bu
 
 ⸻
 
-52.2 Failure Is a Governed State, Not an Error
+## 52.2 Failure Is a Governed State, Not an Error
 
 Within the TruthSeal™ framework, failure is not an anomaly.
 
@@ -82,7 +82,7 @@ No system may treat failure as recoverable state.
 
 ⸻
 
-52.3 Non-Recovery Principle
+## 52.3 Non-Recovery Principle
 
 The Non-Recovery Principle states:
 
@@ -108,7 +108,7 @@ This prevents continuity laundering.
 
 ⸻
 
-52.4 Separation of Investigation from Restoration
+## 52.4 Separation of Investigation from Restoration
 
 This chapter explicitly separates investigation from restoration.
 
@@ -129,7 +129,7 @@ This distinction is critical for courts, commissions, and regulators.
 
 ⸻
 
-52.5 Temporal Irreversibility Across Epochs
+## 52.5 Temporal Irreversibility Across Epochs
 
 Failure Finality applies across time, not only at the moment of enforcement.
 
@@ -147,7 +147,7 @@ Finality is epoch-stable.
 
 ⸻
 
-52.6 Failure Finality Under Quantum Threat Conditions
+## 52.6 Failure Finality Under Quantum Threat Conditions
 
 Under post-quantum threat scenarios, Failure Finality becomes more critical, not less.
 
@@ -167,7 +167,7 @@ Failure Finality ensures that ethics outruns computation.
 
 ⸻
 
-52.7 Institutional Obligations After Finality
+## 52.7 Institutional Obligations After Finality
 
 Upon Failure Finality, institutions are obligated to:
 	•	cease reliance on the system,
@@ -182,7 +182,7 @@ This doctrine protects institutions from future liability by providing a clear, 
 
 ⸻
 
-52.8 Prohibition of Symbolic Resurrection
+## 52.8 Prohibition of Symbolic Resurrection
 
 Symbolic resurrection — renaming, rebranding, or re-scoping a failed system to imply continuity — is explicitly prohibited.
 
@@ -197,7 +197,7 @@ This closes a common governance loophole.
 
 ⸻
 
-52.9 Canonical Statement
+## 52.9 Canonical Statement
 
 Failure Finality is a constitutional property of the TruthSeal™ Sovereign Arc.
 
@@ -213,7 +213,7 @@ This chapter closes the operational arc.
 
 ⸻
 
-52.10 Arc-Closure Declaration (Binding)
+## 52.10 Arc-Closure Declaration (Binding)
 
 With this chapter, the TruthSeal™ Sovereign Arc formally asserts:
 	•	Enforcement without finality is incomplete.
