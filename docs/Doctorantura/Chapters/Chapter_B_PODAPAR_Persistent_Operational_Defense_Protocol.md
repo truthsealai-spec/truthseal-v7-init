@@ -1,15 +1,15 @@
-TruthSeal™ Pty Ltd
+**TruthSeal™ Pty Ltd
 Melbourne, Australia
-truthseal.ai
+truthseal.ai**
 
-TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0
+**TRUTHSEAL™ DOCTORANTURA** — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0
 Strict Internal Doctrine — Not for Public Use
 
 date: 2025-12-17
 
 ⸻
 
-Chapter B — PODAPAR™
+**Chapter B — PODAPAR™**
 Persistent Operational Defense & Action Protocol
 
 version: 1.0
@@ -26,7 +26,7 @@ Doctorantura Edition — Internal / Sovereign
 
 ⸻
 
-B.0 Purpose & Scope
+**B.0 Purpose & Scope**
 
 PODAPAR™ is a persistent operational defense protocol embedded inside a sovereign system.
 It operates continuously, without sleep, pause, or discretionary downtime.
@@ -47,7 +47,7 @@ It is hardened for post-quantum threat models.
 
 ⸻
 
-B.1 Definition (What PODAPAR™ Is)
+**B.1 Definition** (What PODAPAR™ Is)
 
 PODAPAR™ is a deterministic watchdog protocol.
 It enforces a fixed operational cycle: Patrol → Observe → Detect → Analyse → Protect → Act → Report.
@@ -68,7 +68,7 @@ It is always subordinate to sovereign authority.
 
 ⸻
 
-B.2 Operational Cycle (HOW It Runs — 24/7)
+**B.2 Operational Cycle** (HOW It Runs — 24/7)
 
 Patrol continuously scans system surfaces and internal state.
 Observe samples telemetry, inputs, timing, and behavioural signals.
@@ -89,7 +89,7 @@ All actions are reversible only if policy allows.
 
 ⸻
 
-B.3 Cryptographic & Control Mechanics (HOW Safety Is Enforced)
+**B.3 Cryptographic & Control Mechanics** (HOW Safety Is Enforced)
 
 PODAPAR™ uses post-quantum cryptographic primitives.
 Session establishment uses ML-KEM (Kyber or successor).
@@ -110,7 +110,7 @@ Failure defaults to restraint.
 
 ⸻
 
-B.4 Reporting, Ledger & Audit (HOW Evidence Is Preserved)
+**B.4 Reporting, Ledger & Audit** (HOW Evidence Is Preserved)
 
 Every Report produces an immutable event record.
 Each record includes previous hash linkage.
@@ -131,7 +131,7 @@ Evidence survives system shutdown.
 
 ⸻
 
-B.5 Failure, Quarantine & Escalation (HOW It Stops Harm)
+**B.5 Failure, Quarantine & Escalation** (HOW It Stops Harm)
 
 PODAPAR™ treats failure as a governed state.
 On violation, the system enters QUARANTINE.
@@ -152,7 +152,7 @@ No ambiguity is tolerated.
 
 ⸻
 
-B.6 Deployment Characteristics
+**B.6 Deployment Characteristics**
 
 PODAPAR™ runs inside the system, not beside it.
 It cannot be disabled at runtime.
@@ -173,7 +173,7 @@ It never assumes safety.
 
 ⸻
 
-Canonical Statement
+**Canonical Statement**
 
 PODAPAR™ is the watchdog that never sleeps.
 It ensures that action never outruns safety.
@@ -182,7 +182,7 @@ It is mechanical, bounded, and sovereign by design.
 
 ⸻
 
-Canonical Notice
+**Canonical Notice**
 
 PODAPAR™ is a sovereign operational defense protocol.
 Its meaning, scope, and mechanics are fixed at the doctrinal level.
