@@ -6,7 +6,7 @@
 
 ⸻
 
-C.0 — Constitutional Role of the Doctrine
+**C.0** — Constitutional Role of the Doctrine
 
 This Chapter constitutes the supreme constitutional hinge of the TruthSeal™ Framework.
 It establishes the binding law that governs the transition from interpretation to execution within any cognitive, agentic, or institutional system operating under TruthSeal™ authority.
