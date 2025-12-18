@@ -64,3 +64,10 @@ Next actions:
 • alertmanager_receiver_v1.yml → sha256=2028899f80c9e183e6e37a11aa2e34a0b36dba5616aaea216f12731ab82afca5 matches EVL observability_refs ✅
 
 - 2025-12-17 — Doctrine Freeze: Chapter B (PODAPAR™) | SHA256=50118ae668a371266778fb68557c5e2c0f682ab890a97acb323ad9f40a78390b | ref=governance/ledger/DOCTRINE_FREEZE_LOG.md
+- 2025-12-17 — Doctrine Freeze (PODAPAR™)
+
+Artifact: DOCTRINE_FREEZE_LOG.md
+SHA256: 50118ae668a371266778fb68557c5e2c0f682ab890a97acb323ad9f40a78390b
+OTS receipt: governance/ledger/receipts/DOCTRINE_FREEZE_LOG.md.ots
+Status: Receipt issued — awaiting Bitcoin confirmation
+Authority: Sovereign
