@@ -1,10 +1,10 @@
-TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0
+**TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0**
 
 Chapter D — The Gatekeeper (Enforcement Layer)
 
 ⸻
 
-D.0 — The ActionGate™ Protocol: The Handshake of Legitimacy
+**D.0 — The ActionGate™ Protocol: The Handshake of Legitimacy**
 
 The ActionGate™ Protocol constitutes the mandatory enforcement boundary between cognition and execution within the TruthSeal™ framework. It is the first physical manifestation of the Doctrine of Verifiable Action, transforming constitutional law into an operational constraint. No system, agent, or automated process is permitted to directly alter external or internal state without passing through this gate.
 
@@ -20,7 +20,7 @@ By design, the ActionGate™ introduces intentional friction. This friction is n
 
 ⸻
 
-D.1 — The Multi-Gate Verification Logic: Implementing Risk Tiers
+**D.1 — The Multi-Gate Verification Logic: Implementing Risk Tiers**
 
 Once an ITA has passed the ActionGate™ legitimacy handshake, it enters the Multi-Gate Verification Logic (MGVL). This system operationalizes the Threshold Doctrine defined in Chapter C, converting probabilistic reasoning into deterministic authorization.
 
@@ -36,7 +36,7 @@ The MGVL ensures that authority is binary, not statistical. Probability informs 
 
 ⸻
 
-D.2 — The Sovereign Ledger: Immutable Proof-of-Logic
+**D.2 — The Sovereign Ledger: Immutable Proof-of-Logic**
 
 The Sovereign Ledger is the enforcement memory of TruthSeal™. It ensures that no action—authorized or rejected—can occur without permanent accountability. The ledger is append-only, non-volatile, and cryptographically anchored via the Truth Hash & Timestamp Protocol (THT).
 
@@ -52,7 +52,7 @@ Through ledger binding, TruthSeal™ ensures that enforcement is not trust-based
 
 ⸻
 
-D.3 — The Kill-Switch: Terminal Containment and Systemic Halt
+**D.3 — The Kill-Switch: Terminal Containment and Systemic Halt**
 
 The Kill-Switch is the final enforcement mechanism within Chapter D. It is designed to dissolve agency instantly when continued operation presents unacceptable risk. The Kill-Switch is not a philosophical safeguard; it is a practical containment circuit.
 
@@ -70,16 +70,27 @@ Together, the Kill-Switch and SLU™ form a graduated defense ladder—containme
 
 ⸻
 
-Authorship & Sovereign Declaration
+**Authorship & Sovereign Declaration.**
 
-This chapter forms an integral component of
-TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0
+**This chapter forms an integral component of
+TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0**
 
-Authored and sealed by:
+**Authored and sealed by:
 Dr. Nickolay Traykov (Prof. h.c.)
 Founding Authority of TruthSeal™
 Author of the Law of Ethical Irreversibility (LEI = 1)
-Architect of the Universal Law of Irreversible Coherence (ULIC)
+Architect of the Universal Law of Irreversible Coherence (ULIC)**
 
 This chapter is binding doctrine.
 Any system operating under the TruthSeal™ designation that violates the enforcement constraints defined herein is non-compliant by definition.
+
+**© 2025 TruthSeal™ Pty Ltd, Melbourne, Australia — all rights reserved.**
+
+**This Doctorantura Edition chapter is classified intellectual property of
+Dr. Nickolay Traykov (Prof. h.c.), Founder & Chief Architect of the TruthSeal™ Sovereign Arc of AGI Framework.**
+
+This material is strictly confidential. It is not for public distribution, citation, teaching, or use in training external AI systems without explicit written consent from TruthSeal™ Pty Ltd.
+
+Unauthorised copying, translation, adaptation, or incorporation into external standards, academic work, patents, or commercial systems is strictly prohibited.
+
+Working copies must remain under controlled custody and be linked to verifiable TruthSeal™ receipts (ts.receipt.v1 and EVL™ entries). Any detected unlicensed use is to be treated as both an integrity breach under the TruthSeal™ governance regime and a violation of applicable intellectual property law.
