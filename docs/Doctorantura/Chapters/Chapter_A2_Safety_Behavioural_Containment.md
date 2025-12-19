@@ -1,7 +1,7 @@
 **TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK
 v1.0**
 
-**Chapter A1 — Scope_Red_Lines.md**
+**Chapter A2 — Safety_Behaviour.md**
 
 **Author: Dr. Nickolay Traykov (Prof. h.c.)
 Role: Founder & Chief Architect
