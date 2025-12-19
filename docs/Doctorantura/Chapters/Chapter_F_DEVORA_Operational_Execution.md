@@ -30,7 +30,7 @@ Without DEVORA™, a system may reason correctly yet act unlawfully.
 Without DEVORA™, enforcement becomes mechanical rather than sovereign.
 DEVORA™ ensures that truth is not merely computed, but judged.
 
-⸻
+------
 
 **F.1 — DEVORA™ as the Verdict Engine (Not a Controller)**
 
