@@ -1,11 +1,17 @@
-TruthSeal™ Pty Ltd  
-Melbourne, Australia  
-truthseal.ai  
+**TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK  
+v1.0**
 
-TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0  
-Strict Internal Doctrine — Not for Public Use  
+**Chapter A1 — Scope_Red_Lines.md**
 
-date: 12 December 2025  
+**Author: Dr. Nickolay Traykov (Prof. h.c.)  
+Role: Founder & Chief Architect  
+TruthSeal™ Document Class:  
+Doctorantura Edition — Internal Canonical** 
+
+**Canonical Law Jurisdiction: TruthSeal™ Sovereign Framework  
+Law Status: Active / Binding**
+
+**date: 12 December 2025**  
 
 ---
 
