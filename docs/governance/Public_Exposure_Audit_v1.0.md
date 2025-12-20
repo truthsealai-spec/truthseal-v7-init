@@ -4,9 +4,9 @@ Purpose:
 Define what TruthSeal™ IS and IS NOT in all public materials.
 
 TruthSeal™ IS:
-• A system that certifies provenance, integrity, and auditability of AI outputs.
+• A system that certifies provenance, integrity, and auditability of AI & AGI outputs.
 • A provider of cryptographic receipts and verification records.
-• A standard for coherent, accountable AI behaviour.
+• A standard for coherent, accountable AI & AGI behaviour.
 
 TruthSeal™ IS NOT:
 • A description of internal enforcement mechanisms.
