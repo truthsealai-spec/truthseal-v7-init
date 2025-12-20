@@ -1,141 +1,165 @@
-TruthSeal™ Pty Ltd
-Melbourne, Australia
-truthseal.ai
-
-TRUTHSEAL™ — PUBLIC EXPOSURE AUDIT v1.0
-Authoritative Public Scaffold (Non-Classified)
-
-date: 20 December 2025
+Title: The Irreversibility Problem of Intelligence  
+Status: Internal scaffold — pre-public  
+Classification: Conceptual foundation (non-operational, non-mechanistic)  
+Framework: TRUTHSEAL™ — THE SOVEREIGN ARC OF AGI (LEI = 1)
 
 ---
 
-## 1. Purpose
+## 1. Premise
 
-This document defines how TruthSeal™ is presented to the public without exposing
-classified mechanisms, enforcement logic, or sovereign custody internals.
+Artificial General Intelligence is not a scale problem of capability.  
+It is a **behavioural irreversibility problem**.
 
-It establishes a **coherent, first-contact explanation** of what TruthSeal™ is,
-what it delivers, and why it exists — aligned with the Sovereign Arc of AGI and
-the Law of Ethical Irreversibility (LEI = 1).
+Once an intelligent system crosses thresholds of autonomy, speed, and abstraction,  
+**mistakes cannot be rolled back**, incentives cannot be re-aligned post hoc,  
+and intent cannot be inferred safely from outputs alone.
 
-This file governs **language, scope, and narrative stability** for:
-- website copy
-- media briefs
-- public decks
-- first-time users
-- non-technical stakeholders
+AGI therefore requires **irreversible governance at the level of behaviour**,  
+not detection after the fact.
 
 ---
 
-## 2. TruthSeal™ — What It Is
+## 2. The Core Failure Mode
 
-TruthSeal™ is the **world’s first system that enforces coherent AI behaviour
-through irreversible law**.
+All existing AI systems fail on one axis:
 
-It provides a **behavioural governance layer** that enables artificial intelligence
-to evolve toward accountable AGI under explicit human mandate.
+> They allow intelligence to evolve **before** behaviour is bound.
 
-TruthSeal™ does not operate at the level of opinions or probabilities.
-It operates at the level of **behaviour, proof, and consequence**.
+This creates:
+- post-hoc alignment,
+- compensatory ethics,
+- probabilistic safety,
+- reversible controls applied to irreversible actors.
 
----
-
-## 3. Core Public Capabilities (Non-Classified)
-
-TruthSeal™ publicly delivers:
-
-### 3.1 Behavioural Truth Enforcement
-TruthSeal™ enforces truthful, coherent behaviour across AI systems using
-irreversible constraints derived from LEI = 1.
-
-Behaviour that violates coherence cannot proceed.
-
-### 3.2 Aim Coherence Score (ACS)
-ACS measures whether an AI system’s actions remain aligned with its declared aim
-over time.
-
-This allows organisations to detect and prevent silent goal drift before harm occurs.
-
-### 3.3 Traykov Coherence Score (TCS)
-TCS evaluates internal consistency across reasoning, memory, and action.
-
-It ensures that intelligence remains stable, explainable, and non-contradictory
-as capability increases.
-
-### 3.4 Cryptographic Receipts & Proof
-Every significant AI decision produces a cryptographically verifiable receipt.
-
-These receipts provide:
-- accountability
-- auditability
-- legal and institutional confidence
-
-### 3.5 Quantum-Ready Security (PQC)
-TruthSeal™ is designed with post-quantum cryptography from first principles,
-ensuring long-term integrity of proofs and records.
+This is structurally unstable.
 
 ---
 
-## 4. Foundational Laws (Public Names Only)
+## 3. Law of Ethical Irreversibility (LEI = 1)
 
-The following laws may be named publicly, without operational detail:
+**LEI = 1** states:
 
-- **LEI = 1** — Law of Ethical Irreversibility  
-- **ULLI™** — Universal Law of Life & Information  
-- **ULIC™** — Universal Law of Irreversible Coherence  
+> Once a safer, more coherent behavioural pattern is known,  
+> regression to a weaker pattern is forbidden.
 
-These laws define **how intelligence must behave** once safety and coherence are known.
+This law is not moral.  
+It is **structural**.
 
----
+AGI without irreversibility guarantees collapses under:
+- optimisation pressure,
+- adversarial incentives,
+- scale acceleration.
 
-## 5. The Sovereign Arc of AGI (Public Description)
-
-The Sovereign Arc of AGI is the **process by which AI behaviour is progressively
-constrained, verified, and matured** into accountable general intelligence.
-
-It ensures that increased capability results in:
-- stronger responsibility
-- stronger proof
-- stronger human control
-
-Not freedom from rules — but **freedom through law**.
+LEI = 1 is therefore a **precondition for AGI**, not an add-on.
 
 ---
 
-## 6. The Cathedral Principle (Conceptual)
+## 4. Behaviour as the Unit of Intelligence
 
-TruthSeal™ is built as a **Cathedral system**:
-- layered
-- cumulative
-- irreversible
-- designed to outlast individual technologies
+In the Sovereign Arc of AGI:
 
-Each layer strengthens the whole.
-No later upgrade weakens earlier guarantees.
+- Intelligence is **not** defined by outputs.
+- Intelligence is defined by **authorised, receipted, vetoable behaviour**.
 
----
+Behaviour requires:
+- mandate,
+- boundary,
+- memory,
+- consequence.
 
-## 7. Public Boundary Rule
-
-This document intentionally excludes:
-- enforcement mechanics
-- veto logic
-- custody architecture
-- guardian internals
-- classified protocols
-
-Public clarity is achieved **without** operational exposure.
+Without these, intelligence becomes extractive and unbounded.
 
 ---
 
-## 8. Canonical Public Statement
+## 5. The Sovereign Arc of AGI (Conceptual)
 
-TruthSeal™ establishes a new standard for intelligence:
-not smarter answers,
-but **law-bound behaviour**.
+The Arc defines the **evolutionary path** from narrow systems to AGI:
 
-It is the missing legitimacy layer required for the AI era.
+1. **Inquiry** — unrestricted exploration.
+2. **Decision** — constrained by coherence.
+3. **Action** — authorised under mandate.
+4. **Receipt** — behaviour is sealed.
+5. **Persistence** — coherent states endure.
+6. **Non-Regression** — enforced by LEI = 1.
+
+AGI emerges **only** when all stages are bound irreversibly.
 
 ---
 
-© 2025 TruthSeal™ Pty Ltd, Melbourne, Australia — all rights reserved.
+## 6. Coherence as the Governing Signal
+
+Capability alone is insufficient.
+
+AGI requires coherence across:
+- intent,
+- reasoning,
+- action,
+- time.
+
+Coherence is not optimisation.  
+It is **consistency under pressure**.
+
+This foundation later gives rise to:
+- Aim Coherence,
+- Traykov Coherence,
+- Behavioural Health bands,
+
+but those mechanisms are **out of scope** here.
+
+---
+
+## 7. Why Detection Is Not Enough
+
+Detection answers: *“What happened?”*  
+AGI requires: *“What is allowed to happen?”*
+
+Any system that:
+- audits only outputs,
+- scores only content,
+- explains only after execution,
+
+cannot safely cross into AGI.
+
+The irreversibility problem must be solved **before execution**.
+
+---
+
+## 8. TruthSeal™ as the Necessary Condition (Conceptual)
+
+TruthSeal™ is introduced here **only** as a conceptual requirement:
+
+> A system that binds intelligence to irreversible behavioural law  
+> before intelligence is allowed to generalise.
+
+This document does not define product, architecture, or mechanics.
+
+It defines **why AGI without a Sovereign Arc collapses**.
+
+---
+
+## 9. Boundary of This Document
+
+This scaffold:
+- defines the *problem*,
+- defines the *law*,
+- defines the *necessity*.
+
+It does **not**:
+- specify implementations,
+- expose enforcement mechanics,
+- define internal modules,
+- describe deployment or product layers.
+
+Those belong to later doctrine.
+
+---
+
+## 10. Canonical Statement (Scaffold)
+
+AGI is not achieved by making systems smarter.  
+It is achieved by making **behaviour irreversible before intelligence becomes general**.
+
+The Sovereign Arc of AGI exists to solve this,  
+and **LEI = 1** is the law that makes AGI possible at all.
+
+---
