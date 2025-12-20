@@ -20,6 +20,7 @@ it MUST NOT appear in public documents.
 - DEVORA™
 - PODAPAR™ mechanics
 - Third Guardian Firewall™ (TGF™)
+- - Noise Distiller™ (signal suppression, coherence purification, or semantic filtering logic)
 - Any veto, halt, enforcement, custody, or audit logic
 
 ## Enforcement
