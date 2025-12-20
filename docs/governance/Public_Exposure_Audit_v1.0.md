@@ -1,150 +1,141 @@
-# Public Exposure Audit — TruthSeal™
-version: 1.0  
-status: INTERNAL — PRE-PUBLIC SAFETY REVIEW  
-classification: Public-Facing Boundary Control (Non-Operational)
+TruthSeal™ Pty Ltd
+Melbourne, Australia
+truthseal.ai
+
+TRUTHSEAL™ — PUBLIC EXPOSURE AUDIT v1.0
+Authoritative Public Scaffold (Non-Classified)
+
+date: 20 December 2025
 
 ---
 
-## 0. Purpose
+## 1. Purpose
 
-This document defines **what TruthSeal™ may expose publicly** and **what must remain internal** to preserve sovereignty, safety, and coherence as the system evolves toward AGI under irreversible law.
+This document defines how TruthSeal™ is presented to the public without exposing
+classified mechanisms, enforcement logic, or sovereign custody internals.
 
-It exists to prevent:
-- accidental doctrine leakage,
-- premature mechanistic disclosure,
-- misinterpretation by media, regulators, or competitors.
+It establishes a **coherent, first-contact explanation** of what TruthSeal™ is,
+what it delivers, and why it exists — aligned with the Sovereign Arc of AGI and
+the Law of Ethical Irreversibility (LEI = 1).
 
-This is an **audit of exposure**, not an implementation guide.
-
----
-
-## 1. TruthSeal™ — Public Definition (Authoritative)
-
-TruthSeal™ is a **Legitimacy and Behavioural Coherence System** for artificial intelligence.
-
-It exists to:
-- enforce **accountable AI behaviour**,  
-- bind AI actions to **irreversible ethical law**,  
-- provide **verifiable proof** that intelligence operates within defined human and legal boundaries.
-
-TruthSeal™ does not merely inspect outputs.  
-It governs **how intelligence is allowed to act**.
+This file governs **language, scope, and narrative stability** for:
+- website copy
+- media briefs
+- public decks
+- first-time users
+- non-technical stakeholders
 
 ---
 
-## 2. The Arc of AGI (Public Framing)
+## 2. TruthSeal™ — What It Is
 
-The **Arc of AGI** describes a controlled evolutionary path where AI capability increases **only when behaviour remains coherent, auditable, and non-regressive**.
+TruthSeal™ is the **world’s first system that enforces coherent AI behaviour
+through irreversible law**.
 
-Publicly, the Arc may be described as:
-- a transition from tools → systems → intelligence,
-- governed by **irreversible constraints**, not incentives,
-- where behaviour must remain explainable, attributable, and bounded.
+It provides a **behavioural governance layer** that enables artificial intelligence
+to evolve toward accountable AGI under explicit human mandate.
 
-No internal enforcement mechanisms are disclosed publicly.
-
----
-
-## 3. Foundational Laws — Public Names Only
-
-The following laws **may be named publicly**, but **never operationalised**:
-
-- **ULLI™ — Universal Law of Life & Information**  
-  Intelligence must move from inquiry → decision → action in a disciplined chain.
-
-- **ULIC™ — Universal Law of Irreversible Coherence**  
-  Once coherence is achieved, it must persist.
-
-- **LEI = 1 — Law of Ethical Irreversibility**  
-  Once a safer and clearer behaviour is known, regression is forbidden.
-
-These are presented as **principles**, not algorithms.
+TruthSeal™ does not operate at the level of opinions or probabilities.
+It operates at the level of **behaviour, proof, and consequence**.
 
 ---
 
-## 4. Behavioural Coherence (Public Explanation)
+## 3. Core Public Capabilities (Non-Classified)
 
-TruthSeal™ evaluates intelligence based on **behaviour**, not claims.
+TruthSeal™ publicly delivers:
 
-Public explanation may include:
-- intelligence must remain consistent over time,
-- decisions must be traceable,
-- actions must be attributable to human mandate or lawful authority.
+### 3.1 Behavioural Truth Enforcement
+TruthSeal™ enforces truthful, coherent behaviour across AI systems using
+irreversible constraints derived from LEI = 1.
 
-Internal scoring systems, thresholds, or enforcement paths are **never disclosed**.
+Behaviour that violates coherence cannot proceed.
 
----
+### 3.2 Aim Coherence Score (ACS)
+ACS measures whether an AI system’s actions remain aligned with its declared aim
+over time.
 
-## 5. The Cathedral (Conceptual Only)
+This allows organisations to detect and prevent silent goal drift before harm occurs.
 
-Publicly, the **Cathedral** may be described as:
+### 3.3 Traykov Coherence Score (TCS)
+TCS evaluates internal consistency across reasoning, memory, and action.
 
-> “The philosophical and civilisational foundation that constrains intelligence before power.”
+It ensures that intelligence remains stable, explainable, and non-contradictory
+as capability increases.
 
-It represents:
-- invariant reasoning,
-- ethical gravity,
-- long-horizon stability.
+### 3.4 Cryptographic Receipts & Proof
+Every significant AI decision produces a cryptographically verifiable receipt.
 
-No internal mappings, profiles, or enforcement layers are exposed.
+These receipts provide:
+- accountability
+- auditability
+- legal and institutional confidence
 
----
-
-## 6. What Is Explicitly NOT Public
-
-The following are **Doctorantura-only** and must never appear in public documents beyond name-level references (if at all):
-
-- enforcement logic,
-- veto / halt paths,
-- internal guardians,
-- custody mechanisms,
-- audit pipelines,
-- escalation protocols,
-- any timing, thresholds, or kill-paths.
-
-Public materials must **never explain how TruthSeal™ enforces** — only **what it guarantees**.
+### 3.5 Quantum-Ready Security (PQC)
+TruthSeal™ is designed with post-quantum cryptography from first principles,
+ensuring long-term integrity of proofs and records.
 
 ---
 
-## 7. Public Narrative Guardrails
+## 4. Foundational Laws (Public Names Only)
 
-Public messaging must:
-- avoid “kill switch”, “shutdown”, or “punitive” language,
-- avoid AGI sensationalism,
-- avoid claims of omniscience or absolute truth.
+The following laws may be named publicly, without operational detail:
 
-Approved framing:
-- legitimacy,
-- accountability,
-- proof,
-- restraint,
-- human agency.
+- **LEI = 1** — Law of Ethical Irreversibility  
+- **ULLI™** — Universal Law of Life & Information  
+- **ULIC™** — Universal Law of Irreversible Coherence  
+
+These laws define **how intelligence must behave** once safety and coherence are known.
 
 ---
 
-## 8. Exposure Classification Summary
+## 5. The Sovereign Arc of AGI (Public Description)
 
-| Element | Public Status |
-|------|------|
-| TruthSeal™ mission | ✅ Public |
-| Arc of AGI (conceptual) | ✅ Public |
-| ULLI / ULIC / LEI names | ✅ Public (names only) |
-| Behavioural coherence | ✅ Public |
-| Cathedral (conceptual) | ✅ Public |
-| Any enforcement logic | ❌ Internal |
-| Any guardians / vetoes | ❌ Internal |
-| Any audit mechanics | ❌ Internal |
+The Sovereign Arc of AGI is the **process by which AI behaviour is progressively
+constrained, verified, and matured** into accountable general intelligence.
 
----
+It ensures that increased capability results in:
+- stronger responsibility
+- stronger proof
+- stronger human control
 
-## 9. Canonical Public Statement
-
-TruthSeal™ establishes the **conditions under which intelligence may act**.
-
-It does not replace law, courts, or human judgment.  
-It ensures that **intelligence cannot outrun accountability**.
+Not freedom from rules — but **freedom through law**.
 
 ---
 
-© 2025 TruthSeal™ Pty Ltd — All rights reserved.  
-Internal working document. Not a product specification.
+## 6. The Cathedral Principle (Conceptual)
+
+TruthSeal™ is built as a **Cathedral system**:
+- layered
+- cumulative
+- irreversible
+- designed to outlast individual technologies
+
+Each layer strengthens the whole.
+No later upgrade weakens earlier guarantees.
+
+---
+
+## 7. Public Boundary Rule
+
+This document intentionally excludes:
+- enforcement mechanics
+- veto logic
+- custody architecture
+- guardian internals
+- classified protocols
+
+Public clarity is achieved **without** operational exposure.
+
+---
+
+## 8. Canonical Public Statement
+
+TruthSeal™ establishes a new standard for intelligence:
+not smarter answers,
+but **law-bound behaviour**.
+
+It is the missing legitimacy layer required for the AI era.
+
+---
+
+© 2025 TruthSeal™ Pty Ltd, Melbourne, Australia — all rights reserved.
