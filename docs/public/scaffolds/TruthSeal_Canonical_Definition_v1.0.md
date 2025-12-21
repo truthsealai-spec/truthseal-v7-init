@@ -1,11 +1,25 @@
+**TruthSeal™ Pty Ltd  
+Melbourne, Australia  
+truthseal.ai** 
+
+**TRUTHSEAL™ — THE SOVEREIGN ARC OF AGI  
+Canonical Public Conceptual Scaffold v1.0** 
+
+Status: CANONICAL CONCEPT — NON-OPERATIONAL  
+Custody: TruthSeal™ Pty Ltd  
+Author & Architect: Dr. Nickolay Traykov (Prof. h.c.)  
+
+This document defines foundational concepts of TruthSeal™ for public,
+technical, and academic understanding. It contains no operational,
+enforcement, or classified mechanisms.
 TruthSeal™ Pty Ltd  
 Melbourne, Australia  
 truthseal.ai  
 
-TRUTHSEAL™ — CANONICAL PUBLIC DEFINITION  
+**TRUTHSEAL™ — CANONICAL PUBLIC DEFINITION  
 Status: Canon v1.0  
 Scope: Public / Non-classified  
-Date: 2025-12-21  
+Date: 2025-12-21** 
 
 ---
 
@@ -63,3 +77,16 @@ TruthSeal™ functions as a legitimacy and governance layer for intelligence its
 It enables institutions, developers, and societies to rely on AI systems whose behaviour and evolution are constrained by transparent, auditable, and non-regressive rules.
 
 This scaffold is canonical for public-facing documentation and technical orientation.
+
+**© 2025 TruthSeal™ Pty Ltd, Melbourne, Australia — all rights reserved.**
+
+**This document is a canonical conceptual reference.
+It does not disclose enforcement logic, custody mechanisms,
+or Doctorantura-only material.**
+
+No part of this document may be used to reproduce, train,
+or implement competing governance or AI control systems
+without explicit written consent from TruthSeal™ Pty Ltd.
+
+**TruthSeal™ reserves the right to evolve implementations
+while preserving the irreversibility of its core principles.**
