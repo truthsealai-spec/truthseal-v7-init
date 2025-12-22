@@ -3,6 +3,26 @@ Title: ACS Validation Report — Intro (v1.1)
 Distribution: Restricted (Owner + named NVIDIA counterparts under NDA)
 Export Control: Pre-patent concepts; external circulation prohibited
 === END CLASSIFICATION HEADER ===
+## Authority & Instrument Scope Notice
+
+This document is **derivative and non-authoritative**.
+
+It is governed by the **TruthSeal™ Sovereign Arc — Authority Index (v1.0)** and operates strictly under the following immutable laws and principles:
+
+- **ULLI — Universal Law of Life & Information** (governing principle)
+- **TQC — Traykov Law of Quantum Coherence** (hardware-enforced law)
+- **LEI = 1 — Law of Ethical Irreversibility** (non-negotiable invariant)
+
+The **Aim Coherence Score (ACS)** described in this report is a **measurement and observability instrument only**.
+
+This report:
+- does **not** define law,
+- does **not** create governance authority,
+- does **not** override or interpret the Sovereign Arc.
+
+Its sole purpose is to validate that **ACS behaves as a stable, auditable integrity instrument** when evaluated **under** the Sovereign Arc laws, and when enforced via compliant hardware (e.g., TS-A1 / TQC Coherence Core).
+
+All authority originates exclusively from the Sovereign Arc.
 
 ACS Validation Report — Intro (v1.1)
 
