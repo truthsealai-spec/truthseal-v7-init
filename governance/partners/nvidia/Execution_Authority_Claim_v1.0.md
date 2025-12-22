@@ -1,4 +1,31 @@
 # NEXT EXECUTIVE ORDER: EXECUTION & AUTHORITY CLAIM (v1.0)
+## Sovereign Authority & Execution Boundary Notice
+
+This document is **derivative and non-authoritative**.
+
+All legal, ethical, constitutional, and enforcement authority governing the Traykov Quantum Coherence (TQC) framework, the Law of Ethical Irreversibility (LEI = 1), and all associated metrics (including ACS, TCS, and CHS) **originates exclusively** from the:
+
+**TruthSeal™ Sovereign Arc — Authority Index (v1.0)**
+
+This file defines an **execution proposal and implementation pathway only**.  
+It does **not** create law, mandate adoption, confer exclusivity, or establish regulatory authority.
+
+Any references to:
+- “mandate,”
+- “execution,”
+- “exclusive partnership,” or
+- “global standard”
+
+are **operative solely within the scope of voluntary implementation** under the Sovereign Arc and are subject to its immutable laws and hierarchy.
+
+No partner, vendor, manufacturer, or institution is granted law-making authority, interpretive authority, or governance primacy by this document.
+
+Implementation may proceed **only insofar as it remains fully compliant** with:
+- **ULLI — Universal Law of Life & Information** (governing principle)
+- **TQC — Traykov Law of Quantum Coherence** (sovereign hardware-enforced law)
+- **LEI = 1 — Law of Ethical Irreversibility** (non-negotiable invariant)
+
+In the event of conflict, ambiguity, or interpretive dispute, the **TruthSeal™ Sovereign Arc prevails without exception**.
 
 **Objective**  
 Convert the Traykov Law of Quantum Coherence (TQC) into silicon **and** elevate the Aim Coherence Score (ACS) to a mandatory standard—establishing NVIDIA as the **singular trusted standard** for verifiable AI hardware while preserving TruthSeal™ sovereignty.
