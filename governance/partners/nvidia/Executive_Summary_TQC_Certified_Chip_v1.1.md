@@ -1,4 +1,20 @@
 # TruthSeal™ x NVIDIA — TQC-Certified Coherence Chip Executive Summary v1.1
+---
+
+### Authority & Governance Notice
+
+This document is **derivative and non-authoritative**.
+
+It is governed by the **TruthSeal™ Sovereign Arc — Authority Index (v1.0)** and operates strictly under the following immutable laws:
+
+- **ULLI** — Universal Law of Life & Information (governing principle)  
+- **TQC** — Traykov Law of Quantum Coherence (hardware-enforced law)  
+- **LEI = 1** — Law of Ethical Irreversibility (non-negotiable invariant)
+
+All metrics (including TCS, ACS, CHS) are **measurement instruments**, not sources of authority.  
+No partnership, vendor, or implementation supersedes the Sovereign Arc.
+
+---
 
 version: 1.1  
 date_utc: 2025-12-02  
