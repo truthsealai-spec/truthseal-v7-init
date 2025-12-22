@@ -1,24 +1,125 @@
-# TruthSeal™ — Sovereign Integrity Ledger (v9.x)
+TruthSeal™ Pty Ltd  
+Melbourne, Australia  
+truthseal.ai  
 
-**Purpose:** Entry point to the live anchoring status and canonical ledger files.
+# TRUTHSEAL™ — DOCUMENTATION INDEX (v1.0)
 
----
-
-## Live anchoring status
-- **Anchoring Status (v9.1):** [`governance/Anchoring_Status_v9.1.md`](governance/Anchoring_Status_v9.1.md)
-
-## Canonical ledgers (current)
-- **ULIC v9.1 (registry block):** [`governance/ledger/ULIC_v9.1.yaml`](governance/ledger/ULIC_v9.1.yaml)
-- **EVL v9.0 (epoch ledger):** [`governance/ledger/EVL_v9.0.yaml`](governance/ledger/EVL_v9.0.yaml)
-- **QCEP Epoch Manifest v9.0:** [`governance/governance/ledger/seals/QCEP_Epoch_Manifest_v9.0.yaml`](governance/governance/ledger/seals/QCEP_Epoch_Manifest_v9.0.yaml)
-- **Integrity Manifest v8_pre:** [`governance/governance/ledger/seals/Integrity_Manifest_v8_pre.yaml`](governance/governance/ledger/seals/Integrity_Manifest_v8_pre.yaml)
-
-> Receipt/timestamp details (calendar IDs, OTS receipt paths, statuses) are tracked in **Anchoring Status (v9.1)**.
-
-## Internal docs index
-- **TS-A1 ↔ RRAM pack:** [`docs/internal/README.md`](docs/internal/README.md)
+Status: CANONICAL — OPERATIONAL  
+Authority: TruthSeal™ Sovereign Arc — Authority Index (v1.0)  
+Governance Invariant: LEI = 1  
+Owner & Architect: Dr. Nickolay Traykov (Prof. h.c.)
 
 ---
 
-© 2025 TruthSeal™ — court-ready verification stack (ULIC • EVL • QCEP • Integrity).
-Public claims must reference the registry and anchoring receipts.
+## 1. Purpose of This Index
+
+This file defines the **authoritative documentation boundaries** for the TruthSeal™ repository.
+
+It establishes:
+- what is **public-facing**,
+- what is **restricted**,
+- what is **sovereign / internal-only**, and
+- how reviewers, partners, and regulators must navigate the documentation set.
+
+No document may override this hierarchy.
+
+---
+
+## 2. Public Documentation (ONLY)
+
+The **only public-facing materials** in this repository are located in:
+docs/public/
+These documents are:
+- conceptual only,
+- non-operational,
+- non-authoritative,
+- non-enforcing.
+
+They exist solely to explain intent, philosophy, and high-level structure.
+
+### Public Entry Points
+- `docs/public/README_PUBLIC_SCOPE.md`
+- `docs/public/Hardware_Governance_Interface_Public_Concept_v1.0.md`
+
+No other folder, file, or path is public by default.
+
+---
+
+## 3. Restricted / Partner Documentation
+
+All materials intended for:
+- partners,
+- vendors,
+- regulators under NDA,
+- pilots or evaluations
+
+are located under:
+governance/partners/
+These materials are **derivative**, **non-authoritative**, and operate strictly under the TruthSeal™ Sovereign Arc.
+
+They do not create law, mandate adoption, or establish regulatory authority.
+
+---
+
+## 4. Sovereign / Internal Documentation
+
+All documents governing:
+- authority,
+- law,
+- enforcement,
+- custody,
+- ledgers,
+- certification,
+- internal governance
+
+are **NOT public** and include (non-exhaustive):
+These materials are **derivative**, **non-authoritative**, and operate strictly under the TruthSeal™ Sovereign Arc.
+
+They do not create law, mandate adoption, or establish regulatory authority.
+
+---
+
+## 4. Sovereign / Internal Documentation
+
+All documents governing:
+- authority,
+- law,
+- enforcement,
+- custody,
+- ledgers,
+- certification,
+- internal governance
+
+are **NOT public** and include (non-exhaustive):
+governance/authority/
+governance/ledger/
+governance/guards/
+governance/sovereign/
+governance/doctorantura/
+These materials are **sovereign**, **non-exportable**, and governed exclusively by the TruthSeal™ Sovereign Arc.
+
+---
+
+## 5. Navigation Rules (Non-Negotiable)
+
+- Public reviewers must remain within `docs/public/`
+- Partners must be explicitly directed into `governance/partners/`
+- No public link may deep-link into sovereign folders
+- No derivative document may redefine authority or law
+
+Violations are treated as scope breaches under LEI = 1.
+
+---
+
+## 6. Authority Statement
+
+All legal, ethical, constitutional, and enforcement authority originates **exclusively** from:
+
+**TruthSeal™ Sovereign Arc — Authority Index (v1.0)**
+
+This file is an index only.  
+It defines structure, not law.
+
+---
+
+End of file.
