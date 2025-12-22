@@ -1,8 +1,22 @@
-=== CLASSIFICATION: INTERNAL — CONFIDENTIAL ===
+**=== CLASSIFICATION: INTERNAL — CONFIDENTIAL ===
 Title: TRUTHSEAL™ × NVIDIA — Traykov Quantum Coherence (TQC)-Certified Coherence Chip Executive Summary (v1.0)
 Distribution: Restricted (Owner + named counterparties under NDA)
 Export Control: Pre-patent concepts; external circulation prohibited
-=== END CLASSIFICATION HEADER ===
+=== END CLASSIFICATION HEADER ===**
+
+## Authority & Scope Notice
+
+This Technical Specification is **derivative and non-authoritative**.
+
+It is governed by the **TruthSeal™ Sovereign Arc — Authority Index (v1.0)** and exists solely to describe a **reference hardware implementation** that complies with higher-order laws and invariants, including:
+
+- **ULLI — Universal Law of Life & Information** (governing principle)
+- **TQC — Traykov Law of Quantum Coherence** (sovereign hardware-enforced law)
+- **LEI = 1 — Law of Ethical Irreversibility** (non-negotiable invariant)
+
+This document **does not create law, mandate adoption, or define governance authority**.  
+All legal, ethical, and constitutional authority originates exclusively from the Sovereign Arc.  
+This specification describes **one compliant realization** for engineering, evaluation, and certification purposes.
 
 # TRUTHSEAL™ × NVIDIA — Executive Summary  
 ## Traykov Quantum Coherence (TQC)-Certified Coherence Chip (v1.0)
