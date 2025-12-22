@@ -1,156 +1,161 @@
-TruthSeal™ Pty Ltd  
-Melbourne, Australia  
-truthseal.ai  
+# Hardware Governance Interface — Public Concept (v1.0)
 
-TRUTHSEAL™ — THE SOVEREIGN ARC OF AGI  
-
-Hardware Governance Interface  
-Public Conceptual Standard v1.0  
-
-Status: CANONICAL CONCEPT — PUBLIC / NON-OPERATIONAL  
-Scope: Conceptual governance only (no mechanisms, no enforcement logic)  
-Governance Invariant: LEI = 1  
-Custody: TruthSeal™ Pty Ltd  
-Author & Architect: Dr. Nickolay Traykov (Prof. h.c.)  
+version: 1.0  
+date_utc: 2025-12-22  
+status: PUBLIC — CONCEPTUAL  
+owner: TruthSeal™ — Dr. Nickolay Traykov (Prof. h.c.)
 
 ---
 
-## 1. Purpose
+## Authority & Boundary Notice
 
-This document defines the public conceptual standard for a **Hardware Governance Interface (HGI)** under the TruthSeal™ Sovereign Arc of AGI.
+This document is **public-facing** and **non-authoritative**.
 
-Its purpose is to establish a **non-negotiable governance boundary** at the hardware level for all embodied artificial intelligence systems operating within human jurisdictions.
+It does **not** define law, mandate adoption, confer exclusivity, or describe any sovereign or proprietary implementation.
 
-The HGI exists to ensure that intelligence embodied in physical machines remains:
-- accountable,
-- auditable,
-- jurisdictionally compliant,
-- and irreversibly bound to human mandate.
+All legal, ethical, constitutional, and enforcement authority originates exclusively from the **TruthSeal™ Sovereign Arc** and its internal governance instruments.
 
-This document defines *what must exist*, not *how it is implemented*.
+This document exists solely to explain, at a **conceptual level**, how hardware-based governance *can* interface with high-risk AI systems in a transparent, auditable, and regulator-compatible manner.
 
 ---
 
-## 2. Foundational Principle
+## 1. Why a Hardware Governance Interface Exists
 
-All embodied AI and AGI systems introduce **physical agency** into the world.
+Modern AI systems increasingly operate in **high-risk domains**:
+- finance and markets,
+- critical infrastructure,
+- robotics and autonomous systems,
+- security-sensitive decision loops.
 
-Physical agency requires **hardware-bound governance**, not software-only assurances.
+Today, most safety and compliance mechanisms are:
+- software-only,
+- probabilistic,
+- post-hoc,
+- difficult to audit independently.
 
-The Hardware Governance Interface represents the **lawful anchor point** where:
-- human authority enters the machine domain,
-- machine action produces verifiable responsibility,
-- and accountability is preserved across the full lifecycle of the system.
-
-This interface is a **governance boundary**, not a computational feature.
-
----
-
-## 3. Scope of Applicability
-
-The Hardware Governance Interface applies to **all embodied intelligent machines**, including but not limited to:
-
-- Humanoid robots (TS-R1)
-- Non-humanoid robots and autonomous platforms (TS-R2), including aerial, terrestrial, maritime, and underwater systems
-- Mobile, industrial, domestic, medical, and infrastructure-integrated machines
-- Any system capable of autonomous or semi-autonomous physical action under AI or AGI control
-
-No embodied intelligent system is exempt from governance by form factor, domain, or purpose.
+A **hardware governance interface** addresses this gap by making integrity:
+- **observable at runtime**,  
+- **enforceable at execution**, and  
+- **verifiable after the fact**.
 
 ---
 
-## 4. Role Within the Sovereign Arc of AGI
+## 2. What “Hardware Governance” Means (Public Definition)
 
-The Hardware Governance Interface functions as the **physical governance junction** within the Sovereign Arc:
+At a high level, a hardware governance interface is a **dedicated control surface** that:
 
-Human Mandate  
-→ Lawful Constraint (LEI = 1)  
-→ Embodied Action  
-→ Verifiable Receipt  
-→ Human Oversight  
+1. Observes critical execution signals from an AI system  
+2. Computes integrity or coherence indicators in real time  
+3. Applies predefined response rules when integrity degrades  
+4. Emits cryptographically verifiable records (“receipts”) of what occurred  
 
-This completes the **closed accountability loop** required for safe AGI deployment.
+Importantly:
+- It does **not** replace the AI model  
+- It does **not** decide outcomes  
+- It does **not** embed ideology or policy content  
 
-The interface ensures that:
-- responsibility cannot be displaced onto the machine,
-- accountability cannot be bypassed by software updates,
-- and custody remains human throughout the system’s life.
-
----
-
-## 5. Relationship to Receipts and Identity
-
-All embodied systems governed under this interface are expected to participate in:
-
-- persistent machine identity,
-- lifecycle traceability,
-- and receipt continuity across updates, ownership changes, repair, and decommissioning.
-
-The interface enables the existence of **verifiable records** linking:
-- mandate,
-- action,
-- and responsibility.
-
-This document does not specify receipt structure or cryptographic method.
+It acts as a **governance instrument**, not an intelligence layer.
 
 ---
 
-## 6. Vendor and Manufacturer Neutrality
+## 3. Conceptual Components (Illustrative)
 
-This standard is **vendor-agnostic**.
+A public, implementation-agnostic view of such an interface includes:
 
-It does not prescribe:
-- chip vendors,
-- architectures,
-- instruction sets,
-- fabrication processes,
-- or implementation technologies.
+### 3.1 Observation Layer
+- Receives execution-relevant signals (inputs, states, actions, timing)
+- Is isolated from model weights and training data
+- Cannot modify upstream data
 
-Manufacturers, chip designers, and system integrators may independently implement conforming solutions, provided they satisfy the **governance intent** defined herein.
+### 3.2 Integrity Measurement
+- Computes continuous integrity indicators (e.g. coherence, drift, self-regulation)
+- Produces normalized scores suitable for dashboards and audits
+- Designed for repeatability and replay
 
-Conformance is a matter of **lawful governance**, not brand affiliation.
+### 3.3 Enforcement Hooks
+- Predefined response states (e.g. warn, restrict, halt, require review)
+- Responses are **deterministic**, not learned
+- Enforcement thresholds are externally defined, not self-tuned
 
----
-
-## 7. Jurisdictional Significance
-
-In jurisdictions that require lawful AI governance, operation of embodied intelligent systems **may be conditioned** on conformance with this interface.
-
-The Hardware Governance Interface provides a basis for:
-- regulatory compliance,
-- insurance eligibility,
-- licensing frameworks,
-- and public trust.
-
-This document defines the **conceptual prerequisite** for democratic deployment of embodied AGI.
+### 3.4 Receipt & Audit Output
+- Generates machine-readable records of:
+  - what happened,
+  - when it happened,
+  - under which configuration,
+  - and what response was triggered
+- Receipts are designed for independent verification
 
 ---
 
-## 8. What This Standard Is Not
+## 4. What This Interface Is *Not*
 
-This document does NOT:
-- describe enforcement mechanisms,
-- specify hardware designs,
-- define cryptographic systems,
-- assign penalties,
-- or dictate operational behavior.
+To avoid confusion, a hardware governance interface is **not**:
 
-Those elements exist under separate, classified, or regulatory instruments.
+- a replacement for AI safety research  
+- a behavioral classifier  
+- a moral decision engine  
+- a surveillance system  
+- a vendor lock-in mechanism  
 
----
+It does not claim to make AI “good” or “ethical”.
 
-## 9. Canonical Status
-
-This document is a **canonical public conceptual standard** within the TruthSeal™ framework.
-
-It establishes a **law-level requirement** for hardware-bound governance of embodied intelligence.
-
-All future operational, technical, or regulatory specifications must remain consistent with this concept.
-
-LEI = 1 is non-negotiable.
+It makes AI **governable**.
 
 ---
 
-© 2025 TruthSeal™ Pty Ltd, Melbourne, Australia — all rights reserved.  
-This document is public, non-operational, and non-classified.  
-No implementation details are disclosed herein.
+## 5. Why Hardware Matters
+
+Software controls can be:
+- bypassed,
+- disabled,
+- modified after deployment,
+- or rendered ineffective under adversarial conditions.
+
+Hardware-anchored governance provides:
+- stronger isolation,
+- deterministic behavior,
+- resistance to tampering,
+- and clearer accountability boundaries.
+
+This is especially relevant where **post-incident explanations** are insufficient and **real-time control** is required.
+
+---
+
+## 6. Relationship to Regulators and Auditors
+
+From a supervisory perspective, a hardware governance interface enables:
+
+- continuous integrity signals instead of periodic attestations,
+- verifiable evidence instead of self-reported claims,
+- replayable audit trails instead of narrative explanations.
+
+It supports:
+- operational risk oversight,
+- model governance requirements,
+- safety-critical system certification,
+- and long-horizon accountability.
+
+---
+
+## 7. Scope of This Document
+
+This document:
+- describes **conceptual capability only**,
+- avoids reference to internal laws, metrics, or enforcement logic,
+- is safe for public distribution,
+- and is intended to support informed discussion.
+
+Any implementation, certification, or binding framework exists **outside** the scope of this text.
+
+---
+
+## 8. Closing Note
+
+As AI systems continue to scale in autonomy and impact, governance must evolve from **policy documents** to **operational instruments**.
+
+A hardware governance interface is one such instrument — not as a replacement for human judgment, but as a means to ensure that judgment remains **in control**, **verifiable**, and **enforceable** when it matters most.
+
+---
+
+© 2025 TruthSeal™  
+This document may be shared in unmodified form with attribution.
