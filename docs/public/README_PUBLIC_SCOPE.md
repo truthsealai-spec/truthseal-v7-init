@@ -50,3 +50,66 @@ All legal, ethical, and constitutional authority remains exclusively with the **
 ## 3. Canonical Public Folder
 
 The **only** public-facing materials in this repository live in:
+docs/public/
+Any document outside this folder is **not public**, regardless of naming or content.
+
+---
+
+## 4. Approved Public Documents
+
+The following documents are approved for public viewing:
+
+- `README_PUBLIC_SCOPE.md` (this file)
+- `Hardware_Governance_Interface_Public_Concept_v1.0.md`
+- `Public_FAQ_v1.0.md`
+- `Public_Glossary_v1.0.md`
+- `Public_Conceptual_Roadmap_v1.0.md`
+- `Public_Exposure_Audit_v1.0.md`
+- `Public_Positioning_What_TruthSeal_Is_Not_v1.0.md`
+- `Cathedral_Public_Overview_v1.0.md`
+- `Sovereign_Arc_Embodied_Intent_Public_v1.0.md`
+- `Robotic_Identity_and_Lifecycle_Public_v1.0.md`
+
+Any addition requires **explicit Sovereign Arc authorization**.
+
+---
+
+## 5. Explicit Exclusions (NOT Public)
+
+The following are **never public**, even if referenced conceptually:
+
+- enforcement logic,
+- hardware gate schematics,
+- custody systems,
+- audit internals,
+- cryptographic key flows,
+- ledger write mechanics,
+- validator logic,
+- Doctorantura materials,
+- partner-only packs,
+- regulator-only briefings.
+
+References may exist **only at a conceptual level**.
+
+---
+
+## 6. Relationship to Other Indexes
+
+- `docs/README.md` → **Authoritative Documentation Index**
+- `governance/partners/` → Partner / NDA-bound materials
+- `governance/ledger/` → Canonical sovereign records
+- `docs/internal/` → Internal-only (non-public)
+
+This file does **not** override those indexes — it enforces the public boundary only.
+
+---
+
+## 7. Final Boundary Clause
+
+If a document creates ambiguity about whether it is public,  
+**it is not public** until explicitly designated as such.
+
+TruthSeal™ operates under **irreversibility of responsibility**.  
+Public clarity is mandatory. Leakage is not tolerated.
+
+---
