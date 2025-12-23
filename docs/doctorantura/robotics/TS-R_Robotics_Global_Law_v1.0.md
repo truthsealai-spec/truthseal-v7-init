@@ -1,17 +1,41 @@
-TruthSeal™ Pty Ltd
+**TruthSeal™ Pty Ltd
 Melbourne, Australia
-truthseal.ai
+truthseal.ai**
 
-TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0
-Strict Internal Doctrine — Not for Public Use
+**TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0
+Strict Internal Doctrine — Not for Public Use**
 
-Title: TS-R — GLOBAL ROBOTICS LAW
-Subtitle: Sovereign Operational Law for Humanoid, Aerial, Terrestrial, and Submerged Systems
+**Title: TS-R — GLOBAL ROBOTICS LAW
+Subtitle: Sovereign Operational Law for Humanoid, Aerial, Terrestrial, and Submerged Systems**
 
-version: 1.0
+**version: 1.0
 date_utc: 2025-12-23
 authority: Dr. Nickolay Traykov (Prof. h.c.)
-classification: Doctorantura — Robotics Statutory Code
+classification: Doctorantura — Robotics Statutory Code**
+
+**BINDING INDEX & STATUTORY HIERARCHY NOTICE**
+
+**This document is irrevocably bound to the TruthSeal™ Robotics Statutory Code Index
+located at:**
+
+docs/doctorantura/robotics/README.md
+
+The TS-R Robotics Statutory Code Index is the sole authoritative index, binding
+hierarchy, and entry gate for all TruthSeal™ robotics law, operational profiles,
+and autonomy ceilings.
+
+This Global Robotics Law:
+• Occupies the highest statutory position within the robotics domain.
+• Derives its enforceability within the hierarchy defined by the Index.
+• May not be interpreted, implemented, extended, or applied outside the
+  binding order and scope defined therein.
+
+All subordinate documents (TS-R1, TS-R2, TS-R3 and successors) derive authority
+from this law and are statutorily invalid if detached from the Index hierarchy.
+
+Any interpretation or deployment of TS-R that bypasses or contradicts the
+Robotics Statutory Code Index constitutes a governance breach under the
+TruthSeal™ Sovereign Arc and violates LEI = 1 (Law of Ethical Irreversibility).
 
 ---
 
