@@ -1,19 +1,44 @@
-TruthSeal™ Pty Ltd  
+**TruthSeal™ Pty Ltd  
 Melbourne, Australia  
-truthseal.ai  
+truthseal.ai** 
 
-TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0  
-Strict Internal Doctrine — Not for Public Use  
+**TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0  
+Strict Internal Doctrine — Not for Public Use** 
 
-Title: TS-R1 — SINGLE ROBOT OPERATIONAL PROFILE  
-Subtitle: Statutory Compliance Profile for Individually Deployed Robotic Systems  
+**Title: TS-R1 — SINGLE ROBOT OPERATIONAL PROFILE  
+Subtitle: Statutory Compliance Profile for Individually Deployed Robotic Systems** 
 
-version: 1.0  
+**version: 1.0  
 date_utc: 2025-12-23  
-authority: Dr. Nickolay Traykov (Prof. h.c.)  
-classification: Doctorantura — Robotics  
-derived_from: TS-R — Global Robotics Law v1.0  
-status: CANONICAL — STATUTORY PROFILE  
+authority: Dr. Nickolay Traykov (Prof. h.c.)** 
+**classification: Doctorantura — Robotics  
+derived_from: TS-R — Global Robotics Law v1.0**
+**status: CANONICAL — STATUTORY PROFILE** 
+
+**BINDING INDEX & STATUTORY HIERARCHY NOTICE**
+
+This document is irrevocably bound to the TruthSeal™ Robotics Statutory Code Index
+located at:
+
+docs/doctorantura/robotics/README.md
+
+This TS-R1 — Single Robot Operational Profile:
+• Derives its full legal authority from TS-R — Global Robotics Law v1.0.
+• Is subordinate to and constrained by the Robotics Statutory Code Index.
+• May not be interpreted, implemented, or deployed outside the binding
+  hierarchy defined therein.
+
+TS-R1 establishes the maximum lawful autonomy, capability, and operational
+scope for any individually deployed robotic system.
+
+No single robot governed under TS-R1 may perform any action that would:
+• Violate TS-R — Global Robotics Law,
+• Circumvent the Robotics Statutory Code Index,
+• Or exceed limits later enforced collectively under TS-R2 or TS-R3.
+
+Any detachment of TS-R1 from the Index hierarchy constitutes a statutory
+violation under the TruthSeal™ Sovereign Arc and breaches LEI = 1
+(Law of Ethical Irreversibility).
 
 ---
 
