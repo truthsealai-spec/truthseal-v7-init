@@ -24,7 +24,7 @@ version: 1.0
 authority: Dr. Nickolay Traykov (Prof. h.c.)
 classification: Doctorantura — Robotics & AGI
 status: CANONICAL — EXPLANATORY CHAPTER (NON-STATUTORY)
--
+
 
 ⸻
 
@@ -206,5 +206,5 @@ This material is strictly confidential. It is not for public distribution, citat
 Unauthorised copying, translation, adaptation, or incorporation into external standards, academic work, patents, or commercial systems is strictly prohibited.
 Working copies must remain under controlled custody and be linked to verifiable TruthSeal™ receipts (ts.receipt.v1) and EVL™ entries.
 Any detected unlicensed use is to be treated as both an integrity breach under the TruthSeal™ governance regime and a violation of applicable intellectual property law.
----
+
 
