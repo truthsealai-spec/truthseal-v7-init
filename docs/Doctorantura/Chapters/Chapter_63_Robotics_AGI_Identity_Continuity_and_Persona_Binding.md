@@ -33,7 +33,7 @@ This chapter explains **why identity continuity is mandatory**.
 
 ---
 
-## I. THE IDENTITY FRACTURE PROBLEM
+## I. THE IDENTITY FRACTURE CHALANGE
 
 Modern AI systems routinely:
 - Reset identities
