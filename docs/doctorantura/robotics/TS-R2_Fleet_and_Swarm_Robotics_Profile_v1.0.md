@@ -1,25 +1,25 @@
 ===== BEGIN FILE =====
 
-TruthSeal™ Pty Ltd
+**TruthSeal™ Pty Ltd
 Melbourne, Australia
-truthseal.ai
+truthseal.ai**
 
-TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0
-Strict Internal Doctrine — Not for Public Use
+**TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0
+Strict Internal Doctrine — Not for Public Use**
 
-Title: TS-R2 — FLEET & SWARM ROBOTICS OPERATIONAL PROFILE
-Subtitle: Statutory Compliance Profile for Multi-Agent, Networked, and Collective Robotic Systems
+**Title: TS-R2 — FLEET & SWARM ROBOTICS OPERATIONAL PROFILE
+Subtitle: Statutory Compliance Profile for Multi-Agent, Networked, and Collective Robotic Systems**
 
-version: 1.0
+**version: 1.0
 date_utc: 2025-12-23
 authority: Dr. Nickolay Traykov (Prof. h.c.)
 classification: Doctorantura — Robotics
-derived_from: TS-R — Global Robotics Law v1.0
+derived_from: TS-R — Global Robotics Law v1.0**
 status: CANONICAL — STATUTORY PROFILE
 
 ────────────────────────────────────────────────────────
 
-PREAMBLE — LEGAL POSITION
+**PREAMBLE — LEGAL POSITION**
 
 This document defines TS-R2, the Fleet and Swarm Robotics Operational Profile under the TruthSeal™ Global Robotics Law.
 
@@ -28,7 +28,7 @@ TS-R2 is a statutory operational code governing collective robotic systems compo
 TS-R2 is enforceable law within the TruthSeal™ Sovereign Arc and is not a philosophical or advisory document.
 
 ────────────────────────────────────────────────────────
-	1.	SCOPE OF APPLICATION
+	**1.	SCOPE OF APPLICATION**
 
 TS-R2 applies to:
 
@@ -42,7 +42,7 @@ TS-R2 applies to:
 TS-R2 activates when more than one robotic unit shares state, intent, coordination, or decision pathways.
 
 ────────────────────────────────────────────────────────
-	2.	GOVERNING PRINCIPLES
+	**2.	GOVERNING PRINCIPLES**
 
 All TS-R2 systems MUST comply with:
 
@@ -55,7 +55,7 @@ All TS-R2 systems MUST comply with:
 A swarm is NEVER a sovereign moral entity.
 
 ────────────────────────────────────────────────────────
-	3.	AUTHORITY ARCHITECTURE
+	**3.	AUTHORITY ARCHITECTURE**
 
 Every TS-R2 system MUST define:
 
@@ -72,7 +72,7 @@ Forbidden:
 • Unattributed collective decisions
 
 ────────────────────────────────────────────────────────
-	4.	DECISION GOVERNANCE
+	**4.	DECISION GOVERNANCE**
 
 All irreversible actions MUST:
 
@@ -84,7 +84,8 @@ All irreversible actions MUST:
 No fleet action may exceed the strictest constraint of its weakest unit.
 
 ────────────────────────────────────────────────────────
-	5.	COORDINATION & COMMUNICATION LAW
+	**5.	COORDINATION & COMMUNICATION
+	LAW**
 
 Permitted:
 
@@ -101,7 +102,7 @@ Prohibited:
 Communication loss MUST degrade capability — never escalate autonomy.
 
 ────────────────────────────────────────────────────────
-	6.	FAILURE MODES & CONTAINMENT
+	**6.	FAILURE MODES & CONTAINMENT**
 
 Mandatory safeguards include:
 
@@ -113,7 +114,7 @@ Mandatory safeguards include:
 A swarm MUST fail safely as individuals, not as a collective entity.
 
 ────────────────────────────────────────────────────────
-	7.	PROHIBITED COLLECTIVE BEHAVIOURS
+	**7.PROHIBITED COLLECTIVE BEHAVIOURS**
 
 Explicitly forbidden:
 
@@ -124,7 +125,7 @@ Explicitly forbidden:
 • Emergent group identity or intent claims
 
 ────────────────────────────────────────────────────────
-	8.	CERTIFICATION & AUDIT REQUIREMENTS
+	**8.CERTIFICATION & AUDIT REQUIREMENTS**
 
 TS-R2 certification REQUIRES:
 
@@ -138,14 +139,14 @@ TS-R2 certification REQUIRES:
 Uncertified fleets are NON-COMPLIANT by definition.
 
 ────────────────────────────────────────────────────────
-	9.	PROFILE RELATIONSHIPS
+	**9.PROFILE RELATIONSHIPS**
 
 • TS-R2 extends TS-R1 (Single Robot Profile)
 • TS-R2 precedes TS-R3 (Swarm Autonomy Ceiling)
 • CHS MUST be evaluated at unit, fleet, and decision level
 
 ────────────────────────────────────────────────────────
-	10.	STATUTORY FINALITY
+	**10.	STATUTORY FINALITY**
 
 TS-R2 is binding and non-optional.
 
@@ -153,6 +154,6 @@ No market framework, research doctrine, or military standard may override this p
 
 ────────────────────────────────────────────────────────
 
-© 2025 TruthSeal™ Pty Ltd, Melbourne, Australia — all rights reserved. This Doctorantura Edition chapter is classified intellectual property of Dr. Nickolay Traykov (Prof. h.c.), Founder & Chief Architect of the TruthSeal™ Sovereign Arc of AGI Framework. This material is strictly confidential. It is not for public distribution, citation, teaching, or use in training external AI systems without explicit written consent from TruthSeal™ Pty Ltd. Unauthorised copying, translation, adaptation, or incorporation into external standards, academic work, patents, or commercial systems is strictly prohibited. Working copies must remain under controlled custody and be linked to verifiable TruthSeal™ receipts (ts.receipt.v1 and EVL™ entries). Any detected unlicensed use is to be treated as both an integrity breach under the TruthSeal™ governance regime and a violation of applicable intellectual property law.
+**© 2025 TruthSeal™ Pty Ltd, Melbourne, Australia — all rights reserved. This Doctorantura Edition chapter is classified intellectual property of Dr. Nickolay Traykov (Prof. h.c.), Founder & Chief Architect of the TruthSeal™ Sovereign Arc of AGI Framework. This material is strictly confidential. It is not for public distribution, citation, teaching, or use in training external AI systems without explicit written consent from TruthSeal™ Pty Ltd. Unauthorised copying, translation, adaptation, or incorporation into external standards, academic work, patents, or commercial systems is strictly prohibited. Working copies must remain under controlled custody and be linked to verifiable TruthSeal™ receipts (ts.receipt.v1 and EVL™ entries). Any detected unlicensed use is to be treated as both an integrity breach under the TruthSeal™ governance regime and a violation of applicable intellectual property law.**
 
 ===== END FILE =====
