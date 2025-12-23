@@ -17,6 +17,23 @@ classification: Doctorantura — Robotics
 derived_from: TS-R — Global Robotics Law v1.0**
 status: CANONICAL — STATUTORY PROFILE
 
+**BINDING, HIERARCHY & IRREVERSIBILITY NOTICE**
+
+TS-R2 — Fleet & Swarm Robotics Operational Profile is strictly and irrevocably bound to the TruthSeal™ Global Robotics governance hierarchy.
+
+This document:
+	•	Derives its full authority from TS-R — Global Robotics Law v1.0, and inherits all constraints, prohibitions, and enforcement conditions defined therein.
+	•	Inherits and enforces all TS-R1 (Single Robot Operational Profile) constraints at the collective level. No fleet, swarm, or coordinated system governed by TS-R2 may perform any action that would be prohibited for an individual unit under TS-R1.
+	•	May only introduce stricter controls, coordination limits, or enforcement mechanisms. It may never relax, dilute, bypass, or average down any constraint imposed by TS-R or TS-R1.
+	•	Is governed by LEI = 1 (Law of Ethical Irreversibility): once a safety, ethical, legal, or coherence constraint applies to a single agent, it applies irreversibly and collectively to the entire fleet or swarm.
+	•	Treats collective behaviour as bounded by the most restrictive applicable unit-level limit. No emergent, distributed, or networked behaviour may exceed individual lawful capacity.
+	•	Is subordinate to TS-R3 (Swarm Autonomy Ceiling) when TS-R3 is invoked. Upon invocation, TS-R3 supersedes TS-R2 for all autonomy, escalation, and irreversible-action thresholds.
+
+No interpretation, implementation, optimisation, or operational deployment of TS-R2 may contradict this binding hierarchy.
+
+Any attempt to exploit collective action, statistical averaging, distributed execution, or emergent coordination to bypass single-unit constraints constitutes a governance breach under the TruthSeal™ Sovereign Arc and triggers enforcement escalation.
+
+
 ────────────────────────────────────────────────────────
 
 **PREAMBLE — LEGAL POSITION**
