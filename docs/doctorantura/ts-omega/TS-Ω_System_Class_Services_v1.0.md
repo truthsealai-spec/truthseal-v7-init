@@ -7,9 +7,7 @@ Strict Internal Doctrine — Not for Public Use**
 
 **date: 2025-12-24**
 
----
-
-# TS-Ω (OMEGA MARSHAL PLAN)  
+--- 
 ## Master Index — Governed System Class Services
 
 ---
