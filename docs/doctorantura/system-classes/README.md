@@ -5,11 +5,11 @@ truthseal.ai**
 **TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0
 Strict Internal Doctrine — Not for Public Use**
 
-date: 2025-12-24
+**date: 2025-12-24**
 
 ---------------------------------------------------------------------
 
-OVERVIEW — DOCTORANTURA SCOPE AND PURPOSE
+**OVERVIEW — DOCTORANTURA SCOPE AND PURPOSE**
 
 This Doctorantura repository defines the binding doctrinal, legal, and technical
 foundations of the TruthSeal™ Sovereign Arc. It is not a product manual, a
@@ -32,7 +32,7 @@ Doctorantura is the law-before-product layer of TruthSeal™.
 
 ---------------------------------------------------------------------
 
-GOVERNED SYSTEM CLASSES — DECLARATION
+**GOVERNED SYSTEM CLASSES — DECLARATION**
 
 TruthSeal™ governs explicitly declared classes of artificial intelligence,
 artificial general intelligence, robotic, infrastructure, and defence systems.
@@ -61,7 +61,7 @@ licensing, and operational dashboards.
 
 ---------------------------------------------------------------------
 
-SERVICE INTENT — WHAT TRUTHSEAL™ PROVIDES
+**SERVICE INTENT — WHAT TRUTHSEAL™ PROVIDES**
 
 TruthSeal™ is not a safety product in the conventional sense. Safety is a
 consequence, not the service.
@@ -83,7 +83,7 @@ audit continuity.
 
 ---------------------------------------------------------------------
 
-LICENSING AND SERVICE TIERS — PRINCIPLE
+**LICENSING AND SERVICE TIERS — PRINCIPLE**
 
 TruthSeal™ services are delivered through explicitly defined service tiers.
 Each tier specifies:
@@ -104,7 +104,7 @@ deployment type.
 
 ---------------------------------------------------------------------
 
-GOVERNANCE DASHBOARDS — STATUTORY ROLE
+**GOVERNANCE DASHBOARDS — STATUTORY ROLE**
 
 Any system governed under TruthSeal™ must expose a governance dashboard appropriate
 to its system class and service tier.
@@ -120,7 +120,7 @@ No governed system may operate without its required dashboard.
 
 ---------------------------------------------------------------------
 
-DOCTORANTURA STRUCTURE — NAVIGATION
+**DOCTORANTURA STRUCTURE — NAVIGATION**
 
 This repository is organised by doctrinal function and system class. Key areas
 include:
@@ -135,7 +135,7 @@ Each document declares its scope, authority, and binding relationships explicitl
 
 ---------------------------------------------------------------------
 
-AUTHORITY AND PRECEDENCE
+**AUTHORITY AND PRECEDENCE**
 
 Doctorantura documents take precedence over all other TruthSeal™ materials.
 If a public document, dashboard, or partner artifact conflicts with Doctorantura,
