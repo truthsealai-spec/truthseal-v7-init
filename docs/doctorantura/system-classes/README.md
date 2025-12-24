@@ -145,21 +145,11 @@ No deviation, reinterpretation, or partial adoption is permitted without an
 explicitly recorded amendment under TruthSeal™ governance procedures.
 
 ---------------------------------------------------------------------
-
 © 2025 TruthSeal™ Pty Ltd, Melbourne, Australia — all rights reserved.
-This Doctorantura Edition document is classified intellectual property of
-Dr. Nickolay Traykov (Prof. h.c.), Founder & Chief Architect of the TruthSeal™
-Sovereign Arc of AGI Framework.
 
-This material is strictly confidential. It is not for public distribution,
-citation, teaching, or use in training external AI systems without explicit
-written consent from TruthSeal™ Pty Ltd.
+This document defines official TruthSeal™ system classes, governance standards, and service requirements intended for governments, regulators, enterprises, institutions, and authorised partners. It describes the scope, guarantees, limitations, and governance obligations of TruthSeal™ services as offered under applicable licensing terms.
 
-Unauthorised copying, translation, adaptation, or incorporation into external
-standards, academic work, patents, or commercial systems is strictly prohibited.
-Working copies must remain under controlled custody and be linked to verifiable
-TruthSeal™ receipts (ts.receipt.v1 and EVL™ entries).
+This document is not legal advice. Use of TruthSeal™ services is subject to executed agreements, certification conditions, and applicable law. TruthSeal™, TS-AI™, TS-AGI™, TS-R™, TS-INFRA™, TS-DEF™, LEI=1™, ULIC™, ACS™, and associated marks are trademarks or protected designations of TruthSeal™ Pty Ltd.
 
-Any detected unlicensed use constitutes both an integrity breach under the
-TruthSeal™ governance framework and a violation of applicable intellectual
-property law.
+Unauthorised modification or misrepresentation of this document voids any implied reliance.
+
