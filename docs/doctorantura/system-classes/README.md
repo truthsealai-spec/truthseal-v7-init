@@ -1,134 +1,165 @@
-**TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0** 
-Internal Doctrine — Client-Governed Systems Reference  
+**TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0  
+Doctorantura Definition of Safety-Governed Intelligence & Robotic System Services  
 Owner: Dr. Nickolay Traykov (Prof. h.c.)  
-Maintained by: TruthSeal™ Pty Ltd, Melbourne, Australia  
+Maintained by: TruthSeal™ Pty Ltd, Melbourne, Australia** 
 
 ---
 
-## PURPOSE OF THIS DOCTORANTURA EDITION
+## CORE PURPOSE — WHY TRUTHSEAL™ EXISTS
 
-This Doctorantura Edition defines the legally governed intelligence and robotic system classes that TruthSeal™ designs, certifies, and operates as long-horizon governance services for high-risk environments.
+TruthSeal™ exists to make advanced artificial intelligence, artificial general intelligence, and robotic systems **safe to operate in the real world**.
 
-It exists to provide absolute clarity to governments, institutions, courts, insurers, infrastructure operators, and strategic enterprises regarding:
+Safety, within TruthSeal™, does not mean performance optimisation, ethical intent, or statistical confidence.
+Safety means that a system **cannot cause unacceptable harm**, even under stress, drift, misuse, or adversarial pressure.
 
-• what categories of artificial intelligence and robotic systems TruthSeal™ governs  
-• what authority boundaries apply to each system class  
-• what protections, obligations, and guarantees are delivered  
-• what is explicitly excluded from scope  
+This Doctorantura Edition defines how TruthSeal™ delivers **continuous, enforceable safety** for systems whose decisions can affect:
+• human life
+• physical environments
+• legal rights
+• financial stability
+• national and institutional security
 
-This edition is not marketing material.  
-It is a service-definition and governance doctrine.
-
----
-
-## WHAT “SYSTEM” MEANS IN TRUTHSEAL™
-
-Within TruthSeal™, a “system” refers exclusively to an explicitly governed artificial intelligence or robotic operational stack that:
-
-• executes decisions with real-world consequence  
-• operates continuously or semi-continuously  
-• interacts with legal, financial, physical, or sovereign domains  
-• requires enforceable human authority and auditability  
-
-TruthSeal™ does not govern generic software, tools, or analytics products.  
-TruthSeal™ governs decision-capable intelligence systems.
+Every concept, system class, and service defined herein exists to prevent unsafe outcomes before they occur.
 
 ---
 
-## GOVERNED SYSTEM CLASS FAMILIES
+## WHAT “SYSTEM SAFETY” MEANS IN TRUTHSEAL™
 
-TruthSeal™ defines and governs the following internal system class families as distinct service categories.
+In TruthSeal™, safety is a **structural property**, not a promise.
 
-Each class represents a different governance load, risk profile, and certification depth.
+A system is considered safe only if:
+• its actions are bounded by enforceable limits
+• unsafe states are detectable in real time
+• irreversible actions require explicit human authority
+• unsafe behaviour cannot be silently ignored or excused
+• accountability is provable after the fact
 
-### TS-AI — Artificial Intelligence Systems
+TruthSeal™ governs **decision-capable systems**, not generic software.
+If a system can decide, act, or trigger consequences, it must be safe by design — not by assumption.
 
-This class covers bounded, non-general artificial intelligence systems operating under defined task constraints.
+---
+
+## GOVERNED SYSTEM CLASS FAMILIES (SAFETY SCOPE)
+
+TruthSeal™ defines internal system classes to match **different categories of safety risk**.
+Each class represents a distinct safety profile, governance load, and enforcement requirement.
+
+These are **service categories**, not abstract labels.
+
+---
+
+### TS-AI — Safety-Governed Artificial Intelligence Systems
+
+TS-AI systems are non-general artificial intelligence systems whose decisions can still cause material harm if unchecked.
 
 Examples include:
-• decision support engines  
-• optimisation and control systems  
-• predictive infrastructure models  
+• financial decision engines
+• infrastructure optimisation systems
+• automated control and routing systems
 
-These systems do not possess general reasoning autonomy but can still create material risk if ungoverned.
+TruthSeal™ safety governance for TS-AI ensures:
+• bounded decision scope
+• prevention of unsafe optimisation shortcuts
+• continuous detection of integrity degradation
+• human-visible audit trails for all critical decisions
 
----
-
-### TS-AGI — Artificial General Intelligence Systems
-
-This class covers systems capable of cross-domain reasoning, self-directed planning, and adaptive strategy formation.
-
-These systems present elevated systemic risk when coherence, intent alignment, or reversibility controls are absent.
-
-TruthSeal™ governance for TS-AGI systems exists to ensure that:
-• action authority is never inferred from intelligence alone  
-• coherence degradation is detected and halted  
-• irreversible outcomes require explicit human legitimacy  
-
-The service is comprehensive because failure impact is extreme, not because access is limited.
+The objective is to prevent local failures from cascading into systemic harm.
 
 ---
 
-### TS-R — Robotic Systems
+### TS-AGI — Safety-Governed Artificial General Intelligence Systems
 
-This class governs embodied systems capable of physical actuation.
+TS-AGI systems are capable of cross-domain reasoning, autonomous planning, and adaptive strategy formation.
 
-It includes:
-• TS-R1 — single robotic units  
-• TS-R2 — fleet and swarm robotics  
-• TS-R3 — autonomy ceiling and actuation limits  
+These systems pose **existential and systemic safety risks** if coherence degrades or authority boundaries are unclear.
 
-Robotic governance is enforced at both decision and execution layers, with strict fallback and human mandate requirements.
+TruthSeal™ safety governance for TS-AGI exists to ensure that:
+• intelligence never implies permission to act
+• unsafe escalation is blocked before execution
+• long-horizon drift is detected and contained
+• irreversible outcomes require explicit, accountable human authorisation
 
----
-
-### TS-INFRA — Critical Infrastructure Systems
-
-This class covers AI or AGI systems embedded in essential services such as:
-• energy  
-• water  
-• payments  
-• transport  
-• identity and border control  
-
-These systems require continuous governance visibility and immediate intervention capability.
+The purpose of this service is not limitation of intelligence, but **prevention of unsafe autonomy**.
 
 ---
 
-### TS-DEF — Defence, Space, and National Security Systems
+### TS-R — Safety-Governed Robotic Systems
 
-This class applies to intelligence systems operating in military, space, or national security contexts.
+TS-R systems are embodied systems capable of physical actuation.
 
-These systems are governed under the most restrictive authority and audit conditions, with explicit escalation, containment, and halt doctrines.
+This includes:
+• TS-R1 — single robotic units
+• TS-R2 — fleet and swarm robotics
+• TS-R3 — autonomy ceilings and actuation limits
 
----
+TruthSeal™ robotic safety governance ensures:
+• safe-stop behaviour under uncertainty
+• strict separation between perception, decision, and actuation
+• prohibition of unsafe autonomous escalation
+• immediate human notification when safety margins degrade
 
-## SERVICE MODEL CLARITY
-
-TruthSeal™ does not sell software licenses.
-
-TruthSeal™ provides governed system services, each defined by:
-• system class  
-• governance depth  
-• enforcement mechanisms  
-• audit and receipt guarantees  
-• human authority model  
-
-Different organisations subscribe to different system classes and governance tiers depending on operational risk and legal obligation.
+Physical safety is enforced as law, not as best practice.
 
 ---
 
-## CLIENT INTENT
+### TS-INFRA — Safety-Governed Critical Infrastructure Systems
 
-This Doctorantura Edition exists so that future clients can understand, before engagement:
+TS-INFRA systems operate within essential services such as:
+• energy
+• water
+• payments
+• transport
+• identity and civic infrastructure
 
-• which system class applies to them  
-• what TruthSeal™ will enforce  
-• what responsibilities they retain  
-• what outcomes are prevented  
+Failures in these systems can cause widespread societal harm.
 
-Nothing in this edition is implicit.
-Nothing is left to interpretation.
+TruthSeal™ governance ensures:
+• continuous safety visibility
+• prevention of unsafe automated overrides
+• guaranteed human intervention capability
+• immutable records for post-incident accountability
+
+---
+
+### TS-DEF — Safety-Governed Defence, Space, and National Security Systems
+
+TS-DEF systems operate where failure can cause irreversible geopolitical or physical harm.
+
+TruthSeal™ governance for this class enforces:
+• the strictest authority hierarchy
+• zero tolerance for unsafe autonomous action
+• explicit escalation and halt mechanisms
+• permanent auditability of all decisions and attempted actions
+
+Safety takes precedence over performance, speed, or optimisation.
+
+---
+
+## SERVICE CLARITY FOR CLIENTS
+
+TruthSeal™ does not offer generic “AI safety tools”.
+
+TruthSeal™ provides **safety-governed system services**, each defined by:
+• the type of system being governed
+• the safety risks being mitigated
+• the enforcement mechanisms applied
+• the human authority model retained
+• the audit and accountability guarantees delivered
+
+Different organisations engage different system classes depending on the level of risk they operate under.
+
+---
+
+## CLIENT INTENT & TRANSPARENCY
+
+This Doctorantura Edition exists so that future clients can clearly understand:
+• what safety risks TruthSeal™ addresses
+• what actions are prevented by design
+• what responsibilities remain with the organisation
+• what failures are structurally impossible
+
+Nothing in TruthSeal™ safety governance relies on trust.
+Everything relies on enforceable structure.
 
 ---
 
