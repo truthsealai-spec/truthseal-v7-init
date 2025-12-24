@@ -1,180 +1,138 @@
-**TruthSeal™ Pty Ltd
-Melbourne, Australia
-truthseal.ai**
-
-**TRUTHSEAL™ DOCTORANTURA — SYSTEM CLASS SERVICES INDEX v1.0
-Client-Facing Governance & Licensing Definition
-Strictly Defined Service Classes — Not Internal Doctrine**
-
-**date: 2025-12-24**
+**TRUTHSEAL™ DOCTORANTURA — THE SOVEREIGN ARC OF AGI FRAMEWORK v1.0** 
+Internal Doctrine — Client-Governed Systems Reference  
+Owner: Dr. Nickolay Traykov (Prof. h.c.)  
+Maintained by: TruthSeal™ Pty Ltd, Melbourne, Australia  
 
 ---
 
-## PREAMBLE — WHAT THIS DOCUMENT IS
+## PURPOSE OF THIS DOCTORANTURA EDITION
 
-This document defines the **official system classes and service categories** governed by TruthSeal™.
+This Doctorantura Edition defines the legally governed intelligence and robotic system classes that TruthSeal™ designs, certifies, and operates as long-horizon governance services for high-risk environments.
 
-It exists for **clients, regulators, insurers, courts, enterprises, governments, and strategic partners** to understand exactly:
-• which types of systems TruthSeal™ governs,
-• what protections and guarantees are provided,
-• what is explicitly excluded,
-• and how licensing and accountability differ by system class.
+It exists to provide absolute clarity to governments, institutions, courts, insurers, infrastructure operators, and strategic enterprises regarding:
 
-This document does **not** describe internal architecture, enforcement mechanics, or proprietary execution plans.  
-It defines **service scope**, **governance guarantees**, and **commercial boundaries**.
+• what categories of artificial intelligence and robotic systems TruthSeal™ governs  
+• what authority boundaries apply to each system class  
+• what protections, obligations, and guarantees are delivered  
+• what is explicitly excluded from scope  
 
-TruthSeal™ does not govern “everything”.
-It governs **explicitly declared system classes under explicit service agreements**.
+This edition is not marketing material.  
+It is a service-definition and governance doctrine.
 
 ---
 
-## SYSTEM CLASS 1 — TS-AI  
-### Artificial Intelligence Systems (Narrow / Task-Bound)
+## WHAT “SYSTEM” MEANS IN TRUTHSEAL™
 
-TS-AI governs **non-general artificial intelligence systems** operating within clearly defined functional boundaries.
+Within TruthSeal™, a “system” refers exclusively to an explicitly governed artificial intelligence or robotic operational stack that:
 
-These include, but are not limited to:
-• decision-support systems,
-• forecasting and optimisation engines,
-• automated compliance tools,
-• classification and recommendation systems,
-• constrained control software without autonomous goal formation.
+• executes decisions with real-world consequence  
+• operates continuously or semi-continuously  
+• interacts with legal, financial, physical, or sovereign domains  
+• requires enforceable human authority and auditability  
 
-TS-AI services provide:
-• integrity receipts for critical decisions,
-• audit-ready traceability of model behaviour,
-• human-authorised override mechanisms,
-• non-repudiation for regulated outputs,
-• contractual clarity for liability allocation.
-
-TS-AI does **not**:
-• certify consciousness or intent,
-• permit autonomous escalation of authority,
-• replace legal or human responsibility,
-• govern open-ended agency.
-
-TS-AI is typically licensed for **enterprises, regulators, insurers, courts, and financial institutions** requiring verifiable AI governance without autonomy claims.
+TruthSeal™ does not govern generic software, tools, or analytics products.  
+TruthSeal™ governs decision-capable intelligence systems.
 
 ---
 
-## SYSTEM CLASS 2 — TS-AGI  
-### Artificial General Intelligence Systems
+## GOVERNED SYSTEM CLASS FAMILIES
 
-TS-AGI governs **explicitly declared Artificial General Intelligence systems** capable of:
-• cross-domain reasoning,
-• long-horizon planning,
-• self-directed optimisation,
-• and adaptive goal pursuit beyond narrow tasks.
+TruthSeal™ defines and governs the following internal system class families as distinct service categories.
 
-TS-AGI services are **scarce by design**.
-Only a limited percentage of deployed systems may qualify, subject to continuous oversight.
+Each class represents a different governance load, risk profile, and certification depth.
 
-TS-AGI services provide:
-• continuous coherence measurement,
-• mandatory human authority boundaries,
-• irreversible accountability records,
-• escalation and suspension guarantees,
-• court-verifiable operational history.
+### TS-AI — Artificial Intelligence Systems
 
-TS-AGI does **not**:
-• grant sovereignty to machines,
-• remove human supremacy,
-• permit unbounded autonomy,
-• operate without explicit contractual custody.
+This class covers bounded, non-general artificial intelligence systems operating under defined task constraints.
 
-TS-AGI is intended for **state actors, frontier research entities, and highly regulated sovereign deployments** only.
+Examples include:
+• decision support engines  
+• optimisation and control systems  
+• predictive infrastructure models  
+
+These systems do not possess general reasoning autonomy but can still create material risk if ungoverned.
 
 ---
 
-## SYSTEM CLASS 3 — TS-R  
-### Robotic & Physical Actuation Systems
+### TS-AGI — Artificial General Intelligence Systems
 
-TS-R governs **physical systems capable of acting in the real world**, including:
-• humanoid robots,
-• industrial robotics,
-• autonomous vehicles,
-• aerial, maritime, and underwater systems.
+This class covers systems capable of cross-domain reasoning, self-directed planning, and adaptive strategy formation.
 
-TS-R services ensure:
-• strict action boundaries,
-• human override supremacy,
-• safety-first operational envelopes,
-• immutable actuation records,
-• jurisdiction-aware accountability.
+These systems present elevated systemic risk when coherence, intent alignment, or reversibility controls are absent.
 
-TS-R is subdivided into:
-• TS-R1 — Single Robot Systems  
-• TS-R2 — Fleet & Swarm Systems  
-• TS-R3 — Autonomy Ceiling & Hard Limits  
+TruthSeal™ governance for TS-AGI systems exists to ensure that:
+• action authority is never inferred from intelligence alone  
+• coherence degradation is detected and halted  
+• irreversible outcomes require explicit human legitimacy  
 
-No TS-R system may operate without a declared human authority model.
-
-TS-R does **not** permit:
-• uncontrolled physical autonomy,
-• dilution of responsibility,
-• silent actuation,
-• collective override of individual safety constraints.
+The service is comprehensive because failure impact is extreme, not because access is limited.
 
 ---
 
-## SYSTEM CLASS 4 — TS-INFRA  
-### Critical Infrastructure Control Systems
+### TS-R — Robotic Systems
 
-TS-INFRA governs AI and automated systems controlling:
-• energy grids,
-• payments and settlement rails,
-• identity systems,
-• communications infrastructure,
-• national logistics and mobility layers.
+This class governs embodied systems capable of physical actuation.
 
-TS-INFRA services provide:
-• continuous integrity assurance,
-• fail-safe governance modes,
-• regulator-ready audit outputs,
-• incident containment guarantees,
-• cross-institution accountability alignment.
+It includes:
+• TS-R1 — single robotic units  
+• TS-R2 — fleet and swarm robotics  
+• TS-R3 — autonomy ceiling and actuation limits  
 
-TS-INFRA is licensed exclusively for **critical infrastructure operators and sovereign institutions**.
+Robotic governance is enforced at both decision and execution layers, with strict fallback and human mandate requirements.
 
 ---
 
-## SYSTEM CLASS 5 — TS-DEF  
-### Defence, Space & National Security Systems
+### TS-INFRA — Critical Infrastructure Systems
 
-TS-DEF governs **classified and high-risk systems** operating in:
-• defence,
-• space,
-• intelligence,
-• and national security contexts.
+This class covers AI or AGI systems embedded in essential services such as:
+• energy  
+• water  
+• payments  
+• transport  
+• identity and border control  
 
-TS-DEF services are **restricted, limited, and scarcity-controlled**.
-
-They provide:
-• maximum human command authority,
-• irreversible action accountability,
-• compartmentalised governance,
-• sovereign-grade evidence trails.
-
-TS-DEF services are **never public**, **never open**, and **never transferable**.
+These systems require continuous governance visibility and immediate intervention capability.
 
 ---
 
-## FINAL NOTICE — LICENSING & SERVICE CLARITY
+### TS-DEF — Defence, Space, and National Security Systems
 
-Each TruthSeal™ system class:
-• is licensed separately,
-• carries different obligations and guarantees,
-• has explicit inclusions and exclusions,
-• and is priced according to risk, scarcity, and governance load.
+This class applies to intelligence systems operating in military, space, or national security contexts.
 
-Clients receive **clarity before commitment**.
-No hidden scope. No ambiguous authority.
+These systems are governed under the most restrictive authority and audit conditions, with explicit escalation, containment, and halt doctrines.
+
+---
+
+## SERVICE MODEL CLARITY
+
+TruthSeal™ does not sell software licenses.
+
+TruthSeal™ provides governed system services, each defined by:
+• system class  
+• governance depth  
+• enforcement mechanisms  
+• audit and receipt guarantees  
+• human authority model  
+
+Different organisations subscribe to different system classes and governance tiers depending on operational risk and legal obligation.
+
+---
+
+## CLIENT INTENT
+
+This Doctorantura Edition exists so that future clients can understand, before engagement:
+
+• which system class applies to them  
+• what TruthSeal™ will enforce  
+• what responsibilities they retain  
+• what outcomes are prevented  
+
+Nothing in this edition is implicit.
+Nothing is left to interpretation.
 
 ---
 
 © 2025 TruthSeal™ Pty Ltd, Melbourne, Australia — all rights reserved.  
 This Doctorantura Edition document is classified intellectual property of  
 Dr. Nickolay Traykov (Prof. h.c.), Founder & Chief Architect of the TruthSeal™ Sovereign Arc of AGI Framework.  
-
-This material is not for public distribution, training, or derivative use without explicit written consent.  
-Unauthorised use constitutes both an integrity breach under TruthSeal™ governance and a violation of applicable intellectual property law.
+Not for public distribution, citation, training, or derivative use without explicit written consent.
