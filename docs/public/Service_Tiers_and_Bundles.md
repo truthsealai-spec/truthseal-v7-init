@@ -10,7 +10,7 @@ version: 1.0
 
 ⸻
 
-1. PURPOSE OF SERVICE TIERS & BUNDLES
+**1. PURPOSE OF SERVICE TIERS & BUNDLES**
 
 TruthSeal™ service tiers and bundles define how governance, audit, enforcement, and accountability systems are applied to Artificial Intelligence (AI), Artificial General Intelligence (AGI), and autonomous robotic systems operating in real-world environments.
 
@@ -24,7 +24,7 @@ Bundles combine governance systems into coherent coverage profiles, allowing ins
 
 ⸻
 
-2. BASE TIER — FOUNDATIONAL AI GOVERNANCE
+**2. BASE TIER — FOUNDATIONAL AI GOVERNANCE**
 
 The Base Tier applies to Artificial Intelligence systems performing bounded, non-general cognitive functions with limited autonomy and clearly defined operational scope.
 
@@ -40,7 +40,7 @@ This tier establishes governance clarity without imposing sovereign-level enforc
 
 ⸻
 
-3. STANDARD TIER — ENTERPRISE & REGULATED SYSTEMS
+**3. STANDARD TIER — ENTERPRISE & REGULATED SYSTEMS**
 
 The Standard Tier applies to AI systems whose outputs materially affect legal, financial, operational, or regulatory outcomes.
 
@@ -56,7 +56,7 @@ Standard Tier remains human-directed but enforces stricter boundaries on output 
 
 ⸻
 
-4. SUPREME TIER — AGI & HIGH-IMPACT AUTONOMOUS SYSTEMS
+**4. SUPREME TIER — AGI & HIGH-IMPACT AUTONOMOUS SYSTEMS**
 
 The Supreme Tier applies to Artificial General Intelligence (AGI) systems and advanced autonomous AI systems capable of multi-domain reasoning, adaptive strategy formation, and long-horizon decision processes.
 
@@ -72,7 +72,7 @@ Supreme Tier establishes enforceable boundaries between cognition and action to 
 
 ⸻
 
-5. ULTRA TIER — DEFENCE, MILITARY & SPACE SYSTEMS
+**5. ULTRA TIER — DEFENCE, MILITARY & SPACE SYSTEMS**
 
 The Ultra Tier applies to AI, AGI, and autonomous robotic systems operating in defence, military, space, or sovereign-critical environments.
 
@@ -88,7 +88,7 @@ This tier represents the highest level of governance coverage available under Tr
 
 ⸻
 
-6. POST-QUANTUM & QUANTUM-RESILIENCE BUNDLE (ADD-ON)
+**6. POST-QUANTUM & QUANTUM-RESILIENCE BUNDLE (ADD-ON)**
 
 The Post-Quantum bundle is an optional extension applicable to Standard, Supreme, or Ultra tiers.
 
@@ -102,7 +102,7 @@ This bundle does not function independently and must be paired with an applicabl
 
 ⸻
 
-7. BUNDLE SELECTION & LICENSING PRINCIPLE
+**7. BUNDLE SELECTION & LICENSING PRINCIPLE**
 
 Service tiers and bundles are selected based on system class, operational consequence, and institutional responsibility.
 
