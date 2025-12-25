@@ -45,16 +45,18 @@ TruthSeal™ does **not** replace human decision-making, legal responsibility, o
 
 ## 3. WHAT TRUTHSEAL™ PROVIDES
 
-TruthSeal™ provides **governance guarantees**, not outcome guarantees.
+TruthSeal™ provides governance guarantees for Artificial Intelligence (AI), Artificial General Intelligence (AGI), and autonomous robotic systems — not guarantees of intelligence quality or outcome correctness.
 
-These guarantees include:
-- enforceable accountability attribution,
-- verifiable auditability of actions and decisions,
-- traceable responsibility chains,
-- irreversible linkage between authority and liability,
-- and governance enforcement proportional to operational risk.
+These governance guarantees apply to the behaviour, actions, outputs, and operational conditions of AI, AGI, and autonomous systems deployed in real-world environments.
 
-TruthSeal™ ensures that **responsibility cannot be denied, obscured, or displaced by automation**.
+They include:
+- enforceable accountability attribution for AI- and AGI-driven actions,
+- verifiable auditability of automated decisions and system behaviour,
+- traceable chains of responsibility linking system outputs to human authority,
+- irreversible linkage between operational authority and legal liability,
+- and governance enforcement proportional to operational risk and system class.
+
+TruthSeal™ ensures that responsibility for AI, AGI, and autonomous systems cannot be denied, obscured, or displaced by automation.
 
 ---
 
@@ -111,27 +113,32 @@ Governance guarantees apply **only when both**:
 
 ## 8. RELIANCE AND LIABILITY PRINCIPLE
 
-Reliance on TruthSeal™ governance means reliance on **provable accountability**, not system infallibility.
+Reliance on TruthSeal™ governance means lawful reliance on Artificial Intelligence (AI), Artificial General Intelligence (AGI), and autonomous robotic systems through **provable accountability**, not reliance on system infallibility.
 
-All responsibility for system design, objectives, training data, deployment decisions, and use cases remains with system owners and operators.
+TruthSeal™ governance enables institutions, regulators, courts, and operators to rely on AI, AGI, and autonomous systems only insofar as their actions, outputs, and operational behaviour remain traceable, auditable, and attributable to human authority.
 
-TruthSeal™ governance ensures that responsibility follows authority and **cannot be displaced onto machines**.
+All responsibility for AI and AGI system design, objectives, training data, deployment decisions, operational constraints, and real-world use cases remains with the system owners and operators.
+
+TruthSeal™ governance ensures that responsibility for AI-, AGI-, and autonomous-system actions follows authority and **cannot be displaced onto machines, automation, or model behaviour**.
 
 ---
 
 ## 9. PUBLIC INTERPRETATION RULE
 
-This document is the authoritative public reference for interpreting TruthSeal™ scope and role.
+This document is the authoritative public reference for interpreting the scope, role, and limits of TruthSeal™ governance services as they apply to Artificial Intelligence (AI), Artificial General Intelligence (AGI), and autonomous robotic systems.
 
-In case of conflict, this document supersedes:
+In the event of any conflict, this document supersedes all:
 - marketing materials,
 - presentations,
 - informal explanations,
-- or derivative summaries.
+- derivative summaries,
+- or third-party interpretations.
 
-All interpretations must align with declared system classes and licensed service tiers.
+All interpretations of TruthSeal™ governance must align strictly with:
+- the declared AI, AGI, and robotic system classes under governance, and
+- the licensed service tiers defining which governance, audit, enforcement, and accountability systems are active.
 
----
+No interpretation may extend TruthSeal™ governance beyond its explicitly declared system classes or licensed service tiers.
 
 © 2025 TruthSeal™ Pty Ltd, Melbourne, Australia.  
 All rights reserved.
