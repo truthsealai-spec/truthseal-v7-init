@@ -9,164 +9,131 @@ Public Canonical Document**
 version: 1.0
 
 ------------------------------------------------------------
+**1. PURPOSE OF THIS DOCUMENT**
 
-**1. PURPOSE OF GOVERNANCE GUARANTEES**
+This document defines the formal governance guarantees provided by TruthSeal™ and the explicit boundaries of what TruthSeal™ does not claim or provide.
 
-This document defines the explicit guarantees provided by TruthSeal™
-and the equally explicit boundaries of what TruthSeal™ does not provide.
+Its purpose is to enable governments, regulators, courts, enterprises, insurers, and institutional stakeholders to rely on TruthSeal™ governance with legal clarity, without misinterpretation, overstatement, or ambiguity.
 
-Its purpose is to eliminate ambiguity for governments, institutions,
-enterprises, regulators, insurers, courts, and other stakeholders
-regarding what reliance on TruthSeal™ governance systems means in
-operational, legal, and accountability terms.
+This document is authoritative for interpreting TruthSeal™ guarantees, exclusions, and scope of responsibility.
 
-TruthSeal™ operates as a governance, audit, enforcement, and
-accountability organisation for Artificial Intelligence (AI),
-Artificial General Intelligence (AGI), and autonomous robotic systems.
-
-This document exists to prevent misinterpretation of TruthSeal™ as
-an intelligence producer, safety predictor, or decision-making system.
-
-All guarantees described herein apply only to systems that are
-properly licensed, deployed, and operated within declared system
-classes and service tiers.
-
-No guarantee exists outside declared scope, active governance layers,
-and continuous operational enforcement.
-
-------------------------------------------------------------
+⸻
 
 **2. WHAT TRUTHSEAL™ GUARANTEES**
 
-TruthSeal™ guarantees that governed AI, AGI, and autonomous robotic
-systems operate under continuous, auditable governance constraints
-defined by licensed system classes and service tiers.
+TruthSeal™ guarantees the continuous governance, auditability, enforcement capability, and human accountability of Artificial Intelligence (AI), Artificial General Intelligence (AGI), and autonomous robotic systems that are licensed and operated under active TruthSeal™ governance.
 
-TruthSeal™ guarantees that governed systems produce outputs, actions,
-and behaviours that are cryptographically traceable, logged, and
-provable through immutable governance records.
+Specifically, TruthSeal™ guarantees that governed systems are:
 
-TruthSeal™ guarantees that every governed system action subject to
-TruthSeal™ enforcement is attributable to a legally accountable
-human authority or institution.
+• Traceable — all governed actions, outputs, and decisions are attributable and auditable
+• Provable — governance events are cryptographically recorded and verifiable
+• Enforceable — governance conditions, restrictions, and controls are actively applied
+• Accountable — responsibility remains bound to identifiable human or institutional authority
+• Non-repudiable — responsibility cannot be denied, obscured, or displaced by automation
 
-TruthSeal™ guarantees continuous coherence auditing of governed
-systems relative to declared objectives, permissions, and constraints.
+These guarantees apply continuously while TruthSeal™ governance is active and properly licensed.
 
-TruthSeal™ guarantees enforceable intervention capability, including
-escalation, suspension, or termination of governed operations where
-licensed thresholds are breached.
+⸻
 
-TruthSeal™ guarantees resistance to post-quantum and quantum-era
-integrity attacks within the scope of activated governance systems
-and licensed protections.
+**3. NATURE OF THE GUARANTEE**
 
-TruthSeal™ guarantees that no governed system may operate silently,
-without auditability, or without accountable authority.
+TruthSeal™ guarantees governance integrity, not outcome perfection.
 
-------------------------------------------------------------
+The guarantee ensures that AI, AGI, and autonomous systems operate within a provable governance perimeter where:
 
-**3. WHAT TRUTHSEAL™ EXPLICITLY DOES NOT PROVIDE**
+• Authority is declared
+• Responsibility is assigned
+• Actions are logged
+• Violations are detectable
+• Enforcement pathways exist
 
-TruthSeal™ does not develop Artificial Intelligence models,
-Artificial General Intelligence systems, or robotic platforms.
+TruthSeal™ governance functions analogously to critical infrastructure control systems such as aviation control, traffic management, or financial clearing systems: it does not eliminate risk, but it makes risk governable, attributable, and lawful.
 
-TruthSeal™ does not generate intelligence outputs, predictions,
-decisions, recommendations, or actions.
+⸻
 
-TruthSeal™ does not guarantee correctness, accuracy, usefulness,
-or desirability of intelligence outputs produced by external systems.
+**4. RELIANCE AND LAWFUL DEPENDENCE**
 
-TruthSeal™ does not replace human judgment, institutional authority,
-or legal responsibility.
+Institutions may lawfully rely on TruthSeal™ governance to:
 
-TruthSeal™ does not certify intent, morality, or outcome quality;
-it governs process, accountability, and enforceability.
+• Establish accountability chains
+• Enable regulatory oversight
+• Support judicial review and evidence
+• Underwrite insurance and compliance decisions
+• Enforce licensing and operational constraints
 
-TruthSeal™ does not eliminate operational risk, strategic risk,
-or societal risk inherent in advanced intelligence systems.
+Reliance on TruthSeal™ governance is reliance on verifiable control and accountability, not reliance on system infallibility.
 
-TruthSeal™ does not assume ownership, authorship, or operational
-control of governed systems.
+This reliance is designed to support lawful operation in high-consequence environments.
 
-Any claim that TruthSeal™ “ensures safe outcomes” or “guarantees
-correct decisions” is invalid and unauthorised.
+⸻
 
-------------------------------------------------------------
+**5. HUMAN ACCOUNTABILITY GUARANTEE**
 
-**4. RELIANCE, LIABILITY, AND HUMAN ACCOUNTABILITY**
+TruthSeal™ guarantees that human accountability is preserved at all times.
 
-Reliance on TruthSeal™ governance means reliance on provable
-accountability, not reliance on system infallibility.
+No AI, AGI, or autonomous system governed by TruthSeal™ may:
 
-All responsibility for deployment decisions, system design,
-training data, objectives, and use cases remains with system owners
-and operators.
+• Hold legal responsibility
+• Replace accountable authority
+• Obscure decision ownership
+• Displace liability onto automation
 
-TruthSeal™ governance ensures that responsibility cannot be denied,
-obscured, or displaced by automation.
+Responsibility always follows authority.
+Automation does not absolve accountability.
 
-Human accountability is preserved at all times, regardless of
-system autonomy, scale, or complexity.
+This guarantee is absolute within governed scope.
 
-TruthSeal™ governance enables lawful reliance by institutions,
-courts, insurers, and regulators by making accountability verifiable.
+⸻
 
-No delegation of legal responsibility to machines is permitted under
-TruthSeal™ governance.
+**6. WHAT TRUTHSEAL™ DOES NOT CLAIM**
 
-Liability follows authority, not automation.
+TruthSeal™ does not claim, imply, or guarantee:
 
-------------------------------------------------------------
+• Correctness of system outputs
+• Ethical desirability of outcomes
+• Absence of harm or failure
+• Intelligence quality or capability
+• Intentional alignment or moral judgement
+• System infallibility
 
-**5. MISREPRESENTATION AND INVALID CLAIMS**
+TruthSeal™ is not an AI service provider, does not generate intelligence outputs, and does not evaluate the “quality” of intelligence.
 
-Any representation that a system is “TruthSeal™ governed” without
-active licensing, enforcement, and audit coverage is invalid.
+TruthSeal™ governs how systems operate under law, not what decisions they should make.
 
-Any use of TruthSeal™ marks, references, or claims outside declared
-system classes and service tiers constitutes misrepresentation.
+⸻
 
-TruthSeal™ governance may not be used to imply certification of
-intelligence quality, ethical intent, or outcome desirability.
+**7. SCOPE-BOUND GUARANTEES**
 
-Claims of coverage beyond licensed scope are void.
+All TruthSeal™ guarantees apply only within declared and licensed scope, defined by:
 
-TruthSeal™ reserves the right to revoke governance, licensing,
-and mark usage where misrepresentation occurs.
+• System class (AI, AGI, robotic, infrastructure, defence, etc.)
+• Activated service tier
+• Enabled governance layers
 
-------------------------------------------------------------
+No guarantee exists for systems, actions, outputs, or protections outside declared coverage.
 
-**6. RELATIONSHIP TO SYSTEM CLASSES AND SERVICE TIERS**
+Governance guarantees do not extend beyond licensed scope.
 
-All guarantees apply strictly within the boundaries defined by
-licensed system classes and activated service tiers.
+⸻
 
-System classes define what type of AI, AGI, or robotic system is
-governed.
+**8. MISREPRESENTATION AND INVALID CLAIMS**
 
-Service tiers define which governance, audit, enforcement, and
-accountability systems are active.
+Any claim that a system is “TruthSeal™ governed” without active licensing, enforcement, and audit coverage is invalid.
 
-No guarantee exists for systems, layers, or protections not explicitly
-included in licensed coverage.
+Any representation that extends TruthSeal™ guarantees beyond declared scope constitutes misrepresentation.
 
-Tier-to-system mappings determine the depth of enforcement and audit.
+TruthSeal™ reserves the right to revoke governance, licensing, and mark usage in cases of misrepresentation or misuse.
 
-------------------------------------------------------------
+⸻
 
-**7. FINAL AUTHORITY AND INTERPRETATION**
+**9. FINAL AUTHORITY**
 
-This document is the authoritative public reference for interpreting
-TruthSeal™ governance guarantees and exclusions.
+This document is the authoritative public reference for interpreting TruthSeal™ governance guarantees and exclusions.
 
-In case of conflict, this document supersedes marketing material,
-presentations, or informal explanations.
+In case of conflict, this document supersedes marketing materials, presentations, or informal explanations.
 
-All interpretations must align with declared system classes, service
-tiers, and active governance layers.
+All interpretations must align with declared system classes, service tiers, and active governance layers.
 
-TruthSeal™ governance is enforceable only within declared scope.
 
 ------------------------------------------------------------
 
