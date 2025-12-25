@@ -6,11 +6,6 @@ truthseal.ai**
 Governance Guarantees Mapped to Service Tiers & System Classes  
 Version 1.0  
 Status: Public Canonical Reference** 
-
-TruthSeal™ — Governance Guarantees Mapped to Service Tiers & System Classes**
-
-Version 1.0 (Public Canonical Reference)
-
 ⸻
 
 **PREAMBLE — SCOPE OF THIS DOCUMENT**
