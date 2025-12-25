@@ -6,16 +6,26 @@ truthseal.ai**
 
 ## PREAMBLE — PURPOSE OF SYSTEM CLASSES
 
-This document defines the public system classes under which TruthSeal™ governance, audit, enforcement, and accountability systems are licensed and deployed.
+This document defines the public system classes under which TruthSeal™ governance, audit, enforcement, and accountability systems are licensed and applied to **Artificial Intelligence (AI), Artificial General Intelligence (AGI), and autonomous robotic systems**.
 
 System classes exist to clearly specify:
-- What type of AI, AGI, or robotic system is being governed  
-- What level of operational risk is present  
-- What TruthSeal™ governance layers are required  
-- What institutions, organisations, or authorities may rely on the system  
 
-System classes are not product descriptions.  
-They are governance categories used to determine licensing scope, enforcement depth, and accountability requirements.
+- **What category of AI, AGI, or autonomous robotic system is being governed**
+- **What level of real-world impact, dependency, or risk the system introduces**
+- **Which TruthSeal™ governance layers are mandatory for lawful operation**
+- **Which institutions (governments, courts, regulators, enterprises, insurers) may rely on governed outputs or actions**
+
+System classes are **not product descriptions** and do not describe intelligence capability, model quality, or performance outcomes.
+
+They are **legal and operational governance categories** used to determine:
+- licensing scope,
+- enforcement depth,
+- audit requirements,
+- accountability binding,
+- and reliance eligibility.
+
+Any AI, AGI, or autonomous robotic system operating under TruthSeal™ governance must be explicitly mapped to one declared system class.  
+No governance, audit, enforcement, or accountability guarantee exists outside declared system class scope.
 
 ---
 
