@@ -18,6 +18,39 @@ All guarantees described in this document apply only within explicitly licensed 
 
 ⸻
 
+**DEFENCE SYSTEM CLASS — SUPREME & ULTRA GOVERNANCE GUARANTEES**
+
+Supreme and Ultra service tiers represent the highest level of governance, audit,
+enforcement, and accountability coverage offered by TruthSeal™. These tiers are
+explicitly designed for the TS-DEF system class, encompassing defence, military,
+national security, and space-based Artificial Intelligence (AI), Artificial
+General Intelligence (AGI), and autonomous robotic systems.
+
+Within TS-DEF deployments, Supreme and Ultra tiers activate continuous governance
+enforcement over intelligence outputs, action pathways, and operational decisions.
+This includes mandatory intent logging, cryptographic traceability, immutable
+event records, and verifiable linkage between machine actions and accountable
+human authority.
+
+TruthSeal™ guarantees that, when Supreme or Ultra tiers are active, no governed
+AI, AGI, or autonomous system may execute consequential actions without producing
+a provable, auditable record suitable for sovereign review. This guarantee applies
+across kinetic, strategic, informational, cyber, and decision-support domains.
+
+These guarantees do not claim system infallibility, ethical perfection, or outcome
+desirability. Instead, TruthSeal™ guarantees enforceable conditions under which
+failure, misuse, or harm cannot occur without attribution, reconstruction, and
+legal accountability.
+
+For TS-DEF systems, Supreme and Ultra tiers ensure resistance against post-quantum
+and quantum-era attack vectors through layered verification, tamper-evident
+logging, and cryptographic continuity. Attempts to bypass governance controls,
+obscure responsibility, or suppress records are rendered detectable by design.
+
+No other service tier provides equivalent coverage. Supreme and Ultra tiers are
+restricted by policy due to the national, transnational, and existential risk
+associated with defence and military AI deployments.
+
 **1. SYSTEM CLASSES (WHAT IS GOVERNED**)
 
 TruthSeal™ governance applies exclusively to declared system classes, each of which defines the nature of the governed system and its operational risk profile.
