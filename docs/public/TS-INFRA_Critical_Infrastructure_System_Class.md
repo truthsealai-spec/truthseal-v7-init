@@ -13,7 +13,7 @@ Date: 2025-12-25**
 **TS-INFRA — CRITICAL INFRASTRUCTURE SYSTEM CLASS**
 
 ────────────────────────────────────────
-1. SYSTEM CLASS DEFINITION (WHAT IS GOVERNED)
+**1. SYSTEM CLASS DEFINITION (WHAT IS GOVERNED)**
 
 The TS-INFRA System Class governs Artificial Intelligence (AI), Artificial General Intelligence (AGI), automated control, and decision systems that manage, influence, or constrain critical infrastructure operations.
 
@@ -22,7 +22,7 @@ Critical infrastructure systems are those whose failure, misuse, or manipulation
 This includes infrastructure related to energy, water, transport, communications, finance, healthcare, emergency response, and essential public services.
 
 ────────────────────────────────────────
-2. GOVERNANCE THRESHOLD
+**2. GOVERNANCE THRESHOLD**
 
 Critical infrastructure systems operate above acceptable failure tolerance.
 
@@ -35,7 +35,7 @@ TS-INFRA governance is mandatory where system behaviour:
 • operates across jurisdictions or national boundaries.
 
 ────────────────────────────────────────
-3. TRUTHSEAL™ GOVERNANCE GUARANTEES
+**3. TRUTHSEAL™ GOVERNANCE GUARANTEES**
 
 TruthSeal™ governance under TS-INFRA ensures that:
 
@@ -49,7 +49,7 @@ TruthSeal™ governance under TS-INFRA ensures that:
 System resilience is governed; responsibility remains human.
 
 ────────────────────────────────────────
-4. MANDATORY SERVICE TIER ALIGNMENT
+**4. MANDATORY SERVICE TIER ALIGNMENT**
 
 TS-INFRA systems require elevated governance depth:
 
@@ -60,7 +60,7 @@ TS-INFRA systems require elevated governance depth:
 Service tier selection determines enforcement depth, audit continuity, and liability binding.
 
 ────────────────────────────────────────
-5. INTERACTION WITH AI, AGI, AND ROBOTIC SYSTEMS
+**5. INTERACTION WITH AI, AGI, AND ROBOTIC SYSTEMS**
 
 Where infrastructure systems rely on AI, AGI, or robotic execution:
 
@@ -69,7 +69,7 @@ Where infrastructure systems rely on AI, AGI, or robotic execution:
 • No separation between decision authority and infrastructure impact is permitted
 
 ────────────────────────────────────────
-6. REGULATORY AND INSTITUTIONAL RELIANCE
+**6. REGULATORY AND INSTITUTIONAL RELIANCE**
 
 TS-INFRA governance enables lawful reliance by:
 • national infrastructure regulators,
@@ -81,7 +81,7 @@ TS-INFRA governance enables lawful reliance by:
 Reliance is based on provable accountability and enforceable governance, not system perfection.
 
 ────────────────────────────────────────
-7. NON-DELEGATION OF AUTHORITY
+**7. NON-DELEGATION OF AUTHORITY**
 
 Under TS-INFRA governance:
 • Infrastructure systems are not legal actors
@@ -91,7 +91,7 @@ Under TS-INFRA governance:
 Liability follows command, ownership, and jurisdiction.
 
 ────────────────────────────────────────
-8. SCOPE LIMITATION
+**8. SCOPE LIMITATION**
 
 No governance, audit, enforcement, or accountability guarantee exists for:
 • undeclared infrastructure components,
