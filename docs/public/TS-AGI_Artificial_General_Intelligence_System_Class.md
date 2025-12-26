@@ -1,19 +1,19 @@
-TruthSeal™ Pty Ltd
+**TruthSeal™ Pty Ltd
 Melbourne, Australia
-truthseal.ai
+truthseal.ai**
 
-TRUTHSEAL™ — SYSTEM CLASS STANDARD
+**TRUTHSEAL™ — SYSTEM CLASS STANDARD
 Artificial General Intelligence (AGI)
-Version: 1.0
-Status: Public Canonical Reference
-Date: 2025-12-25
+Version: 1.0**
+**Status: Public Canonical Reference
+Date: 2025-12-25**
 
 ────────────────────────────────────────
 
-TS-AGI — ARTIFICIAL GENERAL INTELLIGENCE SYSTEM CLASS
+**TS-AGI — ARTIFICIAL GENERAL INTELLIGENCE SYSTEM CLASS**
 
 ────────────────────────────────────────
-1. SYSTEM CLASS DEFINITION (WHAT IS GOVERNED)
+**1. SYSTEM CLASS DEFINITION (WHAT IS GOVERNED)**
 
 The TS-AGI System Class governs Artificial General Intelligence (AGI) systems that demonstrate cross-domain reasoning, adaptive learning, autonomous planning, and the capacity to generalise beyond bounded task definitions.
 
@@ -22,7 +22,7 @@ AGI systems governed under TS-AGI may interpret abstract objectives, generate no
 This system class applies to any intelligence system whose outputs, actions, or behavioural evolution may produce legal, financial, physical, societal, or geopolitical consequences.
 
 ────────────────────────────────────────
-2. GOVERNANCE THRESHOLD
+**2. GOVERNANCE THRESHOLD**
 
 AGI systems represent a qualitative escalation of operational and societal risk relative to narrow or task-bounded AI systems.
 
@@ -35,7 +35,7 @@ TS-AGI governance is mandatory for:
 • AGI deployments relied upon by governments, courts, defence, finance, or critical infrastructure.
 
 ────────────────────────────────────────
-3. TRUTHSEAL™ GOVERNANCE GUARANTEES
+**3. TRUTHSEAL™ GOVERNANCE GUARANTEES**
 
 TruthSeal™ governance under the TS-AGI system class ensures that:
 
@@ -49,7 +49,7 @@ TruthSeal™ governance under the TS-AGI system class ensures that:
 AGI autonomy never supersedes human accountability.
 
 ────────────────────────────────────────
-4. MANDATORY SERVICE TIER ALIGNMENT
+**4. MANDATORY SERVICE TIER ALIGNMENT**
 
 TS-AGI systems require activation of Supreme or Ultra service tiers at all times.
 
@@ -63,7 +63,7 @@ Supreme and Ultra tiers activate:
 • cross-system liability attribution.
 
 ────────────────────────────────────────
-5. REGULATORY AND INSTITUTIONAL RELIANCE
+**5. REGULATORY AND INSTITUTIONAL RELIANCE**
 
 TS-AGI governance is designed for lawful reliance by:
 • governments and national regulators,
@@ -75,7 +75,7 @@ TS-AGI governance is designed for lawful reliance by:
 TruthSeal™ enables reliance on AGI systems by making responsibility provable, not by asserting system infallibility.
 
 ────────────────────────────────────────
-6. NON-DELEGATION OF AUTHORITY
+**6. NON-DELEGATION OF AUTHORITY**
 
 Under TS-AGI governance:
 • AGI systems are not legal actors
@@ -85,7 +85,7 @@ Under TS-AGI governance:
 Liability follows human authority, not intelligence capability.
 
 ────────────────────────────────────────
-7. SCOPE LIMITATION
+**7. SCOPE LIMITATION**
 
 No governance, audit, enforcement, or accountability guarantee exists for:
 • undeclared AGI capabilities,
