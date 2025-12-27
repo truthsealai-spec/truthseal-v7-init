@@ -1,30 +1,30 @@
-TruthSeal™ Pty Ltd  
-Melbourne, Australia  
-truthseal.ai
-
 # TRUTHSEAL™ — GOVERNANCE DASHBOARD & CONTROL PLANE  
 Public Canonical Document
 
+TruthSeal™ Pty Ltd  
+Melbourne, Australia  
+truthseal.ai  
+
 date: 2025-12-25  
-version: 1.0
+version: 1.0  
 
 ---
 
-## 1. PURPOSE OF THE GOVERNANCE CONTROL PLANE
+## 1. PURPOSE OF THE GOVERNANCE DASHBOARD & CONTROL PLANE
 
-The Governance Dashboard & Control Plane defines how TruthSeal™ governance visibility, audit access, escalation signals, and enforcement states are surfaced to authorised parties.
+The Governance Dashboard & Control Plane defines the observable and enforceable governance interface through which TruthSeal™ oversight is exercised.
 
-This control plane does not operate, command, or execute Artificial Intelligence (AI), Artificial General Intelligence (AGI), or robotic systems.
+This control plane does not operate, command, train, or influence AI, AGI, or robotic systems directly.
 
-It exists to make governance observable, accountable, and legally reviewable across the lifecycle of governed systems.
+It exists to make governance states visible, verifiable, auditable, and legally interpretable at all times.
 
-The dashboard provides structured visibility into governance state, not system performance or intelligence quality.
+The dashboard provides structured visibility into system classification, certification status, active governance controls, and escalation posture.
 
-It enables regulators, courts, enterprises, insurers, and sovereign authorities to determine whether a system is operating within declared governance conditions.
+It enables regulators, courts, enterprises, insurers, and authorised institutions to determine governance coverage without technical ambiguity.
 
-The control plane is a governance interface, not an operational console.
+The control plane serves as the authoritative governance surface for reliance and accountability interpretation.
 
-TruthSeal™ governance actions occur through contractual, legal, and enforcement mechanisms — not direct system control.
+TruthSeal™ governance actions occur through policy enforcement, certification state changes, and escalation authority — not system execution.
 
 ---
 
@@ -32,99 +32,81 @@ TruthSeal™ governance actions occur through contractual, legal, and enforcemen
 
 The control plane exposes governance-relevant surfaces only.
 
-These include system classification, licensed service tier, active governance layers, audit status, integrity signals, escalation markers, and enforcement state.
+These include system classification, licensed tier, certification state, audit status, escalation thresholds, and enforcement posture.
 
-Each surface represents a verifiable governance condition tied to declared scope and licensing.
+Each surface represents a verifiable governance fact backed by audit records and immutable logs.
 
-No model internals, training data, source code, or proprietary system logic is exposed.
+No model internals, training data, source code, weights, or proprietary algorithms are exposed.
 
-Governance surfaces are structured to support legal interpretation, regulatory review, and institutional reliance.
+Governance surfaces are structured to support legal review, regulatory supervision, and institutional reliance.
 
-All displayed information is derived from audit records, receipts, and governance logs.
+All displayed information is derived from certified governance records.
 
-The control plane reflects governance reality; it does not infer, predict, or simulate behaviour.
-
----
-
-## 3. VISIBILITY — WHO SEES WHAT
-
-Visibility is role-based and jurisdiction-aware.
-
-System operators may view governance status, alerts, and compliance indicators relevant to their licensed systems.
-
-Regulators and courts may access certified audit records, decision receipts, escalation history, and enforcement state.
-
-Insurers may access governance continuity indicators and certification validity relevant to risk assessment.
-
-Sovereign authorities may access expanded audit depth where contractually and legally authorised.
-
-No party receives unrestricted access by default.
-
-Visibility does not imply authority to modify systems or governance parameters.
+The dashboard is a governance interface, not an analytics or operational console.
 
 ---
 
-## 4. AUTHORITY — WHO CAN ACT (AND WHO CANNOT)
+## 3. VISIBILITY, ACCESS, AND ROLES
 
-TruthSeal™ does not operate, modify, or command external systems.
+Access to the Governance Dashboard is role-based and authority-scoped.
 
-TruthSeal™ cannot trigger system actions, deploy updates, alter objectives, or execute controls.
+Different stakeholders may see different governance views depending on legal authority and licensing rights.
 
-Authority to act on governed systems remains with system owners, operators, or legally designated human authorities.
+Operators may view certification status and obligations applicable to their systems.
 
-TruthSeal™ governance may trigger escalation signals, suspension conditions, or certification state changes as defined by license.
+Regulators and courts may view full governance state, audit history, and escalation events.
 
-These actions affect governance status, not system execution.
+Insurers and institutional partners may view reliance-relevant certification and compliance indicators.
 
-All enforcement occurs through legal, contractual, or institutional mechanisms — not technical takeover.
+No unauthorised party may access restricted governance surfaces.
 
----
-
-## 5. ESCALATION AND INTERVENTION LOGIC
-
-Escalation signals are generated when governance conditions are breached or at risk.
-
-Signals may include integrity violations, scope deviation, undeclared autonomy, audit failure, or misuse indicators.
-
-Escalation does not equal intervention.
-
-Escalation notifies authorised human authorities and relevant institutions according to tier and system class.
-
-Intervention decisions are executed by humans under legal authority, not by TruthSeal™.
-
-This separation preserves accountability and prevents displacement of responsibility onto automated systems.
+All access events are logged for audit integrity.
 
 ---
 
-## 6. LOGGING, EVIDENCE, AND AUDIT CONTINUITY
+## 4. CONTROL PLANE ACTIONS
 
-All governance-relevant events are logged as structured, immutable records.
+The control plane enables governance actions, not operational commands.
 
-Logs include certification state, audit checkpoints, escalation events, enforcement actions, and suspension or revocation decisions.
+Actions include certification issuance, suspension, revocation, escalation triggers, and governance state transitions.
 
-Records are retained according to declared audit lifecycle and jurisdictional requirements.
+No action may directly instruct system behaviour, decision-making, or execution.
 
-Logs are designed to be admissible, reviewable, and reconstructable in legal or regulatory proceedings.
+Control plane actions affect governance status only.
 
-Audit continuity ensures governance state can be assessed retrospectively and longitudinally.
+All actions require defined authority, authentication, and recorded justification.
 
-TruthSeal™ logs support accountability without asserting outcome correctness.
+Every action generates an immutable governance record.
 
 ---
 
-## 7. EXPLICIT EXCLUSIONS AND NON-CLAIMS
+## 5. LOGGING, AUDIT, AND CONTINUITY
 
-The Governance Dashboard does not guarantee system safety, correctness, or performance.
+All governance states and actions are continuously logged.
 
-It does not predict failures, prevent harm, or certify intelligence quality.
+Logs are structured to support long-term auditability and legal admissibility.
 
-It does not replace human judgment, legal oversight, or operational responsibility.
+Historical governance states remain retrievable even after suspension or revocation.
 
-No governance visibility implies approval of system objectives or outcomes.
+No governance action may occur without a corresponding audit trail.
 
-TruthSeal™ governance ensures accountability, not infallibility.
+The control plane maintains continuity across system updates, redeployments, and lifecycle changes.
 
-All reliance must align with declared system class, licensed tier, and active governance scope.
+Governance history cannot be retroactively altered.
+
+---
+
+## 6. LIMITATIONS AND EXCLUSIONS
+
+The Governance Dashboard & Control Plane does not monitor model internals or runtime cognition.
+
+It does not guarantee outcomes, correctness, safety, or performance of governed systems.
+
+It does not replace regulatory authority, legal judgment, or human responsibility.
+
+Its function is limited to governance visibility, certification enforcement, and accountability continuity.
+
+Reliance is limited to declared governance coverage only.
 
 ---
 
